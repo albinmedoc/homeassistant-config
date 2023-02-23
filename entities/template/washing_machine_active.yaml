@@ -3,8 +3,7 @@
 #
 
 binary_sensor:
-  - name: "Washing Machine"
-    unique_id: "134b3946-ae3e-476d-b500-c845c13396ae"
+  - unique_id: "134b3946-ae3e-476d-b500-c845c13396ae"
     delay_off:
       seconds: 20
     state: >

@@ -3,8 +3,7 @@
 #
 
 sensor:
-  - name: "SMHI Temperature"
-    unique_id: "b673d5fe-7eb5-4ff0-b182-f3f1d860f1cf"
+  - unique_id: "b673d5fe-7eb5-4ff0-b182-f3f1d860f1cf"
     state: "{{ state_attr('weather.smhi', 'temperature') }}"
     state_class: measurement
     unit_of_measurement: "°C"

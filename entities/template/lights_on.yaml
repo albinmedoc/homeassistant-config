@@ -3,8 +3,7 @@
 #
 
 sensor:
-  - name: "Lights on"
-    unique_id: a7f5dc10-973a-4f44-883b-5a774ec21695
+  - unique_id: a7f5dc10-973a-4f44-883b-5a774ec21695
     state_class: "measurement"
     state: >
       {% set ns = namespace(on_lights=0) %}

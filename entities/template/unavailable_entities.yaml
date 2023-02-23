@@ -5,8 +5,7 @@
 #
 
 sensor:
-  - name: "Unavailable Entities"
-    unique_id: 22e44867-57b9-4b45-aefb-41a889aaf837
+  - unique_id: 22e44867-57b9-4b45-aefb-41a889aaf837
     icon: "{{ iif(states(this.entity_id)|int(0) > 0,'mdi:alert-circle','mdi:check-circle') }}"
     unit_of_measurement: entities
     state: >
