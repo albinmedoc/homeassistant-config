@@ -1,5 +1,5 @@
 ---
-# Monitor HA machine
+# Monitor system
 #
 # https://www.home-assistant.io/integrations/systemmonitor/
 #
@@ -7,8 +7,7 @@
 platform: systemmonitor
 resources:
   - type: disk_use_percent
-    arg: /config
-  #  - type: disk_use
+    arg: /
   #  - type: disk_free
   - type: memory_use_percent
   #  - type: memory_use
@@ -36,5 +35,5 @@ resources:
   #  - type: ipv6_address
   #    arg: eth0
   - type: processor_use
-  - type: processor_temperature
+  # - type: processor_temperature
   - type: last_boot
