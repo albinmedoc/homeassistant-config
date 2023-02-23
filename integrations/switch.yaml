@@ -1,2 +1,6 @@
 ---
+# This handles the loading of my switches.
+#
+# https://www.home-assistant.io/integrations/switch/
+#
 switch: !include_dir_list ../entities/switch

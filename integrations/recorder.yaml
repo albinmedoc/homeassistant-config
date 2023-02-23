@@ -1,2 +1,7 @@
+---
+# Configures light entities.
+#
+# https://www.home-assistant.io/integrations/light/
+#
 recorder:
   db_url: !secret db_url

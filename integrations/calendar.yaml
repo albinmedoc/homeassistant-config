@@ -1,2 +1,6 @@
 ---
+# This handles the loading of my calendars
+#
+# https://www.home-assistant.io/integrations/calendar/
+#
 calendar: !include_dir_list ../entities/calendar

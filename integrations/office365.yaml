@@ -1,6 +1,8 @@
 ---
+# This handles the loading of my Office 356 calendars
+#
 # https://rogerselwyn.github.io/O365-HomeAssistant/
-# Example configuration.yaml entry for multiple account
+#
 o365:
   accounts:
     - account_name: Albin jobb
