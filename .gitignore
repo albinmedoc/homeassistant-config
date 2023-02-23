@@ -15,8 +15,6 @@ www/community/
 home-assistant.log*
 *.db*
 
-node-red/
-
 deepstack/
 
 frigate.yml
