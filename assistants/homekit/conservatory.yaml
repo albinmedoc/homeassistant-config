@@ -3,7 +3,7 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Conservatory
 #
-# entities:
+
 - light.lamp_conservatory
 - light.roof_loop_conservatory
 

@@ -3,6 +3,7 @@
 #
 # https://github.com/franc6/ics_calendar
 #
+
 platform: ics_calendar
 calendars:
   - name: "Matilda jobb"

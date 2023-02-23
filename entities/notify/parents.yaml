@@ -1,6 +1,7 @@
 ---
 # A notify group used to send notifications to all parents
 #
+
 name: "Parents"
 platform: group
 services:

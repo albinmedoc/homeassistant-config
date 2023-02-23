@@ -3,5 +3,5 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Playroom
 #
-# entities:
+
 - light.ceiling_lamp_playroom

@@ -3,6 +3,7 @@
 # 
 # Samsung TV in living room
 #
+
 platform: samsungtv_tizen
 name: "Samsung TV Vardagsrum"
 host: !secret tv_living_room_host

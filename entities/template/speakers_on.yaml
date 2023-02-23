@@ -1,6 +1,7 @@
 ---
 # This sensor keeps track of how many speakers are on
 #
+
 sensor:
   - name: "Speakers on"
     unique_id: 17bc82f4-f9b0-4a06-9502-8f5fc763e177

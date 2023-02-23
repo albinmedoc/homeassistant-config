@@ -1,6 +1,7 @@
 ---
 # This sensor keeps track of how many lights are on
 #
+
 sensor:
   - name: "Lights on"
     unique_id: a7f5dc10-973a-4f44-883b-5a774ec21695

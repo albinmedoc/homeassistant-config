@@ -5,6 +5,7 @@
 #
 # https://www.home-assistant.io/integrations/homekit/#entity_config
 #
+
 linked_motion_sensor: binary_sensor.camera_living_room_motion
 support_audio: true
 max_fps: 60

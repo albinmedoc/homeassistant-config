@@ -4,6 +4,7 @@
 # Allow requests from the Cloudflared add-on.
 # The add-on runs locally, so HA has to trust the docker network.
 #
+
 http:
   use_x_forwarded_for: true
   trusted_proxies:

@@ -3,6 +3,7 @@
 #
 # https://rogerselwyn.github.io/O365-HomeAssistant/
 #
+
 o365:
   accounts:
     - account_name: Albin jobb

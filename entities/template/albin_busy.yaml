@@ -1,6 +1,7 @@
 ---
 # This binary sensor is turned on when albin is busy
 #
+
 binary_sensor:
   - name: "Albin is Busy"
     unique_id: "1ef646ce-0b1b-4cd1-8379-719eb6dafb59"

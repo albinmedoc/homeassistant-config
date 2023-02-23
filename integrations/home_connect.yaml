@@ -3,6 +3,7 @@
 #
 # https://github.com/ekutner/home-connect-hass
 #
+
 home_connect_alt:
   client_id: !secret home_connect_client_id
   client_secret: !secret home_connect_client_secret

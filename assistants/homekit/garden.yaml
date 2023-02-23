@@ -3,7 +3,7 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Garden
 #
-# entities:
+
 - camera.camera_garden_hd_stream
 
 - sensor.temperature_garden

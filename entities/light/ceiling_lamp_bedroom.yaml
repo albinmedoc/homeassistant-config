@@ -2,6 +2,7 @@
 # Creates a "fake" light
 # This is to handle the light from being unavailable due the relay cuts the power
 #
+
 platform: template
 lights:
   ceiling_lamp_bedroom:

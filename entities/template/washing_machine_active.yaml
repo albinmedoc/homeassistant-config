@@ -1,6 +1,7 @@
 ---
 # This binary sensor is turned on when the washing machine is running
 #
+
 binary_sensor:
   - name: "Washing Machine"
     unique_id: "134b3946-ae3e-476d-b500-c845c13396ae"

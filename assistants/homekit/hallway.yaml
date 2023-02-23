@@ -3,7 +3,7 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Hallway
 #
-# entities:
+
 - light.lamp_entrance_hallway
 - light.lamp_2_hallway
 - light.lamp_3_hallway

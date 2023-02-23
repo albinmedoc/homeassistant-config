@@ -3,7 +3,7 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Living Room
 #
-# entities:
+
 - light.ceiling_lamp_living_room
 - light.dining_table_living_room
 - light.standing_lamp_living_room

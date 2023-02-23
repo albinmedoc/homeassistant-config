@@ -3,6 +3,7 @@
 #
 # https://www.home-assistant.io/integrations/caldav/
 #
+
 platform: caldav
 username: !secret icloud_username
 password: !secret icloud_password

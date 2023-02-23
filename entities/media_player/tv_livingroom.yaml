@@ -3,6 +3,7 @@
 #
 # Makes so the media_player can be turned on
 #
+
 platform: universal
 unique_id: 0b62194d-2919-4280-b31d-8e0ddf4f4034
 name: "TV Vardagsrum"

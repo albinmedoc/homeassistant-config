@@ -3,5 +3,5 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Kitchen
 #
-# entities:
+
 - light.ceiling_lamp_kitchen

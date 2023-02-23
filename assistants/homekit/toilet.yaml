@@ -3,7 +3,7 @@
 # List of entities that is exposed to HomeKit/Siri
 # Area: Toilet
 #
-# entities:
+
 - light.lamp_toilet
 
 - binary_sensor.motion_toilet

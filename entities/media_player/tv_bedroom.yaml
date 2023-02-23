@@ -2,6 +2,7 @@
 # Add feature to the chromecast media player
 # so it can turn on/off the TV
 #
+
 platform: universal
 unique_id: 8c796d23-b72b-4407-b2ad-3f3d4a7e13e6
 name: "TV Sovrum"
