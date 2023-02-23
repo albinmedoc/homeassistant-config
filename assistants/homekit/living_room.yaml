@@ -1,0 +1,18 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# Area: Living Room
+#
+# entities:
+- light.ceiling_lamp_living_room
+- light.dining_table_living_room
+- light.standing_lamp_living_room
+- light.sonos_lamp_living_room
+
+- media_player.tv_living_room
+
+- camera.camera_living_room_hd_stream
+
+- binary_sensor.motion_living_room
+
+- sensor.temperature_living_room

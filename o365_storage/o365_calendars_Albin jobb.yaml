@@ -1,0 +1,20 @@
+- cal_id: AAMkADBlMTFiZTZjLTlmNmItNGM4MC04ZjFjLWM0MmIxNDA1ZWI2NwBGAAAAAACdmX3HFi3dS6WWK42WUpghBwCqM0hrL4ZpQ4Jce7C8JIehAAAAAAEGAACqM0hrL4ZpQ4Jce7C8JIehAAAIlrYvAAA=
+  entities:
+    - device_id: ""
+      end_offset: 24
+      name: Albin Jobb
+      start_offset: 0
+      track: true
+      exclude:
+        - "VAB"
+        - "Semester"
+        - "Ledig"
+        - "Jobba hemma"
+
+- cal_id: AAMkADBlMTFiZTZjLTlmNmItNGM4MC04ZjFjLWM0MmIxNDA1ZWI2NwBGAAAAAACdmX3HFi3dS6WWK42WUpghBwCqM0hrL4ZpQ4Jce7C8JIehAAAAAAEGAAAR34qkdJrKRL6GNgoEQDA2AAAERG6eAAA=
+  entities:
+    - device_id: Birthdays
+      end_offset: 24
+      name: Birthdays
+      start_offset: 0
+      track: false

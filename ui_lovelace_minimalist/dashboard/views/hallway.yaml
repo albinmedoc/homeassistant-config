@@ -1,0 +1,93 @@
+title: "Hall"
+path: "hallway"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Hall"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.motion_hallway
+            state: "on"
+        card:
+          type: "custom:button-card"
+          template: chip_mdi_icon_only
+          variables:
+            ulm_chip_mdi_icon_only_entity: binary_sensor.motion_hallway
+            ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
+            ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
+
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        tap_action:
+          action: "call-service"
+          service: "light.toggle"
+          service_data:
+            entity_id: light.all_hallway
+        variables:
+          ulm_custom_card_group_counter_chip_entity: light.all_hallway
+          ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
+          ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
+          ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
+          ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
+          ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
+          ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
+          ulm_custom_card_group_counter_chip_hide_if_0: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_entrance_hallway
+        variables:
+          ulm_card_light_name: "Entré"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_2_hallway
+        variables:
+          ulm_card_light_name: "Lampa 2"
+          ulm_card_light_enable_popup: true
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_3_hallway
+        variables:
+          ulm_card_light_name: "Lampa 3"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Sensorer"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_binary_sensor
+        variables:
+          ulm_card_binary_sensor_name: "Rörelse"
+          ulm_card_binary_sensor_alert: true
+          ulm_show_last_changed: true
+        entity: binary_sensor.motion_hallway
+      - type: "custom:button-card"
+        template: card_binary_sensor_alert
+        variables:
+          ulm_card_binary_sensor_alert_name: "Ytterdörr"
+          ulm_card_binary_sensor_alert: true
+          ulm_show_last_changed: true
+        entity: binary_sensor.door_main_hallway

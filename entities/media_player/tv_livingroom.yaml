@@ -1,0 +1,55 @@
+---
+# Combines the Samsung TV and Apple TV
+#
+# Makes so the media_player can be turned on
+#
+platform: universal
+unique_id: 0b62194d-2919-4280-b31d-8e0ddf4f4034
+name: "TV Vardagsrum"
+children:
+  - media_player.samsung_tv_living_room
+  - media_player.apple_tv_living_room
+state_template: "{{ states('input_boolean.tv_living_room_on') }}"
+#  {% if is_state('input_boolean.tv_living_room_on', 'off') %}
+#    off
+#  {% else %}
+#    {{ states('media_player.apple_tv_living_room') }}
+#    # Kanske ska kolla vilken källa och då även titta på ps4
+#  {% endif %}
+commands:
+  turn_on:
+    service: script.turn_on_tv_living_room
+  turn_off:
+    service: script.turn_off_tv_living_room
+  volume_up:
+    service: media_player.volume_up
+    target:
+      entity_id: media_player.samsung_tv_vardagsrum
+  volume_down:
+    service: media_player.volume_down
+    target:
+      entity_id: media_player.samsung_tv_vardagsrum
+  volume_set:
+    service: media_player.volume_set
+    data_template:
+      volume_level: "{{ volume_level }}"
+      entity_id: media_player.samsung_tv_vardagsrum
+  volume_mute:
+    service: media_player.volume_mute
+    data:
+      is_volume_muted: "{{ is_volume_muted }}"
+    target:
+      entity_id: media_player.samsung_tv_living_room
+  select_source:
+    service: media_player.select_source
+    data:
+      source: "{{ source }}"
+    target:
+      entity_id: media_player.samsung_tv_vardagsrum
+attributes:
+  state: media_player.samsung_tv_vardagsrum|state
+  is_volume_muted: media_player.samsung_tv_vardagsrum|is_volume_muted
+  volume_level: media_player.samsung_tv_vardagsrum|volume_level
+  source: media_player.samsung_tv_vardagsrum|source
+  source_list: media_player.samsung_tv_vardagsrum|source_list
+device_class: tv

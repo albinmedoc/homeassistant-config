@@ -1,0 +1,10 @@
+---
+# This binary sensor is turned on when the air fryer is running
+#
+binary_sensor:
+  - name: "AirFryer active"
+    unique_id: "df450127-6c84-4ec2-b0c8-c1f005b0c420"
+    delay_off:
+      seconds: 10
+    state: >
+      {{ states('sensor.airfryer_conservatory_active_power')|float|default(0) > 0 }}

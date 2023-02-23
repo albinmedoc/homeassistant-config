@@ -1,0 +1,10 @@
+---
+# https://rogerselwyn.github.io/O365-HomeAssistant/
+# Example configuration.yaml entry for multiple account
+o365:
+  accounts:
+    - account_name: Albin jobb
+      client_id: !secret o365_client_id_albin_work
+      client_secret: !secret o365_client_secret_albin_work
+      alt_auth_method: False
+      enable_update: True

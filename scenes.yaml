@@ -1,0 +1,45 @@
+- id: a6228e57-aad3-49f6-9379-1ee6713121a5
+  name: Titta TV Sovrum
+  entities:
+    switch.plug_tv_bedroom:
+      friendly_name: Plug TV Sovrum Switch
+      state: "on"
+    light.ceiling_lamp_bedroom:
+      color_mode: brightness
+      brightness: 3
+      state: "on"
+  icon: mdi:television-shimmer
+  metadata:
+    switch.plug_tv_bedroom:
+      entity_only: true
+    light.ceiling_lamp_bedroom:
+      entity_only: true
+- id: e8f1ac5a-b814-4ed3-a5bd-95979f23ea24
+  name: Inte hemma
+  icon: mdi:home-off
+  entities:
+    light.all_living_room: "off"
+    light.all_kids_bedroom: "off"
+    light.all_hallway: "off"
+    light.all_playroom: "off"
+    light.all_bedroom: "off"
+    light.all_kitchen: "off"
+    light.all_bathroom: "off"
+    light.all_toilet: "off"
+    light.all_conservatory: "off"
+    media_player.tv_living_room: "off"
+    media_player.tv_sovrum: "off"
+- id: bde84642-1abd-4db8-9c71-e8dbd7bea799
+  name: Godnatt
+  icon: mdi:sleep
+  entities:
+    light.all_living_room: "off"
+    light.all_kids_bedroom: "off"
+    light.all_hallway: "off"
+    light.all_playroom: "off"
+    light.all_bedroom: "off"
+    light.all_kitchen: "off"
+    light.all_bathroom: "off"
+    light.all_toilet: "off"
+    light.all_conservatory: "off"
+    media_player.tv_living_room: "off"

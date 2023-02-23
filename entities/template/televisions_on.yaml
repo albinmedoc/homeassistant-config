@@ -1,0 +1,8 @@
+---
+# This sensor keeps track of how many televisions are on
+#
+sensor:
+  - name: "Televisions on"
+    unique_id: f58e43d8-d424-4303-b160-de8bf18af1ab
+    state_class: "measurement"
+    state: "{{expand(state_attr('media_player.televisions', 'entity_id'))| selectattr('state','eq','on')|map(attribute='entity_id')|list|count}}"

@@ -1,0 +1,134 @@
+title: "Vardagsrum"
+path: "living-room"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Vardagsrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.motion_living_room
+            state: "on"
+        card:
+          type: "custom:button-card"
+          template: chip_mdi_icon_only
+          variables:
+            ulm_chip_mdi_icon_only_entity: binary_sensor.motion_living_room
+            ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
+            ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
+
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        tap_action:
+          action: "call-service"
+          service: "light.toggle"
+          service_data:
+            entity_id: light.all_living_room
+        variables:
+          ulm_custom_card_group_counter_chip_entity: light.all_living_room
+          ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
+          ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
+          ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
+          ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
+          ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
+          ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
+          ulm_custom_card_group_counter_chip_hide_if_0: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_graph
+        entity: sensor.smoke_detector_living_room_temperature
+        variables:
+          ulm_card_graph_color: "var(--google-red)"
+          ulm_card_graph_name: Temperatur
+          ulm_card_graph_entity: sensor.smoke_detector_living_room_temperature
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+          ulm_card_graph_group_by: interval
+      - type: "custom:button-card"
+        entity: camera.camera_living_room_hd_stream
+        template: "custom_card_camera"
+        show_icon: false #True if you set ulm_custom_card_camera_title: true
+        variables:
+          ulm_custom_card_camera_title: false
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "custom:button-card"
+    template: card_media_player
+    entity: media_player.tv_living_room
+    variables:
+      ulm_card_media_player_name: "TV"
+      ulm_card_media_player_enable_art: true
+      ulm_card_media_player_enable_controls: true
+      ulm_card_media_player_collapsible: true
+      ulm_card_media_player_enable_popup: true
+      ulm_card_media_player_power_button: true
+
+  - type: "custom:button-card"
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Sonos lampa"
+      ulm_card_media_player_with_controls_entity: media_player.sonos_lamp_living_room
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_living_room
+        variables:
+          ulm_card_light_name: "Soffa"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.sonos_lamp_living_room
+        variables:
+          ulm_card_light_name: "Sonos lampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.standing_lamp_living_room
+        variables:
+          ulm_card_light_name: "Stående lampa"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.dining_table_living_room
+        variables:
+          ulm_card_light_name: "Matbord"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Sensorer"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_binary_sensor
+        variables:
+          ulm_card_binary_sensor_name: "Rörelse"
+          ulm_card_binary_sensor_alert: true
+          ulm_show_last_changed: true
+        entity: binary_sensor.camera_living_room_motion
+      - type: "custom:button-card"
+        template: card_binary_sensor
+        variables:
+          ulm_card_binary_sensor_name: "Rök"
+          ulm_card_binary_sensor_alert: true
+        entity: binary_sensor.smoke_detector_living_room_smoke

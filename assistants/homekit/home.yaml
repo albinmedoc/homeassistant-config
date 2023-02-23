@@ -1,0 +1,14 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# Area: Home
+#
+# entities:
+- input_boolean.homekit_albin_home
+- input_boolean.homekit_matilda_home
+
+- vacuum.cleanmate
+
+- camera.camera_dino_hd_stream
+
+- alarm_control_panel.alarmo

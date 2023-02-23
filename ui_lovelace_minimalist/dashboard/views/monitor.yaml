@@ -1,0 +1,92 @@
+title: "Övervakning"
+path: "monitor"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Övervakning"
+
+  - type: "custom:button-card"
+    template: custom_card_homeassistant_updates
+    variables:
+      ulm_card_homeassistant_core: "update.home_assistant_core_update"
+      ulm_card_homeassistant_supervisor: "update.home_assistant_supervisor_update"
+      ulm_card_homeassistant_os: "update.home_assistant_operating_system_update"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Skrivare"
+
+  - type: "custom:button-card"
+    template: "custom_card_sisimomo_printer"
+    entity: sensor.printer_status
+    notification: "mdi:window-shutter"
+    variables:
+      printer_name: "HP LaserJet M209dw"
+      cartridges:
+        - label: "Bläck"
+          entity_id: sensor.printer_toner_black
+          color: "black"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "NAS"
+
+  - type: "custom:button-card"
+    template: "custom_card_apexcharts"
+    variables:
+      chart_type: "radialBar"
+      graph_span: "10min"
+      entity_1:
+        entity_id: sensor.nas_volume_1_volume_used
+        icon: ""
+        name: "Disk"
+        color: "red"
+        max_value: 100
+      entity_2:
+        entity_id: sensor.nas_memory_usage_real
+        icon: ""
+        name: "Minne"
+        color: "yellow"
+        max_value: 100
+      entity_3:
+        entity_id: sensor.nas_cpu_utilization_other
+        icon: ""
+        name: "CPU"
+        color: "green"
+        max_value: 100
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "NUC"
+
+  - type: "custom:button-card"
+    template: "custom_card_apexcharts"
+    variables:
+      chart_type: "radialBar"
+      graph_span: "10min"
+      entity_1:
+        entity_id: sensor.disk_use_percent_config
+        icon: ""
+        name: "Disk"
+        color: "red"
+        max_value: 100
+      entity_2:
+        entity_id: sensor.memory_use_percent
+        icon: ""
+        name: "Minne"
+        color: "yellow"
+        max_value: 100
+      entity_3:
+        entity_id: sensor.processor_use
+        icon: ""
+        name: "CPU"
+        color: "green"
+        max_value: 100

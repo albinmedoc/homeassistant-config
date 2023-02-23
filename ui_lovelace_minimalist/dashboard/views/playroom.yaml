@@ -1,0 +1,57 @@
+title: "Lekrum"
+path: "playroom"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Lekrum"
+
+  - type: "custom:button-card"
+    template: custom_card_group_counter_chip
+    tap_action:
+      action: "call-service"
+      service: "light.toggle"
+      service_data:
+        entity_id: light.all_playroom
+    variables:
+      ulm_custom_card_group_counter_chip_entity: light.all_playroom
+      ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
+      ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
+      ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
+      ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
+      ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
+      ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
+      ulm_custom_card_group_counter_chip_hide_if_0: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_playroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Sensorer"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_binary_sensor_alert
+        variables:
+          ulm_card_binary_sensor_alert: true
+          ulm_show_last_changed: true
+        entity: binary_sensor.window_playroom

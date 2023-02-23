@@ -1,0 +1,182 @@
+---
+custom_card_dishwasher:
+  template:
+    - "icon_more_info_new"
+  variables:
+    ulm_custom_card_dishwasher_name: "Dishwasher"
+    ulm_custom_card_dishwasher_icon: mdi:dishwasher
+    ulm_custom_card_dishwasher_run_state: "running"
+    ulm_custom_card_dishwasher_ready_state: "ready"
+  triggers_update: "all"
+  styles:
+    grid:
+      - grid-template-areas: "'item1' 'item2' 'item3'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "repeat(3, min-content)"
+      - row-gap: "12px"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "12px"
+      - background-color: >
+          [[[
+            if(hass.themes.darkMode){
+              return "rgba(var(--color-theme), 0.1)";
+              }
+          ]]]
+    custom_fields:
+      item3:
+        - display: >
+            [[[
+              const dishwasherActive = entity.state.toLowerCase() === variables.ulm_custom_card_dishwasher_run_state.toLowerCase();
+              const progressAvailable = states[variables.ulm_custom_card_dishwasher_progress_entity].state != 'unavailable';
+              const showProgressBar = dishwasherActive && progressAvailable;
+              return showProgressBar ? 'block' : 'none'
+            ]]]
+  custom_fields:
+    item1:
+      card:
+        type: "custom:button-card"
+        custom_fields:
+          item1:
+            card:
+              type: "custom:button-card"
+              entity: "[[[ return entity.entity_id ]]]"
+              icon: "[[[ return variables.ulm_custom_card_dishwasher_icon ]]]"
+              styles:
+                icon:
+                  - color: "rgba(var(--color-theme), 1)"
+                img_cell:
+                  - background-color: "rgba(var(--color-theme), 0.05)"
+          item2:
+            card:
+              type: "custom:button-card"
+              entity: "[[[ return entity.entity_id ]]]"
+              name: "[[[ return variables.ulm_custom_card_dishwasher_name ]]]"
+              label: >
+                [[[
+                  let label = entity.attributes.friendly_name
+                  if(variables.ulm_custom_card_dishwasher_label){
+                    label = variables.ulm_custom_card_dishwasher_label;
+                  } else {
+                    label = variables.ulm_translation_state;
+                  }
+                  return label;
+                ]]]
+    item2:
+      card:
+        type: "custom:button-card"
+        template: "list_4_items"
+        styles:
+          card:
+            - background: "none"
+            - border-radius: "0"
+        custom_fields:
+          item1:
+            card:
+              type: "custom:button-card"
+              template: "widget_icon"
+              icon: >
+                [[[
+                  if(states[variables.ulm_custom_card_dishwasher_power_entity].state !== 'on') {
+                        return "mdi:power"
+                  }
+                  if(entity.state === variables.ulm_custom_card_dishwasher_run_state ){
+                    return "mdi:pause"
+                  }
+                  if(entity.state === variables.ulm_custom_card_dishwasher_ready_state ){
+                    return "mdi:play";
+                  }
+                ]]]
+              tap_action:
+                action: "call-service"
+                service: >
+                  [[[
+                    if(states[variables.ulm_custom_card_dishwasher_power_entity].state !== 'on') {
+                        return "switch.turn_on"
+                    }
+                    return "button.press"
+                  ]]]
+                service_data:
+                  entity_id: >
+                    [[[
+                      if(states[variables.ulm_custom_card_dishwasher_power_entity].state !== 'on') {
+                          return variables.ulm_custom_card_dishwasher_power_entity
+                      }
+                      return variables.ulm_custom_card_dishwasher_start_pause_button
+                    ]]]
+          item2:
+            card:
+              type: "custom:button-card"
+              template: "custom_card_dishwasher_program"
+              variables:
+                ulm_custom_card_dishwasher_programs_entity: "[[[ return variables.ulm_custom_card_dishwasher_programs_entity ]]]"
+                ulm_custom_card_dishwasher_active_program_entity: "[[[ return variables.ulm_custom_card_dishwasher_active_program_entity ]]]"
+                ulm_custom_card_dishwasher_program_icon: "[[[ return variables.ulm_custom_card_dishwasher_program_1.icon ]]]"
+                ulm_custom_card_dishwasher_program_option: "[[[ return variables.ulm_custom_card_dishwasher_program_1.option ]]]"
+          item3:
+            card:
+              type: "custom:button-card"
+              template: "custom_card_dishwasher_program"
+              variables:
+                ulm_custom_card_dishwasher_programs_entity: "[[[ return variables.ulm_custom_card_dishwasher_programs_entity ]]]"
+                ulm_custom_card_dishwasher_active_program_entity: "[[[ return variables.ulm_custom_card_dishwasher_active_program_entity ]]]"
+                ulm_custom_card_dishwasher_program_icon: "[[[ return variables.ulm_custom_card_dishwasher_program_2.icon ]]]"
+                ulm_custom_card_dishwasher_program_option: "[[[ return variables.ulm_custom_card_dishwasher_program_2.option ]]]"
+          item4:
+            card:
+              type: "custom:button-card"
+              template: "custom_card_dishwasher_program"
+              variables:
+                ulm_custom_card_dishwasher_programs_entity: "[[[ return variables.ulm_custom_card_dishwasher_programs_entity ]]]"
+                ulm_custom_card_dishwasher_active_program_entity: "[[[ return variables.ulm_custom_card_dishwasher_active_program_entity ]]]"
+                ulm_custom_card_dishwasher_program_icon: "[[[ return variables.ulm_custom_card_dishwasher_program_3.icon ]]]"
+                ulm_custom_card_dishwasher_program_option: "[[[ return variables.ulm_custom_card_dishwasher_program_3.option ]]]"
+    item3:
+      card:
+        type: "custom:bar-card"
+        entity: "[[[ return variables.ulm_custom_card_dishwasher_progress_entity ]]]"
+        color: "var(--google-blue)"
+        positions:
+          icon: "off"
+          indicator: "off"
+          name: "off"
+        style: |-
+          bar-card-currentbar {
+            right: 0;
+          }
+          bar-card-backgroundbar {
+            right: 0;
+          }
+          #states {
+            padding: 0;
+          }
+          bar-card-value {
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+
+custom_card_dishwasher_program:
+  type: "custom:button-card"
+  template: "widget_icon"
+  triggers_update: "all"
+  icon: "[[[ return variables.ulm_custom_card_dishwasher_program_icon ]]]"
+  styles:
+    grid:
+      - grid-template-areas: "'i'"
+    card:
+      - background-color: >
+          [[[
+            const is_active_program = states[variables.ulm_custom_card_dishwasher_active_program_entity].state;
+            if(is_active_program === variables.ulm_custom_card_dishwasher_program_option) {
+              return "var(--google-blue)";
+            }
+            return "rgba(var(--color-theme),0.05)";
+          ]]]
+  tap_action:
+    action: "call-service"
+    service: "select.select_option"
+    service_data:
+      entity_id: "[[[ return variables.ulm_custom_card_dishwasher_programs_entity ]]]"
+      option: "[[[ return variables.ulm_custom_card_dishwasher_program_option ]]]"

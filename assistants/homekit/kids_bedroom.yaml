@@ -1,0 +1,13 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# Area: Kids bedroom
+#
+# entities:
+- light.ceiling_lamp_kids_bedroom
+
+- camera.camera_kids_bedroom_hd_stream
+
+- binary_sensor.kids_bedroom_motion
+
+- sensor.temperature_kids_bedroom

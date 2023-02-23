@@ -1,0 +1,80 @@
+---
+### Custom Card Light Counter Chip ###
+custom_card_group_counter_chip:
+  template: "chips"
+  variables:
+    ulm_custom_card_group_counter_chip_icon_0: "mdi:lightbulb-outline"
+    ulm_custom_card_group_counter_chip_icon_1: "mdi:lightbulb-on-outline"
+    ulm_custom_card_group_counter_chip_icon_many: "mdi:lightbulb-on-outline"
+    ulm_custom_card_group_counter_chip_color: "yellow"
+    ulm_custom_card_group_counter_chip_count_state: "on"
+    ulm_custom_card_group_counter_chip_hide_if_0: false
+  triggers_update: "all"
+  show_icon: true
+  icon: |
+    [[[
+      const entities_active = states[
+        variables.ulm_custom_card_group_counter_chip_entity
+      ].attributes.entity_id.filter((entity) => {
+        return states[entity]?.state == variables.ulm_custom_card_group_counter_chip_count_state
+      }).length;
+
+      if (entities_active == 0) {
+        return variables.ulm_custom_card_group_counter_chip_icon_0;
+      } else if (entities_active == 1) {
+        return variables.ulm_custom_card_group_counter_chip_icon_1;
+      } else {
+        return variables.ulm_custom_card_group_counter_chip_icon_many;
+      }
+    ]]]
+  label: |
+    [[[
+      const entities_active = states[
+        variables.ulm_custom_card_group_counter_chip_entity
+      ].attributes.entity_id.filter((entity) => {
+        return states[entity]?.state == variables.ulm_custom_card_group_counter_chip_count_state
+      }).length;
+      
+      let label = "";
+      if (entities_active == 0) {
+        label = variables.ulm_custom_card_group_counter_chip_label_0;
+      } else if (entities_active == 1) {
+        label = variables.ulm_custom_card_group_counter_chip_label_1;
+      } else {
+        label = variables.ulm_custom_card_group_counter_chip_label_many;
+      }
+      return label.replace('{state}', entities_active);
+    ]]]
+  styles:
+    card:
+      - display: |
+          [[[
+            const entities_active = states[
+              variables.ulm_custom_card_group_counter_chip_entity
+            ].attributes.entity_id.filter((entity) => {
+              return states[entity]?.state == variables.ulm_custom_card_group_counter_chip_count_state
+            }).length;
+
+            if(variables.ulm_custom_card_group_counter_chip_hide_if_0 && entities_active == 0){
+              return "none";
+            }
+            return "block";
+          ]]]
+    grid:
+      - grid-template-areas: "'i l'"
+    icon:
+      - color: |
+          [[[
+            const entities_active = states[
+              variables.ulm_custom_card_group_counter_chip_entity
+            ].attributes.entity_id.filter((entity) => {
+              return states[entity]?.state == variables.ulm_custom_card_group_counter_chip_count_state
+            }).length;
+
+            if (entities_active == 0) {
+              return 'rgba(var(--color-theme),0.2)';
+            }
+            else {
+              return 'rgba(var(--color-' + variables.ulm_custom_card_group_counter_chip_color + '),1)';
+            }
+          ]]]

@@ -1,0 +1,198 @@
+---
+card_shortcut_card:
+  variables:
+    ulm_weather: "[[[ return variables.ulm_weather]]]"
+    ulm_language: "[[[ return hass['language']; ]]]"
+  template:
+    - "ulm_language_variables"
+    - "ulm_translation_engine"
+  show_icon: false
+  show_name: false
+  show_label: true
+  styles:
+    grid:
+      - grid-template-areas: >
+          [[[
+            if(variables.ulm_card_welcome_scenes_collapse && states[variables.ulm_card_welcome_scenes_collapse].state == 'on'){
+              return "\'item1\' \'item2\' ";
+            } else {
+              return "\'item1\' \'item2\' \'item3\'";
+            }
+          ]]]
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "min-content min-content"
+      - row-gap: "0px"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "10px"
+    custom_fields:
+      item3:
+        - display: >
+            [[[
+              if(variables.ulm_card_welcome_scenes_collapse && states[variables.ulm_card_welcome_scenes_collapse].state == 'on'){
+                return "none";
+              } else {
+                return "block";
+              }
+            ]]]
+  custom_fields:
+    item1:
+      card:
+        type: "custom:button-card"
+        template: "card_topbar_welcome"
+        variables:
+          ulm_card_welcome_scenes_collapse: "[[[ return variables.ulm_card_welcome_scenes_collapse ]]]"
+          ulm_weather: "[[[ return variables.ulm_weather]]]"
+          ulm_language: "[[[ return variables.ulm_language ]]]"
+        styles:
+          card:
+            - border-radius: "none"
+            - box-shadow: "none"
+            - padding: "4px"
+    item2:
+      card:
+        type: "custom:button-card"
+        show_icon: false
+        show_label: false
+        show_name: true
+        show_entity_picture: false
+        name: |
+          [[[
+            var today = new Date();
+            var time = today.getHours()
+            let welcome = '';
+            if (time >= '18'){
+              welcome = variables.ulm_evening;
+            } else if (time >= '12'){
+              welcome = variables.ulm_afternoon;
+            } else if (time >= '5'){
+              welcome = variables.ulm_morning;
+            } else {
+              welcome = variables.ulm_hello;
+            }
+            return welcome + ', ' + '   <br>' + user.name + '!';
+          ]]]
+        styles:
+          name:
+            - align-self: "start"
+            - justify-self: "start"
+            - font-weight: "bold"
+            - font-size: "24px"
+            - margin-left: "16px"
+          grid:
+            - grid-template-areas: "'i n' 'i l'"
+            - grid-template-columns: "min-content auto"
+            - grid-template-rows: "min-content min-content"
+            - text-align: "start"
+          card:
+            - box-shadow: "none"
+            - padding-bottom: "8px"
+    item3:
+      card:
+        type: "custom:button-card"
+        template: "card_scenes_welcome"
+        styles:
+          card:
+            - border-radius: "none"
+            - box-shadow: "none"
+            - padding: "4px"
+        variables: >
+          [[[
+            const entities = {
+              ...(variables.entity_1 && {entity_1: variables.entity_1}),
+              ...(variables.entity_2 && {entity_2: variables.entity_2}),
+              ...(variables.entity_3 && {entity_3: variables.entity_3}),
+              ...(variables.entity_4 && {entity_4: variables.entity_4}),
+              ...(variables.entity_5 && {entity_5: variables.entity_5}),
+              ...(variables.entity_6 && {entity_6: variables.entity_6}),
+              ...(variables.entity_7 && {entity_7: variables.entity_7})
+            };
+            console.log(entities);
+            return entities;
+          ]]]
+
+card_topbar_welcome:
+  show_icon: false
+  show_name: false
+  show_label: false
+  styles:
+    grid:
+      - grid-template-areas: "item1 item2 item3"
+      - justify-content: "space-between"
+      - display: "flex"
+    card:
+      - border-radius: "none"
+      - box-shadow: "none"
+      - padding: "12px"
+      - background: "none"
+  custom_fields:
+    item1:
+      card:
+        type: "custom:button-card"
+        template: "chips"
+        entity: "[[[ return variables.ulm_card_welcome_scenes_collapse ]]]"
+        icon: "mdi:chevron-up"
+        show_icon: true
+        styles:
+          grid:
+            - grid-template-areas: "'i'"
+          card:
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]
+        state:
+          - value: "on"
+            icon: "mdi:chevron-down"
+            styles:
+              icon:
+                - color: "rgb(var(--color-theme))"
+        tap_action:
+          action: "call-service"
+          service: "input_boolean.toggle"
+          service_data:
+            entity_id: "[[[ return variables.ulm_card_welcome_scenes_collapse ]]]"
+    item2:
+      card:
+        type: "custom:button-card"
+        template: "chip_weather_date"
+        variables:
+          ulm_weather: "[[[ return variables.ulm_weather]]]"
+        tap_action:
+          action: "more-info"
+        styles:
+          card:
+            - width: "100px"
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]
+    item3:
+      card:
+        type: "custom:button-card"
+        tap_action:
+          action: "navigate"
+          navigation_path: "/config/dashboard"
+        template: "chip_mdi_icon_only"
+        variables:
+          ulm_chip_mdi_icon_only_icon: "mdi:cog-outline"
+        styles:
+          card:
+            - align-self: "end"
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]

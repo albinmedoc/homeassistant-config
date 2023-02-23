@@ -1,0 +1,18 @@
+---
+### Chip Mdi Icon State Custom Label ###
+custom_card_chip_mdi_icon_state_custom_label:
+  template: "chips"
+  tap_action:
+    action: "more-info"
+    entity: "[[[ return variables.ulm_custom_card_chip_mdi_icon_state_custom_label_entity ]]]"
+  triggers_update: "all"
+  show_icon: true
+  icon: "[[[ return variables.ulm_custom_card_chip_mdi_icon_state_custom_label_icon ]]]"
+  label: "[[[ return variables.ulm_custom_card_chip_mdi_icon_state_custom_label_label ]]]"
+  styles:
+    grid:
+      - grid-template-areas: "'i l'"
+    icon:
+      - color: "[[[ return variables.ulm_custom_card_chip_mdi_icon_state_custom_label_icon_color; ]]]"
+    label:
+      - color: "[[[ return variables.ulm_custom_card_chip_mdi_icon_state_custom_label_label_color; ]]]"

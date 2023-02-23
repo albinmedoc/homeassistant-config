@@ -1,0 +1,75 @@
+title: "Kök"
+path: "kitchen"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Kök"
+
+  - type: "custom:button-card"
+    template: custom_card_group_counter_chip
+    tap_action:
+      action: "call-service"
+      service: "light.toggle"
+      service_data:
+        entity_id: light.all_kitchen
+    variables:
+      ulm_custom_card_group_counter_chip_entity: light.all_kitchen
+      ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
+      ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
+      ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
+      ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
+      ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
+      ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
+      ulm_custom_card_group_counter_chip_hide_if_0: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "custom:button-card"
+    template: card_media_player
+    entity: media_player.homepod_kitchen
+    variables:
+      ulm_card_media_player_name: "HomePod"
+      ulm_card_media_player_enable_art: true
+      ulm_card_media_player_enable_controls: true
+      ulm_card_media_player_collapsible: true
+      ulm_card_media_player_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_kitchen
+        variables:
+          ulm_card_light_name: "Taklampa"
+
+  - type: "custom:button-card"
+    template: custom_card_dishwasher
+    entity: sensor.dishwasher_operationstate
+    variables:
+      ulm_custom_card_dishwasher_name: Diskmaskin
+      ulm_custom_card_dishwasher_run_state: BSH.Common.EnumType.OperationState.Run
+      ulm_custom_card_dishwasher_ready_state: BSH.Common.EnumType.OperationState.Ready
+      ulm_custom_card_dishwasher_start_pause_button: button.dishwasher_start_pause
+      ulm_custom_card_dishwasher_power_entity: switch.dishwasher_powerstate
+      ulm_custom_card_dishwasher_programs_entity: select.dishwasher_programs # Good to change this to a service
+      ulm_custom_card_dishwasher_active_program_entity: sensor.dishwasher_selected_program
+      ulm_custom_card_dishwasher_progress_entity: sensor.dishwasher_programprogress
+      ulm_custom_card_dishwasher_program_1:
+        icon: mdi:leaf
+        option: "Dishcare.Dishwasher.Program.Eco50"
+      ulm_custom_card_dishwasher_program_2:
+        icon: mdi:fast-forward-60
+        option: "Dishcare.Dishwasher.Program.Quick65"
+      ulm_custom_card_dishwasher_program_3:
+        icon: mdi:auto-fix
+        option: "Dishcare.Dishwasher.Program.Auto2"

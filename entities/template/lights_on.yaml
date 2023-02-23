@@ -1,0 +1,24 @@
+---
+# This sensor keeps track of how many lights are on
+#
+sensor:
+  - name: "Lights on"
+    unique_id: a7f5dc10-973a-4f44-883b-5a774ec21695
+    state_class: "measurement"
+    state: >
+      {% set ns = namespace(on_lights=0) %}
+      {% for light in (
+          state_attr('light.all_bathroom', 'entity_id') +
+          state_attr('light.all_bedroom', 'entity_id') +
+          state_attr('light.all_conservatory', 'entity_id') +
+          state_attr('light.all_hallway', 'entity_id') +
+          state_attr('light.all_kids_bedroom', 'entity_id') +
+          state_attr('light.all_kitchen', 'entity_id') +
+          state_attr('light.all_living_room', 'entity_id') +
+          state_attr('light.all_playroom', 'entity_id') +
+          state_attr('light.all_toilet', 'entity_id')
+        ) if is_state(light, 'on')
+      %}
+        {% set ns.on_lights = ns.on_lights + 1 %}
+      {% endfor %}
+      {{ ns.on_lights }}

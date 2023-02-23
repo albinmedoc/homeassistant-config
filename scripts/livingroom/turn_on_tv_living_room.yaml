@@ -1,0 +1,16 @@
+---
+turn_on_tv_living_room:
+  alias: Sätt på TV Vardagsrum
+  icon: mdi:television
+  sequence:
+    - service: remote.send_command
+      data:
+        command:
+          - home_hold
+      target:
+        entity_id: remote.apple_tv_remote_living_room
+    - service: input_boolean.turn_on
+      data: {}
+      target:
+        entity_id: input_boolean.tv_living_room_on
+  mode: single

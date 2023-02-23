@@ -1,0 +1,12 @@
+---
+# Adds our shared calendar
+#
+# https://www.home-assistant.io/integrations/caldav/
+#
+platform: caldav
+username: !secret icloud_username
+password: !secret icloud_password
+url: https://caldav.icloud.com
+days: 30
+calendars:
+  - Familj

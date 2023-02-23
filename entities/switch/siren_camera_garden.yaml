@@ -1,0 +1,14 @@
+---
+platform: template
+switches:
+  siren_camera_living_garden:
+    unique_id: 494a5266-cb92-45ef-8e1d-f2c9c94a84ec
+    availability_template: "{{ states('button.camera_garden_manual_alarm_start') != 'unavailable' and states('button.camera_garden_manual_alarm_stop') != 'unavailable' }}"
+    turn_on:
+      service: button.press
+      target:
+        entity_id: button.camera_garden_manual_alarm_start
+    turn_off:
+      service: button.press
+      target:
+        entity_id: button.camera_garden_manual_alarm_stop

@@ -1,0 +1,67 @@
+title: "Batterier"
+path: "batteries"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Batterier"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Låg batterinivå"
+
+  - type: custom:auto-entities
+    card:
+      type: "grid"
+      columns: 1
+      square: false
+    card_param: "cards"
+    sort:
+      method: "state"
+      first: 5
+    filter:
+      include:
+        - and:
+            - state: "< 20"
+            - entity_id: "sensor.*_battery_level"
+          options:
+            type: "custom:button-card"
+            template: card_battery
+            entity: "this.entity_id"
+            variables:
+              ulm_card_battery_battery_level_danger: 20
+              ulm_card_battery_battery_level_warning: 30
+      exclude:
+        - integration: "mobile_app"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Alla"
+
+  - type: custom:auto-entities
+    card:
+      type: "grid"
+      columns: 2
+      square: false
+    card_param: "cards"
+    sort:
+      method: "state"
+    filter:
+      include:
+        - entity_id: "sensor.*_battery_level"
+          options:
+            type: "custom:button-card"
+            template: card_battery
+            entity: "this.entity_id"
+            variables:
+              ulm_card_battery_battery_level_danger: 20
+              ulm_card_battery_battery_level_warning: 30
+      exclude:
+        - integration: "mobile_app"

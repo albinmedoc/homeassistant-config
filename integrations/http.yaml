@@ -1,0 +1,9 @@
+---
+# https://github.com/brenner-tobias/addon-cloudflared/blob/main/cloudflared/DOCS.md#configurationyaml
+#
+# Allow requests from the Cloudflared add-on.
+# The add-on runs locally, so HA has to trust the docker network.
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.0/24

@@ -1,0 +1,8 @@
+---
+# This binary sensor is turned on when albin is busy
+#
+binary_sensor:
+  - name: "Albin is Busy"
+    unique_id: "1ef646ce-0b1b-4cd1-8379-719eb6dafb59"
+    device_class: occupancy
+    state: "{{ is_state('calendar.albin_jobb', 'on') or is_state('sensor.albin_teams_status', 'Busy') }}"

@@ -1,0 +1,8 @@
+---
+# This binary sensor is turned on when there is someone home
+#
+binary_sensor:
+  - name: "Someone home"
+    unique_id: "0a7476cc-d6c1-40ba-8ae1-606518c3497f"
+    device_class: occupancy
+    state: "{{ (states('zone.home')|int > 0) or is_state('input_boolean.guest_mode', 'on') }}"

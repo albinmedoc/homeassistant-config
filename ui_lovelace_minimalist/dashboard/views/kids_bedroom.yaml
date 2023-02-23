@@ -1,0 +1,103 @@
+title: "Barnens sovrum"
+path: "kids-bedroom"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Barnens sovrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.motion_kids_bedroom
+            state: "on"
+        card:
+          type: "custom:button-card"
+          template: chip_mdi_icon_only
+          variables:
+            ulm_chip_mdi_icon_only_entity: binary_sensor.motion_kids_bedroom
+            ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
+            ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
+
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        tap_action:
+          action: "call-service"
+          service: "light.toggle"
+          service_data:
+            entity_id: light.all_kids_bedroom
+        variables:
+          ulm_custom_card_group_counter_chip_entity: light.all_kids_bedroom
+          ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
+          ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
+          ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
+          ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
+          ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
+          ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
+          ulm_custom_card_group_counter_chip_hide_if_0: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_graph
+        entity: sensor.smoke_detector_kids_bedroom_temperature
+        variables:
+          ulm_card_graph_color: "var(--google-red)"
+          ulm_card_graph_name: Temperatur
+          ulm_card_graph_entity: sensor.smoke_detector_kids_bedroom_temperature
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+          ulm_card_graph_group_by: interval
+      - type: "custom:button-card"
+        entity: camera.camera_kids_bedroom_hd_stream
+        template: "custom_card_camera"
+        show_icon: false #True if you set ulm_custom_card_camera_title: true
+        variables:
+          ulm_custom_card_camera_title: false
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_kids_bedroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_input_boolean
+        entity: input_boolean.night_light_kids_bedroom
+        variables:
+          ulm_card_input_boolean_name: "Nattlampa"
+          ulm_card_input_boolean_icon: mdi:lightbulb-night
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Sensorer"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_binary_sensor
+        variables:
+          ulm_card_binary_sensor_name: "Rök"
+          ulm_card_binary_sensor_alert: true
+        entity: binary_sensor.smoke_detector_kids_bedroom_smoke
+      - type: "custom:button-card"
+        template: card_binary_sensor_alert
+        variables:
+          ulm_card_binary_sensor_alert_name: "Fönster"
+          ulm_card_binary_sensor_alert: true
+          ulm_show_last_changed: true
+        entity: binary_sensor.window_playroom

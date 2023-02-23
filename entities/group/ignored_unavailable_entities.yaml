@@ -1,0 +1,31 @@
+---
+name: "Ignored Unavailable Entities"
+entities:
+  # Camera Living room
+  - binary_sensor.camera_living_room_motion
+  - button.camera_living_room_manual_alarm_start
+  - button.camera_living_room_manual_alarm_stop
+
+  # Camera Kids bedroom
+  - button.camera_kids_bedroom_manual_alarm_start
+  - button.camera_kids_bedroom_manual_alarm_stop
+
+  # Camera Garden
+  - button.camera_garden_manual_alarm_start
+  - button.camera_garden_manual_alarm_stop
+
+  # Camera Dino
+  - camera.camera_dino_hd_stream
+
+  # Cooker hood light
+  - light.cooker_hood_kitchen
+
+  # Bulb Playroom
+  - light.ceiling_bulb_playroom
+
+  # Buld Bedroom
+  - light.ceiling_bulb_bedroom
+
+  # Albin teams
+  - sensor.albin_teams_activity
+  - sensor.albin_teams_status

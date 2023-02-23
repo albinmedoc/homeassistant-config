@@ -1,0 +1,179 @@
+title: "Lampor"
+path: "lights"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/home
+      - type: "custom:button-card"
+        template: card_title
+        name: "Lampor"
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Vardagsrum"
+
+  - type: "custom:button-card"
+    template: card_light
+    entity: light.all_living_room
+    variables:
+      ulm_card_light_name: "Alla"
+      ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_living_room
+        variables:
+          ulm_card_light_name: "Soffa"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.dining_table_living_room
+        variables:
+          ulm_card_light_name: "Matbord"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Hall"
+
+  - type: "custom:button-card"
+    template: card_light
+    entity: light.all_hallway
+    variables:
+      ulm_card_light_name: "Alla"
+      ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_entrance_hallway
+        variables:
+          ulm_card_light_name: "Entré"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_2_hallway
+        variables:
+          ulm_card_light_name: "Lampa 2"
+          ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_3_hallway
+        variables:
+          ulm_card_light_name: "Lampa 3"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Sovrum"
+
+  - type: "custom:button-card"
+    template: card_light
+    entity: light.all_bedroom
+    variables:
+      ulm_card_light_name: "Alla"
+      ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_bedroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.wardrobe_lamp_bedroom
+        variables:
+          ulm_card_light_name: "Garderob"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Tjejernas sovrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_kids_bedroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Lekrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.ceiling_lamp_playroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Badrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_bathroom
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Toalett"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_toilet
+        variables:
+          ulm_card_light_name: "Taklampa"
+          ulm_card_light_enable_popup: true
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Uterum"
+
+  - type: "custom:button-card"
+    template: card_light
+    entity: light.all_conservatory
+    variables:
+      ulm_card_light_name: "Alla"
+      ulm_card_light_enable_popup: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.roof_loop_conservatory
+        variables:
+          ulm_card_light_name: "Takslinga"
+          ulm_card_light_enable_popup: true
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.lamp_conservatory
+        variables:
+          ulm_card_light_name: "Lampa"
+          ulm_card_light_enable_popup: true

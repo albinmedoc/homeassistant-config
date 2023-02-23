@@ -1,0 +1,14 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# Area: Bedroom
+#
+# entities:
+- light.wardrobe_lamp_bedroom
+- light.ceiling_lamp_bedroom
+
+- media_player.tv_sovrum
+
+- binary_sensor.motion_bedroom
+
+- sensor.temperature_bedroom

@@ -1,0 +1,28 @@
+---
+button_card_templates: !include_dir_merge_named "../../custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
+
+title: "Minimalist"
+background: "var(--background-image)"
+swipe_nav:
+  animate: swipe
+  prevent_default: true
+  swipe_amount: 30
+  logger_level: verbose
+views:
+  - !include views/home.yaml
+  - !include views/house.yaml
+  - !include views/living_room.yaml
+  - !include views/bedroom.yaml
+  - !include views/hallway.yaml
+  - !include views/kitchen.yaml
+  - !include views/kids_bedroom.yaml
+  - !include views/playroom.yaml
+  - !include views/conservatory.yaml
+  - !include views/bathroom.yaml
+  - !include views/toilet.yaml
+  - !include views/garden.yaml
+
+  - !include views/security.yaml
+  - !include views/monitor.yaml
+  - !include views/batteries.yaml
+  - !include views/lights.yaml

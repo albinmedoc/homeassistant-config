@@ -1,0 +1,249 @@
+title: "Startsida"
+path: "home"
+swipe_back: null
+swipe_forward: null
+cards:
+  - type: "custom:button-card"
+    template: "card_esh_welcome"
+    variables:
+      ulm_weather: "weather.smhi"
+      entity_1:
+        nav: "house"
+        icon: "mdi:home"
+        name: "Hem"
+        color: "blue"
+      entity_2:
+        nav: "lights"
+        icon: "mdi:lightbulb"
+        name: "Lampor"
+        color: "yellow"
+      entity_3:
+        nav: "security"
+        icon: "mdi:shield"
+        name: "Säkerhet"
+        color: "blue"
+      entity_4:
+        nav: "batteries"
+        icon: "mdi:battery-50"
+        name: "Batterier"
+        color: "green"
+      entity_5:
+        nav: "monitor"
+        icon: "mdi:chart-bar"
+        name: "Övervakning"
+        color: "red"
+
+  - type: horizontal-stack
+    cards:
+      - type: custom:popup-card
+        entity: alarm_control_panel.alarmo
+        card:
+          type: "custom:alarmo-card"
+          entity: alarm_control_panel.alarmo
+          name: Larm
+      - type: "custom:button-card"
+        color_type: blank-card
+      - type: "custom:button-card"
+        template: chip_alarm
+        entity: alarm_control_panel.alarmo
+      - type: "custom:button-card"
+        color_type: blank-card
+      - type: "custom:button-card"
+        template: custom_card_chip_mdi_icon_state_custom_label
+        variables:
+          ulm_custom_card_chip_mdi_icon_state_custom_label_entity: sensor.garbage_collection
+          ulm_custom_card_chip_mdi_icon_state_custom_label_icon: mdi:trash-can
+          ulm_custom_card_chip_mdi_icon_state_custom_label_icon_color: rgba(var(--color-red),1)
+          ulm_custom_card_chip_mdi_icon_state_custom_label_label: |
+            [[[
+              console.log(states["sensor.garbage_collection"]);
+              if (states["sensor.garbage_collection"].attributes.days == "0") {
+                return "Idag";
+              }
+              else if (states["sensor.garbage_collection"].attributes.days == "1") {
+                return "I morgon";
+              }
+              return `${states["sensor.garbage_collection"].attributes.days} dagar`;
+            ]]]
+      - type: "custom:button-card"
+        color_type: blank-card
+      - type: "custom:button-card"
+        template: custom_card_chip_mdi_icon_state_custom_label
+        variables:
+          ulm_custom_card_chip_mdi_icon_state_custom_label_entity: sensor.mail_delivery
+          ulm_custom_card_chip_mdi_icon_state_custom_label_icon: mdi:mailbox-open
+          ulm_custom_card_chip_mdi_icon_state_custom_label_icon_color: rgba(var(--color-red),1)
+          ulm_custom_card_chip_mdi_icon_state_custom_label_label: |
+            [[[
+              if (states["sensor.mail_delivery"].state == "0") {
+                return "Idag";
+              }
+              else if (states["sensor.mail_delivery"].state == "1") {
+                return "I morgon";
+              }
+              return `${states["sensor.mail_delivery"].state} dagar`;
+            ]]]
+      - type: "custom:button-card"
+        color_type: blank-card
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: custom_card_person
+        entity: person.albin
+        variables:
+          ulm_custom_card_person_entity: person.albin
+          ulm_custom_card_person_use_entity_picture: true
+          ulm_custom_card_person_icon: mdi:face-man
+          ulm_custom_card_person_battery: sensor.albin_iphone_app_battery_level
+          ulm_custom_card_person_busy: binary_sensor.albin_busy
+      - type: "custom:button-card"
+        template: custom_card_person
+        entity: person.matilda
+        variables:
+          ulm_custom_card_person_entity: person.matilda
+          ulm_custom_card_person_use_entity_picture: true
+          ulm_custom_card_person_icon: mdi:face-woman
+          ulm_custom_card_person_battery: sensor.matilda_iphone_app_battery_level
+          ulm_custom_card_person_busy: calendar.matilda_jobb
+
+  - type: "custom:button-card"
+    template: card_title
+    name: "Rum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Vardagsrum"
+        entity: light.all_living_room
+        icon: mdi:sofa
+        tap_action:
+          action: navigate
+          navigation_path: "living-room"
+        label: "[[[ return states['sensor.temperature_living_room'].state + '°C' ]]]"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_living_room
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Kök"
+        entity: light.all_kitchen
+        icon: mdi:fridge
+        tap_action:
+          action: navigate
+          navigation_path: "kitchen"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_kitchen
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Sovrum"
+        entity: light.all_bedroom
+        icon: mdi:bed-king
+        tap_action:
+          action: navigate
+          navigation_path: "bedroom"
+        label: "[[[ return states['sensor.temperature_bedroom'].state + '°C' ]]]"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_bedroom
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Barnens sovrum"
+        entity: light.ceiling_lamp_kids_bedroom
+        icon: mdi:bed-single
+        tap_action:
+          action: navigate
+          navigation_path: "kids-bedroom"
+        label: "[[[ return states['sensor.temperature_kids_bedroom'].state + '°C' ]]]"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_kids_bedroom
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Hall"
+        entity: light.all_hallway
+        icon: mdi:image-frame
+        tap_action:
+          action: navigate
+          navigation_path: "hallway"
+        label: "[[[ return states['sensor.temperature_hallway'].state + '°C' ]]]"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_hallway
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Lekrum"
+        entity: light.all_playroom
+        icon: mdi:teddy-bear
+        tap_action:
+          action: navigate
+          navigation_path: "playroom"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_playroom
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Badrum"
+        entity: light.lamp_bathroom
+        icon: mdi:shower-head
+        tap_action:
+          action: navigate
+          navigation_path: "bathroom"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.lamp_bathroom
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Toalett"
+        entity: light.lamp_toilet
+        icon: mdi:toilet
+        tap_action:
+          action: navigate
+          navigation_path: "toilet"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.lamp_toilet
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Uterum"
+        entity: light.all_conservatory
+        icon: mdi:home-plus-outline
+        tap_action:
+          action: navigate
+          navigation_path: "conservatory"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.all_conservatory
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: "Trädgård"
+        icon: mdi:flower
+        tap_action:
+          action: navigate
+          navigation_path: "garden"
+        label: "[[[ return states['sensor.temperature_garden'].state + '°C' ]]]"

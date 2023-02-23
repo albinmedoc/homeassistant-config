@@ -1,0 +1,27 @@
+---
+# Sensor to track unavailable entities
+#
+# https://github.com/jazzyisj/unavailable-entities-sensor
+#
+
+sensor:
+  - name: "Unavailable Entities"
+    unique_id: 22e44867-57b9-4b45-aefb-41a889aaf837
+    icon: "{{ iif(states(this.entity_id)|int(0) > 0,'mdi:alert-circle','mdi:check-circle') }}"
+    unit_of_measurement: entities
+    state: >
+      {% set entities = state_attr(this.entity_id,'entity_id') %}
+      {% if entities != none %} {{ entities|count }} {% endif %}
+    attributes:
+      entity_id: >
+        {% set ignore_seconds = 60 %}
+        {# Ignore entities from google wifi and also entities specified in the group "ignored_unavailable_entities" #}
+        {% set ignored = integration_entities('googlewifi') + state_attr('group.ignored_unavailable_entities','entity_id')|list %}
+        {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
+        {% set entities = states|rejectattr('domain','eq','group')
+            |rejectattr('last_changed','ge',ignore_ts)
+            |selectattr('state','in',['unavailable','unknown']) %}
+        {% if ignored != none %}
+          {% set entities =  entities|rejectattr('entity_id','in',ignored) %}
+        {% endif %}
+        {{ entities|map(attribute='entity_id')|list }}
