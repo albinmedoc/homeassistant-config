@@ -1,7 +1,7 @@
 ---
-# This binary sensor is turned on when the
-# night lamp is currently active
+# This binary sensor is turned on when the night lamp is currently active
 #
+
 binary_sensor:
   - name: "Night lamp active"
     unique_id: "dead4311-cd10-457c-ae48-99447b913544"

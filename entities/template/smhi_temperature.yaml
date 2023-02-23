@@ -1,6 +1,7 @@
 ---
-# This temperature sensor
+# Creates temperature sensor based on weather.smhi attribute
 #
+
 sensor:
   - name: "SMHI Temperature"
     unique_id: "b673d5fe-7eb5-4ff0-b182-f3f1d860f1cf"

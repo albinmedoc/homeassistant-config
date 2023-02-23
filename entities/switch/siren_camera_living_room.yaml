@@ -1,4 +1,7 @@
 ---
+# Create siren from camera on/off buttons
+#
+
 platform: template
 switches:
   siren_camera_living_room:

@@ -1,4 +1,7 @@
 ---
+# Entities to exclude from "unavailable entities"-sensor
+#
+
 name: "Ignored Unavailable Entities"
 entities:
   # Camera Living room
