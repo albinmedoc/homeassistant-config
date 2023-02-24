@@ -1,3 +1,7 @@
+---
+# Startpage view
+#
+
 title: "Startsida"
 path: "home"
 swipe_back: null

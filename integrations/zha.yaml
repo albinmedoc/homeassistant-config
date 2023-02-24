@@ -10,17 +10,30 @@ zha:
     ota:
       ikea_provider: true
   device_config:
-    00:12:4b:00:26:b7:0a:6e-1: # Relay Playroom
+    # Relay Playroom
+    00:12:4b:00:26:b7:0a:6e-1:
       type: "switch"
-    00:12:4b:00:24:c5:ce:bd-1: # Relay Sofa Living room
+
+    # Relay Sofa Living room
+    00:12:4b:00:24:c5:ce:bd-1:
       type: "switch"
-    00:12:4b:00:26:b7:0d:9e-1: # Relay Kids Bedroom
+
+    # Relay Kids Bedroom
+    00:12:4b:00:26:b7:0d:9e-1:
       type: "switch"
-    00:12:4b:00:26:b7:1a:8c-1: # Relay Hallway 1
+
+    # Relay Hallway 1
+    00:12:4b:00:26:b7:1a:8c-1:
       type: "switch"
-    00:12:4b:00:26:b7:1a:1f-1: # Relay Hallway 2
+
+    # Relay Hallway 2
+    00:12:4b:00:26:b7:1a:1f-1:
       type: "switch"
-    00:12:4b:00:26:b7:1b:73-1: # Relay Hallway 3
+
+    # Relay Hallway 3
+    00:12:4b:00:26:b7:1b:73-1:
       type: "switch"
-    00:12:4b:00:25:e2:08:c5-1: # Relay Bedroom
+
+    # Relay Bedroom
+    00:12:4b:00:25:e2:08:c5-1:
       type: "switch"

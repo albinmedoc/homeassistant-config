@@ -1,9 +1,10 @@
 ---
 ignore: |
   automations.yaml
+  scenes.yaml
   blueprints/*/homeassistant/*.yaml
   custom_components/
-  ip_bans.yaml
+  ui_lovelace_minimalist/custom_cards/
   themes/
   esphome/.esphome/
   .github/

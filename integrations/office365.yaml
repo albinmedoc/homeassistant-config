@@ -9,5 +9,5 @@ o365:
     - account_name: Albin jobb
       client_id: !secret o365_client_id_albin_work
       client_secret: !secret o365_client_secret_albin_work
-      alt_auth_method: False
-      enable_update: True
+      alt_auth_method: false
+      enable_update: true
