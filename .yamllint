@@ -1,14 +1,5 @@
 ---
-ignore: |
-  automations.yaml
-  scenes.yaml
-  blueprints/*/homeassistant/*.yaml
-  custom_components/
-  ui_lovelace_minimalist/custom_cards/
-  themes/
-  esphome/.esphome/
-  .github/
-  o365_storage/
+ignore-from-file: .yamlignore
 rules:
   braces:
     level: error
