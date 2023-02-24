@@ -2,6 +2,7 @@
 !.gitignore
 !/.github
 !.HA_VERSION
+!.yamllint
 backups/
 blueprints/
 
