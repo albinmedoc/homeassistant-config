@@ -1,21 +1,41 @@
-.*
-!.gitignore
-!/.github
-!.HA_VERSION
-!.yamllint
-backups/
-blueprints/
+# Generic ignores
+*.log
+*.log.*
+*.db
+*.db-shm
+*.db-wal
+*.pyc
+._*
+__pycache__
 
-secrets_template.yaml
+# Directory (contents) ignores
+.cloud
+.storage
+deps
+
+# Specific file ignores
 secrets.yaml
 
-custom_components/
-www/community/
+# Build-in blueprints ignores
+blueprints/*/homeassistant
 
-*.code-workspace
-home-assistant.log*
-*.db*
-
+# Ignore add-on files/folders
+frigate.yml
 deepstack/
 
-frigate.yml
+# Ignore integration files/folders
+.*.august.conf
+.ps4-games.*.json
+o365_storage/.O365-token-cache/
+
+# Ignore files created by IDE's
+.vscode
+.Trash*
+
+# Ignore vendored stuff
+custom_components
+themes
+www/community
+
+# Specific keeps
+!.gitkeep
