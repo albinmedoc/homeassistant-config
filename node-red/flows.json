@@ -914,6 +914,57 @@
         }
     },
     {
+        "id": "bd6b3fc9fb3bede7",
+        "type": "subflow",
+        "name": "Hämta alla personer",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "e633149daa1a2584"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 900,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "306dae335005e8e4",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "output_persons",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-sign-out",
+                    "label": {
+                        "en-US": "Persons"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "01342c3d53a6371c",
         "type": "group",
         "z": "7c1b8ecc3bcbbebd",
@@ -930,7 +981,9 @@
             "3191172f2275f0d6"
         ],
         "x": 34,
-        "y": 259
+        "y": 259,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "178bf0b9061d0b5b",
@@ -947,7 +1000,9 @@
             "e8f575e5dd5428a1"
         ],
         "x": 34,
-        "y": 559
+        "y": 559,
+        "w": 592,
+        "h": 142
     },
     {
         "id": "b9ecb733de105962",
@@ -964,7 +1019,9 @@
             "30f1bd684c99b7de"
         ],
         "x": 34,
-        "y": 399
+        "y": 399,
+        "w": 772,
+        "h": 142
     },
     {
         "id": "83c104c1e200db9f",
@@ -981,7 +1038,9 @@
             "f011b702bd2a1309"
         ],
         "x": 34,
-        "y": 239
+        "y": 239,
+        "w": 372,
+        "h": 142
     },
     {
         "id": "906392ec964d3dab",
@@ -1000,7 +1059,9 @@
             "d5f851c978157a9f"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "0bb729de77f60250",
@@ -1015,7 +1076,9 @@
             "0446ec6e9dda92d9"
         ],
         "x": 514,
-        "y": 199
+        "y": 199,
+        "w": 212,
+        "h": 142
     },
     {
         "id": "832ac7f7a2975116",
@@ -1030,7 +1093,9 @@
             "245925ea62837296"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "8f2e68f12915ae99",
@@ -1046,7 +1111,9 @@
             "7e6877fe8a6653d6"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 552,
+        "h": 82
     },
     {
         "id": "657a994829f4573f",
@@ -1065,7 +1132,9 @@
             "3835fda3ddccfb06"
         ],
         "x": 34,
-        "y": 919
+        "y": 919,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "a41dac5adac5421d",
@@ -1084,7 +1153,9 @@
             "e2d369938e7b43be"
         ],
         "x": 34,
-        "y": 699
+        "y": 699,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "e08ca9117ba9237c",
@@ -1103,7 +1174,9 @@
             "dccec8a7a80e5d82"
         ],
         "x": 34,
-        "y": 479
+        "y": 479,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "d38d059c9d7b5a0b",
@@ -1120,7 +1193,9 @@
             "c26011848a0452d9"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 692,
+        "h": 122
     },
     {
         "id": "7f0fd93a794c7b06",
@@ -1139,7 +1214,9 @@
             "8a8505f137c29f47"
         ],
         "x": 14,
-        "y": 159
+        "y": 159,
+        "w": 852,
+        "h": 242
     },
     {
         "id": "016692fb15240c40",
@@ -1155,7 +1232,9 @@
             "e70d386a804b3186"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 492,
+        "h": 162
     },
     {
         "id": "a2c59dab1c39eb27",
@@ -1170,7 +1249,9 @@
             "a13be603a67e703a"
         ],
         "x": 34,
-        "y": 219
+        "y": 219,
+        "w": 492,
+        "h": 82
     },
     {
         "id": "15764dd4cae9897a",
@@ -1185,7 +1266,9 @@
             "b9e07ea95cb6d8e1"
         ],
         "x": 34,
-        "y": 319
+        "y": 319,
+        "w": 512,
+        "h": 82
     },
     {
         "id": "05d687da1ce7b06d",
@@ -1416,7 +1499,9 @@
             "1f21716b9f95f12a"
         ],
         "x": 14,
-        "y": 419
+        "y": 419,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "7f13b2d75f7cc15f",
@@ -1550,7 +1635,9 @@
             "04270f65108df369"
         ],
         "x": 14,
-        "y": 539
+        "y": 539,
+        "w": 572,
+        "h": 142
     },
     {
         "id": "87f9c3202c8c5ccc",
@@ -3451,6 +3538,117 @@
         "queue": "none",
         "x": 1210,
         "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ddea0968519555b8",
+        "type": "ha-get-entities",
+        "z": "bd6b3fc9fb3bede7",
+        "name": "Hämta alla personer",
+        "server": "e9739673.bbfed8",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "person\\.",
+                "valueType": "re"
+            }
+        ],
+        "output_type": "array",
+        "output_empty_results": true,
+        "output_location_type": "msg",
+        "output_location": "person_entities",
+        "output_results_count": 1,
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "b7130217d923b22c"
+            ]
+        ]
+    },
+    {
+        "id": "b7130217d923b22c",
+        "type": "function",
+        "z": "bd6b3fc9fb3bede7",
+        "name": "Plocka ut entity ids",
+        "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    ...msg,\n    persons: person_entity_ids\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 60,
+        "wires": [
+            [
+                "908e6d016f436680",
+                "306dae335005e8e4"
+            ]
+        ]
+    },
+    {
+        "id": "908e6d016f436680",
+        "type": "function",
+        "z": "bd6b3fc9fb3bede7",
+        "name": "Skapa status",
+        "func": "const color = msg.persons.length > 0 ? \"green\": \"red\";\nconst text = msg.persons.join(', ')\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e633149daa1a2584",
+        "type": "function",
+        "z": "bd6b3fc9fb3bede7",
+        "name": "setup",
+        "func": "// Define inputs\nconst env_keys = [];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "selectn",
+                "module": "selectn"
+            }
+        ],
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "ddea0968519555b8"
+            ]
+        ]
+    },
+    {
+        "id": "306dae335005e8e4",
+        "type": "function",
+        "z": "bd6b3fc9fb3bede7",
+        "name": "cleanup",
+        "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_persons': 'persons'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "selectn",
+                "module": "selectn"
+            }
+        ],
+        "x": 780,
+        "y": 60,
         "wires": [
             []
         ]
@@ -7660,6 +7858,91 @@
             [
                 "72cf3dd514774f5f"
             ]
+        ]
+    },
+    {
+        "id": "f7768fbab71ef429",
+        "type": "server-state-changed",
+        "z": "9081c37be56bc95b",
+        "name": "Larm utlöst",
+        "server": "e9739673.bbfed8",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "alarm_control_panel.alarmo",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "triggered",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 1240,
+        "wires": [
+            [
+                "694decc229ffefc0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "28b7e3190283b558",
+        "type": "comment",
+        "z": "9081c37be56bc95b",
+        "name": "Tittar inte på vilket läge",
+        "info": "",
+        "x": 140,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "694decc229ffefc0",
+        "type": "subflow:bd6b3fc9fb3bede7",
+        "z": "9081c37be56bc95b",
+        "name": "",
+        "x": 310,
+        "y": 1240,
+        "wires": [
+            []
         ]
     },
     {
