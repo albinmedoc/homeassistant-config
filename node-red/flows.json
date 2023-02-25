@@ -7572,7 +7572,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"title\":\"Larm utlöst!\",\"message\":\"Håll inne för att visa mer information\",\"data\":{\"entity_id\":\"camera.camera_living_room_hd_stream\",\"push\":{\"sound\":{\"name\":\"default\",\"critical\":1,\"volume\":1}},\"actions\":[{\"action\":\"DISARM_ALBIN\",\"title\":\"Inaktivera larm\",\"destructive\":true,\"icon\":\"sfsymbols:bell.slash\",\"authenticationRequired\":true},{\"action\":\"IGNORE_LIGHT\",\"title\":\"Ignore\"}],\"persistent\":true,\"tag\":\"persistent\"}}",
+        "data": "{\"title\":\"Larm utlöst!\",\"message\":\"Håll inne för att visa mer information\",\"data\":{\"entity_id\":\"camera.camera_living_room_hd_stream\",\"push\":{\"sound\":{\"name\":\"default\",\"critical\":1,\"volume\":1}},\"actions\":[{\"action\":\"DISARM_ALBIN\",\"title\":\"Inaktivera larm\",\"destructive\":true,\"icon\":\"sfsymbols:bell.slash\",\"authenticationRequired\":true}],\"persistent\":true,\"tag\":\"persistent\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
