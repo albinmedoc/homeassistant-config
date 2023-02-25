@@ -1482,7 +1482,7 @@
             "ee2aa044230da653"
         ],
         "x": 34,
-        "y": 1019,
+        "y": 1159,
         "w": 372,
         "h": 82
     },
@@ -1578,7 +1578,8 @@
             "283aacb4926f7f3b",
             "06737b5b192a39a8",
             "71e1f5cac1cb11c5",
-            "67d1083ee5ac4427"
+            "67d1083ee5ac4427",
+            "7bfda30ac040bd4c"
         ],
         "x": 34,
         "y": 739,
@@ -1719,7 +1720,7 @@
             "6addbb6abca1c9c1"
         ],
         "x": 34,
-        "y": 919,
+        "y": 1059,
         "w": 552,
         "h": 82
     },
@@ -1754,6 +1755,27 @@
         ],
         "x": 74,
         "y": 219
+    },
+    {
+        "id": "0dae13e1d2f37ed0",
+        "type": "group",
+        "z": "9081c37be56bc95b",
+        "name": "Skicka notis vid utlöst larm",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "694decc229ffefc0",
+            "8ae24a3cefea69b6",
+            "960bfb8e4169253b",
+            "ada400995e3d7452",
+            "28b7e3190283b558",
+            "f7768fbab71ef429"
+        ],
+        "x": 34,
+        "y": 919,
+        "w": 1032,
+        "h": 122
     },
     {
         "id": "9ddcbb1e73030798",
@@ -7542,7 +7564,7 @@
             }
         ],
         "x": 130,
-        "y": 1060,
+        "y": 1200,
         "wires": [
             [
                 "ee2aa044230da653"
@@ -7571,7 +7593,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 310,
-        "y": 1060,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -7777,7 +7799,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 320,
-        "y": 1160,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -7804,7 +7826,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 1160,
+        "y": 1300,
         "wires": [
             [
                 "b06ede3a469dc964"
@@ -7834,7 +7856,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 960,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -7853,7 +7875,7 @@
             }
         ],
         "x": 170,
-        "y": 960,
+        "y": 1100,
         "wires": [
             [
                 "72cf3dd514774f5f"
@@ -7864,6 +7886,7 @@
         "id": "f7768fbab71ef429",
         "type": "server-state-changed",
         "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
         "name": "Larm utlöst",
         "server": "e9739673.bbfed8",
         "version": 4,
@@ -7915,8 +7938,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 110,
-        "y": 1240,
+        "x": 130,
+        "y": 960,
         "wires": [
             [
                 "694decc229ffefc0"
@@ -7928,22 +7951,108 @@
         "id": "28b7e3190283b558",
         "type": "comment",
         "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
         "name": "Tittar inte på vilket läge",
         "info": "",
-        "x": 140,
-        "y": 1280,
+        "x": 160,
+        "y": 1000,
         "wires": []
     },
     {
         "id": "694decc229ffefc0",
         "type": "subflow:bd6b3fc9fb3bede7",
         "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
         "name": "",
-        "x": 310,
-        "y": 1240,
+        "env": [
+            {
+                "name": "output_persons",
+                "value": "payload",
+                "type": "str"
+            }
+        ],
+        "x": 330,
+        "y": 960,
+        "wires": [
+            [
+                "8ae24a3cefea69b6"
+            ]
+        ]
+    },
+    {
+        "id": "8ae24a3cefea69b6",
+        "type": "split",
+        "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
+        "name": "För varje person",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 540,
+        "y": 960,
+        "wires": [
+            [
+                "960bfb8e4169253b"
+            ]
+        ]
+    },
+    {
+        "id": "960bfb8e4169253b",
+        "type": "function",
+        "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
+        "name": "Skapa notis",
+        "func": "const person_entity_id = msg.payload;\nconst person_name = person_entity_id.split('.')[1];\nconst disarm_action = `DISARM_${person_name.toUpperCase()}`;\n\nconst notify_data = {\n    \"title\": \"Larm utlöst!\",\n        \"message\": \"Håll inne för att visa mer information\",\n            \"data\": {\n        \"entity_id\": \"camera.camera_living_room_hd_stream\",\n            \"push\": {\n            \"sound\": {\n                \"name\": \"default\",\n                    \"critical\": 1,\n                        \"volume\": 1\n            }\n        },\n        \"actions\": [\n            {\n                \"action\": disarm_action,\n                \"title\": \"Inaktivera larm\",\n                \"destructive\": true,\n                \"icon\": \"sfsymbols:bell.slash\",\n                \"authenticationRequired\": true\n            }\n        ],\n            \"persistent\": true,\n                \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 960,
+        "wires": [
+            [
+                "ada400995e3d7452"
+            ]
+        ]
+    },
+    {
+        "id": "ada400995e3d7452",
+        "type": "subflow:9577215509c764c6",
+        "z": "9081c37be56bc95b",
+        "g": "0dae13e1d2f37ed0",
+        "name": "",
+        "env": [
+            {
+                "name": "person",
+                "value": "{{payload}}",
+                "type": "str"
+            },
+            {
+                "name": "notify_data",
+                "value": "{{notify_data}}",
+                "type": "str"
+            }
+        ],
+        "x": 940,
+        "y": 960,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7bfda30ac040bd4c",
+        "type": "comment",
+        "z": "9081c37be56bc95b",
+        "g": "ea9720dad10ae7bd",
+        "name": "Sök upp personen istället",
+        "info": "",
+        "x": 390,
+        "y": 780,
+        "wires": []
     },
     {
         "id": "2d4f29ef982ab65e",
