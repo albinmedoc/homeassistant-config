@@ -981,9 +981,7 @@
             "3191172f2275f0d6"
         ],
         "x": 34,
-        "y": 259,
-        "w": 532,
-        "h": 202
+        "y": 259
     },
     {
         "id": "178bf0b9061d0b5b",
@@ -1000,9 +998,7 @@
             "e8f575e5dd5428a1"
         ],
         "x": 34,
-        "y": 559,
-        "w": 592,
-        "h": 142
+        "y": 559
     },
     {
         "id": "b9ecb733de105962",
@@ -1019,9 +1015,7 @@
             "30f1bd684c99b7de"
         ],
         "x": 34,
-        "y": 399,
-        "w": 772,
-        "h": 142
+        "y": 399
     },
     {
         "id": "83c104c1e200db9f",
@@ -1038,9 +1032,7 @@
             "f011b702bd2a1309"
         ],
         "x": 34,
-        "y": 239,
-        "w": 372,
-        "h": 142
+        "y": 239
     },
     {
         "id": "906392ec964d3dab",
@@ -1059,9 +1051,7 @@
             "d5f851c978157a9f"
         ],
         "x": 34,
-        "y": 39,
-        "w": 532,
-        "h": 202
+        "y": 39
     },
     {
         "id": "0bb729de77f60250",
@@ -1076,9 +1066,7 @@
             "0446ec6e9dda92d9"
         ],
         "x": 514,
-        "y": 199,
-        "w": 212,
-        "h": 142
+        "y": 199
     },
     {
         "id": "832ac7f7a2975116",
@@ -1093,9 +1081,7 @@
             "245925ea62837296"
         ],
         "x": 34,
-        "y": 139,
-        "w": 372,
-        "h": 82
+        "y": 139
     },
     {
         "id": "8f2e68f12915ae99",
@@ -1111,9 +1097,7 @@
             "7e6877fe8a6653d6"
         ],
         "x": 34,
-        "y": 39,
-        "w": 552,
-        "h": 82
+        "y": 39
     },
     {
         "id": "657a994829f4573f",
@@ -1132,9 +1116,7 @@
             "3835fda3ddccfb06"
         ],
         "x": 34,
-        "y": 919,
-        "w": 532,
-        "h": 202
+        "y": 919
     },
     {
         "id": "a41dac5adac5421d",
@@ -1153,9 +1135,7 @@
             "e2d369938e7b43be"
         ],
         "x": 34,
-        "y": 699,
-        "w": 532,
-        "h": 202
+        "y": 699
     },
     {
         "id": "e08ca9117ba9237c",
@@ -1174,9 +1154,7 @@
             "dccec8a7a80e5d82"
         ],
         "x": 34,
-        "y": 479,
-        "w": 532,
-        "h": 202
+        "y": 479
     },
     {
         "id": "d38d059c9d7b5a0b",
@@ -1193,9 +1171,7 @@
             "c26011848a0452d9"
         ],
         "x": 14,
-        "y": 19,
-        "w": 692,
-        "h": 122
+        "y": 19
     },
     {
         "id": "7f0fd93a794c7b06",
@@ -1214,9 +1190,7 @@
             "8a8505f137c29f47"
         ],
         "x": 14,
-        "y": 159,
-        "w": 852,
-        "h": 242
+        "y": 159
     },
     {
         "id": "016692fb15240c40",
@@ -1232,9 +1206,7 @@
             "e70d386a804b3186"
         ],
         "x": 34,
-        "y": 39,
-        "w": 492,
-        "h": 162
+        "y": 39
     },
     {
         "id": "a2c59dab1c39eb27",
@@ -1249,9 +1221,7 @@
             "a13be603a67e703a"
         ],
         "x": 34,
-        "y": 219,
-        "w": 492,
-        "h": 82
+        "y": 219
     },
     {
         "id": "15764dd4cae9897a",
@@ -1266,9 +1236,7 @@
             "b9e07ea95cb6d8e1"
         ],
         "x": 34,
-        "y": 319,
-        "w": 512,
-        "h": 82
+        "y": 319
     },
     {
         "id": "05d687da1ce7b06d",
@@ -1499,9 +1467,7 @@
             "1f21716b9f95f12a"
         ],
         "x": 14,
-        "y": 419,
-        "w": 372,
-        "h": 82
+        "y": 419
     },
     {
         "id": "7f13b2d75f7cc15f",
@@ -1636,9 +1602,7 @@
             "04270f65108df369"
         ],
         "x": 14,
-        "y": 539,
-        "w": 572,
-        "h": 142
+        "y": 539
     },
     {
         "id": "87f9c3202c8c5ccc",
@@ -1725,6 +1689,27 @@
         "h": 82
     },
     {
+        "id": "0dae13e1d2f37ed0",
+        "type": "group",
+        "z": "9081c37be56bc95b",
+        "name": "Skicka notis vid utlöst larm",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "694decc229ffefc0",
+            "8ae24a3cefea69b6",
+            "960bfb8e4169253b",
+            "ada400995e3d7452",
+            "28b7e3190283b558",
+            "f7768fbab71ef429"
+        ],
+        "x": 34,
+        "y": 919,
+        "w": 1032,
+        "h": 122
+    },
+    {
         "id": "0634c713d7c382b4",
         "type": "group",
         "z": "7f81ec7457fe49ea",
@@ -1755,27 +1740,6 @@
         ],
         "x": 74,
         "y": 219
-    },
-    {
-        "id": "0dae13e1d2f37ed0",
-        "type": "group",
-        "z": "9081c37be56bc95b",
-        "name": "Skicka notis vid utlöst larm",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "694decc229ffefc0",
-            "8ae24a3cefea69b6",
-            "960bfb8e4169253b",
-            "ada400995e3d7452",
-            "28b7e3190283b558",
-            "f7768fbab71ef429"
-        ],
-        "x": 34,
-        "y": 919,
-        "w": 1032,
-        "h": 122
     },
     {
         "id": "9ddcbb1e73030798",
@@ -7780,60 +7744,6 @@
         ]
     },
     {
-        "id": "b06ede3a469dc964",
-        "type": "api-call-service",
-        "z": "9081c37be56bc95b",
-        "name": "Test Alarm notis Albin",
-        "server": "e9739673.bbfed8",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_albin_iphone",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"title\":\"Larm utlöst!\",\"message\":\"Håll inne för att visa mer information\",\"data\":{\"entity_id\":\"camera.camera_living_room_hd_stream\",\"push\":{\"sound\":{\"name\":\"default\",\"critical\":1,\"volume\":1}},\"actions\":[{\"action\":\"DISARM_ALBIN\",\"title\":\"Inaktivera larm\",\"destructive\":true,\"icon\":\"sfsymbols:bell.slash\",\"authenticationRequired\":true}],\"persistent\":true,\"tag\":\"persistent\"}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 320,
-        "y": 1300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f6a0ca354f4a7bec",
-        "type": "inject",
-        "z": "9081c37be56bc95b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 1300,
-        "wires": [
-            [
-                "b06ede3a469dc964"
-            ]
-        ]
-    },
-    {
         "id": "72cf3dd514774f5f",
         "type": "api-call-service",
         "z": "9081c37be56bc95b",
@@ -7867,13 +7777,6 @@
         "z": "9081c37be56bc95b",
         "g": "2c760ae190629011",
         "name": "",
-        "env": [
-            {
-                "name": "output_person",
-                "value": "person",
-                "type": "str"
-            }
-        ],
         "x": 170,
         "y": 1100,
         "wires": [
