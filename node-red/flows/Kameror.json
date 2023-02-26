@@ -1,0 +1,574 @@
+[
+  {
+    "id": "896b946718d5907e",
+    "type": "tab",
+    "label": "Kameror",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "d38d059c9d7b5a0b",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Ström",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "5470da52f33fe08a",
+      "58bd23dd8dcd24ea",
+      "1de41cddb747f07a",
+      "c26011848a0452d9"
+    ],
+    "x": 14,
+    "y": 19
+  },
+  {
+    "id": "7f0fd93a794c7b06",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Frigate detektering",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "f69b707795505743",
+      "323f86dd9f5cfe60",
+      "31e992625650a7b3",
+      "db7885a6041b1761",
+      "d459f4a37575b73b",
+      "8a8505f137c29f47"
+    ],
+    "x": 14,
+    "y": 159
+  },
+  {
+    "id": "2b75c890eff44cfb",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Katt upptäckt i trädgård",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "3fc508453f5a4bf3",
+      "1f21716b9f95f12a"
+    ],
+    "x": 14,
+    "y": 419
+  },
+  {
+    "id": "00a032e1b75fa8ed",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Dinos kamera tillgänlig",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "eba99b674a6786c2",
+      "0785c72b9a19417f",
+      "04270f65108df369"
+    ],
+    "x": 14,
+    "y": 539
+  },
+  {
+    "id": "5470da52f33fe08a",
+    "type": "subflow:5da5355c5d6e8223",
+    "z": "896b946718d5907e",
+    "g": "d38d059c9d7b5a0b",
+    "name": "",
+    "x": 140,
+    "y": 80,
+    "wires": [
+      [
+        "58bd23dd8dcd24ea"
+      ]
+    ]
+  },
+  {
+    "id": "58bd23dd8dcd24ea",
+    "type": "api-current-state",
+    "z": "896b946718d5907e",
+    "g": "d38d059c9d7b5a0b",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 80,
+    "wires": [
+      [
+        "c26011848a0452d9"
+      ],
+      [
+        "1de41cddb747f07a"
+      ]
+    ]
+  },
+  {
+    "id": "1de41cddb747f07a",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "d38d059c9d7b5a0b",
+    "name": "Vardagsrum - Stäng av ström",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_privacy"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 560,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c26011848a0452d9",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "d38d059c9d7b5a0b",
+    "name": "Vardagsrum - Sätt på ström",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_privacy"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 560,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f69b707795505743",
+    "type": "subflow:5da5355c5d6e8223",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "",
+    "x": 140,
+    "y": 280,
+    "wires": [
+      [
+        "323f86dd9f5cfe60"
+      ]
+    ]
+  },
+  {
+    "id": "323f86dd9f5cfe60",
+    "type": "api-current-state",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 280,
+    "wires": [
+      [
+        "31e992625650a7b3",
+        "d459f4a37575b73b"
+      ],
+      [
+        "db7885a6041b1761",
+        "8a8505f137c29f47"
+      ]
+    ]
+  },
+  {
+    "id": "31e992625650a7b3",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "Barnens Sovrum - Sätt på Frigate detektering",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_kids_bedroom_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 660,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "db7885a6041b1761",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "Vardagsrum - Stäng av Frigate detektering",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 650,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d459f4a37575b73b",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "Vardagsrum - Sätt på Frigate detektering",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 640,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8a8505f137c29f47",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "7f0fd93a794c7b06",
+    "name": "Barnens Sovrum - Stäng av Frigate detektering",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_kids_bedroom_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 660,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3fc508453f5a4bf3",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "g": "2b75c890eff44cfb",
+    "name": "Katt upptäckt",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.camera_garden_cat_occupancy",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 460,
+    "wires": [
+      [
+        "1f21716b9f95f12a"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "eba99b674a6786c2",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "g": "00a032e1b75fa8ed",
+    "name": "Kamera Dino Tillgänglig",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "camera.camera_dino_hd_stream",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "unavailable",
+    "halt_if_type": "str",
+    "halt_if_compare": "is_not",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 580,
+    "wires": [
+      [
+        "0785c72b9a19417f",
+        "04270f65108df369"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "0785c72b9a19417f",
+    "type": "subflow:c0dcc6a2aeb58851",
+    "z": "896b946718d5907e",
+    "g": "00a032e1b75fa8ed",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"message\":\"Dinos kamera är tillgänglig\"}",
+        "type": "json"
+      }
+    ],
+    "x": 420,
+    "y": 580,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "04270f65108df369",
+    "type": "subflow:17f3c422bcd5a1fb",
+    "z": "896b946718d5907e",
+    "g": "00a032e1b75fa8ed",
+    "name": "",
+    "env": [
+      {
+        "name": "media_player",
+        "value": "media_player.homepod_kitchen",
+        "type": "str"
+      },
+      {
+        "name": "message",
+        "value": "Dinos kamera är tillgänglig",
+        "type": "str"
+      }
+    ],
+    "x": 350,
+    "y": 640,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1f21716b9f95f12a",
+    "type": "subflow:17f3c422bcd5a1fb",
+    "z": "896b946718d5907e",
+    "g": "2b75c890eff44cfb",
+    "name": "",
+    "env": [
+      {
+        "name": "media_player",
+        "value": "media_player.homepod_kitchen",
+        "type": "str"
+      },
+      {
+        "name": "message",
+        "value": "Elina och Alea! Det är en katt i trädgården. Gå dit och titta.",
+        "type": "str"
+      },
+      {
+        "name": "volume_level",
+        "value": "0.5",
+        "type": "num"
+      }
+    ],
+    "x": 290,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  }
+]

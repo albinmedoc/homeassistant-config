@@ -1,0 +1,1184 @@
+[
+  {
+    "id": "1f26ba8a27c1477d",
+    "type": "tab",
+    "label": "Nattlampa",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "178bf0b9061d0b5b",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare på",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "12279ce84a315168",
+      "5fef2779e12e1af1",
+      "8ef1e9e82c34c8b0",
+      "e8f575e5dd5428a1"
+    ],
+    "x": 34,
+    "y": 559
+  },
+  {
+    "id": "b9ecb733de105962",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare av",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "3f9efcc8834f655a",
+      "3394244f52a3651b",
+      "192698308fb2d748",
+      "30f1bd684c99b7de"
+    ],
+    "x": 34,
+    "y": 399
+  },
+  {
+    "id": "83c104c1e200db9f",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Tidsintervall",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "b8fe64363b5fef34",
+      "189bf1e4b8b66cb4",
+      "7a77cd45f5393478",
+      "f011b702bd2a1309"
+    ],
+    "x": 34,
+    "y": 239
+  },
+  {
+    "id": "0bb729de77f60250",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Ändra färg",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "97423d588ca97b7e",
+      "0446ec6e9dda92d9"
+    ],
+    "x": 514,
+    "y": 199
+  },
+  {
+    "id": "832ac7f7a2975116",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Slå på nattlampa",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "307eed8904a91f77",
+      "245925ea62837296"
+    ],
+    "x": 34,
+    "y": 139
+  },
+  {
+    "id": "8f2e68f12915ae99",
+    "type": "group",
+    "z": "1f26ba8a27c1477d",
+    "name": "Slå av nattlampa",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "01eff572884c1d07",
+      "608cb52462ac0c81",
+      "7e6877fe8a6653d6"
+    ],
+    "x": 34,
+    "y": 39
+  },
+  {
+    "id": "b8fe64363b5fef34",
+    "type": "inject",
+    "z": "1f26ba8a27c1477d",
+    "g": "83c104c1e200db9f",
+    "name": "22:00",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 22 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 130,
+    "y": 340,
+    "wires": [
+      [
+        "7a77cd45f5393478"
+      ]
+    ]
+  },
+  {
+    "id": "189bf1e4b8b66cb4",
+    "type": "inject",
+    "z": "1f26ba8a27c1477d",
+    "g": "83c104c1e200db9f",
+    "name": "07:00",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 130,
+    "y": 280,
+    "wires": [
+      [
+        "f011b702bd2a1309"
+      ]
+    ]
+  },
+  {
+    "id": "7a77cd45f5393478",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "g": "83c104c1e200db9f",
+    "name": "Nattlampa på?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_light_kids_bedroom",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 300,
+    "y": 340,
+    "wires": [
+      [
+        "97423d588ca97b7e"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f011b702bd2a1309",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "g": "83c104c1e200db9f",
+    "name": "Nattlampa på?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_light_kids_bedroom",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 300,
+    "y": 280,
+    "wires": [
+      [
+        "0446ec6e9dda92d9"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "5fef2779e12e1af1",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "g": "178bf0b9061d0b5b",
+    "name": "Väggknapp På",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 600,
+    "wires": [
+      [
+        "12279ce84a315168",
+        "8ef1e9e82c34c8b0"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3f9efcc8834f655a",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "g": "b9ecb733de105962",
+    "name": " Väggknapp Av",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 480,
+    "wires": [
+      [
+        "192698308fb2d748"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "8ef1e9e82c34c8b0",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "178bf0b9061d0b5b",
+    "name": "Taklampa På",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_kids_bedroom"
+    ],
+    "data": "{\t    \"brightness_pct\": 100,\t    \"rgb_color\": [255,184,124]\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 330,
+    "y": 660,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3394244f52a3651b",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "b9ecb733de105962",
+    "name": "Taklampa Av",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_kids_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 710,
+    "y": 500,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e8f575e5dd5428a1",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "178bf0b9061d0b5b",
+    "name": "Nattlampa Av",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.night_light_kids_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 520,
+    "y": 600,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "97423d588ca97b7e",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "0bb729de77f60250",
+    "name": "Taklampa Röd",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_kids_bedroom"
+    ],
+    "data": "{\t    \"brightness_pct\": 1,\t    \"rgb_color\": [\t        255,\t        0,\t        0\t    ]\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 620,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0446ec6e9dda92d9",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "0bb729de77f60250",
+    "name": "Taklampa Grön",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_kids_bedroom"
+    ],
+    "data": "{\t    \"brightness_pct\": 1,\t    \"rgb_color\": [\t        0,\t        255,\t        0\t    ]\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 620,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "30f1bd684c99b7de",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "g": "b9ecb733de105962",
+    "name": "Nattlampa på?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_light_kids_bedroom",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 520,
+    "y": 440,
+    "wires": [
+      [
+        "97423d588ca97b7e"
+      ],
+      [
+        "3394244f52a3651b"
+      ]
+    ]
+  },
+  {
+    "id": "245925ea62837296",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "g": "832ac7f7a2975116",
+    "name": "Nattlampa På",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_light_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 180,
+    "wires": [
+      [
+        "307eed8904a91f77"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "608cb52462ac0c81",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "g": "8f2e68f12915ae99",
+    "name": "Nattlampa Av",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_light_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 80,
+    "wires": [
+      [
+        "01eff572884c1d07"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7e6877fe8a6653d6",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "g": "8f2e68f12915ae99",
+    "name": "Taklampa Av",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_kids_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 490,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "12279ce84a315168",
+    "type": "time-switch",
+    "z": "1f26ba8a27c1477d",
+    "g": "178bf0b9061d0b5b",
+    "name": "22:00 - 07:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "22:00",
+    "endTime": "07:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 330,
+    "y": 600,
+    "wires": [
+      [
+        "e8f575e5dd5428a1"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "192698308fb2d748",
+    "type": "time-switch",
+    "z": "1f26ba8a27c1477d",
+    "g": "b9ecb733de105962",
+    "name": "22:00 - 07:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "22:00",
+    "endTime": "07:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 330,
+    "y": 480,
+    "wires": [
+      [
+        "30f1bd684c99b7de"
+      ],
+      [
+        "3394244f52a3651b"
+      ]
+    ]
+  },
+  {
+    "id": "307eed8904a91f77",
+    "type": "time-switch",
+    "z": "1f26ba8a27c1477d",
+    "g": "832ac7f7a2975116",
+    "name": "22:00 - 07:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "22:00",
+    "endTime": "07:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 310,
+    "y": 180,
+    "wires": [
+      [
+        "97423d588ca97b7e"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "01eff572884c1d07",
+    "type": "time-switch",
+    "z": "1f26ba8a27c1477d",
+    "g": "8f2e68f12915ae99",
+    "name": "22:00 - 07:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "22:00",
+    "endTime": "07:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 310,
+    "y": 80,
+    "wires": [
+      [
+        "7e6877fe8a6653d6"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "525054d275a4df1b",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "name": "Lampa på",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.ceiling_lamp_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 100,
+    "y": 760,
+    "wires": [
+      [
+        "f8fd07aa892e1f9b"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f8fd07aa892e1f9b",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare av?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "switch.relay_kids_bedroom",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 280,
+    "y": 760,
+    "wires": [
+      [
+        "083229431baf9d69"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "a7e8eebd90a38474",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare på",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_kids_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 700,
+    "y": 760,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d5fd42e1cafddab6",
+    "type": "server-state-changed",
+    "z": "1f26ba8a27c1477d",
+    "name": "Lampa av",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.ceiling_lamp_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 100,
+    "y": 820,
+    "wires": [
+      [
+        "1c94d6a848b49a31"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "1c94d6a848b49a31",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare på?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "switch.relay_kids_bedroom",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 280,
+    "y": 820,
+    "wires": [
+      [
+        "7c8c145290d75f7f"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "083229431baf9d69",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "name": "Nattlampa aktiv?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.night_light_kids_bedroom_active",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 490,
+    "y": 760,
+    "wires": [
+      [],
+      [
+        "a7e8eebd90a38474"
+      ]
+    ]
+  },
+  {
+    "id": "905b14865fdbd2b9",
+    "type": "api-call-service",
+    "z": "1f26ba8a27c1477d",
+    "name": "Väggbrytare av",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_kids_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 700,
+    "y": 820,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7c8c145290d75f7f",
+    "type": "api-current-state",
+    "z": "1f26ba8a27c1477d",
+    "name": "Nattlampa aktiv?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.night_light_kids_bedroom_active",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 490,
+    "y": 820,
+    "wires": [
+      [],
+      [
+        "905b14865fdbd2b9"
+      ]
+    ]
+  }
+]

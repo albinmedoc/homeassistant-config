@@ -1,2 +1,8 @@
 node_modules/
 .*
+
+# Hide the fat flow json file
+# I use node-red-contrib-flow-manager to seperate flows and subflows
+#
+# https://flows.nodered.org/node/node-red-contrib-flow-manager
+flows.json

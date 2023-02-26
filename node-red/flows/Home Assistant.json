@@ -1,0 +1,500 @@
+[
+  {
+    "id": "9d7cd8ae.f2fe48",
+    "type": "tab",
+    "label": "Home Assistant",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "86f8f4678672d22a",
+    "type": "group",
+    "z": "9d7cd8ae.f2fe48",
+    "name": "Ladda secrets.yaml vid uppstart",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "24ebb2e2.2f6ffe",
+      "2c59ff99.2affc",
+      "9e7c7d2d.fdeb8",
+      "ac0fc7a.efcc038",
+      "3a583032.2662b",
+      "1323cb3a16877935",
+      "2b7ad1b2216adaa5"
+    ],
+    "x": 14,
+    "y": 19
+  },
+  {
+    "id": "2e59710b52d84cd4",
+    "type": "group",
+    "z": "9d7cd8ae.f2fe48",
+    "name": "Starta om Intel NUC",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "aad95164dda26a61",
+      "bc6575adb8f391d5"
+    ],
+    "x": 14,
+    "y": 239
+  },
+  {
+    "id": "d45aea997f43d7df",
+    "type": "group",
+    "z": "9d7cd8ae.f2fe48",
+    "name": "Notis vid tillgänglig HA uppdatering",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "4b411ef3ab4191f7",
+      "c86e931d7bf34a6d",
+      "7c9eac7cf14500bf"
+    ],
+    "x": 14,
+    "y": 339
+  },
+  {
+    "id": "a2a2c7d13b2d1495",
+    "type": "group",
+    "z": "9d7cd8ae.f2fe48",
+    "name": "Notis vid tillgänglig HACS uppdatering",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "f876c5ceabd6750a",
+      "f3ed7dd986d07d37",
+      "0b4e37880bc471a9"
+    ],
+    "x": 14,
+    "y": 499
+  },
+  {
+    "id": "24ebb2e2.2f6ffe",
+    "type": "file in",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "Läs secrets.yaml",
+    "filename": "/config/secrets.yaml",
+    "filenameType": "str",
+    "format": "utf8",
+    "chunk": false,
+    "sendError": false,
+    "encoding": "none",
+    "allProps": false,
+    "x": 370,
+    "y": 180,
+    "wires": [
+      [
+        "2c59ff99.2affc"
+      ]
+    ]
+  },
+  {
+    "id": "2c59ff99.2affc",
+    "type": "yaml",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "property": "payload",
+    "name": "Parse yaml",
+    "x": 570,
+    "y": 180,
+    "wires": [
+      [
+        "9e7c7d2d.fdeb8"
+      ]
+    ]
+  },
+  {
+    "id": "9e7c7d2d.fdeb8",
+    "type": "function",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "Sätt global config vars",
+    "func": "for (let [key, value] of Object.entries(msg.payload)) {\n  global.set(key,value);\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 780,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ac0fc7a.efcc038",
+    "type": "comment",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "Kör vid HA start",
+    "info": "",
+    "x": 120,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "3a583032.2662b",
+    "type": "comment",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "Sätt global config vars från secrets.yaml",
+    "info": "https://bonani.tech/make-a-node-red-flow-run-on-home-assistant-start/",
+    "x": 560,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "1323cb3a16877935",
+    "type": "comment",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "https://community.home-assistant.io/t/use-secrets-from-secrets-yaml-in-node-red-flow/168586/8",
+    "info": "",
+    "x": 370,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "2b7ad1b2216adaa5",
+    "type": "subflow:5da5355c5d6e8223",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "",
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "24ebb2e2.2f6ffe"
+      ]
+    ]
+  },
+  {
+    "id": "aad95164dda26a61",
+    "type": "inject",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "2e59710b52d84cd4",
+    "name": "03.00",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 03 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 110,
+    "y": 280,
+    "wires": [
+      [
+        "bc6575adb8f391d5"
+      ]
+    ]
+  },
+  {
+    "id": "bc6575adb8f391d5",
+    "type": "api-call-service",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "2e59710b52d84cd4",
+    "name": "Starta om Intel NUC",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "hassio",
+    "service": "host_reboot",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 300,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4b411ef3ab4191f7",
+    "type": "server-state-changed",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "d45aea997f43d7df",
+    "name": "Home Assistant Core Update",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "update.home_assistant_core_update",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 160,
+    "y": 380,
+    "wires": [
+      [
+        "7c9eac7cf14500bf"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c86e931d7bf34a6d",
+    "type": "server-state-changed",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "d45aea997f43d7df",
+    "name": "Home Assistant Supervisor Update",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "update.home_assistant_supervisor_update",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 180,
+    "y": 440,
+    "wires": [
+      [
+        "7c9eac7cf14500bf"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7c9eac7cf14500bf",
+    "type": "api-call-service",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "d45aea997f43d7df",
+    "name": "Skicka notis till Albin",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_albin_iphone",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"message\": \"Det finns en ny version av Home Assistant!\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 500,
+    "y": 400,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f876c5ceabd6750a",
+    "type": "server-state-changed",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "a2a2c7d13b2d1495",
+    "name": "Tillgänglig HACS uppdatering",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.hacs",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "num",
+    "haltifstate": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 160,
+    "y": 540,
+    "wires": [
+      [
+        "0b4e37880bc471a9"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f3ed7dd986d07d37",
+    "type": "api-call-service",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "a2a2c7d13b2d1495",
+    "name": "Skicka notis till Albin",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_albin_iphone",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"message\": \"Det finns en ny uppdatering!\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 640,
+    "y": 540,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0b4e37880bc471a9",
+    "type": "function",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "a2a2c7d13b2d1495",
+    "name": "Skapa meddelande",
+    "func": "const repositories = msg.data.attributes.repositories;\n\nconst repository_names = repositories.map((repository) => repository.display_name);\n\nconst getRepositoryNameText = (repository_names) => {\n    // Get the last repository name\n    const last_repository_name = repository_names.pop();\n\n    // If there is any more repository names\n    if (repository_names.length > 0) {\n        return `${repository_names.join(', ')} och ${last_repository_name}`;\n    }\n    return last_repository_name;\n}\n\nconst message = `Det finns en ny HACS uppdatering, ${getRepositoryNameText(repository_names)}.`\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 410,
+    "y": 540,
+    "wires": [
+      [
+        "f3ed7dd986d07d37"
+      ]
+    ]
+  }
+]

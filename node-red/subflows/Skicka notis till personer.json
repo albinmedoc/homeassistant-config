@@ -1,0 +1,288 @@
+[
+  {
+    "id": "6be012d64f25f43f",
+    "type": "subflow",
+    "name": "Skicka notis till personer",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "bafa2d49610af115"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1260,
+        "y": 60,
+        "wires": [
+          {
+            "id": "77312eb671db8184",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "persons",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Persons"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "notify_data",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Notify data"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "output_notify_services",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Notify services"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "status": {
+      "x": 1260,
+      "y": 140,
+      "wires": [
+        {
+          "id": "024de54230752dc1",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "9ddcbb1e73030798",
+    "type": "junction",
+    "z": "6be012d64f25f43f",
+    "x": 480,
+    "y": 120,
+    "wires": [
+      [
+        "91d07763eee29f9f"
+      ]
+    ]
+  },
+  {
+    "id": "91d07763eee29f9f",
+    "type": "junction",
+    "z": "6be012d64f25f43f",
+    "x": 1000,
+    "y": 120,
+    "wires": [
+      [
+        "77312eb671db8184"
+      ]
+    ]
+  },
+  {
+    "id": "d4f28161858d8840",
+    "type": "function",
+    "z": "6be012d64f25f43f",
+    "name": "För varje person",
+    "func": "const storage = 'flow_storage1';\n\nconst persons = msg[storage].persons;\nif(persons.length > 0) {\n    persons.forEach((person, index) => {\n        node.send({\n            ...msg,\n            person,\n            parts: {\n                id: \"notify_persons\",\n                type: \"array\",\n                count: persons.length,\n                len: 1,\n                index\n            }\n        });\n    });\n}\n\nreturn [null, {services: []}]\n",
+    "outputs": 2,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 340,
+    "y": 60,
+    "wires": [
+      [
+        "739e21e164f8a279"
+      ],
+      [
+        "9ddcbb1e73030798"
+      ]
+    ],
+    "outputLabels": [
+      "",
+      "no persons"
+    ]
+  },
+  {
+    "id": "739e21e164f8a279",
+    "type": "subflow:9577215509c764c6",
+    "z": "6be012d64f25f43f",
+    "name": "",
+    "env": [
+      {
+        "name": "person",
+        "value": "{{ person }}",
+        "type": "str"
+      },
+      {
+        "name": "notify_data",
+        "value": "{{ flow_storage1.notify_data }}",
+        "type": "str"
+      },
+      {
+        "name": "output_notify_service",
+        "value": "service",
+        "type": "str"
+      }
+    ],
+    "x": 560,
+    "y": 60,
+    "wires": [
+      [
+        "b53ff6641760cd5b"
+      ]
+    ]
+  },
+  {
+    "id": "b53ff6641760cd5b",
+    "type": "join",
+    "z": "6be012d64f25f43f",
+    "name": "",
+    "mode": "auto",
+    "build": "array",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "num",
+    "reduceFixup": "",
+    "x": 750,
+    "y": 60,
+    "wires": [
+      [
+        "72b4bab712e13952"
+      ]
+    ]
+  },
+  {
+    "id": "024de54230752dc1",
+    "type": "function",
+    "z": "6be012d64f25f43f",
+    "name": "Skapa status",
+    "func": "const text = msg.services.join(', ')\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1130,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bafa2d49610af115",
+    "type": "function",
+    "z": "6be012d64f25f43f",
+    "name": "setup",
+    "func": "// Define inputs\nconst env_keys = ['persons', 'notify_data'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage1';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 170,
+    "y": 60,
+    "wires": [
+      [
+        "d4f28161858d8840"
+      ]
+    ]
+  },
+  {
+    "id": "77312eb671db8184",
+    "type": "function",
+    "z": "6be012d64f25f43f",
+    "name": "cleanup",
+    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_notify_services': 'services'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 1140,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "72b4bab712e13952",
+    "type": "function",
+    "z": "6be012d64f25f43f",
+    "name": "Slå samman services",
+    "func": "\nreturn {\n    ...msg,\n    services: msg.payload.map((payload) => payload.service)\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 940,
+    "y": 60,
+    "wires": [
+      [
+        "77312eb671db8184",
+        "024de54230752dc1"
+      ]
+    ]
+  }
+]

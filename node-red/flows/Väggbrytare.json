@@ -1,0 +1,1335 @@
+[
+  {
+    "id": "7c1b8ecc3bcbbebd",
+    "type": "tab",
+    "label": "Väggbrytare",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "01342c3d53a6371c",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Taklampa Sovrum",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "3e917487f9509efc",
+      "d333661181e8ccf5",
+      "973f595125b71af7",
+      "3b9d4fda06291e53",
+      "83cd2c752c8e4186",
+      "3191172f2275f0d6"
+    ],
+    "x": 34,
+    "y": 259
+  },
+  {
+    "id": "906392ec964d3dab",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Vardagsrum Soffa",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "09f11ee754c3da26",
+      "9e1ab61fc84c0359",
+      "0a17adc6d42b515d",
+      "f084ec7f3de82348",
+      "32130c10373961a5",
+      "d5f851c978157a9f"
+    ],
+    "x": 34,
+    "y": 39
+  },
+  {
+    "id": "657a994829f4573f",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Hall 3",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "8791af0aa2f6eb95",
+      "4507b1e2cb8085fc",
+      "987bf4720dead3df",
+      "61e8d049b688a63e",
+      "e42beba3e8afcc2d",
+      "3835fda3ddccfb06"
+    ],
+    "x": 34,
+    "y": 919
+  },
+  {
+    "id": "a41dac5adac5421d",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Hall 2",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "c2c38d7f85510778",
+      "3d616dfc706c76af",
+      "55d2c8dd730b437c",
+      "18c53d47f54bf7bf",
+      "f350126776b8d2bf",
+      "e2d369938e7b43be"
+    ],
+    "x": 34,
+    "y": 699
+  },
+  {
+    "id": "e08ca9117ba9237c",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Hall Entré",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "2659e04f1506b9a4",
+      "d0e4cb73260a397a",
+      "b1372081cd149554",
+      "80e2cae131458d2b",
+      "1bf087c0a818fcbd",
+      "dccec8a7a80e5d82"
+    ],
+    "x": 34,
+    "y": 479
+  },
+  {
+    "id": "3e917487f9509efc",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Brytare Sovrum",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 320,
+    "wires": [
+      [
+        "d333661181e8ccf5"
+      ],
+      [
+        "973f595125b71af7"
+      ]
+    ]
+  },
+  {
+    "id": "d333661181e8ccf5",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Tänd lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "973f595125b71af7",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Släck lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3b9d4fda06291e53",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Lampa Sovrum",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.ceiling_lamp_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 400,
+    "wires": [
+      [
+        "83cd2c752c8e4186"
+      ],
+      [
+        "3191172f2275f0d6"
+      ]
+    ]
+  },
+  {
+    "id": "83cd2c752c8e4186",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Slå på brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3191172f2275f0d6",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "01342c3d53a6371c",
+    "name": "Slå av brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "09f11ee754c3da26",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Brytare Vardagsrum soffa",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_living_room_sofa",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 170,
+    "y": 100,
+    "wires": [
+      [
+        "9e1ab61fc84c0359"
+      ],
+      [
+        "0a17adc6d42b515d"
+      ]
+    ]
+  },
+  {
+    "id": "9e1ab61fc84c0359",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Tänd lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_living_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0a17adc6d42b515d",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Släck lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_living_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f084ec7f3de82348",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Lampa Vardagsrum soffa",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.ceiling_lamp_living_room",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 170,
+    "y": 180,
+    "wires": [
+      [
+        "32130c10373961a5"
+      ],
+      [
+        "d5f851c978157a9f"
+      ]
+    ]
+  },
+  {
+    "id": "32130c10373961a5",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Slå på brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_living_room_sofa"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d5f851c978157a9f",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "906392ec964d3dab",
+    "name": "Slå av brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_living_room_sofa"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8791af0aa2f6eb95",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Brytare Hall 3",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_hallway_3",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 980,
+    "wires": [
+      [
+        "4507b1e2cb8085fc"
+      ],
+      [
+        "987bf4720dead3df"
+      ]
+    ]
+  },
+  {
+    "id": "4507b1e2cb8085fc",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Tänd lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_3_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "987bf4720dead3df",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Släck lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_3_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 1000,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "61e8d049b688a63e",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Lampa Hall 3",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.lamp_3_hallway",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 1060,
+    "wires": [
+      [
+        "e42beba3e8afcc2d"
+      ],
+      [
+        "3835fda3ddccfb06"
+      ]
+    ]
+  },
+  {
+    "id": "e42beba3e8afcc2d",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Slå på brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_3"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 1040,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3835fda3ddccfb06",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "657a994829f4573f",
+    "name": "Slå av brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_3"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 1080,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c2c38d7f85510778",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Brytare Hall 2",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_hallway_2",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 760,
+    "wires": [
+      [
+        "3d616dfc706c76af"
+      ],
+      [
+        "55d2c8dd730b437c"
+      ]
+    ]
+  },
+  {
+    "id": "3d616dfc706c76af",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Tänd lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_2_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 740,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "55d2c8dd730b437c",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Släck lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_2_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 780,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "18c53d47f54bf7bf",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Lampa Hall 2",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.lamp_2_hallway",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 840,
+    "wires": [
+      [
+        "f350126776b8d2bf"
+      ],
+      [
+        "e2d369938e7b43be"
+      ]
+    ]
+  },
+  {
+    "id": "f350126776b8d2bf",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Slå på brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_2"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 820,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e2d369938e7b43be",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "a41dac5adac5421d",
+    "name": "Slå av brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_2"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2659e04f1506b9a4",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Brytare Entré",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_hallway_1",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 540,
+    "wires": [
+      [
+        "d0e4cb73260a397a"
+      ],
+      [
+        "b1372081cd149554"
+      ]
+    ]
+  },
+  {
+    "id": "d0e4cb73260a397a",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Tänd lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_entrance_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b1372081cd149554",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Släck lampa",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lamp_entrance_hallway"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 560,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "80e2cae131458d2b",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Lampa Entré",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.lamp_entrance_hallway",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 620,
+    "wires": [
+      [
+        "1bf087c0a818fcbd"
+      ],
+      [
+        "dccec8a7a80e5d82"
+      ]
+    ]
+  },
+  {
+    "id": "1bf087c0a818fcbd",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Slå på brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_1"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 600,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dccec8a7a80e5d82",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "e08ca9117ba9237c",
+    "name": "Slå av brytare",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_hallway_1"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 460,
+    "y": 640,
+    "wires": [
+      []
+    ]
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "id": "f6c266122b405d78",
+    "type": "tab",
+    "label": "Dammsugare",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "05d687da1ce7b06d",
+    "type": "group",
+    "z": "f6c266122b405d78",
+    "name": "Inaktivera rörelsesensorer (larma hemma) när dammsugning börjar",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "2d4f29ef982ab65e",
+      "8d28e6dfa1bfb9b0",
+      "6d1d2435763bad74"
+    ],
+    "x": 34,
+    "y": 39
+  },
+  {
+    "id": "c77bf66ac0de544c",
+    "type": "group",
+    "z": "f6c266122b405d78",
+    "name": "Aktivera larm när dammsugning klar om ingen hemma",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "0c709adc70a7b981",
+      "43a51cdd1bafdc8f",
+      "3f2ab8b96d1ab88c",
+      "7421bc525afa4694"
+    ],
+    "x": 34,
+    "y": 159
+  },
+  {
+    "id": "2d4f29ef982ab65e",
+    "type": "server-state-changed",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "05d687da1ce7b06d",
+    "name": "Börjar dammsuga",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "vacuum.cleanmate",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "cleaning",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 150,
+    "y": 80,
+    "wires": [
+      [
+        "8d28e6dfa1bfb9b0"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f9b987ce12fc245a",
+    "type": "comment",
+    "z": "f6c266122b405d78",
+    "name": "Sätt upp ett schema",
+    "info": "Någon dag i veckan när ingen är hemma",
+    "x": 130,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "8d28e6dfa1bfb9b0",
+    "type": "api-current-state",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "05d687da1ce7b06d",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 80,
+    "wires": [
+      [
+        "6d1d2435763bad74"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "0c709adc70a7b981",
+    "type": "api-call-service",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "c77bf66ac0de544c",
+    "name": "Aktivera larm",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarm_control_panel",
+    "service": "alarm_arm_away",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 690,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6d1d2435763bad74",
+    "type": "api-call-service",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "05d687da1ce7b06d",
+    "name": "Larma hemma",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarm_control_panel",
+    "service": "alarm_arm_home",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 540,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "43a51cdd1bafdc8f",
+    "type": "server-state-changed",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "c77bf66ac0de544c",
+    "name": "Dockad",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "vacuum.cleanmate",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "docked",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 200,
+    "wires": [
+      [
+        "3f2ab8b96d1ab88c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3f2ab8b96d1ab88c",
+    "type": "api-current-state",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "c77bf66ac0de544c",
+    "name": "Ingen hemma",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "zone.home",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 300,
+    "y": 200,
+    "wires": [
+      [
+        "7421bc525afa4694"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7421bc525afa4694",
+    "type": "api-current-state",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "c77bf66ac0de544c",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 500,
+    "y": 200,
+    "wires": [
+      [],
+      [
+        "0c709adc70a7b981"
+      ]
+    ]
+  }
+]

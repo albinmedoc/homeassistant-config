@@ -1,0 +1,418 @@
+[
+  {
+    "id": "17f3c422bcd5a1fb",
+    "type": "subflow",
+    "name": "Spela TTS",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "792a8dd0d8a39c60"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1600,
+        "y": 60,
+        "wires": [
+          {
+            "id": "665eda0df34dc544",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "media_player",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Media player"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Message"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "volume_level",
+        "type": "num",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Volume"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "num"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "status": {
+      "x": 1600,
+      "y": 140,
+      "wires": [
+        {
+          "id": "c029c322b1380a7b",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "7b567172d270dada",
+    "type": "junction",
+    "z": "17f3c422bcd5a1fb",
+    "x": 1340,
+    "y": 120,
+    "wires": [
+      [
+        "665eda0df34dc544",
+        "c029c322b1380a7b"
+      ]
+    ]
+  },
+  {
+    "id": "766039233a5d9cf0",
+    "type": "api-current-state",
+    "z": "17f3c422bcd5a1fb",
+    "name": "TTS Muted?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.tts_mute",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 330,
+    "y": 60,
+    "wires": [
+      [],
+      [
+        "c637bcaf14cc0c61"
+      ]
+    ]
+  },
+  {
+    "id": "c029c322b1380a7b",
+    "type": "function",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Skapa status",
+    "func": "const text = msg.flow_storage.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1470,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "792a8dd0d8a39c60",
+    "type": "function",
+    "z": "17f3c422bcd5a1fb",
+    "name": "setup",
+    "func": "// Define inputs\nconst env_keys = ['media_player', 'message', 'volume_level'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 170,
+    "y": 60,
+    "wires": [
+      [
+        "766039233a5d9cf0"
+      ]
+    ]
+  },
+  {
+    "id": "665eda0df34dc544",
+    "type": "function",
+    "z": "17f3c422bcd5a1fb",
+    "name": "cleanup",
+    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 1480,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c637bcaf14cc0c61",
+    "type": "switch",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Volym satt?",
+    "property": "flow_storage.volume_level",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "istype",
+        "v": "number",
+        "vt": "number"
+      },
+      {
+        "t": "istype",
+        "v": "string",
+        "vt": "string"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 510,
+    "y": 60,
+    "wires": [
+      [
+        "91e7a552c2264b02"
+      ],
+      [
+        "0bd4cd1c91468aa0"
+      ]
+    ]
+  },
+  {
+    "id": "91e7a552c2264b02",
+    "type": "api-current-state",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Hämta mediaspelare",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "{{ flow_storage.media_player }}",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "media_player_entity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 720,
+    "y": 60,
+    "wires": [
+      [
+        "e45b6ee7a5750832"
+      ]
+    ]
+  },
+  {
+    "id": "e45b6ee7a5750832",
+    "type": "api-call-service",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Sätt volym",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "volume_set",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ flow_storage.media_player }}"
+    ],
+    "data": "{ \"volume_level\": flow_storage.volume_level }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 930,
+    "y": 60,
+    "wires": [
+      [
+        "da0bd14c3672d4f2"
+      ]
+    ]
+  },
+  {
+    "id": "da0bd14c3672d4f2",
+    "type": "api-call-service",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Spela TTS",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "tts",
+    "service": "cloud_say",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ flow_storage.media_player }}"
+    ],
+    "data": "{\t    \"message\": msg.flow_storage.message\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1110,
+    "y": 60,
+    "wires": [
+      [
+        "d9fa482c08da77e3"
+      ]
+    ]
+  },
+  {
+    "id": "d9fa482c08da77e3",
+    "type": "api-call-service",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Återställ volym",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "volume_set",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ flow_storage.media_player }}"
+    ],
+    "data": "{ \"volume_level\": media_player_entity.attributes.volume_level }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1300,
+    "y": 60,
+    "wires": [
+      [
+        "665eda0df34dc544",
+        "c029c322b1380a7b"
+      ]
+    ]
+  },
+  {
+    "id": "0bd4cd1c91468aa0",
+    "type": "api-call-service",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Spela TTS",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "tts",
+    "service": "cloud_say",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ flow_storage.media_player }}"
+    ],
+    "data": "{\t    \"message\": msg.flow_storage.message\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 690,
+    "y": 120,
+    "wires": [
+      [
+        "7b567172d270dada"
+      ]
+    ]
+  },
+  {
+    "id": "2263d8e231277a4e",
+    "type": "api-call-service",
+    "z": "17f3c422bcd5a1fb",
+    "name": "Sätt volym",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "volume_set",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ flow_storage.media_player }}"
+    ],
+    "data": "{ \"volume_level\": flow_storage.volume_level }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1210,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  }
+]

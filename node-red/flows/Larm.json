@@ -1,0 +1,1386 @@
+[
+  {
+    "id": "9081c37be56bc95b",
+    "type": "tab",
+    "label": "Larm",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "60a6418e9202f91b",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Inaktivera larm av när man låser upp dörr",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "21fd8062b7da30b0",
+      "7ea3f7423d6c9264",
+      "a80517abc44a8685",
+      "c1fde7221f082bde",
+      "f10a3c4729976592"
+    ],
+    "x": 34,
+    "y": 219
+  },
+  {
+    "id": "75e39dcb53bdacc7",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Automatisk aktivering av larm",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "0b509be3db326b86",
+      "48c2925eb12eb26f",
+      "626dbc36ba45a1c4"
+    ],
+    "x": 34,
+    "y": 119
+  },
+  {
+    "id": "f3fabdf91855700f",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Automatisk inaktivering av larm ",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "ae2f4571bf9c28d5",
+      "7b9f40156304418e",
+      "59a1364f3a5958ea"
+    ],
+    "x": 34,
+    "y": 19
+  },
+  {
+    "id": "819624756ad5ddb3",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Aktivera larm med personkod",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "d802c477e4a883f3",
+      "f959494e33a8d5f0",
+      "f40681a2f5d0b028",
+      "6cca731ae0297214",
+      "8b850efc4a432f90"
+    ],
+    "x": 34,
+    "y": 439
+  },
+  {
+    "id": "dbf45413091d6098",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Inaktivera larm med personkod",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "58d22ecab9d2941c",
+      "8609e6abb78f8068",
+      "7eb0434ae2b4a93a",
+      "6d47bd9e0bf5c0e0",
+      "1543208147c778e2"
+    ],
+    "x": 34,
+    "y": 539
+  },
+  {
+    "id": "66ec8226d6cd11e1",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Temporär failsafe",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "1b495b77b513d7da",
+      "203e8450084e2033",
+      "32bbbe0572b23f77",
+      "5b5f16ca973f1b0e"
+    ],
+    "x": 34,
+    "y": 639
+  },
+  {
+    "id": "ac4a5fa8ce361c85",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Rök upptäckt",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "2e0513112b568dfa",
+      "ee2aa044230da653"
+    ],
+    "x": 34,
+    "y": 1159
+  },
+  {
+    "id": "ea9720dad10ae7bd",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Larm Notifikation action",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "daf827e5ff247e6a",
+      "283aacb4926f7f3b",
+      "06737b5b192a39a8",
+      "71e1f5cac1cb11c5",
+      "67d1083ee5ac4427",
+      "7bfda30ac040bd4c"
+    ],
+    "x": 34,
+    "y": 739
+  },
+  {
+    "id": "2c760ae190629011",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Aktivera scen \"Inte hemma\" när alla lämnat hemmet",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "72cf3dd514774f5f",
+      "6addbb6abca1c9c1"
+    ],
+    "x": 34,
+    "y": 1059
+  },
+  {
+    "id": "0dae13e1d2f37ed0",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Skicka notis vid utlöst larm",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "694decc229ffefc0",
+      "8ae24a3cefea69b6",
+      "960bfb8e4169253b",
+      "ada400995e3d7452",
+      "28b7e3190283b558",
+      "f7768fbab71ef429"
+    ],
+    "x": 34,
+    "y": 919
+  },
+  {
+    "id": "21fd8062b7da30b0",
+    "type": "comment",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "Förhoppningsvis ska det redan ha blivit avlarmat",
+    "info": "",
+    "x": 240,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "ae2f4571bf9c28d5",
+    "type": "subflow:5c7f108f494183f7",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "",
+    "env": [
+      {
+        "name": "output_person",
+        "value": "person",
+        "type": "str"
+      }
+    ],
+    "x": 180,
+    "y": 60,
+    "wires": [
+      [
+        "7b9f40156304418e"
+      ]
+    ]
+  },
+  {
+    "id": "0b509be3db326b86",
+    "type": "subflow:10bf6a612840df6b",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "",
+    "env": [
+      {
+        "name": "output_person",
+        "value": "person",
+        "type": "str"
+      }
+    ],
+    "x": 170,
+    "y": 160,
+    "wires": [
+      [
+        "48c2925eb12eb26f"
+      ]
+    ]
+  },
+  {
+    "id": "7ea3f7423d6c9264",
+    "type": "server-state-changed",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "Albin öppnar ytterdörr",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.main_door_operator",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "Albin Medoc",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      },
+      {
+        "property": "person",
+        "propertyType": "msg",
+        "value": "person.albin",
+        "valueType": "str"
+      }
+    ],
+    "x": 160,
+    "y": 320,
+    "wires": [
+      [
+        "a80517abc44a8685"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c1fde7221f082bde",
+    "type": "server-state-changed",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "Matilda öppnar ytterdörr",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.main_door_operator",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "Matilda Takkula",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      },
+      {
+        "property": "person",
+        "propertyType": "msg",
+        "value": "person.matilda",
+        "valueType": "str"
+      }
+    ],
+    "x": 170,
+    "y": 380,
+    "wires": [
+      [
+        "a80517abc44a8685"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "d802c477e4a883f3",
+    "type": "api-current-state",
+    "z": "9081c37be56bc95b",
+    "g": "819624756ad5ddb3",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 200,
+    "y": 480,
+    "wires": [
+      [],
+      [
+        "f959494e33a8d5f0"
+      ]
+    ]
+  },
+  {
+    "id": "f959494e33a8d5f0",
+    "type": "function",
+    "z": "9081c37be56bc95b",
+    "g": "819624756ad5ddb3",
+    "name": "Hämta dörrkod för person",
+    "func": "\nconst person_entity_id = msg.person;\n\nconst person_name = person_entity_id.split('.')[1];\n\nconst secret_key = `lock_code_${person_name}`;\n\nconst code = global.get(secret_key);\n\nreturn {\n    ...msg,\n    code\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 410,
+    "y": 480,
+    "wires": [
+      [
+        "f40681a2f5d0b028"
+      ]
+    ]
+  },
+  {
+    "id": "f40681a2f5d0b028",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "819624756ad5ddb3",
+    "name": "Aktivera larm",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarmo",
+    "service": "arm",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "alarm_control_panel.alarmo"
+    ],
+    "data": "{\t    \"code\": msg.code,\t    \"mode\": \"away\",\t    \"skip_delay\": true,\t    \"force\": true\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 630,
+    "y": 480,
+    "wires": [
+      [
+        "8b850efc4a432f90"
+      ]
+    ]
+  },
+  {
+    "id": "58d22ecab9d2941c",
+    "type": "api-current-state",
+    "z": "9081c37be56bc95b",
+    "g": "dbf45413091d6098",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 200,
+    "y": 580,
+    "wires": [
+      [
+        "8609e6abb78f8068"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "8609e6abb78f8068",
+    "type": "function",
+    "z": "9081c37be56bc95b",
+    "g": "dbf45413091d6098",
+    "name": "Hämta dörrkod för person",
+    "func": "\nconst person_entity_id = msg.person;\n\nconst person_name = person_entity_id.split('.')[1];\n\nconst secret_key = `lock_code_${person_name}`;\n\nconst code = global.get(secret_key);\n\nreturn {\n    ...msg,\n    code\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 410,
+    "y": 580,
+    "wires": [
+      [
+        "7eb0434ae2b4a93a"
+      ]
+    ]
+  },
+  {
+    "id": "7eb0434ae2b4a93a",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "dbf45413091d6098",
+    "name": "Inaktivera larm",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarmo",
+    "service": "disarm",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "alarm_control_panel.alarmo"
+    ],
+    "data": "{\t    \"code\": msg.code\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 640,
+    "y": 580,
+    "wires": [
+      [
+        "1543208147c778e2"
+      ]
+    ]
+  },
+  {
+    "id": "6cca731ae0297214",
+    "type": "link in",
+    "z": "9081c37be56bc95b",
+    "g": "819624756ad5ddb3",
+    "name": "Aktivera larm med personkod",
+    "links": [],
+    "x": 75,
+    "y": 480,
+    "wires": [
+      [
+        "d802c477e4a883f3"
+      ]
+    ]
+  },
+  {
+    "id": "6d47bd9e0bf5c0e0",
+    "type": "link in",
+    "z": "9081c37be56bc95b",
+    "g": "dbf45413091d6098",
+    "name": "Inaktivera larm med personkod",
+    "links": [],
+    "x": 75,
+    "y": 580,
+    "wires": [
+      [
+        "58d22ecab9d2941c"
+      ]
+    ]
+  },
+  {
+    "id": "a80517abc44a8685",
+    "type": "link call",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "",
+    "links": [
+      "6d47bd9e0bf5c0e0"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 450,
+    "y": 320,
+    "wires": [
+      [
+        "f10a3c4729976592"
+      ]
+    ]
+  },
+  {
+    "id": "7b9f40156304418e",
+    "type": "link call",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "",
+    "links": [
+      "6d47bd9e0bf5c0e0"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 470,
+    "y": 60,
+    "wires": [
+      [
+        "59a1364f3a5958ea"
+      ]
+    ]
+  },
+  {
+    "id": "48c2925eb12eb26f",
+    "type": "link call",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "",
+    "links": [
+      "6cca731ae0297214"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 470,
+    "y": 160,
+    "wires": [
+      [
+        "626dbc36ba45a1c4"
+      ]
+    ]
+  },
+  {
+    "id": "f10a3c4729976592",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_albin_iphone",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" låste upp dörren\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 690,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "626dbc36ba45a1c4",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "parents",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm aktiverat\",\t    \"message\":\t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har lämnat hem\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 710,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "59a1364f3a5958ea",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "parents",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har kommit hem\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 710,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1b495b77b513d7da",
+    "type": "server-state-changed",
+    "z": "9081c37be56bc95b",
+    "g": "66ec8226d6cd11e1",
+    "name": "Ytterdörr öppen",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.door_main_hallway",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 680,
+    "wires": [
+      [
+        "203e8450084e2033"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "203e8450084e2033",
+    "type": "api-current-state",
+    "z": "9081c37be56bc95b",
+    "g": "66ec8226d6cd11e1",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 320,
+    "y": 680,
+    "wires": [
+      [
+        "32bbbe0572b23f77"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "32bbbe0572b23f77",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "66ec8226d6cd11e1",
+    "name": "Inaktivera larm",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarm_control_panel",
+    "service": "alarm_disarm",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "alarm_control_panel.alarmo"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 500,
+    "y": 680,
+    "wires": [
+      [
+        "5b5f16ca973f1b0e"
+      ]
+    ]
+  },
+  {
+    "id": "5b5f16ca973f1b0e",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "66ec8226d6cd11e1",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_albin_iphone",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm fel...\",\t    \"message\": \"Larmet inaktiverades av att någon öppnade dörren, så vill vi inte ha det.\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 690,
+    "y": 680,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2e0513112b568dfa",
+    "type": "server-state-changed",
+    "z": "9081c37be56bc95b",
+    "g": "ac4a5fa8ce361c85",
+    "name": "Rök upptäckt",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.smoke_detected",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 1200,
+    "wires": [
+      [
+        "ee2aa044230da653"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ee2aa044230da653",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "ac4a5fa8ce361c85",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "parents",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t   \"title\": \"Rök upptäckt!\",\t   \"message\": \"Rök upptäckt i hemmet! Det kanske brinner!\",\t   \"data\": {\t       \"push\": {\t           \"sound\": {\t               \"name\": \"default\",\t               \"critical\": 1,\t               \"volume\": 1\t            }\t        }\t    }\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 310,
+    "y": 1200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8b850efc4a432f90",
+    "type": "link out",
+    "z": "9081c37be56bc95b",
+    "g": "819624756ad5ddb3",
+    "name": "link out 1",
+    "mode": "return",
+    "links": [],
+    "x": 755,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "1543208147c778e2",
+    "type": "link out",
+    "z": "9081c37be56bc95b",
+    "g": "dbf45413091d6098",
+    "name": "link out 2",
+    "mode": "return",
+    "links": [],
+    "x": 775,
+    "y": 580,
+    "wires": []
+  },
+  {
+    "id": "daf827e5ff247e6a",
+    "type": "server-events",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Notifikation action",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "eventType": "mobile_app_notification_action",
+    "exposeToHomeAssistant": false,
+    "eventData": "",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "waitForRunning": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "$outputData(\"eventData\").event_type",
+        "valueType": "jsonata"
+      },
+      {
+        "property": "event_type",
+        "propertyType": "msg",
+        "value": "$outputData(\"eventData\").event_type",
+        "valueType": "jsonata"
+      }
+    ],
+    "x": 150,
+    "y": 820,
+    "wires": [
+      [
+        "283aacb4926f7f3b"
+      ]
+    ]
+  },
+  {
+    "id": "283aacb4926f7f3b",
+    "type": "switch",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Inaktivera larm action? person?",
+    "property": "payload.event.action",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "DISARM_ALBIN",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "DISARM_MATILDA",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 410,
+    "y": 820,
+    "wires": [
+      [
+        "06737b5b192a39a8"
+      ],
+      [
+        "71e1f5cac1cb11c5"
+      ]
+    ]
+  },
+  {
+    "id": "06737b5b192a39a8",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Sätt person Albin",
+    "rules": [
+      {
+        "t": "set",
+        "p": "person",
+        "pt": "msg",
+        "to": "person.albin",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 670,
+    "y": 780,
+    "wires": [
+      [
+        "67d1083ee5ac4427"
+      ]
+    ]
+  },
+  {
+    "id": "71e1f5cac1cb11c5",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Sätt person Matilda",
+    "rules": [
+      {
+        "t": "set",
+        "p": "person",
+        "pt": "msg",
+        "to": "person.matilda",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 670,
+    "y": 860,
+    "wires": [
+      [
+        "67d1083ee5ac4427"
+      ]
+    ]
+  },
+  {
+    "id": "67d1083ee5ac4427",
+    "type": "link call",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "",
+    "links": [
+      "6d47bd9e0bf5c0e0"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 930,
+    "y": 820,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "72cf3dd514774f5f",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "2c760ae190629011",
+    "name": "Aktivera scen \"Inte hemma\"",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "scene",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "scene.not_home"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 440,
+    "y": 1100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6addbb6abca1c9c1",
+    "type": "subflow:10bf6a612840df6b",
+    "z": "9081c37be56bc95b",
+    "g": "2c760ae190629011",
+    "name": "",
+    "x": 170,
+    "y": 1100,
+    "wires": [
+      [
+        "72cf3dd514774f5f"
+      ]
+    ]
+  },
+  {
+    "id": "f7768fbab71ef429",
+    "type": "server-state-changed",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "Larm utlöst",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "alarm_control_panel.alarmo",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "triggered",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 960,
+    "wires": [
+      [
+        "694decc229ffefc0"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "28b7e3190283b558",
+    "type": "comment",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "Tittar inte på vilket läge",
+    "info": "",
+    "x": 160,
+    "y": 1000,
+    "wires": []
+  },
+  {
+    "id": "694decc229ffefc0",
+    "type": "subflow:bd6b3fc9fb3bede7",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "",
+    "env": [
+      {
+        "name": "output_persons",
+        "value": "payload",
+        "type": "str"
+      }
+    ],
+    "x": 330,
+    "y": 960,
+    "wires": [
+      [
+        "8ae24a3cefea69b6"
+      ]
+    ]
+  },
+  {
+    "id": "8ae24a3cefea69b6",
+    "type": "split",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "För varje person",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "",
+    "x": 540,
+    "y": 960,
+    "wires": [
+      [
+        "960bfb8e4169253b"
+      ]
+    ]
+  },
+  {
+    "id": "960bfb8e4169253b",
+    "type": "function",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "Skapa notis",
+    "func": "const person_entity_id = msg.payload;\nconst person_name = person_entity_id.split('.')[1];\nconst disarm_action = `DISARM_${person_name.toUpperCase()}`;\n\nconst notify_data = {\n    \"title\": \"Larm utlöst!\",\n        \"message\": \"Håll inne för att visa mer information\",\n            \"data\": {\n        \"entity_id\": \"camera.camera_living_room_hd_stream\",\n            \"push\": {\n            \"sound\": {\n                \"name\": \"default\",\n                    \"critical\": 1,\n                        \"volume\": 1\n            }\n        },\n        \"actions\": [\n            {\n                \"action\": disarm_action,\n                \"title\": \"Inaktivera larm\",\n                \"destructive\": true,\n                \"icon\": \"sfsymbols:bell.slash\",\n                \"authenticationRequired\": true\n            }\n        ],\n            \"persistent\": true,\n                \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 730,
+    "y": 960,
+    "wires": [
+      [
+        "ada400995e3d7452"
+      ]
+    ]
+  },
+  {
+    "id": "ada400995e3d7452",
+    "type": "subflow:9577215509c764c6",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "",
+    "env": [
+      {
+        "name": "person",
+        "value": "{{payload}}",
+        "type": "str"
+      },
+      {
+        "name": "notify_data",
+        "value": "{{notify_data}}",
+        "type": "str"
+      }
+    ],
+    "x": 940,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7bfda30ac040bd4c",
+    "type": "comment",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Sök upp personen istället",
+    "info": "",
+    "x": 390,
+    "y": 780,
+    "wires": []
+  }
+]

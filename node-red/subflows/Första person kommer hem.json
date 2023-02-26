@@ -1,0 +1,223 @@
+[
+  {
+    "id": "5c7f108f494183f7",
+    "type": "subflow",
+    "name": "Första person kommer hem",
+    "info": "",
+    "category": "",
+    "in": [],
+    "out": [
+      {
+        "x": 1100,
+        "y": 60,
+        "wires": [
+          {
+            "id": "8ba3ed2570504118",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "output_person",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Person"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "status": {
+      "x": 1100,
+      "y": 140,
+      "wires": [
+        {
+          "id": "bb71c5a1e7a3f063",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "03d0855aa7570e8d",
+    "type": "server-state-changed",
+    "z": "5c7f108f494183f7",
+    "name": "En person hemma",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "zone.home",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "num",
+    "haltifstate": "1",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      }
+    ],
+    "x": 130,
+    "y": 60,
+    "wires": [
+      [
+        "22f343fdacc17007"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "cce4e66bf72f0f15",
+    "type": "function",
+    "z": "5c7f108f494183f7",
+    "name": "Hämta person som kom hem",
+    "func": "const old_persons = msg.data.old_state.attributes.persons;\nconst new_persons = msg.data.new_state.attributes.persons;\n\nconst person = new_persons.filter(p => !old_persons.includes(p))[0];\n\nreturn {\n    person\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 760,
+    "y": 60,
+    "wires": [
+      [
+        "bb71c5a1e7a3f063",
+        "8ba3ed2570504118"
+      ]
+    ]
+  },
+  {
+    "id": "ebe77296e60e8877",
+    "type": "switch",
+    "z": "5c7f108f494183f7",
+    "name": "Tidigare tillstånd var 0",
+    "property": "data.old_state.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "0",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 500,
+    "y": 60,
+    "wires": [
+      [
+        "cce4e66bf72f0f15"
+      ]
+    ]
+  },
+  {
+    "id": "bb71c5a1e7a3f063",
+    "type": "function",
+    "z": "5c7f108f494183f7",
+    "name": "Skapa status",
+    "func": "const text = msg.topic;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 970,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "22f343fdacc17007",
+    "type": "function",
+    "z": "5c7f108f494183f7",
+    "name": "setup",
+    "func": "// Define inputs\nconst env_keys = [];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 310,
+    "y": 60,
+    "wires": [
+      [
+        "ebe77296e60e8877"
+      ]
+    ]
+  },
+  {
+    "id": "8ba3ed2570504118",
+    "type": "function",
+    "z": "5c7f108f494183f7",
+    "name": "cleanup",
+    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_person': 'person'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 980,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7f06673b2261b535",
+    "type": "comment",
+    "z": "5c7f108f494183f7",
+    "name": "Injector, inget pre_msg behövs",
+    "info": "",
+    "x": 650,
+    "y": 20,
+    "wires": []
+  }
+]

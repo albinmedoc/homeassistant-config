@@ -1,0 +1,180 @@
+[
+  {
+    "id": "29024697abc79029",
+    "type": "subflow",
+    "name": "Hämta personer borta",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "581c28f951e7c8b8"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 940,
+        "y": 60,
+        "wires": [
+          {
+            "id": "b99d4f8b51752826",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "output_persons",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Persons"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "status": {
+      "x": 940,
+      "y": 140,
+      "wires": [
+        {
+          "id": "781785e263a6d008",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "01e5dd44dbf610fc",
+    "type": "ha-get-entities",
+    "z": "29024697abc79029",
+    "name": "Hämta personer inte hemma",
+    "server": "e9739673.bbfed8",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "is",
+        "value": "person\\.",
+        "valueType": "re"
+      },
+      {
+        "property": "state",
+        "logic": "is_not",
+        "value": "home",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "array",
+    "output_empty_results": true,
+    "output_location_type": "msg",
+    "output_location": "person_entities",
+    "output_results_count": 1,
+    "x": 380,
+    "y": 60,
+    "wires": [
+      [
+        "df7bbd1b6e50d3e2"
+      ]
+    ]
+  },
+  {
+    "id": "df7bbd1b6e50d3e2",
+    "type": "function",
+    "z": "29024697abc79029",
+    "name": "Plocka ut entity ids",
+    "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    ...msg,\n    persons: person_entity_ids\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 630,
+    "y": 60,
+    "wires": [
+      [
+        "781785e263a6d008",
+        "b99d4f8b51752826"
+      ]
+    ]
+  },
+  {
+    "id": "781785e263a6d008",
+    "type": "function",
+    "z": "29024697abc79029",
+    "name": "Skapa status",
+    "func": "const color = msg.persons.length > 0 ? \"green\": \"red\";\nconst text = msg.persons.join(', ')\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 810,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "581c28f951e7c8b8",
+    "type": "function",
+    "z": "29024697abc79029",
+    "name": "setup",
+    "func": "// Define inputs\nconst env_keys = [];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 170,
+    "y": 60,
+    "wires": [
+      [
+        "01e5dd44dbf610fc"
+      ]
+    ]
+  },
+  {
+    "id": "b99d4f8b51752826",
+    "type": "function",
+    "z": "29024697abc79029",
+    "name": "cleanup",
+    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_persons': 'persons'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 820,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  }
+]
