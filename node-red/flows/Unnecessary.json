@@ -2,7 +2,7 @@
   {
     "id": "cd9a5746e1f519c9",
     "type": "tab",
-    "label": "Onödigt",
+    "label": "Unnecessary",
     "disabled": false,
     "info": "",
     "env": []
@@ -21,7 +21,9 @@
       "4dbb2d100e9c7495"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 672,
+    "h": 82
   },
   {
     "id": "50b6ce68ea1dbe94",
@@ -41,7 +43,9 @@
       "9e24eaa95fb2667a"
     ],
     "x": 34,
-    "y": 139
+    "y": 139,
+    "w": 352,
+    "h": 442
   },
   {
     "id": "8dd22f7676bd5610",

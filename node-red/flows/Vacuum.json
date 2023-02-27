@@ -2,7 +2,7 @@
   {
     "id": "f6c266122b405d78",
     "type": "tab",
-    "label": "Dammsugare",
+    "label": "Vacuum",
     "disabled": false,
     "info": "",
     "env": []
@@ -21,7 +21,9 @@
       "6d1d2435763bad74"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 612,
+    "h": 82
   },
   {
     "id": "c77bf66ac0de544c",
@@ -38,7 +40,9 @@
       "7421bc525afa4694"
     ],
     "x": 34,
-    "y": 159
+    "y": 159,
+    "w": 752,
+    "h": 82
   },
   {
     "id": "2d4f29ef982ab65e",
@@ -105,16 +109,6 @@
       ],
       []
     ]
-  },
-  {
-    "id": "f9b987ce12fc245a",
-    "type": "comment",
-    "z": "f6c266122b405d78",
-    "name": "Sätt upp ett schema",
-    "info": "Någon dag i veckan när ingen är hemma",
-    "x": 130,
-    "y": 320,
-    "wires": []
   },
   {
     "id": "8d28e6dfa1bfb9b0",
