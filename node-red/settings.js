@@ -192,5 +192,5 @@ module.exports = {
   },
 
   // Pretty print the flows.json file
-  flowFilePretty: true,
+  flowFilePretty: false,
 };
