@@ -6,3 +6,9 @@ node_modules/
 #
 # https://flows.nodered.org/node/node-red-contrib-flow-manager
 flows.json
+
+# Don't know what this file is used for
+# It grows without me touching node red 
+#
+# https://github.com/zachowj/node-red-contrib-home-assistant-websocket
+node-red-contrib-home-assistant-websocket.json
