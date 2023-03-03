@@ -17,6 +17,10 @@ cards:
         template: card_title
         name: "Trädgård"
 
+  - type: custom:simple-weather-card
+    entity: weather.smhi
+    backdrop: true
+
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
