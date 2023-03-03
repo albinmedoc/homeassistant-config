@@ -45,7 +45,6 @@ cards:
         entity: light.lamp_conservatory
         variables:
           ulm_card_light_name: "Lampa"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_light
         entity: light.roof_loop_conservatory

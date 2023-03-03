@@ -95,13 +95,11 @@ cards:
         entity: light.ceiling_lamp_living_room
         variables:
           ulm_card_light_name: "Soffa"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_light
         entity: light.sonos_lamp_living_room
         variables:
           ulm_card_light_name: "Sonos lampa"
-          ulm_card_light_enable_popup: true
 
   - type: "horizontal-stack"
     cards:
@@ -110,7 +108,6 @@ cards:
         entity: light.standing_lamp_living_room
         variables:
           ulm_card_light_name: "Stående lampa"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_light
         entity: light.dining_table_living_room

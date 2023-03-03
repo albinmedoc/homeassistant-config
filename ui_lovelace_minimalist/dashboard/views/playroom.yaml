@@ -45,7 +45,6 @@ cards:
         entity: light.ceiling_lamp_playroom
         variables:
           ulm_card_light_name: "Taklampa"
-          ulm_card_light_enable_popup: true
 
   - type: "custom:button-card"
     template: card_title

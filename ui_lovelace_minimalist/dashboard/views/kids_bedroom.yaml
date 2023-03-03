@@ -78,7 +78,6 @@ cards:
         entity: light.ceiling_lamp_kids_bedroom
         variables:
           ulm_card_light_name: "Taklampa"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_input_boolean
         entity: input_boolean.night_light_kids_bedroom

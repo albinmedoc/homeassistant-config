@@ -82,13 +82,11 @@ cards:
         entity: light.ceiling_lamp_bedroom
         variables:
           ulm_card_light_name: "Taklampa"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_light
         entity: light.wardrobe_lamp_bedroom
         variables:
           ulm_card_light_name: "Lampa garderob"
-          ulm_card_light_enable_popup: true
 
   - type: "custom:button-card"
     template: card_title

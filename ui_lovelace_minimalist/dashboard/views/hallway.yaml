@@ -59,13 +59,11 @@ cards:
         entity: light.lamp_entrance_hallway
         variables:
           ulm_card_light_name: "Entré"
-          ulm_card_light_enable_popup: true
       - type: "custom:button-card"
         template: card_light
         entity: light.lamp_2_hallway
         variables:
           ulm_card_light_name: "Lampa 2"
-          ulm_card_light_enable_popup: true
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
@@ -73,7 +71,6 @@ cards:
         entity: light.lamp_3_hallway
         variables:
           ulm_card_light_name: "Lampa 3"
-          ulm_card_light_enable_popup: true
 
   - type: "custom:button-card"
     entity: lock.main_door
