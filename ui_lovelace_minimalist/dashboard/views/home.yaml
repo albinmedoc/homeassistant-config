@@ -7,12 +7,26 @@ path: "home"
 swipe_back: null
 swipe_forward: null
 cards:
-  - type: "custom:button-card"
-    template: custom_card_group_counter_chip
-    entity: light.all
-    variables:
-      ulm_custom_card_group_counter_chip_entities_active: sensor.lights_on
-      ulm_custom_card_group_counter_chip_hide_if_zero: true
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        entity: light.all
+        variables:
+          ulm_custom_card_group_counter_chip_entities_active: sensor.lights_on
+          ulm_custom_card_group_counter_chip_hide_if_zero: true
+
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        entity: media_player.televisions
+        variables:
+          ulm_custom_card_group_counter_chip_entities_active: sensor.televisions_on
+          ulm_custom_card_group_counter_chip_hide_if_zero: true
+          ulm_custom_card_group_counter_chip_type: television
+          ulm_custom_card_group_counter_chip_color: blue
+          ulm_custom_card_group_counter_chip_icon_zero: "mdi:television"
+          ulm_custom_card_group_counter_chip_icon_one: "mdi:television"
+          ulm_custom_card_group_counter_chip_icon_multiple: "mdi:television"
 
   - type: "custom:button-card"
     template: "card_esh_welcome"
