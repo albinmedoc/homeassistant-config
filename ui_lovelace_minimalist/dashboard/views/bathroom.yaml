@@ -13,7 +13,7 @@ cards:
       - title: Badrum
       - motion_sensor: binary_sensor.motion_bathroom
       - lights: light.all_bathroom
-  
+
   - type: "custom:button-card"
     template: card_title
     label: "Enheter"
