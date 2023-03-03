@@ -33,16 +33,8 @@ cards:
 
       - type: "custom:button-card"
         template: custom_card_group_counter_chip
-        tap_action:
-          action: "call-service"
-          service: "light.toggle"
-          service_data:
-            entity_id: light.all_bathroom
+        entity: light.all_bathroom
         variables:
-          ulm_custom_card_group_counter_chip_entity: light.all_bathroom
-          ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
-          ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
-          ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
           ulm_custom_card_group_counter_chip_hide_if_0: true
 
   - type: "custom:button-card"

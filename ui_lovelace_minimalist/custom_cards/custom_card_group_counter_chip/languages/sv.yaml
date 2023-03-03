@@ -1,0 +1,14 @@
+---
+custom_card_group_counter_chip_language_variables:
+  variables:
+    custom_card_group_counter_chip_light_zero: "Inga lampor"
+    custom_card_group_counter_chip_light_one: "En lampa"
+    custom_card_group_counter_chip_light_multiple: "{count} lampor"
+
+    custom_card_group_counter_chip_media_player_zero: "Inga mediaspelare"
+    custom_card_group_counter_chip_media_player_one: "En mediaspelare"
+    custom_card_group_counter_chip_media_player_multiple: "{count} mediaspelare"
+
+    custom_card_group_counter_chip_speaker_zero: "Inga högtalare"
+    custom_card_group_counter_chip_speaker_one: "En högtalare"
+    custom_card_group_counter_chip_speaker_multiple: "{count} högtalare"

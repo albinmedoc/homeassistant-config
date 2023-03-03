@@ -1,0 +1,14 @@
+---
+custom_card_group_counter_chip_language_variables:
+  variables:
+    custom_card_group_counter_chip_light_zero: "No lights"
+    custom_card_group_counter_chip_light_one: "One light"
+    custom_card_group_counter_chip_light_multiple: "{count} lights"
+
+    custom_card_group_counter_chip_media_player_zero: "No media players"
+    custom_card_group_counter_chip_media_player_one: "One media player"
+    custom_card_group_counter_chip_media_player_multiple: "{count} media players"
+
+    custom_card_group_counter_chip_speaker_zero: "No speakers"
+    custom_card_group_counter_chip_speaker_one: "One speaker"
+    custom_card_group_counter_chip_speaker_multiple: "{count} speakers"
