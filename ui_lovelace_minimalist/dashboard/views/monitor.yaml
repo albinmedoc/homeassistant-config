@@ -50,19 +50,19 @@ cards:
       graph_span: "10min"
       entity_1:
         entity_id: sensor.nas_volume_1_volume_used
-        icon: ""
+        icon: "mdi:harddisk"
         name: "Disk"
         color: "red"
         max_value: 100
       entity_2:
         entity_id: sensor.nas_memory_usage_real
-        icon: ""
+        icon: "mdi:memory"
         name: "Minne"
         color: "yellow"
         max_value: 100
       entity_3:
         entity_id: sensor.nas_cpu_utilization_other
-        icon: ""
+        icon: "mdi:chip"
         name: "CPU"
         color: "green"
         max_value: 100
@@ -77,20 +77,20 @@ cards:
       chart_type: "radialBar"
       graph_span: "10min"
       entity_1:
-        entity_id: sensor.disk_use_percent_config
-        icon: ""
+        entity_id: sensor.disk_use_percent
+        icon: "mdi:harddisk"
         name: "Disk"
         color: "red"
         max_value: 100
       entity_2:
         entity_id: sensor.memory_use_percent
-        icon: ""
+        icon: "mdi:memory"
         name: "Minne"
         color: "yellow"
         max_value: 100
       entity_3:
         entity_id: sensor.processor_use
-        icon: ""
+        icon: "mdi:chip"
         name: "CPU"
         color: "green"
         max_value: 100
