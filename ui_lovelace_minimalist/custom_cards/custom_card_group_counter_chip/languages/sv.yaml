@@ -12,3 +12,7 @@ custom_card_group_counter_chip_language_variables:
     custom_card_group_counter_chip_speaker_zero: "Inga högtalare"
     custom_card_group_counter_chip_speaker_one: "En högtalare"
     custom_card_group_counter_chip_speaker_multiple: "{count} högtalare"
+
+    custom_card_group_counter_chip_television_zero: "Inga TV:ar"
+    custom_card_group_counter_chip_television_one: "En TV"
+    custom_card_group_counter_chip_television_multiple: "{count} TV:ar"

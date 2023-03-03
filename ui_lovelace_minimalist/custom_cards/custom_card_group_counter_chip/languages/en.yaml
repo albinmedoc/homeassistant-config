@@ -12,3 +12,7 @@ custom_card_group_counter_chip_language_variables:
     custom_card_group_counter_chip_speaker_zero: "No speakers"
     custom_card_group_counter_chip_speaker_one: "One speaker"
     custom_card_group_counter_chip_speaker_multiple: "{count} speakers"
+
+    custom_card_group_counter_chip_television_zero: "No TVs"
+    custom_card_group_counter_chip_television_one: "One TV"
+    custom_card_group_counter_chip_television_multiple: "{count} TVs"
