@@ -7,15 +7,10 @@ path: "lights"
 swipe_back: "home"
 swipe_forward: null
 cards:
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: chip_back
-        variables:
-          ulm_chip_back_path: /ui-lovelace-minimalist/home
-      - type: "custom:button-card"
-        template: card_title
-        name: "Lampor"
+  - type: custom:decluttering-card
+    template: view_heading
+    variables:
+      - title: Lampor
 
   - type: "custom:button-card"
     template: card_title

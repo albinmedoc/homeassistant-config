@@ -7,35 +7,12 @@ path: "toilet"
 swipe_back: "home"
 swipe_forward: null
 cards:
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: chip_back
-        variables:
-          ulm_chip_back_path: /ui-lovelace-minimalist/home
-      - type: "custom:button-card"
-        template: card_title
-        name: "Toalett"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: conditional
-        conditions:
-          - entity: binary_sensor.motion_toilet
-            state: "on"
-        card:
-          type: "custom:button-card"
-          template: chip_mdi_icon_only
-          variables:
-            ulm_chip_mdi_icon_only_entity: binary_sensor.motion_toilet
-            ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
-            ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
-
-      - type: "custom:button-card"
-        template: custom_card_group_counter_chip
-        entity: light.all_toilet
-        variables:
-          ulm_custom_card_group_counter_chip_hide_if_0: true
+  - type: custom:decluttering-card
+    template: view_heading
+    variables:
+      - title: Toalett
+      - motion_sensor: binary_sensor.motion_toilet
+      - lights: light.all_toilet
 
   - type: "custom:button-card"
     template: card_title

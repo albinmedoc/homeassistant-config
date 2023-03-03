@@ -7,35 +7,12 @@ path: "hallway"
 swipe_back: "home"
 swipe_forward: null
 cards:
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: chip_back
-        variables:
-          ulm_chip_back_path: /ui-lovelace-minimalist/home
-      - type: "custom:button-card"
-        template: card_title
-        name: "Hall"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: conditional
-        conditions:
-          - entity: binary_sensor.motion_hallway
-            state: "on"
-        card:
-          type: "custom:button-card"
-          template: chip_mdi_icon_only
-          variables:
-            ulm_chip_mdi_icon_only_entity: binary_sensor.motion_hallway
-            ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
-            ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
-
-      - type: "custom:button-card"
-        template: custom_card_group_counter_chip
-        entity: light.all_hallway
-        variables:
-          ulm_custom_card_group_counter_chip_hide_if_0: true
+  - type: custom:decluttering-card
+    template: view_heading
+    variables:
+      - title: Hall
+      - motion_sensor: binary_sensor.motion_hallway
+      - lights: light.all_hallway
 
   - type: "custom:button-card"
     template: card_title

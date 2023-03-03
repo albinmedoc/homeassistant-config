@@ -8,6 +8,7 @@ swipe_nav:
   prevent_default: true
   swipe_amount: 30
   logger_level: verbose
+decluttering_templates: !include_dir_named "../decluttering_templates"
 views:
   - !include views/home.yaml
   - !include views/house.yaml
