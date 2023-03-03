@@ -28,6 +28,18 @@ cards:
           ulm_custom_card_group_counter_chip_icon_one: "mdi:television"
           ulm_custom_card_group_counter_chip_icon_multiple: "mdi:television"
 
+      - type: "custom:button-card"
+        template: custom_card_group_counter_chip
+        entity: media_player.speakers
+        variables:
+          ulm_custom_card_group_counter_chip_entities_active: sensor.speakers_on
+          ulm_custom_card_group_counter_chip_hide_if_zero: true
+          ulm_custom_card_group_counter_chip_type: speaker
+          ulm_custom_card_group_counter_chip_color: green
+          ulm_custom_card_group_counter_chip_icon_zero: "mdi:speaker"
+          ulm_custom_card_group_counter_chip_icon_one: "mdi:speaker"
+          ulm_custom_card_group_counter_chip_icon_multiple: "mdi:speaker-multiple"
+
   - type: "custom:button-card"
     template: "card_esh_welcome"
     variables:
