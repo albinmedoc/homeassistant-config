@@ -43,9 +43,6 @@ cards:
           ulm_custom_card_group_counter_chip_label_0: "Inga lampor"
           ulm_custom_card_group_counter_chip_label_1: "{state} lampa"
           ulm_custom_card_group_counter_chip_label_many: "{state} lampor"
-          ulm_custom_card_group_counter_chip_icon_0: mdi:lightbulb-outline
-          ulm_custom_card_group_counter_chip_icon_1: mdi:lightbulb-on-outline
-          ulm_custom_card_group_counter_chip_icon_many: mdi:lightbulb-multiple-outline
           ulm_custom_card_group_counter_chip_hide_if_0: true
 
   - type: "horizontal-stack"
