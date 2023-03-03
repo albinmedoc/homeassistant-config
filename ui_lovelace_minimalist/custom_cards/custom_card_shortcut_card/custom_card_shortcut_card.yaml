@@ -108,7 +108,6 @@ card_shortcut_card:
               ...(variables.entity_6 && {entity_6: variables.entity_6}),
               ...(variables.entity_7 && {entity_7: variables.entity_7})
             };
-            console.log(entities);
             return entities;
           ]]]
 

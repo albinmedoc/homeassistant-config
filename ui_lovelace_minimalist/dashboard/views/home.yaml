@@ -60,7 +60,6 @@ cards:
           ulm_custom_card_chip_mdi_icon_state_custom_label_icon_color: rgba(var(--color-red),1)
           ulm_custom_card_chip_mdi_icon_state_custom_label_label: |
             [[[
-              console.log(states["sensor.garbage_collection"]);
               if (states["sensor.garbage_collection"].attributes.days == "0") {
                 return "Idag";
               }
