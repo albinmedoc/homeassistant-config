@@ -108,25 +108,6 @@
     "h": 82
   },
   {
-    "id": "66ec8226d6cd11e1",
-    "type": "group",
-    "z": "9081c37be56bc95b",
-    "name": "Temporär failsafe",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "1b495b77b513d7da",
-      "203e8450084e2033",
-      "32bbbe0572b23f77",
-      "5b5f16ca973f1b0e"
-    ],
-    "x": 34,
-    "y": 759,
-    "w": 752,
-    "h": 82
-  },
-  {
     "id": "ac4a5fa8ce361c85",
     "type": "group",
     "z": "9081c37be56bc95b",
@@ -139,7 +120,7 @@
       "ee2aa044230da653"
     ],
     "x": 34,
-    "y": 1279,
+    "y": 1179,
     "w": 372,
     "h": 82
   },
@@ -160,7 +141,7 @@
       "7bfda30ac040bd4c"
     ],
     "x": 34,
-    "y": 859,
+    "y": 759,
     "w": 1052,
     "h": 162
   },
@@ -177,7 +158,7 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 1179,
+    "y": 1079,
     "w": 552,
     "h": 82
   },
@@ -199,7 +180,7 @@
       "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 1039,
+    "y": 939,
     "w": 1032,
     "h": 122
   },
@@ -762,173 +743,6 @@
     ]
   },
   {
-    "id": "1b495b77b513d7da",
-    "type": "server-state-changed",
-    "z": "9081c37be56bc95b",
-    "g": "66ec8226d6cd11e1",
-    "name": "Ytterdörr öppen",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.door_main_hallway",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 140,
-    "y": 800,
-    "wires": [
-      [
-        "203e8450084e2033"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "203e8450084e2033",
-    "type": "api-current-state",
-    "z": "9081c37be56bc95b",
-    "g": "66ec8226d6cd11e1",
-    "name": "Larmat?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "armed_away",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "alarm_control_panel.alarmo",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 320,
-    "y": 800,
-    "wires": [
-      [
-        "32bbbe0572b23f77"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "32bbbe0572b23f77",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "66ec8226d6cd11e1",
-    "name": "Inaktivera larm",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "alarm_control_panel",
-    "service": "alarm_disarm",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "alarm_control_panel.alarmo"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 500,
-    "y": 800,
-    "wires": [
-      [
-        "5b5f16ca973f1b0e"
-      ]
-    ]
-  },
-  {
-    "id": "5b5f16ca973f1b0e",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "66ec8226d6cd11e1",
-    "name": "Skicka notis",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "mobile_app_albin_iphone",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm fel...\",\t    \"message\": \"Larmet inaktiverades av att någon öppnade dörren, så vill vi inte ha det.\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 690,
-    "y": 800,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "2e0513112b568dfa",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
@@ -985,7 +799,7 @@
       }
     ],
     "x": 130,
-    "y": 1320,
+    "y": 1220,
     "wires": [
       [
         "ee2aa044230da653"
@@ -1014,7 +828,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 310,
-    "y": 1320,
+    "y": 1220,
     "wires": [
       []
     ]
@@ -1086,7 +900,7 @@
       }
     ],
     "x": 150,
-    "y": 940,
+    "y": 840,
     "wires": [
       [
         "283aacb4926f7f3b"
@@ -1117,7 +931,7 @@
     "repair": false,
     "outputs": 2,
     "x": 410,
-    "y": 940,
+    "y": 840,
     "wires": [
       [
         "06737b5b192a39a8"
@@ -1148,7 +962,7 @@
     "to": "",
     "reg": false,
     "x": 670,
-    "y": 900,
+    "y": 800,
     "wires": [
       [
         "67d1083ee5ac4427"
@@ -1176,7 +990,7 @@
     "to": "",
     "reg": false,
     "x": 670,
-    "y": 980,
+    "y": 880,
     "wires": [
       [
         "67d1083ee5ac4427"
@@ -1195,7 +1009,7 @@
     "linkType": "static",
     "timeout": "30",
     "x": 930,
-    "y": 940,
+    "y": 840,
     "wires": [
       []
     ]
@@ -1223,7 +1037,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 440,
-    "y": 1220,
+    "y": 1120,
     "wires": [
       []
     ]
@@ -1235,7 +1049,7 @@
     "g": "2c760ae190629011",
     "name": "",
     "x": 170,
-    "y": 1220,
+    "y": 1120,
     "wires": [
       [
         "72cf3dd514774f5f"
@@ -1300,7 +1114,7 @@
       }
     ],
     "x": 130,
-    "y": 1080,
+    "y": 980,
     "wires": [
       [
         "694decc229ffefc0"
@@ -1316,7 +1130,7 @@
     "name": "Tittar inte på vilket läge",
     "info": "",
     "x": 160,
-    "y": 1120,
+    "y": 1020,
     "wires": []
   },
   {
@@ -1333,7 +1147,7 @@
       }
     ],
     "x": 330,
-    "y": 1080,
+    "y": 980,
     "wires": [
       [
         "8ae24a3cefea69b6"
@@ -1353,7 +1167,7 @@
     "stream": false,
     "addname": "",
     "x": 540,
-    "y": 1080,
+    "y": 980,
     "wires": [
       [
         "960bfb8e4169253b"
@@ -1373,7 +1187,7 @@
     "finalize": "",
     "libs": [],
     "x": 730,
-    "y": 1080,
+    "y": 980,
     "wires": [
       [
         "ada400995e3d7452"
@@ -1399,7 +1213,7 @@
       }
     ],
     "x": 940,
-    "y": 1080,
+    "y": 980,
     "wires": [
       []
     ]
@@ -1412,7 +1226,7 @@
     "name": "Sök upp personen istället",
     "info": "",
     "x": 390,
-    "y": 900,
+    "y": 800,
     "wires": []
   },
   {
@@ -1535,7 +1349,7 @@
     "name": "Vi skickar unika notiser, därför loopar vi",
     "info": "",
     "x": 610,
-    "y": 1120,
+    "y": 1020,
     "wires": []
   }
 ]
