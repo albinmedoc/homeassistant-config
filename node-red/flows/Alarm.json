@@ -23,7 +23,9 @@
       "f10a3c4729976592"
     ],
     "x": 34,
-    "y": 219
+    "y": 339,
+    "w": 752,
+    "h": 202
   },
   {
     "id": "75e39dcb53bdacc7",
@@ -36,10 +38,14 @@
     "nodes": [
       "0b509be3db326b86",
       "48c2925eb12eb26f",
-      "626dbc36ba45a1c4"
+      "626dbc36ba45a1c4",
+      "9b0337d5217d7ff0",
+      "34df5041832334e5"
     ],
     "x": 34,
-    "y": 119
+    "y": 179,
+    "w": 772,
+    "h": 142
   },
   {
     "id": "f3fabdf91855700f",
@@ -52,10 +58,14 @@
     "nodes": [
       "ae2f4571bf9c28d5",
       "7b9f40156304418e",
-      "59a1364f3a5958ea"
+      "59a1364f3a5958ea",
+      "7b76037c19231281",
+      "7183340c3aaababd"
     ],
     "x": 34,
-    "y": 19
+    "y": 19,
+    "w": 772,
+    "h": 142
   },
   {
     "id": "819624756ad5ddb3",
@@ -73,7 +83,9 @@
       "8b850efc4a432f90"
     ],
     "x": 34,
-    "y": 439
+    "y": 559,
+    "w": 762,
+    "h": 82
   },
   {
     "id": "dbf45413091d6098",
@@ -91,7 +103,9 @@
       "1543208147c778e2"
     ],
     "x": 34,
-    "y": 539
+    "y": 659,
+    "w": 782,
+    "h": 82
   },
   {
     "id": "66ec8226d6cd11e1",
@@ -108,7 +122,9 @@
       "5b5f16ca973f1b0e"
     ],
     "x": 34,
-    "y": 639
+    "y": 759,
+    "w": 752,
+    "h": 82
   },
   {
     "id": "ac4a5fa8ce361c85",
@@ -123,7 +139,9 @@
       "ee2aa044230da653"
     ],
     "x": 34,
-    "y": 1159
+    "y": 1279,
+    "w": 372,
+    "h": 82
   },
   {
     "id": "ea9720dad10ae7bd",
@@ -142,7 +160,9 @@
       "7bfda30ac040bd4c"
     ],
     "x": 34,
-    "y": 739
+    "y": 859,
+    "w": 1052,
+    "h": 162
   },
   {
     "id": "2c760ae190629011",
@@ -157,7 +177,9 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 1059
+    "y": 1179,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "0dae13e1d2f37ed0",
@@ -173,20 +195,23 @@
       "960bfb8e4169253b",
       "ada400995e3d7452",
       "28b7e3190283b558",
-      "f7768fbab71ef429"
+      "f7768fbab71ef429",
+      "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 919
+    "y": 1039,
+    "w": 1032,
+    "h": 122
   },
   {
     "id": "21fd8062b7da30b0",
     "type": "comment",
     "z": "9081c37be56bc95b",
     "g": "60a6418e9202f91b",
-    "name": "Förhoppningsvis ska det redan ha blivit avlarmat",
+    "name": "Förhoppningsvis ska det redan ha blivit avlarmat, men det är acceptabelt",
     "info": "",
-    "x": 240,
-    "y": 260,
+    "x": 320,
+    "y": 380,
     "wires": []
   },
   {
@@ -207,6 +232,9 @@
     "wires": [
       [
         "7b9f40156304418e"
+      ],
+      [
+        "7b76037c19231281"
       ]
     ]
   },
@@ -224,10 +252,13 @@
       }
     ],
     "x": 170,
-    "y": 160,
+    "y": 220,
     "wires": [
       [
         "48c2925eb12eb26f"
+      ],
+      [
+        "9b0337d5217d7ff0"
       ]
     ]
   },
@@ -294,7 +325,7 @@
       }
     ],
     "x": 160,
-    "y": 320,
+    "y": 440,
     "wires": [
       [
         "a80517abc44a8685"
@@ -365,7 +396,7 @@
       }
     ],
     "x": 170,
-    "y": 380,
+    "y": 500,
     "wires": [
       [
         "a80517abc44a8685"
@@ -411,7 +442,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 200,
-    "y": 480,
+    "y": 600,
     "wires": [
       [],
       [
@@ -432,7 +463,7 @@
     "finalize": "",
     "libs": [],
     "x": 410,
-    "y": 480,
+    "y": 600,
     "wires": [
       [
         "f40681a2f5d0b028"
@@ -462,7 +493,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 630,
-    "y": 480,
+    "y": 600,
     "wires": [
       [
         "8b850efc4a432f90"
@@ -507,7 +538,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 200,
-    "y": 580,
+    "y": 700,
     "wires": [
       [
         "8609e6abb78f8068"
@@ -528,7 +559,7 @@
     "finalize": "",
     "libs": [],
     "x": 410,
-    "y": 580,
+    "y": 700,
     "wires": [
       [
         "7eb0434ae2b4a93a"
@@ -558,7 +589,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 640,
-    "y": 580,
+    "y": 700,
     "wires": [
       [
         "1543208147c778e2"
@@ -573,7 +604,7 @@
     "name": "Aktivera larm med personkod",
     "links": [],
     "x": 75,
-    "y": 480,
+    "y": 600,
     "wires": [
       [
         "d802c477e4a883f3"
@@ -588,7 +619,7 @@
     "name": "Inaktivera larm med personkod",
     "links": [],
     "x": 75,
-    "y": 580,
+    "y": 700,
     "wires": [
       [
         "58d22ecab9d2941c"
@@ -607,7 +638,7 @@
     "linkType": "static",
     "timeout": "30",
     "x": 450,
-    "y": 320,
+    "y": 440,
     "wires": [
       [
         "f10a3c4729976592"
@@ -645,7 +676,7 @@
     "linkType": "static",
     "timeout": "30",
     "x": 470,
-    "y": 160,
+    "y": 220,
     "wires": [
       [
         "626dbc36ba45a1c4"
@@ -673,7 +704,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 690,
-    "y": 320,
+    "y": 440,
     "wires": [
       []
     ]
@@ -699,7 +730,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 710,
-    "y": 160,
+    "y": 220,
     "wires": [
       []
     ]
@@ -787,7 +818,7 @@
       }
     ],
     "x": 140,
-    "y": 680,
+    "y": 800,
     "wires": [
       [
         "203e8450084e2033"
@@ -833,7 +864,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 320,
-    "y": 680,
+    "y": 800,
     "wires": [
       [
         "32bbbe0572b23f77"
@@ -864,7 +895,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 500,
-    "y": 680,
+    "y": 800,
     "wires": [
       [
         "5b5f16ca973f1b0e"
@@ -892,7 +923,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 690,
-    "y": 680,
+    "y": 800,
     "wires": [
       []
     ]
@@ -954,7 +985,7 @@
       }
     ],
     "x": 130,
-    "y": 1200,
+    "y": 1320,
     "wires": [
       [
         "ee2aa044230da653"
@@ -983,7 +1014,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 310,
-    "y": 1200,
+    "y": 1320,
     "wires": [
       []
     ]
@@ -997,7 +1028,7 @@
     "mode": "return",
     "links": [],
     "x": 755,
-    "y": 480,
+    "y": 600,
     "wires": []
   },
   {
@@ -1009,7 +1040,7 @@
     "mode": "return",
     "links": [],
     "x": 775,
-    "y": 580,
+    "y": 700,
     "wires": []
   },
   {
@@ -1055,7 +1086,7 @@
       }
     ],
     "x": 150,
-    "y": 820,
+    "y": 940,
     "wires": [
       [
         "283aacb4926f7f3b"
@@ -1086,7 +1117,7 @@
     "repair": false,
     "outputs": 2,
     "x": 410,
-    "y": 820,
+    "y": 940,
     "wires": [
       [
         "06737b5b192a39a8"
@@ -1117,7 +1148,7 @@
     "to": "",
     "reg": false,
     "x": 670,
-    "y": 780,
+    "y": 900,
     "wires": [
       [
         "67d1083ee5ac4427"
@@ -1145,7 +1176,7 @@
     "to": "",
     "reg": false,
     "x": 670,
-    "y": 860,
+    "y": 980,
     "wires": [
       [
         "67d1083ee5ac4427"
@@ -1164,7 +1195,7 @@
     "linkType": "static",
     "timeout": "30",
     "x": 930,
-    "y": 820,
+    "y": 940,
     "wires": [
       []
     ]
@@ -1192,7 +1223,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 440,
-    "y": 1100,
+    "y": 1220,
     "wires": [
       []
     ]
@@ -1204,11 +1235,12 @@
     "g": "2c760ae190629011",
     "name": "",
     "x": 170,
-    "y": 1100,
+    "y": 1220,
     "wires": [
       [
         "72cf3dd514774f5f"
-      ]
+      ],
+      []
     ]
   },
   {
@@ -1268,7 +1300,7 @@
       }
     ],
     "x": 130,
-    "y": 960,
+    "y": 1080,
     "wires": [
       [
         "694decc229ffefc0"
@@ -1284,7 +1316,7 @@
     "name": "Tittar inte på vilket läge",
     "info": "",
     "x": 160,
-    "y": 1000,
+    "y": 1120,
     "wires": []
   },
   {
@@ -1301,7 +1333,7 @@
       }
     ],
     "x": 330,
-    "y": 960,
+    "y": 1080,
     "wires": [
       [
         "8ae24a3cefea69b6"
@@ -1321,7 +1353,7 @@
     "stream": false,
     "addname": "",
     "x": 540,
-    "y": 960,
+    "y": 1080,
     "wires": [
       [
         "960bfb8e4169253b"
@@ -1341,7 +1373,7 @@
     "finalize": "",
     "libs": [],
     "x": 730,
-    "y": 960,
+    "y": 1080,
     "wires": [
       [
         "ada400995e3d7452"
@@ -1367,7 +1399,7 @@
       }
     ],
     "x": 940,
-    "y": 960,
+    "y": 1080,
     "wires": [
       []
     ]
@@ -1380,7 +1412,130 @@
     "name": "Sök upp personen istället",
     "info": "",
     "x": 390,
-    "y": 780,
+    "y": 900,
+    "wires": []
+  },
+  {
+    "id": "7b76037c19231281",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "Inaktivera larm som gäst",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarmo",
+    "service": "disarm",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "alarm_control_panel.alarmo"
+    ],
+    "data": "{\t    \"code\": $globalContext(\"lock_code_guest\")\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 450,
+    "y": 120,
+    "wires": [
+      [
+        "7183340c3aaababd"
+      ]
+    ]
+  },
+  {
+    "id": "9b0337d5217d7ff0",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "Aktivera larm som gäst",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarmo",
+    "service": "arm",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "alarm_control_panel.alarmo"
+    ],
+    "data": "{\t    \"code\": $globalContext(\"lock_code_guest\"),\t    \"mode\": \"away\",\t    \"skip_delay\": true,\t    \"force\": true\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 440,
+    "y": 280,
+    "wires": [
+      [
+        "34df5041832334e5"
+      ]
+    ]
+  },
+  {
+    "id": "7183340c3aaababd",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "parents",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \"Gäst(er) har kommit hem\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 710,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "34df5041832334e5",
+    "type": "api-call-service",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "Skicka notis",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "parents",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"title\": \"Larm aktiverat\",\t    \"message\": \"Gäst(er) har lämnat hem\"\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 710,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "99b7a838b172040f",
+    "type": "comment",
+    "z": "9081c37be56bc95b",
+    "g": "0dae13e1d2f37ed0",
+    "name": "Vi skickar unika notiser, därför loopar vi",
+    "info": "",
+    "x": 610,
+    "y": 1120,
     "wires": []
   }
 ]
