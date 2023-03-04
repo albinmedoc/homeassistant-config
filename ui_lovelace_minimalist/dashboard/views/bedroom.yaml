@@ -28,7 +28,7 @@ cards:
           ulm_card_graph_group_by: interval
       - type: "custom:button-card"
         template: card_media_player
-        entity: media_player.tv_sovrum
+        entity: media_player.tv_bedroom
         variables:
           ulm_card_media_player_name: TV
           ulm_card_media_player_enable_art: true

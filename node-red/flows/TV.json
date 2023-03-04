@@ -21,7 +21,9 @@
       "dd89f3d78cc0ddc4"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 732,
+    "h": 82
   },
   {
     "id": "8d64418785067593",
@@ -41,7 +43,9 @@
       "1c6e050d5d9776e4"
     ],
     "x": 34,
-    "y": 159
+    "y": 159,
+    "w": 712,
+    "h": 222
   },
   {
     "id": "e0ef91ffabc79baa",
@@ -187,7 +191,7 @@
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "ChromeCast av 5 min",
+    "name": "ChromeCast av",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -210,7 +214,7 @@
     "halt_if_compare": "is",
     "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "5",
+    "for": "0",
     "forType": "num",
     "forUnits": "minutes",
     "ignorePrevStateNull": false,
@@ -238,7 +242,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 160,
+    "x": 140,
     "y": 260,
     "wires": [
       [
@@ -388,7 +392,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 410,
+    "x": 370,
     "y": 260,
     "wires": [
       []
@@ -441,7 +445,7 @@
         "value": ""
       }
     ],
-    "entityidfilter": "media_player.tv_sovrum",
+    "entityidfilter": "media_player.tv_bedroom",
     "entityidfiltertype": "exact",
     "outputinitially": false,
     "state_type": "str",

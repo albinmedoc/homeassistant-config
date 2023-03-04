@@ -28,7 +28,7 @@
     light.all_toilet: "off"
     light.all_conservatory: "off"
     media_player.tv_living_room: "off"
-    media_player.tv_sovrum: "off"
+    media_player.tv_bedroom: "off"
 - id: bde84642-1abd-4db8-9c71-e8dbd7bea799
   name: Godnatt
   icon: mdi:sleep

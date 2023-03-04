@@ -114,7 +114,7 @@
         - service: media_player.toggle
           data: {}
           target:
-            entity_id: media_player.tv_sovrum
+            entity_id: media_player.tv_bedroom
       action_button_down_short:
         - type: turn_on
           device_id: fc6ab062501184a599762c445fa1c691
@@ -129,7 +129,7 @@
         - service: media_player.toggle
           data: {}
           target:
-            entity_id: media_player.tv_sovrum
+            entity_id: media_player.tv_bedroom
       button_up_double_press: true
       button_down_double_press: true
       helper_double_press_delay: 1000
