@@ -120,7 +120,7 @@
       "ee2aa044230da653"
     ],
     "x": 34,
-    "y": 1179,
+    "y": 1099,
     "w": 372,
     "h": 82
   },
@@ -134,16 +134,13 @@
     },
     "nodes": [
       "daf827e5ff247e6a",
-      "283aacb4926f7f3b",
-      "06737b5b192a39a8",
-      "71e1f5cac1cb11c5",
       "67d1083ee5ac4427",
-      "7bfda30ac040bd4c"
+      "c57913cb5ac2c4b7"
     ],
     "x": 34,
     "y": 759,
-    "w": 1052,
-    "h": 162
+    "w": 792,
+    "h": 82
   },
   {
     "id": "2c760ae190629011",
@@ -158,7 +155,7 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 1079,
+    "y": 999,
     "w": 552,
     "h": 82
   },
@@ -180,7 +177,7 @@
       "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 939,
+    "y": 859,
     "w": 1032,
     "h": 122
   },
@@ -799,7 +796,7 @@
       }
     ],
     "x": 130,
-    "y": 1220,
+    "y": 1140,
     "wires": [
       [
         "ee2aa044230da653"
@@ -828,7 +825,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 310,
-    "y": 1220,
+    "y": 1140,
     "wires": [
       []
     ]
@@ -900,100 +897,10 @@
       }
     ],
     "x": 150,
-    "y": 840,
-    "wires": [
-      [
-        "283aacb4926f7f3b"
-      ]
-    ]
-  },
-  {
-    "id": "283aacb4926f7f3b",
-    "type": "switch",
-    "z": "9081c37be56bc95b",
-    "g": "ea9720dad10ae7bd",
-    "name": "Inaktivera larm action? person?",
-    "property": "payload.event.action",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "DISARM_ALBIN",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "DISARM_MATILDA",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 410,
-    "y": 840,
-    "wires": [
-      [
-        "06737b5b192a39a8"
-      ],
-      [
-        "71e1f5cac1cb11c5"
-      ]
-    ]
-  },
-  {
-    "id": "06737b5b192a39a8",
-    "type": "change",
-    "z": "9081c37be56bc95b",
-    "g": "ea9720dad10ae7bd",
-    "name": "Sätt person Albin",
-    "rules": [
-      {
-        "t": "set",
-        "p": "person",
-        "pt": "msg",
-        "to": "person.albin",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 670,
     "y": 800,
     "wires": [
       [
-        "67d1083ee5ac4427"
-      ]
-    ]
-  },
-  {
-    "id": "71e1f5cac1cb11c5",
-    "type": "change",
-    "z": "9081c37be56bc95b",
-    "g": "ea9720dad10ae7bd",
-    "name": "Sätt person Matilda",
-    "rules": [
-      {
-        "t": "set",
-        "p": "person",
-        "pt": "msg",
-        "to": "person.matilda",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 670,
-    "y": 880,
-    "wires": [
-      [
-        "67d1083ee5ac4427"
+        "c57913cb5ac2c4b7"
       ]
     ]
   },
@@ -1008,8 +915,8 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 930,
-    "y": 840,
+    "x": 670,
+    "y": 800,
     "wires": [
       []
     ]
@@ -1037,7 +944,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 440,
-    "y": 1120,
+    "y": 1040,
     "wires": [
       []
     ]
@@ -1049,7 +956,7 @@
     "g": "2c760ae190629011",
     "name": "",
     "x": 170,
-    "y": 1120,
+    "y": 1040,
     "wires": [
       [
         "72cf3dd514774f5f"
@@ -1114,7 +1021,7 @@
       }
     ],
     "x": 130,
-    "y": 980,
+    "y": 900,
     "wires": [
       [
         "694decc229ffefc0"
@@ -1130,7 +1037,7 @@
     "name": "Tittar inte på vilket läge",
     "info": "",
     "x": 160,
-    "y": 1020,
+    "y": 940,
     "wires": []
   },
   {
@@ -1147,7 +1054,7 @@
       }
     ],
     "x": 330,
-    "y": 980,
+    "y": 900,
     "wires": [
       [
         "8ae24a3cefea69b6"
@@ -1167,7 +1074,7 @@
     "stream": false,
     "addname": "",
     "x": 540,
-    "y": 980,
+    "y": 900,
     "wires": [
       [
         "960bfb8e4169253b"
@@ -1187,7 +1094,7 @@
     "finalize": "",
     "libs": [],
     "x": 730,
-    "y": 980,
+    "y": 900,
     "wires": [
       [
         "ada400995e3d7452"
@@ -1213,21 +1120,10 @@
       }
     ],
     "x": 940,
-    "y": 980,
+    "y": 900,
     "wires": [
       []
     ]
-  },
-  {
-    "id": "7bfda30ac040bd4c",
-    "type": "comment",
-    "z": "9081c37be56bc95b",
-    "g": "ea9720dad10ae7bd",
-    "name": "Sök upp personen istället",
-    "info": "",
-    "x": 390,
-    "y": 800,
-    "wires": []
   },
   {
     "id": "7b76037c19231281",
@@ -1349,7 +1245,27 @@
     "name": "Vi skickar unika notiser, därför loopar vi",
     "info": "",
     "x": 610,
-    "y": 1020,
+    "y": 940,
     "wires": []
+  },
+  {
+    "id": "c57913cb5ac2c4b7",
+    "type": "function",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Hämta person från Action",
+    "func": "const action_name = msg.payload.event.action;\nconst person = action_name.split('DISARM_')[1].toLowerCase()\nconst person_entity_id = `person.${person}`;\n\nreturn {\n    person: person_entity_id\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 390,
+    "y": 800,
+    "wires": [
+      [
+        "67d1083ee5ac4427"
+      ]
+    ]
   }
 ]
