@@ -13,6 +13,8 @@ cards:
       - title: Vardagsrum
       - motion_sensor: binary_sensor.motion_living_room
       - lights: light.all_living_room
+      - televisions: media_player.televisions_living_room
+      - speakers: media_player.speakers_living_room
 
   - type: "horizontal-stack"
     cards:

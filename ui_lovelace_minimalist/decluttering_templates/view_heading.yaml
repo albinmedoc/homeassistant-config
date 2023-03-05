@@ -1,6 +1,14 @@
 ---
 # Heading used for every view
 # View title, back button, etc
+#
+# Variables
+#   title: The title of the view
+#   motion_sensor?: A motion sensor for the room
+#   lights?: A light group for the lights in the room
+#   televisions?: A media player group for televisions in the room
+#   speakers?: A media player group for speakers in the room
+
 card:
   type: vertical-stack
   cards:
@@ -29,6 +37,8 @@ card:
               ulm_chip_mdi_icon_only_entity: "[[motion_sensor]]"
               ulm_chip_mdi_icon_only_icon: mdi:motion-sensor
               ulm_chip_mdi_icon_only_icon_color: "rgba(var(--color-blue),1)"
+
+        # Lights on
         - type: conditional
           conditions:
             - entity: "[[lights]]"
@@ -39,3 +49,45 @@ card:
             entity: "[[lights]]"
             variables:
               ulm_custom_card_group_counter_chip_hide_if_zero: true
+
+        # Televisions on
+        - type: conditional
+          conditions:
+            - entity: "[[televisions]]"
+              state_not: "unavailable"
+          card:
+            type: "custom:button-card"
+            template: custom_card_group_counter_chip
+            entity: "[[televisions]]"
+            variables:
+              ulm_custom_card_group_counter_chip_hide_if_zero: true
+              ulm_custom_card_group_counter_chip_type: television
+              ulm_custom_card_group_counter_chip_count_state:
+                - "on"
+                - "idle"
+                - "buffering"
+                - "playing"
+              ulm_custom_card_group_counter_chip_color: blue
+              ulm_custom_card_group_counter_chip_icon_zero: "mdi:television"
+              ulm_custom_card_group_counter_chip_icon_one: "mdi:television"
+              ulm_custom_card_group_counter_chip_icon_multiple: "mdi:television"
+
+        # Speakers on
+        - type: conditional
+          conditions:
+            - entity: "[[speakers]]"
+              state_not: "unavailable"
+          card:
+            type: "custom:button-card"
+            template: custom_card_group_counter_chip
+            entity: "[[speakers]]"
+            variables:
+              ulm_custom_card_group_counter_chip_hide_if_zero: true
+              ulm_custom_card_group_counter_chip_type: speaker
+              ulm_custom_card_group_counter_chip_count_state:
+                - "playing"
+                - "buffering"
+              ulm_custom_card_group_counter_chip_color: green
+              ulm_custom_card_group_counter_chip_icon_zero: "mdi:speaker"
+              ulm_custom_card_group_counter_chip_icon_one: "mdi:speaker"
+              ulm_custom_card_group_counter_chip_icon_multiple: "mdi:speaker-multiple"

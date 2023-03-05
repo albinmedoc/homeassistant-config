@@ -12,6 +12,7 @@ cards:
     variables:
       - title: Kök
       - lights: light.all_kitchen
+      - speakers: media_player.speakers_kitchen
 
   - type: "custom:button-card"
     template: card_title

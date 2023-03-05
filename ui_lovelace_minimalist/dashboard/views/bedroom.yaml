@@ -13,6 +13,7 @@ cards:
       - title: Sovrum
       - motion_sensor: binary_sensor.motion_bedroom
       - lights: light.all_bedroom
+      - televisions: media_player.televisions_bedroom
 
   - type: "horizontal-stack"
     cards:
