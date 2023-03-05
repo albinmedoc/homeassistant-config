@@ -10,13 +10,12 @@ name: "TV Living room"
 children:
   - media_player.samsung_tv_living_room
   - media_player.apple_tv_living_room
-state_template: "{{ states('input_boolean.tv_living_room_on') }}"
-#  {% if is_state('input_boolean.tv_living_room_on', 'off') %}
-#    off
-#  {% else %}
-#    {{ states('media_player.apple_tv_living_room') }}
-#    # Kanske ska kolla vilken källa och då även titta på ps4
-#  {% endif %}
+state_template: >
+  {% if is_state('input_boolean.tv_living_room_on', 'off') %}
+    off
+  {% else %}
+    {{ states('media_player.apple_tv_living_room') }}
+  {% endif %}
 commands:
   turn_on:
     service: script.turn_on_tv_living_room
@@ -48,7 +47,6 @@ commands:
     target:
       entity_id: media_player.samsung_tv_vardagsrum
 attributes:
-  state: media_player.samsung_tv_vardagsrum|state
   is_volume_muted: media_player.samsung_tv_vardagsrum|is_volume_muted
   volume_level: media_player.samsung_tv_vardagsrum|volume_level
   source: media_player.samsung_tv_vardagsrum|source
