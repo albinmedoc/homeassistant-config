@@ -62,6 +62,52 @@
     "h": 142
   },
   {
+    "id": "bbd84bc50923a84f",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Frigate detektering",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "ccfdabb36bf314d2",
+      "e4a2ce528b9eb841",
+      "7d152dff6670950b",
+      "46707d8fbc8cdf54",
+      "6253d88f8b95acbe",
+      "450f3e12c9f7e11b",
+      "4c15814e70f47579",
+      "c22c4a091c121592"
+    ],
+    "x": 34,
+    "y": 199,
+    "w": 692,
+    "h": 508
+  },
+  {
+    "id": "384d969dab2710bb",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Frigate inspelning",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "d90ecb4205af9b69",
+      "76e453d16259e34b",
+      "26a04b9654bfe18e",
+      "19d5e7e3285a71f6",
+      "0764ac1f525a600f",
+      "8c5330dd8b9d52fd",
+      "134b62539f8035ac",
+      "e0c7aabaefb211b0"
+    ],
+    "x": 34,
+    "y": 739,
+    "w": 692,
+    "h": 428
+  },
+  {
     "id": "4c15814e70f47579",
     "type": "group",
     "z": "896b946718d5907e",
@@ -100,52 +146,6 @@
     "y": 559,
     "w": 552,
     "h": 122
-  },
-  {
-    "id": "bbd84bc50923a84f",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Frigate detektering",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "ccfdabb36bf314d2",
-      "e4a2ce528b9eb841",
-      "7d152dff6670950b",
-      "46707d8fbc8cdf54",
-      "6253d88f8b95acbe",
-      "450f3e12c9f7e11b",
-      "4c15814e70f47579",
-      "c22c4a091c121592"
-    ],
-    "x": 34,
-    "y": 199,
-    "w": 692,
-    "h": 508
-  },
-  {
-    "id": "384d969dab2710bb",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Frigate detektering",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "d90ecb4205af9b69",
-      "76e453d16259e34b",
-      "26a04b9654bfe18e",
-      "19d5e7e3285a71f6",
-      "0764ac1f525a600f",
-      "8c5330dd8b9d52fd",
-      "134b62539f8035ac",
-      "e0c7aabaefb211b0"
-    ],
-    "x": 34,
-    "y": 739,
-    "w": 692,
-    "h": 428
   },
   {
     "id": "134b62539f8035ac",
