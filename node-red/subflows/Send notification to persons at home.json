@@ -2,7 +2,7 @@
   {
     "id": "c0dcc6a2aeb58851",
     "type": "subflow",
-    "name": "Skicka notis till personer hemma",
+    "name": "Send notification to persons at home",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 960,
+        "x": 980,
         "y": 60,
         "wires": [
           {
@@ -84,7 +84,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 960,
+      "x": 980,
       "y": 140,
       "wires": [
         {
@@ -118,7 +118,7 @@
     "id": "d22c0752c41e771d",
     "type": "subflow:6be012d64f25f43f",
     "z": "c0dcc6a2aeb58851",
-    "name": "Skicka notis till personer",
+    "name": "",
     "env": [
       {
         "name": "persons",
@@ -136,7 +136,7 @@
         "type": "str"
       }
     ],
-    "x": 630,
+    "x": 640,
     "y": 60,
     "wires": [
       [
@@ -149,14 +149,14 @@
     "id": "6fec81bf15051b42",
     "type": "function",
     "z": "c0dcc6a2aeb58851",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "let text = 'No persons home';\nlet color = 'red';\n\nif (msg.services.length > 0) {\n    text = msg.services.join(', ');\n    color = 'green';\n}\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 830,
+    "x": 840,
     "y": 140,
     "wires": [
       []
@@ -202,7 +202,7 @@
         "module": "selectn"
       }
     ],
-    "x": 840,
+    "x": 860,
     "y": 60,
     "wires": [
       []

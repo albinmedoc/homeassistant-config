@@ -11,7 +11,7 @@
     "id": "01342c3d53a6371c",
     "type": "group",
     "z": "7c1b8ecc3bcbbebd",
-    "name": "Taklampa Sovrum",
+    "name": "Ceiling lamp Bedroom",
     "style": {
       "label": true
     },
@@ -24,13 +24,15 @@
       "3191172f2275f0d6"
     ],
     "x": 34,
-    "y": 259
+    "y": 359,
+    "w": 412,
+    "h": 302
   },
   {
     "id": "906392ec964d3dab",
     "type": "group",
     "z": "7c1b8ecc3bcbbebd",
-    "name": "Vardagsrum Soffa",
+    "name": "Living room Sofa",
     "style": {
       "label": true
     },
@@ -43,13 +45,15 @@
       "d5f851c978157a9f"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 472,
+    "h": 302
   },
   {
     "id": "657a994829f4573f",
     "type": "group",
     "z": "7c1b8ecc3bcbbebd",
-    "name": "Hall 3",
+    "name": "Hallway 3",
     "style": {
       "label": true
     },
@@ -62,13 +66,15 @@
       "3835fda3ddccfb06"
     ],
     "x": 34,
-    "y": 919
+    "y": 1319,
+    "w": 412,
+    "h": 302
   },
   {
     "id": "a41dac5adac5421d",
     "type": "group",
     "z": "7c1b8ecc3bcbbebd",
-    "name": "Hall 2",
+    "name": "Hallway 2",
     "style": {
       "label": true
     },
@@ -81,13 +87,15 @@
       "e2d369938e7b43be"
     ],
     "x": 34,
-    "y": 699
+    "y": 999,
+    "w": 412,
+    "h": 302
   },
   {
     "id": "e08ca9117ba9237c",
     "type": "group",
     "z": "7c1b8ecc3bcbbebd",
-    "name": "Hall Entré",
+    "name": "Hallway Entrance",
     "style": {
       "label": true
     },
@@ -100,14 +108,16 @@
       "dccec8a7a80e5d82"
     ],
     "x": 34,
-    "y": 479
+    "y": 679,
+    "w": 472,
+    "h": 302
   },
   {
     "id": "3e917487f9509efc",
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Brytare Sovrum",
+    "name": "Switch Bedroom",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -159,7 +169,7 @@
       }
     ],
     "x": 140,
-    "y": 320,
+    "y": 440,
     "wires": [
       [
         "d333661181e8ccf5"
@@ -174,7 +184,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Tänd lampa",
+    "name": "Turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -191,8 +201,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 300,
+    "x": 330,
+    "y": 400,
     "wires": [
       []
     ]
@@ -202,7 +212,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Släck lampa",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -219,8 +229,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 340,
+    "x": 330,
+    "y": 480,
     "wires": [
       []
     ]
@@ -230,7 +240,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Lampa Sovrum",
+    "name": "Lamp Bedroom",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -282,7 +292,7 @@
       }
     ],
     "x": 140,
-    "y": 400,
+    "y": 580,
     "wires": [
       [
         "83cd2c752c8e4186"
@@ -297,7 +307,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Slå på brytare",
+    "name": "Turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -314,8 +324,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 380,
+    "x": 340,
+    "y": 540,
     "wires": [
       []
     ]
@@ -325,7 +335,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Slå av brytare",
+    "name": "Turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -342,8 +352,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 420,
+    "x": 340,
+    "y": 620,
     "wires": [
       []
     ]
@@ -353,7 +363,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Brytare Vardagsrum soffa",
+    "name": "Switch Living room Sofa",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -405,7 +415,7 @@
       }
     ],
     "x": 170,
-    "y": 100,
+    "y": 120,
     "wires": [
       [
         "9e1ab61fc84c0359"
@@ -420,7 +430,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Tänd lampa",
+    "name": "Turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -437,7 +447,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
+    "x": 390,
     "y": 80,
     "wires": [
       []
@@ -448,7 +458,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Släck lampa",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -465,8 +475,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 120,
+    "x": 390,
+    "y": 160,
     "wires": [
       []
     ]
@@ -476,7 +486,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Lampa Vardagsrum soffa",
+    "name": "Lamp Living room Sofa",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -527,8 +537,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 170,
-    "y": 180,
+    "x": 160,
+    "y": 260,
     "wires": [
       [
         "32130c10373961a5"
@@ -543,7 +553,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Slå på brytare",
+    "name": "Turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -560,8 +570,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 160,
+    "x": 400,
+    "y": 220,
     "wires": [
       []
     ]
@@ -571,7 +581,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Slå av brytare",
+    "name": "Turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -588,8 +598,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 200,
+    "x": 400,
+    "y": 300,
     "wires": [
       []
     ]
@@ -599,7 +609,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Brytare Hall 3",
+    "name": "Switch Hallway 3",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -650,8 +660,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 980,
+    "x": 140,
+    "y": 1400,
     "wires": [
       [
         "4507b1e2cb8085fc"
@@ -666,7 +676,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Tänd lampa",
+    "name": "Turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -683,8 +693,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 960,
+    "x": 330,
+    "y": 1360,
     "wires": [
       []
     ]
@@ -694,7 +704,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Släck lampa",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -711,8 +721,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 1000,
+    "x": 330,
+    "y": 1440,
     "wires": [
       []
     ]
@@ -722,7 +732,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Lampa Hall 3",
+    "name": "Lamp Hallway 3",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -773,8 +783,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 1060,
+    "x": 140,
+    "y": 1540,
     "wires": [
       [
         "e42beba3e8afcc2d"
@@ -789,7 +799,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Slå på brytare",
+    "name": "Turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -806,8 +816,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 1040,
+    "x": 340,
+    "y": 1500,
     "wires": [
       []
     ]
@@ -817,7 +827,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Slå av brytare",
+    "name": "Turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -834,8 +844,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 1080,
+    "x": 340,
+    "y": 1580,
     "wires": [
       []
     ]
@@ -845,7 +855,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Brytare Hall 2",
+    "name": "Switch Hallway 2",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -896,8 +906,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 760,
+    "x": 140,
+    "y": 1080,
     "wires": [
       [
         "3d616dfc706c76af"
@@ -912,7 +922,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Tänd lampa",
+    "name": "Turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -929,8 +939,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 740,
+    "x": 330,
+    "y": 1040,
     "wires": [
       []
     ]
@@ -940,7 +950,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Släck lampa",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -957,8 +967,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 780,
+    "x": 330,
+    "y": 1120,
     "wires": [
       []
     ]
@@ -968,7 +978,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Lampa Hall 2",
+    "name": "Lamp Hallway 2",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1019,8 +1029,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 840,
+    "x": 140,
+    "y": 1220,
     "wires": [
       [
         "f350126776b8d2bf"
@@ -1035,7 +1045,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Slå på brytare",
+    "name": "Turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1052,8 +1062,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 820,
+    "x": 340,
+    "y": 1180,
     "wires": [
       []
     ]
@@ -1063,7 +1073,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "a41dac5adac5421d",
-    "name": "Slå av brytare",
+    "name": "Turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1080,8 +1090,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 860,
+    "x": 340,
+    "y": 1260,
     "wires": [
       []
     ]
@@ -1091,7 +1101,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Brytare Entré",
+    "name": "Switch Hallway Entrance",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1142,8 +1152,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 540,
+    "x": 170,
+    "y": 760,
     "wires": [
       [
         "d0e4cb73260a397a"
@@ -1158,7 +1168,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Tänd lampa",
+    "name": "Turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1175,8 +1185,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 520,
+    "x": 390,
+    "y": 720,
     "wires": [
       []
     ]
@@ -1186,7 +1196,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Släck lampa",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1203,8 +1213,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 560,
+    "x": 390,
+    "y": 800,
     "wires": [
       []
     ]
@@ -1214,7 +1224,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Lampa Entré",
+    "name": "Lamp Hallway Entrance",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1265,8 +1275,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 620,
+    "x": 160,
+    "y": 900,
     "wires": [
       [
         "1bf087c0a818fcbd"
@@ -1281,7 +1291,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Slå på brytare",
+    "name": "Turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1298,8 +1308,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 600,
+    "x": 400,
+    "y": 860,
     "wires": [
       []
     ]
@@ -1309,7 +1319,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Slå av brytare",
+    "name": "Turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1326,8 +1336,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 460,
-    "y": 640,
+    "x": 400,
+    "y": 940,
     "wires": [
       []
     ]

@@ -11,7 +11,7 @@
     "id": "178bf0b9061d0b5b",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare på",
+    "name": "Wallswitch on",
     "style": {
       "label": true
     },
@@ -22,13 +22,15 @@
       "e8f575e5dd5428a1"
     ],
     "x": 34,
-    "y": 559
+    "y": 559,
+    "w": 612,
+    "h": 142
   },
   {
     "id": "b9ecb733de105962",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare av",
+    "name": "Wallswitch off",
     "style": {
       "label": true
     },
@@ -39,13 +41,15 @@
       "30f1bd684c99b7de"
     ],
     "x": 34,
-    "y": 399
+    "y": 399,
+    "w": 832,
+    "h": 142
   },
   {
     "id": "83c104c1e200db9f",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Tidsintervall",
+    "name": "Time interval",
     "style": {
       "label": true
     },
@@ -56,13 +60,15 @@
       "f011b702bd2a1309"
     ],
     "x": 34,
-    "y": 239
+    "y": 239,
+    "w": 372,
+    "h": 142
   },
   {
     "id": "0bb729de77f60250",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Ändra färg",
+    "name": "Change color",
     "style": {
       "label": true
     },
@@ -71,13 +77,15 @@
       "0446ec6e9dda92d9"
     ],
     "x": 514,
-    "y": 199
+    "y": 199,
+    "w": 172,
+    "h": 142
   },
   {
     "id": "832ac7f7a2975116",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Slå på nattlampa",
+    "name": "Turn on nightlamp",
     "style": {
       "label": true
     },
@@ -86,13 +94,15 @@
       "245925ea62837296"
     ],
     "x": 34,
-    "y": 139
+    "y": 139,
+    "w": 372,
+    "h": 82
   },
   {
     "id": "8f2e68f12915ae99",
     "type": "group",
     "z": "1f26ba8a27c1477d",
-    "name": "Slå av nattlampa",
+    "name": "Turn off nightlamp",
     "style": {
       "label": true
     },
@@ -102,7 +112,9 @@
       "7e6877fe8a6653d6"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 612,
+    "h": 82
   },
   {
     "id": "b8fe64363b5fef34",
@@ -169,7 +181,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
-    "name": "Nattlampa på?",
+    "name": "Nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -215,7 +227,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
-    "name": "Nattlampa på?",
+    "name": "Nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -261,7 +273,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Väggknapp På",
+    "name": "Wallswitch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -312,7 +324,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 130,
     "y": 600,
     "wires": [
       [
@@ -327,7 +339,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": " Väggknapp Av",
+    "name": "Wallswitch off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -378,7 +390,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 130,
     "y": 480,
     "wires": [
       [
@@ -392,7 +404,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Taklampa På",
+    "name": "Turn on ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -409,7 +421,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
+    "x": 360,
     "y": 660,
     "wires": [
       []
@@ -420,7 +432,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": "Taklampa Av",
+    "name": "Turn off ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -437,7 +449,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 710,
+    "x": 740,
     "y": 500,
     "wires": [
       []
@@ -448,7 +460,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Nattlampa Av",
+    "name": "Turn off nightlamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -465,7 +477,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 520,
+    "x": 530,
     "y": 600,
     "wires": [
       []
@@ -476,7 +488,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "0bb729de77f60250",
-    "name": "Taklampa Röd",
+    "name": "Set red",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -493,7 +505,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 620,
+    "x": 600,
     "y": 300,
     "wires": [
       []
@@ -504,7 +516,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "0bb729de77f60250",
-    "name": "Taklampa Grön",
+    "name": "Set green",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -521,7 +533,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 620,
+    "x": 600,
     "y": 240,
     "wires": [
       []
@@ -532,7 +544,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": "Nattlampa på?",
+    "name": "Nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -580,7 +592,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "832ac7f7a2975116",
-    "name": "Nattlampa På",
+    "name": "Nightlamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -645,7 +657,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "8f2e68f12915ae99",
-    "name": "Nattlampa Av",
+    "name": "Nightlamp off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -710,7 +722,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "8f2e68f12915ae99",
-    "name": "Taklampa Av",
+    "name": "Turn off ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -727,7 +739,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 490,
+    "x": 520,
     "y": 80,
     "wires": [
       []
@@ -823,7 +835,7 @@
     "id": "525054d275a4df1b",
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
-    "name": "Lampa på",
+    "name": "Lamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -887,7 +899,7 @@
     "id": "f8fd07aa892e1f9b",
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare av?",
+    "name": "Wallswitch off?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -932,7 +944,7 @@
     "id": "a7e8eebd90a38474",
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare på",
+    "name": "Wallswitch on",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -959,7 +971,7 @@
     "id": "d5fd42e1cafddab6",
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
-    "name": "Lampa av",
+    "name": "Lamp off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1023,7 +1035,7 @@
     "id": "1c94d6a848b49a31",
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare på?",
+    "name": "Wallswitch on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -1068,7 +1080,7 @@
     "id": "083229431baf9d69",
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Nattlampa aktiv?",
+    "name": "Nightlamp active?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -1113,7 +1125,7 @@
     "id": "905b14865fdbd2b9",
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
-    "name": "Väggbrytare av",
+    "name": "Wallswitch off",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1140,7 +1152,7 @@
     "id": "7c8c145290d75f7f",
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Nattlampa aktiv?",
+    "name": "Nightlamp active?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,

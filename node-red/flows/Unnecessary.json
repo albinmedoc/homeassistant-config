@@ -11,7 +11,7 @@
     "id": "87f9c3202c8c5ccc",
     "type": "group",
     "z": "cd9a5746e1f519c9",
-    "name": "Notis till albin när matilda lämnar jobb",
+    "name": "Notify Albin when Matilda leaves work",
     "style": {
       "label": true
     },
@@ -21,13 +21,15 @@
       "4dbb2d100e9c7495"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 692,
+    "h": 82
   },
   {
     "id": "50b6ce68ea1dbe94",
     "type": "group",
     "z": "cd9a5746e1f519c9",
-    "name": "Välkomna personen som kommer hem",
+    "name": "Welcome the person(s) coming home",
     "style": {
       "label": true
     },
@@ -41,14 +43,16 @@
       "9e24eaa95fb2667a"
     ],
     "x": 34,
-    "y": 139
+    "y": 139,
+    "w": 372,
+    "h": 442
   },
   {
     "id": "8dd22f7676bd5610",
     "type": "ha-zone",
     "z": "cd9a5746e1f519c9",
     "g": "87f9c3202c8c5ccc",
-    "name": "Matilda lämnar jobb",
+    "name": "Matilda leaves work",
     "server": "e9739673.bbfed8",
     "version": 0,
     "exposeToHomeAssistant": false,
@@ -82,7 +86,7 @@
     "type": "api-current-state",
     "z": "cd9a5746e1f519c9",
     "g": "87f9c3202c8c5ccc",
-    "name": "Albin är hemma",
+    "name": "Albin is home",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -132,7 +136,7 @@
     "type": "api-call-service",
     "z": "cd9a5746e1f519c9",
     "g": "87f9c3202c8c5ccc",
-    "name": "Skicka notis till Albin",
+    "name": "Send notification to Albin",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -147,7 +151,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 580,
+    "x": 590,
     "y": 80,
     "wires": [
       []
@@ -158,7 +162,7 @@
     "type": "ha-wait-until",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Vänta tills dörren öppnas",
+    "name": "Wait for the front door to open",
     "server": "e9739673.bbfed8",
     "version": 2,
     "outputs": 2,
@@ -176,7 +180,7 @@
     "outputProperties": [],
     "entityLocation": "data",
     "entityLocationType": "none",
-    "x": 170,
+    "x": 190,
     "y": 240,
     "wires": [
       [
@@ -190,7 +194,7 @@
     "type": "function",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Beräkna intervall (-3 min)",
+    "name": "Calculate interval (-3 min)",
     "func": "const person_home_time = new Date(msg.data.new_state.last_changed);\n\nconst history_start = new Date(person_home_time.getTime() - 1000 * 60 * 3);\n\nreturn {\n    ...msg,\n    history_start: history_start.toISOString()\n};",
     "outputs": 1,
     "noerr": 0,
@@ -210,7 +214,7 @@
     "type": "ha-get-entities",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Vem har kommit hem inom intervallet",
+    "name": "Who has come home within the interval",
     "server": "e9739673.bbfed8",
     "version": 0,
     "rules": [
@@ -238,7 +242,7 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 210,
+    "x": 220,
     "y": 360,
     "wires": [
       [
@@ -251,14 +255,14 @@
     "type": "function",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Skapa meddelande",
+    "name": "Create message",
     "func": "const persons = msg.payload.map((person) => person.entity_id.split('.')[1]);\n\nconst getPersonText = (persons) => {\n    // Get the last person\n    const last_person = persons.pop();\n\n    // If there is any more persons\n    if(persons.length > 0){\n        return `${persons.join(', ')} och ${last_person}`;\n    }\n    return last_person;\n}\n\nreturn {\n    ...msg,\n    message: `Välkomm${persons.length > 1 ? 'na' : 'en'} hem ${getPersonText(persons)}`\n}\n",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 150,
+    "x": 140,
     "y": 420,
     "wires": [
       [
@@ -284,7 +288,7 @@
         "type": "str"
       }
     ],
-    "x": 130,
+    "x": 120,
     "y": 540,
     "wires": [
       []
@@ -295,7 +299,7 @@
     "type": "server-state-changed",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Någon kommer hem",
+    "name": "Someone comes home",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -346,7 +350,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 150,
+    "x": 160,
     "y": 180,
     "wires": [
       [
@@ -360,7 +364,7 @@
     "type": "delay",
     "z": "cd9a5746e1f519c9",
     "g": "50b6ce68ea1dbe94",
-    "name": "Vänta 10s",
+    "name": "Wait 10s",
     "pauseType": "delay",
     "timeout": "10",
     "timeoutUnits": "seconds",

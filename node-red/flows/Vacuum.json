@@ -11,7 +11,7 @@
     "id": "05d687da1ce7b06d",
     "type": "group",
     "z": "f6c266122b405d78",
-    "name": "Inaktivera rörelsesensorer (larma hemma) när dammsugning börjar",
+    "name": "Disable motion sensors (arm home mode) when vacuuming starts",
     "style": {
       "label": true
     },
@@ -21,13 +21,15 @@
       "6d1d2435763bad74"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 572,
+    "h": 82
   },
   {
     "id": "c77bf66ac0de544c",
     "type": "group",
     "z": "f6c266122b405d78",
-    "name": "Aktivera larm när dammsugning klar om ingen hemma",
+    "name": "Activate the alarm when vacuuming is complete if no one is home",
     "style": {
       "label": true
     },
@@ -38,7 +40,9 @@
       "7421bc525afa4694"
     ],
     "x": 34,
-    "y": 159
+    "y": 159,
+    "w": 712,
+    "h": 82
   },
   {
     "id": "2d4f29ef982ab65e",
@@ -46,7 +50,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "05d687da1ce7b06d",
-    "name": "Börjar dammsuga",
+    "name": "Vacuum start",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -97,7 +101,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 150,
+    "x": 130,
     "y": 80,
     "wires": [
       [
@@ -112,7 +116,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "05d687da1ce7b06d",
-    "name": "Larmat?",
+    "name": "Armed?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -144,7 +148,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 340,
+    "x": 300,
     "y": 80,
     "wires": [
       [
@@ -159,7 +163,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Aktivera larm",
+    "name": "Arm",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -174,7 +178,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 690,
+    "x": 670,
     "y": 200,
     "wires": [
       []
@@ -186,7 +190,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "05d687da1ce7b06d",
-    "name": "Larma hemma",
+    "name": "Arm home mode",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -201,7 +205,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 540,
+    "x": 490,
     "y": 80,
     "wires": [
       []
@@ -213,7 +217,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Dockad",
+    "name": "Vacuum docked",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -264,7 +268,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 110,
+    "x": 140,
     "y": 200,
     "wires": [
       [
@@ -279,7 +283,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Ingen hemma",
+    "name": "Nobody home",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -311,7 +315,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 300,
+    "x": 340,
     "y": 200,
     "wires": [
       [
@@ -326,7 +330,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Larmat?",
+    "name": "Armed?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -358,7 +362,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 500,
+    "x": 520,
     "y": 200,
     "wires": [
       [],

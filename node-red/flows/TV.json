@@ -11,7 +11,7 @@
     "id": "ca425b51ea70d657",
     "type": "group",
     "z": "59b6382f2b4b4619",
-    "name": "Vardagsrum",
+    "name": "Living room",
     "style": {
       "label": true
     },
@@ -21,13 +21,15 @@
       "dd89f3d78cc0ddc4"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 772,
+    "h": 82
   },
   {
     "id": "8d64418785067593",
     "type": "group",
     "z": "59b6382f2b4b4619",
-    "name": "Sovrum",
+    "name": "Bedroom",
     "style": {
       "label": true
     },
@@ -41,14 +43,16 @@
       "1c6e050d5d9776e4"
     ],
     "x": 34,
-    "y": 159
+    "y": 159,
+    "w": 672,
+    "h": 202
   },
   {
     "id": "e0ef91ffabc79baa",
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "ca425b51ea70d657",
-    "name": "Samsung TV Vardagsrum på",
+    "name": "Samsung TV Living room on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -113,7 +117,7 @@
     "type": "api-current-state",
     "z": "59b6382f2b4b4619",
     "g": "ca425b51ea70d657",
-    "name": "TV Vardagsrum av?",
+    "name": "TV Living room off?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -159,7 +163,7 @@
     "type": "api-call-service",
     "z": "59b6382f2b4b4619",
     "g": "ca425b51ea70d657",
-    "name": "TV Vardagsrum på",
+    "name": "Turn on TV Living room",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -176,7 +180,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 650,
+    "x": 670,
     "y": 80,
     "wires": [
       []
@@ -187,7 +191,7 @@
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "ChromeCast av",
+    "name": "Chromecast off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -252,7 +256,7 @@
     "type": "switch",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "Var avstängd?",
+    "name": "Was turned off?",
     "property": "data.old_state.state",
     "propertyType": "msg",
     "rules": [
@@ -265,8 +269,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 380,
-    "y": 340,
+    "x": 340,
+    "y": 320,
     "wires": [
       [
         "881e055aefec352a"
@@ -278,7 +282,7 @@
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "ChromeCast overksam",
+    "name": "Chromecast idle",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -329,8 +333,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 160,
-    "y": 340,
+    "x": 140,
+    "y": 320,
     "wires": [
       [
         "6a811b5ff4e50888"
@@ -343,7 +347,7 @@
     "type": "api-call-service",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "Sätt på Plug Tv Socrum",
+    "name": "Turn on TV Bedroom Plug",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -360,8 +364,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 610,
-    "y": 340,
+    "x": 570,
+    "y": 320,
     "wires": [
       []
     ]
@@ -371,7 +375,7 @@
     "type": "api-call-service",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "Stäng av Plug Tv Socrum",
+    "name": "Turn of TV Bedroom Plug",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -399,7 +403,7 @@
     "type": "api-call-service",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "Pausa ChromeCast",
+    "name": "Pause Chromecast",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -416,7 +420,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
+    "x": 350,
     "y": 200,
     "wires": [
       []
@@ -427,7 +431,7 @@
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "TV Sovrum av",
+    "name": "TV Bedroom off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -478,7 +482,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
+    "x": 140,
     "y": 200,
     "wires": [
       [

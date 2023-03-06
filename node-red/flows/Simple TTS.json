@@ -11,7 +11,7 @@
     "id": "7f13b2d75f7cc15f",
     "type": "group",
     "z": "7f81ec7457fe49ea",
-    "name": "Inaktivera TTS inom viss tidsspann",
+    "name": "Disable TTS within a certain time span",
     "style": {
       "label": true
     },
@@ -30,7 +30,7 @@
     "id": "bef63f036ef05e26",
     "type": "group",
     "z": "7f81ec7457fe49ea",
-    "name": "Tvättmaskin klar",
+    "name": "Dishwasher done",
     "style": {
       "label": true
     },
@@ -47,7 +47,7 @@
     "id": "997af72d18e55a49",
     "type": "group",
     "z": "7f81ec7457fe49ea",
-    "name": "Ytterdörr öppen i 5 min",
+    "name": " Front door open for 5 min",
     "style": {
       "label": true
     },
@@ -64,7 +64,7 @@
     "id": "9acaa0666b5b68d6",
     "type": "group",
     "z": "7f81ec7457fe49ea",
-    "name": "AirFryer klar",
+    "name": "AirFryer done",
     "style": {
       "label": true
     },
@@ -198,7 +198,7 @@
     "type": "server-state-changed",
     "z": "7f81ec7457fe49ea",
     "g": "bef63f036ef05e26",
-    "name": "Tvättmaskin klar",
+    "name": "Dishwasher done",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -275,7 +275,7 @@
     "type": "server-state-changed",
     "z": "7f81ec7457fe49ea",
     "g": "997af72d18e55a49",
-    "name": "Ytterdörr öppen 5 min",
+    "name": " Front door open for 5 min",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -338,7 +338,7 @@
         "valueType": "str"
       }
     ],
-    "x": 180,
+    "x": 190,
     "y": 440,
     "wires": [
       [
@@ -365,7 +365,7 @@
         "type": "str"
       }
     ],
-    "x": 390,
+    "x": 400,
     "y": 440,
     "wires": [
       []
@@ -391,14 +391,16 @@
     ],
     "x": 350,
     "y": 240,
-    "wires": []
+    "wires": [
+      []
+    ]
   },
   {
     "id": "09eb4ce045377709",
     "type": "server-state-changed",
     "z": "7f81ec7457fe49ea",
     "g": "9acaa0666b5b68d6",
-    "name": "AirFryer klar",
+    "name": "AirFryer done",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -490,13 +492,15 @@
     ],
     "x": 350,
     "y": 340,
-    "wires": []
+    "wires": [
+      []
+    ]
   },
   {
     "id": "bc88b940133a5f0a",
     "type": "comment",
     "z": "7f81ec7457fe49ea",
-    "name": "Gör så dessa inte körs när templates laddas om",
+    "name": "Make these not run when templates are reloaded",
     "info": "",
     "x": 680,
     "y": 380,

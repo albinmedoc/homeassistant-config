@@ -2,7 +2,7 @@
   {
     "id": "92acfb4d26effac0",
     "type": "subflow",
-    "name": "Hämta personer hemma",
+    "name": "Get persons at home",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 920,
+        "x": 900,
         "y": 60,
         "wires": [
           {
@@ -64,7 +64,7 @@
     "id": "9bd3102eea3f4d99",
     "type": "ha-get-entities",
     "z": "92acfb4d26effac0",
-    "name": "Hämta personer hemma",
+    "name": "Get persons at home",
     "server": "e9739673.bbfed8",
     "version": 0,
     "rules": [
@@ -86,7 +86,7 @@
     "output_location_type": "msg",
     "output_location": "person_entities",
     "output_results_count": 1,
-    "x": 370,
+    "x": 360,
     "y": 60,
     "wires": [
       [
@@ -98,14 +98,14 @@
     "id": "0df834b2ca539f6c",
     "type": "function",
     "z": "92acfb4d26effac0",
-    "name": "Plocka ut entity ids",
+    "name": "Pick out entity ids",
     "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    persons: person_entity_ids\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 610,
+    "x": 590,
     "y": 60,
     "wires": [
       [
@@ -118,14 +118,14 @@
     "id": "6a9480372530925d",
     "type": "function",
     "z": "92acfb4d26effac0",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const color = msg.persons.length > 0 ? \"green\": \"red\";\nconst text = msg.persons.join(', ')\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 790,
+    "x": 780,
     "y": 140,
     "wires": [
       []
@@ -171,7 +171,7 @@
         "module": "selectn"
       }
     ],
-    "x": 800,
+    "x": 780,
     "y": 60,
     "wires": [
       []

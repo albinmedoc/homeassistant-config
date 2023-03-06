@@ -2,7 +2,7 @@
   {
     "id": "ad0b3a8015e7f49b",
     "type": "subflow",
-    "name": "Spela media",
+    "name": "Play media",
     "info": "",
     "category": "",
     "in": [
@@ -16,7 +16,18 @@
         ]
       }
     ],
-    "out": [],
+    "out": [
+      {
+        "x": 1580,
+        "y": 60,
+        "wires": [
+          {
+            "id": "130a97d040fd0f62",
+            "port": 0
+          }
+        ]
+      }
+    ],
     "env": [
       {
         "name": "media_player",
@@ -96,13 +107,23 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99"
+    "color": "#DDAA99",
+    "status": {
+      "x": 1580,
+      "y": 140,
+      "wires": [
+        {
+          "id": "4bd83ca5e99a297a",
+          "port": 0
+        }
+      ]
+    }
   },
   {
     "id": "05ae649663b26e09",
     "type": "junction",
     "z": "ad0b3a8015e7f49b",
-    "x": 1340,
+    "x": 1300,
     "y": 120,
     "wires": [
       [
@@ -171,7 +192,7 @@
     "id": "9b2ab136d63e135e",
     "type": "switch",
     "z": "ad0b3a8015e7f49b",
-    "name": "Volym satt?",
+    "name": "Volume set?",
     "property": "flow_storage.volume_level",
     "propertyType": "msg",
     "rules": [
@@ -204,7 +225,7 @@
     "id": "b5dcc93fec6c966c",
     "type": "api-current-state",
     "z": "ad0b3a8015e7f49b",
-    "name": "Hämta mediaspelare",
+    "name": "Get media player",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 1,
@@ -230,7 +251,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 720,
+    "x": 710,
     "y": 60,
     "wires": [
       [
@@ -242,7 +263,7 @@
     "id": "11ed05c4a7d9af59",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Sätt volym",
+    "name": "Set volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -259,7 +280,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 930,
+    "x": 910,
     "y": 60,
     "wires": [
       [
@@ -271,7 +292,7 @@
     "id": "50eb7190b4ecc241",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Återställ volym",
+    "name": "Reset volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -288,7 +309,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1300,
+    "x": 1280,
     "y": 60,
     "wires": [
       [
@@ -301,7 +322,7 @@
     "id": "c512f6a566e58a44",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Spela media",
+    "name": "Play media",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -318,7 +339,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1110,
+    "x": 1090,
     "y": 60,
     "wires": [
       [
@@ -330,7 +351,7 @@
     "id": "a9cc56f2b6cf47ed",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Spela media",
+    "name": "Play media",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -359,14 +380,14 @@
     "id": "4bd83ca5e99a297a",
     "type": "function",
     "z": "ad0b3a8015e7f49b",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const text = msg.flow_storage.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1470,
+    "x": 1440,
     "y": 140,
     "wires": [
       []
@@ -388,7 +409,7 @@
         "module": "selectn"
       }
     ],
-    "x": 1480,
+    "x": 1460,
     "y": 60,
     "wires": [
       []

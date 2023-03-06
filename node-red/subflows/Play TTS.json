@@ -2,7 +2,7 @@
   {
     "id": "17f3c422bcd5a1fb",
     "type": "subflow",
-    "name": "Spela TTS",
+    "name": "Play TTS",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1600,
+        "x": 1560,
         "y": 60,
         "wires": [
           {
@@ -82,7 +82,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1600,
+      "x": 1560,
       "y": 140,
       "wires": [
         {
@@ -96,7 +96,7 @@
     "id": "7b567172d270dada",
     "type": "junction",
     "z": "17f3c422bcd5a1fb",
-    "x": 1340,
+    "x": 1280,
     "y": 120,
     "wires": [
       [
@@ -141,14 +141,14 @@
     "id": "c029c322b1380a7b",
     "type": "function",
     "z": "17f3c422bcd5a1fb",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const text = msg.flow_storage.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1470,
+    "x": 1420,
     "y": 140,
     "wires": [
       []
@@ -194,7 +194,7 @@
         "module": "selectn"
       }
     ],
-    "x": 1480,
+    "x": 1440,
     "y": 60,
     "wires": [
       []
@@ -204,7 +204,7 @@
     "id": "c637bcaf14cc0c61",
     "type": "switch",
     "z": "17f3c422bcd5a1fb",
-    "name": "Volym satt?",
+    "name": "Volume set?",
     "property": "flow_storage.volume_level",
     "propertyType": "msg",
     "rules": [
@@ -237,7 +237,7 @@
     "id": "91e7a552c2264b02",
     "type": "api-current-state",
     "z": "17f3c422bcd5a1fb",
-    "name": "Hämta mediaspelare",
+    "name": "Get media player",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 1,
@@ -263,7 +263,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 720,
+    "x": 710,
     "y": 60,
     "wires": [
       [
@@ -275,7 +275,7 @@
     "id": "e45b6ee7a5750832",
     "type": "api-call-service",
     "z": "17f3c422bcd5a1fb",
-    "name": "Sätt volym",
+    "name": "Set volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -292,7 +292,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 930,
+    "x": 910,
     "y": 60,
     "wires": [
       [
@@ -304,7 +304,7 @@
     "id": "da0bd14c3672d4f2",
     "type": "api-call-service",
     "z": "17f3c422bcd5a1fb",
-    "name": "Spela TTS",
+    "name": "Play TTS",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -321,7 +321,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1110,
+    "x": 1080,
     "y": 60,
     "wires": [
       [
@@ -333,7 +333,7 @@
     "id": "d9fa482c08da77e3",
     "type": "api-call-service",
     "z": "17f3c422bcd5a1fb",
-    "name": "Återställ volym",
+    "name": "Reset volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -350,7 +350,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1300,
+    "x": 1260,
     "y": 60,
     "wires": [
       [
@@ -363,7 +363,7 @@
     "id": "0bd4cd1c91468aa0",
     "type": "api-call-service",
     "z": "17f3c422bcd5a1fb",
-    "name": "Spela TTS",
+    "name": "Play TTS",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -380,39 +380,12 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 690,
+    "x": 680,
     "y": 120,
     "wires": [
       [
         "7b567172d270dada"
       ]
-    ]
-  },
-  {
-    "id": "2263d8e231277a4e",
-    "type": "api-call-service",
-    "z": "17f3c422bcd5a1fb",
-    "name": "Sätt volym",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "media_player",
-    "service": "volume_set",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "{{ flow_storage.media_player }}"
-    ],
-    "data": "{ \"volume_level\": flow_storage.volume_level }",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1210,
-    "y": 180,
-    "wires": [
-      []
     ]
   }
 ]

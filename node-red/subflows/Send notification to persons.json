@@ -2,7 +2,7 @@
   {
     "id": "6be012d64f25f43f",
     "type": "subflow",
-    "name": "Skicka notis till personer",
+    "name": "Send notification to persons",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1260,
+        "x": 1300,
         "y": 60,
         "wires": [
           {
@@ -84,7 +84,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1260,
+      "x": 1300,
       "y": 140,
       "wires": [
         {
@@ -98,7 +98,7 @@
     "id": "9ddcbb1e73030798",
     "type": "junction",
     "z": "6be012d64f25f43f",
-    "x": 480,
+    "x": 520,
     "y": 120,
     "wires": [
       [
@@ -110,7 +110,7 @@
     "id": "91d07763eee29f9f",
     "type": "junction",
     "z": "6be012d64f25f43f",
-    "x": 1000,
+    "x": 1040,
     "y": 120,
     "wires": [
       [
@@ -122,14 +122,14 @@
     "id": "d4f28161858d8840",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "För varje person",
+    "name": "For every person",
     "func": "const storage = 'flow_storage1';\n\nconst persons = msg[storage].persons;\nif(persons.length > 0) {\n    persons.forEach((person, index) => {\n        node.send({\n            ...msg,\n            person,\n            parts: {\n                id: \"notify_persons\",\n                type: \"array\",\n                count: persons.length,\n                len: 1,\n                index\n            }\n        });\n    });\n}\n\nreturn [null, {services: []}]\n",
     "outputs": 2,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 340,
+    "x": 350,
     "y": 60,
     "wires": [
       [
@@ -166,7 +166,7 @@
         "type": "str"
       }
     ],
-    "x": 560,
+    "x": 600,
     "y": 60,
     "wires": [
       [
@@ -194,7 +194,7 @@
     "reduceInit": "",
     "reduceInitType": "num",
     "reduceFixup": "",
-    "x": 750,
+    "x": 790,
     "y": 60,
     "wires": [
       [
@@ -206,14 +206,14 @@
     "id": "024de54230752dc1",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const text = msg.services.join(', ')\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1130,
+    "x": 1160,
     "y": 140,
     "wires": [
       []
@@ -259,7 +259,7 @@
         "module": "selectn"
       }
     ],
-    "x": 1140,
+    "x": 1180,
     "y": 60,
     "wires": [
       []
@@ -269,14 +269,14 @@
     "id": "72b4bab712e13952",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "Slå samman services",
+    "name": "Merge services",
     "func": "\nreturn {\n    ...msg,\n    services: msg.payload.map((payload) => payload.service)\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 940,
+    "x": 960,
     "y": 60,
     "wires": [
       [

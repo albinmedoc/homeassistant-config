@@ -11,7 +11,7 @@
     "id": "60a6418e9202f91b",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Inaktivera larm av när man låser upp dörr",
+    "name": "Disarm when unlocking the door",
     "style": {
       "label": true
     },
@@ -24,14 +24,14 @@
     ],
     "x": 34,
     "y": 339,
-    "w": 752,
+    "w": 792,
     "h": 202
   },
   {
     "id": "75e39dcb53bdacc7",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Automatisk aktivering av larm",
+    "name": "Arm when everyone has left home",
     "style": {
       "label": true
     },
@@ -44,14 +44,14 @@
     ],
     "x": 34,
     "y": 179,
-    "w": 772,
+    "w": 752,
     "h": 142
   },
   {
     "id": "f3fabdf91855700f",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Automatisk inaktivering av larm ",
+    "name": "Disarm when somebody comes home",
     "style": {
       "label": true
     },
@@ -71,7 +71,7 @@
     "id": "819624756ad5ddb3",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Aktivera larm med personkod",
+    "name": "Arm with persons's code",
     "style": {
       "label": true
     },
@@ -84,14 +84,14 @@
     ],
     "x": 34,
     "y": 559,
-    "w": 762,
+    "w": 732,
     "h": 82
   },
   {
     "id": "dbf45413091d6098",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Inaktivera larm med personkod",
+    "name": "Disarm with persons's code",
     "style": {
       "label": true
     },
@@ -104,14 +104,14 @@
     ],
     "x": 34,
     "y": 659,
-    "w": 782,
+    "w": 752,
     "h": 82
   },
   {
     "id": "ac4a5fa8ce361c85",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Rök upptäckt",
+    "name": "Smoke detected",
     "style": {
       "label": true
     },
@@ -121,14 +121,14 @@
     ],
     "x": 34,
     "y": 1099,
-    "w": 372,
+    "w": 432,
     "h": 82
   },
   {
     "id": "ea9720dad10ae7bd",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Larm Notifikation action",
+    "name": "Disarm notification action",
     "style": {
       "label": true
     },
@@ -139,14 +139,14 @@
     ],
     "x": 34,
     "y": 759,
-    "w": 792,
+    "w": 772,
     "h": 82
   },
   {
     "id": "2c760ae190629011",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Aktivera scen \"Inte hemma\" när alla lämnat hemmet",
+    "name": "Enable \"not home\" scene when everyone has left home",
     "style": {
       "label": true
     },
@@ -156,14 +156,14 @@
     ],
     "x": 34,
     "y": 999,
-    "w": 552,
+    "w": 472,
     "h": 82
   },
   {
     "id": "0dae13e1d2f37ed0",
     "type": "group",
     "z": "9081c37be56bc95b",
-    "name": "Skicka notis vid utlöst larm",
+    "name": "Send notification on trigger",
     "style": {
       "label": true
     },
@@ -172,13 +172,12 @@
       "8ae24a3cefea69b6",
       "960bfb8e4169253b",
       "ada400995e3d7452",
-      "28b7e3190283b558",
       "f7768fbab71ef429",
       "99b7a838b172040f"
     ],
     "x": 34,
     "y": 859,
-    "w": 1032,
+    "w": 1132,
     "h": 122
   },
   {
@@ -186,9 +185,9 @@
     "type": "comment",
     "z": "9081c37be56bc95b",
     "g": "60a6418e9202f91b",
-    "name": "Förhoppningsvis ska det redan ha blivit avlarmat, men det är acceptabelt",
+    "name": "Hopefully it have already been disarmed",
     "info": "",
-    "x": 320,
+    "x": 220,
     "y": 380,
     "wires": []
   },
@@ -205,7 +204,7 @@
         "type": "str"
       }
     ],
-    "x": 180,
+    "x": 170,
     "y": 60,
     "wires": [
       [
@@ -245,7 +244,7 @@
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
     "g": "60a6418e9202f91b",
-    "name": "Albin öppnar ytterdörr",
+    "name": "Albin opens the front door",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -302,7 +301,7 @@
         "valueType": "str"
       }
     ],
-    "x": 160,
+    "x": 170,
     "y": 440,
     "wires": [
       [
@@ -316,7 +315,7 @@
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
     "g": "60a6418e9202f91b",
-    "name": "Matilda öppnar ytterdörr",
+    "name": "Matilda opens the front door",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -373,7 +372,7 @@
         "valueType": "str"
       }
     ],
-    "x": 170,
+    "x": 180,
     "y": 500,
     "wires": [
       [
@@ -387,7 +386,7 @@
     "type": "api-current-state",
     "z": "9081c37be56bc95b",
     "g": "819624756ad5ddb3",
-    "name": "Larmat?",
+    "name": "Armed?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -419,7 +418,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 200,
+    "x": 180,
     "y": 600,
     "wires": [
       [],
@@ -433,14 +432,14 @@
     "type": "function",
     "z": "9081c37be56bc95b",
     "g": "819624756ad5ddb3",
-    "name": "Hämta dörrkod för person",
+    "name": "Get code for person",
     "func": "\nconst person_entity_id = msg.person;\n\nconst person_name = person_entity_id.split('.')[1];\n\nconst secret_key = `lock_code_${person_name}`;\n\nconst code = global.get(secret_key);\n\nreturn {\n    ...msg,\n    code\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 410,
+    "x": 380,
     "y": 600,
     "wires": [
       [
@@ -453,7 +452,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "819624756ad5ddb3",
-    "name": "Aktivera larm",
+    "name": "Arm with code",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -470,7 +469,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 630,
+    "x": 600,
     "y": 600,
     "wires": [
       [
@@ -483,7 +482,7 @@
     "type": "api-current-state",
     "z": "9081c37be56bc95b",
     "g": "dbf45413091d6098",
-    "name": "Larmat?",
+    "name": "Armed?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -515,7 +514,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 200,
+    "x": 180,
     "y": 700,
     "wires": [
       [
@@ -529,14 +528,14 @@
     "type": "function",
     "z": "9081c37be56bc95b",
     "g": "dbf45413091d6098",
-    "name": "Hämta dörrkod för person",
+    "name": "Get code for person",
     "func": "\nconst person_entity_id = msg.person;\n\nconst person_name = person_entity_id.split('.')[1];\n\nconst secret_key = `lock_code_${person_name}`;\n\nconst code = global.get(secret_key);\n\nreturn {\n    ...msg,\n    code\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 410,
+    "x": 380,
     "y": 700,
     "wires": [
       [
@@ -549,7 +548,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "dbf45413091d6098",
-    "name": "Inaktivera larm",
+    "name": "Disarm with code",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -566,7 +565,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 640,
+    "x": 610,
     "y": 700,
     "wires": [
       [
@@ -579,7 +578,7 @@
     "type": "link in",
     "z": "9081c37be56bc95b",
     "g": "819624756ad5ddb3",
-    "name": "Aktivera larm med personkod",
+    "name": "Arm with persons's code",
     "links": [],
     "x": 75,
     "y": 600,
@@ -594,7 +593,7 @@
     "type": "link in",
     "z": "9081c37be56bc95b",
     "g": "dbf45413091d6098",
-    "name": "Inaktivera larm med personkod",
+    "name": "Disarm with persons's code",
     "links": [],
     "x": 75,
     "y": 700,
@@ -615,7 +614,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 450,
+    "x": 460,
     "y": 440,
     "wires": [
       [
@@ -634,7 +633,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 470,
+    "x": 440,
     "y": 60,
     "wires": [
       [
@@ -653,7 +652,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 470,
+    "x": 430,
     "y": 220,
     "wires": [
       [
@@ -666,7 +665,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "60a6418e9202f91b",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -681,7 +680,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 690,
+    "x": 710,
     "y": 440,
     "wires": [
       []
@@ -692,7 +691,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "75e39dcb53bdacc7",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -707,7 +706,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 710,
+    "x": 670,
     "y": 220,
     "wires": [
       []
@@ -718,7 +717,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "f3fabdf91855700f",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -733,7 +732,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 710,
+    "x": 690,
     "y": 60,
     "wires": [
       []
@@ -744,7 +743,7 @@
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
     "g": "ac4a5fa8ce361c85",
-    "name": "Rök upptäckt",
+    "name": "Smoke detected",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -795,7 +794,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
+    "x": 140,
     "y": 1140,
     "wires": [
       [
@@ -809,7 +808,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "ac4a5fa8ce361c85",
-    "name": "Skicka notis",
+    "name": "Send notificaiton",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -824,7 +823,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 310,
+    "x": 350,
     "y": 1140,
     "wires": [
       []
@@ -838,7 +837,7 @@
     "name": "link out 1",
     "mode": "return",
     "links": [],
-    "x": 755,
+    "x": 725,
     "y": 600,
     "wires": []
   },
@@ -850,7 +849,7 @@
     "name": "link out 2",
     "mode": "return",
     "links": [],
-    "x": 775,
+    "x": 745,
     "y": 700,
     "wires": []
   },
@@ -915,7 +914,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 660,
     "y": 800,
     "wires": [
       []
@@ -926,7 +925,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "2c760ae190629011",
-    "name": "Aktivera scen \"Inte hemma\"",
+    "name": "Activate scene",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -943,7 +942,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 440,
+    "x": 400,
     "y": 1040,
     "wires": [
       []
@@ -971,7 +970,7 @@
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
     "g": "0dae13e1d2f37ed0",
-    "name": "Larm utlöst",
+    "name": "Alarm triggered",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1022,7 +1021,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
+    "x": 140,
     "y": 900,
     "wires": [
       [
@@ -1030,17 +1029,6 @@
       ],
       []
     ]
-  },
-  {
-    "id": "28b7e3190283b558",
-    "type": "comment",
-    "z": "9081c37be56bc95b",
-    "g": "0dae13e1d2f37ed0",
-    "name": "Tittar inte på vilket läge",
-    "info": "",
-    "x": 160,
-    "y": 940,
-    "wires": []
   },
   {
     "id": "694decc229ffefc0",
@@ -1055,7 +1043,7 @@
         "type": "str"
       }
     ],
-    "x": 330,
+    "x": 340,
     "y": 900,
     "wires": [
       [
@@ -1068,14 +1056,14 @@
     "type": "split",
     "z": "9081c37be56bc95b",
     "g": "0dae13e1d2f37ed0",
-    "name": "För varje person",
+    "name": "For every person",
     "splt": "\\n",
     "spltType": "str",
     "arraySplt": 1,
     "arraySpltType": "len",
     "stream": false,
     "addname": "",
-    "x": 540,
+    "x": 550,
     "y": 900,
     "wires": [
       [
@@ -1088,14 +1076,14 @@
     "type": "function",
     "z": "9081c37be56bc95b",
     "g": "0dae13e1d2f37ed0",
-    "name": "Skapa notis",
+    "name": "Create notification",
     "func": "const person_entity_id = msg.payload;\nconst person_name = person_entity_id.split('.')[1];\nconst disarm_action = `DISARM_${person_name.toUpperCase()}`;\n\nconst notify_data = {\n    \"title\": \"Larm utlöst!\",\n        \"message\": \"Håll inne för att visa mer information\",\n            \"data\": {\n        \"entity_id\": \"camera.camera_living_room_hd_stream\",\n            \"push\": {\n            \"sound\": {\n                \"name\": \"default\",\n                    \"critical\": 1,\n                        \"volume\": 1\n            }\n        },\n        \"actions\": [\n            {\n                \"action\": disarm_action,\n                \"title\": \"Inaktivera larm\",\n                \"destructive\": true,\n                \"icon\": \"sfsymbols:bell.slash\",\n                \"authenticationRequired\": true\n            }\n        ],\n            \"persistent\": true,\n                \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 730,
+    "x": 770,
     "y": 900,
     "wires": [
       [
@@ -1121,7 +1109,7 @@
         "type": "str"
       }
     ],
-    "x": 940,
+    "x": 1020,
     "y": 900,
     "wires": [
       []
@@ -1132,7 +1120,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "f3fabdf91855700f",
-    "name": "Inaktivera larm som gäst",
+    "name": "Disarm as guest",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1149,7 +1137,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
+    "x": 400,
     "y": 120,
     "wires": [
       [
@@ -1162,7 +1150,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "75e39dcb53bdacc7",
-    "name": "Aktivera larm som gäst",
+    "name": "Arm as guest",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1179,7 +1167,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 440,
+    "x": 390,
     "y": 280,
     "wires": [
       [
@@ -1192,7 +1180,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "f3fabdf91855700f",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1207,7 +1195,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 710,
+    "x": 690,
     "y": 120,
     "wires": [
       []
@@ -1218,7 +1206,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "g": "75e39dcb53bdacc7",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1233,7 +1221,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 710,
+    "x": 670,
     "y": 280,
     "wires": [
       []
@@ -1244,9 +1232,9 @@
     "type": "comment",
     "z": "9081c37be56bc95b",
     "g": "0dae13e1d2f37ed0",
-    "name": "Vi skickar unika notiser, därför loopar vi",
+    "name": "We are sending unique notifications, therefor we are looping",
     "info": "",
-    "x": 610,
+    "x": 680,
     "y": 940,
     "wires": []
   },
@@ -1255,7 +1243,7 @@
     "type": "function",
     "z": "9081c37be56bc95b",
     "g": "ea9720dad10ae7bd",
-    "name": "Hämta person från Action",
+    "name": "Get person from action",
     "func": "const action_name = msg.payload.event.action;\nconst person = action_name.split('DISARM_')[1].toLowerCase()\nconst person_entity_id = `person.${person}`;\n\nreturn {\n    person: person_entity_id\n};",
     "outputs": 1,
     "noerr": 0,

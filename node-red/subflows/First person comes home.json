@@ -2,7 +2,7 @@
   {
     "id": "5c7f108f494183f7",
     "type": "subflow",
-    "name": "Första person kommer hem",
+    "name": "First person comes home",
     "info": "",
     "category": "",
     "in": [],
@@ -72,7 +72,7 @@
     "id": "622170d4e98f3b5e",
     "type": "junction",
     "z": "5c7f108f494183f7",
-    "x": 1140,
+    "x": 1120,
     "y": 240,
     "wires": [
       []
@@ -82,7 +82,7 @@
     "id": "03d0855aa7570e8d",
     "type": "server-state-changed",
     "z": "5c7f108f494183f7",
-    "name": "Någon person hemma",
+    "name": "Someone is home",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -121,7 +121,7 @@
         "valueType": "eventData"
       }
     ],
-    "x": 140,
+    "x": 130,
     "y": 60,
     "wires": [
       [
@@ -134,14 +134,14 @@
     "id": "cce4e66bf72f0f15",
     "type": "function",
     "z": "5c7f108f494183f7",
-    "name": "Hämta person som kom hem",
+    "name": "Get person that came home",
     "func": "const old_persons = msg.data.old_state.attributes.persons;\nconst new_persons = msg.data.new_state.attributes.persons;\n\nconst person = new_persons.filter(p => !old_persons.includes(p))[0];\n\nreturn {\n    person\n}",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1000,
+    "x": 960,
     "y": 60,
     "wires": [
       [
@@ -154,7 +154,7 @@
     "id": "ebe77296e60e8877",
     "type": "switch",
     "z": "5c7f108f494183f7",
-    "name": "Tidigare tillstånd var 0",
+    "name": "Last state was 0",
     "property": "data.old_state.state",
     "propertyType": "msg",
     "rules": [
@@ -179,14 +179,14 @@
     "id": "bb71c5a1e7a3f063",
     "type": "function",
     "z": "5c7f108f494183f7",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const text = msg.topic;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1210,
+    "x": 1200,
     "y": 140,
     "wires": [
       []
@@ -242,7 +242,7 @@
     "id": "3aa73519440a0b6d",
     "type": "server-state-changed",
     "z": "5c7f108f494183f7",
-    "name": "Gästläge aktiverat",
+    "name": "Guest mode active",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -287,7 +287,7 @@
     "id": "e27f976ad2994d40",
     "type": "api-current-state",
     "z": "5c7f108f494183f7",
-    "name": "Någon hemma?",
+    "name": "Someone home?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -306,7 +306,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 340,
+    "x": 350,
     "y": 120,
     "wires": [
       [],
@@ -320,14 +320,14 @@
     "id": "cd27a7e455b81369",
     "type": "function",
     "z": "5c7f108f494183f7",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "return {\n    payload: {\n        fill: \"green\",\n        text: \"Guest\"\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1210,
+    "x": 1200,
     "y": 200,
     "wires": [
       []
@@ -337,7 +337,7 @@
     "id": "5112c31c80fe721f",
     "type": "api-current-state",
     "z": "5c7f108f494183f7",
-    "name": "Gästläge aktiverat",
+    "name": "Guest mode active?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -356,7 +356,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 510,
+    "x": 520,
     "y": 60,
     "wires": [
       [],

@@ -2,7 +2,7 @@
   {
     "id": "bd6b3fc9fb3bede7",
     "type": "subflow",
-    "name": "Hämta alla personer",
+    "name": "Get all persons",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 900,
+        "x": 860,
         "y": 60,
         "wires": [
           {
@@ -48,13 +48,23 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99"
+    "color": "#DDAA99",
+    "status": {
+      "x": 860,
+      "y": 140,
+      "wires": [
+        {
+          "id": "908e6d016f436680",
+          "port": 0
+        }
+      ]
+    }
   },
   {
     "id": "ddea0968519555b8",
     "type": "ha-get-entities",
     "z": "bd6b3fc9fb3bede7",
-    "name": "Hämta alla personer",
+    "name": "Get all persons",
     "server": "e9739673.bbfed8",
     "version": 0,
     "rules": [
@@ -70,7 +80,7 @@
     "output_location_type": "msg",
     "output_location": "person_entities",
     "output_results_count": 1,
-    "x": 360,
+    "x": 340,
     "y": 60,
     "wires": [
       [
@@ -82,14 +92,14 @@
     "id": "b7130217d923b22c",
     "type": "function",
     "z": "bd6b3fc9fb3bede7",
-    "name": "Plocka ut entity ids",
+    "name": "Pick out entity ids",
     "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    ...msg,\n    persons: person_entity_ids\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 590,
+    "x": 550,
     "y": 60,
     "wires": [
       [
@@ -102,14 +112,14 @@
     "id": "908e6d016f436680",
     "type": "function",
     "z": "bd6b3fc9fb3bede7",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const color = msg.persons.length > 0 ? \"green\": \"red\";\nconst text = msg.persons.join(', ')\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 770,
+    "x": 720,
     "y": 140,
     "wires": [
       []
@@ -155,7 +165,7 @@
         "module": "selectn"
       }
     ],
-    "x": 780,
+    "x": 740,
     "y": 60,
     "wires": [
       []

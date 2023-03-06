@@ -2,7 +2,7 @@
   {
     "id": "9577215509c764c6",
     "type": "subflow",
-    "name": "Skicka notis till person",
+    "name": "Send notification to person",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 840,
+        "x": 880,
         "y": 60,
         "wires": [
           {
@@ -83,7 +83,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 840,
+      "x": 880,
       "y": 140,
       "wires": [
         {
@@ -97,14 +97,14 @@
     "id": "b097d3315ee03c10",
     "type": "function",
     "z": "9577215509c764c6",
-    "name": "Hämta notify service",
+    "name": "Get notify service",
     "func": "const storage = 'flow_storage';\n\nconst person_entity_id = msg[storage].person;\nconst person_name = person_entity_id.split('.')[1];\n\nconst service = `mobile_app_${person_name}_iphone`;\nconst data = msg[storage].notify_data\n\nmsg['payload'] = { service, data };\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 360,
+    "x": 350,
     "y": 60,
     "wires": [
       [
@@ -116,14 +116,14 @@
     "id": "8b7d6855d09b0533",
     "type": "function",
     "z": "9577215509c764c6",
-    "name": "Skapa status",
+    "name": "Create status",
     "func": "const text = msg.payload.service\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 710,
+    "x": 740,
     "y": 140,
     "wires": [
       []
@@ -169,7 +169,7 @@
         "module": "selectn"
       }
     ],
-    "x": 740,
+    "x": 760,
     "y": 60,
     "wires": [
       []
@@ -179,7 +179,7 @@
     "id": "5e64db703b93910a",
     "type": "api-call-service",
     "z": "9577215509c764c6",
-    "name": "Skicka notis",
+    "name": "Send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,

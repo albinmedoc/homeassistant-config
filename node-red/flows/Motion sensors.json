@@ -11,7 +11,7 @@
     "id": "016692fb15240c40",
     "type": "group",
     "z": "8cf7f0d9a08b3655",
-    "name": "Toalett",
+    "name": "Toilet",
     "style": {
       "label": true
     },
@@ -21,13 +21,15 @@
       "e70d386a804b3186"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 392,
+    "h": 162
   },
   {
     "id": "a2c59dab1c39eb27",
     "type": "group",
     "z": "8cf7f0d9a08b3655",
-    "name": "Badrum",
+    "name": "Bathroom",
     "style": {
       "label": true
     },
@@ -36,13 +38,15 @@
       "a13be603a67e703a"
     ],
     "x": 34,
-    "y": 219
+    "y": 219,
+    "w": 412,
+    "h": 82
   },
   {
     "id": "15764dd4cae9897a",
     "type": "group",
     "z": "8cf7f0d9a08b3655",
-    "name": "Garderob",
+    "name": "Wardrobe",
     "style": {
       "label": true
     },
@@ -51,14 +55,16 @@
       "b9e07ea95cb6d8e1"
     ],
     "x": 34,
-    "y": 319
+    "y": 319,
+    "w": 452,
+    "h": 82
   },
   {
     "id": "67bf15aa9af16432",
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Rörelse Toalett",
+    "name": "Motion Toilet",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -109,7 +115,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 130,
     "y": 120,
     "wires": [
       [
@@ -125,7 +131,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Släck Lampor Toalett",
+    "name": "Turn off lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -142,7 +148,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
+    "x": 320,
     "y": 80,
     "wires": [
       []
@@ -153,7 +159,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Tänd Lampor Toalett",
+    "name": "Turn on lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -170,7 +176,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
+    "x": 320,
     "y": 160,
     "wires": [
       []
@@ -181,7 +187,7 @@
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "a2c59dab1c39eb27",
-    "name": "Rörelse Badrum",
+    "name": "Motion Bathroom",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -246,7 +252,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "a2c59dab1c39eb27",
-    "name": "Släck Lampor Badrum",
+    "name": "Turn off lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -263,7 +269,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
+    "x": 340,
     "y": 260,
     "wires": [
       []
@@ -274,7 +280,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "15764dd4cae9897a",
-    "name": "Släck Lampa Garderob",
+    "name": "Turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -291,7 +297,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 410,
+    "x": 390,
     "y": 360,
     "wires": [
       []
@@ -302,7 +308,7 @@
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "15764dd4cae9897a",
-    "name": "Rörelse Garderob",
+    "name": "Motion Bedroom Wardrobe",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -353,7 +359,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 170,
     "y": 360,
     "wires": [
       [

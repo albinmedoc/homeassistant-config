@@ -10,7 +10,7 @@
     "id": "86f8f4678672d22a",
     "type": "group",
     "z": "9d7cd8ae.f2fe48",
-    "name": "Ladda secrets.yaml vid uppstart",
+    "name": "Load secrets.yaml at startup",
     "style": {
       "label": true
     },
@@ -24,13 +24,15 @@
       "2b7ad1b2216adaa5"
     ],
     "x": 14,
-    "y": 19
+    "y": 19,
+    "w": 932,
+    "h": 202
   },
   {
     "id": "2e59710b52d84cd4",
     "type": "group",
     "z": "9d7cd8ae.f2fe48",
-    "name": "Starta om Intel NUC",
+    "name": "Reboot Intel NUC",
     "style": {
       "label": true
     },
@@ -39,13 +41,15 @@
       "bc6575adb8f391d5"
     ],
     "x": 14,
-    "y": 239
+    "y": 239,
+    "w": 392,
+    "h": 82
   },
   {
     "id": "d45aea997f43d7df",
     "type": "group",
     "z": "9d7cd8ae.f2fe48",
-    "name": "Notis vid tillgänglig HA uppdatering",
+    "name": "Notify when available HA update",
     "style": {
       "label": true
     },
@@ -55,13 +59,15 @@
       "7c9eac7cf14500bf"
     ],
     "x": 14,
-    "y": 339
+    "y": 339,
+    "w": 592,
+    "h": 142
   },
   {
     "id": "a2a2c7d13b2d1495",
     "type": "group",
     "z": "9d7cd8ae.f2fe48",
-    "name": "Notis vid tillgänglig HACS uppdatering",
+    "name": "Notify when available HACS update",
     "style": {
       "label": true
     },
@@ -71,14 +77,16 @@
       "0b4e37880bc471a9"
     ],
     "x": 14,
-    "y": 499
+    "y": 499,
+    "w": 752,
+    "h": 82
   },
   {
     "id": "24ebb2e2.2f6ffe",
     "type": "file in",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Läs secrets.yaml",
+    "name": "Read secrets.yaml",
     "filename": "/config/secrets.yaml",
     "filenameType": "str",
     "format": "utf8",
@@ -114,14 +122,14 @@
     "type": "function",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Sätt global config vars",
+    "name": "Set global config variables",
     "func": "for (let [key, value] of Object.entries(msg.payload)) {\n  global.set(key,value);\n}\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 780,
+    "x": 800,
     "y": 180,
     "wires": [
       []
@@ -132,7 +140,7 @@
     "type": "comment",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Kör vid HA start",
+    "name": "Run at HA start",
     "info": "",
     "x": 120,
     "y": 120,
@@ -143,9 +151,9 @@
     "type": "comment",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Sätt global config vars från secrets.yaml",
+    "name": "Set global config variables from secrets.yaml",
     "info": "https://bonani.tech/make-a-node-red-flow-run-on-home-assistant-start/",
-    "x": 560,
+    "x": 570,
     "y": 120,
     "wires": []
   },
@@ -209,7 +217,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "2e59710b52d84cd4",
-    "name": "Starta om Intel NUC",
+    "name": "Reboot Intel NUC",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -224,7 +232,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 300,
+    "x": 290,
     "y": 280,
     "wires": [
       []
@@ -365,7 +373,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "d45aea997f43d7df",
-    "name": "Skicka notis till Albin",
+    "name": "Send notification to Albin",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -380,7 +388,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 500,
+    "x": 470,
     "y": 400,
     "wires": [
       []
@@ -456,7 +464,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "a2a2c7d13b2d1495",
-    "name": "Skicka notis till Albin",
+    "name": "Send notification to Albin",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -471,7 +479,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 640,
+    "x": 630,
     "y": 540,
     "wires": [
       []
@@ -482,14 +490,14 @@
     "type": "function",
     "z": "9d7cd8ae.f2fe48",
     "g": "a2a2c7d13b2d1495",
-    "name": "Skapa meddelande",
+    "name": "Create message",
     "func": "const repositories = msg.data.attributes.repositories;\n\nconst repository_names = repositories.map((repository) => repository.display_name);\n\nconst getRepositoryNameText = (repository_names) => {\n    // Get the last repository name\n    const last_repository_name = repository_names.pop();\n\n    // If there is any more repository names\n    if (repository_names.length > 0) {\n        return `${repository_names.join(', ')} och ${last_repository_name}`;\n    }\n    return last_repository_name;\n}\n\nconst message = `Det finns en ny HACS uppdatering, ${getRepositoryNameText(repository_names)}.`\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 410,
+    "x": 400,
     "y": 540,
     "wires": [
       [

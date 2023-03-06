@@ -11,7 +11,7 @@
     "id": "c0c5a3195dcfdaf2",
     "type": "server-state-changed",
     "z": "791362d653843ce3",
-    "name": "Nattläge",
+    "name": "Nightmode",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -75,7 +75,7 @@
     "id": "e28d10c163b78031",
     "type": "api-call-service",
     "z": "791362d653843ce3",
-    "name": "Godnatt scen",
+    "name": "Activate \"night\" scene",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -92,7 +92,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 380,
+    "x": 320,
     "y": 80,
     "wires": [
       []
