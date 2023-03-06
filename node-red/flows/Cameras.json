@@ -39,7 +39,7 @@
       "1f21716b9f95f12a"
     ],
     "x": 34,
-    "y": 1199,
+    "y": 1659,
     "w": 372,
     "h": 82
   },
@@ -57,7 +57,7 @@
       "04270f65108df369"
     ],
     "x": 34,
-    "y": 1319,
+    "y": 1779,
     "w": 572,
     "h": 142
   },
@@ -182,6 +182,67 @@
     ],
     "x": 64,
     "y": 1059,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "e2660893743dfd0f",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Frigate snapshots",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "208d9fb6b5c05b56",
+      "2a398121bed8c10c",
+      "923b7b8f1c34e130",
+      "94abe684675619ae",
+      "0bdfc6d246628f4b",
+      "92ddc55097f97cff",
+      "8f7fe86f39bfc035",
+      "14f13ff62770307c"
+    ],
+    "x": 34,
+    "y": 1199,
+    "w": 692,
+    "h": 428
+  },
+  {
+    "id": "8f7fe86f39bfc035",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "Sätt på Frigate snapshots",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "6c088de714eab51c",
+      "6b6e237f21de203f",
+      "64fe513a0cc6b876"
+    ],
+    "x": 64,
+    "y": 1419,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "14f13ff62770307c",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "Stäng av Frigate snapshots",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "1d2d4ea207580fba",
+      "51bf05076a76d1a6",
+      "2762040170ead6c3"
+    ],
+    "x": 64,
+    "y": 1519,
     "w": 552,
     "h": 82
   },
@@ -347,7 +408,7 @@
       }
     ],
     "x": 130,
-    "y": 1240,
+    "y": 1700,
     "wires": [
       [
         "1f21716b9f95f12a"
@@ -412,7 +473,7 @@
       }
     ],
     "x": 160,
-    "y": 1360,
+    "y": 1820,
     "wires": [
       [
         "0785c72b9a19417f",
@@ -435,7 +496,7 @@
       }
     ],
     "x": 440,
-    "y": 1360,
+    "y": 1820,
     "wires": [
       []
     ]
@@ -459,7 +520,7 @@
       }
     ],
     "x": 370,
-    "y": 1420,
+    "y": 1880,
     "wires": [
       []
     ]
@@ -488,7 +549,7 @@
       }
     ],
     "x": 310,
-    "y": 1240,
+    "y": 1700,
     "wires": [
       []
     ]
@@ -1113,7 +1174,6 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_kids_bedroom_frigate_detect",
       "switch.garden_recordings"
     ],
     "data": "",
@@ -1127,6 +1187,295 @@
     "wires": [
       [
         "5ecc59f1f0a5829d"
+      ]
+    ]
+  },
+  {
+    "id": "208d9fb6b5c05b56",
+    "type": "subflow:5da5355c5d6e8223",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "",
+    "x": 160,
+    "y": 1300,
+    "wires": [
+      [
+        "923b7b8f1c34e130"
+      ]
+    ]
+  },
+  {
+    "id": "2a398121bed8c10c",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "Larmat",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "alarm_control_panel.alarmo",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 110,
+    "y": 1240,
+    "wires": [
+      [
+        "92ddc55097f97cff"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "923b7b8f1c34e130",
+    "type": "api-current-state",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "Larmat?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "armed_away",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "alarm_control_panel.alarmo",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 360,
+    "y": 1300,
+    "wires": [
+      [
+        "92ddc55097f97cff"
+      ],
+      [
+        "0bdfc6d246628f4b"
+      ]
+    ]
+  },
+  {
+    "id": "94abe684675619ae",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "Avlarmat",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "alarm_control_panel.alarmo",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "disarmed",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 120,
+    "y": 1360,
+    "wires": [
+      [
+        "0bdfc6d246628f4b"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "0bdfc6d246628f4b",
+    "type": "link call",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "",
+    "links": [
+      "1d2d4ea207580fba"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 580,
+    "y": 1360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "92ddc55097f97cff",
+    "type": "link call",
+    "z": "896b946718d5907e",
+    "g": "e2660893743dfd0f",
+    "name": "",
+    "links": [
+      "6c088de714eab51c"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 570,
+    "y": 1240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6c088de714eab51c",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "8f7fe86f39bfc035",
+    "name": "Sätt på Frigate snapshots",
+    "links": [],
+    "x": 105,
+    "y": 1460,
+    "wires": [
+      [
+        "64fe513a0cc6b876"
+      ]
+    ]
+  },
+  {
+    "id": "6b6e237f21de203f",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "8f7fe86f39bfc035",
+    "name": "link out 7",
+    "mode": "return",
+    "links": [],
+    "x": 575,
+    "y": 1460,
+    "wires": []
+  },
+  {
+    "id": "64fe513a0cc6b876",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "8f7fe86f39bfc035",
+    "name": "Trädgård - Sätt på Frigate snapshots",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.garden_snapshots"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 310,
+    "y": 1460,
+    "wires": [
+      [
+        "6b6e237f21de203f"
+      ]
+    ]
+  },
+  {
+    "id": "1d2d4ea207580fba",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "14f13ff62770307c",
+    "name": "Stäng av Frigate snapshots",
+    "links": [],
+    "x": 105,
+    "y": 1560,
+    "wires": [
+      [
+        "2762040170ead6c3"
+      ]
+    ]
+  },
+  {
+    "id": "51bf05076a76d1a6",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "14f13ff62770307c",
+    "name": "link out 8",
+    "mode": "return",
+    "links": [],
+    "x": 575,
+    "y": 1560,
+    "wires": []
+  },
+  {
+    "id": "2762040170ead6c3",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "14f13ff62770307c",
+    "name": "Trädgård - Stäng av Frigate snapshots",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.garden_snapshots"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 310,
+    "y": 1560,
+    "wires": [
+      [
+        "51bf05076a76d1a6"
       ]
     ]
   }
