@@ -15,7 +15,8 @@ sensor:
       entity_id: >
         {% set ignore_seconds = 60 %}
         {# Ignore entities from google wifi and also entities specified in the group "ignored_unavailable_entities" #}
-        {% set ignored = integration_entities('googlewifi') + state_attr('group.ignored_unavailable_entities','entity_id')|list %}
+        {% set ignored_integration_entities = integration_entities('googlewifi') + integration_entities('home_connect_alt') %}
+        {% set ignored = ignored_integration_entities + state_attr('group.ignored_unavailable_entities','entity_id')|list %}
         {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
         {% set entities = states|rejectattr('domain','eq','group')
             |rejectattr('last_changed','ge',ignore_ts)
