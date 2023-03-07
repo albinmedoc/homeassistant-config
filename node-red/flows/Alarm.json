@@ -135,11 +135,12 @@
     "nodes": [
       "daf827e5ff247e6a",
       "67d1083ee5ac4427",
-      "c57913cb5ac2c4b7"
+      "c57913cb5ac2c4b7",
+      "f277febc1319bf63"
     ],
     "x": 34,
     "y": 759,
-    "w": 772,
+    "w": 992,
     "h": 82
   },
   {
@@ -899,7 +900,7 @@
     "y": 800,
     "wires": [
       [
-        "c57913cb5ac2c4b7"
+        "f277febc1319bf63"
       ]
     ]
   },
@@ -914,7 +915,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 660,
+    "x": 880,
     "y": 800,
     "wires": [
       []
@@ -1077,7 +1078,7 @@
     "z": "9081c37be56bc95b",
     "g": "0dae13e1d2f37ed0",
     "name": "Create notification",
-    "func": "const person_entity_id = msg.payload;\nconst person_name = person_entity_id.split('.')[1];\nconst disarm_action = `DISARM_${person_name.toUpperCase()}`;\n\nconst notify_data = {\n    \"title\": \"Larm utlöst!\",\n        \"message\": \"Håll inne för att visa mer information\",\n            \"data\": {\n        \"entity_id\": \"camera.camera_living_room_hd_stream\",\n            \"push\": {\n            \"sound\": {\n                \"name\": \"default\",\n                    \"critical\": 1,\n                        \"volume\": 1\n            }\n        },\n        \"actions\": [\n            {\n                \"action\": disarm_action,\n                \"title\": \"Inaktivera larm\",\n                \"destructive\": true,\n                \"icon\": \"sfsymbols:bell.slash\",\n                \"authenticationRequired\": true\n            }\n        ],\n            \"persistent\": true,\n                \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
+    "func": "const person_entity_id = msg.payload;\nconst person_name = person_entity_id.split('.')[1];\nconst disarm_action = `DISARM_${person_name.toUpperCase()}`;\n\nconst notify_data = {\n    \"title\": \"Larm utlöst!\",\n    \"message\": \"Håll inne för att visa mer information\",\n    \"data\": {\n        \"entity_id\": \"camera.camera_living_room_hd_stream\",\n        \"push\": {\n            \"sound\": {\n                \"name\": \"default\",\n                \"critical\": 1,\n                \"volume\": 1\n            }\n        },\n        \"actions\": [\n            {\n                \"action\": disarm_action,\n                \"title\": \"Inaktivera larm\",\n                \"destructive\": true,\n                \"icon\": \"sfsymbols:bell.slash\",\n                \"authenticationRequired\": true\n            }\n        ],\n        \"persistent\": true,\n        \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
@@ -1250,11 +1251,38 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 390,
+    "x": 610,
     "y": 800,
     "wires": [
       [
         "67d1083ee5ac4427"
+      ]
+    ]
+  },
+  {
+    "id": "f277febc1319bf63",
+    "type": "switch",
+    "z": "9081c37be56bc95b",
+    "g": "ea9720dad10ae7bd",
+    "name": "Is correct action?",
+    "property": "test",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "regex",
+        "v": "DISARM_[A-Z]{1,}",
+        "vt": "str",
+        "case": false
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 370,
+    "y": 800,
+    "wires": [
+      [
+        "c57913cb5ac2c4b7"
       ]
     ]
   }
