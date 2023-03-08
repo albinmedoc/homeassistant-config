@@ -5,7 +5,7 @@
 #
 
 platform: group
-unique_id: "2213ef54-e31b-4d2d-9ef3-5a42092d464d"
+name: Parents
 services:
   - service: mobile_app_matilda_iphone
   - service: mobile_app_albin_iphone
