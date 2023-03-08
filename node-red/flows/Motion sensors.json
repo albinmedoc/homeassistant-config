@@ -95,26 +95,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 130,
     "y": 120,
     "wires": [
@@ -218,26 +199,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 140,
     "y": 260,
     "wires": [
@@ -339,26 +301,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 170,
     "y": 360,
     "wires": [

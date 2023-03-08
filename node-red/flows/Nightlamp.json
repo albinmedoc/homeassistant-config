@@ -122,22 +122,12 @@
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
     "name": "22:00",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
+    "props": [],
     "repeat": "",
     "crontab": "00 22 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
     "x": 130,
     "y": 340,
     "wires": [
@@ -152,22 +142,12 @@
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
     "name": "07:00",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
+    "props": [],
     "repeat": "",
     "crontab": "00 07 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
     "x": 130,
     "y": 280,
     "wires": [
@@ -191,20 +171,7 @@
     "entity_id": "input_boolean.night_light_kids_bedroom",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -237,20 +204,7 @@
     "entity_id": "input_boolean.night_light_kids_bedroom",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -304,26 +258,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 130,
     "y": 600,
     "wires": [
@@ -370,26 +305,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 130,
     "y": 480,
     "wires": [
@@ -554,20 +470,7 @@
     "entity_id": "input_boolean.night_light_kids_bedroom",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -623,26 +526,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 130,
     "y": 180,
     "wires": [
@@ -688,26 +572,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 130,
     "y": 80,
     "wires": [
@@ -866,26 +731,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 100,
     "y": 760,
     "wires": [
@@ -909,20 +755,7 @@
     "entity_id": "switch.relay_kids_bedroom",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1002,26 +835,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 100,
     "y": 820,
     "wires": [
@@ -1045,20 +859,7 @@
     "entity_id": "switch.relay_kids_bedroom",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1090,20 +891,7 @@
     "entity_id": "binary_sensor.night_light_kids_bedroom_active",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1162,20 +950,7 @@
     "entity_id": "binary_sensor.night_light_kids_bedroom_active",
     "state_type": "habool",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",

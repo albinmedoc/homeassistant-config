@@ -278,24 +278,6 @@
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [
       {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      },
-      {
         "property": "person",
         "propertyType": "msg",
         "value": "person.albin",
@@ -348,24 +330,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      },
       {
         "property": "person",
         "propertyType": "msg",
@@ -749,26 +713,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 140,
     "y": 1140,
     "wires": [
@@ -852,21 +797,9 @@
     "waitForRunning": true,
     "outputProperties": [
       {
-        "property": "payload",
+        "property": "action_type",
         "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event_type",
-        "valueType": "jsonata"
-      },
-      {
-        "property": "event_type",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event_type",
+        "value": "$outputData(\"eventData\").event.action",
         "valueType": "jsonata"
       }
     ],
@@ -976,26 +909,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 140,
     "y": 900,
     "wires": [
@@ -1219,7 +1133,7 @@
     "z": "9081c37be56bc95b",
     "g": "ea9720dad10ae7bd",
     "name": "Get person from action",
-    "func": "const action_name = msg.payload.event.action;\nconst person = action_name.split('DISARM_')[1].toLowerCase()\nconst person_entity_id = `person.${person}`;\n\nreturn {\n    person: person_entity_id\n};",
+    "func": "const action_name = msg.event_type;\nconst person = action_name.split('DISARM_')[1].toLowerCase()\nconst person_entity_id = `person.${person}`;\n\nreturn {\n    person: person_entity_id\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
@@ -1239,7 +1153,7 @@
     "z": "9081c37be56bc95b",
     "g": "ea9720dad10ae7bd",
     "name": "Is correct action?",
-    "property": "test",
+    "property": "action_type",
     "propertyType": "msg",
     "rules": [
       {

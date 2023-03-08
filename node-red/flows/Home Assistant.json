@@ -188,22 +188,12 @@
     "z": "9d7cd8ae.f2fe48",
     "g": "2e59710b52d84cd4",
     "name": "03.00",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
+    "props": [],
     "repeat": "",
     "crontab": "00 03 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
     "x": 110,
     "y": 280,
     "wires": [
@@ -274,26 +264,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 160,
     "y": 380,
     "wires": [
@@ -339,26 +310,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 180,
     "y": 440,
     "wires": [
@@ -432,22 +384,10 @@
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [
       {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
         "property": "data",
         "propertyType": "msg",
         "value": "",
         "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
       }
     ],
     "x": 160,

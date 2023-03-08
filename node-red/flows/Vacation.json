@@ -125,19 +125,7 @@
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [
       {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
+        "property": "person",
         "propertyType": "msg",
         "value": "",
         "valueType": "triggerId"
@@ -206,20 +194,7 @@
     "entity_id": "input_boolean.vacation_mode",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
@@ -247,20 +222,7 @@
     "entity_id": "input_boolean.vacation_mode",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
@@ -282,7 +244,7 @@
     "env": [
       {
         "name": "person",
-        "value": "{{topic}}",
+        "value": "{{person}}",
         "type": "str"
       },
       {
@@ -341,21 +303,9 @@
     "waitForRunning": true,
     "outputProperties": [
       {
-        "property": "payload",
+        "property": "action_type",
         "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event_type",
-        "valueType": "jsonata"
-      },
-      {
-        "property": "event_type",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event_type",
+        "value": "$outputData(\"eventData\").event.action",
         "valueType": "jsonata"
       }
     ],
@@ -373,7 +323,7 @@
     "z": "3b4f176249db8ba0",
     "g": "a95f98beadb5e910",
     "name": "Is correct action?",
-    "property": "payload.event.action",
+    "property": "action_type",
     "propertyType": "msg",
     "rules": [
       {
@@ -466,26 +416,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "x": 160,
     "y": 400,
     "wires": [
@@ -747,26 +678,7 @@
     "entity_id": "input_boolean.vacation_mode",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
+    "outputProperties": [],
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",

@@ -83,22 +83,12 @@
     "z": "7f81ec7457fe49ea",
     "g": "7f13b2d75f7cc15f",
     "name": "22.00",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
+    "props": [],
     "repeat": "",
     "crontab": "00 22 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
     "x": 150,
     "y": 80,
     "wires": [
@@ -113,22 +103,12 @@
     "z": "7f81ec7457fe49ea",
     "g": "7f13b2d75f7cc15f",
     "name": "07.00",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
+    "props": [],
     "repeat": "",
     "crontab": "00 07 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
     "x": 150,
     "y": 140,
     "wires": [
@@ -229,38 +209,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      },
-      {
-        "property": "media_player",
-        "propertyType": "msg",
-        "value": "media_player.homepod_kitchen",
-        "valueType": "str"
-      },
-      {
-        "property": "media_content_id",
-        "propertyType": "msg",
-        "value": "media-source://media_source/local/washer_done.mp3",
-        "valueType": "str"
-      }
-    ],
+    "outputProperties": [],
     "x": 160,
     "y": 240,
     "wires": [
@@ -306,38 +255,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      },
-      {
-        "property": "media_player",
-        "propertyType": "msg",
-        "value": "media_player.homepod_kitchen",
-        "valueType": "str"
-      },
-      {
-        "property": "message",
-        "propertyType": "msg",
-        "value": "Ytterdörr har varit öppen i 5 minuter. Den borde kanske stängas?",
-        "valueType": "str"
-      }
-    ],
+    "outputProperties": [],
     "x": 190,
     "y": 440,
     "wires": [
@@ -431,38 +349,7 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      },
-      {
-        "property": "media_player",
-        "propertyType": "msg",
-        "value": "media_player.homepod_kitchen",
-        "valueType": "str"
-      },
-      {
-        "property": "media_content_id",
-        "propertyType": "msg",
-        "value": "media-source://media_source/local/washer_done.mp3",
-        "valueType": "str"
-      }
-    ],
+    "outputProperties": [],
     "x": 150,
     "y": 340,
     "wires": [
