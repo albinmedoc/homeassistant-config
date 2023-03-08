@@ -78,19 +78,19 @@ cards:
       chart_type: "radialBar"
       graph_span: "10min"
       entity_1:
-        entity_id: sensor.disk_use_percent
+        entity_id: sensor.system_disk_use
         icon: "mdi:harddisk"
         name: "Disk"
         color: "red"
         max_value: 100
       entity_2:
-        entity_id: sensor.memory_use_percent
+        entity_id: sensor.system_memory_use
         icon: "mdi:memory"
         name: "Minne"
         color: "yellow"
         max_value: 100
       entity_3:
-        entity_id: sensor.processor_use
+        entity_id: sensor.system_processor_use
         icon: "mdi:chip"
         name: "CPU"
         color: "green"
