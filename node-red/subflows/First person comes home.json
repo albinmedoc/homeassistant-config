@@ -8,7 +8,7 @@
     "in": [],
     "out": [
       {
-        "x": 1370,
+        "x": 1330,
         "y": 60,
         "wires": [
           {
@@ -18,7 +18,7 @@
         ]
       },
       {
-        "x": 1370,
+        "x": 1330,
         "y": 240,
         "wires": [
           {
@@ -54,7 +54,7 @@
       "guest"
     ],
     "status": {
-      "x": 1340,
+      "x": 1300,
       "y": 140,
       "wires": [
         {
@@ -72,7 +72,7 @@
     "id": "622170d4e98f3b5e",
     "type": "junction",
     "z": "5c7f108f494183f7",
-    "x": 1120,
+    "x": 1080,
     "y": 240,
     "wires": [
       []
@@ -180,13 +180,13 @@
     "type": "function",
     "z": "5c7f108f494183f7",
     "name": "Create status",
-    "func": "const text = msg.topic;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "func": "const text = msg.person;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1200,
+    "x": 1160,
     "y": 140,
     "wires": [
       []
@@ -232,7 +232,7 @@
         "module": "selectn"
       }
     ],
-    "x": 1220,
+    "x": 1180,
     "y": 60,
     "wires": [
       []
@@ -327,7 +327,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1200,
+    "x": 1160,
     "y": 200,
     "wires": [
       []

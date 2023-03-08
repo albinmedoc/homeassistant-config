@@ -8,7 +8,7 @@
     "in": [],
     "out": [
       {
-        "x": 1070,
+        "x": 1030,
         "y": 60,
         "wires": [
           {
@@ -18,7 +18,7 @@
         ]
       },
       {
-        "x": 1070,
+        "x": 1030,
         "y": 260,
         "wires": [
           {
@@ -54,7 +54,7 @@
       "guest"
     ],
     "status": {
-      "x": 1040,
+      "x": 1000,
       "y": 140,
       "wires": [
         {
@@ -72,7 +72,7 @@
     "id": "f28cfb1eaf9dd39e",
     "type": "junction",
     "z": "10bf6a612840df6b",
-    "x": 820,
+    "x": 780,
     "y": 260,
     "wires": [
       []
@@ -115,22 +115,10 @@
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [
       {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
         "property": "data",
         "propertyType": "msg",
         "value": "",
         "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
       }
     ],
     "x": 110,
@@ -167,13 +155,13 @@
     "type": "function",
     "z": "10bf6a612840df6b",
     "name": "Create status",
-    "func": "const text = msg.topic;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "func": "const text = msg.person;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 900,
+    "x": 860,
     "y": 140,
     "wires": [
       []
@@ -219,7 +207,7 @@
         "module": "selectn"
       }
     ],
-    "x": 920,
+    "x": 880,
     "y": 60,
     "wires": [
       []
@@ -314,7 +302,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 900,
+    "x": 860,
     "y": 200,
     "wires": [
       []

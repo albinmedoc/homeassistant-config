@@ -397,20 +397,7 @@
     "entity_id": "alarm_control_panel.alarmo",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -493,20 +480,7 @@
     "entity_id": "alarm_control_panel.alarmo",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
