@@ -8,25 +8,16 @@ swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
-    template: view_heading
+    template: room_view_base
     variables:
       - title: Sovrum
       - motion_sensor: binary_sensor.motion_bedroom
       - lights: light.all_bedroom
       - televisions: media_player.televisions_bedroom
+      - temperature: sensor.smoke_detector_bedroom_temperature
 
   - type: "horizontal-stack"
     cards:
-      - type: "custom:button-card"
-        template: card_graph
-        entity: sensor.smoke_detector_bedroom_temperature
-        variables:
-          ulm_card_graph_color: "var(--google-red)"
-          ulm_card_graph_name: Temperatur
-          ulm_card_graph_entity: sensor.smoke_detector_bedroom_temperature
-          ulm_card_graph_type: fill
-          ulm_card_graph_hours: 24
-          ulm_card_graph_group_by: interval
       - type: "custom:button-card"
         template: card_media_player
         entity: media_player.tv_bedroom

@@ -8,23 +8,11 @@ swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
-    template: view_heading
+    template: room_view_base
     variables:
       - title: Uterum
       - lights: light.all_conservatory
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_graph
-        entity: sensor.temperature_conservatory
-        variables:
-          ulm_card_graph_color: "var(--google-red)"
-          ulm_card_graph_name: Temperatur
-          ulm_card_graph_entity: sensor.temperature_conservatory
-          ulm_card_graph_type: fill
-          ulm_card_graph_hours: 24
-          ulm_card_graph_group_by: interval
+      - temperature: sensor.temperature_conservatory
 
   - type: "custom:button-card"
     template: card_title

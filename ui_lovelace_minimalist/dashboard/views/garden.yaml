@@ -8,22 +8,17 @@ swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
-    template: view_heading
+    template: room_view_base
     variables:
       - title: Trädgård
-
-  - type: custom:simple-weather-card
-    entity: weather.smhi
-    backdrop: true
+      - temperature: sensor.temperature_garden
+      - camera: camera.camera_garden_hd_stream
 
   - type: "horizontal-stack"
     cards:
-      - type: "custom:button-card"
-        entity: camera.camera_garden_hd_stream
-        template: "custom_card_camera"
-        show_icon: false
-        variables:
-          ulm_custom_card_camera_title: false
+      - type: custom:simple-weather-card
+        entity: weather.smhi
+        backdrop: true
 
   - type: "custom:button-card"
     template: card_title

@@ -8,7 +8,7 @@ swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
-    template: view_heading
+    template: room_view_base
     variables:
       - title: Badrum
       - motion_sensor: binary_sensor.motion_bathroom
