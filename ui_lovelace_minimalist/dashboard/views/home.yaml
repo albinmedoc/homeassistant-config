@@ -271,6 +271,7 @@ cards:
         tap_action:
           action: navigate
           navigation_path: "conservatory"
+        label: "[[[ return states['sensor.temperature_conservatory'].state + '°C' ]]]"
         variables:
           ulm_custom_card_esh_room_light_entity: light.all_conservatory
       - type: "custom:button-card"
