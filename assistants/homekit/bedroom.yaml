@@ -7,6 +7,8 @@
 - light.wardrobe_lamp_bedroom
 - light.ceiling_lamp_bedroom
 
+- cover.blind_bedroom
+
 - media_player.tv_bedroom
 
 - binary_sensor.motion_bedroom
