@@ -16,13 +16,12 @@
       "label": true
     },
     "nodes": [
-      "e0ef91ffabc79baa",
-      "733c04aaaa75aef8",
-      "dd89f3d78cc0ddc4"
+      "dd89f3d78cc0ddc4",
+      "f6f12d54667290c7"
     ],
     "x": 34,
     "y": 39,
-    "w": 772,
+    "w": 552,
     "h": 82
   },
   {
@@ -35,96 +34,16 @@
     },
     "nodes": [
       "108711782342764d",
-      "6a811b5ff4e50888",
-      "145e4d491c2bf0e8",
       "881e055aefec352a",
       "5a752c4a7ee2bb9a",
       "6bfc01e7166f0255",
-      "1c6e050d5d9776e4"
+      "1c6e050d5d9776e4",
+      "78dad3d01b30c42e"
     ],
     "x": 34,
     "y": 159,
-    "w": 672,
+    "w": 472,
     "h": 202
-  },
-  {
-    "id": "e0ef91ffabc79baa",
-    "type": "server-state-changed",
-    "z": "59b6382f2b4b4619",
-    "g": "ca425b51ea70d657",
-    "name": "Samsung TV Living room on",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "media_player.samsung_tv_vardagsrum",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 180,
-    "y": 80,
-    "wires": [
-      [
-        "733c04aaaa75aef8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "733c04aaaa75aef8",
-    "type": "api-current-state",
-    "z": "59b6382f2b4b4619",
-    "g": "ca425b51ea70d657",
-    "name": "TV Living room off?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_living_room_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 430,
-    "y": 80,
-    "wires": [
-      [
-        "dd89f3d78cc0ddc4"
-      ],
-      []
-    ]
   },
   {
     "id": "dd89f3d78cc0ddc4",
@@ -148,7 +67,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 670,
+    "x": 450,
     "y": 80,
     "wires": [
       []
@@ -201,78 +120,6 @@
     ]
   },
   {
-    "id": "6a811b5ff4e50888",
-    "type": "switch",
-    "z": "59b6382f2b4b4619",
-    "g": "8d64418785067593",
-    "name": "Was turned off?",
-    "property": "data.old_state.state",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "off",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 340,
-    "y": 320,
-    "wires": [
-      [
-        "881e055aefec352a"
-      ]
-    ]
-  },
-  {
-    "id": "145e4d491c2bf0e8",
-    "type": "server-state-changed",
-    "z": "59b6382f2b4b4619",
-    "g": "8d64418785067593",
-    "name": "Chromecast idle",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "media_player.chromecast_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "idle",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 140,
-    "y": 320,
-    "wires": [
-      [
-        "6a811b5ff4e50888"
-      ],
-      []
-    ]
-  },
-  {
     "id": "881e055aefec352a",
     "type": "api-call-service",
     "z": "59b6382f2b4b4619",
@@ -294,7 +141,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 570,
+    "x": 370,
     "y": 320,
     "wires": [
       []
@@ -398,6 +245,129 @@
     "wires": [
       [
         "6bfc01e7166f0255"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f6f12d54667290c7",
+    "type": "trigger-state",
+    "z": "59b6382f2b4b4619",
+    "g": "ca425b51ea70d657",
+    "name": "Samsung TV Living room on",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "media_player.samsung_tv_vardagsrum",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "on"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "input_boolean.tv_living_room_on",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      }
+    ],
+    "inputs": 0,
+    "outputs": 2,
+    "customoutputs": [],
+    "outputinitially": false,
+    "state_type": "str",
+    "enableInput": false,
+    "x": 180,
+    "y": 80,
+    "wires": [
+      [
+        "dd89f3d78cc0ddc4"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "78dad3d01b30c42e",
+    "type": "trigger-state",
+    "z": "59b6382f2b4b4619",
+    "g": "8d64418785067593",
+    "name": "Chromecast on",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "media_player.chromecast_bedroom",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is_not",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "on"
+      },
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "previous_state",
+        "propertyValue": "old_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "switch.plug_tv_bedroom",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      }
+    ],
+    "inputs": 0,
+    "outputs": 2,
+    "customoutputs": [],
+    "outputinitially": false,
+    "state_type": "str",
+    "enableInput": false,
+    "x": 140,
+    "y": 320,
+    "wires": [
+      [
+        "881e055aefec352a"
       ],
       []
     ]

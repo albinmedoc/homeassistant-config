@@ -697,83 +697,6 @@
     ]
   },
   {
-    "id": "525054d275a4df1b",
-    "type": "server-state-changed",
-    "z": "1f26ba8a27c1477d",
-    "name": "Lamp on",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.ceiling_lamp_kids_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [],
-    "x": 100,
-    "y": 760,
-    "wires": [
-      [
-        "f8fd07aa892e1f9b"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "f8fd07aa892e1f9b",
-    "type": "api-current-state",
-    "z": "1f26ba8a27c1477d",
-    "name": "Wallswitch off?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "false",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "entity_id": "switch.relay_kids_bedroom",
-    "state_type": "habool",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 280,
-    "y": 760,
-    "wires": [
-      [
-        "083229431baf9d69"
-      ],
-      []
-    ]
-  },
-  {
     "id": "a7e8eebd90a38474",
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
@@ -794,119 +717,10 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 700,
+    "x": 520,
     "y": 760,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "d5fd42e1cafddab6",
-    "type": "server-state-changed",
-    "z": "1f26ba8a27c1477d",
-    "name": "Lamp off",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.ceiling_lamp_kids_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "false",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [],
-    "x": 100,
-    "y": 820,
-    "wires": [
-      [
-        "1c94d6a848b49a31"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "1c94d6a848b49a31",
-    "type": "api-current-state",
-    "z": "1f26ba8a27c1477d",
-    "name": "Wallswitch on?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "entity_id": "switch.relay_kids_bedroom",
-    "state_type": "habool",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 280,
-    "y": 820,
-    "wires": [
-      [
-        "7c8c145290d75f7f"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "083229431baf9d69",
-    "type": "api-current-state",
-    "z": "1f26ba8a27c1477d",
-    "name": "Nightlamp active?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "entity_id": "binary_sensor.night_light_kids_bedroom_active",
-    "state_type": "habool",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 490,
-    "y": 760,
-    "wires": [
-      [],
-      [
-        "a7e8eebd90a38474"
-      ]
     ]
   },
   {
@@ -930,42 +744,140 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 700,
+    "x": 520,
     "y": 820,
     "wires": [
       []
     ]
   },
   {
-    "id": "7c8c145290d75f7f",
-    "type": "api-current-state",
+    "id": "4bb60aca5aedf2b7",
+    "type": "trigger-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Nightlamp active?",
+    "name": "Lamp on, Wallswitch and Nightmode active off",
     "server": "e9739673.bbfed8",
-    "version": 3,
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "light.ceiling_lamp_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "on"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "switch.relay_kids_bedroom",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "binary_sensor.night_light_kids_bedroom_active",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      }
+    ],
+    "inputs": 0,
     "outputs": 2,
-    "halt_if": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "entity_id": "binary_sensor.night_light_kids_bedroom_active",
-    "state_type": "habool",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 490,
+    "customoutputs": [],
+    "outputinitially": false,
+    "state_type": "str",
+    "enableInput": false,
+    "x": 220,
+    "y": 760,
+    "wires": [
+      [
+        "a7e8eebd90a38474"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "5a0a9b7ffcc43b59",
+    "type": "trigger-state",
+    "z": "1f26ba8a27c1477d",
+    "name": "Lamp off, Wallswitch on, Nightmode active off",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "light.ceiling_lamp_kids_bedroom",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "switch.relay_kids_bedroom",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "on"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "binary_sensor.night_light_kids_bedroom_active",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "off"
+      }
+    ],
+    "inputs": 0,
+    "outputs": 2,
+    "customoutputs": [],
+    "outputinitially": false,
+    "state_type": "str",
+    "enableInput": false,
+    "x": 210,
     "y": 820,
     "wires": [
-      [],
       [
         "905b14865fdbd2b9"
-      ]
+      ],
+      []
     ]
   }
 ]

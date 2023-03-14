@@ -16,13 +16,12 @@
       "label": true
     },
     "nodes": [
-      "2d4f29ef982ab65e",
-      "8d28e6dfa1bfb9b0",
-      "6d1d2435763bad74"
+      "6d1d2435763bad74",
+      "3058c66978f70a0d"
     ],
     "x": 34,
     "y": 39,
-    "w": 572,
+    "w": 532,
     "h": 82
   },
   {
@@ -35,95 +34,12 @@
     },
     "nodes": [
       "0c709adc70a7b981",
-      "43a51cdd1bafdc8f",
-      "3f2ab8b96d1ab88c",
-      "7421bc525afa4694"
+      "59541d6d88a5c3a1"
     ],
     "x": 34,
     "y": 159,
-    "w": 712,
+    "w": 552,
     "h": 82
-  },
-  {
-    "id": "2d4f29ef982ab65e",
-    "type": "server-state-changed",
-    "z": "f6c266122b405d78",
-    "d": true,
-    "g": "05d687da1ce7b06d",
-    "name": "Vacuum start",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "vacuum.cleanmate",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "cleaning",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 130,
-    "y": 80,
-    "wires": [
-      [
-        "8d28e6dfa1bfb9b0"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "8d28e6dfa1bfb9b0",
-    "type": "api-current-state",
-    "z": "f6c266122b405d78",
-    "d": true,
-    "g": "05d687da1ce7b06d",
-    "name": "Armed?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "armed_away",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "alarm_control_panel.alarmo",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 300,
-    "y": 80,
-    "wires": [
-      [
-        "6d1d2435763bad74"
-      ],
-      []
-    ]
   },
   {
     "id": "0c709adc70a7b981",
@@ -146,7 +62,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 670,
+    "x": 510,
     "y": 200,
     "wires": [
       []
@@ -173,21 +89,20 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 490,
+    "x": 450,
     "y": 80,
     "wires": [
       []
     ]
   },
   {
-    "id": "43a51cdd1bafdc8f",
-    "type": "server-state-changed",
+    "id": "3058c66978f70a0d",
+    "type": "trigger-state",
     "z": "f6c266122b405d78",
-    "d": true,
-    "g": "c77bf66ac0de544c",
-    "name": "Vacuum docked",
+    "g": "05d687da1ce7b06d",
+    "name": "Vacuum starts and armed away",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 2,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -199,99 +114,117 @@
         "value": ""
       }
     ],
-    "entityidfilter": "vacuum.cleanmate",
+    "entityid": "vacuum.cleanmate",
     "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "cleaning"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "alarm_control_panel.alarmo",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "armed_away"
+      }
+    ],
+    "inputs": 0,
+    "outputs": 2,
+    "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
-    "haltifstate": "docked",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 140,
-    "y": 200,
+    "enableInput": false,
+    "x": 190,
+    "y": 80,
     "wires": [
       [
-        "3f2ab8b96d1ab88c"
+        "6d1d2435763bad74"
       ],
       []
     ]
   },
   {
-    "id": "3f2ab8b96d1ab88c",
-    "type": "api-current-state",
+    "id": "59541d6d88a5c3a1",
+    "type": "trigger-state",
     "z": "f6c266122b405d78",
-    "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Nobody home",
+    "name": "Vacuum docked, nobody home and armed home",
     "server": "e9739673.bbfed8",
-    "version": 3,
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "vacuum.cleanmate",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "cleaning"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "zone.home",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "num",
+        "comparatorValue": "0"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "input_boolean.guest_mode",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "false"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "alarm_control_panel.alarmo",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "armed_home"
+      }
+    ],
+    "inputs": 0,
     "outputs": 2,
-    "halt_if": "0",
-    "halt_if_type": "num",
-    "halt_if_compare": "is",
-    "entity_id": "zone.home",
+    "customoutputs": [],
+    "outputinitially": false,
     "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 340,
+    "enableInput": false,
+    "x": 240,
     "y": 200,
     "wires": [
-      [
-        "7421bc525afa4694"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "7421bc525afa4694",
-    "type": "api-current-state",
-    "z": "f6c266122b405d78",
-    "d": true,
-    "g": "c77bf66ac0de544c",
-    "name": "Armed?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "armed_away",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "alarm_control_panel.alarmo",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 520,
-    "y": 200,
-    "wires": [
-      [],
       [
         "0c709adc70a7b981"
-      ]
+      ],
+      []
     ]
   }
 ]
