@@ -197,3 +197,27 @@
           \ {% set ns.result = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result
           | join('\\n') }}\n"
   mode: restart
+- id: '1678739259510'
+  alias: Volymkontroll Vardagsrum
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1744.yaml
+    input:
+      integration: ZHA
+      controller_device: 0eb1f091144c535885b9f93bcdf86169
+      helper_last_controller_event: input_text.controller_helper_living_room_volume
+      action_click_short: []
+      action_click_double: []
+      action_rotate_left: []
+      action_rotate_right: []
+      helper_debounce_delay: 100
+- id: '1678740188806'
+  alias: Hook - Media Player - TV Vardagsrum
+  description: ''
+  use_blueprint:
+    path: EPMatt/media_player.yaml
+    input:
+      controller_model: IKEA E1744 SYMFONISK Rotary Remote
+      media_player: media_player.tv_living_room
+      controller_device: 0eb1f091144c535885b9f93bcdf86169
+      volume_steps_long: 100
