@@ -221,3 +221,47 @@
       media_player: media_player.tv_living_room
       controller_device: 0eb1f091144c535885b9f93bcdf86169
       volume_steps_long: 100
+- id: '1678827426647'
+  alias: NS-Panel Hallway
+  description: ''
+  use_blueprint:
+    path: Blackymas/nspanel_blueprint.yaml
+    input:
+      nspanel_name: ns_panel
+      language: SWE
+      weather: Default
+      weather_entity: weather.smhi
+      left_button_entity: light.lamp_2_hallway
+      left_button_name: Lampa
+      right_button_name: Lampa
+      right_button_entity: light.lamp_2_hallway
+      button_page01_label: Vardagsrum
+      button_page02_label: Hall
+      button_page03_label: Kök
+      button_page04_label: Sovrum
+      entity01: light.ceiling_lamp_living_room
+      entity01_name: Taklampa
+      entity02: light.standing_lamp_living_room
+      entity02_name: Stående Lampa
+      entity03: light.sonos_lamp_living_room
+      entity03_name: Sonos Lampa
+      entity04: light.dining_table_living_room
+      entity04_name: Matbord
+      entity09: light.lamp_entrance_hallway
+      entity09_name: Entré
+      entity10: light.lamp_2_hallway
+      entity10_name: Hall 2
+      entity11: light.lamp_3_hallway
+      entity11_name: Hall 3
+      entity17: light.ceiling_lamp_kitchen
+      entity17_name: Taklampa
+      entity18: light.cooker_hood_kitchen
+      entity18_name: Köksfläkt
+      entity25: light.ceiling_lamp_bedroom
+      entity25_name: Taklampa
+      entity26: light.wardrobe_lamp_bedroom
+      entity26_name: Garderob
+      qrcode_state: true
+      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
+      qrcode_label: Wifi
+      entity04_confirm: false
