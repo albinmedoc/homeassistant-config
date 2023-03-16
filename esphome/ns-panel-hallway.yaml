@@ -3,7 +3,7 @@ substitutions:
 
   ###### CHANGE ME START ######
 
-  device_name: "ns_panel"
+  device_name: "ns_panel_hallway"
   wifi_ssid: !secret wifi_ssid
   wifi_password: !secret wifi_password
 
