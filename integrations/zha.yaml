@@ -17,20 +17,12 @@ zha:
     00:12:4b:00:26:b7:0a:6e-1:
       type: "switch"
 
-    # Relay Sofa Living room
-    00:12:4b:00:24:c5:ce:bd-1:
-      type: "switch"
-
     # Relay Kids Bedroom
     00:12:4b:00:26:b7:0d:9e-1:
       type: "switch"
 
     # Relay Hallway 1
     00:12:4b:00:26:b7:1a:8c-1:
-      type: "switch"
-
-    # Relay Hallway 2
-    00:12:4b:00:26:b7:1a:1f-1:
       type: "switch"
 
     # Relay Hallway 3
