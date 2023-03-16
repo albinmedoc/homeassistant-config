@@ -280,8 +280,8 @@
       qrcode_label: Wifi
       left_button_name: Taklampa
       left_button_entity: light.ceiling_lamp_living_room
-      right_button_name: Stående lampa
-      right_button_entity: light.standing_lamp_living_room
+      right_button_name: Uterum
+      right_button_entity: light.roof_loop_conservatory
       button_page01_label: Vardagsrum
       button_page02_label: Hall
       button_page03_label: Kök
