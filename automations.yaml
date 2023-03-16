@@ -236,8 +236,8 @@
       qrcode_label: Wifi
       left_button_name: Lampa
       left_button_entity: light.lamp_2_hallway
-      right_button_name: Lampa
-      right_button_entity: light.lamp_2_hallway
+      right_button_name: Entré
+      right_button_entity: light.lamp_entrance_hallway
       button_page01_label: Vardagsrum
       button_page02_label: Hall
       button_page03_label: Kök
