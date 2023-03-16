@@ -264,6 +264,8 @@
       entity25_name: Taklampa
       entity26: light.wardrobe_lamp_bedroom
       entity26_name: Garderob
+      entity27: cover.blind_bedroom
+      entity27_name: Rullgardin
 - id: '1678918339019'
   alias: NS-Panel Living room
   description: ''
@@ -306,3 +308,5 @@
       entity25_name: Taklampa
       entity26: light.wardrobe_lamp_bedroom
       entity26_name: Garderob
+      entity27: cover.blind_bedroom
+      entity27_name: Rullgardin
