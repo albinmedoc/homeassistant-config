@@ -12,3 +12,6 @@ flows.json
 #
 # https://github.com/zachowj/node-red-contrib-home-assistant-websocket
 node-red-contrib-home-assistant-websocket.json
+
+# Hide the playground flow, updates frequently
+flows/Playground.json
