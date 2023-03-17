@@ -10,6 +10,7 @@ card_esh_room:
     - "ulm_translation_engine"
   size: "20px"
   variables:
+    ulm_custom_card_esh_room_label: null
     ulm_custom_card_esh_room_light_entity: null
     ulm_custom_card_esh_room_climate_entity: null
     ulm_card_thermostat_enable_popup: false
@@ -22,7 +23,9 @@ card_esh_room:
       var label_entity = variables.ulm_custom_card_esh_room_light_entity
         ? states[variables.ulm_custom_card_esh_room_light_entity]
         : entity;
-      if (!label_entity) {
+      if(variables.ulm_custom_card_esh_room_label){
+        return variables.ulm_custom_card_esh_room_label;
+      } else if (!label_entity) {
         return "<br />";
       } else if (label_entity.state == "on") {
         var bri = Math.round(label_entity.attributes.brightness / 2.55);

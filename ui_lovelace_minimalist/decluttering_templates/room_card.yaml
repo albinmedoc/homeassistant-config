@@ -1,0 +1,24 @@
+---
+# Room Card
+#
+# Variables
+#   title: The title of the room
+#   icon: The icon for the room
+#   navigation_path: The path for the room view
+#   lights?: A light group for the lights in the room
+#   temperature?: A temperature sensor for the room
+
+card:
+  type: "custom:button-card"
+  template:
+    - card_esh_room
+    - yellow_on
+  name: "[[title]]"
+  entity: "[[lights]]"
+  icon: "[[icon]]"
+  tap_action:
+    action: navigate
+    navigation_path: "[[navigation_path]]"
+  variables:
+    ulm_custom_card_esh_room_light_entity: "[[[ return ('[[lights]]'.includes('[[') ? null : '[[lights]]') ]]]"
+    ulm_custom_card_esh_room_label: "[[[ return ('[[temperature]]'.includes('[[') ? null : states['[[temperature]]'].state + '°C') ]]]"
