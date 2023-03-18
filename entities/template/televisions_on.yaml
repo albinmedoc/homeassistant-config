@@ -5,4 +5,5 @@
 sensor:
   - unique_id: f58e43d8-d424-4303-b160-de8bf18af1ab
     state_class: "measurement"
+    unit_of_measurement: "tv apparat(er)"
     state: "{{expand(state_attr('media_player.televisions', 'entity_id'))| selectattr('state','in', ['on', 'idle', 'buffering', 'playing'])|map(attribute='entity_id')|list|count}}"
