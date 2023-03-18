@@ -11,8 +11,8 @@ mac: !secret tv_living_room_mac
 api_key: !secret smart_things_api_key
 device_id: !secret smart_things_tv_device_id
 source_list: '{
-  "Playstation": "ST_HDMI3",
-  "Apple TV": "ST_HDMI2"
+  "Playstation": "ST_HDMI2",
+  "Apple TV": "ST_HDMI3"
 }'
 app_list: '{}'
 channel_list: '{}'
