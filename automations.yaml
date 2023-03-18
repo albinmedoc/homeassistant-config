@@ -225,88 +225,127 @@
   alias: NS-Panel Hallway
   description: ''
   use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
+    path: Blackymas/nspanel_blueprint_beta.yaml
     input:
       nspanel_name: ns_panel_hallway
       language: SWE
-      weather: Default
       weather_entity: weather.smhi
-      qrcode_state: true
-      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
+      qrcode_enabled: true
       qrcode_label: Wifi
-      left_button_name: Lampa
+      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
       left_button_entity: light.lamp_2_hallway
-      right_button_name: Entré
+      left_button_hold_select: Custom Action
+      left_button_hold_custom_action:
+      - service: light.toggle
+        target:
+          entity_id: light.all_hallway
+        data: {}
+      left_button_name: Hall 2
       right_button_entity: light.lamp_entrance_hallway
+      right_button_name: Entre
+      right_button_hold_select: Custom Action
+      right_button_hold_custom_action:
+      - service: light.toggle
+        target:
+          entity_id: light.all_hallway
+        data: {}
+      relay_2_local_fallback: true
       button_page01_label: Vardagsrum
-      button_page02_label: Hall
-      button_page03_label: Kök
-      button_page04_label: Sovrum
-      entity01: light.ceiling_lamp_living_room
+      button_page02_label: Sovrum
+      button_page03_label: Hall
       entity01_name: Taklampa
+      entity01: light.ceiling_lamp_living_room
+      entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
-      entity02_name: Stående Lampa
+      entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
-      entity03_name: Sonos Lampa
-      entity04: light.dining_table_living_room
       entity04_name: Matbord
-      entity09: light.lamp_entrance_hallway
-      entity09_name: Entré
-      entity10: light.lamp_2_hallway
-      entity10_name: Hall 2
-      entity11: light.lamp_3_hallway
-      entity11_name: Hall 3
-      entity17: light.ceiling_lamp_kitchen
-      entity17_name: Taklampa
-      entity18: light.cooker_hood_kitchen
-      entity18_name: Köksfläkt
-      entity25: light.ceiling_lamp_bedroom
-      entity25_name: Taklampa
-      entity26: light.wardrobe_lamp_bedroom
-      entity26_name: Garderob
-      entity27: cover.blind_bedroom
-      entity27_name: Rullgardin
+      entity04: light.dining_table_living_room
+      entity09_name: Taklampa
+      entity09: light.ceiling_lamp_bedroom
+      entity10_name: Garderob
+      entity10: light.wardrobe_lamp_bedroom
+      entity11_name: Rullgardin
+      entity11: cover.blind_bedroom
+      entity17_name: Entré
+      entity17: light.lamp_entrance_hallway
+      entity18_name: Lampa 2
+      entity18: light.lamp_2_hallway
+      entity19_name: Lampa 3
+      entity19: light.lamp_3_hallway
+      entitypages_enabled: true
+      home_button06_icon: 
+      entity_page01_label: Säkerhet
+      entities_entity01_name: Barnens Sovrum
+      entities_entity01: binary_sensor.window_kids_bedroom
+      entities_entity01_icon: 
+      entities_entity02_name: Lekrum
+      entities_entity02: binary_sensor.window_playroom
+      entities_entity02_icon: 
+      entities_entity03_name: Sovrum
+      entities_entity03: binary_sensor.window_bedroom
+      entities_entity03_icon: 
+      entities_entity04_name: Ytterdörr
+      entities_entity04: binary_sensor.door_main_hallway
+      entities_entity04_icon: 
+      entities_entity05_name: Uterum
+      entities_entity05: binary_sensor.door_conservatory
+      entities_entity05_icon: 
 - id: '1678918339019'
   alias: NS-Panel Living room
   description: ''
   use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
+    path: Blackymas/nspanel_blueprint_beta.yaml
     input:
       nspanel_name: ns_panel_living_room
       language: SWE
       weather_entity: weather.smhi
-      qrcode_state: true
-      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
+      qrcode_enabled: true
       qrcode_label: Wifi
-      left_button_name: Taklampa
+      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
       left_button_entity: light.ceiling_lamp_living_room
-      right_button_name: Uterum
+      left_button_name: Taklampa
       right_button_entity: light.roof_loop_conservatory
+      right_button_name: Uterum
+      relay_2_local_fallback: true
       button_page01_label: Vardagsrum
-      button_page02_label: Hall
-      button_page03_label: Kök
-      button_page04_label: Sovrum
-      entity01: light.ceiling_lamp_living_room
+      button_page02_label: Sovrum
+      button_page03_label: Hall
       entity01_name: Taklampa
+      entity01: light.ceiling_lamp_living_room
+      entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
-      entity02_name: Stående Lampa
+      entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
-      entity03_name: Sonos Lampa
-      entity04: light.dining_table_living_room
       entity04_name: Matbord
-      entity09: light.lamp_entrance_hallway
-      entity09_name: Entré
-      entity10: light.lamp_2_hallway
-      entity10_name: Hall 2
-      entity11: light.lamp_3_hallway
-      entity11_name: Hall 3
-      entity17: light.ceiling_lamp_kitchen
-      entity17_name: Taklampa
-      entity18: light.cooker_hood_kitchen
-      entity18_name: Köksfläkt
-      entity25: light.ceiling_lamp_bedroom
-      entity25_name: Taklampa
-      entity26: light.wardrobe_lamp_bedroom
-      entity26_name: Garderob
-      entity27: cover.blind_bedroom
-      entity27_name: Rullgardin
+      entity04: light.dining_table_living_room
+      entity09_name: Taklampa
+      entity09: light.ceiling_lamp_bedroom
+      entity10_name: Garderob
+      entity10: light.wardrobe_lamp_bedroom
+      entity11_name: Rullgardin
+      entity11: cover.blind_bedroom
+      entity17_name: Entré
+      entity17: light.lamp_entrance_hallway
+      entity18_name: Lampa 2
+      entity18: light.lamp_2_hallway
+      entity19_name: Lampa 3
+      entity19: light.lamp_3_hallway
+      entitypages_enabled: true
+      home_button06_icon: 
+      entity_page01_label: Säkerhet
+      entities_entity01_name: Barnens Sovrum
+      entities_entity01: binary_sensor.window_kids_bedroom
+      entities_entity01_icon: 
+      entities_entity02_name: Lekrum
+      entities_entity02: binary_sensor.window_playroom
+      entities_entity02_icon: 
+      entities_entity03_name: Sovrum
+      entities_entity03: binary_sensor.window_bedroom
+      entities_entity03_icon: 
+      entities_entity04_name: Ytterdörr
+      entities_entity04: binary_sensor.door_main_hallway
+      entities_entity04_icon: 
+      entities_entity05_name: Uterum
+      entities_entity05: binary_sensor.door_conservatory
+      entities_entity05_icon: 
