@@ -4,9 +4,6 @@
 # Area: Home
 #
 
-- input_boolean.homekit_albin_home
-- input_boolean.homekit_matilda_home
-
 - vacuum.cleanmate
 
 - camera.camera_dino_hd_stream
