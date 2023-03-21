@@ -309,8 +309,6 @@
       right_button_name: Uterum
       relay_2_local_fallback: true
       button_page01_label: Vardagsrum
-      button_page02_label: Sovrum
-      button_page03_label: Hall
       entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
       entity02_name: Stående lampa
@@ -319,18 +317,26 @@
       entity03: light.sonos_lamp_living_room
       entity04_name: Matbord
       entity04: light.dining_table_living_room
+      button_page02_label: Sovrum
       entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
       entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
       entity11_name: Rullgardin
       entity11: cover.blind_bedroom
+      button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
       entity18_name: Lampa 2
       entity18: light.lamp_2_hallway
       entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
+      entity25: light.all
+      entity25_name: Alla lampor
+      entity26: scene.film
+      entity26_name: Filmläge
+      entity27: scene.night
+      entity27_name: Nattläge
       entitypages_enabled: true
       home_button06_icon: 
       entity_page01_label: Säkerhet
