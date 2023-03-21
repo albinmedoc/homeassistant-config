@@ -355,3 +355,19 @@
       entities_entity05_name: Uterum
       entities_entity05: binary_sensor.door_conservatory
       entities_entity05_icon: 
+      entity_page02_label: Temperatur
+      entities_entity09_name: Vardagsrum
+      entities_entity09: sensor.temperature_living_room
+      entities_entity09_icon: 
+      entities_entity10_name: Hall
+      entities_entity10: sensor.temperature_hallway
+      entities_entity10_icon: 
+      entities_entity11_name: Sovrum
+      entities_entity11: sensor.temperature_bedroom
+      entities_entity11_icon: 
+      entities_entity12_name: Barnens sovrum
+      entities_entity12: sensor.temperature_kids_bedroom
+      entities_entity12_icon: 
+      entities_entity13_name: Uterum
+      entities_entity13: sensor.temperature_conservatory
+      entities_entity13_icon: 
