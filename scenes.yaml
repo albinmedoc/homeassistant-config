@@ -1,19 +1,3 @@
-- id: a6228e57-aad3-49f6-9379-1ee6713121a5
-  name: Titta TV Sovrum
-  entities:
-    switch.plug_tv_bedroom:
-      friendly_name: Plug TV Sovrum Switch
-      state: 'on'
-    light.ceiling_lamp_bedroom:
-      color_mode: brightness
-      brightness: 3
-      state: 'on'
-  icon: mdi:television-shimmer
-  metadata:
-    switch.plug_tv_bedroom:
-      entity_only: true
-    light.ceiling_lamp_bedroom:
-      entity_only: true
 - id: e8f1ac5a-b814-4ed3-a5bd-95979f23ea24
   name: Inte hemma
   icon: mdi:home-off
@@ -47,7 +31,7 @@
   name: Film
   entities:
     media_player.tv_living_room:
-      volume_level: 0.20
+      volume_level: 0.2
       is_volume_muted: false
       source: Apple TV
       state: paused
@@ -58,4 +42,3 @@
     light.ceiling_lamp_kitchen: 'off'
     light.dining_table_living_room: 'off'
   icon: mdi:movie
-  
