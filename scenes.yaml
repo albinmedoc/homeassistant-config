@@ -43,3 +43,19 @@
     light.all_toilet: 'off'
     light.all_conservatory: 'off'
     media_player.tv_living_room: 'off'
+- id: df6883c0-c56d-4bfb-8f89-b0d9de9852db
+  name: Film
+  entities:
+    media_player.tv_living_room:
+      volume_level: 0.20
+      is_volume_muted: false
+      source: Apple TV
+      state: paused
+    light.sonos_lamp_living_room:
+      brightness: 51
+      state: 'on'
+    light.ceiling_lamp_living_room: 'off'
+    light.ceiling_lamp_kitchen: 'off'
+    light.dining_table_living_room: 'off'
+  icon: mdi:movie
+  

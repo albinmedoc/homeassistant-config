@@ -290,7 +290,7 @@
       entity25_icon: 
       entity25_icon_color: '62880'
       entity26_name: Filmläge
-      entity26: scene.film
+      entity26: scene.movie
       entity26_icon: 
       entity26_icon_color: '55907'
       entity27_name: Nattläge
@@ -389,7 +389,7 @@
       entity25_icon: 
       entity25_icon_color: '62880'
       entity26_name: Filmläge
-      entity26: scene.film
+      entity26: scene.movie
       entity26_icon: 
       entity26_icon_color: '55907'
       entity27_name: Nattläge
