@@ -1,0 +1,314 @@
+[
+  {
+    "id": "c95d61a1b9dd9e02",
+    "type": "subflow",
+    "name": "Notification action timeout",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "b7f62e0f401f8eee"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 930,
+        "y": 220,
+        "wires": [
+          {
+            "id": "6d9d0409afa6c69e",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 940,
+        "y": 60,
+        "wires": [
+          {
+            "id": "603758d70cad1b6c",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "action",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Action (regex)"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "timeout",
+        "type": "num",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Timeout"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "num"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "outputLabels": [
+      "action",
+      "timeout"
+    ],
+    "status": {
+      "x": 900,
+      "y": 140,
+      "wires": [
+        {
+          "id": "84cab82cad4c5ab4",
+          "port": 0
+        },
+        {
+          "id": "0346da3a99c43c8e",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "6d9d0409afa6c69e",
+    "type": "junction",
+    "z": "c95d61a1b9dd9e02",
+    "x": 620,
+    "y": 220,
+    "wires": [
+      [
+        "0346da3a99c43c8e"
+      ]
+    ]
+  },
+  {
+    "id": "ac183c5dc6184e49",
+    "type": "delay",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Delay",
+    "pauseType": "delayv",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 570,
+    "y": 60,
+    "wires": [
+      [
+        "603758d70cad1b6c"
+      ]
+    ]
+  },
+  {
+    "id": "62187b595c3b4844",
+    "type": "server-events",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Notification action",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "eventType": "mobile_app_notification_action",
+    "exposeToHomeAssistant": false,
+    "eventData": "",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "waitForRunning": true,
+    "outputProperties": [
+      {
+        "property": "action_type",
+        "propertyType": "msg",
+        "value": "$outputData(\"eventData\").event.action",
+        "valueType": "jsonata"
+      },
+      {
+        "property": "reset",
+        "propertyType": "msg",
+        "value": "true",
+        "valueType": "bool"
+      }
+    ],
+    "x": 130,
+    "y": 220,
+    "wires": [
+      [
+        "c5b4b74f55c02e39"
+      ]
+    ]
+  },
+  {
+    "id": "c5b4b74f55c02e39",
+    "type": "switch",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Is correct action?",
+    "property": "action_type",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "regex",
+        "v": "action",
+        "vt": "env",
+        "case": false
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 350,
+    "y": 220,
+    "wires": [
+      [
+        "ac183c5dc6184e49",
+        "6d9d0409afa6c69e"
+      ]
+    ]
+  },
+  {
+    "id": "84cab82cad4c5ab4",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Create status",
+    "func": "const text = \"timeout\";\n\nreturn {\n    payload: {\n        fill: \"red\",\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 760,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b7f62e0f401f8eee",
+    "type": "subflow:846b2a595d7e7acf",
+    "z": "c95d61a1b9dd9e02",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "notification_action_timeout",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"action\",\"timeout\"]",
+        "type": "json"
+      },
+      {
+        "name": "flow_storage",
+        "value": "flow_storage",
+        "type": "str"
+      }
+    ],
+    "x": 200,
+    "y": 60,
+    "wires": [
+      [
+        "846ded3f4c609fee"
+      ]
+    ]
+  },
+  {
+    "id": "603758d70cad1b6c",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "c95d61a1b9dd9e02",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "notification_action_timeout",
+        "type": "str"
+      }
+    ],
+    "x": 750,
+    "y": 60,
+    "wires": [
+      [
+        "84cab82cad4c5ab4"
+      ]
+    ]
+  },
+  {
+    "id": "846ded3f4c609fee",
+    "type": "change",
+    "z": "c95d61a1b9dd9e02",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "delay",
+        "pt": "msg",
+        "to": "msg.flow_storage.timeout * 1000",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 60,
+    "wires": [
+      [
+        "ac183c5dc6184e49"
+      ]
+    ]
+  },
+  {
+    "id": "0346da3a99c43c8e",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Create status",
+    "func": "const text = \"action\";\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 760,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  }
+]
