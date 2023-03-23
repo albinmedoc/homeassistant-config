@@ -11,18 +11,18 @@
         "y": 60,
         "wires": [
           {
-            "id": "7ed5d82e7e9359ac"
+            "id": "9c4b2351035e0bed"
           }
         ]
       }
     ],
     "out": [
       {
-        "x": 920,
+        "x": 1040,
         "y": 60,
         "wires": [
           {
-            "id": "6a98eb6c26396f24",
+            "id": "a48b7181dfc73c60",
             "port": 0
           }
         ]
@@ -84,7 +84,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 920,
+      "x": 1040,
       "y": 140,
       "wires": [
         {
@@ -116,12 +116,12 @@
         "type": "str"
       }
     ],
-    "x": 580,
+    "x": 640,
     "y": 60,
     "wires": [
       [
         "a4d80952ba441987",
-        "6a98eb6c26396f24"
+        "a48b7181dfc73c60"
       ]
     ]
   },
@@ -136,56 +136,10 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 780,
+    "x": 900,
     "y": 140,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "6a98eb6c26396f24",
-    "type": "function",
-    "z": "0543352e157255d4",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_notify_services': 'services',\n    'output_persons': 'persons'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 800,
-    "y": 60,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "7ed5d82e7e9359ac",
-    "type": "function",
-    "z": "0543352e157255d4",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = ['persons', 'notify_data'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage2';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 170,
-    "y": 60,
-    "wires": [
-      [
-        "2fb56bdced216c26"
-      ]
     ]
   },
   {
@@ -200,12 +154,65 @@
         "type": "str"
       }
     ],
-    "x": 340,
+    "x": 400,
     "y": 60,
     "wires": [
       [
         "983cbda27834c7ab"
       ]
+    ]
+  },
+  {
+    "id": "9c4b2351035e0bed",
+    "type": "subflow:846b2a595d7e7acf",
+    "z": "0543352e157255d4",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "send_notification_to_all_persons",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"notify_data\"]",
+        "type": "json"
+      },
+      {
+        "name": "flow_storage",
+        "value": "flow_storage2",
+        "type": "str"
+      }
+    ],
+    "x": 200,
+    "y": 60,
+    "wires": [
+      [
+        "2fb56bdced216c26"
+      ]
+    ]
+  },
+  {
+    "id": "a48b7181dfc73c60",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "0543352e157255d4",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "send_notification_to_all_persons",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_notify_services\":\"services\",\"output_persons\":\"persons\"}",
+        "type": "json"
+      }
+    ],
+    "x": 890,
+    "y": 60,
+    "wires": [
+      []
     ]
   }
 ]

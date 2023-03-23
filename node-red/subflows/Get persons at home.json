@@ -11,18 +11,18 @@
         "y": 60,
         "wires": [
           {
-            "id": "efa87fa685b4707b"
+            "id": "a21a97528c4ebd02"
           }
         ]
       }
     ],
     "out": [
       {
-        "x": 900,
+        "x": 1020,
         "y": 60,
         "wires": [
           {
-            "id": "229ceb6c0a1113fd",
+            "id": "c44cea2745614401",
             "port": 0
           }
         ]
@@ -50,7 +50,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 920,
+      "x": 1020,
       "y": 140,
       "wires": [
         {
@@ -86,7 +86,7 @@
     "output_location_type": "msg",
     "output_location": "person_entities",
     "output_results_count": 1,
-    "x": 360,
+    "x": 420,
     "y": 60,
     "wires": [
       [
@@ -99,18 +99,18 @@
     "type": "function",
     "z": "92acfb4d26effac0",
     "name": "Pick out entity ids",
-    "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    persons: person_entity_ids\n};",
+    "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    ...msg,\n    persons: person_entity_ids\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 590,
+    "x": 650,
     "y": 60,
     "wires": [
       [
         "6a9480372530925d",
-        "229ceb6c0a1113fd"
+        "c44cea2745614401"
       ]
     ]
   },
@@ -125,29 +125,30 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 780,
+    "x": 880,
     "y": 140,
     "wires": [
       []
     ]
   },
   {
-    "id": "efa87fa685b4707b",
-    "type": "function",
+    "id": "a21a97528c4ebd02",
+    "type": "subflow:846b2a595d7e7acf",
     "z": "92acfb4d26effac0",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = [];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
+    "name": "",
+    "env": [
       {
-        "var": "selectn",
-        "module": "selectn"
+        "name": "unique_id",
+        "value": "get_persons_home",
+        "type": "str"
+      },
+      {
+        "name": "flow_storage",
+        "value": "flow_storage",
+        "type": "str"
       }
     ],
-    "x": 170,
+    "x": 200,
     "y": 60,
     "wires": [
       [
@@ -156,22 +157,23 @@
     ]
   },
   {
-    "id": "229ceb6c0a1113fd",
-    "type": "function",
+    "id": "c44cea2745614401",
+    "type": "subflow:667ec96ed52e720e",
     "z": "92acfb4d26effac0",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_persons': 'persons'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
+    "name": "",
+    "env": [
       {
-        "var": "selectn",
-        "module": "selectn"
+        "name": "unique_id",
+        "value": "get_persons_home",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_persons\":\"persons\"}",
+        "type": "json"
       }
     ],
-    "x": 780,
+    "x": 870,
     "y": 60,
     "wires": [
       []

@@ -8,17 +8,17 @@
     "in": [],
     "out": [
       {
-        "x": 1030,
+        "x": 950,
         "y": 60,
         "wires": [
           {
-            "id": "63aa7075ace1ec06",
+            "id": "aa0f970f240f3797",
             "port": 0
           }
         ]
       },
       {
-        "x": 1030,
+        "x": 950,
         "y": 260,
         "wires": [
           {
@@ -54,7 +54,7 @@
       "guest"
     ],
     "status": {
-      "x": 1000,
+      "x": 920,
       "y": 140,
       "wires": [
         {
@@ -72,7 +72,7 @@
     "id": "f28cfb1eaf9dd39e",
     "type": "junction",
     "z": "10bf6a612840df6b",
-    "x": 780,
+    "x": 640,
     "y": 260,
     "wires": [
       []
@@ -125,7 +125,7 @@
     "y": 60,
     "wires": [
       [
-        "cca8176dfb811e96"
+        "681185c42c7a2b36"
       ],
       []
     ]
@@ -141,12 +141,12 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 690,
+    "x": 550,
     "y": 60,
     "wires": [
       [
         "a008fb2ad1c74bdc",
-        "63aa7075ace1ec06"
+        "aa0f970f240f3797"
       ]
     ]
   },
@@ -161,54 +161,8 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 860,
+    "x": 780,
     "y": 140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "cca8176dfb811e96",
-    "type": "function",
-    "z": "10bf6a612840df6b",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = ['media_player', 'message'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 270,
-    "y": 60,
-    "wires": [
-      [
-        "681185c42c7a2b36"
-      ]
-    ]
-  },
-  {
-    "id": "63aa7075ace1ec06",
-    "type": "function",
-    "z": "10bf6a612840df6b",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_person': 'person'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 880,
-    "y": 60,
     "wires": [
       []
     ]
@@ -302,7 +256,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 860,
+    "x": 780,
     "y": 200,
     "wires": [
       []
@@ -331,13 +285,41 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 460,
+    "x": 320,
     "y": 60,
     "wires": [
       [],
       [
         "16f07124f699c070"
       ]
+    ]
+  },
+  {
+    "id": "aa0f970f240f3797",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "10bf6a612840df6b",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "last_person_leaves_home",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_person\":\"person\"}",
+        "type": "json"
+      },
+      {
+        "name": "has_setup",
+        "value": "false",
+        "type": "bool"
+      }
+    ],
+    "x": 770,
+    "y": 60,
+    "wires": [
+      []
     ]
   }
 ]

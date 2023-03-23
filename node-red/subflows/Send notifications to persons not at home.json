@@ -11,18 +11,18 @@
         "y": 60,
         "wires": [
           {
-            "id": "c3925d7dd6da7909"
+            "id": "73f36ca3bf06f92f"
           }
         ]
       }
     ],
     "out": [
       {
-        "x": 960,
+        "x": 1100,
         "y": 60,
         "wires": [
           {
-            "id": "30817a201e9a8b5e",
+            "id": "578905a741091b49",
             "port": 0
           }
         ]
@@ -84,7 +84,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 960,
+      "x": 1100,
       "y": 140,
       "wires": [
         {
@@ -106,7 +106,7 @@
         "type": "str"
       }
     ],
-    "x": 360,
+    "x": 430,
     "y": 60,
     "wires": [
       [
@@ -136,12 +136,12 @@
         "type": "str"
       }
     ],
-    "x": 620,
+    "x": 700,
     "y": 60,
     "wires": [
       [
         "58e5fe0c3317d285",
-        "30817a201e9a8b5e"
+        "578905a741091b49"
       ]
     ]
   },
@@ -156,29 +156,35 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 820,
+    "x": 960,
     "y": 140,
     "wires": [
       []
     ]
   },
   {
-    "id": "c3925d7dd6da7909",
-    "type": "function",
+    "id": "73f36ca3bf06f92f",
+    "type": "subflow:846b2a595d7e7acf",
     "z": "362c301346dfdfcc",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = ['persons', 'notify_data'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage2';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
+    "name": "",
+    "env": [
       {
-        "var": "selectn",
-        "module": "selectn"
+        "name": "unique_id",
+        "value": "send_notification_to_persons_not_home",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"notify_data\"]",
+        "type": "json"
+      },
+      {
+        "name": "flow_storage",
+        "value": "flow_storage2",
+        "type": "str"
       }
     ],
-    "x": 170,
+    "x": 200,
     "y": 60,
     "wires": [
       [
@@ -187,22 +193,23 @@
     ]
   },
   {
-    "id": "30817a201e9a8b5e",
-    "type": "function",
+    "id": "578905a741091b49",
+    "type": "subflow:667ec96ed52e720e",
     "z": "362c301346dfdfcc",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_notify_services': 'services',\n    'output_persons': 'persons'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\nconsole.log(flow.get('input_msg'));\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
+    "name": "",
+    "env": [
       {
-        "var": "selectn",
-        "module": "selectn"
+        "name": "unique_id",
+        "value": "send_notification_to_persons_not_home",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_notify_services\":\"services\",\"output_persons\":\"persons\"}",
+        "type": "json"
       }
     ],
-    "x": 840,
+    "x": 950,
     "y": 60,
     "wires": [
       []

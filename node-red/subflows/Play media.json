@@ -11,18 +11,18 @@
         "y": 60,
         "wires": [
           {
-            "id": "7d5dcacedbbc15e3"
+            "id": "96c993fb8bc5ec5e"
           }
         ]
       }
     ],
     "out": [
       {
-        "x": 1580,
+        "x": 1700,
         "y": 60,
         "wires": [
           {
-            "id": "130a97d040fd0f62",
+            "id": "2e978a9d86ad2a6c",
             "port": 0
           }
         ]
@@ -109,7 +109,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1580,
+      "x": 1700,
       "y": 140,
       "wires": [
         {
@@ -123,36 +123,12 @@
     "id": "05ae649663b26e09",
     "type": "junction",
     "z": "ad0b3a8015e7f49b",
-    "x": 1300,
+    "x": 1360,
     "y": 120,
     "wires": [
       [
         "4bd83ca5e99a297a",
-        "130a97d040fd0f62"
-      ]
-    ]
-  },
-  {
-    "id": "7d5dcacedbbc15e3",
-    "type": "function",
-    "z": "ad0b3a8015e7f49b",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = ['media_player', 'media_content_type', 'media_content_id', 'volume_level'];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 170,
-    "y": 60,
-    "wires": [
-      [
-        "b6fd16c3c12c6c48"
+        "2e978a9d86ad2a6c"
       ]
     ]
   },
@@ -179,7 +155,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 330,
+    "x": 390,
     "y": 60,
     "wires": [
       [],
@@ -210,7 +186,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 510,
+    "x": 570,
     "y": 60,
     "wires": [
       [
@@ -251,7 +227,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 710,
+    "x": 770,
     "y": 60,
     "wires": [
       [
@@ -280,7 +256,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 910,
+    "x": 970,
     "y": 60,
     "wires": [
       [
@@ -309,12 +285,12 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1280,
+    "x": 1340,
     "y": 60,
     "wires": [
       [
         "4bd83ca5e99a297a",
-        "130a97d040fd0f62"
+        "2e978a9d86ad2a6c"
       ]
     ]
   },
@@ -339,7 +315,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1090,
+    "x": 1150,
     "y": 60,
     "wires": [
       [
@@ -368,7 +344,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 690,
+    "x": 750,
     "y": 120,
     "wires": [
       [
@@ -387,29 +363,55 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1440,
+    "x": 1560,
     "y": 140,
     "wires": [
       []
     ]
   },
   {
-    "id": "130a97d040fd0f62",
-    "type": "function",
+    "id": "96c993fb8bc5ec5e",
+    "type": "subflow:846b2a595d7e7acf",
     "z": "ad0b3a8015e7f49b",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
+    "name": "",
+    "env": [
       {
-        "var": "selectn",
-        "module": "selectn"
+        "name": "unique_id",
+        "value": "play_media",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"media_player\",\"media_content_type\",\"media_content_id\",\"volume_level\"]",
+        "type": "json"
+      },
+      {
+        "name": "flow_storage",
+        "value": "flow_storage",
+        "type": "str"
       }
     ],
-    "x": 1460,
+    "x": 200,
+    "y": 60,
+    "wires": [
+      [
+        "b6fd16c3c12c6c48"
+      ]
+    ]
+  },
+  {
+    "id": "2e978a9d86ad2a6c",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "ad0b3a8015e7f49b",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "play_media",
+        "type": "str"
+      }
+    ],
+    "x": 1550,
     "y": 60,
     "wires": [
       []

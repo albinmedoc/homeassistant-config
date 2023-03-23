@@ -8,17 +8,17 @@
     "in": [],
     "out": [
       {
-        "x": 1330,
+        "x": 1230,
         "y": 60,
         "wires": [
           {
-            "id": "8ba3ed2570504118",
+            "id": "177470d01ddaca6d",
             "port": 0
           }
         ]
       },
       {
-        "x": 1330,
+        "x": 1230,
         "y": 240,
         "wires": [
           {
@@ -54,7 +54,7 @@
       "guest"
     ],
     "status": {
-      "x": 1300,
+      "x": 1200,
       "y": 140,
       "wires": [
         {
@@ -72,7 +72,7 @@
     "id": "622170d4e98f3b5e",
     "type": "junction",
     "z": "5c7f108f494183f7",
-    "x": 1080,
+    "x": 920,
     "y": 240,
     "wires": [
       []
@@ -125,7 +125,7 @@
     "y": 60,
     "wires": [
       [
-        "22f343fdacc17007"
+        "5112c31c80fe721f"
       ],
       []
     ]
@@ -141,12 +141,12 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 960,
+    "x": 800,
     "y": 60,
     "wires": [
       [
         "bb71c5a1e7a3f063",
-        "8ba3ed2570504118"
+        "177470d01ddaca6d"
       ]
     ]
   },
@@ -167,7 +167,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 740,
+    "x": 580,
     "y": 60,
     "wires": [
       [
@@ -186,54 +186,8 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1160,
+    "x": 1060,
     "y": 140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "22f343fdacc17007",
-    "type": "function",
-    "z": "5c7f108f494183f7",
-    "name": "setup",
-    "func": "// Define inputs\nconst env_keys = [];\n\n// Where should the parsed inputs be stored during the subflow\nconst storage = 'flow_storage';\n\n// Save the msg\nflow.set('input_msg', JSON.stringify(msg));\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv_keys.forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 330,
-    "y": 60,
-    "wires": [
-      [
-        "5112c31c80fe721f"
-      ]
-    ]
-  },
-  {
-    "id": "8ba3ed2570504118",
-    "type": "function",
-    "z": "5c7f108f494183f7",
-    "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = {\n    'output_person': 'person'\n};\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the msg as the input was to the subflow\nconst pre_msg = JSON.parse(flow.get('input_msg'));\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [
-      {
-        "var": "selectn",
-        "module": "selectn"
-      }
-    ],
-    "x": 1180,
-    "y": 60,
     "wires": [
       []
     ]
@@ -327,7 +281,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1160,
+    "x": 1060,
     "y": 200,
     "wires": [
       []
@@ -356,13 +310,41 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 520,
+    "x": 360,
     "y": 60,
     "wires": [
       [],
       [
         "ebe77296e60e8877"
       ]
+    ]
+  },
+  {
+    "id": "177470d01ddaca6d",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "5c7f108f494183f7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "first_person_comes_home",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_person\":\"person\"}",
+        "type": "json"
+      },
+      {
+        "name": "has_setup",
+        "value": "false",
+        "type": "bool"
+      }
+    ],
+    "x": 1050,
+    "y": 60,
+    "wires": [
+      []
     ]
   }
 ]
