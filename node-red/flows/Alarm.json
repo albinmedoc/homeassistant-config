@@ -778,7 +778,7 @@
     "type": "server-events",
     "z": "9081c37be56bc95b",
     "g": "ea9720dad10ae7bd",
-    "name": "Notifikation action",
+    "name": "Notification action",
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "mobile_app_notification_action",
