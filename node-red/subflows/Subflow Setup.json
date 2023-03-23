@@ -1,0 +1,106 @@
+[
+  {
+    "id": "846b2a595d7e7acf",
+    "type": "subflow",
+    "name": "Subflow Setup",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "1435db4fbce993ca"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 280,
+        "y": 60,
+        "wires": [
+          {
+            "id": "1435db4fbce993ca",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "unique_id",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Unique id"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "entries",
+        "type": "json",
+        "value": "[]",
+        "ui": {
+          "label": {
+            "en-US": "Entries"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "flow_storage",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Storage key"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "1435db4fbce993ca",
+    "type": "function",
+    "z": "846b2a595d7e7acf",
+    "name": "setup",
+    "func": "// Where should the parsed inputs be stored during the subflow\nconst storage = env.get('flow_storage');\n\n// Save the input msg\nmsg[env.get('unique_id')] = JSON.stringify(msg)\n\nmsg[storage] = {};\n\n// Check if string contains mustache\nconst containsMustache = (str) => {\n    const regex = /{{(?:(?!}}).+)}}/g;\n    return regex.test(str);\n}\n\n// Parse inputs\nenv.get('entries').forEach((env_key) => {\n    let env_value = env.get(env_key);\n    if (containsMustache(env_value)) {\n        env_value = env_value.replace(/(\\{{)\\s*(\\S+)\\s*(\\}})/g, \"$2\");\n        env_value = selectn(env_value, msg);\n    }\n    msg[storage][env_key] = env_value;\n});\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [
+      {
+        "var": "selectn",
+        "module": "selectn"
+      }
+    ],
+    "x": 170,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  }
+]
