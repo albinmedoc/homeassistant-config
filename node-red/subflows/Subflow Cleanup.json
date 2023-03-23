@@ -57,6 +57,22 @@
             ]
           }
         }
+      },
+      {
+        "name": "has_setup",
+        "type": "bool",
+        "value": "true",
+        "ui": {
+          "label": {
+            "en-US": "Has setup?"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "bool"
+            ]
+          }
+        }
       }
     ],
     "meta": {},
@@ -67,7 +83,7 @@
     "type": "function",
     "z": "667ec96ed52e720e",
     "name": "cleanup",
-    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = env.get('outputs');\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\n// Load the input msg\nconst pre_msg = JSON.parse(msg[env.get('unique_id')]);\n\n// Return the input message alongside the outputs\nmsg = Object.assign(pre_msg, output_values);\nreturn msg;",
+    "func": "// Define outputs\n// * Key - environment variable\n// * Value - msg path to value\nconst outputs = env.get('outputs');\n\nconst buildObjWithValue = (path, value = '') => {\n    const paths = path.split('.');\n    return paths.reduceRight((acc, item, index) => ({\n        [item]: index === paths.length - 1\n            ? value\n            : acc\n    }), {});\n}\n\n// Set output variables\nconst output_values = {};\nObject.keys(outputs).forEach((output_key) => {\n    const output_value_path = outputs[output_key];\n    const output_value_location = env.get(output_key);\n    const output_value = selectn(output_value_path, msg)\n    if (output_value_location && output_value_location !== \"\") {\n        Object.assign(output_values, buildObjWithValue(output_value_location, output_value));\n    }\n});\n\nconst has_setup = env.get('has_setup');\nif (has_setup) {\n    // Load the input msg\n    const pre_msg = JSON.parse(msg[env.get('unique_id')]);\n\n    // Return the input message alongside the outputs\n    msg = Object.assign(pre_msg, output_values);\n} else {\n    msg = output_values;\n}\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
