@@ -4,7 +4,7 @@
     "type": "subflow",
     "name": "Subflow Setup",
     "info": "",
-    "category": "",
+    "category": "function",
     "in": [
       {
         "x": 60,
@@ -79,7 +79,8 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99"
+    "color": "#E6E0F8",
+    "icon": "font-awesome/fa-cog"
   },
   {
     "id": "1435db4fbce993ca",
