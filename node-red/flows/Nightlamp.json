@@ -22,9 +22,7 @@
       "e8f575e5dd5428a1"
     ],
     "x": 34,
-    "y": 559,
-    "w": 612,
-    "h": 142
+    "y": 559
   },
   {
     "id": "b9ecb733de105962",
@@ -41,9 +39,7 @@
       "30f1bd684c99b7de"
     ],
     "x": 34,
-    "y": 399,
-    "w": 832,
-    "h": 142
+    "y": 399
   },
   {
     "id": "83c104c1e200db9f",
@@ -60,9 +56,7 @@
       "f011b702bd2a1309"
     ],
     "x": 34,
-    "y": 239,
-    "w": 372,
-    "h": 142
+    "y": 239
   },
   {
     "id": "0bb729de77f60250",
@@ -77,9 +71,7 @@
       "0446ec6e9dda92d9"
     ],
     "x": 514,
-    "y": 199,
-    "w": 172,
-    "h": 142
+    "y": 199
   },
   {
     "id": "832ac7f7a2975116",
@@ -94,9 +86,7 @@
       "245925ea62837296"
     ],
     "x": 34,
-    "y": 139,
-    "w": 372,
-    "h": 82
+    "y": 139
   },
   {
     "id": "8f2e68f12915ae99",
@@ -112,9 +102,7 @@
       "7e6877fe8a6653d6"
     ],
     "x": 34,
-    "y": 39,
-    "w": 612,
-    "h": 82
+    "y": 39
   },
   {
     "id": "b8fe64363b5fef34",
@@ -161,7 +149,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
-    "name": "Nightlamp on?",
+    "name": "nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -194,7 +182,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "83c104c1e200db9f",
-    "name": "Nightlamp on?",
+    "name": "nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -227,7 +215,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Wallswitch on",
+    "name": "wallswitch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -274,7 +262,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": "Wallswitch off",
+    "name": "wallswitch off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -320,7 +308,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Turn on ceiling lamp",
+    "name": "turn on ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -337,7 +325,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 360,
+    "x": 350,
     "y": 660,
     "wires": [
       []
@@ -348,7 +336,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": "Turn off ceiling lamp",
+    "name": "turn off ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -376,7 +364,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "178bf0b9061d0b5b",
-    "name": "Turn off nightlamp",
+    "name": "turn off nightlamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -404,7 +392,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "0bb729de77f60250",
-    "name": "Set red",
+    "name": "set red",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -421,7 +409,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 600,
+    "x": 590,
     "y": 300,
     "wires": [
       []
@@ -432,7 +420,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "0bb729de77f60250",
-    "name": "Set green",
+    "name": "set green",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -460,7 +448,7 @@
     "type": "api-current-state",
     "z": "1f26ba8a27c1477d",
     "g": "b9ecb733de105962",
-    "name": "Nightlamp on?",
+    "name": "nightlamp on?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -495,7 +483,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "832ac7f7a2975116",
-    "name": "Nightlamp on",
+    "name": "nightlamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -541,7 +529,7 @@
     "type": "server-state-changed",
     "z": "1f26ba8a27c1477d",
     "g": "8f2e68f12915ae99",
-    "name": "Nightlamp off",
+    "name": "nightlamp off",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -587,7 +575,7 @@
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
     "g": "8f2e68f12915ae99",
-    "name": "Turn off ceiling lamp",
+    "name": "turn off ceiling lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -700,7 +688,7 @@
     "id": "a7e8eebd90a38474",
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
-    "name": "Wallswitch on",
+    "name": "wallswitch on",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -727,7 +715,7 @@
     "id": "905b14865fdbd2b9",
     "type": "api-call-service",
     "z": "1f26ba8a27c1477d",
-    "name": "Wallswitch off",
+    "name": "wallswitch off",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -754,7 +742,7 @@
     "id": "4bb60aca5aedf2b7",
     "type": "trigger-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Lamp on, Wallswitch and Nightmode active off",
+    "name": "lamp on, wallswitch and nightmode active off",
     "server": "e9739673.bbfed8",
     "version": 2,
     "exposeToHomeAssistant": false,
@@ -806,7 +794,7 @@
     "outputinitially": false,
     "state_type": "str",
     "enableInput": false,
-    "x": 220,
+    "x": 210,
     "y": 760,
     "wires": [
       [
@@ -819,7 +807,7 @@
     "id": "5a0a9b7ffcc43b59",
     "type": "trigger-state",
     "z": "1f26ba8a27c1477d",
-    "name": "Lamp off, Wallswitch on, Nightmode active off",
+    "name": "lamp off, wallswitch on, nightmode active off",
     "server": "e9739673.bbfed8",
     "version": 2,
     "exposeToHomeAssistant": false,

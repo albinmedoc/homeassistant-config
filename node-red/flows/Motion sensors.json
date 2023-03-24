@@ -21,9 +21,7 @@
       "e70d386a804b3186"
     ],
     "x": 34,
-    "y": 39,
-    "w": 392,
-    "h": 162
+    "y": 39
   },
   {
     "id": "a2c59dab1c39eb27",
@@ -38,9 +36,7 @@
       "a13be603a67e703a"
     ],
     "x": 34,
-    "y": 219,
-    "w": 412,
-    "h": 82
+    "y": 219
   },
   {
     "id": "15764dd4cae9897a",
@@ -55,16 +51,14 @@
       "b9e07ea95cb6d8e1"
     ],
     "x": 34,
-    "y": 319,
-    "w": 452,
-    "h": 82
+    "y": 319
   },
   {
     "id": "67bf15aa9af16432",
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Motion Toilet",
+    "name": "motion",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -96,7 +90,7 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 130,
+    "x": 110,
     "y": 120,
     "wires": [
       [
@@ -112,7 +106,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Turn off lamps",
+    "name": "turn off lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -140,7 +134,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "016692fb15240c40",
-    "name": "Turn on lamps",
+    "name": "turn on lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -168,7 +162,7 @@
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "a2c59dab1c39eb27",
-    "name": "Motion Bathroom",
+    "name": "motion",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -200,7 +194,7 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 140,
+    "x": 110,
     "y": 260,
     "wires": [
       [
@@ -214,7 +208,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "a2c59dab1c39eb27",
-    "name": "Turn off lamps",
+    "name": "turn off lamps",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -242,7 +236,7 @@
     "type": "api-call-service",
     "z": "8cf7f0d9a08b3655",
     "g": "15764dd4cae9897a",
-    "name": "Turn off lamp",
+    "name": "turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -270,7 +264,7 @@
     "type": "server-state-changed",
     "z": "8cf7f0d9a08b3655",
     "g": "15764dd4cae9897a",
-    "name": "Motion Bedroom Wardrobe",
+    "name": " motion",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -302,7 +296,7 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 170,
+    "x": 110,
     "y": 360,
     "wires": [
       [

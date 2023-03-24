@@ -25,7 +25,7 @@
     ],
     "x": 14,
     "y": 19,
-    "w": 932,
+    "w": 872,
     "h": 202
   },
   {
@@ -60,7 +60,7 @@
     ],
     "x": 14,
     "y": 339,
-    "w": 592,
+    "w": 532,
     "h": 142
   },
   {
@@ -78,7 +78,7 @@
     ],
     "x": 14,
     "y": 499,
-    "w": 752,
+    "w": 652,
     "h": 82
   },
   {
@@ -86,7 +86,7 @@
     "type": "file in",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Read secrets.yaml",
+    "name": "read secrets.yaml",
     "filename": "/config/secrets.yaml",
     "filenameType": "str",
     "format": "utf8",
@@ -94,7 +94,7 @@
     "sendError": false,
     "encoding": "none",
     "allProps": false,
-    "x": 370,
+    "x": 330,
     "y": 180,
     "wires": [
       [
@@ -108,8 +108,8 @@
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
     "property": "payload",
-    "name": "Parse yaml",
-    "x": 570,
+    "name": "parse yaml",
+    "x": 530,
     "y": 180,
     "wires": [
       [
@@ -122,14 +122,14 @@
     "type": "function",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "Set global config variables",
+    "name": "set global config variables",
     "func": "for (let [key, value] of Object.entries(msg.payload)) {\n  global.set(key,value);\n}\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 800,
+    "x": 750,
     "y": 180,
     "wires": [
       []
@@ -207,7 +207,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "2e59710b52d84cd4",
-    "name": "Reboot Intel NUC",
+    "name": "reboot Intel NUC",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -233,7 +233,7 @@
     "type": "server-state-changed",
     "z": "9d7cd8ae.f2fe48",
     "g": "d45aea997f43d7df",
-    "name": "Home Assistant Core Update",
+    "name": "HA Core update",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -265,7 +265,7 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 160,
+    "x": 120,
     "y": 380,
     "wires": [
       [
@@ -279,7 +279,7 @@
     "type": "server-state-changed",
     "z": "9d7cd8ae.f2fe48",
     "g": "d45aea997f43d7df",
-    "name": "Home Assistant Supervisor Update",
+    "name": "HA Supervisor update",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -311,7 +311,7 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 180,
+    "x": 140,
     "y": 440,
     "wires": [
       [
@@ -325,7 +325,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "d45aea997f43d7df",
-    "name": "Send notification to Albin",
+    "name": "send notification to Albin",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -340,7 +340,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 470,
+    "x": 410,
     "y": 400,
     "wires": [
       []
@@ -351,7 +351,7 @@
     "type": "server-state-changed",
     "z": "9d7cd8ae.f2fe48",
     "g": "a2a2c7d13b2d1495",
-    "name": "Tillgänglig HACS uppdatering",
+    "name": "HACS update",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -390,7 +390,7 @@
         "valueType": "eventData"
       }
     ],
-    "x": 160,
+    "x": 110,
     "y": 540,
     "wires": [
       [
@@ -404,7 +404,7 @@
     "type": "api-call-service",
     "z": "9d7cd8ae.f2fe48",
     "g": "a2a2c7d13b2d1495",
-    "name": "Send notification to Albin",
+    "name": "send notification to Albin",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -419,7 +419,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 630,
+    "x": 530,
     "y": 540,
     "wires": [
       []
@@ -430,14 +430,14 @@
     "type": "function",
     "z": "9d7cd8ae.f2fe48",
     "g": "a2a2c7d13b2d1495",
-    "name": "Create message",
+    "name": "create message",
     "func": "const repositories = msg.data.attributes.repositories;\n\nconst repository_names = repositories.map((repository) => repository.display_name);\n\nconst getRepositoryNameText = (repository_names) => {\n    // Get the last repository name\n    const last_repository_name = repository_names.pop();\n\n    // If there is any more repository names\n    if (repository_names.length > 0) {\n        return `${repository_names.join(', ')} och ${last_repository_name}`;\n    }\n    return last_repository_name;\n}\n\nconst message = `Det finns en ny HACS uppdatering, ${getRepositoryNameText(repository_names)}.`\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 400,
+    "x": 300,
     "y": 540,
     "wires": [
       [

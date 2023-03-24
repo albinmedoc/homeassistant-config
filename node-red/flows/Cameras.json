@@ -11,7 +11,7 @@
     "id": "037b270105a5e078",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn on Frigate detection",
+    "name": "Turn on frigate detection",
     "style": {
       "label": true
     },
@@ -22,15 +22,13 @@
       "d919babce7e295d8"
     ],
     "x": 44,
-    "y": 739,
-    "w": 552,
-    "h": 122
+    "y": 739
   },
   {
     "id": "0a04ea6bece547ae",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn off Frigate detection",
+    "name": "Turn off frigate detection",
     "style": {
       "label": true
     },
@@ -41,15 +39,13 @@
       "50af51a9914bbeeb"
     ],
     "x": 44,
-    "y": 879,
-    "w": 552,
-    "h": 122
+    "y": 879
   },
   {
     "id": "7ad94aaec9160b50",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn on Frigate recording",
+    "name": "Turn on frigate recording",
     "style": {
       "label": true
     },
@@ -59,15 +55,13 @@
       "7daa5915c3daa539"
     ],
     "x": 44,
-    "y": 1019,
-    "w": 552,
-    "h": 82
+    "y": 1019
   },
   {
     "id": "cfed098803bc16cd",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn off Frigate recording",
+    "name": "Turn off frigate recording",
     "style": {
       "label": true
     },
@@ -77,15 +71,13 @@
       "2a123fdb611d4352"
     ],
     "x": 44,
-    "y": 1119,
-    "w": 552,
-    "h": 82
+    "y": 1119
   },
   {
     "id": "e7e05890b1c08c7e",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn on Frigate snapshots",
+    "name": "Turn on frigate snapshots",
     "style": {
       "label": true
     },
@@ -95,15 +87,13 @@
       "030247dadaf91fed"
     ],
     "x": 44,
-    "y": 1219,
-    "w": 552,
-    "h": 82
+    "y": 1219
   },
   {
     "id": "ec260776601b15bd",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn off Frigate snapshots",
+    "name": "Turn off frigate snapshots",
     "style": {
       "label": true
     },
@@ -113,9 +103,7 @@
       "7f832b8e9eefdd27"
     ],
     "x": 44,
-    "y": 1319,
-    "w": 552,
-    "h": 82
+    "y": 1319
   },
   {
     "id": "2b75c890eff44cfb",
@@ -130,9 +118,7 @@
       "1f21716b9f95f12a"
     ],
     "x": 44,
-    "y": 439,
-    "w": 352,
-    "h": 82
+    "y": 439
   },
   {
     "id": "00a032e1b75fa8ed",
@@ -148,9 +134,7 @@
       "04270f65108df369"
     ],
     "x": 44,
-    "y": 559,
-    "w": 592,
-    "h": 142
+    "y": 559
   },
   {
     "id": "815082aec75c4eb0",
@@ -187,7 +171,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "037b270105a5e078",
-    "name": "Turn on Frigate detection",
+    "name": "turn on frigate detection",
     "links": [],
     "x": 85,
     "y": 800,
@@ -215,7 +199,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "037b270105a5e078",
-    "name": "Kids Bedroom - Turn on frigate detection",
+    "name": "kids bedroom - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -245,7 +229,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "037b270105a5e078",
-    "name": "Living room - Turn on frigate detection",
+    "name": "living room - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -273,7 +257,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "0a04ea6bece547ae",
-    "name": "Turn off Frigate detection",
+    "name": "turn off frigate detection",
     "links": [],
     "x": 85,
     "y": 940,
@@ -301,7 +285,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "0a04ea6bece547ae",
-    "name": "Living room - Turn off frigate detection",
+    "name": "living room - turn off frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -329,7 +313,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "0a04ea6bece547ae",
-    "name": "Kids Bedroom - Turn off frigate detection",
+    "name": "kids bedroom - turn off frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -359,7 +343,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "7ad94aaec9160b50",
-    "name": "Turn on Frigate recording",
+    "name": "turn on frigate recording",
     "links": [],
     "x": 85,
     "y": 1060,
@@ -386,7 +370,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "7ad94aaec9160b50",
-    "name": "Garden - Turn on Frigate recording",
+    "name": "garden - turn on frigate recording",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -416,7 +400,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "cfed098803bc16cd",
-    "name": "Turn off Frigate recording",
+    "name": "turn off frigate recording",
     "links": [],
     "x": 85,
     "y": 1160,
@@ -443,7 +427,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "cfed098803bc16cd",
-    "name": "Garden - Turn off Frigate recording",
+    "name": "garden - turn off frigate recording",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -473,7 +457,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "e7e05890b1c08c7e",
-    "name": "Turn on Frigate snapshots",
+    "name": "turn on frigate snapshots",
     "links": [],
     "x": 85,
     "y": 1260,
@@ -500,7 +484,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "e7e05890b1c08c7e",
-    "name": "Garden - Turn on Frigate snapshots",
+    "name": "garden - turn on frigate snapshots",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -530,7 +514,7 @@
     "type": "link in",
     "z": "896b946718d5907e",
     "g": "ec260776601b15bd",
-    "name": "Turn off Frigate snapshots",
+    "name": "turn off frigate snapshots",
     "links": [],
     "x": 85,
     "y": 1360,
@@ -557,7 +541,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "ec260776601b15bd",
-    "name": "Garden - Turn off Frigate snapshots",
+    "name": "garden - turn off frigate snapshots",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -586,7 +570,7 @@
     "id": "01801704a5e26ceb",
     "type": "server-state-changed",
     "z": "896b946718d5907e",
-    "name": "Armed",
+    "name": "armed",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -644,7 +628,7 @@
     "id": "9673143934f2e8df",
     "type": "server-state-changed",
     "z": "896b946718d5907e",
-    "name": "Disarmed",
+    "name": "disarmed",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -689,7 +673,7 @@
     "id": "44a306311dbabd9d",
     "type": "api-current-state",
     "z": "896b946718d5907e",
-    "name": "Armed?",
+    "name": "armed?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -819,7 +803,7 @@
     "id": "c1527206c9bd3d84",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "name": "Living room - Turn off stream",
+    "name": "living room - turn off stream",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -846,7 +830,7 @@
     "id": "0490f783d7c754f7",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "name": "Living room - Turn on stream",
+    "name": "living room - turn on stream",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -874,7 +858,7 @@
     "type": "server-state-changed",
     "z": "896b946718d5907e",
     "g": "2b75c890eff44cfb",
-    "name": "Cat detected",
+    "name": "cat detected",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -949,7 +933,7 @@
     "type": "server-state-changed",
     "z": "896b946718d5907e",
     "g": "00a032e1b75fa8ed",
-    "name": "Camera Dino Available",
+    "name": "camera Dino available",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,

@@ -21,7 +21,7 @@
     ],
     "x": 34,
     "y": 39,
-    "w": 532,
+    "w": 512,
     "h": 82
   },
   {
@@ -47,7 +47,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "c77bf66ac0de544c",
-    "name": "Arm",
+    "name": "arm",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -74,7 +74,7 @@
     "z": "f6c266122b405d78",
     "d": true,
     "g": "05d687da1ce7b06d",
-    "name": "Arm home mode",
+    "name": "arm home mode",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -89,7 +89,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
+    "x": 440,
     "y": 80,
     "wires": [
       []
@@ -100,7 +100,7 @@
     "type": "trigger-state",
     "z": "f6c266122b405d78",
     "g": "05d687da1ce7b06d",
-    "name": "Vacuum starts and armed away",
+    "name": "vacuum starts and armed away",
     "server": "e9739673.bbfed8",
     "version": 2,
     "exposeToHomeAssistant": false,
@@ -157,7 +157,7 @@
     "type": "trigger-state",
     "z": "f6c266122b405d78",
     "g": "c77bf66ac0de544c",
-    "name": "Vacuum docked, nobody home and armed home",
+    "name": "vacuum docked, nobody home and armed home",
     "server": "e9739673.bbfed8",
     "version": 2,
     "exposeToHomeAssistant": false,
