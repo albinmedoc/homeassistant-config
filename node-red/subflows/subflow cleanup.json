@@ -2,7 +2,7 @@
   {
     "id": "667ec96ed52e720e",
     "type": "subflow",
-    "name": "Subflow Cleanup",
+    "name": "subflow cleanup",
     "info": "",
     "category": "function",
     "in": [

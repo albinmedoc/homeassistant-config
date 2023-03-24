@@ -1,28 +1,28 @@
 [
   {
-    "id": "10bf6a612840df6b",
+    "id": "5c7f108f494183f7",
     "type": "subflow",
-    "name": "Last person leaves home",
+    "name": "first person comes home",
     "info": "",
     "category": "",
     "in": [],
     "out": [
       {
-        "x": 950,
+        "x": 1230,
         "y": 60,
         "wires": [
           {
-            "id": "aa0f970f240f3797",
+            "id": "177470d01ddaca6d",
             "port": 0
           }
         ]
       },
       {
-        "x": 950,
-        "y": 260,
+        "x": 1230,
+        "y": 240,
         "wires": [
           {
-            "id": "f28cfb1eaf9dd39e",
+            "id": "622170d4e98f3b5e",
             "port": 0
           }
         ]
@@ -54,35 +54,35 @@
       "guest"
     ],
     "status": {
-      "x": 920,
+      "x": 1200,
       "y": 140,
       "wires": [
         {
-          "id": "a008fb2ad1c74bdc",
+          "id": "bb71c5a1e7a3f063",
           "port": 0
         },
         {
-          "id": "a731138b4bea4cc2",
+          "id": "cd27a7e455b81369",
           "port": 0
         }
       ]
     }
   },
   {
-    "id": "f28cfb1eaf9dd39e",
+    "id": "622170d4e98f3b5e",
     "type": "junction",
-    "z": "10bf6a612840df6b",
-    "x": 640,
-    "y": 260,
+    "z": "5c7f108f494183f7",
+    "x": 920,
+    "y": 240,
     "wires": [
       []
     ]
   },
   {
-    "id": "1460052b763787b4",
+    "id": "03d0855aa7570e8d",
     "type": "server-state-changed",
-    "z": "10bf6a612840df6b",
-    "name": "Nobody home",
+    "z": "5c7f108f494183f7",
+    "name": "someone is home",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -102,7 +102,7 @@
     "state_type": "num",
     "haltifstate": "0",
     "halt_if_type": "num",
-    "halt_if_compare": "is",
+    "halt_if_compare": "gt",
     "outputs": 2,
     "output_only_on_state_change": true,
     "for": "0",
@@ -121,57 +121,82 @@
         "valueType": "eventData"
       }
     ],
-    "x": 110,
+    "x": 130,
     "y": 60,
     "wires": [
       [
-        "681185c42c7a2b36"
+        "5112c31c80fe721f"
       ],
       []
     ]
   },
   {
-    "id": "16f07124f699c070",
+    "id": "cce4e66bf72f0f15",
     "type": "function",
-    "z": "10bf6a612840df6b",
-    "name": "Get person that left",
-    "func": "const old_persons = msg.data.old_state.attributes.persons;\nconst new_persons = msg.data.new_state.attributes.persons;\n\nconst person = old_persons.filter(p => !new_persons.includes(p))[0];\n\nreturn {\n    person\n};",
+    "z": "5c7f108f494183f7",
+    "name": "get person that came home",
+    "func": "const old_persons = msg.data.old_state.attributes.persons;\nconst new_persons = msg.data.new_state.attributes.persons;\n\nconst person = new_persons.filter(p => !old_persons.includes(p))[0];\n\nreturn {\n    person\n}",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 550,
+    "x": 800,
     "y": 60,
     "wires": [
       [
-        "a008fb2ad1c74bdc",
-        "aa0f970f240f3797"
+        "bb71c5a1e7a3f063",
+        "177470d01ddaca6d"
       ]
     ]
   },
   {
-    "id": "a008fb2ad1c74bdc",
+    "id": "ebe77296e60e8877",
+    "type": "switch",
+    "z": "5c7f108f494183f7",
+    "name": "last state was 0",
+    "property": "data.old_state.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "0",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 560,
+    "y": 60,
+    "wires": [
+      [
+        "cce4e66bf72f0f15"
+      ]
+    ]
+  },
+  {
+    "id": "bb71c5a1e7a3f063",
     "type": "function",
-    "z": "10bf6a612840df6b",
-    "name": "Create status",
+    "z": "5c7f108f494183f7",
+    "name": "create status",
     "func": "const text = msg.person;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 780,
+    "x": 1050,
     "y": 140,
     "wires": [
       []
     ]
   },
   {
-    "id": "799ec6bada6d1670",
+    "id": "3aa73519440a0b6d",
     "type": "server-state-changed",
-    "z": "10bf6a612840df6b",
-    "name": "Guest mode inactive",
+    "z": "5c7f108f494183f7",
+    "name": "guest mode active",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -189,7 +214,7 @@
     "entityidfiltertype": "exact",
     "outputinitially": false,
     "state_type": "str",
-    "haltifstate": "off",
+    "haltifstate": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "outputs": 2,
@@ -207,16 +232,16 @@
     "y": 120,
     "wires": [
       [
-        "5c7f5d2a691d5890"
+        "e27f976ad2994d40"
       ],
       []
     ]
   },
   {
-    "id": "5c7f5d2a691d5890",
+    "id": "e27f976ad2994d40",
     "type": "api-current-state",
-    "z": "10bf6a612840df6b",
-    "name": "Someone home?",
+    "z": "5c7f108f494183f7",
+    "name": "someone home?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -240,33 +265,33 @@
     "wires": [
       [],
       [
-        "a731138b4bea4cc2",
-        "f28cfb1eaf9dd39e"
+        "622170d4e98f3b5e",
+        "cd27a7e455b81369"
       ]
     ]
   },
   {
-    "id": "a731138b4bea4cc2",
+    "id": "cd27a7e455b81369",
     "type": "function",
-    "z": "10bf6a612840df6b",
-    "name": "Create status",
+    "z": "5c7f108f494183f7",
+    "name": "create status",
     "func": "return {\n    payload: {\n        fill: \"green\",\n        text: \"Guest\"\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 780,
+    "x": 1050,
     "y": 200,
     "wires": [
       []
     ]
   },
   {
-    "id": "681185c42c7a2b36",
+    "id": "5112c31c80fe721f",
     "type": "api-current-state",
-    "z": "10bf6a612840df6b",
-    "name": "Guest mode active?",
+    "z": "5c7f108f494183f7",
+    "name": "guest mode active?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -285,24 +310,24 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 320,
+    "x": 350,
     "y": 60,
     "wires": [
       [],
       [
-        "16f07124f699c070"
+        "ebe77296e60e8877"
       ]
     ]
   },
   {
-    "id": "aa0f970f240f3797",
+    "id": "177470d01ddaca6d",
     "type": "subflow:667ec96ed52e720e",
-    "z": "10bf6a612840df6b",
+    "z": "5c7f108f494183f7",
     "name": "",
     "env": [
       {
         "name": "unique_id",
-        "value": "last_person_leaves_home",
+        "value": "first_person_comes_home",
         "type": "str"
       },
       {
@@ -316,7 +341,7 @@
         "type": "bool"
       }
     ],
-    "x": 770,
+    "x": 1050,
     "y": 60,
     "wires": [
       []

@@ -2,7 +2,7 @@
   {
     "id": "29024697abc79029",
     "type": "subflow",
-    "name": "Get persons not at home",
+    "name": "get persons not at home",
     "info": "",
     "category": "",
     "in": [
@@ -64,7 +64,7 @@
     "id": "01e5dd44dbf610fc",
     "type": "ha-get-entities",
     "z": "29024697abc79029",
-    "name": "Get persons not at home",
+    "name": "get persons not at home",
     "server": "e9739673.bbfed8",
     "version": 0,
     "rules": [
@@ -98,7 +98,7 @@
     "id": "df7bbd1b6e50d3e2",
     "type": "function",
     "z": "29024697abc79029",
-    "name": "Pick out entity ids",
+    "name": "pick out entity ids",
     "func": "const person_entity_ids = msg.person_entities.map((person) => person.entity_id);\n\nreturn {\n    ...msg,\n    persons: person_entity_ids\n};",
     "outputs": 1,
     "noerr": 0,
@@ -118,14 +118,14 @@
     "id": "781785e263a6d008",
     "type": "function",
     "z": "29024697abc79029",
-    "name": "Create status",
+    "name": "create status",
     "func": "const color = msg.persons.length > 0 ? \"green\": \"red\";\nconst text = msg.persons.join(', ')\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 900,
+    "x": 890,
     "y": 140,
     "wires": [
       []

@@ -2,7 +2,7 @@
   {
     "id": "846b2a595d7e7acf",
     "type": "subflow",
-    "name": "Subflow Setup",
+    "name": "subflow setup",
     "info": "",
     "category": "function",
     "in": [

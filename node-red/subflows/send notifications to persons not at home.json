@@ -1,8 +1,8 @@
 [
   {
-    "id": "c0dcc6a2aeb58851",
+    "id": "362c301346dfdfcc",
     "type": "subflow",
-    "name": "Send notification to persons at home",
+    "name": "send notifications to persons not at home",
     "info": "",
     "category": "",
     "in": [
@@ -11,7 +11,7 @@
         "y": 60,
         "wires": [
           {
-            "id": "1dc379b70d0eedb1"
+            "id": "73f36ca3bf06f92f"
           }
         ]
       }
@@ -22,7 +22,7 @@
         "y": 60,
         "wires": [
           {
-            "id": "c241f53df3f8a17e",
+            "id": "578905a741091b49",
             "port": 0
           }
         ]
@@ -88,16 +88,16 @@
       "y": 140,
       "wires": [
         {
-          "id": "6fec81bf15051b42",
+          "id": "58e5fe0c3317d285",
           "port": 0
         }
       ]
     }
   },
   {
-    "id": "6778bbce2e781dc2",
-    "type": "subflow:92acfb4d26effac0",
-    "z": "c0dcc6a2aeb58851",
+    "id": "c8f1b8fba6b56112",
+    "type": "subflow:29024697abc79029",
+    "z": "362c301346dfdfcc",
     "name": "",
     "env": [
       {
@@ -106,18 +106,18 @@
         "type": "str"
       }
     ],
-    "x": 420,
+    "x": 430,
     "y": 60,
     "wires": [
       [
-        "d22c0752c41e771d"
+        "e13a65ea718ca707"
       ]
     ]
   },
   {
-    "id": "d22c0752c41e771d",
+    "id": "e13a65ea718ca707",
     "type": "subflow:6be012d64f25f43f",
-    "z": "c0dcc6a2aeb58851",
+    "z": "362c301346dfdfcc",
     "name": "",
     "env": [
       {
@@ -136,41 +136,41 @@
         "type": "str"
       }
     ],
-    "x": 680,
+    "x": 700,
     "y": 60,
     "wires": [
       [
-        "6fec81bf15051b42",
-        "c241f53df3f8a17e"
+        "58e5fe0c3317d285",
+        "578905a741091b49"
       ]
     ]
   },
   {
-    "id": "6fec81bf15051b42",
+    "id": "58e5fe0c3317d285",
     "type": "function",
-    "z": "c0dcc6a2aeb58851",
-    "name": "Create status",
-    "func": "let text = 'No persons home';\nlet color = 'red';\n\nif (msg.services.length > 0) {\n    text = msg.services.join(', ');\n    color = 'green';\n}\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
+    "z": "362c301346dfdfcc",
+    "name": "create status",
+    "func": "let text = 'No persons away';\nlet color = 'red';\n\nif (msg.services.length > 0) {\n    text = msg.services.join(', ');\n    color = 'green';\n}\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 940,
+    "x": 950,
     "y": 140,
     "wires": [
       []
     ]
   },
   {
-    "id": "1dc379b70d0eedb1",
+    "id": "73f36ca3bf06f92f",
     "type": "subflow:846b2a595d7e7acf",
-    "z": "c0dcc6a2aeb58851",
+    "z": "362c301346dfdfcc",
     "name": "",
     "env": [
       {
         "name": "unique_id",
-        "value": "send_notification_to_persons_home",
+        "value": "send_notification_to_persons_not_home",
         "type": "str"
       },
       {
@@ -188,19 +188,19 @@
     "y": 60,
     "wires": [
       [
-        "6778bbce2e781dc2"
+        "c8f1b8fba6b56112"
       ]
     ]
   },
   {
-    "id": "c241f53df3f8a17e",
+    "id": "578905a741091b49",
     "type": "subflow:667ec96ed52e720e",
-    "z": "c0dcc6a2aeb58851",
+    "z": "362c301346dfdfcc",
     "name": "",
     "env": [
       {
         "name": "unique_id",
-        "value": "send_notification_to_persons_home",
+        "value": "send_notification_to_persons_not_home",
         "type": "str"
       },
       {
@@ -209,7 +209,7 @@
         "type": "json"
       }
     ],
-    "x": 930,
+    "x": 940,
     "y": 60,
     "wires": [
       []

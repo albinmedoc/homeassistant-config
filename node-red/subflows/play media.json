@@ -2,7 +2,7 @@
   {
     "id": "ad0b3a8015e7f49b",
     "type": "subflow",
-    "name": "Play media",
+    "name": "play media",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1700,
+        "x": 1660,
         "y": 60,
         "wires": [
           {
@@ -109,7 +109,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1700,
+      "x": 1660,
       "y": 140,
       "wires": [
         {
@@ -136,7 +136,7 @@
     "id": "b6fd16c3c12c6c48",
     "type": "api-current-state",
     "z": "ad0b3a8015e7f49b",
-    "name": "TTS Muted?",
+    "name": "TTS muted?",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 2,
@@ -168,7 +168,7 @@
     "id": "9b2ab136d63e135e",
     "type": "switch",
     "z": "ad0b3a8015e7f49b",
-    "name": "Volume set?",
+    "name": "volume set?",
     "property": "flow_storage.volume_level",
     "propertyType": "msg",
     "rules": [
@@ -201,7 +201,7 @@
     "id": "b5dcc93fec6c966c",
     "type": "api-current-state",
     "z": "ad0b3a8015e7f49b",
-    "name": "Get media player",
+    "name": "get media player",
     "server": "e9739673.bbfed8",
     "version": 3,
     "outputs": 1,
@@ -239,7 +239,7 @@
     "id": "11ed05c4a7d9af59",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Set volume",
+    "name": "set volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -268,7 +268,7 @@
     "id": "50eb7190b4ecc241",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Reset volume",
+    "name": "reset volume",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -285,7 +285,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1340,
+    "x": 1330,
     "y": 60,
     "wires": [
       [
@@ -298,7 +298,7 @@
     "id": "c512f6a566e58a44",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Play media",
+    "name": "play media",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -327,7 +327,7 @@
     "id": "a9cc56f2b6cf47ed",
     "type": "api-call-service",
     "z": "ad0b3a8015e7f49b",
-    "name": "Play media",
+    "name": "play media",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -356,14 +356,14 @@
     "id": "4bd83ca5e99a297a",
     "type": "function",
     "z": "ad0b3a8015e7f49b",
-    "name": "Create status",
+    "name": "create status",
     "func": "const text = msg.flow_storage.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1560,
+    "x": 1510,
     "y": 140,
     "wires": [
       []
@@ -411,7 +411,7 @@
         "type": "str"
       }
     ],
-    "x": 1550,
+    "x": 1520,
     "y": 60,
     "wires": [
       []

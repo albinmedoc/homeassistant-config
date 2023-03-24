@@ -2,7 +2,7 @@
   {
     "id": "0543352e157255d4",
     "type": "subflow",
-    "name": "Send notification to all persons",
+    "name": "send notification to all persons",
     "info": "",
     "category": "",
     "in": [
@@ -129,14 +129,14 @@
     "id": "a4d80952ba441987",
     "type": "function",
     "z": "0543352e157255d4",
-    "name": "Create status",
+    "name": "create status",
     "func": "let text = 'No persons home';\nlet color = 'red';\n\nif (msg.services.length > 0) {\n    text = msg.services.join(', ');\n    color = 'green';\n}\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 900,
+    "x": 890,
     "y": 140,
     "wires": [
       []

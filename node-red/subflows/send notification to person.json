@@ -2,7 +2,7 @@
   {
     "id": "9577215509c764c6",
     "type": "subflow",
-    "name": "Send notification to person",
+    "name": "send notification to person",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1000,
+        "x": 960,
         "y": 60,
         "wires": [
           {
@@ -83,7 +83,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1000,
+      "x": 960,
       "y": 140,
       "wires": [
         {
@@ -97,7 +97,7 @@
     "id": "b097d3315ee03c10",
     "type": "function",
     "z": "9577215509c764c6",
-    "name": "Get notify service",
+    "name": "get notify service",
     "func": "const storage = 'flow_storage';\n\nconst person_entity_id = msg[storage].person;\nconst person_name = person_entity_id.split('.')[1];\n\nconst service = `mobile_app_${person_name}_iphone`;\nconst data = msg[storage].notify_data\n\nmsg['payload'] = { service, data };\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
@@ -116,7 +116,7 @@
     "id": "5e64db703b93910a",
     "type": "api-call-service",
     "z": "9577215509c764c6",
-    "name": "Send notification",
+    "name": "send notification",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -131,7 +131,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 630,
+    "x": 620,
     "y": 60,
     "wires": [
       [
@@ -174,14 +174,14 @@
     "id": "8b7d6855d09b0533",
     "type": "function",
     "z": "9577215509c764c6",
-    "name": "Create status",
+    "name": "create status",
     "func": "const text = msg.payload.service\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 860,
+    "x": 830,
     "y": 140,
     "wires": [
       []
@@ -204,7 +204,7 @@
         "type": "json"
       }
     ],
-    "x": 850,
+    "x": 820,
     "y": 60,
     "wires": [
       []

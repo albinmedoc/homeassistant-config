@@ -2,7 +2,7 @@
   {
     "id": "6be012d64f25f43f",
     "type": "subflow",
-    "name": "Send notification to persons",
+    "name": "send notification to persons",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1420,
+        "x": 1400,
         "y": 60,
         "wires": [
           {
@@ -84,7 +84,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1420,
+      "x": 1400,
       "y": 140,
       "wires": [
         {
@@ -98,7 +98,7 @@
     "id": "9ddcbb1e73030798",
     "type": "junction",
     "z": "6be012d64f25f43f",
-    "x": 540,
+    "x": 520,
     "y": 120,
     "wires": [
       [
@@ -122,14 +122,14 @@
     "id": "d4f28161858d8840",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "For every person",
+    "name": "for every person",
     "func": "const storage = 'flow_storage1';\n\nconst persons = msg[storage].persons;\nif(persons.length > 0) {\n    persons.forEach((person, index) => {\n        node.send({\n            ...msg,\n            person,\n            parts: {\n                id: \"notify_persons\",\n                type: \"array\",\n                count: persons.length,\n                len: 1,\n                index\n            }\n        });\n    });\n}\n\nreturn [null, {services: []}]\n",
     "outputs": 2,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 410,
+    "x": 400,
     "y": 60,
     "wires": [
       [
@@ -166,7 +166,7 @@
         "type": "str"
       }
     ],
-    "x": 660,
+    "x": 640,
     "y": 60,
     "wires": [
       [
@@ -206,14 +206,14 @@
     "id": "024de54230752dc1",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "Create status",
+    "name": "create status",
     "func": "const text = msg.services.join(', ')\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1280,
+    "x": 1270,
     "y": 140,
     "wires": [
       []
@@ -223,7 +223,7 @@
     "id": "72b4bab712e13952",
     "type": "function",
     "z": "6be012d64f25f43f",
-    "name": "Merge services",
+    "name": "merge services",
     "func": "\nreturn {\n    ...msg,\n    services: msg.payload.map((payload) => payload.service)\n};",
     "outputs": 1,
     "noerr": 0,
@@ -286,7 +286,7 @@
         "type": "json"
       }
     ],
-    "x": 1270,
+    "x": 1260,
     "y": 60,
     "wires": [
       []

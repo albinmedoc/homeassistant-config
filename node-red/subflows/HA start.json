@@ -2,7 +2,7 @@
   {
     "id": "5da5355c5d6e8223",
     "type": "subflow",
-    "name": "Home Assistant start",
+    "name": "HA start",
     "info": "",
     "category": "home_assistant",
     "in": [],
@@ -50,7 +50,7 @@
     "id": "b66320a5.f8586",
     "type": "server-events",
     "z": "5da5355c5d6e8223",
-    "name": "Home Assistant Client Event",
+    "name": "Home Assistant client event",
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "home_assistant_client",

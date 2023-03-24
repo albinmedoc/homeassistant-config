@@ -2,7 +2,7 @@
   {
     "id": "c95d61a1b9dd9e02",
     "type": "subflow",
-    "name": "Notification action timeout",
+    "name": "notification action timeout",
     "info": "",
     "category": "",
     "in": [
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 930,
+        "x": 910,
         "y": 220,
         "wires": [
           {
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "x": 940,
+        "x": 920,
         "y": 60,
         "wires": [
           {
@@ -79,7 +79,7 @@
       "timeout"
     ],
     "status": {
-      "x": 900,
+      "x": 880,
       "y": 140,
       "wires": [
         {
@@ -109,7 +109,7 @@
     "id": "ac183c5dc6184e49",
     "type": "delay",
     "z": "c95d61a1b9dd9e02",
-    "name": "Delay",
+    "name": "delay",
     "pauseType": "delayv",
     "timeout": "5",
     "timeoutUnits": "seconds",
@@ -134,7 +134,7 @@
     "id": "62187b595c3b4844",
     "type": "server-events",
     "z": "c95d61a1b9dd9e02",
-    "name": "Notification action",
+    "name": "notification action",
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "mobile_app_notification_action",
@@ -177,7 +177,7 @@
     "id": "c5b4b74f55c02e39",
     "type": "switch",
     "z": "c95d61a1b9dd9e02",
-    "name": "Is correct action?",
+    "name": "is correct action?",
     "property": "action_type",
     "propertyType": "msg",
     "rules": [
@@ -204,14 +204,14 @@
     "id": "84cab82cad4c5ab4",
     "type": "function",
     "z": "c95d61a1b9dd9e02",
-    "name": "Create status",
+    "name": "create status",
     "func": "const text = \"timeout\";\n\nreturn {\n    payload: {\n        fill: \"red\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 760,
+    "x": 750,
     "y": 120,
     "wires": [
       []
@@ -259,7 +259,7 @@
         "type": "str"
       }
     ],
-    "x": 750,
+    "x": 740,
     "y": 60,
     "wires": [
       [
@@ -298,14 +298,14 @@
     "id": "0346da3a99c43c8e",
     "type": "function",
     "z": "c95d61a1b9dd9e02",
-    "name": "Create status",
+    "name": "create status",
     "func": "const text = \"action\";\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 760,
+    "x": 750,
     "y": 160,
     "wires": [
       []
