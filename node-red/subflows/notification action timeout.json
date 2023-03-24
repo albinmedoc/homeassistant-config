@@ -230,13 +230,8 @@
       },
       {
         "name": "entries",
-        "value": "[\"action\",\"timeout\"]",
+        "value": "[\"timeout\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,
@@ -277,7 +272,7 @@
         "t": "set",
         "p": "delay",
         "pt": "msg",
-        "to": "msg.flow_storage.timeout * 1000",
+        "to": "msg.notification_action_timeout.timeout * 1000",
         "tot": "jsonata"
       }
     ],

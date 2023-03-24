@@ -127,7 +127,7 @@
       },
       {
         "name": "notify_data",
-        "value": "{{ flow_storage2.notify_data }}",
+        "value": "{{ send_notification_to_persons_home.notify_data }}",
         "type": "str"
       },
       {
@@ -177,11 +177,6 @@
         "name": "entries",
         "value": "[\"notify_data\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage2",
-        "type": "str"
       }
     ],
     "x": 200,

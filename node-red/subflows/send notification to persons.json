@@ -123,7 +123,7 @@
     "type": "function",
     "z": "6be012d64f25f43f",
     "name": "for every person",
-    "func": "const storage = 'flow_storage1';\n\nconst persons = msg[storage].persons;\nif(persons.length > 0) {\n    persons.forEach((person, index) => {\n        node.send({\n            ...msg,\n            person,\n            parts: {\n                id: \"notify_persons\",\n                type: \"array\",\n                count: persons.length,\n                len: 1,\n                index\n            }\n        });\n    });\n}\n\nreturn [null, {services: []}]\n",
+    "func": "const storage = 'send_notification_to_persons';\n\nconst persons = msg[storage].persons;\nif(persons.length > 0) {\n    persons.forEach((person, index) => {\n        node.send({\n            ...msg,\n            person,\n            parts: {\n                id: \"notify_persons\",\n                type: \"array\",\n                count: persons.length,\n                len: 1,\n                index\n            }\n        });\n    });\n}\n\nreturn [null, {services: []}]\n",
     "outputs": 2,
     "noerr": 0,
     "initialize": "",
@@ -157,7 +157,7 @@
       },
       {
         "name": "notify_data",
-        "value": "{{ flow_storage1.notify_data }}",
+        "value": "{{ send_notification_to_persons.notify_data }}",
         "type": "str"
       },
       {
@@ -254,11 +254,6 @@
         "name": "entries",
         "value": "[\"persons\",\"notify_data\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,

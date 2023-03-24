@@ -98,7 +98,7 @@
     "type": "function",
     "z": "9577215509c764c6",
     "name": "get notify service",
-    "func": "const storage = 'flow_storage';\n\nconst person_entity_id = msg[storage].person;\nconst person_name = person_entity_id.split('.')[1];\n\nconst service = `mobile_app_${person_name}_iphone`;\nconst data = msg[storage].notify_data\n\nmsg['payload'] = { service, data };\n\nreturn msg;",
+    "func": "const storage = 'send_notification_to_person';\n\nconst person_entity_id = msg[storage].person;\nconst person_name = person_entity_id.split('.')[1];\n\nconst service = `mobile_app_${person_name}_iphone`;\nconst data = msg[storage].notify_data\n\nmsg['payload'] = { service, data };\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
@@ -155,11 +155,6 @@
         "name": "entries",
         "value": "[\"person\",\"notify_data\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,

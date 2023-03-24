@@ -159,7 +159,7 @@
     "type": "switch",
     "z": "17f3c422bcd5a1fb",
     "name": "volume set?",
-    "property": "flow_storage.volume_level",
+    "property": "play_tts.volume_level",
     "propertyType": "msg",
     "rules": [
       {
@@ -198,7 +198,7 @@
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "{{ flow_storage.media_player }}",
+    "entity_id": "{{ play_tts.media_player }}",
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
@@ -238,9 +238,9 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_tts.media_player }}"
     ],
-    "data": "{ \"volume_level\": flow_storage.volume_level }",
+    "data": "{ \"volume_level\": play_tts.volume_level }",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -267,9 +267,9 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_tts.media_player }}"
     ],
-    "data": "{\t    \"message\": msg.flow_storage.message\t}",
+    "data": "{\t    \"message\": msg.play_tts.message\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -296,7 +296,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_tts.media_player }}"
     ],
     "data": "{ \"volume_level\": media_player_entity.attributes.volume_level }",
     "dataType": "jsonata",
@@ -326,9 +326,9 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_tts.media_player }}"
     ],
-    "data": "{\t    \"message\": msg.flow_storage.message\t}",
+    "data": "{\t    \"message\": msg.play_tts.message\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -357,11 +357,6 @@
         "name": "entries",
         "value": "[\"media_player\",\"message\",\"volume_level\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,

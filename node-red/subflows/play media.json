@@ -169,7 +169,7 @@
     "type": "switch",
     "z": "ad0b3a8015e7f49b",
     "name": "volume set?",
-    "property": "flow_storage.volume_level",
+    "property": "play_media.volume_level",
     "propertyType": "msg",
     "rules": [
       {
@@ -208,7 +208,7 @@
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "{{ flow_storage.media_player }}",
+    "entity_id": "{{ play_media.media_player }}",
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
@@ -248,9 +248,9 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_media.media_player }}"
     ],
-    "data": "{ \"volume_level\": flow_storage.volume_level }",
+    "data": "{ \"volume_level\": play_media.volume_level }",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -277,7 +277,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_media.media_player }}"
     ],
     "data": "{ \"volume_level\": media_player_entity.attributes.volume_level }",
     "dataType": "jsonata",
@@ -307,9 +307,9 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_media.media_player }}"
     ],
-    "data": "{\t   \"media_content_type\": flow_storage.media_content_type,\t   \"media_content_id\": flow_storage.media_content_id,\t   \"announce\": $env(\"announce\")\t}",
+    "data": "{\t   \"media_content_type\": play_media.media_content_type,\t   \"media_content_id\": play_media.media_content_id,\t   \"announce\": $env(\"announce\")\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -338,7 +338,7 @@
     "entityId": [
       "{{ flow_storage.media_player }}"
     ],
-    "data": "{\t   \"media_content_type\": flow_storage.media_content_type,\t   \"media_content_id\": flow_storage.media_content_id,\t   \"announce\": $env(\"announce\")\t}",
+    "data": "{\t   \"media_content_type\": play_media.media_content_type,\t   \"media_content_id\": play_media.media_content_id,\t   \"announce\": $env(\"announce\")\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -384,11 +384,6 @@
         "name": "entries",
         "value": "[\"media_player\",\"media_content_type\",\"media_content_id\",\"volume_level\"]",
         "type": "json"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,
