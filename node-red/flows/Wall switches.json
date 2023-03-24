@@ -23,9 +23,9 @@
       "83cd2c752c8e4186",
       "3191172f2275f0d6"
     ],
-    "x": 34,
-    "y": 359,
-    "w": 412,
+    "x": 454,
+    "y": 39,
+    "w": 372,
     "h": 302
   },
   {
@@ -46,7 +46,7 @@
     ],
     "x": 34,
     "y": 39,
-    "w": 472,
+    "w": 372,
     "h": 302
   },
   {
@@ -65,30 +65,9 @@
       "e42beba3e8afcc2d",
       "3835fda3ddccfb06"
     ],
-    "x": 34,
-    "y": 1319,
-    "w": 412,
-    "h": 302
-  },
-  {
-    "id": "a41dac5adac5421d",
-    "type": "group",
-    "z": "7c1b8ecc3bcbbebd",
-    "name": "Hallway 2",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "c2c38d7f85510778",
-      "3d616dfc706c76af",
-      "55d2c8dd730b437c",
-      "18c53d47f54bf7bf",
-      "f350126776b8d2bf",
-      "e2d369938e7b43be"
-    ],
-    "x": 34,
-    "y": 999,
-    "w": 412,
+    "x": 454,
+    "y": 379,
+    "w": 372,
     "h": 302
   },
   {
@@ -108,8 +87,8 @@
       "dccec8a7a80e5d82"
     ],
     "x": 34,
-    "y": 679,
-    "w": 472,
+    "y": 379,
+    "w": 372,
     "h": 302
   },
   {
@@ -117,7 +96,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Switch Bedroom",
+    "name": "switch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -149,8 +128,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 140,
-    "y": 440,
+    "x": 540,
+    "y": 120,
     "wires": [
       [
         "d333661181e8ccf5"
@@ -165,7 +144,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Turn on lamp",
+    "name": "turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -182,8 +161,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
-    "y": 400,
+    "x": 710,
+    "y": 80,
     "wires": [
       []
     ]
@@ -193,7 +172,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Turn off lamp",
+    "name": "turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -210,8 +189,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
-    "y": 480,
+    "x": 710,
+    "y": 160,
     "wires": [
       []
     ]
@@ -221,7 +200,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Lamp Bedroom",
+    "name": "lamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -253,8 +232,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 140,
-    "y": 580,
+    "x": 540,
+    "y": 260,
     "wires": [
       [
         "83cd2c752c8e4186"
@@ -269,7 +248,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Turn on switch",
+    "name": "turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -286,8 +265,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 340,
-    "y": 540,
+    "x": 720,
+    "y": 220,
     "wires": [
       []
     ]
@@ -297,7 +276,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "01342c3d53a6371c",
-    "name": "Turn off switch",
+    "name": "turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -314,8 +293,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 340,
-    "y": 620,
+    "x": 720,
+    "y": 300,
     "wires": [
       []
     ]
@@ -325,7 +304,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Switch Living room Sofa",
+    "name": "switch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -357,7 +336,7 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 170,
+    "x": 120,
     "y": 120,
     "wires": [
       [
@@ -373,7 +352,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Turn on lamp",
+    "name": "turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -390,7 +369,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 390,
+    "x": 290,
     "y": 80,
     "wires": [
       []
@@ -401,7 +380,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Turn off lamp",
+    "name": "turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -418,7 +397,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 390,
+    "x": 290,
     "y": 160,
     "wires": [
       []
@@ -429,7 +408,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Lamp Living room Sofa",
+    "name": "lamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -461,7 +440,7 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 160,
+    "x": 120,
     "y": 260,
     "wires": [
       [
@@ -477,7 +456,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Turn on switch",
+    "name": "turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -494,7 +473,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
+    "x": 300,
     "y": 220,
     "wires": [
       []
@@ -505,7 +484,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "906392ec964d3dab",
-    "name": "Turn off switch",
+    "name": "turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -522,7 +501,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
+    "x": 300,
     "y": 300,
     "wires": [
       []
@@ -533,7 +512,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Switch Hallway 3",
+    "name": "switch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -565,8 +544,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 140,
-    "y": 1400,
+    "x": 540,
+    "y": 460,
     "wires": [
       [
         "4507b1e2cb8085fc"
@@ -581,7 +560,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Turn on lamp",
+    "name": "turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -598,8 +577,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
-    "y": 1360,
+    "x": 710,
+    "y": 420,
     "wires": [
       []
     ]
@@ -609,7 +588,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Turn off lamp",
+    "name": "turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -626,8 +605,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 330,
-    "y": 1440,
+    "x": 710,
+    "y": 500,
     "wires": [
       []
     ]
@@ -637,7 +616,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Lamp Hallway 3",
+    "name": "lamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -669,8 +648,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 140,
-    "y": 1540,
+    "x": 540,
+    "y": 600,
     "wires": [
       [
         "e42beba3e8afcc2d"
@@ -685,7 +664,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Turn on switch",
+    "name": "turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -702,8 +681,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 340,
-    "y": 1500,
+    "x": 720,
+    "y": 560,
     "wires": [
       []
     ]
@@ -713,7 +692,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "657a994829f4573f",
-    "name": "Turn off switch",
+    "name": "turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -730,216 +709,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 340,
-    "y": 1580,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "c2c38d7f85510778",
-    "type": "server-state-changed",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Switch Hallway 2",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_hallway_2",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [],
-    "x": 140,
-    "y": 1080,
-    "wires": [
-      [
-        "3d616dfc706c76af"
-      ],
-      [
-        "55d2c8dd730b437c"
-      ]
-    ]
-  },
-  {
-    "id": "3d616dfc706c76af",
-    "type": "api-call-service",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Turn on lamp",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "light",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "light.lamp_2_hallway"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 330,
-    "y": 1040,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "55d2c8dd730b437c",
-    "type": "api-call-service",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Turn off lamp",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "light",
-    "service": "turn_off",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "light.lamp_2_hallway"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 330,
-    "y": 1120,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "18c53d47f54bf7bf",
-    "type": "server-state-changed",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Lamp Hallway 2",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.lamp_2_hallway",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [],
-    "x": 140,
-    "y": 1220,
-    "wires": [
-      [
-        "f350126776b8d2bf"
-      ],
-      [
-        "e2d369938e7b43be"
-      ]
-    ]
-  },
-  {
-    "id": "f350126776b8d2bf",
-    "type": "api-call-service",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Turn on switch",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "switch",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "switch.relay_hallway_2"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 340,
-    "y": 1180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "e2d369938e7b43be",
-    "type": "api-call-service",
-    "z": "7c1b8ecc3bcbbebd",
-    "g": "a41dac5adac5421d",
-    "name": "Turn off switch",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "switch",
-    "service": "turn_off",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "switch.relay_hallway_2"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 340,
-    "y": 1260,
+    "x": 720,
+    "y": 640,
     "wires": [
       []
     ]
@@ -949,7 +720,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Switch Hallway Entrance",
+    "name": "switch on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -981,8 +752,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 170,
-    "y": 760,
+    "x": 120,
+    "y": 460,
     "wires": [
       [
         "d0e4cb73260a397a"
@@ -997,7 +768,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Turn on lamp",
+    "name": "turn on lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1014,8 +785,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 390,
-    "y": 720,
+    "x": 290,
+    "y": 420,
     "wires": [
       []
     ]
@@ -1025,7 +796,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Turn off lamp",
+    "name": "turn off lamp",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1042,8 +813,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 390,
-    "y": 800,
+    "x": 290,
+    "y": 500,
     "wires": [
       []
     ]
@@ -1053,7 +824,7 @@
     "type": "server-state-changed",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Lamp Hallway Entrance",
+    "name": "lamp on",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -1085,8 +856,8 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "x": 160,
-    "y": 900,
+    "x": 120,
+    "y": 600,
     "wires": [
       [
         "1bf087c0a818fcbd"
@@ -1101,7 +872,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Turn on switch",
+    "name": "turn on switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1118,8 +889,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
-    "y": 860,
+    "x": 300,
+    "y": 560,
     "wires": [
       []
     ]
@@ -1129,7 +900,7 @@
     "type": "api-call-service",
     "z": "7c1b8ecc3bcbbebd",
     "g": "e08ca9117ba9237c",
-    "name": "Turn off switch",
+    "name": "turn off switch",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -1146,8 +917,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 400,
-    "y": 940,
+    "x": 300,
+    "y": 640,
     "wires": [
       []
     ]
