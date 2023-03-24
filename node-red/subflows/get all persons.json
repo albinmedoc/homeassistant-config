@@ -140,11 +140,6 @@
         "name": "outputs",
         "value": "{\"output_persons\":\"persons\"}",
         "type": "json"
-      },
-      {
-        "name": "has_setup",
-        "value": "false",
-        "type": "bool"
       }
     ],
     "x": 620,
