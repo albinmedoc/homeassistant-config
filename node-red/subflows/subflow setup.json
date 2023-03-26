@@ -3,7 +3,7 @@
     "id": "846b2a595d7e7acf",
     "type": "subflow",
     "name": "subflow setup",
-    "info": "",
+    "info": "A helper to setup subflows\nLoads configuration from msg using mustache\nSaves the input msg to be able to restore it\n\n### Configuration\n\n#### `Unique Id required`\n\n- Type: `string`\n\nThe media player where to play the TTS\n\n#### `Entries required`\n\n- Type: `array`\n\nA list of environment keys to load using mustache\n",
     "category": "function",
     "in": [
       {
@@ -35,7 +35,7 @@
         "value": "",
         "ui": {
           "label": {
-            "en-US": "Unique id"
+            "en-US": "Unique Id"
           },
           "type": "input",
           "opts": {

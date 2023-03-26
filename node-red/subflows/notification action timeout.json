@@ -3,7 +3,7 @@
     "id": "c95d61a1b9dd9e02",
     "type": "subflow",
     "name": "notification action timeout",
-    "info": "",
+    "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timout used for the notification action\n",
     "category": "",
     "in": [
       {

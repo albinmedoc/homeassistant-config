@@ -3,7 +3,7 @@
     "id": "c0dcc6a2aeb58851",
     "type": "subflow",
     "name": "send notification to persons at home",
-    "info": "",
+    "info": "Send a notification to persons at home\n\n### Configuration\n\n#### `Notify Data required`\n\n- Type: `JSON`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification data to send to the persons\n\n## Output\n\nValue types:\n\n- `Notify Services`: a list of notify services for the persons at home\n\n- `Persons`: a list of persons at home\n",
     "category": "",
     "in": [
       {

@@ -3,7 +3,7 @@
     "id": "29024697abc79029",
     "type": "subflow",
     "name": "get persons not at home",
-    "info": "",
+    "info": "Get persons that are not home\n\n## Output\n\nValue types:\n\n- `Persons`: A list of persons that are not home\n",
     "category": "",
     "in": [
       {

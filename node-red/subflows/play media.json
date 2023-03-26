@@ -3,7 +3,7 @@
     "id": "ad0b3a8015e7f49b",
     "type": "subflow",
     "name": "play media",
-    "info": "",
+    "info": "Play media on a media player\n\n### Configuration\n\n#### `Media player required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe media player where to play the TTS\n\n#### `Content type required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe content type of the media\n\n#### `Content Id required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe Id of the content\n\n#### `Announce required`\n\n- Type: `boolean`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nIf the media should be played as an announcement\n\n#### `Volume level`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe volume level that should be used while playing the TTS\n",
     "category": "",
     "in": [
       {

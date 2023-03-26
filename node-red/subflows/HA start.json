@@ -3,7 +3,7 @@
     "id": "5da5355c5d6e8223",
     "type": "subflow",
     "name": "HA start",
-    "info": "",
+    "info": "Runs when Home Assistant has started\n",
     "category": "home_assistant",
     "in": [],
     "out": [

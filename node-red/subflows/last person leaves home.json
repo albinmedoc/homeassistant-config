@@ -3,7 +3,7 @@
     "id": "10bf6a612840df6b",
     "type": "subflow",
     "name": "last person leaves home",
-    "info": "",
+    "info": "Triggers when the last person leaves home\n\n## Output\n\nValue types:\n\n- `Person`: the person that left home\n",
     "category": "",
     "in": [],
     "out": [

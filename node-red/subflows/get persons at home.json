@@ -3,7 +3,7 @@
     "id": "92acfb4d26effac0",
     "type": "subflow",
     "name": "get persons at home",
-    "info": "",
+    "info": "Get persons that are home\n\n## Output\n\nValue types:\n\n- `Persons`: a list of persons home\n",
     "category": "",
     "in": [
       {

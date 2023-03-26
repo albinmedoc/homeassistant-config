@@ -3,7 +3,7 @@
     "id": "5c7f108f494183f7",
     "type": "subflow",
     "name": "first person comes home",
-    "info": "",
+    "info": "Triggers when the first person comes home\n\n## Output\n\nValue types:\n\n- `Person`: the person that came home\n",
     "category": "",
     "in": [],
     "out": [

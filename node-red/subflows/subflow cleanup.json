@@ -3,7 +3,7 @@
     "id": "667ec96ed52e720e",
     "type": "subflow",
     "name": "subflow cleanup",
-    "info": "",
+    "info": "A helper to cleanup subflows\n- Restores the input msg\n- Populate output variables\n\n### Configuration\n\n#### `Unique Id required`\n\n- Type: `string`\n\nThe media player where to play the TTS\n\n#### `Outputs required`\n\n- Type: `object`\n\nSpecifies where to populate the outputs from\n* Key - environment variable\n* Value - msg path to value",
     "category": "function",
     "in": [
       {

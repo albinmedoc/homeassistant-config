@@ -3,7 +3,7 @@
     "id": "bd6b3fc9fb3bede7",
     "type": "subflow",
     "name": "get all persons",
-    "info": "",
+    "info": "Get all persons\n\n## Output\n\nValue types:\n- `Persons`: a list of all persons\n",
     "category": "",
     "in": [
       {
