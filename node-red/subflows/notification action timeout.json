@@ -3,7 +3,7 @@
     "id": "c95d61a1b9dd9e02",
     "type": "subflow",
     "name": "notification action timeout",
-    "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timout used for the notification action\n",
+    "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timout used for the notification action\n\n## Output\n\nValue types:\n\n- `Action`: the action that was used\n\n",
     "category": "",
     "in": [
       {
@@ -22,7 +22,7 @@
         "y": 220,
         "wires": [
           {
-            "id": "6d9d0409afa6c69e",
+            "id": "6602fc5b4c1d8ff8",
             "port": 0
           }
         ]
@@ -70,6 +70,23 @@
             ]
           }
         }
+      },
+      {
+        "name": "output_action",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Action"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
       }
     ],
     "meta": {},
@@ -101,7 +118,8 @@
     "y": 220,
     "wires": [
       [
-        "0346da3a99c43c8e"
+        "0346da3a99c43c8e",
+        "6602fc5b4c1d8ff8"
       ]
     ]
   },
@@ -252,6 +270,11 @@
         "name": "unique_id",
         "value": "notification_action_timeout",
         "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_action\":\"action_type\"}",
+        "type": "json"
       }
     ],
     "x": 740,
@@ -302,6 +325,29 @@
     "libs": [],
     "x": 750,
     "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6602fc5b4c1d8ff8",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "c95d61a1b9dd9e02",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "notification_action_timeout",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_action\":\"action_type\"}",
+        "type": "json"
+      }
+    ],
+    "x": 740,
+    "y": 220,
     "wires": [
       []
     ]
