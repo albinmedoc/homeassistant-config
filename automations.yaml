@@ -348,6 +348,12 @@
       left_button_name: Taklampa
       right_button_entity: light.roof_loop_conservatory
       right_button_name: Uterum
+      right_button_hold_select: Custom Action
+      right_button_hold_custom_action:
+      - service: switch.toggle
+        data: {}
+        target:
+          entity_id: switch.airfryer_conservatory
       relay_2_local_fallback: true
       button_page01_label: Vardagsrum
       entity01_name: Taklampa
