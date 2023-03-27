@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 910,
+        "x": 1350,
         "y": 220,
         "wires": [
           {
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "x": 920,
+        "x": 1360,
         "y": 60,
         "wires": [
           {
@@ -96,7 +96,7 @@
       "timeout"
     ],
     "status": {
-      "x": 880,
+      "x": 1320,
       "y": 140,
       "wires": [
         {
@@ -109,19 +109,6 @@
         }
       ]
     }
-  },
-  {
-    "id": "6d9d0409afa6c69e",
-    "type": "junction",
-    "z": "c95d61a1b9dd9e02",
-    "x": 620,
-    "y": 220,
-    "wires": [
-      [
-        "0346da3a99c43c8e",
-        "6602fc5b4c1d8ff8"
-      ]
-    ]
   },
   {
     "id": "ac183c5dc6184e49",
@@ -140,11 +127,11 @@
     "drop": false,
     "allowrate": false,
     "outputs": 1,
-    "x": 570,
+    "x": 770,
     "y": 60,
     "wires": [
       [
-        "603758d70cad1b6c"
+        "2eb64c0ea19f6b79"
       ]
     ]
   },
@@ -213,8 +200,7 @@
     "y": 220,
     "wires": [
       [
-        "ac183c5dc6184e49",
-        "6d9d0409afa6c69e"
+        "b0f5078df0d931cf"
       ]
     ]
   },
@@ -229,7 +215,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 750,
+    "x": 1190,
     "y": 120,
     "wires": [
       []
@@ -256,7 +242,7 @@
     "y": 60,
     "wires": [
       [
-        "846ded3f4c609fee"
+        "a525c16e3408ed0f"
       ]
     ]
   },
@@ -277,7 +263,7 @@
         "type": "json"
       }
     ],
-    "x": 740,
+    "x": 1180,
     "y": 60,
     "wires": [
       [
@@ -304,7 +290,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 400,
+    "x": 600,
     "y": 60,
     "wires": [
       [
@@ -323,7 +309,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 750,
+    "x": 1190,
     "y": 160,
     "wires": [
       []
@@ -346,10 +332,98 @@
         "type": "json"
       }
     ],
-    "x": 740,
+    "x": 1180,
     "y": 220,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "a525c16e3408ed0f",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "add one running",
+    "func": "const unique_id = 'notification_action_timeout';\nconst action = env.get('action');\nconst flow_key = `${unique_id}_${action}`;\n\nconst current_running = flow.get(flow_key) ?? 0;\n\nflow.set(flow_key, current_running + 1);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 400,
+    "y": 60,
+    "wires": [
+      [
+        "846ded3f4c609fee"
+      ]
+    ]
+  },
+  {
+    "id": "b0f5078df0d931cf",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "check if running",
+    "func": "const unique_id = 'notification_action_timeout';\nconst action = env.get('action');\nconst flow_key = `${unique_id}_${action}`;\n\nconst current_running = flow.get(flow_key) ?? 0;\n\nif (current_running > 0) {\n    return msg;\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 560,
+    "y": 220,
+    "wires": [
+      [
+        "ac183c5dc6184e49",
+        "7e6951b154a50767"
+      ]
+    ]
+  },
+  {
+    "id": "e545221051ff4641",
+    "type": "comment",
+    "z": "c95d61a1b9dd9e02",
+    "name": "Remove one",
+    "info": "Kan fortfarande finnas fler med längre timeout",
+    "x": 870,
+    "y": 20,
+    "wires": []
+  },
+  {
+    "id": "7e6951b154a50767",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "remove all running",
+    "func": "const unique_id = 'notification_action_timeout';\nconst action = env.get('action');\nconst flow_key = `${unique_id}_${action}`;\n\nconst current_running = flow.get(flow_key) ?? 0;\n\nflow.set(flow_key, undefined);\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 970,
+    "y": 220,
+    "wires": [
+      [
+        "6602fc5b4c1d8ff8",
+        "0346da3a99c43c8e"
+      ]
+    ]
+  },
+  {
+    "id": "2eb64c0ea19f6b79",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "remove one running",
+    "func": "const unique_id = 'notification_action_timeout';\nconst action = env.get('action');\nconst flow_key = `${unique_id}_${action}`;\n\nconst current_running = flow.get(flow_key) ?? 0;\n\nif (current_running > 1) {\n    flow.set(flow_key, current_running - 1);\n} else {\n    flow.set(flow_key, undefined);\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 960,
+    "y": 60,
+    "wires": [
+      [
+        "603758d70cad1b6c"
+      ]
     ]
   }
 ]
