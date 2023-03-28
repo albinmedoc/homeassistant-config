@@ -263,13 +263,13 @@
     "version": 5,
     "debugenabled": false,
     "domain": "tts",
-    "service": "cloud_say",
+    "service": "google_translate_say",
     "areaId": [],
     "deviceId": [],
     "entityId": [
       "{{ play_tts.media_player }}"
     ],
-    "data": "{\t    \"message\": msg.play_tts.message\t}",
+    "data": "{\t    \"message\": msg.play_tts.message,\t    \"language\": \"sv\"\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -322,13 +322,13 @@
     "version": 5,
     "debugenabled": false,
     "domain": "tts",
-    "service": "cloud_say",
+    "service": "google_translate_say",
     "areaId": [],
     "deviceId": [],
     "entityId": [
       "{{ play_tts.media_player }}"
     ],
-    "data": "{\t    \"message\": msg.play_tts.message\t}",
+    "data": "{\t    \"message\": msg.play_tts.message,\t    \"language\": \"sv\"\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
