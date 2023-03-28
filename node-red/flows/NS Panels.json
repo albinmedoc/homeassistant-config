@@ -1,0 +1,188 @@
+[
+  {
+    "id": "b5497d99883a62af",
+    "type": "tab",
+    "label": "NS Panels",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "121eec31d66d97f5",
+    "type": "subflow:10bf6a612840df6b",
+    "z": "b5497d99883a62af",
+    "name": "",
+    "x": 150,
+    "y": 60,
+    "wires": [
+      [
+        "ed7c020f60c6dda2"
+      ],
+      [
+        "ed7c020f60c6dda2"
+      ]
+    ]
+  },
+  {
+    "id": "d2f37cad72bfc84b",
+    "type": "subflow:5c7f108f494183f7",
+    "z": "b5497d99883a62af",
+    "name": "",
+    "x": 150,
+    "y": 220,
+    "wires": [
+      [
+        "d76e917baa3dd0f3"
+      ],
+      [
+        "d76e917baa3dd0f3"
+      ]
+    ]
+  },
+  {
+    "id": "d9e6d54b93a455d2",
+    "type": "server-state-changed",
+    "z": "b5497d99883a62af",
+    "name": "nightmode on",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_mode",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 190,
+    "y": 100,
+    "wires": [
+      [
+        "ed7c020f60c6dda2"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3927aab9012fbce7",
+    "type": "server-state-changed",
+    "z": "b5497d99883a62af",
+    "name": "nightmode off",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_mode",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 190,
+    "y": 260,
+    "wires": [
+      [
+        "d76e917baa3dd0f3"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ed7c020f60c6dda2",
+    "type": "api-call-service",
+    "z": "b5497d99883a62af",
+    "name": "turn on sleep modus",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.ns_panel_hallway_sleep_modus",
+      "switch.ns_panel_living_room_sleep_modus"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 420,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d76e917baa3dd0f3",
+    "type": "api-call-service",
+    "z": "b5497d99883a62af",
+    "name": "turn off sleep modus",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.ns_panel_hallway_sleep_modus",
+      "switch.ns_panel_living_room_sleep_modus"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 420,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  }
+]
