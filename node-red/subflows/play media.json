@@ -357,7 +357,7 @@
     "type": "function",
     "z": "ad0b3a8015e7f49b",
     "name": "create status",
-    "func": "const text = msg.flow_storage.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
+    "func": "const text = msg.play_media.media_player;\n\nreturn {\n    payload: {\n        fill: \"green\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
