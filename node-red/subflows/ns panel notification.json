@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1380,
+        "x": 1300,
         "y": 40,
         "wires": [
           {
@@ -151,7 +151,7 @@
         "type": "str"
       }
     ],
-    "x": 1240,
+    "x": 1160,
     "y": 40,
     "wires": [
       []
@@ -161,14 +161,14 @@
     "id": "881338b5e25c39eb",
     "type": "function",
     "z": "5799dae45d05d32f",
-    "name": "map services and entities",
-    "func": "const ns_panel = msg.ns_panel_notification.ns_panel;\n\nconst notification_sound_entity = `${ns_panel}_notification_sound`;\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_sound_entity,\n    notification_show_service,\n    play_rtttl_service\n};",
+    "name": "map services",
+    "func": "const ns_panel = msg.ns_panel_notification.ns_panel;\n\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_show_service,\n    play_rtttl_service\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 430,
+    "x": 390,
     "y": 40,
     "wires": [
       [
@@ -195,7 +195,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 670,
+    "x": 590,
     "y": 40,
     "wires": [
       [
@@ -222,7 +222,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1060,
+    "x": 980,
     "y": 80,
     "wires": [
       [
@@ -250,7 +250,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 880,
+    "x": 800,
     "y": 40,
     "wires": [
       [
