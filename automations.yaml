@@ -225,7 +225,7 @@
   alias: NS-Panel Hallway
   description: ''
   use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
+    path: Blackymas/nspanel_blueprint_beta.yaml
     input:
       nspanel_name: ns_panel_hallway
       language: SWE
@@ -336,7 +336,7 @@
   alias: NS-Panel Living room
   description: ''
   use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
+    path: Blackymas/nspanel_blueprint_beta.yaml
     input:
       nspanel_name: ns_panel_living_room
       language: SWE
