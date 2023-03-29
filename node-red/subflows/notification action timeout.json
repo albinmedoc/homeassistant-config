@@ -19,7 +19,7 @@
     "out": [
       {
         "x": 1350,
-        "y": 220,
+        "y": 260,
         "wires": [
           {
             "id": "6602fc5b4c1d8ff8",
@@ -97,7 +97,7 @@
     ],
     "status": {
       "x": 1320,
-      "y": 140,
+      "y": 160,
       "wires": [
         {
           "id": "84cab82cad4c5ab4",
@@ -106,9 +106,25 @@
         {
           "id": "0346da3a99c43c8e",
           "port": 0
+        },
+        {
+          "id": "a8387bed389502ee",
+          "port": 0
         }
       ]
     }
+  },
+  {
+    "id": "cd27df279b6fcfba",
+    "type": "junction",
+    "z": "c95d61a1b9dd9e02",
+    "x": 740,
+    "y": 160,
+    "wires": [
+      [
+        "a8387bed389502ee"
+      ]
+    ]
   },
   {
     "id": "ac183c5dc6184e49",
@@ -171,7 +187,7 @@
       }
     ],
     "x": 130,
-    "y": 220,
+    "y": 280,
     "wires": [
       [
         "c5b4b74f55c02e39"
@@ -197,7 +213,7 @@
     "repair": false,
     "outputs": 1,
     "x": 350,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "b0f5078df0d931cf"
@@ -294,7 +310,8 @@
     "y": 60,
     "wires": [
       [
-        "ac183c5dc6184e49"
+        "ac183c5dc6184e49",
+        "cd27df279b6fcfba"
       ]
     ]
   },
@@ -310,7 +327,7 @@
     "finalize": "",
     "libs": [],
     "x": 1190,
-    "y": 160,
+    "y": 200,
     "wires": [
       []
     ]
@@ -333,7 +350,7 @@
       }
     ],
     "x": 1180,
-    "y": 220,
+    "y": 260,
     "wires": [
       []
     ]
@@ -369,7 +386,7 @@
     "finalize": "",
     "libs": [],
     "x": 560,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "ac183c5dc6184e49",
@@ -399,7 +416,7 @@
     "finalize": "",
     "libs": [],
     "x": 970,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "6602fc5b4c1d8ff8",
@@ -424,6 +441,23 @@
       [
         "603758d70cad1b6c"
       ]
+    ]
+  },
+  {
+    "id": "a8387bed389502ee",
+    "type": "function",
+    "z": "c95d61a1b9dd9e02",
+    "name": "create status",
+    "func": "const text = 'waiting for action';\n\nreturn {\n    payload: {\n        fill: 'yellow',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1190,
+    "y": 160,
+    "wires": [
+      []
     ]
   }
 ]
