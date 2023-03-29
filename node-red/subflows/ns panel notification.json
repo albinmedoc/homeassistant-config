@@ -3,7 +3,7 @@
     "id": "5799dae45d05d32f",
     "type": "subflow",
     "name": "ns panel notification",
-    "info": "",
+    "info": "Show notification on NS Panel\n\n### Configuration\n\n#### `NS Panel required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe name of the NS Panel\n\n#### `Label required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification label\n\n#### `Text required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification text\n\n#### `Sound required`\n\n- Type: `string`\n\nThe sound to play with the notification, set None for not playing a sound.\n",
     "category": "",
     "in": [
       {
