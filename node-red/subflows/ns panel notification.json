@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1300,
+        "x": 1340,
         "y": 40,
         "wires": [
           {
@@ -112,7 +112,30 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99"
+    "color": "#DDAA99",
+    "status": {
+      "x": 1340,
+      "y": 100,
+      "wires": [
+        {
+          "id": "78c81ec4f2c90a83",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "3fd2fc2f6b6d697d",
+    "type": "junction",
+    "z": "5799dae45d05d32f",
+    "x": 1080,
+    "y": 40,
+    "wires": [
+      [
+        "c0637180b40fcc6e",
+        "78c81ec4f2c90a83"
+      ]
+    ]
   },
   {
     "id": "65e81a4db530a853",
@@ -151,7 +174,7 @@
         "type": "str"
       }
     ],
-    "x": 1160,
+    "x": 1200,
     "y": 40,
     "wires": [
       []
@@ -226,7 +249,7 @@
     "y": 80,
     "wires": [
       [
-        "c0637180b40fcc6e"
+        "3fd2fc2f6b6d697d"
       ]
     ]
   },
@@ -254,11 +277,28 @@
     "y": 40,
     "wires": [
       [
-        "c0637180b40fcc6e"
+        "3fd2fc2f6b6d697d"
       ],
       [
         "63efb2544968d0ac"
       ]
+    ]
+  },
+  {
+    "id": "78c81ec4f2c90a83",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "name": "create status",
+    "func": "const text = msg.ns_panel_notification.ns_panel;\n\nreturn {\n    payload: {\n        fill: 'green',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1210,
+    "y": 100,
+    "wires": [
+      []
     ]
   }
 ]
