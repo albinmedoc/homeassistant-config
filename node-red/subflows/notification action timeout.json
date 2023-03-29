@@ -3,7 +3,7 @@
     "id": "c95d61a1b9dd9e02",
     "type": "subflow",
     "name": "notification action timeout",
-    "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timout used for the notification action\n\n## Output\n\nValue types:\n\n- `Action`: the action that was used\n\n",
+    "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timeout in minutes used for the notification action\n\n## Output\n\nValue types:\n\n- `Action`: the action that was used\n\n",
     "category": "",
     "in": [
       {
@@ -93,7 +93,7 @@
     "color": "#DDAA99",
     "outputLabels": [
       "action",
-      "timeout"
+      "timed out"
     ],
     "status": {
       "x": 1320,
@@ -209,7 +209,7 @@
     "type": "function",
     "z": "c95d61a1b9dd9e02",
     "name": "create status",
-    "func": "const text = \"timeout\";\n\nreturn {\n    payload: {\n        fill: \"red\",\n        text\n    }\n};",
+    "func": "const text = \"timed out\";\n\nreturn {\n    payload: {\n        fill: \"red\",\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
@@ -281,7 +281,7 @@
         "t": "set",
         "p": "delay",
         "pt": "msg",
-        "to": "msg.notification_action_timeout.timeout * 1000",
+        "to": "msg.notification_action_timeout.timeout * 1000 * 60",
         "tot": "jsonata"
       }
     ],
