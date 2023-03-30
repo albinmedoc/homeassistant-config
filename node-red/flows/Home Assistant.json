@@ -19,7 +19,7 @@
       "6ed9e60aeed51db7"
     ],
     "x": 14,
-    "y": 599,
+    "y": 539,
     "w": 532,
     "h": 82
   },
@@ -37,7 +37,7 @@
       "0b4e37880bc471a9"
     ],
     "x": 14,
-    "y": 499,
+    "y": 439,
     "w": 652,
     "h": 82
   },
@@ -51,13 +51,12 @@
     },
     "nodes": [
       "4b411ef3ab4191f7",
-      "c86e931d7bf34a6d",
       "7c9eac7cf14500bf"
     ],
     "x": 14,
     "y": 339,
-    "w": 532,
-    "h": 142
+    "w": 472,
+    "h": 82
   },
   {
     "id": "2e59710b52d84cd4",
@@ -119,7 +118,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 410,
-    "y": 640,
+    "y": 580,
     "wires": [
       []
     ]
@@ -169,7 +168,7 @@
       }
     ],
     "x": 150,
-    "y": 640,
+    "y": 580,
     "wires": [
       [
         "6ed9e60aeed51db7"
@@ -189,7 +188,7 @@
     "finalize": "",
     "libs": [],
     "x": 300,
-    "y": 540,
+    "y": 480,
     "wires": [
       [
         "f3ed7dd986d07d37"
@@ -217,7 +216,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 530,
-    "y": 540,
+    "y": 480,
     "wires": [
       []
     ]
@@ -267,7 +266,7 @@
       }
     ],
     "x": 110,
-    "y": 540,
+    "y": 480,
     "wires": [
       [
         "0b4e37880bc471a9"
@@ -295,55 +294,9 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 410,
-    "y": 400,
+    "x": 350,
+    "y": 380,
     "wires": [
-      []
-    ]
-  },
-  {
-    "id": "c86e931d7bf34a6d",
-    "type": "server-state-changed",
-    "z": "9d7cd8ae.f2fe48",
-    "g": "d45aea997f43d7df",
-    "name": "HA Supervisor update",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "update.home_assistant_supervisor_update",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 140,
-    "y": 440,
-    "wires": [
-      [
-        "7c9eac7cf14500bf"
-      ],
       []
     ]
   },
