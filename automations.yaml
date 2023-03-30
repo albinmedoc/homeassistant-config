@@ -229,6 +229,7 @@
     input:
       nspanel_name: ns_panel_hallway
       language: SWE
+      date_format: '%-d/%-m'
       weather_entity: weather.smhi
       qrcode_enabled: true
       qrcode_label: Wifi
@@ -379,6 +380,7 @@
     input:
       nspanel_name: ns_panel_living_room
       language: SWE
+      date_format: '%-d/%-m'
       weather_entity: weather.smhi
       qrcode_enabled: true
       qrcode_label: Wifi
