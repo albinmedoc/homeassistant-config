@@ -8,21 +8,111 @@
     "env": []
   },
   {
-    "id": "037b270105a5e078",
+    "id": "00a032e1b75fa8ed",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn on frigate detection",
+    "name": "Camera Dino Available",
     "style": {
       "label": true
     },
     "nodes": [
-      "620711191d1dde67",
-      "040015a0a2cff3c7",
-      "932949eed4e341ae",
-      "d919babce7e295d8"
+      "eba99b674a6786c2",
+      "0785c72b9a19417f",
+      "04270f65108df369"
     ],
     "x": 44,
-    "y": 739
+    "y": 559,
+    "w": 592,
+    "h": 142
+  },
+  {
+    "id": "2b75c890eff44cfb",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Cat detected in Garden",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "3fc508453f5a4bf3",
+      "1f21716b9f95f12a"
+    ],
+    "x": 44,
+    "y": 439,
+    "w": 352,
+    "h": 82
+  },
+  {
+    "id": "ec260776601b15bd",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Turn off frigate snapshots",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "c274c5fc78c6ed79",
+      "4db1542ebba481ee",
+      "7f832b8e9eefdd27"
+    ],
+    "x": 44,
+    "y": 1319,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "e7e05890b1c08c7e",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Turn on frigate snapshots",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "f9a9d763c873ef7d",
+      "c3613d99ba4b682f",
+      "030247dadaf91fed"
+    ],
+    "x": 44,
+    "y": 1219,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "cfed098803bc16cd",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Turn off frigate recording",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "ddd26b60dcf9adf4",
+      "f6d5066046175e3d",
+      "2a123fdb611d4352"
+    ],
+    "x": 44,
+    "y": 1119,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "7ad94aaec9160b50",
+    "type": "group",
+    "z": "896b946718d5907e",
+    "name": "Turn on frigate recording",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "122e0508126adfa7",
+      "74706fe0bda77c41",
+      "7daa5915c3daa539"
+    ],
+    "x": 44,
+    "y": 1019,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "0a04ea6bece547ae",
@@ -39,102 +129,28 @@
       "50af51a9914bbeeb"
     ],
     "x": 44,
-    "y": 879
+    "y": 879,
+    "w": 552,
+    "h": 122
   },
   {
-    "id": "7ad94aaec9160b50",
+    "id": "037b270105a5e078",
     "type": "group",
     "z": "896b946718d5907e",
-    "name": "Turn on frigate recording",
+    "name": "Turn on frigate detection",
     "style": {
       "label": true
     },
     "nodes": [
-      "122e0508126adfa7",
-      "74706fe0bda77c41",
-      "7daa5915c3daa539"
+      "620711191d1dde67",
+      "040015a0a2cff3c7",
+      "932949eed4e341ae",
+      "d919babce7e295d8"
     ],
     "x": 44,
-    "y": 1019
-  },
-  {
-    "id": "cfed098803bc16cd",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Turn off frigate recording",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "ddd26b60dcf9adf4",
-      "f6d5066046175e3d",
-      "2a123fdb611d4352"
-    ],
-    "x": 44,
-    "y": 1119
-  },
-  {
-    "id": "e7e05890b1c08c7e",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Turn on frigate snapshots",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "f9a9d763c873ef7d",
-      "c3613d99ba4b682f",
-      "030247dadaf91fed"
-    ],
-    "x": 44,
-    "y": 1219
-  },
-  {
-    "id": "ec260776601b15bd",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Turn off frigate snapshots",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "c274c5fc78c6ed79",
-      "4db1542ebba481ee",
-      "7f832b8e9eefdd27"
-    ],
-    "x": 44,
-    "y": 1319
-  },
-  {
-    "id": "2b75c890eff44cfb",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Cat detected in Garden",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "3fc508453f5a4bf3",
-      "1f21716b9f95f12a"
-    ],
-    "x": 44,
-    "y": 439
-  },
-  {
-    "id": "00a032e1b75fa8ed",
-    "type": "group",
-    "z": "896b946718d5907e",
-    "name": "Camera Dino Available",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "eba99b674a6786c2",
-      "0785c72b9a19417f",
-      "04270f65108df369"
-    ],
-    "x": 44,
-    "y": 559
+    "y": 739,
+    "w": 552,
+    "h": 122
   },
   {
     "id": "815082aec75c4eb0",
@@ -167,125 +183,176 @@
     ]
   },
   {
-    "id": "620711191d1dde67",
-    "type": "link in",
+    "id": "04270f65108df369",
+    "type": "subflow:17f3c422bcd5a1fb",
     "z": "896b946718d5907e",
-    "g": "037b270105a5e078",
-    "name": "turn on frigate detection",
-    "links": [],
-    "x": 85,
-    "y": 800,
-    "wires": [
-      [
-        "932949eed4e341ae",
-        "d919babce7e295d8"
-      ]
-    ]
-  },
-  {
-    "id": "040015a0a2cff3c7",
-    "type": "link out",
-    "z": "896b946718d5907e",
-    "g": "037b270105a5e078",
-    "name": "link out 5",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 780,
-    "wires": []
-  },
-  {
-    "id": "932949eed4e341ae",
-    "type": "api-call-service",
-    "z": "896b946718d5907e",
-    "g": "037b270105a5e078",
-    "name": "kids bedroom - turn on frigate detection",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "switch",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "switch.camera_kids_bedroom_frigate_detect"
+    "g": "00a032e1b75fa8ed",
+    "name": "",
+    "env": [
+      {
+        "name": "media_player",
+        "value": "media_player.homepod_kitchen",
+        "type": "str"
+      },
+      {
+        "name": "message",
+        "value": "Dinos kamera är tillgänglig",
+        "type": "str"
+      }
     ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 300,
-    "y": 780,
-    "wires": [
-      [
-        "040015a0a2cff3c7"
-      ]
-    ]
-  },
-  {
-    "id": "d919babce7e295d8",
-    "type": "api-call-service",
-    "z": "896b946718d5907e",
-    "g": "037b270105a5e078",
-    "name": "living room - turn on frigate detection",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "switch",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "switch.camera_living_room_frigate_detect"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 290,
-    "y": 820,
+    "x": 370,
+    "y": 660,
     "wires": [
       []
     ]
   },
   {
-    "id": "d2f9fca8ac1c76a3",
-    "type": "link in",
+    "id": "0785c72b9a19417f",
+    "type": "subflow:c0dcc6a2aeb58851",
     "z": "896b946718d5907e",
-    "g": "0a04ea6bece547ae",
-    "name": "turn off frigate detection",
-    "links": [],
-    "x": 85,
-    "y": 940,
+    "g": "00a032e1b75fa8ed",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"message\":\"Dinos kamera är tillgänglig\"}",
+        "type": "json"
+      }
+    ],
+    "x": 460,
+    "y": 600,
     "wires": [
-      [
-        "50af51a9914bbeeb",
-        "e636b99adc958b4a"
-      ]
+      []
     ]
   },
   {
-    "id": "595040b26ad6e859",
-    "type": "link out",
+    "id": "eba99b674a6786c2",
+    "type": "server-state-changed",
     "z": "896b946718d5907e",
-    "g": "0a04ea6bece547ae",
-    "name": "link out 6",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 920,
-    "wires": []
+    "g": "00a032e1b75fa8ed",
+    "name": "camera Dino available",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "camera.camera_dino_hd_stream",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "unavailable",
+    "halt_if_type": "str",
+    "halt_if_compare": "is_not",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 170,
+    "y": 600,
+    "wires": [
+      [
+        "0785c72b9a19417f",
+        "04270f65108df369"
+      ],
+      []
+    ]
   },
   {
-    "id": "e636b99adc958b4a",
+    "id": "1f21716b9f95f12a",
+    "type": "subflow:17f3c422bcd5a1fb",
+    "z": "896b946718d5907e",
+    "g": "2b75c890eff44cfb",
+    "name": "",
+    "env": [
+      {
+        "name": "media_player",
+        "value": "media_player.homepod_kitchen",
+        "type": "str"
+      },
+      {
+        "name": "message",
+        "value": "Elina och Alea! Det är en katt i trädgården. Gå dit och titta.",
+        "type": "str"
+      },
+      {
+        "name": "volume_level",
+        "value": "0.5",
+        "type": "num"
+      }
+    ],
+    "x": 310,
+    "y": 480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3fc508453f5a4bf3",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "g": "2b75c890eff44cfb",
+    "name": "cat detected",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.camera_garden_cat_occupancy",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 140,
+    "y": 480,
+    "wires": [
+      [
+        "1f21716b9f95f12a"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7f832b8e9eefdd27",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "g": "0a04ea6bece547ae",
-    "name": "living room - turn off frigate detection",
+    "g": "ec260776601b15bd",
+    "name": "garden - turn off frigate snapshots",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -294,7 +361,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_living_room_frigate_detect"
+      "switch.garden_snapshots"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -302,10 +369,210 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 290,
-    "y": 960,
+    "x": 280,
+    "y": 1360,
     "wires": [
-      []
+      [
+        "4db1542ebba481ee"
+      ]
+    ]
+  },
+  {
+    "id": "4db1542ebba481ee",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "ec260776601b15bd",
+    "name": "link out 10",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 1360,
+    "wires": []
+  },
+  {
+    "id": "c274c5fc78c6ed79",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "ec260776601b15bd",
+    "name": "turn off frigate snapshots",
+    "links": [],
+    "x": 85,
+    "y": 1360,
+    "wires": [
+      [
+        "7f832b8e9eefdd27"
+      ]
+    ]
+  },
+  {
+    "id": "030247dadaf91fed",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "e7e05890b1c08c7e",
+    "name": "garden - turn on frigate snapshots",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.garden_snapshots"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 280,
+    "y": 1260,
+    "wires": [
+      [
+        "c3613d99ba4b682f"
+      ]
+    ]
+  },
+  {
+    "id": "c3613d99ba4b682f",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "e7e05890b1c08c7e",
+    "name": "link out 9",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 1260,
+    "wires": []
+  },
+  {
+    "id": "f9a9d763c873ef7d",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "e7e05890b1c08c7e",
+    "name": "turn on frigate snapshots",
+    "links": [],
+    "x": 85,
+    "y": 1260,
+    "wires": [
+      [
+        "030247dadaf91fed"
+      ]
+    ]
+  },
+  {
+    "id": "2a123fdb611d4352",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "cfed098803bc16cd",
+    "name": "garden - turn off frigate recording",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.garden_recordings"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 280,
+    "y": 1160,
+    "wires": [
+      [
+        "f6d5066046175e3d"
+      ]
+    ]
+  },
+  {
+    "id": "f6d5066046175e3d",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "cfed098803bc16cd",
+    "name": "link out 8",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 1160,
+    "wires": []
+  },
+  {
+    "id": "ddd26b60dcf9adf4",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "cfed098803bc16cd",
+    "name": "turn off frigate recording",
+    "links": [],
+    "x": 85,
+    "y": 1160,
+    "wires": [
+      [
+        "2a123fdb611d4352"
+      ]
+    ]
+  },
+  {
+    "id": "7daa5915c3daa539",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "7ad94aaec9160b50",
+    "name": "garden - turn on frigate recording",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.garden_recordings"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 280,
+    "y": 1060,
+    "wires": [
+      [
+        "74706fe0bda77c41"
+      ]
+    ]
+  },
+  {
+    "id": "74706fe0bda77c41",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "7ad94aaec9160b50",
+    "name": "link out 7",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 1060,
+    "wires": []
+  },
+  {
+    "id": "122e0508126adfa7",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "7ad94aaec9160b50",
+    "name": "turn on frigate recording",
+    "links": [],
+    "x": 85,
+    "y": 1060,
+    "wires": [
+      [
+        "7daa5915c3daa539"
+      ]
     ]
   },
   {
@@ -339,95 +606,11 @@
     ]
   },
   {
-    "id": "122e0508126adfa7",
-    "type": "link in",
-    "z": "896b946718d5907e",
-    "g": "7ad94aaec9160b50",
-    "name": "turn on frigate recording",
-    "links": [],
-    "x": 85,
-    "y": 1060,
-    "wires": [
-      [
-        "7daa5915c3daa539"
-      ]
-    ]
-  },
-  {
-    "id": "74706fe0bda77c41",
-    "type": "link out",
-    "z": "896b946718d5907e",
-    "g": "7ad94aaec9160b50",
-    "name": "link out 7",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 1060,
-    "wires": []
-  },
-  {
-    "id": "7daa5915c3daa539",
+    "id": "e636b99adc958b4a",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "g": "7ad94aaec9160b50",
-    "name": "garden - turn on frigate recording",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "switch",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "switch.garden_recordings"
-    ],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 280,
-    "y": 1060,
-    "wires": [
-      [
-        "74706fe0bda77c41"
-      ]
-    ]
-  },
-  {
-    "id": "ddd26b60dcf9adf4",
-    "type": "link in",
-    "z": "896b946718d5907e",
-    "g": "cfed098803bc16cd",
-    "name": "turn off frigate recording",
-    "links": [],
-    "x": 85,
-    "y": 1160,
-    "wires": [
-      [
-        "2a123fdb611d4352"
-      ]
-    ]
-  },
-  {
-    "id": "f6d5066046175e3d",
-    "type": "link out",
-    "z": "896b946718d5907e",
-    "g": "cfed098803bc16cd",
-    "name": "link out 8",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 1160,
-    "wires": []
-  },
-  {
-    "id": "2a123fdb611d4352",
-    "type": "api-call-service",
-    "z": "896b946718d5907e",
-    "g": "cfed098803bc16cd",
-    "name": "garden - turn off frigate recording",
+    "g": "0a04ea6bece547ae",
+    "name": "living room - turn off frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -436,7 +619,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.garden_recordings"
+      "switch.camera_living_room_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -444,47 +627,46 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 280,
-    "y": 1160,
+    "x": 290,
+    "y": 960,
     "wires": [
-      [
-        "f6d5066046175e3d"
-      ]
+      []
     ]
   },
   {
-    "id": "f9a9d763c873ef7d",
-    "type": "link in",
-    "z": "896b946718d5907e",
-    "g": "e7e05890b1c08c7e",
-    "name": "turn on frigate snapshots",
-    "links": [],
-    "x": 85,
-    "y": 1260,
-    "wires": [
-      [
-        "030247dadaf91fed"
-      ]
-    ]
-  },
-  {
-    "id": "c3613d99ba4b682f",
+    "id": "595040b26ad6e859",
     "type": "link out",
     "z": "896b946718d5907e",
-    "g": "e7e05890b1c08c7e",
-    "name": "link out 9",
+    "g": "0a04ea6bece547ae",
+    "name": "link out 6",
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 1260,
+    "y": 920,
     "wires": []
   },
   {
-    "id": "030247dadaf91fed",
+    "id": "d2f9fca8ac1c76a3",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "0a04ea6bece547ae",
+    "name": "turn off frigate detection",
+    "links": [],
+    "x": 85,
+    "y": 940,
+    "wires": [
+      [
+        "50af51a9914bbeeb",
+        "e636b99adc958b4a"
+      ]
+    ]
+  },
+  {
+    "id": "d919babce7e295d8",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "g": "e7e05890b1c08c7e",
-    "name": "garden - turn on frigate snapshots",
+    "g": "037b270105a5e078",
+    "name": "living room - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -493,7 +675,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.garden_snapshots"
+      "switch.camera_living_room_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -501,56 +683,27 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 280,
-    "y": 1260,
+    "x": 290,
+    "y": 820,
     "wires": [
-      [
-        "c3613d99ba4b682f"
-      ]
+      []
     ]
   },
   {
-    "id": "c274c5fc78c6ed79",
-    "type": "link in",
-    "z": "896b946718d5907e",
-    "g": "ec260776601b15bd",
-    "name": "turn off frigate snapshots",
-    "links": [],
-    "x": 85,
-    "y": 1360,
-    "wires": [
-      [
-        "7f832b8e9eefdd27"
-      ]
-    ]
-  },
-  {
-    "id": "4db1542ebba481ee",
-    "type": "link out",
-    "z": "896b946718d5907e",
-    "g": "ec260776601b15bd",
-    "name": "link out 10",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 1360,
-    "wires": []
-  },
-  {
-    "id": "7f832b8e9eefdd27",
+    "id": "932949eed4e341ae",
     "type": "api-call-service",
     "z": "896b946718d5907e",
-    "g": "ec260776601b15bd",
-    "name": "garden - turn off frigate snapshots",
+    "g": "037b270105a5e078",
+    "name": "kids bedroom - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
     "domain": "switch",
-    "service": "turn_off",
+    "service": "turn_on",
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.garden_snapshots"
+      "switch.camera_kids_bedroom_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -558,11 +711,39 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 280,
-    "y": 1360,
+    "x": 300,
+    "y": 780,
     "wires": [
       [
-        "4db1542ebba481ee"
+        "040015a0a2cff3c7"
+      ]
+    ]
+  },
+  {
+    "id": "040015a0a2cff3c7",
+    "type": "link out",
+    "z": "896b946718d5907e",
+    "g": "037b270105a5e078",
+    "name": "link out 5",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 780,
+    "wires": []
+  },
+  {
+    "id": "620711191d1dde67",
+    "type": "link in",
+    "z": "896b946718d5907e",
+    "g": "037b270105a5e078",
+    "name": "turn on frigate detection",
+    "links": [],
+    "x": 85,
+    "y": 800,
+    "wires": [
+      [
+        "932949eed4e341ae",
+        "d919babce7e295d8"
       ]
     ]
   },
@@ -849,171 +1030,6 @@
     "queue": "none",
     "x": 680,
     "y": 260,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "3fc508453f5a4bf3",
-    "type": "server-state-changed",
-    "z": "896b946718d5907e",
-    "g": "2b75c890eff44cfb",
-    "name": "cat detected",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.camera_garden_cat_occupancy",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 140,
-    "y": 480,
-    "wires": [
-      [
-        "1f21716b9f95f12a"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "1f21716b9f95f12a",
-    "type": "subflow:17f3c422bcd5a1fb",
-    "z": "896b946718d5907e",
-    "g": "2b75c890eff44cfb",
-    "name": "",
-    "env": [
-      {
-        "name": "media_player",
-        "value": "media_player.homepod_kitchen",
-        "type": "str"
-      },
-      {
-        "name": "message",
-        "value": "Elina och Alea! Det är en katt i trädgården. Gå dit och titta.",
-        "type": "str"
-      },
-      {
-        "name": "volume_level",
-        "value": "0.5",
-        "type": "num"
-      }
-    ],
-    "x": 310,
-    "y": 480,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "eba99b674a6786c2",
-    "type": "server-state-changed",
-    "z": "896b946718d5907e",
-    "g": "00a032e1b75fa8ed",
-    "name": "camera Dino available",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "camera.camera_dino_hd_stream",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "unavailable",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 170,
-    "y": 600,
-    "wires": [
-      [
-        "0785c72b9a19417f",
-        "04270f65108df369"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "0785c72b9a19417f",
-    "type": "subflow:c0dcc6a2aeb58851",
-    "z": "896b946718d5907e",
-    "g": "00a032e1b75fa8ed",
-    "name": "",
-    "env": [
-      {
-        "name": "notify_data",
-        "value": "{\"message\":\"Dinos kamera är tillgänglig\"}",
-        "type": "json"
-      }
-    ],
-    "x": 460,
-    "y": 600,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "04270f65108df369",
-    "type": "subflow:17f3c422bcd5a1fb",
-    "z": "896b946718d5907e",
-    "g": "00a032e1b75fa8ed",
-    "name": "",
-    "env": [
-      {
-        "name": "media_player",
-        "value": "media_player.homepod_kitchen",
-        "type": "str"
-      },
-      {
-        "name": "message",
-        "value": "Dinos kamera är tillgänglig",
-        "type": "str"
-      }
-    ],
-    "x": 370,
-    "y": 660,
     "wires": [
       []
     ]

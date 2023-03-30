@@ -8,23 +8,6 @@
     "env": []
   },
   {
-    "id": "05d687da1ce7b06d",
-    "type": "group",
-    "z": "f6c266122b405d78",
-    "name": "Disable motion sensors (arm home mode) when vacuuming starts",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "6d1d2435763bad74",
-      "3058c66978f70a0d"
-    ],
-    "x": 34,
-    "y": 39,
-    "w": 512,
-    "h": 82
-  },
-  {
     "id": "c77bf66ac0de544c",
     "type": "group",
     "z": "f6c266122b405d78",
@@ -37,120 +20,22 @@
       "59541d6d88a5c3a1"
     ],
     "x": 34,
-    "y": 159,
-    "w": 552,
-    "h": 82
+    "y": 159
   },
   {
-    "id": "0c709adc70a7b981",
-    "type": "api-call-service",
+    "id": "05d687da1ce7b06d",
+    "type": "group",
     "z": "f6c266122b405d78",
-    "d": true,
-    "g": "c77bf66ac0de544c",
-    "name": "arm",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "alarm_control_panel",
-    "service": "alarm_arm_away",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 510,
-    "y": 200,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "6d1d2435763bad74",
-    "type": "api-call-service",
-    "z": "f6c266122b405d78",
-    "d": true,
-    "g": "05d687da1ce7b06d",
-    "name": "arm home mode",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "alarm_control_panel",
-    "service": "alarm_arm_home",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 440,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "3058c66978f70a0d",
-    "type": "trigger-state",
-    "z": "f6c266122b405d78",
-    "g": "05d687da1ce7b06d",
-    "name": "vacuum starts and armed away",
-    "server": "e9739673.bbfed8",
-    "version": 2,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
+    "name": "Disable motion sensors (arm home mode) when vacuuming starts",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "6d1d2435763bad74",
+      "3058c66978f70a0d"
     ],
-    "entityid": "vacuum.cleanmate",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "constraints": [
-      {
-        "targetType": "this_entity",
-        "targetValue": "",
-        "propertyType": "current_state",
-        "propertyValue": "new_state.state",
-        "comparatorType": "is",
-        "comparatorValueDatatype": "str",
-        "comparatorValue": "cleaning"
-      },
-      {
-        "targetType": "entity_id",
-        "targetValue": "alarm_control_panel.alarmo",
-        "propertyType": "current_state",
-        "propertyValue": "new_state.state",
-        "comparatorType": "is",
-        "comparatorValueDatatype": "str",
-        "comparatorValue": "armed_away"
-      }
-    ],
-    "inputs": 0,
-    "outputs": 2,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
-    "enableInput": false,
-    "x": 190,
-    "y": 80,
-    "wires": [
-      [
-        "6d1d2435763bad74"
-      ],
-      []
-    ]
+    "x": 34,
+    "y": 39
   },
   {
     "id": "59541d6d88a5c3a1",
@@ -224,6 +109,117 @@
       [
         "0c709adc70a7b981"
       ],
+      []
+    ]
+  },
+  {
+    "id": "3058c66978f70a0d",
+    "type": "trigger-state",
+    "z": "f6c266122b405d78",
+    "g": "05d687da1ce7b06d",
+    "name": "vacuum starts and armed away",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "vacuum.cleanmate",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
+    "constraints": [
+      {
+        "targetType": "this_entity",
+        "targetValue": "",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "cleaning"
+      },
+      {
+        "targetType": "entity_id",
+        "targetValue": "alarm_control_panel.alarmo",
+        "propertyType": "current_state",
+        "propertyValue": "new_state.state",
+        "comparatorType": "is",
+        "comparatorValueDatatype": "str",
+        "comparatorValue": "armed_away"
+      }
+    ],
+    "inputs": 0,
+    "outputs": 2,
+    "customoutputs": [],
+    "outputinitially": false,
+    "state_type": "str",
+    "enableInput": false,
+    "x": 190,
+    "y": 80,
+    "wires": [
+      [
+        "6d1d2435763bad74"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6d1d2435763bad74",
+    "type": "api-call-service",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "05d687da1ce7b06d",
+    "name": "arm home mode",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarm_control_panel",
+    "service": "alarm_arm_home",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 440,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0c709adc70a7b981",
+    "type": "api-call-service",
+    "z": "f6c266122b405d78",
+    "d": true,
+    "g": "c77bf66ac0de544c",
+    "name": "arm",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "alarm_control_panel",
+    "service": "alarm_arm_away",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 510,
+    "y": 200,
+    "wires": [
       []
     ]
   }
