@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1220,
+        "x": 1640,
         "y": 60,
         "wires": [
           {
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "x": 1220,
+        "x": 1640,
         "y": 140,
         "wires": [
           {
@@ -38,7 +38,7 @@
         ]
       },
       {
-        "x": 1220,
+        "x": 1640,
         "y": 220,
         "wires": [
           {
@@ -99,6 +99,23 @@
             ]
           }
         }
+      },
+      {
+        "name": "output_ns_panel",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "NS Panel"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
       }
     ],
     "meta": {},
@@ -110,7 +127,7 @@
     ],
     "status": {
       "x": 140,
-      "y": 200,
+      "y": 60,
       "wires": [
         {
           "id": "6b483041cf5a0623",
@@ -123,7 +140,7 @@
     "id": "6f7e788d1e3b1a5b",
     "type": "group",
     "z": "778fe590ae6f3a0e",
-    "name": "Hide notifications",
+    "name": "Clear notifications",
     "style": {
       "label": true
     },
@@ -134,20 +151,89 @@
       "fa9002de83ee4327"
     ],
     "x": 44,
-    "y": 319,
+    "y": 179,
     "w": 702,
+    "h": 82
+  },
+  {
+    "id": "3bb0493cb27d27a0",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Set page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "977ea29fb0bf2fba",
+      "40d4a31ef800c1c3",
+      "87be1dadb6874633",
+      "417dcba44ccc9635"
+    ],
+    "x": 44,
+    "y": 379,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "3dcc1d68f33064ee",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Reset page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "23d1b6c903fe4d11",
+      "e1e1a705e4fbc395",
+      "5dc0596b8d48cbf1"
+    ],
+    "x": 44,
+    "y": 479,
+    "w": 602,
+    "h": 82
+  },
+  {
+    "id": "40126c78a464c95d",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Save page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "e60253f2fc9c7a01",
+      "f57530708addf0f8",
+      "015fb42254654028",
+      "179096776e1af2ad"
+    ],
+    "x": 44,
+    "y": 279,
+    "w": 512,
     "h": 82
   },
   {
     "id": "c993128519e21572",
     "type": "junction",
     "z": "778fe590ae6f3a0e",
-    "x": 900,
+    "x": 1320,
     "y": 220,
     "wires": [
       [
         "2ce048ed0ef1b93a",
         "a974b819e2404ab1"
+      ]
+    ]
+  },
+  {
+    "id": "03352f1607a520c0",
+    "type": "junction",
+    "z": "778fe590ae6f3a0e",
+    "x": 1080,
+    "y": 220,
+    "wires": [
+      [
+        "c4640467264ed760",
+        "9ad5790aa7edbcc3"
       ]
     ]
   },
@@ -159,6 +245,7 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "outputs": 2,
+    "entityId": "",
     "entityIdFilterType": "exact",
     "property": "state",
     "comparator": "is",
@@ -179,16 +266,16 @@
     ],
     "entityLocation": "data",
     "entityLocationType": "none",
-    "x": 660,
+    "x": 1080,
     "y": 120,
     "wires": [
       [
         "42e0490e73500f90",
-        "9ad5790aa7edbcc3"
+        "03352f1607a520c0"
       ],
       [
         "c993128519e21572",
-        "9ad5790aa7edbcc3"
+        "03352f1607a520c0"
       ]
     ]
   },
@@ -230,7 +317,7 @@
         "type": "str"
       }
     ],
-    "x": 1040,
+    "x": 1460,
     "y": 220,
     "wires": [
       []
@@ -248,7 +335,7 @@
         "type": "str"
       }
     ],
-    "x": 1040,
+    "x": 1460,
     "y": 140,
     "wires": [
       []
@@ -266,7 +353,7 @@
         "type": "str"
       }
     ],
-    "x": 1040,
+    "x": 1460,
     "y": 60,
     "wires": [
       []
@@ -292,7 +379,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 850,
+    "x": 1270,
     "y": 120,
     "wires": [
       [
@@ -316,7 +403,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1030,
+    "x": 1450,
     "y": 260,
     "wires": [
       [
@@ -335,7 +422,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1030,
+    "x": 1450,
     "y": 180,
     "wires": [
       [
@@ -354,7 +441,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1030,
+    "x": 1450,
     "y": 100,
     "wires": [
       [
@@ -396,7 +483,7 @@
     "y": 120,
     "wires": [
       [
-        "a8b61fd733d27b45"
+        "f4b025c4b76b93eb"
       ]
     ]
   },
@@ -412,7 +499,7 @@
       "a4511aab0daa2605"
     ],
     "x": 65,
-    "y": 200,
+    "y": 60,
     "wires": [
       []
     ]
@@ -421,12 +508,12 @@
     "id": "642427305fc92c70",
     "type": "link out",
     "z": "778fe590ae6f3a0e",
-    "name": "",
+    "name": "show status",
     "mode": "link",
     "links": [
       "6b483041cf5a0623"
     ],
-    "x": 1175,
+    "x": 1595,
     "y": 100,
     "wires": []
   },
@@ -434,12 +521,12 @@
     "id": "3ae2c279dfe1508e",
     "type": "link out",
     "z": "778fe590ae6f3a0e",
-    "name": "",
+    "name": "show status",
     "mode": "link",
     "links": [
       "6b483041cf5a0623"
     ],
-    "x": 1175,
+    "x": 1595,
     "y": 180,
     "wires": []
   },
@@ -447,12 +534,12 @@
     "id": "83e380b194dda3f8",
     "type": "link out",
     "z": "778fe590ae6f3a0e",
-    "name": "",
+    "name": "show status",
     "mode": "link",
     "links": [
       "6b483041cf5a0623"
     ],
-    "x": 1175,
+    "x": 1595,
     "y": 260,
     "wires": []
   },
@@ -479,7 +566,7 @@
       "8604b010b2ff6b04"
     ],
     "x": 85,
-    "y": 360,
+    "y": 220,
     "wires": [
       [
         "7f2e65970d6838cd"
@@ -499,7 +586,7 @@
     "finalize": "",
     "libs": [],
     "x": 230,
-    "y": 360,
+    "y": 220,
     "wires": [
       [
         "ebf3896a26a64096"
@@ -524,17 +611,10 @@
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
-    "outputProperties": [
-      {
-        "property": "kebab",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "data"
-      }
-    ],
+    "outputProperties": [],
     "queue": "none",
     "x": 440,
-    "y": 360,
+    "y": 220,
     "wires": [
       [
         "fa9002de83ee4327"
@@ -559,17 +639,10 @@
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
-    "outputProperties": [
-      {
-        "property": "kebab",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "data"
-      }
-    ],
+    "outputProperties": [],
     "queue": "none",
     "x": 640,
-    "y": 360,
+    "y": 220,
     "wires": [
       []
     ]
@@ -578,12 +651,12 @@
     "id": "8604b010b2ff6b04",
     "type": "link out",
     "z": "778fe590ae6f3a0e",
-    "name": "",
+    "name": "clear notifications",
     "mode": "link",
     "links": [
       "965dfe91d690dee1"
     ],
-    "x": 895,
+    "x": 1315,
     "y": 260,
     "wires": []
   },
@@ -602,11 +675,280 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 770,
+    "x": 1190,
     "y": 260,
     "wires": [
       [
         "8604b010b2ff6b04"
+      ]
+    ]
+  },
+  {
+    "id": "977ea29fb0bf2fba",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "3bb0493cb27d27a0",
+    "name": "set page timeout",
+    "links": [
+      "2a5e9c94d6943e04"
+    ],
+    "x": 85,
+    "y": 420,
+    "wires": [
+      [
+        "40d4a31ef800c1c3"
+      ]
+    ]
+  },
+  {
+    "id": "40d4a31ef800c1c3",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "3bb0493cb27d27a0",
+    "name": "map entities",
+    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 420,
+    "wires": [
+      [
+        "87be1dadb6874633"
+      ]
+    ]
+  },
+  {
+    "id": "87be1dadb6874633",
+    "type": "api-call-service",
+    "z": "778fe590ae6f3a0e",
+    "g": "3bb0493cb27d27a0",
+    "name": "set page timeout",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "number",
+    "service": "set_value",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ page_timeout_entity_ids }}"
+    ],
+    "data": "{\t    \"value\": ns_panel_notification_action_timeout.timeout\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 410,
+    "y": 420,
+    "wires": [
+      [
+        "417dcba44ccc9635"
+      ]
+    ]
+  },
+  {
+    "id": "23d1b6c903fe4d11",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "3dcc1d68f33064ee",
+    "name": "reset page timeout",
+    "links": [
+      "c4640467264ed760"
+    ],
+    "x": 85,
+    "y": 520,
+    "wires": [
+      [
+        "e1e1a705e4fbc395"
+      ]
+    ]
+  },
+  {
+    "id": "e1e1a705e4fbc395",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "3dcc1d68f33064ee",
+    "name": "for every page_timeout_entity",
+    "func": "const old_page_timeout_entities = msg.old_page_timeout_entities;\nold_page_timeout_entities.forEach((page_timeout_entity) => {\n    node.send({\n        ...msg,\n        page_timeout_entity,\n    });\n});\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 270,
+    "y": 520,
+    "wires": [
+      [
+        "5dc0596b8d48cbf1"
+      ]
+    ]
+  },
+  {
+    "id": "5dc0596b8d48cbf1",
+    "type": "api-call-service",
+    "z": "778fe590ae6f3a0e",
+    "g": "3dcc1d68f33064ee",
+    "name": "set page timeout",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "number",
+    "service": "set_value",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ page_timeout_entity.entity_id }}"
+    ],
+    "data": "{\t    \"value\": page_timeout_entity.state\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 530,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "417dcba44ccc9635",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "3bb0493cb27d27a0",
+    "name": "page timeout set",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "cec38c2b4fdb7f19",
+    "type": "link call",
+    "z": "778fe590ae6f3a0e",
+    "name": "set page timeout",
+    "links": [
+      "977ea29fb0bf2fba"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 870,
+    "y": 120,
+    "wires": [
+      [
+        "a8b61fd733d27b45"
+      ]
+    ]
+  },
+  {
+    "id": "c4640467264ed760",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "name": "reset page timout",
+    "mode": "link",
+    "links": [
+      "23d1b6c903fe4d11"
+    ],
+    "x": 1135,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "e60253f2fc9c7a01",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "40126c78a464c95d",
+    "name": "save page timeout",
+    "links": [],
+    "x": 85,
+    "y": 320,
+    "wires": [
+      [
+        "f57530708addf0f8"
+      ]
+    ]
+  },
+  {
+    "id": "f57530708addf0f8",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "40126c78a464c95d",
+    "name": "map entities",
+    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 320,
+    "wires": [
+      [
+        "015fb42254654028"
+      ]
+    ]
+  },
+  {
+    "id": "015fb42254654028",
+    "type": "ha-get-entities",
+    "z": "778fe590ae6f3a0e",
+    "g": "40126c78a464c95d",
+    "name": "",
+    "server": "e9739673.bbfed8",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "includes",
+        "value": "page_timeout_entity_ids",
+        "valueType": "msg"
+      }
+    ],
+    "output_type": "array",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "old_page_timeout_entities",
+    "output_results_count": 1,
+    "x": 390,
+    "y": 320,
+    "wires": [
+      [
+        "179096776e1af2ad"
+      ]
+    ]
+  },
+  {
+    "id": "179096776e1af2ad",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "40126c78a464c95d",
+    "name": "page timeout saved",
+    "mode": "return",
+    "links": [],
+    "x": 515,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "f4b025c4b76b93eb",
+    "type": "link call",
+    "z": "778fe590ae6f3a0e",
+    "name": "save page timeout",
+    "links": [
+      "e60253f2fc9c7a01"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 650,
+    "y": 120,
+    "wires": [
+      [
+        "cec38c2b4fdb7f19"
       ]
     ]
   }
