@@ -3,7 +3,7 @@
     "id": "5799dae45d05d32f",
     "type": "subflow",
     "name": "ns panel notification",
-    "info": "Show notification on NS Panel\n\n### Configuration\n\n#### `NS Panel required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe name of the NS Panel\n\n#### `Label required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification label\n\n#### `Text required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification text\n\n#### `Sound required`\n\n- Type: `string`\n\nThe sound to play with the notification, set None for not playing a sound.\n",
+    "info": "Show notification on NS Panel\n\n### Configuration\n\n#### `NS Panels required`\n\n- Type: `array`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nName of the NS Panels to show the notification on\n\n#### `Label required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification label\n\n#### `Text required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification text\n\n#### `Sound required`\n\n- Type: `string`\n\nThe sound to play with the notification, set None for not playing a sound.\n",
     "category": "",
     "in": [
       {
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1340,
+        "x": 1660,
         "y": 40,
         "wires": [
           {
@@ -30,17 +30,18 @@
     ],
     "env": [
       {
-        "name": "ns_panel",
-        "type": "str",
-        "value": "",
+        "name": "ns_panels",
+        "type": "json",
+        "value": "[]",
         "ui": {
           "label": {
-            "en-US": "NS Panel"
+            "en-US": "NS Panels"
           },
           "type": "input",
           "opts": {
             "types": [
-              "str"
+              "str",
+              "json"
             ]
           }
         }
@@ -114,7 +115,7 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1340,
+      "x": 1660,
       "y": 100,
       "wires": [
         {
@@ -123,19 +124,6 @@
         }
       ]
     }
-  },
-  {
-    "id": "3fd2fc2f6b6d697d",
-    "type": "junction",
-    "z": "5799dae45d05d32f",
-    "x": 1080,
-    "y": 40,
-    "wires": [
-      [
-        "c0637180b40fcc6e",
-        "78c81ec4f2c90a83"
-      ]
-    ]
   },
   {
     "id": "65e81a4db530a853",
@@ -150,7 +138,7 @@
       },
       {
         "name": "entries",
-        "value": "[\"ns_panel\",\"label\",\"text\",\"sound\"]",
+        "value": "[\"ns_panels\",\"label\",\"text\",\"sound\"]",
         "type": "json"
       }
     ],
@@ -158,49 +146,60 @@
     "y": 40,
     "wires": [
       [
-        "881338b5e25c39eb"
+        "aec59f5f5be36759"
       ]
     ]
   },
   {
-    "id": "c0637180b40fcc6e",
-    "type": "subflow:667ec96ed52e720e",
-    "z": "5799dae45d05d32f",
-    "name": "",
-    "env": [
-      {
-        "name": "unique_id",
-        "value": "ns_panel_notification",
-        "type": "str"
-      }
-    ],
-    "x": 1200,
-    "y": 40,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "881338b5e25c39eb",
+    "id": "aec59f5f5be36759",
     "type": "function",
     "z": "5799dae45d05d32f",
-    "name": "map services",
-    "func": "const ns_panel = msg.ns_panel_notification.ns_panel;\n\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_show_service,\n    play_rtttl_service\n};",
+    "name": "for every ns panel",
+    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nns_panels.forEach((ns_panel, index) => {\n    node.send({\n        ...msg,\n        ns_panel,\n        parts: {\n            id: \"ns_panel_notification\",\n            type: \"array\",\n            count: ns_panels.length,\n            len: 1,\n            index\n        }\n    });\n});\n",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 390,
+    "x": 410,
     "y": 40,
     "wires": [
       [
-        "a885835287d263bf"
+        "9addbf8edbbc80c8"
       ]
     ]
   },
   {
-    "id": "a885835287d263bf",
+    "id": "3b55bb4418648944",
+    "type": "join",
+    "z": "5799dae45d05d32f",
+    "name": "",
+    "mode": "auto",
+    "build": "array",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "num",
+    "reduceFixup": "",
+    "x": 1350,
+    "y": 40,
+    "wires": [
+      [
+        "c0637180b40fcc6e",
+        "78c81ec4f2c90a83"
+      ]
+    ]
+  },
+  {
+    "id": "8a300e4d9985ac0d",
     "type": "api-call-service",
     "z": "5799dae45d05d32f",
     "name": "show notification",
@@ -218,16 +217,35 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 590,
+    "x": 810,
     "y": 40,
     "wires": [
       [
-        "434f92e7c9422124"
+        "edfc9d11913960c1"
       ]
     ]
   },
   {
-    "id": "63efb2544968d0ac",
+    "id": "9addbf8edbbc80c8",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "name": "map services",
+    "func": "const ns_panel = msg.ns_panel;\n\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_show_service,\n    play_rtttl_service\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 610,
+    "y": 40,
+    "wires": [
+      [
+        "8a300e4d9985ac0d"
+      ]
+    ]
+  },
+  {
+    "id": "8c71ca838a9cf010",
     "type": "api-call-service",
     "z": "5799dae45d05d32f",
     "name": "play rtttl",
@@ -245,16 +263,16 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 980,
+    "x": 1200,
     "y": 80,
     "wires": [
       [
-        "3fd2fc2f6b6d697d"
+        "3b55bb4418648944"
       ]
     ]
   },
   {
-    "id": "434f92e7c9422124",
+    "id": "edfc9d11913960c1",
     "type": "switch",
     "z": "5799dae45d05d32f",
     "name": "sound is none?",
@@ -273,15 +291,33 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 800,
+    "x": 1020,
     "y": 40,
     "wires": [
       [
-        "3fd2fc2f6b6d697d"
+        "3b55bb4418648944"
       ],
       [
-        "63efb2544968d0ac"
+        "8c71ca838a9cf010"
       ]
+    ]
+  },
+  {
+    "id": "c0637180b40fcc6e",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "5799dae45d05d32f",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "ns_panel_notification",
+        "type": "str"
+      }
+    ],
+    "x": 1520,
+    "y": 40,
+    "wires": [
+      []
     ]
   },
   {
@@ -289,13 +325,13 @@
     "type": "function",
     "z": "5799dae45d05d32f",
     "name": "create status",
-    "func": "const text = msg.ns_panel_notification.ns_panel;\n\nreturn {\n    payload: {\n        fill: 'green',\n        text\n    }\n};",
+    "func": "const text = msg.ns_panel_notification.ns_panels.join(', ');\n\nreturn {\n    payload: {\n        fill: 'green',\n        text\n    }\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1210,
+    "x": 1530,
     "y": 100,
     "wires": [
       []
