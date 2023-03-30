@@ -21,7 +21,6 @@ blueprints/*/homeassistant
 
 # Ignore add-on files/folders
 frigate.yml
-deepstack/
 
 # Ignore integration files/folders
 .*.august.conf

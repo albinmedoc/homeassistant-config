@@ -57,8 +57,6 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 |---------:|:--------|
 | **[AdGuard Home](https://github.com/hassio-addons/addon-adguard-home)** | to remove ads from my whole network.
 | **[Cloudflared](https://github.com/brenner-tobias/addon-cloudflared/)** | to use my own domain name and access HA outside my network.
-| **[DeepStack Client (DeepStack Trainer)](https://github.com/DivanX10/Home-Assistant-Add-on-Deepstack/tree/main/deepstack-trainer)** | to train my DeepStack server.
-| **[DeepStack (CPU)](https://github.com/DivanX10/Home-Assistant-Add-on-Deepstack/tree/main/deepstack-cpu)** | to identify persons in camera feeds.
 | **[ESPHome](https://github.com/esphome/esphome)** | to create diy devices.
 | **[Frigate](https://github.com/blakeblackshear/frigate)** | to identify motion and objects in camera feeds, used as DVR.
 | **[Maria DB](https://github.com/home-assistant/addons/tree/master/mariadb)** | databse used to store history and logbook.
@@ -77,7 +75,6 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 | **[HP Printers Integration](https://github.com/elad-bar/ha-hpprinter)** | to add my printer in HA, tracks ink level and page count.
 | **[SamsungTV Tizen](https://github.com/jaruba/ha-samsungtv-tizen)** | to controll my samsung tv through HA.
 | **[Tapo: Cameras Control](https://github.com/JurajNyiri/HomeAssistant-Tapo-Control)** | to add all my Tapo cameras into HA, supports ONVIF.
-| **[deepstack face custom integration](https://github.com/robmarkcole/HASS-Deepstack-face)** | to integrate DeepStack into HA.
 | **[browser_mod](https://github.com/thomasloven/hass-browser_mod)** | to add pop-up support in dashboard.
 | **[Google WiFi](https://github.com/djtimca/hagooglewifi)** | to track devices at home, and number of devices connected to guest network.
 | **[Alarmo](https://github.com/nielsfaber/alarmo)** | to easily create an alarm system.
