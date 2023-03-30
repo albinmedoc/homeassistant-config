@@ -253,51 +253,90 @@
       button_page01_label: Vardagsrum
       entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
-      entity01_icon_color: '62880'
+      entity01_icon_color:
+      - 240
+      - 180
+      - 0
       entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
-      entity02_icon_color: '62880'
+      entity02_icon_color:
+      - 240
+      - 180
+      - 0
       entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
-      entity03_icon_color: '62880'
+      entity03_icon_color:
+      - 240
+      - 180
+      - 0
       entity04_name: Matbord
       entity04: light.dining_table_living_room
-      entity04_icon_color: '62880'
+      entity04_icon_color:
+      - 240
+      - 180
+      - 0
       button_page02_label: Sovrum
       entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
-      entity09_icon_color: '62880'
+      entity09_icon_color:
+      - 240
+      - 180
+      - 0
       entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
-      entity10_icon_color: '62880'
+      entity10_icon_color:
+      - 240
+      - 180
+      - 0
       entity11_name: Rullgardin
       entity11: cover.blind_bedroom
-      entity11_icon_color: '62880'
+      entity11_icon_color:
+      - 240
+      - 180
+      - 0
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
-      entity17_icon_color: '62880'
+      entity17_icon_color:
+      - 240
+      - 180
+      - 0
       entity18_name: Lampa 2
       entity18: light.lamp_2_hallway
-      entity18_icon_color: '62880'
+      entity18_icon_color:
+      - 240
+      - 180
+      - 0
       entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
-      entity19_icon_color: '62880'
+      entity19_icon_color:
+      - 240
+      - 180
+      - 0
       button_page04_label: Åtgärder
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
       entity25_icon: 
-      entity25_icon_color: '62880'
+      entity25_icon_color:
+      - 240
+      - 180
+      - 0
       entity26_name: Filmläge
       entity26: scene.movie
       entity26_icon: 
-      entity26_icon_color: '55907'
+      entity26_icon_color:
+      - 216
+      - 76
+      - 24
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
       entity27_icon: 
-      entity27_icon_color: '36983'
+      entity27_icon_color:
+      - 114
+      - 12
+      - 184
       entitypages_enabled: true
       home_button06_icon: 
       entity_page01_label: Säkerhet
@@ -358,51 +397,90 @@
       button_page01_label: Vardagsrum
       entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
-      entity01_icon_color: '62880'
+      entity01_icon_color:
+      - 240
+      - 180
+      - 0
       entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
-      entity02_icon_color: '62880'
+      entity02_icon_color:
+      - 240
+      - 180
+      - 0
       entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
-      entity03_icon_color: '62880'
+      entity03_icon_color:
+      - 240
+      - 180
+      - 0
       entity04_name: Matbord
       entity04: light.dining_table_living_room
-      entity04_icon_color: '62880'
+      entity04_icon_color:
+      - 240
+      - 180
+      - 0
       button_page02_label: Sovrum
       entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
-      entity09_icon_color: '62880'
+      entity09_icon_color:
+      - 240
+      - 180
+      - 0
       entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
-      entity10_icon_color: '62880'
+      entity10_icon_color:
+      - 240
+      - 180
+      - 0
       entity11_name: Rullgardin
       entity11: cover.blind_bedroom
-      entity11_icon_color: '62880'
+      entity11_icon_color:
+      - 240
+      - 180
+      - 0
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
-      entity17_icon_color: '62880'
+      entity17_icon_color:
+      - 240
+      - 180
+      - 0
       entity18_name: Lampa 2
       entity18: light.lamp_2_hallway
-      entity18_icon_color: '62880'
+      entity18_icon_color:
+      - 240
+      - 180
+      - 0
       entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
-      entity19_icon_color: '62880'
+      entity19_icon_color:
+      - 240
+      - 180
+      - 0
       button_page04_label: Åtgärder
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
       entity25_icon: 
-      entity25_icon_color: '62880'
+      entity25_icon_color:
+      - 240
+      - 180
+      - 0
       entity26_name: Filmläge
       entity26: scene.movie
       entity26_icon: 
-      entity26_icon_color: '55907'
+      entity26_icon_color:
+      - 216
+      - 76
+      - 24
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
       entity27_icon: 
-      entity27_icon_color: '36983'
+      entity27_icon_color:
+      - 114
+      - 12
+      - 184
       entitypages_enabled: true
       home_button06_icon: 
       entity_page01_label: Säkerhet
