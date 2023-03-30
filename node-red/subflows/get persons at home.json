@@ -141,11 +141,6 @@
         "name": "unique_id",
         "value": "get_persons_home",
         "type": "str"
-      },
-      {
-        "name": "flow_storage",
-        "value": "flow_storage",
-        "type": "str"
       }
     ],
     "x": 200,

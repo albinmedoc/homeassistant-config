@@ -336,7 +336,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "{{ flow_storage.media_player }}"
+      "{{ play_media.media_player }}"
     ],
     "data": "{\t   \"media_content_type\": play_media.media_content_type,\t   \"media_content_id\": play_media.media_content_id,\t   \"announce\": $env(\"announce\")\t}",
     "dataType": "jsonata",
