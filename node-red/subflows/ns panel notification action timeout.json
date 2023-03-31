@@ -18,18 +18,18 @@
     ],
     "out": [
       {
-        "x": 1640,
-        "y": 60,
+        "x": 480,
+        "y": 800,
         "wires": [
           {
-            "id": "db7d3a21f1b7f5a4",
+            "id": "ee84f05f5c5fa086",
             "port": 0
           }
         ]
       },
       {
-        "x": 1640,
-        "y": 140,
+        "x": 480,
+        "y": 960,
         "wires": [
           {
             "id": "b3b5f4055b818cb6",
@@ -38,8 +38,8 @@
         ]
       },
       {
-        "x": 1640,
-        "y": 220,
+        "x": 480,
+        "y": 1120,
         "wires": [
           {
             "id": "2ce048ed0ef1b93a",
@@ -151,7 +151,7 @@
       "fa9002de83ee4327"
     ],
     "x": 44,
-    "y": 179,
+    "y": 219,
     "w": 702,
     "h": 82
   },
@@ -170,7 +170,7 @@
       "417dcba44ccc9635"
     ],
     "x": 44,
-    "y": 379,
+    "y": 419,
     "w": 552,
     "h": 82
   },
@@ -188,7 +188,7 @@
       "5dc0596b8d48cbf1"
     ],
     "x": 44,
-    "y": 479,
+    "y": 519,
     "w": 602,
     "h": 82
   },
@@ -207,33 +207,161 @@
       "179096776e1af2ad"
     ],
     "x": 44,
-    "y": 279,
+    "y": 319,
     "w": 512,
     "h": 82
   },
   {
-    "id": "c993128519e21572",
+    "id": "d46fd1b35ef9ca57",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Accepted",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "72d9192fd41e46f6",
+      "f534f872a0aed22f",
+      "ee84f05f5c5fa086",
+      "4fbf84f17931c2ef"
+    ],
+    "x": 44,
+    "y": 759,
+    "w": 332,
+    "h": 142
+  },
+  {
+    "id": "0bd0c07fe83bbf42",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Declined",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "8520d69db5837f4a",
+      "441b423bb47d7970",
+      "b3b5f4055b818cb6",
+      "3ae2c279dfe1508e"
+    ],
+    "x": 44,
+    "y": 919,
+    "w": 332,
+    "h": 142
+  },
+  {
+    "id": "444e42c64c38a30d",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Timed out",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "83e380b194dda3f8",
+      "a974b819e2404ab1",
+      "2ce048ed0ef1b93a",
+      "209741e5871c5cd4"
+    ],
+    "x": 44,
+    "y": 1079,
+    "w": 332,
+    "h": 142
+  },
+  {
+    "id": "1ef2b5623052cfeb",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Action",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "0feb816c500ecc36",
+      "42e0490e73500f90",
+      "ddac6db506b0c1c4",
+      "10649458e737eae7",
+      "4a175fcb89f9107f"
+    ],
+    "x": 44,
+    "y": 619,
+    "w": 572,
+    "h": 122
+  },
+  {
+    "id": "e8cf22b05cc550e7",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Panel cleanup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "b2125ce626897b36",
+      "9ad5790aa7edbcc3",
+      "8604b010b2ff6b04",
+      "c4640467264ed760"
+    ],
+    "x": 44,
+    "y": 1339,
+    "w": 332,
+    "h": 142
+  },
+  {
+    "id": "b9544936afdb4413",
+    "type": "group",
+    "z": "778fe590ae6f3a0e",
+    "name": "Panel setup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "2d6a6399ba388e44",
+      "b0bc3bebcbcff737",
+      "f4b025c4b76b93eb",
+      "cec38c2b4fdb7f19",
+      "68ab9d3597b201eb"
+    ],
+    "x": 44,
+    "y": 1239,
+    "w": 832,
+    "h": 82
+  },
+  {
+    "id": "0b44db1c061fdce9",
     "type": "junction",
     "z": "778fe590ae6f3a0e",
-    "x": 1320,
-    "y": 220,
+    "x": 745,
+    "y": 60,
     "wires": [
       [
-        "2ce048ed0ef1b93a",
-        "a974b819e2404ab1"
+        "4d0b013967958360",
+        "e41c20ab93af3f94"
       ]
     ]
   },
   {
-    "id": "03352f1607a520c0",
+    "id": "72d246cdc7383775",
     "type": "junction",
     "z": "778fe590ae6f3a0e",
-    "x": 1080,
-    "y": 220,
+    "x": 740,
+    "y": 180,
     "wires": [
       [
-        "c4640467264ed760",
-        "9ad5790aa7edbcc3"
+        "0bec1e4791e8f339",
+        "4d0b013967958360"
+      ]
+    ]
+  },
+  {
+    "id": "4d0b013967958360",
+    "type": "junction",
+    "z": "778fe590ae6f3a0e",
+    "x": 820,
+    "y": 120,
+    "wires": [
+      [
+        "61d8dcfb54ecb875"
       ]
     ]
   },
@@ -266,16 +394,14 @@
     ],
     "entityLocation": "data",
     "entityLocationType": "none",
-    "x": 1080,
+    "x": 580,
     "y": 120,
     "wires": [
       [
-        "42e0490e73500f90",
-        "03352f1607a520c0"
+        "0b44db1c061fdce9"
       ],
       [
-        "c993128519e21572",
-        "03352f1607a520c0"
+        "72d246cdc7383775"
       ]
     ]
   },
@@ -300,152 +426,8 @@
     "y": 120,
     "wires": [
       [
-        "b0bc3bebcbcff737",
-        "ba68b298c9295f36"
-      ]
-    ]
-  },
-  {
-    "id": "2ce048ed0ef1b93a",
-    "type": "subflow:667ec96ed52e720e",
-    "z": "778fe590ae6f3a0e",
-    "name": "",
-    "env": [
-      {
-        "name": "unique_id",
-        "value": "ns_panel_notification_action_timeout",
-        "type": "str"
-      }
-    ],
-    "x": 1460,
-    "y": 220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "b3b5f4055b818cb6",
-    "type": "subflow:667ec96ed52e720e",
-    "z": "778fe590ae6f3a0e",
-    "name": "",
-    "env": [
-      {
-        "name": "unique_id",
-        "value": "ns_panel_notification_action_timeout",
-        "type": "str"
-      }
-    ],
-    "x": 1460,
-    "y": 140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "db7d3a21f1b7f5a4",
-    "type": "subflow:667ec96ed52e720e",
-    "z": "778fe590ae6f3a0e",
-    "name": "",
-    "env": [
-      {
-        "name": "unique_id",
-        "value": "ns_panel_notification_action_timeout",
-        "type": "str"
-      }
-    ],
-    "x": 1460,
-    "y": 60,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "42e0490e73500f90",
-    "type": "switch",
-    "z": "778fe590ae6f3a0e",
-    "name": "accepted?",
-    "property": "entity.state",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "notificationacceptrelease",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 1270,
-    "y": 120,
-    "wires": [
-      [
-        "db7d3a21f1b7f5a4",
-        "cac5a2e42aad1757"
-      ],
-      [
-        "b3b5f4055b818cb6",
-        "441b423bb47d7970"
-      ]
-    ]
-  },
-  {
-    "id": "a974b819e2404ab1",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "name": "create status",
-    "func": "const text = 'timed out';\n\nreturn {\n    payload: {\n        fill: 'red',\n        text\n    }\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1450,
-    "y": 260,
-    "wires": [
-      [
-        "83e380b194dda3f8"
-      ]
-    ]
-  },
-  {
-    "id": "441b423bb47d7970",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "name": "create status",
-    "func": "const text = 'declined';\n\nreturn {\n    payload: {\n        fill: 'red',\n        shape: 'ring',\n        text\n    }\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1450,
-    "y": 180,
-    "wires": [
-      [
-        "3ae2c279dfe1508e"
-      ]
-    ]
-  },
-  {
-    "id": "cac5a2e42aad1757",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "name": "create status",
-    "func": "const text = 'accepted';\n\nreturn {\n    payload: {\n        fill: 'green',\n        text\n    }\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1450,
-    "y": 100,
-    "wires": [
-      [
-        "642427305fc92c70"
+        "ba68b298c9295f36",
+        "df480bafab506be4"
       ]
     ]
   },
@@ -461,29 +443,10 @@
     "finalize": "",
     "libs": [],
     "x": 390,
-    "y": 80,
+    "y": 60,
     "wires": [
       [
         "a4511aab0daa2605"
-      ]
-    ]
-  },
-  {
-    "id": "b0bc3bebcbcff737",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "name": "create last_click regex",
-    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst sensors = ns_panels.map((ns_panel) => `sensor.${ns_panel}_last_click$`);\nconst last_click_regex = sensors.join('|');\n\nreturn {\n    ...msg,\n    payload: {\n        entity_id: last_click_regex,\n        entityIdFilterType: 'regex',\n    }\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 420,
-    "y": 120,
-    "wires": [
-      [
-        "f4b025c4b76b93eb"
       ]
     ]
   },
@@ -496,52 +459,15 @@
       "642427305fc92c70",
       "3ae2c279dfe1508e",
       "83e380b194dda3f8",
-      "a4511aab0daa2605"
+      "a4511aab0daa2605",
+      "4fbf84f17931c2ef",
+      "b254d9661724133d"
     ],
     "x": 65,
     "y": 60,
     "wires": [
       []
     ]
-  },
-  {
-    "id": "642427305fc92c70",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "show status",
-    "mode": "link",
-    "links": [
-      "6b483041cf5a0623"
-    ],
-    "x": 1595,
-    "y": 100,
-    "wires": []
-  },
-  {
-    "id": "3ae2c279dfe1508e",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "show status",
-    "mode": "link",
-    "links": [
-      "6b483041cf5a0623"
-    ],
-    "x": 1595,
-    "y": 180,
-    "wires": []
-  },
-  {
-    "id": "83e380b194dda3f8",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "show status",
-    "mode": "link",
-    "links": [
-      "6b483041cf5a0623"
-    ],
-    "x": 1595,
-    "y": 260,
-    "wires": []
   },
   {
     "id": "a4511aab0daa2605",
@@ -553,7 +479,7 @@
       "6b483041cf5a0623"
     ],
     "x": 505,
-    "y": 80,
+    "y": 60,
     "wires": []
   },
   {
@@ -563,10 +489,11 @@
     "g": "6f7e788d1e3b1a5b",
     "name": "clear notifications",
     "links": [
-      "8604b010b2ff6b04"
+      "8604b010b2ff6b04",
+      "525d29ca3df92cf7"
     ],
     "x": 85,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "7f2e65970d6838cd"
@@ -586,7 +513,7 @@
     "finalize": "",
     "libs": [],
     "x": 230,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "ebf3896a26a64096"
@@ -614,7 +541,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 440,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "fa9002de83ee4327"
@@ -642,45 +569,9 @@
     "outputProperties": [],
     "queue": "none",
     "x": 640,
-    "y": 220,
+    "y": 260,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "8604b010b2ff6b04",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "clear notifications",
-    "mode": "link",
-    "links": [
-      "965dfe91d690dee1"
-    ],
-    "x": 1315,
-    "y": 260,
-    "wires": []
-  },
-  {
-    "id": "9ad5790aa7edbcc3",
-    "type": "switch",
-    "z": "778fe590ae6f3a0e",
-    "name": "not remain",
-    "property": "ns_panel_notification_action_timeout.remain",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "false"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 1190,
-    "y": 260,
-    "wires": [
-      [
-        "8604b010b2ff6b04"
-      ]
     ]
   },
   {
@@ -693,7 +584,7 @@
       "2a5e9c94d6943e04"
     ],
     "x": 85,
-    "y": 420,
+    "y": 460,
     "wires": [
       [
         "40d4a31ef800c1c3"
@@ -713,7 +604,7 @@
     "finalize": "",
     "libs": [],
     "x": 210,
-    "y": 420,
+    "y": 460,
     "wires": [
       [
         "87be1dadb6874633"
@@ -743,7 +634,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 410,
-    "y": 420,
+    "y": 460,
     "wires": [
       [
         "417dcba44ccc9635"
@@ -757,10 +648,11 @@
     "g": "3dcc1d68f33064ee",
     "name": "reset page timeout",
     "links": [
-      "c4640467264ed760"
+      "c4640467264ed760",
+      "221150b701106a08"
     ],
     "x": 85,
-    "y": 520,
+    "y": 560,
     "wires": [
       [
         "e1e1a705e4fbc395"
@@ -780,7 +672,7 @@
     "finalize": "",
     "libs": [],
     "x": 270,
-    "y": 520,
+    "y": 560,
     "wires": [
       [
         "5dc0596b8d48cbf1"
@@ -810,7 +702,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 530,
-    "y": 520,
+    "y": 560,
     "wires": [
       []
     ]
@@ -824,38 +716,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 420,
-    "wires": []
-  },
-  {
-    "id": "cec38c2b4fdb7f19",
-    "type": "link call",
-    "z": "778fe590ae6f3a0e",
-    "name": "set page timeout",
-    "links": [
-      "977ea29fb0bf2fba"
-    ],
-    "linkType": "static",
-    "timeout": "30",
-    "x": 870,
-    "y": 120,
-    "wires": [
-      [
-        "a8b61fd733d27b45"
-      ]
-    ]
-  },
-  {
-    "id": "c4640467264ed760",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "reset page timout",
-    "mode": "link",
-    "links": [
-      "23d1b6c903fe4d11"
-    ],
-    "x": 1135,
-    "y": 220,
+    "y": 460,
     "wires": []
   },
   {
@@ -866,7 +727,7 @@
     "name": "save page timeout",
     "links": [],
     "x": 85,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "f57530708addf0f8"
@@ -886,7 +747,7 @@
     "finalize": "",
     "libs": [],
     "x": 210,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "015fb42254654028"
@@ -915,7 +776,7 @@
     "output_location": "old_page_timeout_entities",
     "output_results_count": 1,
     "x": 390,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "179096776e1af2ad"
@@ -931,24 +792,538 @@
     "mode": "return",
     "links": [],
     "x": 515,
-    "y": 320,
+    "y": 360,
     "wires": []
+  },
+  {
+    "id": "72d9192fd41e46f6",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "d46fd1b35ef9ca57",
+    "name": "accepted",
+    "links": [
+      "ddac6db506b0c1c4"
+    ],
+    "x": 85,
+    "y": 800,
+    "wires": [
+      [
+        "ee84f05f5c5fa086",
+        "f534f872a0aed22f"
+      ]
+    ]
+  },
+  {
+    "id": "8520d69db5837f4a",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "0bd0c07fe83bbf42",
+    "name": "declined",
+    "links": [
+      "10649458e737eae7"
+    ],
+    "x": 85,
+    "y": 960,
+    "wires": [
+      [
+        "b3b5f4055b818cb6",
+        "441b423bb47d7970"
+      ]
+    ]
+  },
+  {
+    "id": "f534f872a0aed22f",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "d46fd1b35ef9ca57",
+    "name": "create status",
+    "func": "const text = 'accepted';\n\nreturn {\n    payload: {\n        fill: 'green',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 860,
+    "wires": [
+      [
+        "4fbf84f17931c2ef"
+      ]
+    ]
+  },
+  {
+    "id": "ee84f05f5c5fa086",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "778fe590ae6f3a0e",
+    "g": "d46fd1b35ef9ca57",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "ns_panel_notification_action_timeout",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_ns_panel\":\"ns_panel\"}",
+        "type": "json"
+      }
+    ],
+    "x": 220,
+    "y": 800,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4fbf84f17931c2ef",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "d46fd1b35ef9ca57",
+    "name": "show status",
+    "mode": "link",
+    "links": [
+      "6b483041cf5a0623"
+    ],
+    "x": 335,
+    "y": 860,
+    "wires": []
+  },
+  {
+    "id": "441b423bb47d7970",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "0bd0c07fe83bbf42",
+    "name": "create status",
+    "func": "const text = 'declined';\n\nreturn {\n    payload: {\n        fill: 'red',\n        shape: 'ring',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 1020,
+    "wires": [
+      [
+        "3ae2c279dfe1508e"
+      ]
+    ]
+  },
+  {
+    "id": "b3b5f4055b818cb6",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "778fe590ae6f3a0e",
+    "g": "0bd0c07fe83bbf42",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "ns_panel_notification_action_timeout",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_ns_panel\":\"ns_panel\"}",
+        "type": "json"
+      }
+    ],
+    "x": 220,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3ae2c279dfe1508e",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "0bd0c07fe83bbf42",
+    "name": "show status",
+    "mode": "link",
+    "links": [
+      "6b483041cf5a0623"
+    ],
+    "x": 335,
+    "y": 1020,
+    "wires": []
+  },
+  {
+    "id": "83e380b194dda3f8",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "444e42c64c38a30d",
+    "name": "show status",
+    "mode": "link",
+    "links": [
+      "6b483041cf5a0623"
+    ],
+    "x": 335,
+    "y": 1180,
+    "wires": []
+  },
+  {
+    "id": "a974b819e2404ab1",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "444e42c64c38a30d",
+    "name": "create status",
+    "func": "const text = 'timed out';\n\nreturn {\n    payload: {\n        fill: 'red',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 1180,
+    "wires": [
+      [
+        "83e380b194dda3f8"
+      ]
+    ]
+  },
+  {
+    "id": "2ce048ed0ef1b93a",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "778fe590ae6f3a0e",
+    "g": "444e42c64c38a30d",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "ns_panel_notification_action_timeout",
+        "type": "str"
+      }
+    ],
+    "x": 220,
+    "y": 1120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "209741e5871c5cd4",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "444e42c64c38a30d",
+    "name": "timed out",
+    "links": [
+      "0bec1e4791e8f339"
+    ],
+    "x": 85,
+    "y": 1120,
+    "wires": [
+      [
+        "2ce048ed0ef1b93a",
+        "a974b819e2404ab1"
+      ]
+    ]
+  },
+  {
+    "id": "0bec1e4791e8f339",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "name": "timed out",
+    "mode": "link",
+    "links": [
+      "209741e5871c5cd4"
+    ],
+    "x": 815,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "0feb816c500ecc36",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "action",
+    "links": [
+      "e41c20ab93af3f94"
+    ],
+    "x": 85,
+    "y": 680,
+    "wires": [
+      [
+        "4a175fcb89f9107f"
+      ]
+    ]
+  },
+  {
+    "id": "e41c20ab93af3f94",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "name": "action",
+    "mode": "link",
+    "links": [
+      "0feb816c500ecc36"
+    ],
+    "x": 815,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "42e0490e73500f90",
+    "type": "switch",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "accepted?",
+    "property": "entity.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "notificationacceptrelease",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 450,
+    "y": 680,
+    "wires": [
+      [
+        "ddac6db506b0c1c4"
+      ],
+      [
+        "10649458e737eae7"
+      ]
+    ]
+  },
+  {
+    "id": "ddac6db506b0c1c4",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "accepted",
+    "mode": "link",
+    "links": [
+      "72d9192fd41e46f6"
+    ],
+    "x": 575,
+    "y": 660,
+    "wires": []
+  },
+  {
+    "id": "10649458e737eae7",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "declined",
+    "mode": "link",
+    "links": [
+      "8520d69db5837f4a"
+    ],
+    "x": 575,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "b2125ce626897b36",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "e8cf22b05cc550e7",
+    "name": "panel cleanup",
+    "links": [
+      "61d8dcfb54ecb875"
+    ],
+    "x": 85,
+    "y": 1380,
+    "wires": [
+      [
+        "9ad5790aa7edbcc3",
+        "c4640467264ed760"
+      ]
+    ]
+  },
+  {
+    "id": "9ad5790aa7edbcc3",
+    "type": "switch",
+    "z": "778fe590ae6f3a0e",
+    "g": "e8cf22b05cc550e7",
+    "name": "not remain",
+    "property": "ns_panel_notification_action_timeout.remain",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 210,
+    "y": 1380,
+    "wires": [
+      [
+        "8604b010b2ff6b04"
+      ]
+    ]
+  },
+  {
+    "id": "8604b010b2ff6b04",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "e8cf22b05cc550e7",
+    "name": "clear notifications",
+    "mode": "link",
+    "links": [
+      "965dfe91d690dee1"
+    ],
+    "x": 335,
+    "y": 1380,
+    "wires": []
+  },
+  {
+    "id": "c4640467264ed760",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "e8cf22b05cc550e7",
+    "name": "reset page timout",
+    "mode": "link",
+    "links": [
+      "23d1b6c903fe4d11"
+    ],
+    "x": 155,
+    "y": 1440,
+    "wires": []
+  },
+  {
+    "id": "61d8dcfb54ecb875",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "name": "panel cleanup",
+    "mode": "link",
+    "links": [
+      "b2125ce626897b36"
+    ],
+    "x": 875,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "2d6a6399ba388e44",
+    "type": "link in",
+    "z": "778fe590ae6f3a0e",
+    "g": "b9544936afdb4413",
+    "name": "panel setup",
+    "links": [],
+    "x": 85,
+    "y": 1280,
+    "wires": [
+      [
+        "b0bc3bebcbcff737"
+      ]
+    ]
+  },
+  {
+    "id": "b0bc3bebcbcff737",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "b9544936afdb4413",
+    "name": "create last_click regex",
+    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst sensors = ns_panels.map((ns_panel) => `sensor.${ns_panel}_last_click$`);\nconst last_click_regex = sensors.join('|');\n\nreturn {\n    ...msg,\n    payload: {\n        entity_id: last_click_regex,\n        entityIdFilterType: 'regex',\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 1280,
+    "wires": [
+      [
+        "f4b025c4b76b93eb"
+      ]
+    ]
   },
   {
     "id": "f4b025c4b76b93eb",
     "type": "link call",
     "z": "778fe590ae6f3a0e",
+    "g": "b9544936afdb4413",
     "name": "save page timeout",
     "links": [
       "e60253f2fc9c7a01"
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 650,
-    "y": 120,
+    "x": 470,
+    "y": 1280,
     "wires": [
       [
         "cec38c2b4fdb7f19"
+      ]
+    ]
+  },
+  {
+    "id": "cec38c2b4fdb7f19",
+    "type": "link call",
+    "z": "778fe590ae6f3a0e",
+    "g": "b9544936afdb4413",
+    "name": "set page timeout",
+    "links": [
+      "977ea29fb0bf2fba"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 690,
+    "y": 1280,
+    "wires": [
+      [
+        "68ab9d3597b201eb"
+      ]
+    ]
+  },
+  {
+    "id": "68ab9d3597b201eb",
+    "type": "link out",
+    "z": "778fe590ae6f3a0e",
+    "g": "b9544936afdb4413",
+    "name": "panel setup",
+    "mode": "return",
+    "links": [],
+    "x": 835,
+    "y": 1280,
+    "wires": []
+  },
+  {
+    "id": "df480bafab506be4",
+    "type": "link call",
+    "z": "778fe590ae6f3a0e",
+    "name": "panel setup",
+    "links": [
+      "2d6a6399ba388e44"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 390,
+    "y": 120,
+    "wires": [
+      [
+        "a8b61fd733d27b45"
+      ]
+    ]
+  },
+  {
+    "id": "4a175fcb89f9107f",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "get actioned ns panel ",
+    "func": "const last_click_entity = msg.entity.entity_id;\nconst ns_panel = /sensor.(.*)_last_click/g.exec(last_click_entity)[1];\n\nreturn {\n    ...msg,\n    ns_panel\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 680,
+    "wires": [
+      [
+        "42e0490e73500f90"
       ]
     ]
   }
