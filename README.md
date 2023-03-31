@@ -83,10 +83,9 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 | **[Office 365 Integration](https://github.com/RogerSelwyn/O365-HomeAssistant)** | to integrate my work calendar.
 | **[UI Lovelace Minimalist](https://github.com/UI-Lovelace-Minimalist/UI)** | used to create my dashboard.
 | **[Swedish Mail Delivery](https://github.com/DSorlov/swemail)** | adds sensors to indicate when the mail is delivered.
-| **[Home Connect Alt](https://github.com/ekutner/home-connect-hass)** | to integrate my dishwasher, likes this better than the [official integration](https://www.home-assistant.io/integrations/home_connect).
+| **[Home Connect Alt](https://github.com/ekutner/home-connect-hass)** | to integrate my dishwasher, I like this better than the [official integration](https://www.home-assistant.io/integrations/home_connect).
 | **[ICS Calendar](https://github.com/franc6/ics_calendar)** | to integrate my partners work calendar.
 | **[Cleanmate](https://github.com/albinmedoc/ha-cleanmate)** | my own integration to be able to controll my vacuum cleaner.
-| **[Spook 👻 Not your homie](https://github.com/frenck/spook)** | adds lot of things/features, that will never end up in Home Assistant itself.
 
 Actual secrets and auto-generated sensitive files are obviously kept off this repo! 😉
 
