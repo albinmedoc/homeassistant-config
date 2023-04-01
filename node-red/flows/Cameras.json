@@ -191,7 +191,7 @@
     "env": [
       {
         "name": "media_player",
-        "value": "media_player.homepod_kitchen",
+        "value": "media_player.sonos_lamp_living_room",
         "type": "str"
       },
       {
@@ -281,7 +281,7 @@
     "env": [
       {
         "name": "media_player",
-        "value": "media_player.homepod_kitchen",
+        "value": "media_player.sonos_lamp_living_room",
         "type": "str"
       },
       {
