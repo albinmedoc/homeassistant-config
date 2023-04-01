@@ -295,6 +295,9 @@
       - 240
       - 180
       - 0
+      entity12: switch.plug_tv_bedroom
+      entity12_name: TV
+      entity12_icon: 
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
@@ -440,6 +443,9 @@
       - 240
       - 180
       - 0
+      entity12: switch.plug_tv_bedroom
+      entity12_name: TV
+      entity12_icon: 
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
