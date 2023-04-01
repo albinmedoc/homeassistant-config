@@ -31,7 +31,7 @@ sensor:
 
         {# Combine all ignored entities arrays #}
         {% set ignored = ignored_entities + ignored_integration_entities + ignored_device_entities %}
-        
+
         {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
 
         {% set entities = states|rejectattr('domain','eq','group')
