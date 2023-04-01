@@ -36,7 +36,8 @@
       "d9e6d54b93a455d2",
       "3927aab9012fbce7",
       "ed7c020f60c6dda2",
-      "d76e917baa3dd0f3"
+      "d76e917baa3dd0f3",
+      "9302b62fa6c6f66d"
     ],
     "x": 34,
     "y": 39
@@ -110,7 +111,9 @@
     "x": 440,
     "y": 240,
     "wires": [
-      []
+      [
+        "9302b62fa6c6f66d"
+      ]
     ]
   },
   {
@@ -266,6 +269,35 @@
       [
         "ed7c020f60c6dda2"
       ]
+    ]
+  },
+  {
+    "id": "9302b62fa6c6f66d",
+    "type": "api-call-service",
+    "z": "b5497d99883a62af",
+    "g": "6bee852ec14b7ebe",
+    "name": "reboot",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "button",
+    "service": "press",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "button.ns_panel_hallway_restart",
+      "button.ns_panel_living_room_restart"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 630,
+    "y": 240,
+    "wires": [
+      []
     ]
   }
 ]
