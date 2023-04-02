@@ -156,7 +156,7 @@
     "id": "815082aec75c4eb0",
     "type": "junction",
     "z": "896b946718d5907e",
-    "x": 480,
+    "x": 660,
     "y": 120,
     "wires": [
       [
@@ -171,7 +171,7 @@
     "id": "0c7d660cbda17a5d",
     "type": "junction",
     "z": "896b946718d5907e",
-    "x": 480,
+    "x": 660,
     "y": 320,
     "wires": [
       [
@@ -179,6 +179,30 @@
         "a85121ba699412b2",
         "be6c27833665ccde",
         "0490f783d7c754f7"
+      ]
+    ]
+  },
+  {
+    "id": "e7a30a411a01fbd5",
+    "type": "junction",
+    "z": "896b946718d5907e",
+    "x": 580,
+    "y": 60,
+    "wires": [
+      [
+        "815082aec75c4eb0"
+      ]
+    ]
+  },
+  {
+    "id": "1b0fcd078f9a65f2",
+    "type": "junction",
+    "z": "896b946718d5907e",
+    "x": 580,
+    "y": 380,
+    "wires": [
+      [
+        "0c7d660cbda17a5d"
       ]
     ]
   },
@@ -748,51 +772,6 @@
     ]
   },
   {
-    "id": "01801704a5e26ceb",
-    "type": "server-state-changed",
-    "z": "896b946718d5907e",
-    "name": "armed",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "armed_away",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 330,
-    "y": 140,
-    "wires": [
-      [
-        "815082aec75c4eb0"
-      ],
-      []
-    ]
-  },
-  {
     "id": "c9d915e2f97d6a59",
     "type": "subflow:5da5355c5d6e8223",
     "z": "896b946718d5907e",
@@ -801,86 +780,7 @@
     "y": 220,
     "wires": [
       [
-        "44a306311dbabd9d"
-      ]
-    ]
-  },
-  {
-    "id": "9673143934f2e8df",
-    "type": "server-state-changed",
-    "z": "896b946718d5907e",
-    "name": "disarmed",
-    "server": "e9739673.bbfed8",
-    "version": 4,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "disarmed",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
-    "x": 340,
-    "y": 300,
-    "wires": [
-      [
-        "0c7d660cbda17a5d"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "44a306311dbabd9d",
-    "type": "api-current-state",
-    "z": "896b946718d5907e",
-    "name": "armed?",
-    "server": "e9739673.bbfed8",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "armed_away",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "alarm_control_panel.alarmo",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 340,
-    "y": 220,
-    "wires": [
-      [
-        "815082aec75c4eb0"
-      ],
-      [
-        "0c7d660cbda17a5d"
+        "38e61d6740a581c0"
       ]
     ]
   },
@@ -894,7 +794,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 300,
     "wires": [
       []
@@ -910,7 +810,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 100,
     "wires": [
       []
@@ -926,7 +826,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 140,
     "wires": [
       []
@@ -942,7 +842,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 180,
     "wires": [
       []
@@ -958,7 +858,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 340,
     "wires": [
       []
@@ -974,7 +874,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 670,
+    "x": 850,
     "y": 380,
     "wires": [
       []
@@ -1001,7 +901,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 680,
+    "x": 860,
     "y": 60,
     "wires": [
       []
@@ -1028,10 +928,213 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 680,
+    "x": 860,
     "y": 260,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "10bf47c0fe75244a",
+    "type": "api-current-state",
+    "z": "896b946718d5907e",
+    "name": "nightmode is on",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 520,
+    "y": 220,
+    "wires": [
+      [
+        "815082aec75c4eb0"
+      ],
+      [
+        "0c7d660cbda17a5d"
+      ]
+    ]
+  },
+  {
+    "id": "41f87af907ac8d0f",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "name": "nigtmode on",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_mode",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [],
+    "x": 150,
+    "y": 100,
+    "wires": [
+      [
+        "e7a30a411a01fbd5"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "33b62c7a49ba7115",
+    "type": "server-state-changed",
+    "z": "896b946718d5907e",
+    "name": "nigtmode off",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.night_mode",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [],
+    "x": 150,
+    "y": 340,
+    "wires": [
+      [
+        "1b0fcd078f9a65f2"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "b2c7d8da6b5cdc45",
+    "type": "subflow:10bf6a612840df6b",
+    "z": "896b946718d5907e",
+    "name": "",
+    "x": 190,
+    "y": 140,
+    "wires": [
+      [
+        "e7a30a411a01fbd5"
+      ],
+      [
+        "e7a30a411a01fbd5"
+      ]
+    ]
+  },
+  {
+    "id": "e529e58b8ce90383",
+    "type": "subflow:5c7f108f494183f7",
+    "z": "896b946718d5907e",
+    "name": "",
+    "x": 190,
+    "y": 300,
+    "wires": [
+      [
+        "1b0fcd078f9a65f2"
+      ],
+      [
+        "1b0fcd078f9a65f2"
+      ]
+    ]
+  },
+  {
+    "id": "38e61d6740a581c0",
+    "type": "api-current-state",
+    "z": "896b946718d5907e",
+    "name": "no one home",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "zone.home",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 310,
+    "y": 220,
+    "wires": [
+      [
+        "815082aec75c4eb0"
+      ],
+      [
+        "10bf47c0fe75244a"
+      ]
     ]
   }
 ]
