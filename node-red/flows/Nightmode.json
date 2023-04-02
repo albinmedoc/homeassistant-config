@@ -8,6 +8,934 @@
     "env": []
   },
   {
+    "id": "5126d61a4c3323f9",
+    "type": "group",
+    "z": "791362d653843ce3",
+    "name": "Validate",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "34c242cda9192802",
+      "059a7b6b50df7a67",
+      "5c47833db1c4a2f5",
+      "7b136c2f47d9c8e7",
+      "f489c8a7a1e79f69",
+      "e6bd173deb9750f3",
+      "80ec04a41c2d320c",
+      "d4144eee1317147f",
+      "f3b626b0f5ebbdbe",
+      "2976c51e464672b5",
+      "3546d266c892c686",
+      "e1eec8dcffc4f46b"
+    ],
+    "x": 34,
+    "y": 539
+  },
+  {
+    "id": "972addeb747d8aa2",
+    "type": "group",
+    "z": "791362d653843ce3",
+    "name": "Triggers",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "fcb55f41bc2d271f",
+      "4165674f5d05d84f",
+      "7079c5e40cf0a108",
+      "e573e994f2049a92",
+      "46516ebf1be4fac2",
+      "5a1795dff61aa8eb",
+      "5665fe223c690d9d",
+      "6dbd8d6351279950",
+      "dd32d5b3784630dc",
+      "1609eb6a7459f81e",
+      "9558b50033d4183b",
+      "920f485bc8a924c6",
+      "4b98babbd59e1b13",
+      "09e521a7df8b727f",
+      "79234eb008501014",
+      "787b49be03b6d12f",
+      "dbf9990d382c4946",
+      "f494b609884704ca"
+    ],
+    "x": 34,
+    "y": 139
+  },
+  {
+    "id": "0c70acf8fc731d75",
+    "type": "group",
+    "z": "791362d653843ce3",
+    "name": "Activate",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "1d745245b1b4c437",
+      "26cf724234daa303",
+      "51e678aab2319e1a"
+    ],
+    "x": 34,
+    "y": 779
+  },
+  {
+    "id": "2976c51e464672b5",
+    "type": "junction",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "x": 580,
+    "y": 700,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ]
+    ]
+  },
+  {
+    "id": "3546d266c892c686",
+    "type": "junction",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "x": 580,
+    "y": 580,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ]
+    ]
+  },
+  {
+    "id": "f494b609884704ca",
+    "type": "junction",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "x": 480,
+    "y": 260,
+    "wires": [
+      [
+        "787b49be03b6d12f"
+      ]
+    ]
+  },
+  {
+    "id": "34c242cda9192802",
+    "type": "join",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "",
+    "mode": "custom",
+    "build": "array",
+    "property": "error",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "50",
+    "count": "3",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "num",
+    "reduceFixup": "",
+    "x": 690,
+    "y": 640,
+    "wires": [
+      [
+        "f3b626b0f5ebbdbe"
+      ]
+    ]
+  },
+  {
+    "id": "059a7b6b50df7a67",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "tv bedroom off for 15 min",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "media_player.tv_bedroom",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "error",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "str"
+      }
+    ],
+    "for": "15",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 250,
+    "y": 640,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ],
+      [
+        "e6bd173deb9750f3"
+      ]
+    ]
+  },
+  {
+    "id": "5c47833db1c4a2f5",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "tv living room off for 15 min",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "media_player.tv_living_room",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "error",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "str"
+      }
+    ],
+    "for": "15",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 260,
+    "y": 580,
+    "wires": [
+      [
+        "3546d266c892c686"
+      ],
+      [
+        "f489c8a7a1e79f69"
+      ]
+    ]
+  },
+  {
+    "id": "7b136c2f47d9c8e7",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "all lights off for 30 min",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.all",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "error",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "str"
+      }
+    ],
+    "for": "30",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 240,
+    "y": 700,
+    "wires": [
+      [
+        "2976c51e464672b5"
+      ],
+      [
+        "80ec04a41c2d320c"
+      ]
+    ]
+  },
+  {
+    "id": "f489c8a7a1e79f69",
+    "type": "change",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "error",
+        "pt": "msg",
+        "to": "TV Vardagsrum har inte varit avstängd i 15 minuter.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 490,
+    "y": 600,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ]
+    ]
+  },
+  {
+    "id": "e6bd173deb9750f3",
+    "type": "change",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "error",
+        "pt": "msg",
+        "to": "TV Sovrum har inte varit avstängd i 15 minuter.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 490,
+    "y": 660,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ]
+    ]
+  },
+  {
+    "id": "80ec04a41c2d320c",
+    "type": "change",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "error",
+        "pt": "msg",
+        "to": "Alla lampor har inte varit släckta i 30 minuter.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 490,
+    "y": 720,
+    "wires": [
+      [
+        "34c242cda9192802"
+      ]
+    ]
+  },
+  {
+    "id": "d4144eee1317147f",
+    "type": "link out",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "link out 18",
+    "mode": "return",
+    "links": [],
+    "x": 1035,
+    "y": 640,
+    "wires": []
+  },
+  {
+    "id": "f3b626b0f5ebbdbe",
+    "type": "function",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "remove empty errors",
+    "func": "let errors = msg.error.filter((error) => error != \"\");\n\ndelete msg.error;\n\nreturn {\n    ...msg,\n    errors,\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 880,
+    "y": 640,
+    "wires": [
+      [
+        "d4144eee1317147f"
+      ]
+    ]
+  },
+  {
+    "id": "e1eec8dcffc4f46b",
+    "type": "link in",
+    "z": "791362d653843ce3",
+    "g": "5126d61a4c3323f9",
+    "name": "validate nightmode",
+    "links": [],
+    "x": 75,
+    "y": 640,
+    "wires": [
+      [
+        "5c47833db1c4a2f5",
+        "059a7b6b50df7a67",
+        "7b136c2f47d9c8e7"
+      ]
+    ]
+  },
+  {
+    "id": "fcb55f41bc2d271f",
+    "type": "inject",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "22.00",
+    "props": [],
+    "repeat": "",
+    "crontab": "00 22 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 250,
+    "y": 180,
+    "wires": [
+      [
+        "f494b609884704ca"
+      ]
+    ]
+  },
+  {
+    "id": "4165674f5d05d84f",
+    "type": "server-state-changed",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "tv bedroom off for 15 min",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "media_player.tv_bedroom",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "15",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 170,
+    "y": 240,
+    "wires": [
+      [
+        "4b98babbd59e1b13"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7079c5e40cf0a108",
+    "type": "server-state-changed",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "all lights off for 30 min",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.all",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "30",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 160,
+    "y": 360,
+    "wires": [
+      [
+        "4b98babbd59e1b13"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e573e994f2049a92",
+    "type": "server-state-changed",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "tv living room off for 15 min",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "media_player.tv_living_room",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "15",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 180,
+    "y": 300,
+    "wires": [
+      [
+        "4b98babbd59e1b13"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "46516ebf1be4fac2",
+    "type": "inject",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "02:00",
+    "props": [],
+    "repeat": "",
+    "crontab": "00 02 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 130,
+    "y": 420,
+    "wires": [
+      [
+        "79234eb008501014"
+      ]
+    ]
+  },
+  {
+    "id": "5a1795dff61aa8eb",
+    "type": "link call",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "links": [
+      "e1eec8dcffc4f46b"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 810,
+    "y": 300,
+    "wires": [
+      [
+        "1609eb6a7459f81e"
+      ]
+    ]
+  },
+  {
+    "id": "5665fe223c690d9d",
+    "type": "link call",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "links": [
+      "e1eec8dcffc4f46b"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 510,
+    "y": 420,
+    "wires": [
+      [
+        "6dbd8d6351279950"
+      ]
+    ]
+  },
+  {
+    "id": "6dbd8d6351279950",
+    "type": "switch",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "has no errors",
+    "property": "errors",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "empty"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 710,
+    "y": 420,
+    "wires": [
+      [
+        "9558b50033d4183b"
+      ],
+      [
+        "920f485bc8a924c6"
+      ]
+    ]
+  },
+  {
+    "id": "dd32d5b3784630dc",
+    "type": "subflow:c95d61a1b9dd9e02",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "env": [
+      {
+        "name": "action",
+        "value": "NIGHTMODE_CANCEL_ACTIVATION",
+        "type": "str"
+      },
+      {
+        "name": "timeout",
+        "value": "15",
+        "type": "num"
+      }
+    ],
+    "x": 650,
+    "y": 480,
+    "wires": [
+      [
+        "dbf9990d382c4946"
+      ],
+      [
+        "9558b50033d4183b",
+        "dbf9990d382c4946"
+      ]
+    ]
+  },
+  {
+    "id": "1609eb6a7459f81e",
+    "type": "switch",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "has no errors",
+    "property": "errors",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "empty"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 1010,
+    "y": 300,
+    "wires": [
+      [
+        "9558b50033d4183b"
+      ]
+    ]
+  },
+  {
+    "id": "9558b50033d4183b",
+    "type": "link out",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "mode": "link",
+    "links": [
+      "1d745245b1b4c437"
+    ],
+    "x": 895,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "920f485bc8a924c6",
+    "type": "subflow:c0dcc6a2aeb58851",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Nattläge kommer aktiveras\",\"message\":\"Nattläge kommer aktiveras om 15 minuter. Håll inne för att visa mer information och avbryta.\",\"data\":{\"actions\":[{\"action\":\"NIGHTMODE_CANCEL_ACTIVATION\",\"title\":\"Aktivera inte nattläge\"}],\"tag\":\"nightmode_cancel_activation\"}}",
+        "type": "json"
+      },
+      {
+        "name": "output_persons",
+        "value": "persons",
+        "type": "str"
+      }
+    ],
+    "x": 350,
+    "y": 480,
+    "wires": [
+      [
+        "dd32d5b3784630dc"
+      ]
+    ]
+  },
+  {
+    "id": "4b98babbd59e1b13",
+    "type": "time-switch",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "22:00 - 02:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "22:00",
+    "endTime": "02:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 410,
+    "y": 300,
+    "wires": [
+      [
+        "787b49be03b6d12f"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "09e521a7df8b727f",
+    "type": "comment",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "activate nightmode",
+    "info": "",
+    "x": 1030,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "79234eb008501014",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "night mode off",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 300,
+    "y": 420,
+    "wires": [
+      [
+        "5665fe223c690d9d"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "787b49be03b6d12f",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "night mode off",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 600,
+    "y": 300,
+    "wires": [
+      [
+        "5a1795dff61aa8eb"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "dbf9990d382c4946",
+    "type": "subflow:f7d101589066e8d4",
+    "z": "791362d653843ce3",
+    "g": "972addeb747d8aa2",
+    "name": "",
+    "env": [
+      {
+        "name": "persons",
+        "value": "{{persons}}",
+        "type": "str"
+      },
+      {
+        "name": "tag",
+        "value": "nightmode_cancel_activation",
+        "type": "str"
+      }
+    ],
+    "x": 920,
+    "y": 480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1d745245b1b4c437",
+    "type": "link in",
+    "z": "791362d653843ce3",
+    "g": "0c70acf8fc731d75",
+    "name": "activate nightmode",
+    "links": [
+      "6c6a10bdfe1d7b96",
+      "9558b50033d4183b"
+    ],
+    "x": 75,
+    "y": 820,
+    "wires": [
+      [
+        "26cf724234daa303"
+      ]
+    ]
+  },
+  {
+    "id": "26cf724234daa303",
+    "type": "subflow:c0dcc6a2aeb58851",
+    "z": "791362d653843ce3",
+    "g": "0c70acf8fc731d75",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Nattläge\",\"message\":\"Nattläge har aktiverats\"}",
+        "type": "json"
+      }
+    ],
+    "x": 270,
+    "y": 820,
+    "wires": [
+      [
+        "51e678aab2319e1a"
+      ]
+    ]
+  },
+  {
+    "id": "51e678aab2319e1a",
+    "type": "api-call-service",
+    "z": "791362d653843ce3",
+    "g": "0c70acf8fc731d75",
+    "name": "turn on night mode",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.night_mode"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 550,
+    "y": 820,
+    "wires": [
+      []
+    ]
+  },
+  {
     "id": "c0c5a3195dcfdaf2",
     "type": "server-state-changed",
     "z": "791362d653843ce3",
@@ -43,7 +971,7 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 120,
+    "x": 100,
     "y": 80,
     "wires": [
       [
@@ -73,8 +1001,211 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 320,
+    "x": 300,
     "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "47f9bf56d1f71876",
+    "type": "server-state-changed",
+    "z": "791362d653843ce3",
+    "name": "any motion",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "^binary_sensor\\.motion_(?!sensor|bedroom)",
+    "entityidfiltertype": "regex",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 100,
+    "y": 940,
+    "wires": [
+      [
+        "73acd356fa24dd34"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "d7f96cfd86eb37d6",
+    "type": "server-state-changed",
+    "z": "791362d653843ce3",
+    "name": "any light on",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "^light\\.all_",
+    "entityidfiltertype": "regex",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 110,
+    "y": 1020,
+    "wires": [
+      [
+        "73acd356fa24dd34"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "73acd356fa24dd34",
+    "type": "time-switch",
+    "z": "791362d653843ce3",
+    "name": "05:00-08:00",
+    "lat": "55.645870",
+    "lon": "13.200610",
+    "startTime": "05:00",
+    "endTime": "08:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 290,
+    "y": 980,
+    "wires": [
+      [
+        "8efcdeb7dac10d16"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c4f73e9a83964e2b",
+    "type": "subflow:9577215509c764c6",
+    "z": "791362d653843ce3",
+    "name": "",
+    "env": [
+      {
+        "name": "person",
+        "value": "person.albin",
+        "type": "str"
+      },
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Nattläge\",\"message\":\"Nattläge inaktiverat\"}",
+        "type": "json"
+      }
+    ],
+    "x": 720,
+    "y": 980,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1e74815dca4be72b",
+    "type": "comment",
+    "z": "791362d653843ce3",
+    "name": "lights is not good, could be turned on by other automations",
+    "info": "",
+    "x": 260,
+    "y": 1080,
+    "wires": []
+  },
+  {
+    "id": "8efcdeb7dac10d16",
+    "type": "api-current-state",
+    "z": "791362d653843ce3",
+    "name": "night mode on",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.night_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 480,
+    "y": 980,
+    "wires": [
+      [
+        "c4f73e9a83964e2b",
+        "274580f4e1a678f9"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "274580f4e1a678f9",
+    "type": "api-call-service",
+    "z": "791362d653843ce3",
+    "name": "turn off night mode",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.night_mode"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 690,
+    "y": 1020,
     "wires": [
       []
     ]
