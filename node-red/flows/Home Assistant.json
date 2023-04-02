@@ -18,8 +18,8 @@
       "3ca4a76f1baed55f",
       "6ed9e60aeed51db7"
     ],
-    "x": 14,
-    "y": 539,
+    "x": 34,
+    "y": 499,
     "w": 532,
     "h": 82
   },
@@ -36,8 +36,8 @@
       "f3ed7dd986d07d37",
       "0b4e37880bc471a9"
     ],
-    "x": 14,
-    "y": 439,
+    "x": 34,
+    "y": 399,
     "w": 652,
     "h": 82
   },
@@ -53,8 +53,8 @@
       "4b411ef3ab4191f7",
       "7c9eac7cf14500bf"
     ],
-    "x": 14,
-    "y": 339,
+    "x": 34,
+    "y": 299,
     "w": 472,
     "h": 82
   },
@@ -70,8 +70,8 @@
       "aad95164dda26a61",
       "bc6575adb8f391d5"
     ],
-    "x": 14,
-    "y": 239,
+    "x": 34,
+    "y": 199,
     "w": 392,
     "h": 82
   },
@@ -84,18 +84,14 @@
       "label": true
     },
     "nodes": [
-      "24ebb2e2.2f6ffe",
-      "2c59ff99.2affc",
-      "9e7c7d2d.fdeb8",
       "ac0fc7a.efcc038",
-      "3a583032.2662b",
-      "1323cb3a16877935",
-      "2b7ad1b2216adaa5"
+      "2b7ad1b2216adaa5",
+      "a8831142feb93a3c"
     ],
-    "x": 14,
-    "y": 19,
-    "w": 832,
-    "h": 202
+    "x": 34,
+    "y": 39,
+    "w": 452,
+    "h": 142
   },
   {
     "id": "6ed9e60aeed51db7",
@@ -117,8 +113,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 410,
-    "y": 580,
+    "x": 430,
+    "y": 540,
     "wires": [
       []
     ]
@@ -167,8 +163,8 @@
         "valueType": "entityState"
       }
     ],
-    "x": 150,
-    "y": 580,
+    "x": 170,
+    "y": 540,
     "wires": [
       [
         "6ed9e60aeed51db7"
@@ -187,8 +183,8 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 300,
-    "y": 480,
+    "x": 320,
+    "y": 440,
     "wires": [
       [
         "f3ed7dd986d07d37"
@@ -215,8 +211,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 530,
-    "y": 480,
+    "x": 550,
+    "y": 440,
     "wires": [
       []
     ]
@@ -265,8 +261,8 @@
         "valueType": "eventData"
       }
     ],
-    "x": 110,
-    "y": 480,
+    "x": 130,
+    "y": 440,
     "wires": [
       [
         "0b4e37880bc471a9"
@@ -294,8 +290,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 350,
-    "y": 380,
+    "x": 370,
+    "y": 340,
     "wires": [
       []
     ]
@@ -337,8 +333,8 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 120,
-    "y": 380,
+    "x": 140,
+    "y": 340,
     "wires": [
       [
         "7c9eac7cf14500bf"
@@ -366,8 +362,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 290,
-    "y": 280,
+    "x": 310,
+    "y": 240,
     "wires": [
       []
     ]
@@ -384,8 +380,8 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "x": 110,
-    "y": 280,
+    "x": 130,
+    "y": 240,
     "wires": [
       [
         "bc6575adb8f391d5"
@@ -398,35 +394,13 @@
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
     "name": "",
-    "x": 100,
-    "y": 180,
+    "x": 120,
+    "y": 140,
     "wires": [
       [
-        "24ebb2e2.2f6ffe"
+        "a8831142feb93a3c"
       ]
     ]
-  },
-  {
-    "id": "1323cb3a16877935",
-    "type": "comment",
-    "z": "9d7cd8ae.f2fe48",
-    "g": "86f8f4678672d22a",
-    "name": "https://community.home-assistant.io/t/use-secrets-from-secrets-yaml-in-node-red-flow/168586/8",
-    "info": "",
-    "x": 370,
-    "y": 60,
-    "wires": []
-  },
-  {
-    "id": "3a583032.2662b",
-    "type": "comment",
-    "z": "9d7cd8ae.f2fe48",
-    "g": "86f8f4678672d22a",
-    "name": "Set global config variables from secrets.yaml",
-    "info": "https://bonani.tech/make-a-node-red-flow-run-on-home-assistant-start/",
-    "x": 570,
-    "y": 120,
-    "wires": []
   },
   {
     "id": "ac0fc7a.efcc038",
@@ -435,62 +409,32 @@
     "g": "86f8f4678672d22a",
     "name": "Run at HA start",
     "info": "",
-    "x": 120,
-    "y": 120,
+    "x": 140,
+    "y": 80,
     "wires": []
   },
   {
-    "id": "9e7c7d2d.fdeb8",
-    "type": "function",
+    "id": "a8831142feb93a3c",
+    "type": "subflow:a85b024b9414b0d3",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "set global config variables",
-    "func": "for (let [key, value] of Object.entries(msg.payload)) {\n  global.set(key,value);\n}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 710,
-    "y": 180,
+    "name": "",
+    "env": [
+      {
+        "name": "path",
+        "value": "/config/secrets.yaml",
+        "type": "str"
+      },
+      {
+        "name": "global_prefix",
+        "value": "secrets_",
+        "type": "str"
+      }
+    ],
+    "x": 340,
+    "y": 140,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "2c59ff99.2affc",
-    "type": "yaml",
-    "z": "9d7cd8ae.f2fe48",
-    "g": "86f8f4678672d22a",
-    "property": "payload",
-    "name": "parse yaml",
-    "x": 490,
-    "y": 180,
-    "wires": [
-      [
-        "9e7c7d2d.fdeb8"
-      ]
-    ]
-  },
-  {
-    "id": "24ebb2e2.2f6ffe",
-    "type": "file in",
-    "z": "9d7cd8ae.f2fe48",
-    "g": "86f8f4678672d22a",
-    "name": "read secrets.yaml",
-    "filename": "/config/secrets.yaml",
-    "filenameType": "str",
-    "format": "utf8",
-    "chunk": false,
-    "sendError": false,
-    "encoding": "none",
-    "allProps": false,
-    "x": 290,
-    "y": 180,
-    "wires": [
-      [
-        "2c59ff99.2affc"
-      ]
     ]
   }
 ]
