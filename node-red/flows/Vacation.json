@@ -26,7 +26,9 @@
       "7e966ac8.609524"
     ],
     "x": 34,
-    "y": 499
+    "y": 499,
+    "w": 372,
+    "h": 502
   },
   {
     "id": "0ebf95f5d2357afa",
@@ -42,7 +44,9 @@
       "6ee233be99add996"
     ],
     "x": 34,
-    "y": 319
+    "y": 319,
+    "w": 452,
+    "h": 162
   },
   {
     "id": "a95f98beadb5e910",
@@ -58,7 +62,9 @@
       "4742e750c7baf611"
     ],
     "x": 34,
-    "y": 219
+    "y": 219,
+    "w": 692,
+    "h": 82
   },
   {
     "id": "87ddd9c72abf2ec5",
@@ -77,7 +83,9 @@
       "6abf57c3ed97fdda"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 972,
+    "h": 162
   },
   {
     "id": "7e966ac8.609524",
@@ -497,7 +505,7 @@
     "z": "3b4f176249db8ba0",
     "g": "87ddd9c72abf2ec5",
     "name": "create notification",
-    "func": "const notify_data = {\n    \"title\": \"Semesterläge\",\n    \"message\": \"Du har varit borta i 24 timmar. Vill du aktivera semesterläge?\",\n    \"data\": {\n        \"actions\": [\n            {\n                \"action\": \"VACATION_MODE_ON\",\n                \"title\": \"Aktivera semesterläge\",\n                \"icon\": \"sfsymbols:airplane\",\n                \"authenticationRequired\": true\n            }\n        ],\n        \"persistent\": true,\n        \"tag\": \"persistent\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
+    "func": "const notify_data = {\n    \"title\": \"Semesterläge\",\n    \"message\": \"Du har varit borta i 24 timmar. Vill du aktivera semesterläge?\",\n    \"data\": {\n        \"actions\": [\n            {\n                \"action\": \"VACATION_MODE_ON\",\n                \"title\": \"Aktivera semesterläge\",\n                \"icon\": \"sfsymbols:airplane\",\n                \"authenticationRequired\": true\n            }\n        ],\n        \"persistent\": true,\n        \"tag\": \"vaccation_mode_activate\"\n    }\n}\n\nreturn {\n    ...msg,\n    notify_data\n};",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
