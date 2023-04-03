@@ -4,6 +4,6 @@
 # Area: Garden
 #
 
-- camera.camera_garden_hd_stream
+- camera.garden_stream
 
 - sensor.temperature_garden

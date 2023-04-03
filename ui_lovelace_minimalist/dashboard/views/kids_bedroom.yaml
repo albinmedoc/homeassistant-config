@@ -14,7 +14,7 @@ cards:
       - motion_sensor: binary_sensor.motion_kids_bedroom
       - lights: light.all_kids_bedroom
       - temperature: sensor.smoke_detector_kids_bedroom_temperature
-      - camera: camera.camera_kids_bedroom_hd_stream
+      - camera: camera.kids_bedroom_stream
 
   - type: "custom:button-card"
     template: card_title
