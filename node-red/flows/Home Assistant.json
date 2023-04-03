@@ -19,7 +19,7 @@
       "6ed9e60aeed51db7"
     ],
     "x": 34,
-    "y": 499,
+    "y": 539,
     "w": 532,
     "h": 82
   },
@@ -37,7 +37,7 @@
       "0b4e37880bc471a9"
     ],
     "x": 34,
-    "y": 399,
+    "y": 439,
     "w": 652,
     "h": 82
   },
@@ -54,7 +54,7 @@
       "7c9eac7cf14500bf"
     ],
     "x": 34,
-    "y": 299,
+    "y": 339,
     "w": 472,
     "h": 82
   },
@@ -71,7 +71,7 @@
       "bc6575adb8f391d5"
     ],
     "x": 34,
-    "y": 199,
+    "y": 239,
     "w": 392,
     "h": 82
   },
@@ -79,19 +79,20 @@
     "id": "86f8f4678672d22a",
     "type": "group",
     "z": "9d7cd8ae.f2fe48",
-    "name": "Load secrets.yaml at startup",
+    "name": "Load yaml files at startup",
     "style": {
       "label": true
     },
     "nodes": [
       "ac0fc7a.efcc038",
       "2b7ad1b2216adaa5",
-      "a8831142feb93a3c"
+      "a8831142feb93a3c",
+      "ee0ceb693d698385"
     ],
     "x": 34,
     "y": 39,
-    "w": 452,
-    "h": 142
+    "w": 472,
+    "h": 182
   },
   {
     "id": "6ed9e60aeed51db7",
@@ -114,7 +115,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 430,
-    "y": 540,
+    "y": 580,
     "wires": [
       []
     ]
@@ -164,7 +165,7 @@
       }
     ],
     "x": 170,
-    "y": 540,
+    "y": 580,
     "wires": [
       [
         "6ed9e60aeed51db7"
@@ -184,7 +185,7 @@
     "finalize": "",
     "libs": [],
     "x": 320,
-    "y": 440,
+    "y": 480,
     "wires": [
       [
         "f3ed7dd986d07d37"
@@ -212,7 +213,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 550,
-    "y": 440,
+    "y": 480,
     "wires": [
       []
     ]
@@ -262,7 +263,7 @@
       }
     ],
     "x": 130,
-    "y": 440,
+    "y": 480,
     "wires": [
       [
         "0b4e37880bc471a9"
@@ -291,7 +292,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 370,
-    "y": 340,
+    "y": 380,
     "wires": [
       []
     ]
@@ -334,7 +335,7 @@
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
     "x": 140,
-    "y": 340,
+    "y": 380,
     "wires": [
       [
         "7c9eac7cf14500bf"
@@ -363,7 +364,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 310,
-    "y": 240,
+    "y": 280,
     "wires": [
       []
     ]
@@ -381,7 +382,7 @@
     "onceDelay": 0.1,
     "topic": "",
     "x": 130,
-    "y": 240,
+    "y": 280,
     "wires": [
       [
         "bc6575adb8f391d5"
@@ -398,7 +399,8 @@
     "y": 140,
     "wires": [
       [
-        "a8831142feb93a3c"
+        "a8831142feb93a3c",
+        "ee0ceb693d698385"
       ]
     ]
   },
@@ -418,7 +420,7 @@
     "type": "subflow:a85b024b9414b0d3",
     "z": "9d7cd8ae.f2fe48",
     "g": "86f8f4678672d22a",
-    "name": "",
+    "name": "load secrets.yaml",
     "env": [
       {
         "name": "path",
@@ -431,8 +433,32 @@
         "type": "str"
       }
     ],
-    "x": 340,
+    "x": 310,
     "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ee0ceb693d698385",
+    "type": "subflow:a85b024b9414b0d3",
+    "z": "9d7cd8ae.f2fe48",
+    "g": "86f8f4678672d22a",
+    "name": "load notification_opt_out.yaml",
+    "env": [
+      {
+        "name": "path",
+        "value": "/config/notification_opt_out.yaml",
+        "type": "str"
+      },
+      {
+        "name": "global_variable",
+        "value": "opt_outs",
+        "type": "str"
+      }
+    ],
+    "x": 350,
+    "y": 180,
     "wires": [
       []
     ]

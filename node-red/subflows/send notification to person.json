@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 960,
+        "x": 1160,
         "y": 60,
         "wires": [
           {
@@ -83,15 +83,44 @@
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 960,
+      "x": 1160,
       "y": 140,
       "wires": [
         {
           "id": "8b7d6855d09b0533",
           "port": 0
+        },
+        {
+          "id": "ac55fec107f6f593",
+          "port": 0
         }
       ]
     }
+  },
+  {
+    "id": "cdbee8b01e47c227",
+    "type": "junction",
+    "z": "9577215509c764c6",
+    "x": 880,
+    "y": 100,
+    "wires": [
+      [
+        "3395dffd3049f0dd",
+        "ac55fec107f6f593"
+      ]
+    ]
+  },
+  {
+    "id": "655b351fdb846192",
+    "type": "junction",
+    "z": "9577215509c764c6",
+    "x": 740,
+    "y": 100,
+    "wires": [
+      [
+        "cdbee8b01e47c227"
+      ]
+    ]
   },
   {
     "id": "b097d3315ee03c10",
@@ -108,7 +137,7 @@
     "y": 60,
     "wires": [
       [
-        "5e64db703b93910a"
+        "bf04d154c32310dc"
       ]
     ]
   },
@@ -131,7 +160,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 620,
+    "x": 820,
     "y": 60,
     "wires": [
       [
@@ -176,8 +205,8 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 830,
-    "y": 140,
+    "x": 1030,
+    "y": 120,
     "wires": [
       []
     ]
@@ -199,8 +228,51 @@
         "type": "json"
       }
     ],
-    "x": 820,
+    "x": 1020,
     "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bf04d154c32310dc",
+    "type": "function",
+    "z": "9577215509c764c6",
+    "name": "not opted out",
+    "func": "const notify_data = msg.send_notification_to_person.notify_data;\nconst tag = notify_data.data?.tag;\n\nconst person = msg.send_notification_to_person.person;\nconst opt_outs = global.get(\"opt_outs\")[person] ?? [];\n\nif (tag && opt_outs && opt_outs.includes(tag)) {\n    return [null, msg]\n}\n\nreturn [msg, null]",
+    "outputs": 2,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 620,
+    "y": 60,
+    "wires": [
+      [
+        "5e64db703b93910a"
+      ],
+      [
+        "655b351fdb846192"
+      ]
+    ],
+    "outputLabels": [
+      "not opted out",
+      "opted out"
+    ]
+  },
+  {
+    "id": "ac55fec107f6f593",
+    "type": "function",
+    "z": "9577215509c764c6",
+    "name": "create status",
+    "func": "const text = 'opted out'\n\nreturn {\n    payload: {\n        fill: 'red',\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1030,
+    "y": 160,
     "wires": [
       []
     ]
