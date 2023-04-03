@@ -40,12 +40,12 @@
     },
     "nodes": [
       "245075c23d375bea",
-      "bcd478d29ab1897b",
-      "6ee233be99add996"
+      "e582012c8ec66dad",
+      "7bcfb01f7f30e717"
     ],
     "x": 34,
     "y": 319,
-    "w": 452,
+    "w": 552,
     "h": 162
   },
   {
@@ -299,58 +299,6 @@
     ]
   },
   {
-    "id": "6ee233be99add996",
-    "type": "api-call-service",
-    "z": "3b4f176249db8ba0",
-    "g": "0ebf95f5d2357afa",
-    "name": "send notificaiton",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t   \"title\": \"Semesterläge!\",\t   \"message\": \"Semesterläge har inaktiverats!\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 380,
-    "y": 440,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "bcd478d29ab1897b",
-    "type": "api-call-service",
-    "z": "3b4f176249db8ba0",
-    "g": "0ebf95f5d2357afa",
-    "name": "send notificaiton",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t   \"title\": \"Semesterläge!\",\t   \"message\": \"Semesterläge har aktiverats!\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 380,
-    "y": 360,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "245075c23d375bea",
     "type": "server-state-changed",
     "z": "3b4f176249db8ba0",
@@ -391,10 +339,10 @@
     "y": 400,
     "wires": [
       [
-        "bcd478d29ab1897b"
+        "e582012c8ec66dad"
       ],
       [
-        "6ee233be99add996"
+        "7bcfb01f7f30e717"
       ]
     ]
   },
@@ -689,6 +637,44 @@
       [
         "f41610963dd07e91"
       ]
+    ]
+  },
+  {
+    "id": "e582012c8ec66dad",
+    "type": "subflow:0543352e157255d4",
+    "z": "3b4f176249db8ba0",
+    "g": "0ebf95f5d2357afa",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Semesterläge!\",\"message\":\"Semesterläge har aktiverats!\",\"data\":{\"tag\":\"vaccation_mode_activated\"}}",
+        "type": "json"
+      }
+    ],
+    "x": 430,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7bcfb01f7f30e717",
+    "type": "subflow:0543352e157255d4",
+    "z": "3b4f176249db8ba0",
+    "g": "0ebf95f5d2357afa",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Semesterläge!\",\"message\":\"Semesterläge har inaktiverats!\",\"data\":{\"tag\":\"vaccation_mode_deactivated\"}}",
+        "type": "json"
+      }
+    ],
+    "x": 430,
+    "y": 440,
+    "wires": [
+      []
     ]
   }
 ]

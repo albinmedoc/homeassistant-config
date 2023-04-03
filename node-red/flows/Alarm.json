@@ -74,11 +74,11 @@
     },
     "nodes": [
       "2e0513112b568dfa",
-      "ee2aa044230da653"
+      "f4a0dc3f7ce96837"
     ],
     "x": 34,
     "y": 1099,
-    "w": 412,
+    "w": 512,
     "h": 82
   },
   {
@@ -132,13 +132,14 @@
     "nodes": [
       "ae2f4571bf9c28d5",
       "7b9f40156304418e",
-      "59a1364f3a5958ea",
       "7b76037c19231281",
-      "7183340c3aaababd"
+      "9d9618dfc57e63e7",
+      "45072dbab86d59da",
+      "edbc2d86c78d49de"
     ],
     "x": 34,
     "y": 19,
-    "w": 752,
+    "w": 1072,
     "h": 142
   },
   {
@@ -152,13 +153,14 @@
     "nodes": [
       "0b509be3db326b86",
       "48c2925eb12eb26f",
-      "626dbc36ba45a1c4",
       "9b0337d5217d7ff0",
-      "34df5041832334e5"
+      "79187bcd88145076",
+      "216ec54d7e952b1a",
+      "df261142f335350f"
     ],
     "x": 34,
     "y": 179,
-    "w": 732,
+    "w": 1052,
     "h": 142
   },
   {
@@ -174,11 +176,12 @@
       "7ea3f7423d6c9264",
       "a80517abc44a8685",
       "c1fde7221f082bde",
-      "f10a3c4729976592"
+      "7fdb715e286f081c",
+      "32fd7a9c35714b19"
     ],
     "x": 34,
     "y": 339,
-    "w": 772,
+    "w": 1092,
     "h": 202
   },
   {
@@ -240,58 +243,6 @@
     "wires": []
   },
   {
-    "id": "34df5041832334e5",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "75e39dcb53bdacc7",
-    "name": "send notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm aktiverat\",\t    \"message\": \"Gäst(er) har lämnat hem\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 660,
-    "y": 280,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "7183340c3aaababd",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "f3fabdf91855700f",
-    "name": "send notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \"Gäst(er) har kommit hem\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 680,
-    "y": 120,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "9b0337d5217d7ff0",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
@@ -317,7 +268,7 @@
     "y": 280,
     "wires": [
       [
-        "34df5041832334e5"
+        "df261142f335350f"
       ]
     ]
   },
@@ -347,7 +298,7 @@
     "y": 120,
     "wires": [
       [
-        "7183340c3aaababd"
+        "edbc2d86c78d49de"
       ]
     ]
   },
@@ -607,32 +558,6 @@
     "wires": []
   },
   {
-    "id": "ee2aa044230da653",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "ac4a5fa8ce361c85",
-    "name": "send notificaiton",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t   \"title\": \"Rök upptäckt!\",\t   \"message\": \"Rök upptäckt i hemmet! Det kanske brinner!\",\t   \"data\": {\t       \"push\": {\t           \"sound\": {\t               \"name\": \"default\",\t               \"critical\": 1,\t               \"volume\": 1\t            }\t        }\t    }\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 340,
-    "y": 1140,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "2e0513112b568dfa",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
@@ -673,86 +598,8 @@
     "y": 1140,
     "wires": [
       [
-        "ee2aa044230da653"
+        "f4a0dc3f7ce96837"
       ],
-      []
-    ]
-  },
-  {
-    "id": "59a1364f3a5958ea",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "f3fabdf91855700f",
-    "name": "send notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har kommit hem\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 680,
-    "y": 60,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "626dbc36ba45a1c4",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "75e39dcb53bdacc7",
-    "name": "send notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "parents",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm aktiverat\",\t    \"message\":\t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har lämnat hem\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 660,
-    "y": 220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "f10a3c4729976592",
-    "type": "api-call-service",
-    "z": "9081c37be56bc95b",
-    "g": "60a6418e9202f91b",
-    "name": "send notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "notify",
-    "service": "mobile_app_albin_iphone",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" låste upp dörren\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 700,
-    "y": 440,
-    "wires": [
       []
     ]
   },
@@ -771,7 +618,7 @@
     "y": 220,
     "wires": [
       [
-        "626dbc36ba45a1c4"
+        "79187bcd88145076"
       ]
     ]
   },
@@ -790,7 +637,7 @@
     "y": 60,
     "wires": [
       [
-        "59a1364f3a5958ea"
+        "9d9618dfc57e63e7"
       ]
     ]
   },
@@ -809,7 +656,7 @@
     "y": 440,
     "wires": [
       [
-        "f10a3c4729976592"
+        "7fdb715e286f081c"
       ]
     ]
   },
@@ -1173,5 +1020,203 @@
     "x": 220,
     "y": 380,
     "wires": []
+  },
+  {
+    "id": "45072dbab86d59da",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{{notify_data}}",
+        "type": "str"
+      }
+    ],
+    "x": 950,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "9d9618dfc57e63e7",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "create notification",
+    "rules": [
+      {
+        "t": "set",
+        "p": "notify_data",
+        "pt": "msg",
+        "to": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har kommit hem\",\t    \"data\": {\t        \"tag\": \"alarm_disarmed\"\t    }\t}",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 690,
+    "y": 60,
+    "wires": [
+      [
+        "45072dbab86d59da"
+      ]
+    ]
+  },
+  {
+    "id": "edbc2d86c78d49de",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "f3fabdf91855700f",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Larm inaktiverat\",\"message\":\"Gäst(er) har kommit hem\",\"data\":{\"tag\":\"alarm_disarmed\"}}",
+        "type": "json"
+      }
+    ],
+    "x": 650,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "79187bcd88145076",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "create notification",
+    "rules": [
+      {
+        "t": "set",
+        "p": "notify_data",
+        "pt": "msg",
+        "to": "{\t    \"title\": \"Larm aktiverat\",\t    \"message\":\t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" har lämnat hem\",\t    \"data\": {\t        \"tag\": \"alarm_armed\"\t    }\t}",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 670,
+    "y": 220,
+    "wires": [
+      [
+        "216ec54d7e952b1a"
+      ]
+    ]
+  },
+  {
+    "id": "216ec54d7e952b1a",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{{notify_data}}",
+        "type": "str"
+      }
+    ],
+    "x": 930,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "df261142f335350f",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Larm aktiverat\",\"message\":\"Gäst(er) har lämnat hem\",\"data\":{\"tag\":\"alarm_armed\"}}",
+        "type": "json"
+      }
+    ],
+    "x": 630,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f4a0dc3f7ce96837",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "ac4a5fa8ce361c85",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{\"title\":\"Rök upptäckt!\",\"message\":\"Rök upptäckt i hemmet! Det kanske brinner!\",\"data\":{\"push\":{\"sound\":{\"name\":\"default\",\"critical\":1,\"volume\":1}},\"tag\":\"smoke_detected\"}}",
+        "type": "json"
+      }
+    ],
+    "x": 390,
+    "y": 1140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7fdb715e286f081c",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "create notification",
+    "rules": [
+      {
+        "t": "set",
+        "p": "notify_data",
+        "pt": "msg",
+        "to": "{\t    \"title\": \"Larm inaktiverat\",\t    \"message\": \t        $uppercase($substring($substringAfter(person, 'person.'), 0, 1))\t        & $substring($substringAfter(person, 'person.'), 1)\t        & \" låste upp dörren\"\t}",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 710,
+    "y": 440,
+    "wires": [
+      [
+        "32fd7a9c35714b19"
+      ]
+    ]
+  },
+  {
+    "id": "32fd7a9c35714b19",
+    "type": "subflow:0543352e157255d4",
+    "z": "9081c37be56bc95b",
+    "g": "60a6418e9202f91b",
+    "name": "",
+    "env": [
+      {
+        "name": "notify_data",
+        "value": "{{notify_data}}",
+        "type": "str"
+      }
+    ],
+    "x": 970,
+    "y": 440,
+    "wires": [
+      []
+    ]
   }
 ]
