@@ -46,12 +46,12 @@
         }
       },
       {
-        "name": "global_prefix",
+        "name": "global_variable",
         "type": "str",
         "value": "",
         "ui": {
           "label": {
-            "en-US": "Global context prefix"
+            "en-US": "Global context variable"
           },
           "type": "input",
           "opts": {
@@ -103,14 +103,14 @@
     "id": "911c876a6099626f",
     "type": "function",
     "z": "a85b024b9414b0d3",
-    "name": "set global config variables",
-    "func": "const global_prefix = msg.load_yaml_to_global_context.global_prefix;\n\nfor (let [key, value] of Object.entries(msg.payload)) {\n  global.set(`${global_prefix}${key}`,value);\n}\n\nreturn msg;",
+    "name": "set global context variable",
+    "func": "const global_variable = msg.load_yaml_to_global_context.global_variable;\n\nglobal.set(global_variable, msg.payload);\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 750,
+    "x": 760,
     "y": 80,
     "wires": [
       [
@@ -149,7 +149,7 @@
       },
       {
         "name": "entries",
-        "value": "[\"path\",\"global_prefix\"]",
+        "value": "[\"path\",\"global_variable\"]",
         "type": "json"
       }
     ],

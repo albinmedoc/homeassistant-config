@@ -426,8 +426,8 @@
         "type": "str"
       },
       {
-        "name": "global_prefix",
-        "value": "secrets_",
+        "name": "global_variable",
+        "value": "secrets",
         "type": "str"
       }
     ],
