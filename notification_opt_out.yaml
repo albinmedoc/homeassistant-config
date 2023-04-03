@@ -4,4 +4,7 @@
 
 person.albin: []
 
-person.matilda: []
+person.matilda:
+  - nightmode_activated
+  - nightmode_deactivated
+  - nightmode_cancel_activation
