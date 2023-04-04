@@ -21,7 +21,9 @@
       "04270f65108df369"
     ],
     "x": 44,
-    "y": 559
+    "y": 559,
+    "w": 592,
+    "h": 142
   },
   {
     "id": "2b75c890eff44cfb",
@@ -36,7 +38,9 @@
       "1f21716b9f95f12a"
     ],
     "x": 44,
-    "y": 439
+    "y": 439,
+    "w": 352,
+    "h": 82
   },
   {
     "id": "ec260776601b15bd",
@@ -52,7 +56,9 @@
       "7f832b8e9eefdd27"
     ],
     "x": 44,
-    "y": 1319
+    "y": 1399,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "e7e05890b1c08c7e",
@@ -68,7 +74,9 @@
       "030247dadaf91fed"
     ],
     "x": 44,
-    "y": 1219
+    "y": 1299,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "cfed098803bc16cd",
@@ -84,7 +92,9 @@
       "2a123fdb611d4352"
     ],
     "x": 44,
-    "y": 1119
+    "y": 1199,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "7ad94aaec9160b50",
@@ -100,7 +110,9 @@
       "7daa5915c3daa539"
     ],
     "x": 44,
-    "y": 1019
+    "y": 1099,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "0a04ea6bece547ae",
@@ -114,10 +126,13 @@
       "d2f9fca8ac1c76a3",
       "595040b26ad6e859",
       "e636b99adc958b4a",
-      "50af51a9914bbeeb"
+      "50af51a9914bbeeb",
+      "22e5e39a66497c6d"
     ],
     "x": 44,
-    "y": 879
+    "y": 919,
+    "w": 552,
+    "h": 162
   },
   {
     "id": "037b270105a5e078",
@@ -131,10 +146,13 @@
       "620711191d1dde67",
       "040015a0a2cff3c7",
       "932949eed4e341ae",
-      "d919babce7e295d8"
+      "d919babce7e295d8",
+      "a75318f9898f8b2f"
     ],
     "x": 44,
-    "y": 739
+    "y": 739,
+    "w": 552,
+    "h": 162
   },
   {
     "id": "815082aec75c4eb0",
@@ -378,7 +396,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 280,
-    "y": 1360,
+    "y": 1440,
     "wires": [
       [
         "4db1542ebba481ee"
@@ -394,7 +412,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 1360,
+    "y": 1440,
     "wires": []
   },
   {
@@ -405,7 +423,7 @@
     "name": "turn off frigate snapshots",
     "links": [],
     "x": 85,
-    "y": 1360,
+    "y": 1440,
     "wires": [
       [
         "7f832b8e9eefdd27"
@@ -435,7 +453,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 280,
-    "y": 1260,
+    "y": 1340,
     "wires": [
       [
         "c3613d99ba4b682f"
@@ -451,7 +469,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 1260,
+    "y": 1340,
     "wires": []
   },
   {
@@ -462,7 +480,7 @@
     "name": "turn on frigate snapshots",
     "links": [],
     "x": 85,
-    "y": 1260,
+    "y": 1340,
     "wires": [
       [
         "030247dadaf91fed"
@@ -492,7 +510,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 280,
-    "y": 1160,
+    "y": 1240,
     "wires": [
       [
         "f6d5066046175e3d"
@@ -508,7 +526,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 1160,
+    "y": 1240,
     "wires": []
   },
   {
@@ -519,7 +537,7 @@
     "name": "turn off frigate recording",
     "links": [],
     "x": 85,
-    "y": 1160,
+    "y": 1240,
     "wires": [
       [
         "2a123fdb611d4352"
@@ -549,7 +567,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 280,
-    "y": 1060,
+    "y": 1140,
     "wires": [
       [
         "74706fe0bda77c41"
@@ -565,7 +583,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 1060,
+    "y": 1140,
     "wires": []
   },
   {
@@ -576,7 +594,7 @@
     "name": "turn on frigate recording",
     "links": [],
     "x": 85,
-    "y": 1060,
+    "y": 1140,
     "wires": [
       [
         "7daa5915c3daa539"
@@ -606,7 +624,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 300,
-    "y": 920,
+    "y": 960,
     "wires": [
       [
         "595040b26ad6e859"
@@ -618,7 +636,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "0a04ea6bece547ae",
-    "name": "living room - turn off frigate detection",
+    "name": "playroom - turn off frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -627,7 +645,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_living_room_frigate_detect"
+      "switch.camera_playroom_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -635,8 +653,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 290,
-    "y": 960,
+    "x": 280,
+    "y": 1000,
     "wires": [
       []
     ]
@@ -650,7 +668,7 @@
     "mode": "return",
     "links": [],
     "x": 555,
-    "y": 920,
+    "y": 960,
     "wires": []
   },
   {
@@ -661,11 +679,12 @@
     "name": "turn off frigate detection",
     "links": [],
     "x": 85,
-    "y": 940,
+    "y": 1000,
     "wires": [
       [
         "50af51a9914bbeeb",
-        "e636b99adc958b4a"
+        "e636b99adc958b4a",
+        "22e5e39a66497c6d"
       ]
     ]
   },
@@ -674,7 +693,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "037b270105a5e078",
-    "name": "living room - turn on frigate detection",
+    "name": "playroom - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -683,7 +702,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_living_room_frigate_detect"
+      "switch.camera_playroom_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -691,7 +710,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 290,
+    "x": 280,
     "y": 820,
     "wires": [
       []
@@ -747,11 +766,12 @@
     "name": "turn on frigate detection",
     "links": [],
     "x": 85,
-    "y": 800,
+    "y": 820,
     "wires": [
       [
         "932949eed4e341ae",
-        "d919babce7e295d8"
+        "d919babce7e295d8",
+        "a75318f9898f8b2f"
       ]
     ]
   },
@@ -1119,6 +1139,62 @@
       [
         "10bf47c0fe75244a"
       ]
+    ]
+  },
+  {
+    "id": "a75318f9898f8b2f",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "037b270105a5e078",
+    "name": "living room - turn on frigate detection",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 290,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "22e5e39a66497c6d",
+    "type": "api-call-service",
+    "z": "896b946718d5907e",
+    "g": "0a04ea6bece547ae",
+    "name": "living room - turn off frigate detection",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.camera_living_room_frigate_detect"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 290,
+    "y": 1040,
+    "wires": [
+      []
     ]
   }
 ]
