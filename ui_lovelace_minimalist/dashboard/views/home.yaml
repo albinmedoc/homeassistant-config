@@ -199,7 +199,7 @@ cards:
         variables:
           - title: Lekrum
           - icon: mdi:teddy-bear
-          - navigation_path: hallway
+          - navigation_path: playroom
           - lights: light.all_playroom
 
   - type: "horizontal-stack"

@@ -12,6 +12,7 @@ cards:
     variables:
       - title: Lekrum
       - lights: light.all_playroom
+      - camera: camera.playroom_stream
 
   - type: "custom:button-card"
     template: card_title
