@@ -15,7 +15,7 @@ influxdb:
   include:
     entity_globs:
       - sensor.*_battery_level
-      - sensor.temperature_
+      - sensor.temperature_*
     entities:
       - sensor.system_disk_use
       - sensor.system_memory_use
