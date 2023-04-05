@@ -1,0 +1,10 @@
+---
+# Configures the logbook
+# 
+# https://www.home-assistant.io/integrations/logbook
+
+logbook:
+  exclude:
+    entity_globs:
+      - "*.ns_panel_*"
+      - automation.*
