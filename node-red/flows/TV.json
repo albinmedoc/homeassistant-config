@@ -24,7 +24,9 @@
       "78dad3d01b30c42e"
     ],
     "x": 34,
-    "y": 159
+    "y": 159,
+    "w": 512,
+    "h": 202
   },
   {
     "id": "ca425b51ea70d657",
@@ -39,7 +41,9 @@
       "f6f12d54667290c7"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 532,
+    "h": 82
   },
   {
     "id": "78dad3d01b30c42e",
@@ -260,7 +264,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 370,
+    "x": 410,
     "y": 260,
     "wires": [
       []
@@ -299,7 +303,7 @@
     "type": "server-state-changed",
     "z": "59b6382f2b4b4619",
     "g": "8d64418785067593",
-    "name": "Chromecast off",
+    "name": "Chromecast off 2 min",
     "server": "e9739673.bbfed8",
     "version": 4,
     "exposeToHomeAssistant": false,
@@ -322,7 +326,7 @@
     "halt_if_compare": "is",
     "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
+    "for": "2",
     "forType": "num",
     "forUnits": "minutes",
     "ignorePrevStateNull": false,
@@ -331,7 +335,7 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 140,
+    "x": 160,
     "y": 260,
     "wires": [
       [
