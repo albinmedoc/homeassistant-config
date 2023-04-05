@@ -1,6 +1,6 @@
 ---
 # Configures InfluxDB
-# 
+#
 # https://www.home-assistant.io/integrations/influxdb/
 
 influxdb:
