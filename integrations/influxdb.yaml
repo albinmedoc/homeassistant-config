@@ -11,6 +11,8 @@ influxdb:
   password: !secret influxdb_password
   max_retries: 3
   default_measurement: state
+  tags_attributes:
+    - friendly_name
 
   include:
     entity_globs:
