@@ -4,7 +4,7 @@
     "type": "subflow",
     "name": "load yaml to global context",
     "info": "Load yaml file to global context\n\n### Configuration\n\n#### `Path required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe path to the yaml file\n\n#### `Global context prefix required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe prefix to use for the global context keys\n",
-    "category": "",
+    "category": "storage",
     "in": [
       {
         "x": 40,
@@ -63,7 +63,8 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99"
+    "color": "#DEB887",
+    "icon": "node-red/parser-yaml.svg"
   },
   {
     "id": "b7e466aacdbccc4d",
