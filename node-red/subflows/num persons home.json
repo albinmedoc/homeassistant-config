@@ -1,0 +1,198 @@
+[
+  {
+    "id": "b66917bea70387d7",
+    "type": "subflow",
+    "name": "num persons home",
+    "info": "Validate number of persons home\n\n### Configuration\n\n#### `Min number of persons required`\n\n- Type: `JSON`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nMinimun number of persons to continue in output 1.\n\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "21ae6fe86e86204c"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 910,
+        "y": 60,
+        "wires": [
+          {
+            "id": "88226e1b12b27676",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 910,
+        "y": 120,
+        "wires": [
+          {
+            "id": "d4b3ebf97027ab3a",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "min_num_persons",
+        "type": "num",
+        "value": "0",
+        "ui": {
+          "label": {
+            "en-US": "Min number of persons"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "num"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#DDAA99",
+    "outputLabels": [
+      "true",
+      "false"
+    ],
+    "status": {
+      "x": 880,
+      "y": 180,
+      "wires": [
+        {
+          "id": "572313b5d09753ee",
+          "port": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "21ae6fe86e86204c",
+    "type": "subflow:846b2a595d7e7acf",
+    "z": "b66917bea70387d7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "num_persons_home",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"min_num_persons\"]",
+        "type": "json"
+      }
+    ],
+    "x": 200,
+    "y": 60,
+    "wires": [
+      [
+        "1fd0d8d70c1caeaa"
+      ]
+    ]
+  },
+  {
+    "id": "88226e1b12b27676",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "b66917bea70387d7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "someone_home",
+        "type": "str"
+      }
+    ],
+    "x": 740,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1fd0d8d70c1caeaa",
+    "type": "api-current-state",
+    "z": "b66917bea70387d7",
+    "name": "",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "num_persons_home.min_num_persons",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gte",
+    "entity_id": "zone.home",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "state",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 430,
+    "y": 60,
+    "wires": [
+      [
+        "88226e1b12b27676",
+        "572313b5d09753ee"
+      ],
+      [
+        "572313b5d09753ee",
+        "d4b3ebf97027ab3a"
+      ]
+    ]
+  },
+  {
+    "id": "572313b5d09753ee",
+    "type": "function",
+    "z": "b66917bea70387d7",
+    "name": "create status",
+    "func": "const color = msg.state > msg.num_persons_home.min_num_persons ? \"green\": \"red\";\nconst text = msg.state;\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 730,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d4b3ebf97027ab3a",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "b66917bea70387d7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "someone_home",
+        "type": "str"
+      }
+    ],
+    "x": 740,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  }
+]
