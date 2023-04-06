@@ -3,16 +3,23 @@ turn_off_tv_living_room:
   alias: Slå av TV Vardagsrum
   icon: mdi:television
   sequence:
-    - service: remote.send_command
-      target:
-        entity_id: remote.apple_tv_remote_living_room
-      data:
-        delay_secs: 0.5
-        command:
-          - home_hold
-          - select
-    - service: input_boolean.turn_off
-      data: {}
-      target:
-        entity_id: input_boolean.tv_living_room_on
+    - if:
+      - condition: not
+        conditions:
+          - condition: state
+            entity_id: media_player.tv_living_room
+            state: "off"
+      then:
+        - service: remote.send_command
+          target:
+            entity_id: remote.apple_tv_remote_living_room
+          data:
+            delay_secs: 0.5
+            command:
+              - home_hold
+              - select
+        - service: input_boolean.turn_off
+          data: {}
+          target:
+            entity_id: input_boolean.tv_living_room_on
   mode: single
