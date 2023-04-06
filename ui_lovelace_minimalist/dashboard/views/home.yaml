@@ -72,12 +72,6 @@ cards:
 
   - type: horizontal-stack
     cards:
-      - type: custom:popup-card
-        entity: alarm_control_panel.alarmo
-        card:
-          type: "custom:alarmo-card"
-          entity: alarm_control_panel.alarmo
-          name: Larm
       - type: "custom:button-card"
         color_type: blank-card
       - type: "custom:button-card"
