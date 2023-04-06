@@ -4,9 +4,9 @@ turn_on_tv_living_room:
   icon: mdi:television
   sequence:
     - if:
-      - condition: state
-        entity_id: media_player.tv_living_room
-        state: "off"
+        - condition: state
+          entity_id: media_player.tv_living_room
+          state: "off"
       then:
         - service: remote.send_command
           data:
