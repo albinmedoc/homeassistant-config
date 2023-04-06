@@ -3,8 +3,8 @@
     "id": "778fe590ae6f3a0e",
     "type": "subflow",
     "name": "ns panel notification action timeout",
-    "info": "Wait for NS Panel notification action, with timeout\n\n### Configuration\n\n#### `NS Panels required`\n\n- Type: `list`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nA list of NS Panel names where to listening for notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timeout in seconds used for the notification\n\n#### `Remain required`\n\n- Type: `boolean`\n\nIf the notifications should remain if declined or on other NS Panels if accepted\n",
-    "category": "",
+    "info": "Wait for NS Panel notification action, with timeout\n\n### Configuration\n\n#### `NS Panels required`\n\n- Type: `list`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nA list of NS Panel names where to listening for notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timeout in seconds used for the notification\n\n#### `Remain required`\n\n- Type: `bool`\n\nIf the notification should remain on other ns panels when actioned.\n\n## Output\n\nValue types:\n\n- `NS Panel`: the ns panel where the action occurred\n",
+    "category": "ns_panel",
     "in": [
       {
         "x": 60,
@@ -19,7 +19,7 @@
     "out": [
       {
         "x": 480,
-        "y": 800,
+        "y": 400,
         "wires": [
           {
             "id": "ee84f05f5c5fa086",
@@ -29,7 +29,7 @@
       },
       {
         "x": 480,
-        "y": 960,
+        "y": 560,
         "wires": [
           {
             "id": "b3b5f4055b818cb6",
@@ -39,7 +39,7 @@
       },
       {
         "x": 480,
-        "y": 1120,
+        "y": 720,
         "wires": [
           {
             "id": "2ce048ed0ef1b93a",
@@ -89,12 +89,11 @@
         "value": "false",
         "ui": {
           "label": {
-            "en-US": "Remain"
+            "en-US": "remain"
           },
           "type": "input",
           "opts": {
             "types": [
-              "str",
               "bool"
             ]
           }
@@ -137,73 +136,6 @@
     }
   },
   {
-    "id": "6f7e788d1e3b1a5b",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Clear notifications",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "965dfe91d690dee1",
-      "7f2e65970d6838cd",
-      "ebf3896a26a64096",
-      "fa9002de83ee4327"
-    ],
-    "x": 44,
-    "y": 219
-  },
-  {
-    "id": "3bb0493cb27d27a0",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Set page timeout",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "977ea29fb0bf2fba",
-      "40d4a31ef800c1c3",
-      "87be1dadb6874633",
-      "417dcba44ccc9635"
-    ],
-    "x": 44,
-    "y": 419
-  },
-  {
-    "id": "3dcc1d68f33064ee",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Reset page timeout",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "23d1b6c903fe4d11",
-      "e1e1a705e4fbc395",
-      "5dc0596b8d48cbf1"
-    ],
-    "x": 44,
-    "y": 519
-  },
-  {
-    "id": "40126c78a464c95d",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Save page timeout",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "e60253f2fc9c7a01",
-      "f57530708addf0f8",
-      "015fb42254654028",
-      "179096776e1af2ad"
-    ],
-    "x": 44,
-    "y": 319
-  },
-  {
     "id": "d46fd1b35ef9ca57",
     "type": "group",
     "z": "778fe590ae6f3a0e",
@@ -218,7 +150,9 @@
       "4fbf84f17931c2ef"
     ],
     "x": 44,
-    "y": 759
+    "y": 359,
+    "w": 332,
+    "h": 142
   },
   {
     "id": "0bd0c07fe83bbf42",
@@ -235,7 +169,9 @@
       "3ae2c279dfe1508e"
     ],
     "x": 44,
-    "y": 919
+    "y": 519,
+    "w": 332,
+    "h": 142
   },
   {
     "id": "444e42c64c38a30d",
@@ -252,7 +188,9 @@
       "209741e5871c5cd4"
     ],
     "x": 44,
-    "y": 1079
+    "y": 679,
+    "w": 332,
+    "h": 142
   },
   {
     "id": "1ef2b5623052cfeb",
@@ -267,83 +205,14 @@
       "42e0490e73500f90",
       "ddac6db506b0c1c4",
       "10649458e737eae7",
-      "4a175fcb89f9107f"
+      "4a175fcb89f9107f",
+      "3383bff18a8d4c5f",
+      "baac416772f635f6"
     ],
     "x": 44,
-    "y": 619
-  },
-  {
-    "id": "e8cf22b05cc550e7",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Panel cleanup",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "b2125ce626897b36",
-      "9ad5790aa7edbcc3",
-      "8604b010b2ff6b04",
-      "c4640467264ed760"
-    ],
-    "x": 44,
-    "y": 1339
-  },
-  {
-    "id": "b9544936afdb4413",
-    "type": "group",
-    "z": "778fe590ae6f3a0e",
-    "name": "Panel setup",
-    "style": {
-      "label": true
-    },
-    "nodes": [
-      "2d6a6399ba388e44",
-      "b0bc3bebcbcff737",
-      "f4b025c4b76b93eb",
-      "cec38c2b4fdb7f19",
-      "68ab9d3597b201eb"
-    ],
-    "x": 44,
-    "y": 1239
-  },
-  {
-    "id": "0b44db1c061fdce9",
-    "type": "junction",
-    "z": "778fe590ae6f3a0e",
-    "x": 745,
-    "y": 60,
-    "wires": [
-      [
-        "4d0b013967958360",
-        "e41c20ab93af3f94"
-      ]
-    ]
-  },
-  {
-    "id": "72d246cdc7383775",
-    "type": "junction",
-    "z": "778fe590ae6f3a0e",
-    "x": 740,
-    "y": 180,
-    "wires": [
-      [
-        "0bec1e4791e8f339",
-        "4d0b013967958360"
-      ]
-    ]
-  },
-  {
-    "id": "4d0b013967958360",
-    "type": "junction",
-    "z": "778fe590ae6f3a0e",
-    "x": 820,
-    "y": 120,
-    "wires": [
-      [
-        "61d8dcfb54ecb875"
-      ]
-    ]
+    "y": 199,
+    "w": 572,
+    "h": 142
   },
   {
     "id": "a8b61fd733d27b45",
@@ -353,7 +222,6 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "outputs": 2,
-    "entityId": "",
     "entityIdFilterType": "exact",
     "property": "state",
     "comparator": "is",
@@ -374,14 +242,14 @@
     ],
     "entityLocation": "data",
     "entityLocationType": "none",
-    "x": 580,
+    "x": 640,
     "y": 120,
     "wires": [
       [
-        "0b44db1c061fdce9"
+        "e41c20ab93af3f94"
       ],
       [
-        "72d246cdc7383775"
+        "0bec1e4791e8f339"
       ]
     ]
   },
@@ -407,7 +275,7 @@
     "wires": [
       [
         "ba68b298c9295f36",
-        "df480bafab506be4"
+        "db5fead55bef90ca"
       ]
     ]
   },
@@ -436,12 +304,10 @@
     "z": "778fe590ae6f3a0e",
     "name": "status",
     "links": [
-      "642427305fc92c70",
       "3ae2c279dfe1508e",
-      "83e380b194dda3f8",
-      "a4511aab0daa2605",
       "4fbf84f17931c2ef",
-      "b254d9661724133d"
+      "83e380b194dda3f8",
+      "a4511aab0daa2605"
     ],
     "x": 65,
     "y": 60,
@@ -463,319 +329,6 @@
     "wires": []
   },
   {
-    "id": "965dfe91d690dee1",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "6f7e788d1e3b1a5b",
-    "name": "clear notifications",
-    "links": [
-      "8604b010b2ff6b04",
-      "525d29ca3df92cf7"
-    ],
-    "x": 85,
-    "y": 260,
-    "wires": [
-      [
-        "7f2e65970d6838cd"
-      ]
-    ]
-  },
-  {
-    "id": "7f2e65970d6838cd",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "g": "6f7e788d1e3b1a5b",
-    "name": "for every ns panel",
-    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nns_panels.forEach((ns_panel) => {\n    const notification_clear_service = `${ns_panel}_notification_clear`;\n    const send_command_printf_service = `${ns_panel}_send_command_printf`;\n    node.send({\n        ...msg,\n        notification_clear_service,\n        send_command_printf_service\n    });\n});\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 230,
-    "y": 260,
-    "wires": [
-      [
-        "ebf3896a26a64096"
-      ]
-    ]
-  },
-  {
-    "id": "ebf3896a26a64096",
-    "type": "api-call-service",
-    "z": "778fe590ae6f3a0e",
-    "g": "6f7e788d1e3b1a5b",
-    "name": "clear notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "esphome",
-    "service": "{{ notification_clear_service }}",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 440,
-    "y": 260,
-    "wires": [
-      [
-        "fa9002de83ee4327"
-      ]
-    ]
-  },
-  {
-    "id": "fa9002de83ee4327",
-    "type": "api-call-service",
-    "z": "778fe590ae6f3a0e",
-    "g": "6f7e788d1e3b1a5b",
-    "name": "go to homepage",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "esphome",
-    "service": "{{ send_command_printf_service }}",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\"cmd\":\"page home\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 640,
-    "y": 260,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "977ea29fb0bf2fba",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "3bb0493cb27d27a0",
-    "name": "set page timeout",
-    "links": [
-      "2a5e9c94d6943e04"
-    ],
-    "x": 85,
-    "y": 460,
-    "wires": [
-      [
-        "40d4a31ef800c1c3"
-      ]
-    ]
-  },
-  {
-    "id": "40d4a31ef800c1c3",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "g": "3bb0493cb27d27a0",
-    "name": "map entities",
-    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 210,
-    "y": 460,
-    "wires": [
-      [
-        "87be1dadb6874633"
-      ]
-    ]
-  },
-  {
-    "id": "87be1dadb6874633",
-    "type": "api-call-service",
-    "z": "778fe590ae6f3a0e",
-    "g": "3bb0493cb27d27a0",
-    "name": "set page timeout",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "number",
-    "service": "set_value",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "{{ page_timeout_entity_ids }}"
-    ],
-    "data": "{\t    \"value\": ns_panel_notification_action_timeout.timeout\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 410,
-    "y": 460,
-    "wires": [
-      [
-        "417dcba44ccc9635"
-      ]
-    ]
-  },
-  {
-    "id": "23d1b6c903fe4d11",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "3dcc1d68f33064ee",
-    "name": "reset page timeout",
-    "links": [
-      "c4640467264ed760",
-      "221150b701106a08"
-    ],
-    "x": 85,
-    "y": 560,
-    "wires": [
-      [
-        "e1e1a705e4fbc395"
-      ]
-    ]
-  },
-  {
-    "id": "e1e1a705e4fbc395",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "g": "3dcc1d68f33064ee",
-    "name": "for every page_timeout_entity",
-    "func": "const old_page_timeout_entities = msg.old_page_timeout_entities;\nold_page_timeout_entities.forEach((page_timeout_entity) => {\n    node.send({\n        ...msg,\n        page_timeout_entity,\n    });\n});\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 270,
-    "y": 560,
-    "wires": [
-      [
-        "5dc0596b8d48cbf1"
-      ]
-    ]
-  },
-  {
-    "id": "5dc0596b8d48cbf1",
-    "type": "api-call-service",
-    "z": "778fe590ae6f3a0e",
-    "g": "3dcc1d68f33064ee",
-    "name": "set page timeout",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "number",
-    "service": "set_value",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "{{ page_timeout_entity.entity_id }}"
-    ],
-    "data": "{\t    \"value\": page_timeout_entity.state\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 530,
-    "y": 560,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "417dcba44ccc9635",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "g": "3bb0493cb27d27a0",
-    "name": "page timeout set",
-    "mode": "return",
-    "links": [],
-    "x": 555,
-    "y": 460,
-    "wires": []
-  },
-  {
-    "id": "e60253f2fc9c7a01",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "40126c78a464c95d",
-    "name": "save page timeout",
-    "links": [],
-    "x": 85,
-    "y": 360,
-    "wires": [
-      [
-        "f57530708addf0f8"
-      ]
-    ]
-  },
-  {
-    "id": "f57530708addf0f8",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "g": "40126c78a464c95d",
-    "name": "map entities",
-    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 210,
-    "y": 360,
-    "wires": [
-      [
-        "015fb42254654028"
-      ]
-    ]
-  },
-  {
-    "id": "015fb42254654028",
-    "type": "ha-get-entities",
-    "z": "778fe590ae6f3a0e",
-    "g": "40126c78a464c95d",
-    "name": "",
-    "server": "e9739673.bbfed8",
-    "version": 0,
-    "rules": [
-      {
-        "property": "entity_id",
-        "logic": "includes",
-        "value": "page_timeout_entity_ids",
-        "valueType": "msg"
-      }
-    ],
-    "output_type": "array",
-    "output_empty_results": false,
-    "output_location_type": "msg",
-    "output_location": "old_page_timeout_entities",
-    "output_results_count": 1,
-    "x": 390,
-    "y": 360,
-    "wires": [
-      [
-        "179096776e1af2ad"
-      ]
-    ]
-  },
-  {
-    "id": "179096776e1af2ad",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "g": "40126c78a464c95d",
-    "name": "page timeout saved",
-    "mode": "return",
-    "links": [],
-    "x": 515,
-    "y": 360,
-    "wires": []
-  },
-  {
     "id": "72d9192fd41e46f6",
     "type": "link in",
     "z": "778fe590ae6f3a0e",
@@ -785,7 +338,7 @@
       "ddac6db506b0c1c4"
     ],
     "x": 85,
-    "y": 800,
+    "y": 400,
     "wires": [
       [
         "ee84f05f5c5fa086",
@@ -803,7 +356,7 @@
       "10649458e737eae7"
     ],
     "x": 85,
-    "y": 960,
+    "y": 560,
     "wires": [
       [
         "b3b5f4055b818cb6",
@@ -824,7 +377,7 @@
     "finalize": "",
     "libs": [],
     "x": 210,
-    "y": 860,
+    "y": 460,
     "wires": [
       [
         "4fbf84f17931c2ef"
@@ -850,7 +403,7 @@
       }
     ],
     "x": 220,
-    "y": 800,
+    "y": 400,
     "wires": [
       []
     ]
@@ -866,7 +419,7 @@
       "6b483041cf5a0623"
     ],
     "x": 335,
-    "y": 860,
+    "y": 460,
     "wires": []
   },
   {
@@ -882,7 +435,7 @@
     "finalize": "",
     "libs": [],
     "x": 210,
-    "y": 1020,
+    "y": 620,
     "wires": [
       [
         "3ae2c279dfe1508e"
@@ -908,7 +461,7 @@
       }
     ],
     "x": 220,
-    "y": 960,
+    "y": 560,
     "wires": [
       []
     ]
@@ -924,7 +477,7 @@
       "6b483041cf5a0623"
     ],
     "x": 335,
-    "y": 1020,
+    "y": 620,
     "wires": []
   },
   {
@@ -938,7 +491,7 @@
       "6b483041cf5a0623"
     ],
     "x": 335,
-    "y": 1180,
+    "y": 780,
     "wires": []
   },
   {
@@ -954,7 +507,7 @@
     "finalize": "",
     "libs": [],
     "x": 210,
-    "y": 1180,
+    "y": 780,
     "wires": [
       [
         "83e380b194dda3f8"
@@ -975,7 +528,7 @@
       }
     ],
     "x": 220,
-    "y": 1120,
+    "y": 720,
     "wires": [
       []
     ]
@@ -990,7 +543,7 @@
       "0bec1e4791e8f339"
     ],
     "x": 85,
-    "y": 1120,
+    "y": 720,
     "wires": [
       [
         "2ce048ed0ef1b93a",
@@ -1007,8 +560,8 @@
     "links": [
       "209741e5871c5cd4"
     ],
-    "x": 815,
-    "y": 180,
+    "x": 775,
+    "y": 140,
     "wires": []
   },
   {
@@ -1021,10 +574,11 @@
       "e41c20ab93af3f94"
     ],
     "x": 85,
-    "y": 680,
+    "y": 260,
     "wires": [
       [
-        "4a175fcb89f9107f"
+        "4a175fcb89f9107f",
+        "3383bff18a8d4c5f"
       ]
     ]
   },
@@ -1037,8 +591,8 @@
     "links": [
       "0feb816c500ecc36"
     ],
-    "x": 815,
-    "y": 60,
+    "x": 775,
+    "y": 80,
     "wires": []
   },
   {
@@ -1063,7 +617,7 @@
     "repair": false,
     "outputs": 2,
     "x": 450,
-    "y": 680,
+    "y": 260,
     "wires": [
       [
         "ddac6db506b0c1c4"
@@ -1084,7 +638,7 @@
       "72d9192fd41e46f6"
     ],
     "x": 575,
-    "y": 660,
+    "y": 240,
     "wires": []
   },
   {
@@ -1098,194 +652,8 @@
       "8520d69db5837f4a"
     ],
     "x": 575,
-    "y": 700,
+    "y": 280,
     "wires": []
-  },
-  {
-    "id": "b2125ce626897b36",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "e8cf22b05cc550e7",
-    "name": "panel cleanup",
-    "links": [
-      "61d8dcfb54ecb875"
-    ],
-    "x": 85,
-    "y": 1380,
-    "wires": [
-      [
-        "9ad5790aa7edbcc3",
-        "c4640467264ed760"
-      ]
-    ]
-  },
-  {
-    "id": "9ad5790aa7edbcc3",
-    "type": "switch",
-    "z": "778fe590ae6f3a0e",
-    "g": "e8cf22b05cc550e7",
-    "name": "not remain",
-    "property": "ns_panel_notification_action_timeout.remain",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "false"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 210,
-    "y": 1380,
-    "wires": [
-      [
-        "8604b010b2ff6b04"
-      ]
-    ]
-  },
-  {
-    "id": "8604b010b2ff6b04",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "g": "e8cf22b05cc550e7",
-    "name": "clear notifications",
-    "mode": "link",
-    "links": [
-      "965dfe91d690dee1"
-    ],
-    "x": 335,
-    "y": 1380,
-    "wires": []
-  },
-  {
-    "id": "c4640467264ed760",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "g": "e8cf22b05cc550e7",
-    "name": "reset page timout",
-    "mode": "link",
-    "links": [
-      "23d1b6c903fe4d11"
-    ],
-    "x": 155,
-    "y": 1440,
-    "wires": []
-  },
-  {
-    "id": "61d8dcfb54ecb875",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "name": "panel cleanup",
-    "mode": "link",
-    "links": [
-      "b2125ce626897b36"
-    ],
-    "x": 875,
-    "y": 120,
-    "wires": []
-  },
-  {
-    "id": "2d6a6399ba388e44",
-    "type": "link in",
-    "z": "778fe590ae6f3a0e",
-    "g": "b9544936afdb4413",
-    "name": "panel setup",
-    "links": [],
-    "x": 85,
-    "y": 1280,
-    "wires": [
-      [
-        "b0bc3bebcbcff737"
-      ]
-    ]
-  },
-  {
-    "id": "b0bc3bebcbcff737",
-    "type": "function",
-    "z": "778fe590ae6f3a0e",
-    "g": "b9544936afdb4413",
-    "name": "create last_click regex",
-    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst sensors = ns_panels.map((ns_panel) => `sensor.${ns_panel}_last_click$`);\nconst last_click_regex = sensors.join('|');\n\nreturn {\n    ...msg,\n    payload: {\n        entity_id: last_click_regex,\n        entityIdFilterType: 'regex',\n    }\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 240,
-    "y": 1280,
-    "wires": [
-      [
-        "f4b025c4b76b93eb"
-      ]
-    ]
-  },
-  {
-    "id": "f4b025c4b76b93eb",
-    "type": "link call",
-    "z": "778fe590ae6f3a0e",
-    "g": "b9544936afdb4413",
-    "name": "save page timeout",
-    "links": [
-      "e60253f2fc9c7a01"
-    ],
-    "linkType": "static",
-    "timeout": "30",
-    "x": 470,
-    "y": 1280,
-    "wires": [
-      [
-        "cec38c2b4fdb7f19"
-      ]
-    ]
-  },
-  {
-    "id": "cec38c2b4fdb7f19",
-    "type": "link call",
-    "z": "778fe590ae6f3a0e",
-    "g": "b9544936afdb4413",
-    "name": "set page timeout",
-    "links": [
-      "977ea29fb0bf2fba"
-    ],
-    "linkType": "static",
-    "timeout": "30",
-    "x": 690,
-    "y": 1280,
-    "wires": [
-      [
-        "68ab9d3597b201eb"
-      ]
-    ]
-  },
-  {
-    "id": "68ab9d3597b201eb",
-    "type": "link out",
-    "z": "778fe590ae6f3a0e",
-    "g": "b9544936afdb4413",
-    "name": "panel setup",
-    "mode": "return",
-    "links": [],
-    "x": 835,
-    "y": 1280,
-    "wires": []
-  },
-  {
-    "id": "df480bafab506be4",
-    "type": "link call",
-    "z": "778fe590ae6f3a0e",
-    "name": "panel setup",
-    "links": [
-      "2d6a6399ba388e44"
-    ],
-    "linkType": "static",
-    "timeout": "30",
-    "x": 390,
-    "y": 120,
-    "wires": [
-      [
-        "a8b61fd733d27b45"
-      ]
-    ]
   },
   {
     "id": "4a175fcb89f9107f",
@@ -1300,11 +668,73 @@
     "finalize": "",
     "libs": [],
     "x": 240,
-    "y": 680,
+    "y": 260,
     "wires": [
       [
         "42e0490e73500f90"
       ]
+    ]
+  },
+  {
+    "id": "db5fead55bef90ca",
+    "type": "function",
+    "z": "778fe590ae6f3a0e",
+    "name": "create last_click regex",
+    "func": "const ns_panels = msg.ns_panel_notification_action_timeout.ns_panels;\nconst sensors = ns_panels.map((ns_panel) => `sensor.${ns_panel}_last_click$`);\nconst last_click_regex = sensors.join('|');\n\nreturn {\n    ...msg,\n    payload: {\n        entity_id: last_click_regex,\n        entityIdFilterType: 'regex',\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 420,
+    "y": 120,
+    "wires": [
+      [
+        "a8b61fd733d27b45"
+      ]
+    ]
+  },
+  {
+    "id": "3383bff18a8d4c5f",
+    "type": "switch",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "not remain?",
+    "property": "ns_panel_notification_action_timeout.remain",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 210,
+    "y": 300,
+    "wires": [
+      [
+        "baac416772f635f6"
+      ]
+    ]
+  },
+  {
+    "id": "baac416772f635f6",
+    "type": "subflow:ae792429f867c954",
+    "z": "778fe590ae6f3a0e",
+    "g": "1ef2b5623052cfeb",
+    "name": "",
+    "env": [
+      {
+        "name": "ns_panels",
+        "value": "{{ns_panel_notification_action_timeout.ns_panels}}",
+        "type": "str"
+      }
+    ],
+    "x": 430,
+    "y": 300,
+    "wires": [
+      []
     ]
   }
 ]

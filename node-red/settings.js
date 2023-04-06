@@ -164,6 +164,7 @@ module.exports = {
     "home_assistant",
     "home_assistant entities",
     "subflows",
+    "ns panel",
     "common",
     "function",
     "network",

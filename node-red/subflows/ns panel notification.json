@@ -3,8 +3,8 @@
     "id": "5799dae45d05d32f",
     "type": "subflow",
     "name": "ns panel notification",
-    "info": "Show notification on NS Panel\n\n### Configuration\n\n#### `NS Panels required`\n\n- Type: `array`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nName of the NS Panels to show the notification on\n\n#### `Label required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification label\n\n#### `Text required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification text\n\n#### `Sound required`\n\n- Type: `string`\n\nThe sound to play with the notification, set None for not playing a sound.\n",
-    "category": "",
+    "info": "Show notification on NS Panel\n\n### Configuration\n\n#### `NS Panels required`\n\n- Type: `array`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nName of the NS Panels to show the notification on\n\n#### `Label required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification label\n\n#### `Text required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification text\n\n#### `Sound required`\n\n- Type: `string`\n\nThe sound to play with the notification, set None for not playing a sound.\n\n#### `Duration required`\n\n- Type: `number`\n\nFor how long the notification will be shown.",
+    "category": "ns_panel",
     "in": [
       {
         "x": 60,
@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 1660,
+        "x": 940,
         "y": 40,
         "wires": [
           {
@@ -110,12 +110,29 @@
             ]
           }
         }
+      },
+      {
+        "name": "duration",
+        "type": "num",
+        "value": "20",
+        "ui": {
+          "label": {
+            "en-US": "Duration"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "num"
+            ]
+          }
+        }
       }
     ],
     "meta": {},
     "color": "#DDAA99",
     "status": {
-      "x": 1660,
+      "x": 940,
       "y": 100,
       "wires": [
         {
@@ -124,6 +141,141 @@
         }
       ]
     }
+  },
+  {
+    "id": "c6887b20c5599c7a",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Set page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "073e1376c405d6e2",
+      "0b9b9696ccd4ddec",
+      "1850bcc1951204f7",
+      "57384d954758252a"
+    ],
+    "x": 44,
+    "y": 219,
+    "w": 552,
+    "h": 82
+  },
+  {
+    "id": "14a8fa52c968698a",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Reset page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "0a31b81ba1e74cca",
+      "1089c25d611f979a",
+      "e743caf5e12fb0cb"
+    ],
+    "x": 44,
+    "y": 319,
+    "w": 602,
+    "h": 82
+  },
+  {
+    "id": "c6ae929861472fd2",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Save page timeout",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "5777d62b3d95aa66",
+      "e539aac8842eb8d8",
+      "47a62ff803d0ce98",
+      "999caccab33ef922"
+    ],
+    "x": 44,
+    "y": 119,
+    "w": 542,
+    "h": 82
+  },
+  {
+    "id": "83cdf7765b5a4942",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Show notification",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "f914a127b7420c9f",
+      "fce2a66c18c8ea96",
+      "8856b30200c34ff6",
+      "1143d0cd6a83b7f9",
+      "4d96fdc34234c622",
+      "9a8834e7f3a6072a"
+    ],
+    "x": 44,
+    "y": 419,
+    "w": 912,
+    "h": 122
+  },
+  {
+    "id": "52f40d0a17d1b0df",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Panel cleanup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "2815644d77e886cf",
+      "e4ebcfa667fa93ab",
+      "cd4e92bf523ed1df",
+      "7946e78a1a1a2dee"
+    ],
+    "x": 44,
+    "y": 759,
+    "w": 522,
+    "h": 142
+  },
+  {
+    "id": "ead721039a85eda7",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Panel setup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "d2b9c98c05369d4d",
+      "15e51ec9d6da5f4d",
+      "24965445637332b9",
+      "a64ad88b5d044d1c"
+    ],
+    "x": 44,
+    "y": 659,
+    "w": 592,
+    "h": 82
+  },
+  {
+    "id": "5b950bba3a1f3d93",
+    "type": "group",
+    "z": "5799dae45d05d32f",
+    "name": "Show notifications",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "aec59f5f5be36759",
+      "c278ecf7d439fe0b",
+      "3b55bb4418648944",
+      "6874f86fb1c89f05",
+      "76a7a0d9bf2f0bb4"
+    ],
+    "x": 44,
+    "y": 559,
+    "w": 732,
+    "h": 82
   },
   {
     "id": "65e81a4db530a853",
@@ -138,7 +290,7 @@
       },
       {
         "name": "entries",
-        "value": "[\"ns_panels\",\"label\",\"text\",\"sound\"]",
+        "value": "[\"ns_panels\",\"label\",\"text\",\"sound\",\"duration\"]",
         "type": "json"
       }
     ],
@@ -146,159 +298,7 @@
     "y": 40,
     "wires": [
       [
-        "aec59f5f5be36759"
-      ]
-    ]
-  },
-  {
-    "id": "aec59f5f5be36759",
-    "type": "function",
-    "z": "5799dae45d05d32f",
-    "name": "for every ns panel",
-    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nns_panels.forEach((ns_panel, index) => {\n    node.send({\n        ...msg,\n        ns_panel,\n        parts: {\n            id: \"ns_panel_notification\",\n            type: \"array\",\n            count: ns_panels.length,\n            len: 1,\n            index\n        }\n    });\n});\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 410,
-    "y": 40,
-    "wires": [
-      [
-        "9addbf8edbbc80c8"
-      ]
-    ]
-  },
-  {
-    "id": "3b55bb4418648944",
-    "type": "join",
-    "z": "5799dae45d05d32f",
-    "name": "",
-    "mode": "auto",
-    "build": "array",
-    "property": "",
-    "propertyType": "full",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": false,
-    "timeout": "",
-    "count": "",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "num",
-    "reduceFixup": "",
-    "x": 1350,
-    "y": 40,
-    "wires": [
-      [
-        "c0637180b40fcc6e",
-        "78c81ec4f2c90a83"
-      ]
-    ]
-  },
-  {
-    "id": "8a300e4d9985ac0d",
-    "type": "api-call-service",
-    "z": "5799dae45d05d32f",
-    "name": "show notification",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "esphome",
-    "service": "{{ notification_show_service }}",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"label\": ns_panel_notification.label,\t    \"text\": ns_panel_notification.text\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 810,
-    "y": 40,
-    "wires": [
-      [
-        "edfc9d11913960c1"
-      ]
-    ]
-  },
-  {
-    "id": "9addbf8edbbc80c8",
-    "type": "function",
-    "z": "5799dae45d05d32f",
-    "name": "map services",
-    "func": "const ns_panel = msg.ns_panel;\n\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_show_service,\n    play_rtttl_service\n};",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 610,
-    "y": 40,
-    "wires": [
-      [
-        "8a300e4d9985ac0d"
-      ]
-    ]
-  },
-  {
-    "id": "8c71ca838a9cf010",
-    "type": "api-call-service",
-    "z": "5799dae45d05d32f",
-    "name": "play rtttl",
-    "server": "e9739673.bbfed8",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "esphome",
-    "service": "{{ play_rtttl_service }}",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\t    \"song_str\": ns_panel_notification.sound\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1200,
-    "y": 80,
-    "wires": [
-      [
-        "3b55bb4418648944"
-      ]
-    ]
-  },
-  {
-    "id": "edfc9d11913960c1",
-    "type": "switch",
-    "z": "5799dae45d05d32f",
-    "name": "sound is none?",
-    "property": "ns_panel_notification.sound",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "none",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 1020,
-    "y": 40,
-    "wires": [
-      [
-        "3b55bb4418648944"
-      ],
-      [
-        "8c71ca838a9cf010"
+        "baacb20b3008b0fc"
       ]
     ]
   },
@@ -314,7 +314,7 @@
         "type": "str"
       }
     ],
-    "x": 1520,
+    "x": 800,
     "y": 40,
     "wires": [
       []
@@ -331,8 +331,699 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 1530,
+    "x": 810,
     "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "073e1376c405d6e2",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "c6887b20c5599c7a",
+    "name": "set page timeout",
+    "links": [],
+    "x": 85,
+    "y": 260,
+    "wires": [
+      [
+        "0b9b9696ccd4ddec"
+      ]
+    ]
+  },
+  {
+    "id": "0b9b9696ccd4ddec",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "g": "c6887b20c5599c7a",
+    "name": "map entities",
+    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 260,
+    "wires": [
+      [
+        "1850bcc1951204f7"
+      ]
+    ]
+  },
+  {
+    "id": "1850bcc1951204f7",
+    "type": "api-call-service",
+    "z": "5799dae45d05d32f",
+    "g": "c6887b20c5599c7a",
+    "name": "set page timeout",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "number",
+    "service": "set_value",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ page_timeout_entity_ids }}"
+    ],
+    "data": "{\t    \"value\": ns_panel_notification.duration\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 410,
+    "y": 260,
+    "wires": [
+      [
+        "57384d954758252a"
+      ]
+    ]
+  },
+  {
+    "id": "57384d954758252a",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "c6887b20c5599c7a",
+    "name": "page timeout set",
+    "mode": "return",
+    "links": [],
+    "x": 555,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "0a31b81ba1e74cca",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "14a8fa52c968698a",
+    "name": "reset page timeout",
+    "links": [
+      "cd4e92bf523ed1df"
+    ],
+    "x": 85,
+    "y": 360,
+    "wires": [
+      [
+        "1089c25d611f979a"
+      ]
+    ]
+  },
+  {
+    "id": "1089c25d611f979a",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "g": "14a8fa52c968698a",
+    "name": "for every page_timeout_entity",
+    "func": "const old_page_timeout_entities = msg.old_page_timeout_entities;\nold_page_timeout_entities.forEach((page_timeout_entity) => {\n    node.send({\n        ...msg,\n        page_timeout_entity,\n    });\n});\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 270,
+    "y": 360,
+    "wires": [
+      [
+        "e743caf5e12fb0cb"
+      ]
+    ]
+  },
+  {
+    "id": "e743caf5e12fb0cb",
+    "type": "api-call-service",
+    "z": "5799dae45d05d32f",
+    "g": "14a8fa52c968698a",
+    "name": "set page timeout",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "number",
+    "service": "set_value",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{ page_timeout_entity.entity_id }}"
+    ],
+    "data": "{\t    \"value\": page_timeout_entity.state\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 530,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5777d62b3d95aa66",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "c6ae929861472fd2",
+    "name": "save page timeout",
+    "links": [],
+    "x": 85,
+    "y": 160,
+    "wires": [
+      [
+        "e539aac8842eb8d8"
+      ]
+    ]
+  },
+  {
+    "id": "e539aac8842eb8d8",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "g": "c6ae929861472fd2",
+    "name": "map entities",
+    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nconst page_timeout_entity_ids = ns_panels.map((ns_panel) => `number.${ns_panel}_page_timeout`);\n\nreturn {\n    ...msg,\n    page_timeout_entity_ids\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 160,
+    "wires": [
+      [
+        "47a62ff803d0ce98"
+      ]
+    ]
+  },
+  {
+    "id": "47a62ff803d0ce98",
+    "type": "ha-get-entities",
+    "z": "5799dae45d05d32f",
+    "g": "c6ae929861472fd2",
+    "name": "get page timeout",
+    "server": "e9739673.bbfed8",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "includes",
+        "value": "page_timeout_entity_ids",
+        "valueType": "msg"
+      }
+    ],
+    "output_type": "array",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "old_page_timeout_entities",
+    "output_results_count": 1,
+    "x": 410,
+    "y": 160,
+    "wires": [
+      [
+        "999caccab33ef922"
+      ]
+    ]
+  },
+  {
+    "id": "999caccab33ef922",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "c6ae929861472fd2",
+    "name": "page timeout saved",
+    "mode": "return",
+    "links": [],
+    "x": 545,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "f914a127b7420c9f",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "map services",
+    "func": "const ns_panel = msg.ns_panel;\n\nconst notification_show_service = `${ns_panel}_notification_show`;\nconst play_rtttl_service = `${ns_panel}_play_rtttl`;\n\nreturn {\n    ...msg,\n    notification_show_service,\n    play_rtttl_service\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 210,
+    "y": 460,
+    "wires": [
+      [
+        "fce2a66c18c8ea96"
+      ]
+    ]
+  },
+  {
+    "id": "fce2a66c18c8ea96",
+    "type": "api-call-service",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "show notification",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "esphome",
+    "service": "{{ notification_show_service }}",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"label\": ns_panel_notification.label,\t    \"text\": ns_panel_notification.text\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 410,
+    "y": 460,
+    "wires": [
+      [
+        "8856b30200c34ff6"
+      ]
+    ]
+  },
+  {
+    "id": "8856b30200c34ff6",
+    "type": "switch",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "sound is none?",
+    "property": "ns_panel_notification.sound",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "none",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 620,
+    "y": 460,
+    "wires": [
+      [
+        "9a8834e7f3a6072a"
+      ],
+      [
+        "1143d0cd6a83b7f9"
+      ]
+    ]
+  },
+  {
+    "id": "1143d0cd6a83b7f9",
+    "type": "api-call-service",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "play rtttl",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "esphome",
+    "service": "{{ play_rtttl_service }}",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\t    \"song_str\": ns_panel_notification.sound\t}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 800,
+    "y": 500,
+    "wires": [
+      [
+        "9a8834e7f3a6072a"
+      ]
+    ]
+  },
+  {
+    "id": "4d96fdc34234c622",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "show notification",
+    "links": [],
+    "x": 85,
+    "y": 460,
+    "wires": [
+      [
+        "f914a127b7420c9f"
+      ]
+    ]
+  },
+  {
+    "id": "9a8834e7f3a6072a",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "83cdf7765b5a4942",
+    "name": "notification shown",
+    "mode": "return",
+    "links": [],
+    "x": 915,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "baacb20b3008b0fc",
+    "type": "link call",
+    "z": "5799dae45d05d32f",
+    "name": "",
+    "links": [
+      "d2b9c98c05369d4d"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 390,
+    "y": 40,
+    "wires": [
+      [
+        "f3931df74bc24cc1"
+      ]
+    ]
+  },
+  {
+    "id": "2815644d77e886cf",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "52f40d0a17d1b0df",
+    "name": "panel cleanup",
+    "links": [
+      "e408edda005200f8"
+    ],
+    "x": 85,
+    "y": 800,
+    "wires": [
+      [
+        "e4ebcfa667fa93ab",
+        "cd4e92bf523ed1df"
+      ]
+    ]
+  },
+  {
+    "id": "e4ebcfa667fa93ab",
+    "type": "switch",
+    "z": "5799dae45d05d32f",
+    "g": "52f40d0a17d1b0df",
+    "name": "not remain",
+    "property": "ns_panel_notification.remain",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 210,
+    "y": 800,
+    "wires": [
+      [
+        "7946e78a1a1a2dee"
+      ]
+    ]
+  },
+  {
+    "id": "cd4e92bf523ed1df",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "52f40d0a17d1b0df",
+    "name": "reset page timeout",
+    "mode": "link",
+    "links": [
+      "0a31b81ba1e74cca"
+    ],
+    "x": 155,
+    "y": 860,
+    "wires": []
+  },
+  {
+    "id": "d2b9c98c05369d4d",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "ead721039a85eda7",
+    "name": "panel setup",
+    "links": [],
+    "x": 85,
+    "y": 700,
+    "wires": [
+      [
+        "15e51ec9d6da5f4d"
+      ]
+    ]
+  },
+  {
+    "id": "15e51ec9d6da5f4d",
+    "type": "link call",
+    "z": "5799dae45d05d32f",
+    "g": "ead721039a85eda7",
+    "name": "save page timeout",
+    "links": [
+      "5777d62b3d95aa66"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 230,
+    "y": 700,
+    "wires": [
+      [
+        "24965445637332b9"
+      ]
+    ]
+  },
+  {
+    "id": "24965445637332b9",
+    "type": "link call",
+    "z": "5799dae45d05d32f",
+    "g": "ead721039a85eda7",
+    "name": "set page timeout",
+    "links": [
+      "073e1376c405d6e2"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 450,
+    "y": 700,
+    "wires": [
+      [
+        "a64ad88b5d044d1c"
+      ]
+    ]
+  },
+  {
+    "id": "a64ad88b5d044d1c",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "ead721039a85eda7",
+    "name": "panel setup",
+    "mode": "return",
+    "links": [],
+    "x": 595,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "e408edda005200f8",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "name": "panel cleanup",
+    "mode": "link",
+    "links": [
+      "2815644d77e886cf"
+    ],
+    "x": 1195,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "1e483a24fd006efb",
+    "type": "ha-wait-until",
+    "z": "5799dae45d05d32f",
+    "name": "wait for action",
+    "server": "e9739673.bbfed8",
+    "version": 2,
+    "outputs": 2,
+    "entityId": "",
+    "entityIdFilterType": "exact",
+    "property": "state",
+    "comparator": "is",
+    "value": "notificationclearrelease$|notificationacceptrelease$",
+    "valueType": "re",
+    "timeout": "ns_panel_notification.duration",
+    "timeoutType": "jsonata",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": false,
+    "outputProperties": [],
+    "entityLocation": "data",
+    "entityLocationType": "none",
+    "x": 1060,
+    "y": 160,
+    "wires": [
+      [
+        "e408edda005200f8"
+      ],
+      [
+        "e408edda005200f8"
+      ]
+    ]
+  },
+  {
+    "id": "0ef80394f893f891",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "name": "create last_click regex",
+    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nconst sensors = ns_panels.map((ns_panel) => `sensor.${ns_panel}_last_click$`);\nconst last_click_regex = sensors.join('|');\n\nreturn {\n    ...msg,\n    payload: {\n        entity_id: last_click_regex,\n        entityIdFilterType: 'regex',\n    }\n};",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 840,
+    "y": 160,
+    "wires": [
+      [
+        "1e483a24fd006efb"
+      ]
+    ]
+  },
+  {
+    "id": "aec59f5f5be36759",
+    "type": "function",
+    "z": "5799dae45d05d32f",
+    "g": "5b950bba3a1f3d93",
+    "name": "for every ns panel",
+    "func": "const ns_panels = msg.ns_panel_notification.ns_panels;\nns_panels.forEach((ns_panel, index) => {\n    node.send({\n        ...msg,\n        ns_panel,\n        parts: {\n            id: \"ns_panel_notification\",\n            type: \"array\",\n            count: ns_panels.length,\n            len: 1,\n            index\n        }\n    });\n});\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 230,
+    "y": 600,
+    "wires": [
+      [
+        "c278ecf7d439fe0b"
+      ]
+    ]
+  },
+  {
+    "id": "c278ecf7d439fe0b",
+    "type": "link call",
+    "z": "5799dae45d05d32f",
+    "g": "5b950bba3a1f3d93",
+    "name": "",
+    "links": [
+      "4d96fdc34234c622"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 450,
+    "y": 600,
+    "wires": [
+      [
+        "3b55bb4418648944"
+      ]
+    ]
+  },
+  {
+    "id": "3b55bb4418648944",
+    "type": "join",
+    "z": "5799dae45d05d32f",
+    "g": "5b950bba3a1f3d93",
+    "name": "",
+    "mode": "auto",
+    "build": "array",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "num",
+    "reduceFixup": "",
+    "x": 630,
+    "y": 600,
+    "wires": [
+      [
+        "76a7a0d9bf2f0bb4"
+      ]
+    ]
+  },
+  {
+    "id": "6874f86fb1c89f05",
+    "type": "link in",
+    "z": "5799dae45d05d32f",
+    "g": "5b950bba3a1f3d93",
+    "name": "show notifications",
+    "links": [],
+    "x": 85,
+    "y": 600,
+    "wires": [
+      [
+        "aec59f5f5be36759"
+      ]
+    ]
+  },
+  {
+    "id": "76a7a0d9bf2f0bb4",
+    "type": "link out",
+    "z": "5799dae45d05d32f",
+    "g": "5b950bba3a1f3d93",
+    "name": "notifications shown",
+    "mode": "return",
+    "links": [],
+    "x": 735,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "f3931df74bc24cc1",
+    "type": "link call",
+    "z": "5799dae45d05d32f",
+    "name": "",
+    "links": [
+      "6874f86fb1c89f05"
+    ],
+    "linkType": "static",
+    "timeout": "30",
+    "x": 590,
+    "y": 40,
+    "wires": [
+      [
+        "c0637180b40fcc6e",
+        "78c81ec4f2c90a83",
+        "0ef80394f893f891"
+      ]
+    ]
+  },
+  {
+    "id": "7946e78a1a1a2dee",
+    "type": "subflow:ae792429f867c954",
+    "z": "5799dae45d05d32f",
+    "g": "52f40d0a17d1b0df",
+    "name": "",
+    "env": [
+      {
+        "name": "ns_panels",
+        "value": "{{ns_panel_notification.ns_panels}}",
+        "type": "str"
+      }
+    ],
+    "x": 430,
+    "y": 800,
     "wires": [
       []
     ]
