@@ -59,7 +59,7 @@
     "name": "",
     "env": [
       {
-        "name": "num_persons",
+        "name": "min_num_persons",
         "value": "1",
         "type": "num"
       }
@@ -67,10 +67,10 @@
     "x": 330,
     "y": 60,
     "wires": [
+      [],
       [
         "250a39d55d8fefc1"
-      ],
-      []
+      ]
     ]
   },
   {
