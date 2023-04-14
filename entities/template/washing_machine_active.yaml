@@ -7,4 +7,4 @@ binary_sensor:
     delay_off:
       seconds: 20
     state: >
-      {{ states('sensor.plug_washing_machine_active_power')|float|default(0) > 5 }}
+      {{ states('sensor.plug_washing_machine_active_power')|float|default(0) > 0 }}
