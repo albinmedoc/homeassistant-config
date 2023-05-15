@@ -297,7 +297,7 @@
       - 0
       entity12: switch.plug_tv_bedroom
       entity12_name: TV
-      entity12_icon: 
+      entity12_icon: mdi:television
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
@@ -321,14 +321,14 @@
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
-      entity25_icon: 
+      entity25_icon: mdi:lightbulb-multiple
       entity25_icon_color:
       - 240
       - 180
       - 0
       entity26_name: Filmläge
       entity26: scene.movie
-      entity26_icon: 
+      entity26_icon: mdi:movie
       entity26_icon_color:
       - 216
       - 76
@@ -336,45 +336,39 @@
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
-      entity27_icon: 
+      entity27_icon: mdi:weather-night
       entity27_icon_color:
       - 114
       - 12
       - 184
       entitypages_enabled: true
-      home_button06_icon: 
       entity_page01_label: Säkerhet
       entities_entity01_name: Barnens Sovrum
       entities_entity01: binary_sensor.window_kids_bedroom
-      entities_entity01_icon: 
+      entities_entity01_icon: mdi:window-closed
       entities_entity02_name: Lekrum
       entities_entity02: binary_sensor.window_playroom
-      entities_entity02_icon: 
+      entities_entity02_icon: mdi:window-closed
       entities_entity03_name: Sovrum
       entities_entity03: binary_sensor.window_bedroom
-      entities_entity03_icon: 
+      entities_entity03_icon: mdi:window-closed
       entities_entity04_name: Ytterdörr
       entities_entity04: binary_sensor.door_main_hallway
-      entities_entity04_icon: 
+      entities_entity04_icon: mdi:door
       entities_entity05_name: Uterum
       entities_entity05: binary_sensor.door_conservatory
-      entities_entity05_icon: 
+      entities_entity05_icon: mdi:door
       entity_page02_label: Temperatur
       entities_entity09_name: Vardagsrum
       entities_entity09: sensor.temperature_living_room
-      entities_entity09_icon: 
       entities_entity10_name: Hall
       entities_entity10: sensor.temperature_hallway
-      entities_entity10_icon: 
       entities_entity11_name: Sovrum
       entities_entity11: sensor.temperature_bedroom
-      entities_entity11_icon: 
       entities_entity12_name: Barnens sovrum
       entities_entity12: sensor.temperature_kids_bedroom
-      entities_entity12_icon: 
       entities_entity13_name: Uterum
       entities_entity13: sensor.temperature_conservatory
-      entities_entity13_icon: 
 - id: '1678918339019'
   alias: NS-Panel Living room
   description: ''
@@ -445,7 +439,7 @@
       - 0
       entity12: switch.plug_tv_bedroom
       entity12_name: TV
-      entity12_icon: 
+      entity12_icon: mdi:television
       button_page03_label: Hall
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
@@ -469,14 +463,14 @@
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
-      entity25_icon: 
+      entity25_icon: mdi:lightbulb-multiple
       entity25_icon_color:
       - 240
       - 180
       - 0
       entity26_name: Filmläge
       entity26: scene.movie
-      entity26_icon: 
+      entity26_icon: mdi:movie
       entity26_icon_color:
       - 216
       - 76
@@ -484,42 +478,36 @@
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
-      entity27_icon: 
+      entity27_icon: mdi:weather-night
       entity27_icon_color:
       - 114
       - 12
       - 184
       entitypages_enabled: true
-      home_button06_icon: 
       entity_page01_label: Säkerhet
       entities_entity01_name: Barnens Sovrum
       entities_entity01: binary_sensor.window_kids_bedroom
-      entities_entity01_icon: 
+      entities_entity01_icon: mdi:window-closed
       entities_entity02_name: Lekrum
       entities_entity02: binary_sensor.window_playroom
-      entities_entity02_icon: 
+      entities_entity02_icon: mdi:window-closed
       entities_entity03_name: Sovrum
       entities_entity03: binary_sensor.window_bedroom
-      entities_entity03_icon: 
+      entities_entity03_icon: mdi:window-closed
       entities_entity04_name: Ytterdörr
       entities_entity04: binary_sensor.door_main_hallway
-      entities_entity04_icon: 
+      entities_entity04_icon: mdi:door
       entities_entity05_name: Uterum
       entities_entity05: binary_sensor.door_conservatory
-      entities_entity05_icon: 
+      entities_entity05_icon: mdi:door
       entity_page02_label: Temperatur
       entities_entity09_name: Vardagsrum
       entities_entity09: sensor.temperature_living_room
-      entities_entity09_icon: 
       entities_entity10_name: Hall
       entities_entity10: sensor.temperature_hallway
-      entities_entity10_icon: 
       entities_entity11_name: Sovrum
       entities_entity11: sensor.temperature_bedroom
-      entities_entity11_icon: 
       entities_entity12_name: Barnens sovrum
       entities_entity12: sensor.temperature_kids_bedroom
-      entities_entity12_icon: 
       entities_entity13_name: Uterum
       entities_entity13: sensor.temperature_conservatory
-      entities_entity13_icon: 
