@@ -227,7 +227,7 @@
   use_blueprint:
     path: Blackymas/nspanel_blueprint.yaml
     input:
-      nspanel_name: ns_panel_hallway
+      nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
       language: SWE
       date_format: '%-d/%-m'
       weather_entity: weather.smhi
@@ -381,7 +381,7 @@
   use_blueprint:
     path: Blackymas/nspanel_blueprint.yaml
     input:
-      nspanel_name: ns_panel_living_room
+      nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
       language: SWE
       date_format: '%-d/%-m'
       weather_entity: weather.smhi
