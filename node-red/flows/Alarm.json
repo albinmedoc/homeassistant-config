@@ -24,7 +24,9 @@
       "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 859
+    "y": 859,
+    "w": 1112,
+    "h": 122
   },
   {
     "id": "2c760ae190629011",
@@ -39,7 +41,9 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 999
+    "y": 999,
+    "w": 472,
+    "h": 82
   },
   {
     "id": "ea9720dad10ae7bd",
@@ -56,7 +60,9 @@
       "f277febc1319bf63"
     ],
     "x": 34,
-    "y": 759
+    "y": 759,
+    "w": 992,
+    "h": 82
   },
   {
     "id": "ac4a5fa8ce361c85",
@@ -71,7 +77,9 @@
       "f4a0dc3f7ce96837"
     ],
     "x": 34,
-    "y": 1099
+    "y": 1099,
+    "w": 512,
+    "h": 82
   },
   {
     "id": "dbf45413091d6098",
@@ -89,7 +97,9 @@
       "1543208147c778e2"
     ],
     "x": 34,
-    "y": 659
+    "y": 659,
+    "w": 742,
+    "h": 82
   },
   {
     "id": "819624756ad5ddb3",
@@ -107,7 +117,9 @@
       "8b850efc4a432f90"
     ],
     "x": 34,
-    "y": 559
+    "y": 559,
+    "w": 722,
+    "h": 82
   },
   {
     "id": "f3fabdf91855700f",
@@ -126,7 +138,9 @@
       "edbc2d86c78d49de"
     ],
     "x": 34,
-    "y": 19
+    "y": 19,
+    "w": 1072,
+    "h": 142
   },
   {
     "id": "75e39dcb53bdacc7",
@@ -142,10 +156,14 @@
       "9b0337d5217d7ff0",
       "79187bcd88145076",
       "216ec54d7e952b1a",
-      "df261142f335350f"
+      "df261142f335350f",
+      "9164d2928d26e029",
+      "63ef5f87db497514"
     ],
     "x": 34,
-    "y": 179
+    "y": 179,
+    "w": 1432,
+    "h": 142
   },
   {
     "id": "60a6418e9202f91b",
@@ -164,7 +182,9 @@
       "32fd7a9c35714b19"
     ],
     "x": 34,
-    "y": 339
+    "y": 339,
+    "w": 1092,
+    "h": 202
   },
   {
     "id": "f277febc1319bf63",
@@ -596,7 +616,7 @@
     ],
     "linkType": "static",
     "timeout": "30",
-    "x": 430,
+    "x": 810,
     "y": 220,
     "wires": [
       [
@@ -771,7 +791,7 @@
     "entityId": [
       "alarm_control_panel.alarmo"
     ],
-    "data": "{\t    \"code\": msg.code,\t    \"mode\": \"away\",\t    \"skip_delay\": true,\t    \"force\": true\t}",
+    "data": "{\t    \"code\": msg.code,\t    \"mode\": msg.mode,\t    \"skip_delay\": true,\t    \"force\": true\t}",
     "dataType": "jsonata",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -961,7 +981,7 @@
     "y": 220,
     "wires": [
       [
-        "48c2925eb12eb26f"
+        "9164d2928d26e029"
       ],
       [
         "9b0337d5217d7ff0"
@@ -1089,7 +1109,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 670,
+    "x": 1050,
     "y": 220,
     "wires": [
       [
@@ -1110,7 +1130,7 @@
         "type": "str"
       }
     ],
-    "x": 930,
+    "x": 1310,
     "y": 220,
     "wires": [
       []
@@ -1771,6 +1791,73 @@
     "y": 1220,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "9164d2928d26e029",
+    "type": "api-current-state",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "Dog mode?",
+    "server": "e9739673.bbfed8",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.dog_mode",
+    "state_type": "habool",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "dog_mode",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 390,
+    "y": 220,
+    "wires": [
+      [
+        "63ef5f87db497514"
+      ]
+    ]
+  },
+  {
+    "id": "63ef5f87db497514",
+    "type": "change",
+    "z": "9081c37be56bc95b",
+    "g": "75e39dcb53bdacc7",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "mode",
+        "pt": "msg",
+        "to": "dog_mode ? 'home' : 'away'",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 580,
+    "y": 220,
+    "wires": [
+      [
+        "48c2925eb12eb26f"
+      ]
     ]
   }
 ]
