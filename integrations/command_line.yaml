@@ -1,0 +1,7 @@
+---
+# This handles the loading of my command line entities.
+#
+# https://www.home-assistant.io/integrations/command_line
+#
+
+command_line: !include_dir_list ../entities/command_line
