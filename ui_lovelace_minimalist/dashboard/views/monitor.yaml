@@ -27,21 +27,6 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    label: "Skrivare"
-
-  - type: "custom:button-card"
-    template: "custom_card_sisimomo_printer"
-    entity: sensor.printer_status
-    notification: "mdi:window-shutter"
-    variables:
-      printer_name: "HP LaserJet M209dw"
-      cartridges:
-        - label: "Bläck"
-          entity_id: sensor.printer_toner_black
-          color: "black"
-
-  - type: "custom:button-card"
-    template: card_title
     label: "NAS"
 
   - type: "custom:button-card"
