@@ -73,7 +73,6 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 
 | `Integration` | `Usage` |
 |--------------:|:--------|
-| **[Garbage Collection](https://github.com/bruxy70/Garbage-Collection)** | adds a sensor to indicate when the garbage is collected.
 | **[SamsungTV Tizen](https://github.com/jaruba/ha-samsungtv-tizen)** | to controll my samsung tv through HA.
 | **[Tapo: Cameras Control](https://github.com/JurajNyiri/HomeAssistant-Tapo-Control)** | to add all my Tapo cameras into HA, supports ONVIF.
 | **[browser_mod](https://github.com/thomasloven/hass-browser_mod)** | to add pop-up support in dashboard.

@@ -1,0 +1,8 @@
+---
+# This sensor keeps track of how many days until it's garbage collection
+#
+
+sensor:
+  - unique_id: 85684a1a-f756-4101-a1b6-482ca91341e3
+    state_class: "measurement"
+    state: "{{ (as_local(as_datetime(state_attr('calendar.sophamtning', 'start_time'))) - today_at('00:00')).days }}"
