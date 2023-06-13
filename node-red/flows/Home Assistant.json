@@ -19,7 +19,9 @@
       "6ed9e60aeed51db7"
     ],
     "x": 34,
-    "y": 539
+    "y": 539,
+    "w": 532,
+    "h": 82
   },
   {
     "id": "a2a2c7d13b2d1495",
@@ -35,7 +37,9 @@
       "0b4e37880bc471a9"
     ],
     "x": 34,
-    "y": 439
+    "y": 439,
+    "w": 652,
+    "h": 82
   },
   {
     "id": "d45aea997f43d7df",
@@ -50,7 +54,9 @@
       "7c9eac7cf14500bf"
     ],
     "x": 34,
-    "y": 339
+    "y": 339,
+    "w": 472,
+    "h": 82
   },
   {
     "id": "2e59710b52d84cd4",
@@ -65,7 +71,9 @@
       "bc6575adb8f391d5"
     ],
     "x": 34,
-    "y": 239
+    "y": 239,
+    "w": 392,
+    "h": 82
   },
   {
     "id": "86f8f4678672d22a",
@@ -82,7 +90,9 @@
       "ee0ceb693d698385"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 472,
+    "h": 182
   },
   {
     "id": "6ed9e60aeed51db7",
@@ -129,7 +139,7 @@
         "value": ""
       }
     ],
-    "entityidfilter": "sensor.nspanel_blueprint_latest_version",
+    "entityidfilter": "sensor.blackymas_nspanel_ha_blueprint_latest_version",
     "entityidfiltertype": "exact",
     "outputinitially": false,
     "state_type": "str",
