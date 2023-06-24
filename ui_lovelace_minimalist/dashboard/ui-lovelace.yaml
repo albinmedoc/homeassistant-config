@@ -17,7 +17,7 @@ views:
   - !include views/hallway.yaml
   - !include views/kitchen.yaml
   - !include views/kids_bedroom.yaml
-  - !include views/playroom.yaml
+  - !include views/elinas_room.yaml
   - !include views/conservatory.yaml
   - !include views/bathroom.yaml
   - !include views/toilet.yaml

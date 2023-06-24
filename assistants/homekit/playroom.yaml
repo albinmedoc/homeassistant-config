@@ -1,9 +1,9 @@
 ---
 #
 # List of entities that is exposed to HomeKit/Siri
-# Area: Playroom
+# Area: Elinas room
 #
 
-- light.ceiling_lamp_playroom
+- light.ceiling_lamp_elinas_room
 
-- camera.playroom_stream
+- camera.elinas_room_stream

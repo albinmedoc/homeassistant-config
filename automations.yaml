@@ -346,8 +346,8 @@
       entities_entity01_name: Barnens Sovrum
       entities_entity01: binary_sensor.window_kids_bedroom
       entities_entity01_icon: mdi:window-closed
-      entities_entity02_name: Lekrum
-      entities_entity02: binary_sensor.window_playroom
+      entities_entity02_name: Elinas rum
+      entities_entity02: binary_sensor.window_elinas_room
       entities_entity02_icon: mdi:window-closed
       entities_entity03_name: Sovrum
       entities_entity03: binary_sensor.window_bedroom
@@ -488,8 +488,8 @@
       entities_entity01_name: Barnens Sovrum
       entities_entity01: binary_sensor.window_kids_bedroom
       entities_entity01_icon: mdi:window-closed
-      entities_entity02_name: Lekrum
-      entities_entity02: binary_sensor.window_playroom
+      entities_entity02_name: Elinas rum
+      entities_entity02: binary_sensor.window_elinas_room
       entities_entity02_icon: mdi:window-closed
       entities_entity03_name: Sovrum
       entities_entity03: binary_sensor.window_bedroom

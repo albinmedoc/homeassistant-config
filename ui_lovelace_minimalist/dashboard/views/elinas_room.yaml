@@ -1,18 +1,18 @@
 ---
-# Playroom view
+# Elinas room view
 #
 
-title: "Lekrum"
-path: "playroom"
+title: "Elinas rum"
+path: "elinas_room"
 swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
     template: room_view_base
     variables:
-      - title: Lekrum
-      - lights: light.all_playroom
-      - camera: camera.playroom_stream
+      - title: Elinas rum
+      - lights: light.all_elinas_room
+      - camera: camera.elinas_room_stream
 
   - type: "custom:button-card"
     template: card_title
@@ -22,7 +22,7 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.ceiling_lamp_playroom
+        entity: light.ceiling_lamp_elinas_room
         variables:
           ulm_card_light_name: "Taklampa"
 
@@ -37,4 +37,4 @@ cards:
         variables:
           ulm_card_binary_sensor_alert: true
           ulm_show_last_changed: true
-        entity: binary_sensor.window_playroom
+        entity: binary_sensor.window_elinas_room

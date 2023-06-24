@@ -1,0 +1,32 @@
+---
+# Creates a "fake" light
+# This is to handle the light from being unavailable due the relay cuts the power
+#
+
+platform: template
+lights:
+  ceiling_lamp_elinas_room:
+    unique_id: "cc93c96f-a033-4f20-a8cf-8a5786080b4f"
+    availability_template: "{{ states('switch.relay_elinas_room') != 'unavailable' }}"
+    value_template: "{{ is_state('switch.relay_elinas_room', 'on') }}"
+    level_template: "{{ state_attr('light.ceiling_bulb_elinas_room', 'brightness') if states('light.ceiling_bulb_elinas_room') != 'unavailable' else 0 }}"
+    temperature_template: "{{ state_attr('light.ceiling_bulb_elinas_room', 'color_temp') if states('light.ceiling_bulb_elinas_room') != 'unavailable' else 153 }}"
+    turn_on:
+      service: script.turn_on_relay_before_light
+      data:
+        light_entity_id: light.ceiling_bulb_elinas_room
+        relay_entity_id: switch.relay_elinas_room
+    turn_off:
+      service: script.turn_off_light_before_relay
+      data:
+        light_entity_id: light.ceiling_bulb_elinas_room
+        relay_entity_id: switch.relay_elinas_room
+    set_level:
+      - service: script.turn_on_relay_before_light
+        data:
+          light_entity_id: light.ceiling_bulb_elinas_room
+          relay_entity_id: switch.relay_elinas_room
+      - service: light.turn_on
+        data:
+          entity_id: light.ceiling_bulb_elinas_room
+          brightness: "{{ brightness }}"

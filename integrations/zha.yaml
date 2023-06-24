@@ -13,7 +13,7 @@ zha:
     ota:
       ikea_provider: true
   device_config:
-    # Relay Playroom
+    # Relay Elinas room
     00:12:4b:00:26:b7:0a:6e-1:
       type: "switch"
 

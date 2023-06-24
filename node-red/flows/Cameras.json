@@ -21,9 +21,7 @@
       "ccb73798baf430ea"
     ],
     "x": 44,
-    "y": 439,
-    "w": 622,
-    "h": 82
+    "y": 439
   },
   {
     "id": "ec260776601b15bd",
@@ -39,9 +37,7 @@
       "7f832b8e9eefdd27"
     ],
     "x": 44,
-    "y": 1219,
-    "w": 552,
-    "h": 82
+    "y": 1219
   },
   {
     "id": "e7e05890b1c08c7e",
@@ -57,9 +53,7 @@
       "030247dadaf91fed"
     ],
     "x": 44,
-    "y": 1119,
-    "w": 552,
-    "h": 82
+    "y": 1119
   },
   {
     "id": "cfed098803bc16cd",
@@ -75,9 +69,7 @@
       "2a123fdb611d4352"
     ],
     "x": 44,
-    "y": 1019,
-    "w": 552,
-    "h": 82
+    "y": 1019
   },
   {
     "id": "7ad94aaec9160b50",
@@ -93,9 +85,7 @@
       "7daa5915c3daa539"
     ],
     "x": 44,
-    "y": 919,
-    "w": 552,
-    "h": 82
+    "y": 919
   },
   {
     "id": "0a04ea6bece547ae",
@@ -113,9 +103,7 @@
       "22e5e39a66497c6d"
     ],
     "x": 44,
-    "y": 739,
-    "w": 552,
-    "h": 162
+    "y": 739
   },
   {
     "id": "037b270105a5e078",
@@ -133,9 +121,7 @@
       "a75318f9898f8b2f"
     ],
     "x": 44,
-    "y": 559,
-    "w": 552,
-    "h": 162
+    "y": 559
   },
   {
     "id": "815082aec75c4eb0",
@@ -529,7 +515,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "0a04ea6bece547ae",
-    "name": "playroom - turn off frigate detection",
+    "name": "Elinas room - turn off frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -538,7 +524,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_playroom_frigate_detect"
+      "switch.camera_elinas_room_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",
@@ -586,7 +572,7 @@
     "type": "api-call-service",
     "z": "896b946718d5907e",
     "g": "037b270105a5e078",
-    "name": "playroom - turn on frigate detection",
+    "name": "Elinas room - turn on frigate detection",
     "server": "e9739673.bbfed8",
     "version": 5,
     "debugenabled": false,
@@ -595,7 +581,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [
-      "switch.camera_playroom_frigate_detect"
+      "switch.camera_elinas_room_frigate_detect"
     ],
     "data": "",
     "dataType": "jsonata",

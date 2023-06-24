@@ -33,7 +33,7 @@ cards:
         variables:
           ulm_card_input_boolean_name: "Nattlampa"
           ulm_card_input_boolean_icon: mdi:lightbulb-night
-  
+
   - type: "custom:button-card"
     template: card_thermostat
     entity: climate.air_condition_kids_bedroom
@@ -61,4 +61,4 @@ cards:
           ulm_card_binary_sensor_alert_name: "Fönster"
           ulm_card_binary_sensor_alert: true
           ulm_show_last_changed: true
-        entity: binary_sensor.window_playroom
+        entity: binary_sensor.window_kids_bedroom

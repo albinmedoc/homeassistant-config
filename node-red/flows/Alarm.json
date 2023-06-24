@@ -24,9 +24,7 @@
       "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 859,
-    "w": 1112,
-    "h": 122
+    "y": 859
   },
   {
     "id": "2c760ae190629011",
@@ -41,9 +39,7 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 999,
-    "w": 472,
-    "h": 82
+    "y": 999
   },
   {
     "id": "ea9720dad10ae7bd",
@@ -60,9 +56,7 @@
       "f277febc1319bf63"
     ],
     "x": 34,
-    "y": 759,
-    "w": 992,
-    "h": 82
+    "y": 759
   },
   {
     "id": "ac4a5fa8ce361c85",
@@ -77,9 +71,7 @@
       "f4a0dc3f7ce96837"
     ],
     "x": 34,
-    "y": 1099,
-    "w": 512,
-    "h": 82
+    "y": 1099
   },
   {
     "id": "dbf45413091d6098",
@@ -97,9 +89,7 @@
       "1543208147c778e2"
     ],
     "x": 34,
-    "y": 659,
-    "w": 742,
-    "h": 82
+    "y": 659
   },
   {
     "id": "819624756ad5ddb3",
@@ -117,9 +107,7 @@
       "8b850efc4a432f90"
     ],
     "x": 34,
-    "y": 559,
-    "w": 722,
-    "h": 82
+    "y": 559
   },
   {
     "id": "f3fabdf91855700f",
@@ -138,9 +126,7 @@
       "edbc2d86c78d49de"
     ],
     "x": 34,
-    "y": 19,
-    "w": 1072,
-    "h": 142
+    "y": 19
   },
   {
     "id": "75e39dcb53bdacc7",
@@ -161,9 +147,7 @@
       "63ef5f87db497514"
     ],
     "x": 34,
-    "y": 179,
-    "w": 1432,
-    "h": 142
+    "y": 179
   },
   {
     "id": "60a6418e9202f91b",
@@ -182,9 +166,7 @@
       "32fd7a9c35714b19"
     ],
     "x": 34,
-    "y": 339,
-    "w": 1092,
-    "h": 202
+    "y": 339
   },
   {
     "id": "f277febc1319bf63",
@@ -1457,7 +1439,7 @@
     "deviceId": [],
     "entityId": [
       "siren.camera_kids_bedroom_siren",
-      "siren.camera_playroom_siren",
+      "siren.camera_elinas_room_siren",
       "siren.camera_garden_siren",
       "siren.camera_living_room_siren"
     ],
@@ -1489,7 +1471,7 @@
     "deviceId": [],
     "entityId": [
       "siren.camera_kids_bedroom_siren",
-      "siren.camera_playroom_siren",
+      "siren.camera_elinas_room_siren",
       "siren.camera_garden_siren",
       "siren.camera_living_room_siren"
     ],
@@ -1521,7 +1503,7 @@
     "deviceId": [],
     "entityId": [
       "switch.camera_kids_bedroom_privacy",
-      "switch.camera_playroom_privacy",
+      "switch.camera_elinas_room_privacy",
       "switch.camera_garden_privacy",
       "switch.camera_living_room_privacy"
     ],
@@ -1550,7 +1532,7 @@
     "areaId": [],
     "deviceId": [],
     "entityId": [],
-    "data": "{\"scene_id\":\"privacy_copy\",\"snapshot_entities\":[\"switch.camera_kids_bedroom_privacy\",\"switch.camera_playroom_privacy\",\"switch.camera_garden_privacy\",\"switch.camera_living_room_privacy\"]}",
+    "data": "{\"scene_id\":\"privacy_copy\",\"snapshot_entities\":[\"switch.camera_kids_bedroom_privacy\",\"switch.camera_elinas_room_privacy\",\"switch.camera_garden_privacy\",\"switch.camera_living_room_privacy\"]}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,

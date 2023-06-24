@@ -10,8 +10,8 @@ entities:
   # Cooker hood light
   - light.cooker_hood_kitchen
 
-  # Bulb Playroom
-  - light.ceiling_bulb_playroom
+  # Bulb Elinas room
+  - light.ceiling_bulb_elinas_room
 
   # Buld Bedroom
   - light.ceiling_bulb_bedroom

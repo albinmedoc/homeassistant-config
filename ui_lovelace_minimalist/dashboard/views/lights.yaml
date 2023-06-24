@@ -103,13 +103,13 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    label: "Lekrum"
+    label: "Elinas rum"
 
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.ceiling_lamp_playroom
+        entity: light.ceiling_lamp_elinas_room
         variables:
           ulm_card_light_name: "Taklampa"
 

@@ -191,10 +191,10 @@ cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
-          - title: Lekrum
+          - title: Elinas rum
           - icon: mdi:teddy-bear
-          - navigation_path: playroom
-          - lights: light.all_playroom
+          - navigation_path: elinas_room
+          - lights: light.all_elinas_room
 
   - type: "horizontal-stack"
     cards:
