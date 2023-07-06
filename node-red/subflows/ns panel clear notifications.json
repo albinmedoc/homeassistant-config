@@ -190,5 +190,15 @@
         "2a0636879e30aaa0"
       ]
     ]
+  },
+  {
+    "id": "7854f717ded7ffba",
+    "type": "comment",
+    "z": "ae792429f867c954",
+    "name": "Current page is gone",
+    "info": "",
+    "x": 400,
+    "y": 80,
+    "wires": []
   }
 ]

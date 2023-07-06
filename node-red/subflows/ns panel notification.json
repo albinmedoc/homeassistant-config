@@ -836,7 +836,6 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "outputs": 2,
-    "entityId": "",
     "entityIdFilterType": "exact",
     "property": "state",
     "comparator": "is",
@@ -1013,5 +1012,15 @@
     "wires": [
       []
     ]
+  },
+  {
+    "id": "27b34bb3d7039b60",
+    "type": "comment",
+    "z": "5799dae45d05d32f",
+    "name": "Last click is gone",
+    "info": "",
+    "x": 820,
+    "y": 200,
+    "wires": []
   }
 ]
