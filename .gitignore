@@ -15,6 +15,7 @@ deps
 
 # Specific file ignores
 secrets.yaml
+.HA_VERSION
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
