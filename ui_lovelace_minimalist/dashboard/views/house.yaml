@@ -11,7 +11,7 @@ cards:
     template: view_heading
     variables:
       - title: Hem
-  
+
   - type: 'custom:button-card'
     template: card_input_boolean
     entity: input_boolean.dog_mode
