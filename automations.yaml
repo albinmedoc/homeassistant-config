@@ -1,4 +1,4 @@
-- id: '1668465104974'
+- id: "1668465104974"
   alias: Notis vid dåligt batteri
   description: Skicka ut en notifikation när sensorer har dåligt batteri.
   use_blueprint:
@@ -6,48 +6,48 @@
     input:
       threshold: 15
       actions:
-      - service: notify.mobile_app_albin_iphone
-        data:
-          title: Dåligt batteri
-          message: '{{sensors}}'
+        - service: notify.mobile_app_albin_iphone
+          data:
+            title: Dåligt batteri
+            message: "{{sensors}}"
       time: 09:00:00
       exclude:
         entity_id:
-        - sensor.matilda_iphone_app_battery_level
-        - sensor.albin_iphone_app_battery_level
-        - sensor.albin_macbook_battery_level
-- id: '1674327218081'
+          - sensor.matilda_iphone_app_battery_level
+          - sensor.albin_iphone_app_battery_level
+          - sensor.albin_macbook_battery_level
+- id: "1674327218081"
   alias: Kontroll Garderob
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1743.yaml
     input:
       integration: ZHA
       controller_device: cad760edc13796a74f8e34fc25c2866d
       action_button_up_short:
-      - service: light.turn_on
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
+        - service: light.turn_on
+          target:
+            entity_id: light.wardrobe_lamp_bedroom
       action_button_down_short:
-      - service: light.turn_off
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
+        - service: light.turn_off
+          target:
+            entity_id: light.wardrobe_lamp_bedroom
       action_button_up_long:
-      - service: light.turn_on
-        data:
-          brightness_pct: 100
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
+        - service: light.turn_on
+          data:
+            brightness_pct: 100
+          target:
+            entity_id: light.wardrobe_lamp_bedroom
       action_button_down_long:
-      - service: light.turn_on
-        data:
-          brightness_pct: 30
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
+        - service: light.turn_on
+          data:
+            brightness_pct: 30
+          target:
+            entity_id: light.wardrobe_lamp_bedroom
       helper_last_controller_event: input_text.controller_helper_wardrobe
 - id: cef76b99-053d-407a-afac-50272f7a2c08
   alias: Kontroll Uterum
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1743.yaml
     input:
@@ -55,32 +55,32 @@
       integration: ZHA
       helper_last_controller_event: input_text.controller_helper_conservatory
       action_button_up_short:
-      - service: light.turn_on
-        target:
-          entity_id:
-          - light.lamp_conservatory
-          - light.roof_loop_conservatory
-        alias: Sätt på Takslinga och Lampa
+        - service: light.turn_on
+          target:
+            entity_id:
+              - light.lamp_conservatory
+              - light.roof_loop_conservatory
+          alias: Sätt på Takslinga och Lampa
       action_button_up_long:
-      - service: switch.turn_on
-        target:
-          entity_id: switch.airfryer_conservatory
-        alias: Sätt på AirFryer
+        - service: switch.turn_on
+          target:
+            entity_id: switch.airfryer_conservatory
+          alias: Sätt på AirFryer
       action_button_down_short:
-      - service: light.turn_off
-        target:
-          entity_id:
-          - light.lamp_conservatory
-          - light.roof_loop_conservatory
-        alias: Stäng av Takslinga och Lampa
+        - service: light.turn_off
+          target:
+            entity_id:
+              - light.lamp_conservatory
+              - light.roof_loop_conservatory
+          alias: Stäng av Takslinga och Lampa
       action_button_down_long:
-      - service: switch.turn_off
-        target:
-          entity_id: switch.airfryer_conservatory
-        alias: Stäng av AirFryer
-- id: '1674415459296'
+        - service: switch.turn_off
+          target:
+            entity_id: switch.airfryer_conservatory
+          alias: Stäng av AirFryer
+- id: "1674415459296"
   alias: Kontroll Albin Sovrum
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1743.yaml
     input:
@@ -89,50 +89,50 @@
       helper_last_controller_event: input_text.controller_helper_albin_bedroom
       action_button_up_short: []
       action_button_up_long:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.night
-        metadata: {}
+        - service: scene.turn_on
+          target:
+            entity_id: scene.night
+          metadata: {}
       action_button_up_double:
-      - service: media_player.toggle
-        data: {}
-        target:
-          entity_id: media_player.tv_bedroom
+        - service: media_player.toggle
+          data: {}
+          target:
+            entity_id: media_player.tv_bedroom
       action_button_down_short:
-      - type: turn_on
-        device_id: fc6ab062501184a599762c445fa1c691
-        entity_id: switch.plug_tv_bedroom
-        domain: switch
+        - type: turn_on
+          device_id: fc6ab062501184a599762c445fa1c691
+          entity_id: switch.plug_tv_bedroom
+          domain: switch
       action_button_down_long:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.night
-        metadata: {}
+        - service: scene.turn_on
+          target:
+            entity_id: scene.night
+          metadata: {}
       action_button_down_double:
-      - service: media_player.toggle
-        data: {}
-        target:
-          entity_id: media_player.tv_bedroom
+        - service: media_player.toggle
+          data: {}
+          target:
+            entity_id: media_player.tv_bedroom
       button_up_double_press: true
       button_down_double_press: true
       helper_double_press_delay: 1000
-- id: '1675625526304'
+- id: "1675625526304"
   alias: Kontroll Hall
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1812.yaml
     input:
       integration: ZHA
       controller_device: 04ce33caec348a593905d01720bebabe
       action_button_short:
-      - service: alarm_control_panel.alarm_disarm
-        data: {}
-        target:
-          entity_id: alarm_control_panel.alarmo
+        - service: alarm_control_panel.alarm_disarm
+          data: {}
+          target:
+            entity_id: alarm_control_panel.alarmo
       helper_last_controller_event: input_text.controller_helper_hallway
-- id: '1675782176107'
+- id: "1675782176107"
   alias: Kontroll Matilda Sovrum
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1743.yaml
     input:
@@ -144,62 +144,65 @@
       button_down_long_loop: true
       button_up_long_loop: true
       action_button_up_long:
-      - service: media_player.volume_up
-        data: {}
-        target:
-          entity_id: media_player.tv_living_room
+        - service: media_player.volume_up
+          data: {}
+          target:
+            entity_id: media_player.tv_living_room
       action_button_down_long:
-      - service: media_player.volume_down
-        data: {}
-        target:
-          entity_id: media_player.tv_living_room
-- id: '1675933105028'
+        - service: media_player.volume_down
+          data: {}
+          target:
+            entity_id: media_player.tv_living_room
+- id: "1675933105028"
   alias: Persistent notifikation - Otillgängliga entiteter
   description: Skapa persistent notifikation om otillgängliga enheter, avvisa om inga.
   trigger:
-  - platform: state
-    entity_id: sensor.unavailable_entities
-    attribute: entity_id
-    to:
-  condition:
-  - condition: template
-    value_template: "{{ is_number(trigger.from_state.state)\n    and is_number(trigger.to_state.state)
-      }}\n"
-  action:
-  - if:
-    - condition: numeric_state
+    - platform: state
       entity_id: sensor.unavailable_entities
-      below: 1
-    then:
-    - service: persistent_notification.dismiss
-      data:
-        notification_id: unavailable_entities
-    else:
-    - service: persistent_notification.create
-      data:
-        notification_id: unavailable_entities
-        title: "{{ \"Otillgängliga entiteter (\" ~ states(\"sensor.unavailable_entities\")
-          ~ \")\" }} \n"
-        message: "{% set ns = namespace(result=[]) %} {% for s in expand(state_attr('sensor.unavailable_entities',
-          'entity_id')) %}\n  {% set ns.result = ns.result + [\n      device_attr(s.entity_id,
-          \"name\") ~ \"|\" ~ device_id(s.entity_id) ~ \"|- **\" ~ s.name ~ \"**\\n\"\n
-          \     ~ \"  - *entity_id*: \" ~ s.entity_id ~ \"\\n\"\n      ~ \"  - *state*:
-          \" ~ s.state ~ \"\\n\"\n    ]\n  %}\n{% endfor %}\n{% set ns.result = ns.result
-          | sort %} {% set lastdev = namespace( id=\"\" ) %} {% set tarr = ns.result
-          %} {% set ns.result = [] %} {% for item in tarr %}\n  {% set dev = namespace(
-          id=\"\" ) %}\n  {% set entity = namespace( data=\"\" ) %}\n  {% set dev.id
-          = item.split(\"|\")[1] %}\n  {% set entity.data = item.split(\"|\")[2] %}\n
-          \ {% if lastdev.id != dev.id %}\n    {% if dev.id != 'None' %}\n      {%
-          set ns.result = ns.result + [ \"**<a href=\\\"/config/devices/device/\"
-          ~ dev.id ~ \"\\\">\" ~ device_attr(dev.id, \"name\") ~ \"</a>**\" ] %}\n
-          \   {% else %}\n      {% set ns.result = ns.result + [ \"**Icke-enhetsentiteter**\"
-          ] %}\n    {% endif %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n
-          \ {% set ns.result = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result
-          | join('\\n') }}\n"
+      attribute: entity_id
+      to:
+  condition:
+    - condition: template
+      value_template:
+        "{{ is_number(trigger.from_state.state)\n    and is_number(trigger.to_state.state)
+        }}\n"
+  action:
+    - if:
+        - condition: numeric_state
+          entity_id: sensor.unavailable_entities
+          below: 1
+      then:
+        - service: persistent_notification.dismiss
+          data:
+            notification_id: unavailable_entities
+      else:
+        - service: persistent_notification.create
+          data:
+            notification_id: unavailable_entities
+            title:
+              "{{ \"Otillgängliga entiteter (\" ~ states(\"sensor.unavailable_entities\")
+              ~ \")\" }} \n"
+            message:
+              "{% set ns = namespace(result=[]) %} {% for s in expand(state_attr('sensor.unavailable_entities',
+              'entity_id')) %}\n  {% set ns.result = ns.result + [\n      device_attr(s.entity_id,
+              \"name\") ~ \"|\" ~ device_id(s.entity_id) ~ \"|- **\" ~ s.name ~ \"**\\n\"\n
+              \     ~ \"  - *entity_id*: \" ~ s.entity_id ~ \"\\n\"\n      ~ \"  - *state*:
+              \" ~ s.state ~ \"\\n\"\n    ]\n  %}\n{% endfor %}\n{% set ns.result = ns.result
+              | sort %} {% set lastdev = namespace( id=\"\" ) %} {% set tarr = ns.result
+              %} {% set ns.result = [] %} {% for item in tarr %}\n  {% set dev = namespace(
+              id=\"\" ) %}\n  {% set entity = namespace( data=\"\" ) %}\n  {% set dev.id
+              = item.split(\"|\")[1] %}\n  {% set entity.data = item.split(\"|\")[2] %}\n
+              \ {% if lastdev.id != dev.id %}\n    {% if dev.id != 'None' %}\n      {%
+              set ns.result = ns.result + [ \"**<a href=\\\"/config/devices/device/\"
+              ~ dev.id ~ \"\\\">\" ~ device_attr(dev.id, \"name\") ~ \"</a>**\" ] %}\n
+              \   {% else %}\n      {% set ns.result = ns.result + [ \"**Icke-enhetsentiteter**\"
+              ] %}\n    {% endif %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n
+              \ {% set ns.result = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result
+              | join('\\n') }}\n"
   mode: restart
-- id: '1678739259510'
+- id: "1678739259510"
   alias: Volymkontroll Vardagsrum
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/ikea_e1744.yaml
     input:
@@ -211,9 +214,9 @@
       action_rotate_left: []
       action_rotate_right: []
       helper_debounce_delay: 100
-- id: '1678740188806'
+- id: "1678740188806"
   alias: Hook - Media Player - TV Vardagsrum
-  description: ''
+  description: ""
   use_blueprint:
     path: EPMatt/media_player.yaml
     input:
@@ -221,15 +224,15 @@
       media_player: media_player.tv_living_room
       controller_device: 0eb1f091144c535885b9f93bcdf86169
       volume_steps_long: 100
-- id: '1678827426647'
+- id: "1678827426647"
   alias: NS-Panel Hallway
-  description: ''
+  description: ""
   use_blueprint:
     path: Blackymas/nspanel_blueprint.yaml
     input:
       nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
       language: SWE
-      date_format: '%-d/%-m'
+      date_format: "%-d/%-m"
       weather_entity: weather.smhi
       qrcode_enabled: true
       qrcode_label: Wifi
@@ -237,64 +240,64 @@
       left_button_entity: light.lamp_2_hallway
       left_button_hold_select: Custom Action
       left_button_hold_custom_action:
-      - service: light.toggle
-        target:
-          entity_id: light.all_hallway
-        data: {}
+        - service: light.toggle
+          target:
+            entity_id: light.all_hallway
+          data: {}
       left_button_name: Hall 2
       right_button_entity: light.lamp_entrance_hallway
       right_button_name: Entre
       right_button_hold_select: Custom Action
       right_button_hold_custom_action:
-      - service: light.toggle
-        target:
-          entity_id: light.all_hallway
-        data: {}
+        - service: light.toggle
+          target:
+            entity_id: light.all_hallway
+          data: {}
       relay_2_local_fallback: true
       button_page01_label: Vardagsrum
       entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
       entity01_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
       entity02_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
       entity03_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity04_name: Matbord
       entity04: light.dining_table_living_room
       entity04_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       button_page02_label: Sovrum
       entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
       entity09_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
       entity10_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity11_name: Rullgardin
       entity11: cover.blind_bedroom
       entity11_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity12: switch.plug_tv_bedroom
       entity12_name: TV
       entity12_icon: mdi:television
@@ -302,49 +305,49 @@
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
       entity17_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity18_name: Lampa 2
       entity18: light.lamp_2_hallway
       entity18_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
       entity19_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       button_page04_label: Åtgärder
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
       entity25_icon: mdi:lightbulb-multiple
       entity25_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity26_name: Filmläge
       entity26: scene.movie
       entity26_icon: mdi:movie
       entity26_icon_color:
-      - 216
-      - 76
-      - 24
+        - 216
+        - 76
+        - 24
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
       entity27_icon: mdi:weather-night
       entity27_icon_color:
-      - 114
-      - 12
-      - 184
+        - 114
+        - 12
+        - 184
       entitypages_enabled: true
       entity_page01_label: Säkerhet
-      entities_entity01_name: Barnens Sovrum
-      entities_entity01: binary_sensor.window_kids_bedroom
+      entities_entity01_name: Aleas rum
+      entities_entity01: binary_sensor.window_aleas_room
       entities_entity01_icon: mdi:window-closed
       entities_entity02_name: Elinas rum
       entities_entity02: binary_sensor.window_elinas_room
@@ -365,19 +368,19 @@
       entities_entity10: sensor.temperature_hallway
       entities_entity11_name: Sovrum
       entities_entity11: sensor.temperature_bedroom
-      entities_entity12_name: Barnens sovrum
-      entities_entity12: sensor.temperature_kids_bedroom
+      entities_entity12_name: Aleas rum
+      entities_entity12: sensor.temperature_aleas_room
       entities_entity13_name: Uterum
       entities_entity13: sensor.temperature_conservatory
-- id: '1678918339019'
+- id: "1678918339019"
   alias: NS-Panel Living room
-  description: ''
+  description: ""
   use_blueprint:
     path: Blackymas/nspanel_blueprint.yaml
     input:
       nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
       language: SWE
-      date_format: '%-d/%-m'
+      date_format: "%-d/%-m"
       weather_entity: weather.smhi
       qrcode_enabled: true
       qrcode_label: Wifi
@@ -388,55 +391,55 @@
       right_button_name: Uterum
       right_button_hold_select: Custom Action
       right_button_hold_custom_action:
-      - service: switch.toggle
-        data: {}
-        target:
-          entity_id: switch.airfryer_conservatory
+        - service: switch.toggle
+          data: {}
+          target:
+            entity_id: switch.airfryer_conservatory
       relay_2_local_fallback: true
       button_page01_label: Vardagsrum
       entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
       entity01_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
       entity02_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
       entity03_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity04_name: Matbord
       entity04: light.dining_table_living_room
       entity04_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       button_page02_label: Sovrum
       entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
       entity09_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
       entity10_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity11_name: Rullgardin
       entity11: cover.blind_bedroom
       entity11_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity12: switch.plug_tv_bedroom
       entity12_name: TV
       entity12_icon: mdi:television
@@ -444,49 +447,49 @@
       entity17_name: Entré
       entity17: light.lamp_entrance_hallway
       entity17_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity18_name: Lampa 2
       entity18: light.lamp_2_hallway
       entity18_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
       entity19_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       button_page04_label: Åtgärder
       entity25_name: Alla lampor
       entity25: light.all
       entity25_confirm: true
       entity25_icon: mdi:lightbulb-multiple
       entity25_icon_color:
-      - 240
-      - 180
-      - 0
+        - 240
+        - 180
+        - 0
       entity26_name: Filmläge
       entity26: scene.movie
       entity26_icon: mdi:movie
       entity26_icon_color:
-      - 216
-      - 76
-      - 24
+        - 216
+        - 76
+        - 24
       entity27_name: Nattläge
       entity27: scene.night
       entity27_confirm: true
       entity27_icon: mdi:weather-night
       entity27_icon_color:
-      - 114
-      - 12
-      - 184
+        - 114
+        - 12
+        - 184
       entitypages_enabled: true
       entity_page01_label: Säkerhet
-      entities_entity01_name: Barnens Sovrum
-      entities_entity01: binary_sensor.window_kids_bedroom
+      entities_entity01_name: Aleas rum
+      entities_entity01: binary_sensor.window_aleas_room
       entities_entity01_icon: mdi:window-closed
       entities_entity02_name: Elinas rum
       entities_entity02: binary_sensor.window_elinas_room
@@ -507,7 +510,7 @@
       entities_entity10: sensor.temperature_hallway
       entities_entity11_name: Sovrum
       entities_entity11: sensor.temperature_bedroom
-      entities_entity12_name: Barnens sovrum
-      entities_entity12: sensor.temperature_kids_bedroom
+      entities_entity12_name: Aleas rum
+      entities_entity12: sensor.temperature_aleas_room
       entities_entity13_name: Uterum
       entities_entity13: sensor.temperature_conservatory

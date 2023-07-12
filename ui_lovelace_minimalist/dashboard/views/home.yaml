@@ -172,22 +172,22 @@ cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
-          - title: Barnens sovrum
-          - icon: mdi:bed-single
-          - navigation_path: kids-bedroom
-          - lights: light.all_kids_bedroom
-          - temperature: sensor.temperature_kids_bedroom
+          - title: Hall
+          - icon: mdi:image-frame
+          - navigation_path: hallway
+          - lights: light.all_hallway
+          - temperature: sensor.temperature_hallway
 
   - type: "horizontal-stack"
     cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
-          - title: Hall
-          - icon: mdi:image-frame
-          - navigation_path: hallway
-          - lights: light.all_hallway
-          - temperature: sensor.temperature_hallway
+          - title: Aleas rum
+          - icon: mdi:bed-single
+          - navigation_path: kids-bedroom
+          - lights: light.all_aleas_room
+          - temperature: sensor.temperature_aleas_room
       - type: custom:decluttering-card
         template: room_card
         variables:

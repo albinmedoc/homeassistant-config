@@ -384,10 +384,11 @@ card_esh_welcome_topbar:
         type: "custom:button-card"
         template: "chip_mdi_icon_only"
         variables:
-          ulm_chip_mdi_icon_only_icon: "mdi:cog-outline"
+          ulm_chip_mdi_icon_only_icon: "mdi:microphone-message"
         tap_action:
-          action: "navigate"
-          navigation_path: "/config/dashboard"
+          action: assist
+          pipeline_id: 01gzhrn7tecthmye4a80kj3qd1
+          start_listening: true
         styles:
           card:
             - align-self: "end"

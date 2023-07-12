@@ -24,7 +24,9 @@
       "dccec8a7a80e5d82"
     ],
     "x": 34,
-    "y": 379
+    "y": 379,
+    "w": 372,
+    "h": 302
   },
   {
     "id": "657a994829f4573f",
@@ -43,7 +45,9 @@
       "3835fda3ddccfb06"
     ],
     "x": 454,
-    "y": 379
+    "y": 379,
+    "w": 372,
+    "h": 302
   },
   {
     "id": "906392ec964d3dab",
@@ -62,7 +66,9 @@
       "d5f851c978157a9f"
     ],
     "x": 34,
-    "y": 39
+    "y": 39,
+    "w": 372,
+    "h": 302
   },
   {
     "id": "01342c3d53a6371c",
@@ -81,7 +87,30 @@
       "3191172f2275f0d6"
     ],
     "x": 454,
-    "y": 39
+    "y": 39,
+    "w": 372,
+    "h": 302
+  },
+  {
+    "id": "42a495fe152f7d6f",
+    "type": "group",
+    "z": "7c1b8ecc3bcbbebd",
+    "name": "Ceiling lamp Aleas room",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "ebd2904721595001",
+      "58789c0894f3f96a",
+      "f21f2aef79a42777",
+      "8ea6bf5f710efaad",
+      "f66624f4c5ca29ef",
+      "ee3b7cd025a68e88"
+    ],
+    "x": 874,
+    "y": 39,
+    "w": 372,
+    "h": 302
   },
   {
     "id": "dccec8a7a80e5d82",
@@ -913,6 +942,214 @@
       [
         "973f595125b71af7"
       ]
+    ]
+  },
+  {
+    "id": "ebd2904721595001",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "switch on",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.relay_aleas_room",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [],
+    "x": 960,
+    "y": 120,
+    "wires": [
+      [
+        "58789c0894f3f96a"
+      ],
+      [
+        "f21f2aef79a42777"
+      ]
+    ]
+  },
+  {
+    "id": "58789c0894f3f96a",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "turn on lamp",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_aleas_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1130,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f21f2aef79a42777",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "turn off lamp",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.ceiling_lamp_aleas_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1130,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8ea6bf5f710efaad",
+    "type": "server-state-changed",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "lamp on",
+    "server": "e9739673.bbfed8",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "light.ceiling_lamp_aleas_room",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [],
+    "x": 960,
+    "y": 260,
+    "wires": [
+      [
+        "f66624f4c5ca29ef"
+      ],
+      [
+        "ee3b7cd025a68e88"
+      ]
+    ]
+  },
+  {
+    "id": "f66624f4c5ca29ef",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "turn on switch",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_aleas_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1140,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ee3b7cd025a68e88",
+    "type": "api-call-service",
+    "z": "7c1b8ecc3bcbbebd",
+    "g": "42a495fe152f7d6f",
+    "name": "turn off switch",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.relay_aleas_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1140,
+    "y": 300,
+    "wires": [
+      []
     ]
   }
 ]

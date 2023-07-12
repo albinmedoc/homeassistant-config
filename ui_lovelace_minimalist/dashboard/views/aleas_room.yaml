@@ -2,7 +2,7 @@
 # Kids bedroom view
 #
 
-title: "Barnens sovrum"
+title: "Aleas rum"
 path: "kids-bedroom"
 swipe_back: "home"
 swipe_forward: null
@@ -10,11 +10,11 @@ cards:
   - type: custom:decluttering-card
     template: room_view_base
     variables:
-      - title: Barnens sovrum
-      - motion_sensor: binary_sensor.motion_kids_bedroom
-      - lights: light.all_kids_bedroom
-      - temperature: sensor.smoke_detector_kids_bedroom_temperature
-      - camera: camera.kids_bedroom_stream
+      - title: Aleas rum
+      - motion_sensor: binary_sensor.motion_aleas_room
+      - lights: light.all_aleas_room
+      - temperature: sensor.smoke_detector_aleas_room_temperature
+      - camera: camera.aleas_room_stream
 
   - type: "custom:button-card"
     template: card_title
@@ -24,19 +24,13 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.ceiling_lamp_kids_bedroom
+        entity: light.ceiling_lamp_aleas_room
         variables:
           ulm_card_light_name: "Taklampa"
-      - type: "custom:button-card"
-        template: card_input_boolean
-        entity: input_boolean.night_light_kids_bedroom
-        variables:
-          ulm_card_input_boolean_name: "Nattlampa"
-          ulm_card_input_boolean_icon: mdi:lightbulb-night
 
   - type: "custom:button-card"
     template: card_thermostat
-    entity: climate.air_condition_kids_bedroom
+    entity: climate.air_condition_aleas_room
     variables:
       ulm_card_thermostat_name: "Air Conditioner"
       ulm_card_thermostat_enable_collapse: true
@@ -54,11 +48,11 @@ cards:
         variables:
           ulm_card_binary_sensor_name: "Rök"
           ulm_card_binary_sensor_alert: true
-        entity: binary_sensor.smoke_detector_kids_bedroom_smoke
+        entity: binary_sensor.smoke_detector_aleas_room_smoke
       - type: "custom:button-card"
         template: card_binary_sensor_alert
         variables:
           ulm_card_binary_sensor_alert_name: "Fönster"
           ulm_card_binary_sensor_alert: true
           ulm_show_last_changed: true
-        entity: binary_sensor.window_kids_bedroom
+        entity: binary_sensor.window_aleas_room

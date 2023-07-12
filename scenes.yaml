@@ -3,7 +3,7 @@
   icon: mdi:home-off
   entities:
     light.all_living_room: "off"
-    light.all_kids_bedroom: "off"
+    light.all_aleas_room: "off"
     light.all_hallway: "off"
     light.all_elinas_room: "off"
     light.all_bedroom: "off"
@@ -18,7 +18,7 @@
   icon: mdi:sleep
   entities:
     light.all_living_room: "off"
-    light.all_kids_bedroom: "off"
+    light.all_aleas_room: "off"
     light.all_hallway: "off"
     light.all_elinas_room: "off"
     light.all_bedroom: "off"

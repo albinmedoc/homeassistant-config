@@ -1,7 +1,0 @@
----
-# This binary sensor is turned on when the night lamp is currently active
-#
-
-binary_sensor:
-  - unique_id: "dead4311-cd10-457c-ae48-99447b913544"
-    state: "{{ is_state('input_boolean.night_light_kids_bedroom', 'on') and (now() > today_at('22:00') or now() < today_at('07:00')) }}"

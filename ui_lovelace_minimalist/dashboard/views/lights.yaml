@@ -97,7 +97,7 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.ceiling_lamp_kids_bedroom
+        entity: light.ceiling_lamp_aleas_room
         variables:
           ulm_card_light_name: "Taklampa"
 

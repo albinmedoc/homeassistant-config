@@ -12,7 +12,7 @@ sensor:
           state_attr('light.all_bedroom', 'entity_id') +
           state_attr('light.all_conservatory', 'entity_id') +
           state_attr('light.all_hallway', 'entity_id') +
-          state_attr('light.all_kids_bedroom', 'entity_id') +
+          state_attr('light.all_aleas_room', 'entity_id') +
           state_attr('light.all_kitchen', 'entity_id') +
           state_attr('light.all_living_room', 'entity_id') +
           state_attr('light.all_elinas_room', 'entity_id') +
