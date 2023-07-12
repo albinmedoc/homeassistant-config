@@ -187,6 +187,98 @@
     "h": 202
   },
   {
+    "id": "7ef139e2e248d51e",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Arming",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "6f51a29b950d44fb",
+      "e70d8c5667ba29bc",
+      "bc4d00155422253c"
+    ],
+    "x": 34,
+    "y": 1199,
+    "w": 692,
+    "h": 82
+  },
+  {
+    "id": "ed4cffe75ed6ed76",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Armed",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "e1ef411b8f07a9b9",
+      "6d806226232b7676"
+    ],
+    "x": 34,
+    "y": 1299,
+    "w": 332,
+    "h": 82
+  },
+  {
+    "id": "b86506a392d6c223",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Triggered",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "61629b8894304c97",
+      "9c8ae5cce7849820",
+      "c92445daf308689d",
+      "cf2385a9f70d9f00",
+      "2abdf8d308f5a5a1",
+      "9784bc69802e38a8"
+    ],
+    "x": 34,
+    "y": 1399,
+    "w": 852,
+    "h": 142
+  },
+  {
+    "id": "57e42db3545ef783",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Was triggered",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "674e7c15b3e9120d",
+      "857e8addceeb0153",
+      "63992e01881c1a45",
+      "4e72c8bfe5ad53b4"
+    ],
+    "x": 34,
+    "y": 1559,
+    "w": 932,
+    "h": 82
+  },
+  {
+    "id": "7b5b32a764a9f51d",
+    "type": "group",
+    "z": "9081c37be56bc95b",
+    "name": "Disarmed",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "62bd21148cc6e7d4",
+      "a59c18f7e31fcc2e"
+    ],
+    "x": 34,
+    "y": 1659,
+    "w": 352,
+    "h": 82
+  },
+  {
     "id": "f277febc1319bf63",
     "type": "switch",
     "z": "9081c37be56bc95b",
@@ -1225,6 +1317,7 @@
     "id": "61629b8894304c97",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
+    "g": "b86506a392d6c223",
     "name": "triggered",
     "server": "e9739673.bbfed8",
     "version": 4,
@@ -1264,8 +1357,8 @@
         "valueType": "eventData"
       }
     ],
-    "x": 100,
-    "y": 1340,
+    "x": 120,
+    "y": 1440,
     "wires": [
       [
         "9c8ae5cce7849820",
@@ -1278,6 +1371,7 @@
     "id": "674e7c15b3e9120d",
     "type": "trigger-state",
     "z": "9081c37be56bc95b",
+    "g": "57e42db3545ef783",
     "name": "was triggered",
     "server": "e9739673.bbfed8",
     "version": 2,
@@ -1321,8 +1415,8 @@
     "outputinitially": false,
     "state_type": "str",
     "enableInput": false,
-    "x": 110,
-    "y": 1480,
+    "x": 130,
+    "y": 1600,
     "wires": [
       [
         "857e8addceeb0153"
@@ -1334,6 +1428,7 @@
     "id": "e1ef411b8f07a9b9",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
+    "g": "ed4cffe75ed6ed76",
     "name": "armed",
     "server": "e9739673.bbfed8",
     "version": 4,
@@ -1366,8 +1461,8 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 90,
-    "y": 1280,
+    "x": 110,
+    "y": 1340,
     "wires": [
       [
         "6d806226232b7676"
@@ -1379,6 +1474,7 @@
     "id": "62bd21148cc6e7d4",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
+    "g": "7b5b32a764a9f51d",
     "name": "disarmed",
     "server": "e9739673.bbfed8",
     "version": 4,
@@ -1411,8 +1507,8 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "x": 100,
-    "y": 1540,
+    "x": 120,
+    "y": 1700,
     "wires": [
       [
         "a59c18f7e31fcc2e"
@@ -1424,6 +1520,7 @@
     "id": "a59c18f7e31fcc2e",
     "type": "subflow:ad0b3a8015e7f49b",
     "z": "9081c37be56bc95b",
+    "g": "7b5b32a764a9f51d",
     "name": "",
     "env": [
       {
@@ -1437,8 +1534,8 @@
         "type": "str"
       }
     ],
-    "x": 270,
-    "y": 1540,
+    "x": 290,
+    "y": 1700,
     "wires": [
       []
     ]
@@ -1447,6 +1544,7 @@
     "id": "9c8ae5cce7849820",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "g": "b86506a392d6c223",
     "name": "turn on camera sirens",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1467,8 +1565,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 300,
-    "y": 1340,
+    "x": 320,
+    "y": 1440,
     "wires": [
       [
         "cf2385a9f70d9f00"
@@ -1479,6 +1577,7 @@
     "id": "857e8addceeb0153",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "g": "57e42db3545ef783",
     "name": "turn off camera sirens",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1499,8 +1598,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 320,
-    "y": 1480,
+    "x": 340,
+    "y": 1600,
     "wires": [
       [
         "4e72c8bfe5ad53b4"
@@ -1511,6 +1610,7 @@
     "id": "c92445daf308689d",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "g": "b86506a392d6c223",
     "name": "turn off privacy",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1531,8 +1631,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 760,
-    "y": 1340,
+    "x": 780,
+    "y": 1440,
     "wires": [
       []
     ]
@@ -1541,6 +1641,7 @@
     "id": "cf2385a9f70d9f00",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "g": "b86506a392d6c223",
     "name": "take privacy snapshot",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1556,8 +1657,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 540,
-    "y": 1340,
+    "x": 560,
+    "y": 1440,
     "wires": [
       [
         "c92445daf308689d"
@@ -1568,6 +1669,7 @@
     "id": "63992e01881c1a45",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "g": "57e42db3545ef783",
     "name": "restore privacy",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1583,8 +1685,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 840,
-    "y": 1480,
+    "x": 860,
+    "y": 1600,
     "wires": [
       []
     ]
@@ -1593,6 +1695,7 @@
     "id": "6d806226232b7676",
     "type": "subflow:ad0b3a8015e7f49b",
     "z": "9081c37be56bc95b",
+    "g": "ed4cffe75ed6ed76",
     "name": "",
     "env": [
       {
@@ -1606,8 +1709,8 @@
         "type": "str"
       }
     ],
-    "x": 250,
-    "y": 1280,
+    "x": 270,
+    "y": 1340,
     "wires": [
       []
     ]
@@ -1617,6 +1720,7 @@
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
     "d": true,
+    "g": "b86506a392d6c223",
     "name": "turn on smoke detector sirens",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1636,8 +1740,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 530,
-    "y": 1400,
+    "x": 550,
+    "y": 1500,
     "wires": [
       []
     ]
@@ -1646,6 +1750,8 @@
     "id": "4e72c8bfe5ad53b4",
     "type": "api-call-service",
     "z": "9081c37be56bc95b",
+    "d": true,
+    "g": "57e42db3545ef783",
     "name": "turn off smoke detector sirens",
     "server": "e9739673.bbfed8",
     "version": 5,
@@ -1665,8 +1771,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 590,
-    "y": 1480,
+    "x": 610,
+    "y": 1600,
     "wires": [
       [
         "63992e01881c1a45"
@@ -1677,6 +1783,7 @@
     "id": "9784bc69802e38a8",
     "type": "switch",
     "z": "9081c37be56bc95b",
+    "g": "b86506a392d6c223",
     "name": "armed_away?",
     "property": "attributes.arm_mode",
     "propertyType": "msg",
@@ -1690,8 +1797,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 280,
-    "y": 1400,
+    "x": 300,
+    "y": 1500,
     "wires": [
       [
         "2abdf8d308f5a5a1"
@@ -1702,6 +1809,7 @@
     "id": "6f51a29b950d44fb",
     "type": "server-state-changed",
     "z": "9081c37be56bc95b",
+    "g": "7ef139e2e248d51e",
     "name": "arming",
     "server": "e9739673.bbfed8",
     "version": 4,
@@ -1741,8 +1849,8 @@
         "valueType": "eventData"
       }
     ],
-    "x": 90,
-    "y": 1220,
+    "x": 110,
+    "y": 1240,
     "wires": [
       [
         "e70d8c5667ba29bc"
@@ -1754,6 +1862,7 @@
     "id": "e70d8c5667ba29bc",
     "type": "switch",
     "z": "9081c37be56bc95b",
+    "g": "7ef139e2e248d51e",
     "name": "armed_away?",
     "property": "attributes.arm_mode",
     "propertyType": "msg",
@@ -1767,8 +1876,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 260,
-    "y": 1220,
+    "x": 280,
+    "y": 1240,
     "wires": [
       [
         "bc4d00155422253c"
@@ -1779,6 +1888,7 @@
     "id": "bc4d00155422253c",
     "type": "subflow:c0dcc6a2aeb58851",
     "z": "9081c37be56bc95b",
+    "g": "7ef139e2e248d51e",
     "name": "",
     "env": [
       {
@@ -1787,8 +1897,8 @@
         "type": "json"
       }
     ],
-    "x": 530,
-    "y": 1220,
+    "x": 550,
+    "y": 1240,
     "wires": [
       []
     ]
