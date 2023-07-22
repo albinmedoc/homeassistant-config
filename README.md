@@ -64,7 +64,6 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 | **[Maria DB](https://github.com/home-assistant/addons/tree/master/mariadb)** | databse used to store history and logbook.
 | **[Mosquitto broker](https://github.com/home-assistant/addons/tree/master/mosquitto)** | to be able to add MQTT devices to HA.
 | **[Node-RED](https://github.com/hassio-addons/addon-node-red)** | to create advanced and visual pleasing automations.
-| **[Samba Backup](https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup)** | to backup HA to my NAS.
 | **[Samba share](https://github.com/home-assistant/addons/tree/master/samba)** | to access my HA config through SMBD.
 | **[SSH & Web Terminal](https://github.com/hassio-addons/addon-ssh)** | to be able to SSH into my HA server, useful if something goes realy bad.
 | **[Studio Code Server](https://github.com/hassio-addons/addon-vscode)** | to easily edit my HA files.
