@@ -18,10 +18,13 @@ custom_card_group_counter_chip:
   show_icon: true
   icon: |
     [[[
+      if(!entity) {
+        return;
+      }
       let entities_active = 0;
       if(variables.ulm_custom_card_group_counter_chip_entities_active) {
         entities_active = states[variables.ulm_custom_card_group_counter_chip_entities_active].state;
-      } else {
+      } else if(states[entity.entity_id]) {
         entities_active = states[
           entity.entity_id
         ].attributes.entity_id.filter((child_entity_id) => {
@@ -39,10 +42,13 @@ custom_card_group_counter_chip:
     ]]]
   label: |
     [[[
+      if(!entity) {
+        return;
+      }
       let entities_active = 0;
       if(variables.ulm_custom_card_group_counter_chip_entities_active) {
         entities_active = states[variables.ulm_custom_card_group_counter_chip_entities_active].state;
-      } else {
+      } else if(states[entity.entity_id]) {
         entities_active = states[
           entity.entity_id
         ].attributes.entity_id.filter((child_entity_id) => {
@@ -59,10 +65,13 @@ custom_card_group_counter_chip:
     card:
       - display: |
           [[[
+            if(!entity) {
+              return "none";
+            }
             let entities_active = 0;
             if(variables.ulm_custom_card_group_counter_chip_entities_active) {
               entities_active = states[variables.ulm_custom_card_group_counter_chip_entities_active].state;
-            } else {
+            } else if(states[entity.entity_id]) {
               entities_active = states[
                 entity.entity_id
               ].attributes.entity_id.filter((child_entity_id) => {
@@ -80,10 +89,13 @@ custom_card_group_counter_chip:
     icon:
       - color: |
           [[[
+            if(!entity) {
+              return;
+            }
             let entities_active = 0;
             if(variables.ulm_custom_card_group_counter_chip_entities_active) {
               entities_active = states[variables.ulm_custom_card_group_counter_chip_entities_active].state;
-            } else {
+            } else if(states[entity.entity_id]) {
               entities_active = states[
                 entity.entity_id
               ].attributes.entity_id.filter((child_entity_id) => {
