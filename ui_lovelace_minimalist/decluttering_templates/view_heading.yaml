@@ -20,8 +20,8 @@ card:
         - type: "custom:button-card"
           template: card_title
           name: "[[title]]"
-
-    - type: "horizontal-stack"
+    
+    - type: custom:swipe-card
       cards:
         - type: conditional
           conditions:
