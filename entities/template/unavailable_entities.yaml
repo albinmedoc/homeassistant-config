@@ -6,11 +6,10 @@
 
 sensor:
   - unique_id: 22e44867-57b9-4b45-aefb-41a889aaf837
-    icon: "{{ iif(states(this.entity_id)|int(0) > 0,'mdi:alert-circle','mdi:check-circle') }}"
-    unit_of_measurement: entities
+    icon: "{{ iif(states(this.entity_id)|int(-1) > 0,'mdi:alert-circle','mdi:check-circle') }}"
     state: >
       {% set entities = state_attr(this.entity_id,'entity_id') %}
-      {% if entities != none %} {{ entities|count }} {% endif %}
+      {{ entities|count if entities != none else none }}
     state_class: measurement
     attributes:
       entity_id: >
