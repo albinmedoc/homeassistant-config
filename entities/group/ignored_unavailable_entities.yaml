@@ -19,3 +19,6 @@ entities:
   # Albin teams
   - sensor.albin_teams_activity
   - sensor.albin_teams_status
+
+  # Air conditioner
+  - climate.air_conditioner
