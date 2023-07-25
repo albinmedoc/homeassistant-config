@@ -30,3 +30,11 @@ cards:
   - type: "custom:button-card"
     template: "card_vacuum"
     entity: vacuum.cleanmate
+
+  - type: "custom:button-card"
+    template: card_thermostat
+    entity: climate.air_conditioner
+    variables:
+      ulm_card_thermostat_enable_collapse: true
+      ulm_card_thermostat_enable_controls: true
+      ulm_card_thermostat_enable_popup: true
