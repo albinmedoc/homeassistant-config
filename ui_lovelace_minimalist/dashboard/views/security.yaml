@@ -14,30 +14,6 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    label: "Kameror"
-
-  - type: custom:auto-entities
-    card:
-      type: "grid"
-      columns: 2
-      square: false
-    card_param: "cards"
-    filter:
-      include:
-        - and:
-            - not:
-                - state: "unavailable"
-            - entity_id: "camera.*_hd_stream"
-          options:
-            type: "custom:button-card"
-            entity: "this.entity_id"
-            template: "custom_card_camera"
-            show_icon: false
-            variables:
-              ulm_custom_card_camera_title: false
-
-  - type: "custom:button-card"
-    template: card_title
     label: "Dörrsensorer"
 
   - type: "horizontal-stack"

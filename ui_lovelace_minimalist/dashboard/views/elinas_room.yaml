@@ -12,7 +12,7 @@ cards:
     variables:
       - title: Elinas rum
       - lights: light.all_elinas_room
-      - camera: camera.elinas_room_stream
+      - camera: camera.elinas_room
 
   - type: "custom:button-card"
     template: card_title

@@ -12,7 +12,7 @@ cards:
     variables:
       - title: Trädgård
       - temperature: sensor.temperature_garden
-      - camera: camera.garden_stream
+      - camera: camera.garden
 
   - type: "horizontal-stack"
     cards:

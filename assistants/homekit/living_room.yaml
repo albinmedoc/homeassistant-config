@@ -11,7 +11,7 @@
 
 - media_player.tv_living_room
 
-- camera.living_room_stream
+- camera.living_room
 
 - binary_sensor.motion_living_room
 

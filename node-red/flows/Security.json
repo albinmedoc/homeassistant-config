@@ -81,7 +81,7 @@
     "env": [
       {
         "name": "notify_data",
-        "value": "{\"title\":\"Person i trädgård!\",\"message\":\"Det verkar som det är någon i trädgården\",\"data\":{\"entity_id\":\"camera.garden_stream\",\"tag\":\"person_garden\"}}",
+        "value": "{\"title\":\"Person i trädgård!\",\"message\":\"Det verkar som det är någon i trädgården\",\"data\":{\"entity_id\":\"camera.garden\",\"tag\":\"person_garden\"}}",
         "type": "json"
       }
     ],

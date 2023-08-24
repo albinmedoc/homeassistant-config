@@ -8,7 +8,7 @@
 
 - climate.air_condition_aleas_room
 
-- camera.aleas_room_stream
+- camera.aleas_room
 
 - binary_sensor.aleas_room_motion
 

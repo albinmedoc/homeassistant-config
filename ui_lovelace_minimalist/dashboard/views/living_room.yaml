@@ -16,7 +16,7 @@ cards:
       - televisions: media_player.televisions_living_room
       - speakers: media_player.speakers_living_room
       - temperature: sensor.smoke_detector_living_room_temperature
-      - camera: camera.living_room_stream
+      - camera: camera.living_room
 
   - type: "custom:button-card"
     template: card_title
