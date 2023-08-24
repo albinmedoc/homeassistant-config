@@ -1,4 +1,10 @@
 ---
+# https://github.com/Blackymas/NSPanel_HA_Blueprint
+# This panel sits in the hallway
+#
+# https://github.com/psvanstrom/esphome-p1reader
+#
+
 substitutions:
 
   ###### CHANGE ME START ######
