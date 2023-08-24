@@ -59,8 +59,6 @@ Tasks are hopefully defined in the [issue queue][link-issues] and their developm
 | **[Cloudflared](https://github.com/brenner-tobias/addon-cloudflared/)** | to use my own domain name and access HA outside my network.
 | **[ESPHome](https://github.com/esphome/esphome)** | to create diy devices.
 | **[Frigate](https://github.com/blakeblackshear/frigate)** | to identify motion and objects in camera feeds, used as DVR.
-| **[Grafana](https://github.com/hassio-addons/addon-grafana)** | to create cool graphs and visualize long-term statistics.
-| **[InfluxDB](https://github.com/hassio-addons/addon-influxdb)** | for long-term statistics.
 | **[Maria DB](https://github.com/home-assistant/addons/tree/master/mariadb)** | databse used to store history and logbook.
 | **[Mosquitto broker](https://github.com/home-assistant/addons/tree/master/mosquitto)** | to be able to add MQTT devices to HA.
 | **[Node-RED](https://github.com/hassio-addons/addon-node-red)** | to create advanced and visual pleasing automations.
