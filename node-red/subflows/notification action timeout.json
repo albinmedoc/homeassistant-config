@@ -4,7 +4,7 @@
     "type": "subflow",
     "name": "notification action timeout",
     "info": "Wait for a notification action, with timeout\n\n### Configuration\n\n#### `Action (regex) required`\n\n- Type: `string`\n\nA regex used to identify the notification action\n\n#### `Timeout required`\n\n- Type: `number`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe timeout in minutes used for the notification action\n\n## Output\n\nValue types:\n\n- `Action`: the action that was used\n\n",
-    "category": "",
+    "category": "notification",
     "in": [
       {
         "x": 60,
@@ -90,11 +90,12 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99",
+    "color": "#C0DEED",
     "outputLabels": [
       "action",
       "timed out"
     ],
+    "icon": "font-awesome/fa-comment",
     "status": {
       "x": 1320,
       "y": 160,
@@ -186,8 +187,8 @@
         "valueType": "bool"
       }
     ],
-    "x": 130,
-    "y": 280,
+    "x": 140,
+    "y": 260,
     "wires": [
       [
         "c5b4b74f55c02e39"

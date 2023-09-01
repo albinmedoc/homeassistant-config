@@ -4,7 +4,7 @@
     "type": "subflow",
     "name": "send notification to person",
     "info": "Send a notification to a person\n\n### Configuration\n\n#### `Person required`\n\n- Type: `string`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nPerson domain to send notification to\n\n#### `Notify Data required`\n\n- Type: `JSON`\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\n\nThe notification data to send to the person\n\n## Output\n\nValue types:\n\n- `Notify Services`: a notify service for the person\n\n",
-    "category": "",
+    "category": "notification",
     "in": [
       {
         "x": 60,
@@ -81,7 +81,8 @@
       }
     ],
     "meta": {},
-    "color": "#DDAA99",
+    "color": "#C0DEED",
+    "icon": "font-awesome/fa-comment",
     "status": {
       "x": 1160,
       "y": 140,
