@@ -1,0 +1,286 @@
+[
+  {
+    "id": "3f53717c75d610d5",
+    "type": "tab",
+    "label": "ios Actions",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "a6a5fa1331e606ab",
+    "type": "group",
+    "z": "3f53717c75d610d5",
+    "name": "Snus Action",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "dbe2ea2f18ae8f96",
+      "9afac06e4e7df6a4",
+      "95ecc023b512f592",
+      "3633f2247cf1cfd0"
+    ],
+    "x": 34,
+    "y": 39,
+    "w": 592,
+    "h": 122
+  },
+  {
+    "id": "c437b73aec0940d7",
+    "type": "group",
+    "z": "3f53717c75d610d5",
+    "name": "TV bedroom action",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "3f19665d1a887a45",
+      "787a213e8b13ac23"
+    ],
+    "x": 34,
+    "y": 279,
+    "w": 392,
+    "h": 82
+  },
+  {
+    "id": "1b78665b71ac26c1",
+    "type": "group",
+    "z": "3f53717c75d610d5",
+    "name": "TV living room action",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "a08689b013afa275",
+      "1958ea0758323e4d"
+    ],
+    "x": 34,
+    "y": 179,
+    "w": 412,
+    "h": 82
+  },
+  {
+    "id": "dbe2ea2f18ae8f96",
+    "type": "subflow:e9ef583367ad9d32",
+    "z": "3f53717c75d610d5",
+    "g": "a6a5fa1331e606ab",
+    "name": "Snus action",
+    "env": [
+      {
+        "name": "action_name",
+        "value": "Snus",
+        "type": "str"
+      },
+      {
+        "name": "output_source_device_name",
+        "value": "sourceName",
+        "type": "str"
+      },
+      {
+        "name": "output_source_device_id",
+        "value": "sourceId",
+        "type": "str"
+      }
+    ],
+    "x": 130,
+    "y": 100,
+    "wires": [
+      [
+        "9afac06e4e7df6a4"
+      ]
+    ]
+  },
+  {
+    "id": "9afac06e4e7df6a4",
+    "type": "switch",
+    "z": "3f53717c75d610d5",
+    "g": "a6a5fa1331e606ab",
+    "name": "check person",
+    "property": "sourceId",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "albin_iphone",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "matilda_iphone",
+        "vt": "str"
+      }
+    ],
+    "checkall": "false",
+    "repair": false,
+    "outputs": 2,
+    "x": 310,
+    "y": 100,
+    "wires": [
+      [
+        "95ecc023b512f592"
+      ],
+      [
+        "3633f2247cf1cfd0"
+      ]
+    ],
+    "outputLabels": [
+      "Albin",
+      "Matilda"
+    ]
+  },
+  {
+    "id": "95ecc023b512f592",
+    "type": "api-call-service",
+    "z": "3f53717c75d610d5",
+    "g": "a6a5fa1331e606ab",
+    "name": "start Albin's timer",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "timer",
+    "service": "start",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "timer.albin_snus"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 510,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3633f2247cf1cfd0",
+    "type": "api-call-service",
+    "z": "3f53717c75d610d5",
+    "g": "a6a5fa1331e606ab",
+    "name": "start Matilda's timer",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "timer",
+    "service": "start",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "timer.matilda_snus"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 510,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a08689b013afa275",
+    "type": "subflow:e9ef583367ad9d32",
+    "z": "3f53717c75d610d5",
+    "g": "1b78665b71ac26c1",
+    "name": "TV Livingroom action",
+    "env": [
+      {
+        "name": "action_name",
+        "value": "TV living room",
+        "type": "str"
+      }
+    ],
+    "x": 160,
+    "y": 220,
+    "wires": [
+      [
+        "1958ea0758323e4d"
+      ]
+    ]
+  },
+  {
+    "id": "1958ea0758323e4d",
+    "type": "api-call-service",
+    "z": "3f53717c75d610d5",
+    "g": "1b78665b71ac26c1",
+    "name": "toggle tv",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.tv_living_room"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 360,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3f19665d1a887a45",
+    "type": "subflow:e9ef583367ad9d32",
+    "z": "3f53717c75d610d5",
+    "g": "c437b73aec0940d7",
+    "name": "TV Bedroom action",
+    "env": [
+      {
+        "name": "action_name",
+        "value": "TV bedroom",
+        "type": "str"
+      }
+    ],
+    "x": 150,
+    "y": 320,
+    "wires": [
+      [
+        "787a213e8b13ac23"
+      ]
+    ]
+  },
+  {
+    "id": "787a213e8b13ac23",
+    "type": "api-call-service",
+    "z": "3f53717c75d610d5",
+    "g": "c437b73aec0940d7",
+    "name": "toggle tv",
+    "server": "e9739673.bbfed8",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.tv_bedroom"
+    ],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 340,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  }
+]

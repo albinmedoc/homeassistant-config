@@ -1,0 +1,31 @@
+---
+# This handles shared ios actions for our devices
+#
+# https://companion.home-assistant.io/docs/core/actions
+#
+
+actions:
+  - name: "Snus"
+    background_color: "#8f8f8f"
+    label:
+      text: "Ta snus"
+      color: "#ffffff"
+    icon:
+      icon: head_plus
+      color: "#ffffff"
+  - name: "TV living room"
+    background_color: "#ffffff"
+    label:
+      text: "TV Vardagsrum"
+      color: "#000000"
+    icon:
+      icon: television
+      color: "#000000"
+  - name: "TV bedroom"
+    background_color: "#ffffff"
+    label:
+      text: "TV Sovrum"
+      color: "#000000"
+    icon:
+      icon: television
+      color: "#000000"

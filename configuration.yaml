@@ -16,3 +16,5 @@
 homeassistant:
   # Load packages
   packages: !include_dir_named integrations
+
+ios: !include ./ios.yaml
