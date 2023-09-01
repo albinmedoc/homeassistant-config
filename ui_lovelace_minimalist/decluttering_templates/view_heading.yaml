@@ -20,7 +20,7 @@ card:
         - type: "custom:button-card"
           template: card_title
           name: "[[title]]"
-    
+
     - type: custom:swipe-card
       cards:
         - type: conditional
