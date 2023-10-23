@@ -1,0 +1,13 @@
+---
+# This handles the loading of my ICS calendars
+#
+# https://github.com/franc6/ics_calendar
+#
+
+ics_calendar:
+  calendars:
+    - name: "Matilda jobb"
+      url: !secret ics_calendar_matilda_work
+      days: 30
+      user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+      exclude: "['Semester', 'VAB', 'Ledig', 'LUNCH']"
