@@ -50,5 +50,5 @@ lights:
         data:
           entity_id: light.ceiling_bulb_elinas_room
           hs_color:
-          - "{{ hs[0] }}"
-          - "{{ hs[1] }}"
+            - "{{ hs[0] }}"
+            - "{{ hs[1] }}"
