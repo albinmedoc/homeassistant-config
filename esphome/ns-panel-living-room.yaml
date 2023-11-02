@@ -2,8 +2,6 @@
 # https://github.com/Blackymas/NSPanel_HA_Blueprint
 # This panel sits in the living room
 #
-# https://github.com/psvanstrom/esphome-p1reader
-#
 
 substitutions:
 
@@ -15,17 +13,55 @@ substitutions:
 
   nextion_update_url: "http://192.168.86.22:8123/local/nspanel/nspanel_eu.tft"  # URL to local tft File
   # nextion_update_url: "https://raw.githubusercontent.com/Blackymas/NSPanel_HA_Blueprint/main/nspanel_eu.tft"  # URL to Github
+  nextion_update_blank_url: "http://192.168.86.22:8123/local/nspanel/nspanel_blank.tft"  # URL to local blank tft File
 
   ##### CHANGE ME END #####
 
 ##### DO NOT CHANGE ANYTHING! #####
 
-packages:
-  ##### download esphome code from Github
-  remote_package:
-    url: https://github.com/Blackymas/NSPanel_HA_Blueprint
-    ref: main
-    files: [nspanel_esphome.yaml]
-    refresh: 300s
+##### MY CUSTOMIZATION START #####
 
-##### DO NOT CHANGE ANYTHING! #####
+deep_sleep:
+  wakeup_pin: 14 # Define the wake-up button. Use pin 14 for left button or pin 27 for right button
+  wakeup_pin_mode: INVERT_WAKEUP
+
+button:
+  # Adds a button to upload a blank TFT file
+  - name: ${device_name} Update TFT display (blank)
+    platform: template
+    icon: mdi:file-sync
+    id: tft_update_blank
+    entity_category: config
+    on_press:
+      - logger.log: "Button pressed: Update TFT display (blank)"
+      - binary_sensor.template.publish:
+          id: nextion_init
+          state: false
+      - delay: 16ms
+      - lambda: |-
+          id(disp1)->set_tft_url("${nextion_update_blank_url}");
+          id(disp1).upload_tft();
+
+api:
+  services:
+
+    ##### SERVICE TO LET THE NSPANEL SLEEP #####
+    - service: sleep
+      variables:
+        minutes: int
+      then:
+        - logger.log: "Service: sleep"
+        - deep_sleep.enter:
+            sleep_duration: !lambda |-
+              return minutes * 60 * 1000;
+
+    ##### SERVICE TO UPDATE THE HMI FILE ##############
+    - service: upload_tft
+      then:
+        - logger.log: "Service: upload_tft"
+        - binary_sensor.template.publish:
+            id: nextion_init
+            state: false
+        - lambda: 'id(disp1)->upload_tft();'
+
+##### MY CUSTOMIZATION END #####
