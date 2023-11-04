@@ -228,7 +228,7 @@
     path: Blackymas/nspanel_blueprint.yaml
     input:
       nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
-      language: SWE
+      language: sv
       date_format: '%-d/%-m'
       weather_entity: weather.smhi
       qrcode_enabled: true
