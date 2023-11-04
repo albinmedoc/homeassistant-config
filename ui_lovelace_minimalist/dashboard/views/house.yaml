@@ -12,20 +12,25 @@ cards:
     variables:
       - title: Hem
 
-  - type: 'custom:button-card'
-    template: card_input_boolean
-    entity: input_boolean.dog_mode
-    variables:
-      ulm_card_input_boolean_name: Hundläge
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_input_boolean
+        entity: input_boolean.night_mode
+      - type: "custom:button-card"
+        template: card_input_boolean
+        entity: input_boolean.guest_mode
 
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
         template: card_input_boolean
-        entity: input_boolean.guest_mode
+        entity: input_boolean.vacation_mode
       - type: "custom:button-card"
         template: card_input_boolean
-        entity: input_boolean.vacation_mode
+        entity: input_boolean.dog_mode
+        variables:
+          ulm_card_input_boolean_name: Hundläge
 
   - type: "custom:button-card"
     template: "card_vacuum"
