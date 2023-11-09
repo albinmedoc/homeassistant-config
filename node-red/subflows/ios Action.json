@@ -157,18 +157,7 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "ios.action_fired",
-    "exposeToHomeAssistant": false,
     "eventData": "",
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
     "waitForRunning": true,
     "outputProperties": [
       {
@@ -179,6 +168,17 @@
       }
     ],
     "event_type": "",
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
     "x": 120,
     "y": 60,
     "wires": [

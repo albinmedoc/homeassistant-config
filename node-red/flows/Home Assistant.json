@@ -19,9 +19,7 @@
       "6ed9e60aeed51db7"
     ],
     "x": 34,
-    "y": 639,
-    "w": 532,
-    "h": 82
+    "y": 639
   },
   {
     "id": "a2a2c7d13b2d1495",
@@ -37,9 +35,7 @@
       "0b4e37880bc471a9"
     ],
     "x": 34,
-    "y": 539,
-    "w": 652,
-    "h": 82
+    "y": 539
   },
   {
     "id": "d45aea997f43d7df",
@@ -54,9 +50,7 @@
       "7c9eac7cf14500bf"
     ],
     "x": 34,
-    "y": 439,
-    "w": 472,
-    "h": 82
+    "y": 439
   },
   {
     "id": "2e59710b52d84cd4",
@@ -71,9 +65,7 @@
       "bc6575adb8f391d5"
     ],
     "x": 34,
-    "y": 339,
-    "w": 392,
-    "h": 82
+    "y": 339
   },
   {
     "id": "86f8f4678672d22a",
@@ -90,9 +82,7 @@
       "ee0ceb693d698385"
     ],
     "x": 34,
-    "y": 39,
-    "w": 472,
-    "h": 182
+    "y": 39
   },
   {
     "id": "5bd13f6e89f1884b",
@@ -107,9 +97,7 @@
       "4020cb835fac70bd"
     ],
     "x": 34,
-    "y": 239,
-    "w": 372,
-    "h": 82
+    "y": 239
   },
   {
     "id": "6ed9e60aeed51db7",
@@ -145,6 +133,23 @@
     "name": "NS Panel blueprint version",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 1,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "version",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -163,24 +168,7 @@
     "haltifstate": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 1,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "version",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      }
-    ],
     "x": 170,
     "y": 680,
     "wires": [
@@ -243,6 +231,23 @@
     "name": "HACS update",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -261,24 +266,7 @@
     "haltifstate": "0",
     "halt_if_type": "num",
     "halt_if_compare": "gt",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      }
-    ],
     "x": 130,
     "y": 580,
     "wires": [
@@ -322,6 +310,16 @@
     "name": "HA Core update",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -340,17 +338,7 @@
     "haltifstate": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 140,
     "y": 480,
     "wires": [

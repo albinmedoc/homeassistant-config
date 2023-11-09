@@ -298,6 +298,16 @@
     "name": "vacation mode enabled",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -316,17 +326,7 @@
     "haltifstate": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 160,
     "y": 400,
     "wires": [
@@ -410,8 +410,17 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "mobile_app_notification_action",
-    "exposeToHomeAssistant": false,
     "eventData": "",
+    "waitForRunning": true,
+    "outputProperties": [
+      {
+        "property": "action_type",
+        "propertyType": "msg",
+        "value": "$outputData(\"eventData\").event.action",
+        "valueType": "jsonata"
+      }
+    ],
+    "exposeToHomeAssistant": false,
     "haConfig": [
       {
         "property": "name",
@@ -420,15 +429,6 @@
       {
         "property": "icon",
         "value": ""
-      }
-    ],
-    "waitForRunning": true,
-    "outputProperties": [
-      {
-        "property": "action_type",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event.action",
-        "valueType": "jsonata"
       }
     ],
     "x": 150,
@@ -584,6 +584,23 @@
     "name": "person away for 1 day",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "1",
+    "forType": "num",
+    "forUnits": "days",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "person",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -602,24 +619,7 @@
     "haltifstate": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "1",
-    "forType": "num",
-    "forUnits": "days",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "person",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
     "x": 160,
     "y": 120,
     "wires": [

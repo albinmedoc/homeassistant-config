@@ -54,8 +54,17 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "home_assistant_client",
-    "exposeToHomeAssistant": false,
     "eventData": "",
+    "waitForRunning": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      }
+    ],
+    "exposeToHomeAssistant": false,
     "haConfig": [
       {
         "property": "name",
@@ -64,15 +73,6 @@
       {
         "property": "icon",
         "value": ""
-      }
-    ],
-    "waitForRunning": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
       }
     ],
     "x": 160,

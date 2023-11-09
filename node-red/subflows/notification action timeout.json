@@ -160,18 +160,7 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "mobile_app_notification_action",
-    "exposeToHomeAssistant": false,
     "eventData": "",
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
     "waitForRunning": true,
     "outputProperties": [
       {
@@ -185,6 +174,17 @@
         "propertyType": "msg",
         "value": "true",
         "valueType": "bool"
+      }
+    ],
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
       }
     ],
     "x": 140,

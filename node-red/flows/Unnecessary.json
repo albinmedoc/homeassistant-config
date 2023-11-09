@@ -77,6 +77,16 @@
     "name": "someone comes home",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -95,17 +105,7 @@
     "haltifstate": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 160,
     "y": 180,
     "wires": [
@@ -323,6 +323,13 @@
     "name": "Matilda leaves work",
     "server": "e9739673.bbfed8",
     "version": 0,
+    "entities": [
+      "person.matilda"
+    ],
+    "event": "leave",
+    "zones": [
+      "zone.matilda_work"
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -333,13 +340,6 @@
         "property": "icon",
         "value": ""
       }
-    ],
-    "entities": [
-      "person.matilda"
-    ],
-    "event": "leave",
-    "zones": [
-      "zone.matilda_work"
     ],
     "x": 150,
     "y": 80,

@@ -49,20 +49,8 @@
     "name": "Chromecast on",
     "server": "e9739673.bbfed8",
     "version": 2,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityid": "media_player.chromecast_bedroom",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
+    "inputs": 0,
+    "outputs": 2,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -92,12 +80,24 @@
         "comparatorValue": "off"
       }
     ],
-    "inputs": 0,
-    "outputs": 2,
+    "enableInput": false,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "media_player.chromecast_bedroom",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
-    "enableInput": false,
     "x": 140,
     "y": 320,
     "wires": [
@@ -115,20 +115,8 @@
     "name": "samsung TV Living room on",
     "server": "e9739673.bbfed8",
     "version": 2,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityid": "media_player.samsung_tv_vardagsrum",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
+    "inputs": 0,
+    "outputs": 2,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -149,12 +137,24 @@
         "comparatorValue": "off"
       }
     ],
-    "inputs": 0,
-    "outputs": 2,
+    "enableInput": false,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "media_player.samsung_tv_vardagsrum",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
-    "enableInput": false,
     "x": 180,
     "y": 80,
     "wires": [
@@ -172,6 +172,16 @@
     "name": "TV bedroom off",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -190,17 +200,7 @@
     "haltifstate": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 140,
     "y": 200,
     "wires": [
@@ -302,6 +302,16 @@
     "name": "Chromecast off 2 min",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "2",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -320,17 +330,7 @@
     "haltifstate": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "2",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 160,
     "y": 260,
     "wires": [

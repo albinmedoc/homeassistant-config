@@ -461,6 +461,16 @@
     "name": "alarm triggered",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -479,17 +489,7 @@
     "haltifstate": "triggered",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 140,
     "y": 900,
     "wires": [
@@ -570,8 +570,17 @@
     "server": "e9739673.bbfed8",
     "version": 2,
     "eventType": "mobile_app_notification_action",
-    "exposeToHomeAssistant": false,
     "eventData": "",
+    "waitForRunning": true,
+    "outputProperties": [
+      {
+        "property": "action_type",
+        "propertyType": "msg",
+        "value": "$outputData(\"eventData\").event.action",
+        "valueType": "jsonata"
+      }
+    ],
+    "exposeToHomeAssistant": false,
     "haConfig": [
       {
         "property": "name",
@@ -580,15 +589,6 @@
       {
         "property": "icon",
         "value": ""
-      }
-    ],
-    "waitForRunning": true,
-    "outputProperties": [
-      {
-        "property": "action_type",
-        "propertyType": "msg",
-        "value": "$outputData(\"eventData\").event.action",
-        "valueType": "jsonata"
       }
     ],
     "x": 150,
@@ -631,6 +631,16 @@
     "name": "smoke detected",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -649,17 +659,7 @@
     "haltifstate": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [],
     "x": 140,
     "y": 1140,
     "wires": [
@@ -930,6 +930,23 @@
     "name": "Matilda opens the front door",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "person",
+        "propertyType": "msg",
+        "value": "person.matilda",
+        "valueType": "str"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -948,24 +965,7 @@
     "haltifstate": "Matilda Takkula",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "person",
-        "propertyType": "msg",
-        "value": "person.matilda",
-        "valueType": "str"
-      }
-    ],
     "x": 180,
     "y": 500,
     "wires": [
@@ -983,6 +983,23 @@
     "name": "Albin opens the front door",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "person",
+        "propertyType": "msg",
+        "value": "person.albin",
+        "valueType": "str"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1001,24 +1018,7 @@
     "haltifstate": "Albin Medoc",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "person",
-        "propertyType": "msg",
-        "value": "person.albin",
-        "valueType": "str"
-      }
-    ],
     "x": 170,
     "y": 440,
     "wires": [
@@ -1293,6 +1293,23 @@
     "name": "triggered",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "event_data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1311,24 +1328,7 @@
     "haltifstate": "triggered",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "event_data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      }
-    ],
     "x": 120,
     "y": 1440,
     "wires": [
@@ -1347,20 +1347,8 @@
     "name": "was triggered",
     "server": "e9739673.bbfed8",
     "version": 2,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityid": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
+    "inputs": 0,
+    "outputs": 2,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -1381,12 +1369,24 @@
         "comparatorValue": "triggered"
       }
     ],
-    "inputs": 0,
-    "outputs": 2,
+    "enableInput": false,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityid": "alarm_control_panel.alarmo",
+    "entityidfiltertype": "exact",
+    "debugenabled": false,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
-    "enableInput": false,
     "x": 130,
     "y": 1600,
     "wires": [
@@ -1404,6 +1404,16 @@
     "name": "armed",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1422,17 +1432,7 @@
     "haltifstate": "armed_home, armed_home, armed_night",
     "halt_if_type": "str",
     "halt_if_compare": "includes",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 110,
     "y": 1340,
     "wires": [
@@ -1450,6 +1450,16 @@
     "name": "disarmed",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1468,17 +1478,7 @@
     "haltifstate": "disarmed",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [],
     "x": 120,
     "y": 1700,
     "wires": [
@@ -1785,6 +1785,23 @@
     "name": "arming",
     "server": "e9739673.bbfed8",
     "version": 4,
+    "outputs": 2,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "event_data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      }
+    ],
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1803,24 +1820,7 @@
     "haltifstate": "arming",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "outputs": 2,
     "output_only_on_state_change": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "event_data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      }
-    ],
     "x": 110,
     "y": 1240,
     "wires": [
