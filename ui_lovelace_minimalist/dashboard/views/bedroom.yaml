@@ -62,11 +62,11 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
-        template: card_binary_sensor
+        template: card_binary_sensor_alert
         variables:
           ulm_card_binary_sensor_name: "Rörelse"
           ulm_card_binary_sensor_alert: true
-          ulm_show_last_changed: true
+          ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.motion_sensor_bedroom
       - type: "custom:button-card"
         template: card_binary_sensor
@@ -82,5 +82,5 @@ cards:
         variables:
           ulm_card_binary_sensor_alert_name: "Fönster"
           ulm_card_binary_sensor_alert: true
-          ulm_show_last_changed: true
+          ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.window_bedroom

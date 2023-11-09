@@ -49,5 +49,5 @@ cards:
         variables:
           ulm_card_binary_sensor_alert_name: "Dörr"
           ulm_card_binary_sensor_alert: true
-          ulm_show_last_changed: true
+          ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.door_conservatory

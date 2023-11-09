@@ -72,14 +72,14 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
-        template: card_binary_sensor
+        template: card_binary_sensor_alert
         variables:
           ulm_card_binary_sensor_name: "Rörelse"
           ulm_card_binary_sensor_alert: true
-          ulm_show_last_changed: true
+          ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.camera_living_room_motion
       - type: "custom:button-card"
-        template: card_binary_sensor
+        template: card_binary_sensor_alert
         variables:
           ulm_card_binary_sensor_name: "Rök"
           ulm_card_binary_sensor_alert: true
