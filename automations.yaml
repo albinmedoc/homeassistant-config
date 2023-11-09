@@ -229,78 +229,80 @@
     input:
       nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
       language: sv
-      date_format: '%-d/%-m'
+      date_format: '%A, %-m/%-d'
       weather_entity: weather.smhi
-      qrcode_enabled: true
-      qrcode_label: Wifi
+      alarm: alarm_control_panel.alarmo
       qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
+      qrcode_label: Wifi
       left_button_entity: light.lamp_2_hallway
+      left_button_name: Hall 2
       left_button_hold_select: Custom Action
       left_button_hold_custom_action:
       - service: light.toggle
-        target:
-          entity_id: light.all_hallway
         data: {}
-      left_button_name: Hall 2
+        target:
+          entity_id:
+          - light.lamp_entrance_hallway
+          - light.lamp_2_hallway
+          - light.lamp_3_hallway
       right_button_entity: light.lamp_entrance_hallway
-      right_button_name: Entre
+      right_button_name: Entré
       right_button_hold_select: Custom Action
       right_button_hold_custom_action:
       - service: light.toggle
-        target:
-          entity_id: light.all_hallway
         data: {}
-      relay_2_local_fallback: true
+        target:
+          entity_id:
+          - light.lamp_entrance_hallway
+          - light.lamp_2_hallway
+          - light.lamp_3_hallway
       button_page01_label: Vardagsrum
-      entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
+      entity01_name: Taklampa
       entity01_icon_color:
       - 240
       - 180
       - 0
-      entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
+      entity02_name: Stående lampa
       entity02_icon_color:
       - 240
       - 180
       - 0
-      entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
+      entity03_name: Sonos lampa
       entity03_icon_color:
       - 240
       - 180
       - 0
-      entity04_name: Matbord
       entity04: light.dining_table_living_room
+      entity04_name: Matbord
       entity04_icon_color:
       - 240
       - 180
       - 0
       button_page02_label: Sovrum
-      entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
+      entity09_name: Taklampa
       entity09_icon_color:
       - 240
       - 180
       - 0
-      entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
+      entity10_name: Garderob
+      entity10_icon: ''
       entity10_icon_color:
       - 240
       - 180
       - 0
-      entity11_name: Rullgardin
       entity11: cover.blind_bedroom
-      entity11_icon_color:
-      - 240
-      - 180
-      - 0
-      entity12: switch.plug_tv_bedroom
+      entity11_name: Rullgardin
+      entity12: media_player.tv_bedroom
       entity12_name: TV
-      entity12_icon: mdi:television
+      entity12_icon: ''
       button_page03_label: Hall
-      entity17_name: Entré
       entity17: light.lamp_entrance_hallway
+      entity17_name: Entré
       entity17_icon_color:
       - 240
       - 180
@@ -311,65 +313,63 @@
       - 240
       - 180
       - 0
-      entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
+      entity19_name: Lampa 3
       entity19_icon_color:
       - 240
       - 180
       - 0
-      button_page04_label: Åtgärder
-      entity25_name: Alla lampor
-      entity25: light.all
-      entity25_confirm: true
-      entity25_icon: mdi:lightbulb-multiple
-      entity25_icon_color:
-      - 240
-      - 180
-      - 0
-      entity26_name: Filmläge
-      entity26: scene.movie
-      entity26_icon: mdi:movie
-      entity26_icon_color:
-      - 216
-      - 76
-      - 24
-      entity27_name: Nattläge
-      entity27: scene.night
-      entity27_confirm: true
-      entity27_icon: mdi:weather-night
-      entity27_icon_color:
-      - 114
-      - 12
-      - 184
-      entitypages_enabled: true
-      entity_page01_label: Säkerhet
-      entities_entity01_name: Aleas rum
-      entities_entity01: binary_sensor.window_aleas_room
-      entities_entity01_icon: mdi:window-closed
-      entities_entity02_name: Elinas rum
-      entities_entity02: binary_sensor.window_elinas_room
-      entities_entity02_icon: mdi:window-closed
-      entities_entity03_name: Sovrum
-      entities_entity03: binary_sensor.window_bedroom
-      entities_entity03_icon: mdi:window-closed
-      entities_entity04_name: Ytterdörr
-      entities_entity04: binary_sensor.door_main_hallway
-      entities_entity04_icon: mdi:door
-      entities_entity05_name: Uterum
-      entities_entity05: binary_sensor.door_conservatory
-      entities_entity05_icon: mdi:door
-      entity_page02_label: Temperatur
-      entities_entity09_name: Vardagsrum
-      entities_entity09: sensor.temperature_living_room
-      entities_entity10_name: Hall
-      entities_entity10: sensor.temperature_hallway
-      entities_entity11_name: Sovrum
-      entities_entity11: sensor.temperature_bedroom
-      entities_entity12_name: Aleas rum
-      entities_entity12: sensor.temperature_aleas_room
-      entities_entity13_name: Uterum
-      entities_entity13: sensor.temperature_conservatory
-- id: '1678918339019'
+- id: '1699560333290'
+  alias: Tjejernas lampor morgon
+  description: Sätt ljusstyrkan till 100% om någon av lamporna tänds på morgonen.
+  trigger:
+  - platform: state
+    entity_id:
+    - light.ceiling_lamp_aleas_room
+    to: 'on'
+    from: 'off'
+    id: alea
+    alias: Alea's ceiling lamp turns on
+  - platform: state
+    entity_id:
+    - light.ceiling_lamp_elinas_room
+    id: elina
+    from: 'off'
+    to: 'on'
+    alias: Elina's ceiling lamp turns on
+  condition:
+  - condition: time
+    after: 04:00:00
+    before: 09:00:00
+  action:
+  - alias: If Alea's lamp
+    if:
+    - condition: trigger
+      id:
+      - alea
+      alias: When triggered by alea
+    then:
+    - service: light.turn_on
+      data:
+        brightness_pct: 100
+      target:
+        entity_id: light.ceiling_lamp_aleas_room
+      alias: Set brightness to 100%
+  - alias: If Elina's lamp
+    if:
+    - condition: trigger
+      id:
+      - elina
+      alias: When triggered by elina
+    then:
+    - service: light.turn_on
+      data:
+        brightness_pct: 100
+      target:
+        entity_id: light.ceiling_lamp_elinas_room
+      alias: Set brightness to 100%
+  mode: single
+- id: '1699561919628'
   alias: NS-Panel Living room
   description: ''
   use_blueprint:
@@ -377,72 +377,76 @@
     input:
       nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
       language: sv
-      date_format: '%A, %-d/%-m'
+      date_format: '%A, %-m/%-d'
       weather_entity: weather.smhi
-      qrcode_enabled: true
-      qrcode_label: Wifi
+      alarm: alarm_control_panel.alarmo
       qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
+      qrcode_label: Wifi
       left_button_entity: light.ceiling_lamp_living_room
       left_button_name: Taklampa
-      right_button_entity: light.roof_loop_conservatory
+      left_button_hold_select: Custom Action
+      left_button_hold_custom_action:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id:
+          - light.sonos_lamp_living_room
+          - light.standing_lamp_living_room
+      right_button_entity: light.all_conservatory
       right_button_name: Uterum
       right_button_hold_select: Custom Action
       right_button_hold_custom_action:
-      - type: toggle
-        device_id: 145dce23543e703f7219d870d9206534
-        entity_id: 2a070e070d1a6be868bb099d47ae9bd9
-        domain: switch
-      relay_2_local_fallback: true
+      - service: switch.toggle
+        data: {}
+        target:
+          entity_id: switch.airfryer_conservatory
       button_page01_label: Vardagsrum
-      entity01_name: Taklampa
       entity01: light.ceiling_lamp_living_room
+      entity01_name: Taklampa
       entity01_icon_color:
       - 240
       - 180
       - 0
-      entity02_name: Stående lampa
       entity02: light.standing_lamp_living_room
+      entity02_name: Stående lampa
       entity02_icon_color:
       - 240
       - 180
       - 0
-      entity03_name: Sonos lampa
       entity03: light.sonos_lamp_living_room
+      entity03_name: Sonos lampa
       entity03_icon_color:
       - 240
       - 180
       - 0
-      entity04_name: Matbord
       entity04: light.dining_table_living_room
+      entity04_name: Matbord
       entity04_icon_color:
       - 240
       - 180
       - 0
       button_page02_label: Sovrum
-      entity09_name: Taklampa
       entity09: light.ceiling_lamp_bedroom
+      entity09_name: Taklampa
       entity09_icon_color:
       - 240
       - 180
       - 0
-      entity10_name: Garderob
       entity10: light.wardrobe_lamp_bedroom
+      entity10_name: Garderob
+      entity10_icon: ''
       entity10_icon_color:
       - 240
       - 180
       - 0
-      entity11_name: Rullgardin
       entity11: cover.blind_bedroom
-      entity11_icon_color:
-      - 240
-      - 180
-      - 0
+      entity11_name: Rullgardin
       entity12: media_player.tv_bedroom
       entity12_name: TV
       entity12_icon: ''
       button_page03_label: Hall
-      entity17_name: Entré
       entity17: light.lamp_entrance_hallway
+      entity17_name: Entré
       entity17_icon_color:
       - 240
       - 180
@@ -453,61 +457,9 @@
       - 240
       - 180
       - 0
-      entity19_name: Lampa 3
       entity19: light.lamp_3_hallway
+      entity19_name: Lampa 3
       entity19_icon_color:
       - 240
       - 180
       - 0
-      button_page04_label: Åtgärder
-      entity25_name: Alla lampor
-      entity25: light.all
-      entity25_confirm: true
-      entity25_icon: mdi:lightbulb-multiple
-      entity25_icon_color:
-      - 240
-      - 180
-      - 0
-      entity26_name: Filmläge
-      entity26: scene.movie
-      entity26_icon: mdi:movie
-      entity26_icon_color:
-      - 216
-      - 76
-      - 24
-      entity27_name: Nattläge
-      entity27: scene.night
-      entity27_confirm: true
-      entity27_icon: mdi:weather-night
-      entity27_icon_color:
-      - 114
-      - 12
-      - 184
-      entitypages_enabled: true
-      entity_page01_label: Säkerhet
-      entities_entity01_name: Aleas rum
-      entities_entity01: binary_sensor.window_aleas_room
-      entities_entity01_icon: mdi:window-closed
-      entities_entity02_name: Elinas rum
-      entities_entity02: binary_sensor.window_elinas_room
-      entities_entity02_icon: mdi:window-closed
-      entities_entity03_name: Sovrum
-      entities_entity03: binary_sensor.window_bedroom
-      entities_entity03_icon: mdi:window-closed
-      entities_entity04_name: Ytterdörr
-      entities_entity04: binary_sensor.door_main_hallway
-      entities_entity04_icon: mdi:door
-      entities_entity05_name: Uterum
-      entities_entity05: binary_sensor.door_conservatory
-      entities_entity05_icon: mdi:door
-      entity_page02_label: Temperatur
-      entities_entity09_name: Vardagsrum
-      entities_entity09: sensor.temperature_living_room
-      entities_entity10_name: Hall
-      entities_entity10: sensor.temperature_hallway
-      entities_entity11_name: Sovrum
-      entities_entity11: sensor.temperature_bedroom
-      entities_entity12_name: Aleas rum
-      entities_entity12: sensor.temperature_aleas_room
-      entities_entity13_name: Uterum
-      entities_entity13: sensor.temperature_conservatory
