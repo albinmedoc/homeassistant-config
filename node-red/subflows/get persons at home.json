@@ -66,7 +66,7 @@
     "z": "92acfb4d26effac0",
     "name": "get persons at home",
     "server": "e9739673.bbfed8",
-    "version": 0,
+    "version": 1,
     "rules": [
       {
         "property": "entity_id",
@@ -81,11 +81,11 @@
         "valueType": "str"
       }
     ],
-    "output_type": "array",
-    "output_empty_results": true,
-    "output_location_type": "msg",
-    "output_location": "person_entities",
-    "output_results_count": 1,
+    "outputType": "array",
+    "outputEmptyResults": true,
+    "outputLocationType": "msg",
+    "outputLocation": "person_entities",
+    "outputResultsCount": 1,
     "x": 420,
     "y": 60,
     "wires": [

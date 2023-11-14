@@ -20,9 +20,7 @@
       "b9e07ea95cb6d8e1"
     ],
     "x": 34,
-    "y": 279,
-    "w": 332,
-    "h": 82
+    "y": 279
   },
   {
     "id": "a2c59dab1c39eb27",
@@ -37,9 +35,7 @@
       "a13be603a67e703a"
     ],
     "x": 34,
-    "y": 179,
-    "w": 352,
-    "h": 82
+    "y": 179
   },
   {
     "id": "016692fb15240c40",
@@ -55,9 +51,7 @@
       "e70d386a804b3186"
     ],
     "x": 34,
-    "y": 39,
-    "w": 372,
-    "h": 122
+    "y": 39
   },
   {
     "id": "89e55bc55da527d0",
@@ -94,8 +88,17 @@
     "g": "15764dd4cae9897a",
     "name": " motion",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.motion_sensor_wardrobe",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "1",
     "forType": "num",
     "forUnits": "minutes",
@@ -105,25 +108,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.motion_sensor_wardrobe",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 320,
     "wires": [
@@ -140,8 +124,17 @@
     "g": "a2c59dab1c39eb27",
     "name": "motion",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.motion_bathroom",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "15",
     "forType": "num",
     "forUnits": "minutes",
@@ -151,25 +144,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.motion_bathroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 220,
     "wires": [
@@ -214,8 +188,17 @@
     "g": "016692fb15240c40",
     "name": "motion",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.motion_toilet",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "5",
     "forType": "num",
     "forUnits": "minutes",
@@ -225,25 +208,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.motion_toilet",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 100,
     "wires": [

@@ -84,8 +84,17 @@
     "z": "10bf6a612840df6b",
     "name": "nobody home",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "zone.home",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "num",
+    "ifState": "0",
+    "ifStateType": "num",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -102,25 +111,6 @@
         "valueType": "eventData"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "zone.home",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "num",
-    "haltifstate": "0",
-    "halt_if_type": "num",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 60,
     "wires": [
@@ -173,8 +163,17 @@
     "z": "10bf6a612840df6b",
     "name": "guest mode inactive",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.guest_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -184,25 +183,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.guest_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 130,
     "y": 120,
     "wires": [

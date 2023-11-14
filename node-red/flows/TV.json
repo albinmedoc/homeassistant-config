@@ -48,9 +48,13 @@
     "g": "8d64418785067593",
     "name": "Chromecast on",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 4,
     "inputs": 0,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "media_player.chromecast_bedroom",
+    "entityIdType": "exact",
+    "debugEnabled": false,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -80,6 +84,9 @@
         "comparatorValue": "off"
       }
     ],
+    "customOutputs": [],
+    "outputInitially": false,
+    "stateType": "str",
     "enableInput": false,
     "exposeToHomeAssistant": false,
     "haConfig": [
@@ -92,12 +99,6 @@
         "value": ""
       }
     ],
-    "entityid": "media_player.chromecast_bedroom",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
     "x": 140,
     "y": 320,
     "wires": [
@@ -114,9 +115,13 @@
     "g": "ca425b51ea70d657",
     "name": "samsung TV Living room on",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 4,
     "inputs": 0,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "media_player.samsung_tv_vardagsrum",
+    "entityIdType": "exact",
+    "debugEnabled": false,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -137,6 +142,9 @@
         "comparatorValue": "off"
       }
     ],
+    "customOutputs": [],
+    "outputInitially": false,
+    "stateType": "str",
     "enableInput": false,
     "exposeToHomeAssistant": false,
     "haConfig": [
@@ -149,12 +157,6 @@
         "value": ""
       }
     ],
-    "entityid": "media_player.samsung_tv_vardagsrum",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
     "x": 180,
     "y": 80,
     "wires": [
@@ -171,8 +173,17 @@
     "g": "8d64418785067593",
     "name": "TV bedroom off",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "media_player.tv_bedroom",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -182,25 +193,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "media_player.tv_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 140,
     "y": 200,
     "wires": [
@@ -301,8 +293,17 @@
     "g": "8d64418785067593",
     "name": "Chromecast off 2 min",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "media_player.chromecast_bedroom",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "2",
     "forType": "num",
     "forUnits": "minutes",
@@ -312,25 +313,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "media_player.chromecast_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 160,
     "y": 260,
     "wires": [

@@ -100,8 +100,17 @@
     "g": "9acaa0666b5b68d6",
     "name": "AirFryer done",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.airfryer_active",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -111,25 +120,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.airfryer_active",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 150,
     "y": 340,
     "wires": [
@@ -194,8 +184,17 @@
     "g": "997af72d18e55a49",
     "name": " front door open for 5 min",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.door_main_hallway",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "5",
     "forType": "num",
     "forUnits": "minutes",
@@ -205,25 +204,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.door_main_hallway",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 190,
     "y": 440,
     "wires": [
@@ -240,8 +220,17 @@
     "g": "bef63f036ef05e26",
     "name": "dishwasher done",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.washing_machine",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -251,25 +240,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.washing_machine",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 160,
     "y": 240,
     "wires": [

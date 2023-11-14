@@ -76,8 +76,17 @@
     "g": "50b6ce68ea1dbe94",
     "name": "someone comes home",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "person\\.",
+    "entityIdType": "regex",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "home",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -87,25 +96,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "person\\.",
-    "entityidfiltertype": "regex",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "home",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 160,
     "y": 180,
     "wires": [
@@ -166,7 +156,7 @@
     "g": "50b6ce68ea1dbe94",
     "name": "get who has come home within the interval",
     "server": "e9739673.bbfed8",
-    "version": 0,
+    "version": 1,
     "rules": [
       {
         "property": "last_changed",
@@ -187,11 +177,11 @@
         "valueType": "str"
       }
     ],
-    "output_type": "array",
-    "output_empty_results": false,
-    "output_location_type": "msg",
-    "output_location": "payload",
-    "output_results_count": 1,
+    "outputType": "array",
+    "outputEmptyResults": false,
+    "outputLocationType": "msg",
+    "outputLocation": "payload",
+    "outputResultsCount": 1,
     "x": 230,
     "y": 360,
     "wires": [
@@ -322,24 +312,14 @@
     "g": "87f9c3202c8c5ccc",
     "name": "Matilda leaves work",
     "server": "e9739673.bbfed8",
-    "version": 0,
+    "version": 1,
+    "exposeAsEntityConfig": "",
     "entities": [
       "person.matilda"
     ],
     "event": "leave",
     "zones": [
       "zone.matilda_work"
-    ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
     ],
     "x": 150,
     "y": 80,

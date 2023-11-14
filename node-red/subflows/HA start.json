@@ -52,7 +52,8 @@
     "z": "5da5355c5d6e8223",
     "name": "Home Assistant client event",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 3,
+    "exposeAsEntityConfig": "",
     "eventType": "home_assistant_client",
     "eventData": "",
     "waitForRunning": true,
@@ -62,17 +63,6 @@
         "propertyType": "msg",
         "value": "",
         "valueType": "eventData"
-      }
-    ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
       }
     ],
     "x": 160,

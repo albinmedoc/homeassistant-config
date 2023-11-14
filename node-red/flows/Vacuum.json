@@ -44,9 +44,13 @@
     "g": "c77bf66ac0de544c",
     "name": "vacuum docked, nobody home and armed home",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 4,
     "inputs": 0,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "vacuum.cleanmate",
+    "entityIdType": "exact",
+    "debugEnabled": false,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -85,6 +89,9 @@
         "comparatorValue": "armed_home"
       }
     ],
+    "customOutputs": [],
+    "outputInitially": false,
+    "stateType": "str",
     "enableInput": false,
     "exposeToHomeAssistant": false,
     "haConfig": [
@@ -97,12 +104,6 @@
         "value": ""
       }
     ],
-    "entityid": "vacuum.cleanmate",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
     "x": 240,
     "y": 200,
     "wires": [
@@ -119,9 +120,13 @@
     "g": "05d687da1ce7b06d",
     "name": "vacuum starts and armed away",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 4,
     "inputs": 0,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "vacuum.cleanmate",
+    "entityIdType": "exact",
+    "debugEnabled": false,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -142,6 +147,9 @@
         "comparatorValue": "armed_away"
       }
     ],
+    "customOutputs": [],
+    "outputInitially": false,
+    "stateType": "str",
     "enableInput": false,
     "exposeToHomeAssistant": false,
     "haConfig": [
@@ -154,12 +162,6 @@
         "value": ""
       }
     ],
-    "entityid": "vacuum.cleanmate",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
     "x": 190,
     "y": 80,
     "wires": [

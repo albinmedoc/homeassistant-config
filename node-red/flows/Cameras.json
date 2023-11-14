@@ -21,7 +21,9 @@
       "ccb73798baf430ea"
     ],
     "x": 44,
-    "y": 439
+    "y": 439,
+    "w": 622,
+    "h": 82
   },
   {
     "id": "ec260776601b15bd",
@@ -37,7 +39,9 @@
       "7f832b8e9eefdd27"
     ],
     "x": 44,
-    "y": 1219
+    "y": 1219,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "e7e05890b1c08c7e",
@@ -53,7 +57,9 @@
       "030247dadaf91fed"
     ],
     "x": 44,
-    "y": 1119
+    "y": 1119,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "cfed098803bc16cd",
@@ -69,7 +75,9 @@
       "2a123fdb611d4352"
     ],
     "x": 44,
-    "y": 1019
+    "y": 1019,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "7ad94aaec9160b50",
@@ -85,7 +93,9 @@
       "7daa5915c3daa539"
     ],
     "x": 44,
-    "y": 919
+    "y": 919,
+    "w": 552,
+    "h": 82
   },
   {
     "id": "0a04ea6bece547ae",
@@ -103,7 +113,9 @@
       "22e5e39a66497c6d"
     ],
     "x": 44,
-    "y": 739
+    "y": 739,
+    "w": 552,
+    "h": 162
   },
   {
     "id": "037b270105a5e078",
@@ -121,7 +133,9 @@
       "a75318f9898f8b2f"
     ],
     "x": 44,
-    "y": 559
+    "y": 559,
+    "w": 552,
+    "h": 162
   },
   {
     "id": "815082aec75c4eb0",
@@ -213,8 +227,17 @@
     "g": "2b75c890eff44cfb",
     "name": "cat detected",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.camera_garden_cat_occupancy",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -224,25 +247,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.camera_garden_cat_occupancy",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 140,
     "y": 480,
     "wires": [
@@ -857,8 +861,17 @@
     "z": "896b946718d5907e",
     "name": "nigtmode on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.night_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -868,25 +881,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.night_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 150,
     "y": 100,
     "wires": [
@@ -902,8 +896,17 @@
     "z": "896b946718d5907e",
     "name": "nigtmode off",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.night_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -913,25 +916,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.night_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 150,
     "y": 340,
     "wires": [

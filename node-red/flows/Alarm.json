@@ -24,7 +24,9 @@
       "99b7a838b172040f"
     ],
     "x": 34,
-    "y": 859
+    "y": 859,
+    "w": 1102,
+    "h": 122
   },
   {
     "id": "2c760ae190629011",
@@ -39,7 +41,9 @@
       "6addbb6abca1c9c1"
     ],
     "x": 34,
-    "y": 999
+    "y": 999,
+    "w": 472,
+    "h": 82
   },
   {
     "id": "ea9720dad10ae7bd",
@@ -55,8 +59,10 @@
       "c57913cb5ac2c4b7",
       "f277febc1319bf63"
     ],
-    "x": 34,
-    "y": 759
+    "x": 44,
+    "y": 759,
+    "w": 982,
+    "h": 82
   },
   {
     "id": "ac4a5fa8ce361c85",
@@ -71,7 +77,9 @@
       "f4a0dc3f7ce96837"
     ],
     "x": 34,
-    "y": 1099
+    "y": 1099,
+    "w": 512,
+    "h": 82
   },
   {
     "id": "dbf45413091d6098",
@@ -89,7 +97,9 @@
       "1543208147c778e2"
     ],
     "x": 34,
-    "y": 659
+    "y": 659,
+    "w": 742,
+    "h": 82
   },
   {
     "id": "819624756ad5ddb3",
@@ -107,7 +117,9 @@
       "8b850efc4a432f90"
     ],
     "x": 34,
-    "y": 559
+    "y": 559,
+    "w": 722,
+    "h": 82
   },
   {
     "id": "f3fabdf91855700f",
@@ -126,7 +138,9 @@
       "edbc2d86c78d49de"
     ],
     "x": 34,
-    "y": 19
+    "y": 19,
+    "w": 1072,
+    "h": 142
   },
   {
     "id": "75e39dcb53bdacc7",
@@ -147,7 +161,9 @@
       "63ef5f87db497514"
     ],
     "x": 34,
-    "y": 179
+    "y": 179,
+    "w": 1432,
+    "h": 142
   },
   {
     "id": "60a6418e9202f91b",
@@ -166,7 +182,9 @@
       "32fd7a9c35714b19"
     ],
     "x": 34,
-    "y": 339
+    "y": 339,
+    "w": 1092,
+    "h": 202
   },
   {
     "id": "7ef139e2e248d51e",
@@ -182,7 +200,9 @@
       "bc4d00155422253c"
     ],
     "x": 34,
-    "y": 1199
+    "y": 1199,
+    "w": 692,
+    "h": 82
   },
   {
     "id": "ed4cffe75ed6ed76",
@@ -197,7 +217,9 @@
       "6d806226232b7676"
     ],
     "x": 34,
-    "y": 1299
+    "y": 1299,
+    "w": 332,
+    "h": 82
   },
   {
     "id": "b86506a392d6c223",
@@ -216,7 +238,9 @@
       "9784bc69802e38a8"
     ],
     "x": 34,
-    "y": 1399
+    "y": 1399,
+    "w": 852,
+    "h": 142
   },
   {
     "id": "57e42db3545ef783",
@@ -233,7 +257,9 @@
       "4e72c8bfe5ad53b4"
     ],
     "x": 34,
-    "y": 1559
+    "y": 1559,
+    "w": 932,
+    "h": 82
   },
   {
     "id": "7b5b32a764a9f51d",
@@ -248,7 +274,9 @@
       "a59c18f7e31fcc2e"
     ],
     "x": 34,
-    "y": 1659
+    "y": 1659,
+    "w": 352,
+    "h": 82
   },
   {
     "id": "f277febc1319bf63",
@@ -460,8 +488,17 @@
     "g": "0dae13e1d2f37ed0",
     "name": "alarm triggered",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "triggered",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -471,25 +508,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "triggered",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 140,
     "y": 900,
     "wires": [
@@ -568,7 +586,8 @@
     "g": "ea9720dad10ae7bd",
     "name": "notification action",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 3,
+    "exposeAsEntityConfig": "",
     "eventType": "mobile_app_notification_action",
     "eventData": "",
     "waitForRunning": true,
@@ -578,17 +597,6 @@
         "propertyType": "msg",
         "value": "$outputData(\"eventData\").event.action",
         "valueType": "jsonata"
-      }
-    ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
       }
     ],
     "x": 150,
@@ -630,8 +638,17 @@
     "g": "ac4a5fa8ce361c85",
     "name": "smoke detected",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "binary_sensor.smoke_detected",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -641,25 +658,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.smoke_detected",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 140,
     "y": 1140,
     "wires": [
@@ -929,8 +927,17 @@
     "g": "60a6418e9202f91b",
     "name": "Matilda opens the front door",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "sensor.main_door_operator",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "Matilda Takkula",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -947,25 +954,6 @@
         "valueType": "str"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "sensor.main_door_operator",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "Matilda Takkula",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 180,
     "y": 500,
     "wires": [
@@ -982,8 +970,17 @@
     "g": "60a6418e9202f91b",
     "name": "Albin opens the front door",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "sensor.main_door_operator",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "Albin Medoc",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1000,25 +997,6 @@
         "valueType": "str"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "sensor.main_door_operator",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "Albin Medoc",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 170,
     "y": 440,
     "wires": [
@@ -1292,8 +1270,17 @@
     "g": "b86506a392d6c223",
     "name": "triggered",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "triggered",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1310,25 +1297,6 @@
         "valueType": "eventData"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "triggered",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 1440,
     "wires": [
@@ -1346,9 +1314,13 @@
     "g": "57e42db3545ef783",
     "name": "was triggered",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 4,
     "inputs": 0,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "debugEnabled": false,
     "constraints": [
       {
         "targetType": "this_entity",
@@ -1369,6 +1341,9 @@
         "comparatorValue": "triggered"
       }
     ],
+    "customOutputs": [],
+    "outputInitially": false,
+    "stateType": "str",
     "enableInput": false,
     "exposeToHomeAssistant": false,
     "haConfig": [
@@ -1381,12 +1356,6 @@
         "value": ""
       }
     ],
-    "entityid": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
     "x": 130,
     "y": 1600,
     "wires": [
@@ -1403,8 +1372,17 @@
     "g": "ed4cffe75ed6ed76",
     "name": "armed",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "armed_home, armed_home, armed_night",
+    "ifStateType": "str",
+    "ifStateOperator": "includes",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1414,25 +1392,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "armed_home, armed_home, armed_night",
-    "halt_if_type": "str",
-    "halt_if_compare": "includes",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 1340,
     "wires": [
@@ -1449,8 +1408,17 @@
     "g": "7b5b32a764a9f51d",
     "name": "disarmed",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "disarmed",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1460,25 +1428,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "disarmed",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 1700,
     "wires": [
@@ -1784,8 +1733,17 @@
     "g": "7ef139e2e248d51e",
     "name": "arming",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "alarm_control_panel.alarmo",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "arming",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1802,25 +1760,6 @@
         "valueType": "eventData"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "alarm_control_panel.alarmo",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "arming",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 110,
     "y": 1240,
     "wires": [

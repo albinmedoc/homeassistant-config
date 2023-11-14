@@ -221,7 +221,7 @@
     "g": "292cd2936dc4770f",
     "name": "",
     "server": "e9739673.bbfed8",
-    "version": 0,
+    "version": 1,
     "rules": [
       {
         "property": "entity_id",
@@ -236,11 +236,11 @@
         "valueType": "str"
       }
     ],
-    "output_type": "random",
-    "output_empty_results": false,
-    "output_location_type": "msg",
-    "output_location": "payload",
-    "output_results_count": 1,
+    "outputType": "random",
+    "outputEmptyResults": false,
+    "outputLocationType": "msg",
+    "outputLocation": "payload",
+    "outputResultsCount": 1,
     "x": 150,
     "y": 780,
     "wires": [
@@ -297,8 +297,17 @@
     "g": "0ebf95f5d2357afa",
     "name": "vacation mode enabled",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.vacation_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -308,25 +317,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.vacation_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 160,
     "y": 400,
     "wires": [
@@ -408,7 +398,8 @@
     "g": "a95f98beadb5e910",
     "name": "notification action",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 3,
+    "exposeAsEntityConfig": "",
     "eventType": "mobile_app_notification_action",
     "eventData": "",
     "waitForRunning": true,
@@ -418,17 +409,6 @@
         "propertyType": "msg",
         "value": "$outputData(\"eventData\").event.action",
         "valueType": "jsonata"
-      }
-    ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
       }
     ],
     "x": 150,
@@ -583,8 +563,17 @@
     "g": "87ddd9c72abf2ec5",
     "name": "person away for 1 day",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "person\\.",
+    "entityIdType": "regex",
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "home",
+    "ifStateType": "str",
+    "ifStateOperator": "is_not",
+    "outputOnlyOnStateChange": true,
     "for": "1",
     "forType": "num",
     "forUnits": "days",
@@ -601,25 +590,6 @@
         "valueType": "triggerId"
       }
     ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "person\\.",
-    "entityidfiltertype": "regex",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "home",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "output_only_on_state_change": true,
     "x": 160,
     "y": 120,
     "wires": [

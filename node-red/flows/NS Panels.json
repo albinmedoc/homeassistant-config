@@ -152,8 +152,17 @@
     "g": "6bee852ec14b7ebe",
     "name": "nightmode off",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.night_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "false",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -163,25 +172,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.night_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "false",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 210,
     "y": 280,
     "wires": [
@@ -198,8 +188,17 @@
     "g": "6bee852ec14b7ebe",
     "name": "nightmode on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "input_boolean.night_mode",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -209,25 +208,6 @@
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.night_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 210,
     "y": 120,
     "wires": [

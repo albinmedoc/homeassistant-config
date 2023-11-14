@@ -155,7 +155,8 @@
     "z": "e9ef583367ad9d32",
     "name": "incoming action",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 3,
+    "exposeAsEntityConfig": "",
     "eventType": "ios.action_fired",
     "eventData": "",
     "waitForRunning": true,
@@ -168,17 +169,6 @@
       }
     ],
     "event_type": "",
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
     "x": 120,
     "y": 60,
     "wires": [

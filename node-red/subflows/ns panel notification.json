@@ -507,7 +507,7 @@
     "g": "c6ae929861472fd2",
     "name": "get page timeout",
     "server": "e9739673.bbfed8",
-    "version": 0,
+    "version": 1,
     "rules": [
       {
         "property": "entity_id",
@@ -516,11 +516,11 @@
         "valueType": "msg"
       }
     ],
-    "output_type": "array",
-    "output_empty_results": false,
-    "output_location_type": "msg",
-    "output_location": "old_page_timeout_entities",
-    "output_results_count": 1,
+    "outputType": "array",
+    "outputEmptyResults": false,
+    "outputLocationType": "msg",
+    "outputLocation": "old_page_timeout_entities",
+    "outputResultsCount": 1,
     "x": 410,
     "y": 160,
     "wires": [

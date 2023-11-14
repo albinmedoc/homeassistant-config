@@ -24,9 +24,7 @@
       "dccec8a7a80e5d82"
     ],
     "x": 34,
-    "y": 379,
-    "w": 372,
-    "h": 302
+    "y": 379
   },
   {
     "id": "657a994829f4573f",
@@ -45,9 +43,7 @@
       "3835fda3ddccfb06"
     ],
     "x": 454,
-    "y": 379,
-    "w": 372,
-    "h": 302
+    "y": 379
   },
   {
     "id": "906392ec964d3dab",
@@ -66,9 +62,7 @@
       "d5f851c978157a9f"
     ],
     "x": 34,
-    "y": 39,
-    "w": 372,
-    "h": 302
+    "y": 39
   },
   {
     "id": "01342c3d53a6371c",
@@ -87,9 +81,7 @@
       "3191172f2275f0d6"
     ],
     "x": 454,
-    "y": 39,
-    "w": 372,
-    "h": 302
+    "y": 39
   },
   {
     "id": "42a495fe152f7d6f",
@@ -108,9 +100,7 @@
       "ee3b7cd025a68e88"
     ],
     "x": 874,
-    "y": 39,
-    "w": 372,
-    "h": 302
+    "y": 39
   },
   {
     "id": "dccec8a7a80e5d82",
@@ -175,8 +165,17 @@
     "g": "e08ca9117ba9237c",
     "name": "lamp on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "light.lamp_entrance_hallway",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -186,25 +185,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.lamp_entrance_hallway",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 600,
     "wires": [
@@ -279,8 +259,17 @@
     "g": "e08ca9117ba9237c",
     "name": "switch on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "switch.relay_hallway_1",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -290,25 +279,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_hallway_1",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 460,
     "wires": [
@@ -383,8 +353,17 @@
     "g": "657a994829f4573f",
     "name": "lamp on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "light.lamp_3_hallway",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -394,25 +373,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.lamp_3_hallway",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 540,
     "y": 600,
     "wires": [
@@ -487,8 +447,17 @@
     "g": "657a994829f4573f",
     "name": "switch on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "switch.relay_hallway_3",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -498,25 +467,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_hallway_3",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 540,
     "y": 460,
     "wires": [
@@ -591,8 +541,17 @@
     "g": "906392ec964d3dab",
     "name": "lamp on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "light.ceiling_lamp_living_room",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -602,25 +561,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.ceiling_lamp_living_room",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 260,
     "wires": [
@@ -695,8 +635,17 @@
     "g": "906392ec964d3dab",
     "name": "switch on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "switch.relay_living_room_sofa",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -706,25 +655,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_living_room_sofa",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 120,
     "y": 120,
     "wires": [
@@ -799,8 +729,17 @@
     "g": "01342c3d53a6371c",
     "name": "lamp on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "light.ceiling_lamp_bedroom",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -810,25 +749,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.ceiling_lamp_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 540,
     "y": 260,
     "wires": [
@@ -903,8 +823,17 @@
     "g": "01342c3d53a6371c",
     "name": "switch on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "switch.relay_bedroom",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -914,25 +843,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_bedroom",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 540,
     "y": 120,
     "wires": [
@@ -951,8 +861,17 @@
     "g": "42a495fe152f7d6f",
     "name": "switch on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "switch.relay_aleas_room",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -962,25 +881,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "switch.relay_aleas_room",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 960,
     "y": 120,
     "wires": [
@@ -1055,8 +955,17 @@
     "g": "42a495fe152f7d6f",
     "name": "lamp on",
     "server": "e9739673.bbfed8",
-    "version": 4,
+    "version": 5,
     "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entityId": "light.ceiling_lamp_aleas_room",
+    "entityIdType": "exact",
+    "outputInitially": false,
+    "stateType": "habool",
+    "ifState": "true",
+    "ifStateType": "bool",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
     "for": "0",
     "forType": "num",
     "forUnits": "minutes",
@@ -1066,25 +975,6 @@
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
     "outputProperties": [],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "light.ceiling_lamp_aleas_room",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "habool",
-    "haltifstate": "true",
-    "halt_if_type": "bool",
-    "halt_if_compare": "is",
-    "output_only_on_state_change": true,
     "x": 960,
     "y": 260,
     "wires": [

@@ -158,7 +158,8 @@
     "z": "c95d61a1b9dd9e02",
     "name": "notification action",
     "server": "e9739673.bbfed8",
-    "version": 2,
+    "version": 3,
+    "exposeAsEntityConfig": "",
     "eventType": "mobile_app_notification_action",
     "eventData": "",
     "waitForRunning": true,
@@ -174,17 +175,6 @@
         "propertyType": "msg",
         "value": "true",
         "valueType": "bool"
-      }
-    ],
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
       }
     ],
     "x": 140,
