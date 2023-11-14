@@ -1,0 +1,243 @@
+[
+  {
+    "id": "c43178a4ca1a0da7",
+    "type": "subflow",
+    "name": "send notification to all persons except",
+    "info": "Send notifications to all persons except person/persons specified\r\n\r\n### Configuration\r\n\r\n#### `Exclude person required`\r\n- Type: `string` | `JSON`\r\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\r\n\r\n#### `Notify Data required`\r\n\r\n- Type: `JSON`\r\n- Accepts [Mustache Templates](https://github.com/janl/mustache.js)\r\n\r\nThe notification data to send to the persons\r\n\r\n## Output\r\n\r\nValue types:\r\n\r\n- `Notify Services`: a list of notify services for all persons\r\n\r\n- `Persons`: a list of all persons that recived the notification",
+    "category": "notification",
+    "in": [
+      {
+        "x": 60,
+        "y": 60,
+        "wires": [
+          {
+            "id": "ef2cbb56f9c90405"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1200,
+        "y": 60,
+        "wires": [
+          {
+            "id": "097dea28432a5ca6",
+            "port": 0
+          },
+          {
+            "id": "9cc406475fa74423",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "exclude_person",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Exclude person"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "notify_data",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "label": {
+            "en-US": "Notify data"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str",
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "output_notify_services",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Notify services"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "output_persons",
+        "type": "str",
+        "value": "",
+        "ui": {
+          "icon": "font-awesome/fa-sign-out",
+          "label": {
+            "en-US": "Persons"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "meta": {},
+    "color": "#C0DEED",
+    "icon": "font-awesome/fa-comment"
+  },
+  {
+    "id": "1d756f04a83745c6",
+    "type": "subflow:6be012d64f25f43f",
+    "z": "c43178a4ca1a0da7",
+    "name": "",
+    "env": [
+      {
+        "name": "persons",
+        "value": "{{ persons }}",
+        "type": "str"
+      },
+      {
+        "name": "notify_data",
+        "value": "{{ send_notification_to_all_persons_except.notify_data }}",
+        "type": "str"
+      },
+      {
+        "name": "output_notify_services",
+        "value": "services",
+        "type": "str"
+      }
+    ],
+    "x": 820,
+    "y": 60,
+    "wires": [
+      [
+        "9cc406475fa74423",
+        "097dea28432a5ca6"
+      ]
+    ]
+  },
+  {
+    "id": "9cc406475fa74423",
+    "type": "function",
+    "z": "c43178a4ca1a0da7",
+    "name": "create status",
+    "func": "const text = msg.services.join(', ');\nconst color = 'green';\n\nreturn {\n    payload: {\n        fill: color,\n        text\n    }\n};",
+    "outputs": 1,
+    "timeout": "",
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1070,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "fdd897fe76c0e3ee",
+    "type": "subflow:bd6b3fc9fb3bede7",
+    "z": "c43178a4ca1a0da7",
+    "name": "",
+    "env": [
+      {
+        "name": "output_persons",
+        "value": "persons",
+        "type": "str"
+      }
+    ],
+    "x": 400,
+    "y": 60,
+    "wires": [
+      [
+        "1d756f04a83745c6"
+      ]
+    ]
+  },
+  {
+    "id": "ef2cbb56f9c90405",
+    "type": "subflow:846b2a595d7e7acf",
+    "z": "c43178a4ca1a0da7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "send_notification_to_all_persons_except",
+        "type": "str"
+      },
+      {
+        "name": "entries",
+        "value": "[\"exclude_person\",\"notify_data\"]",
+        "type": "json"
+      }
+    ],
+    "x": 200,
+    "y": 60,
+    "wires": [
+      [
+        "fdd897fe76c0e3ee"
+      ]
+    ]
+  },
+  {
+    "id": "097dea28432a5ca6",
+    "type": "subflow:667ec96ed52e720e",
+    "z": "c43178a4ca1a0da7",
+    "name": "",
+    "env": [
+      {
+        "name": "unique_id",
+        "value": "send_notification_to_all_persons_except",
+        "type": "str"
+      },
+      {
+        "name": "outputs",
+        "value": "{\"output_notify_services\":\"services\",\"output_persons\":\"persons\"}",
+        "type": "json"
+      }
+    ],
+    "x": 1060,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "58df0194657d4b8d",
+    "type": "function",
+    "z": "c43178a4ca1a0da7",
+    "name": "filter persons",
+    "func": "const persons = msg.persons.filter((person) => {\n    if(typeof msg.send_notification_to_all_persons_except.exclude_person === 'string') {\n        return person !== msg.send_notification_to_all_persons_except.exclude_person;\n    }\n    return !msg.send_notification_to_all_persons_except.exclude_person.contains(person);\n});\nreturn {\n    ...msg,\n    persons\n};",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 590,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  }
+]
