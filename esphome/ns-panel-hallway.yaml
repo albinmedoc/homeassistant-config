@@ -24,7 +24,12 @@ packages:
   remote_package:
     url: https://github.com/Blackymas/NSPanel_HA_Blueprint
     ref: main
-    files: [nspanel_esphome.yaml]
+    files:
+      - nspanel_esphome.yaml # Core package
+      - nspanel_esphome_advanced.yaml # activate advanced (legacy) elements - can be useful for troubleshooting
     refresh: 300s
 
 ##### DO NOT CHANGE ANYTHING! #####
+
+# Enable Bluetooth proxy
+bluetooth_proxy:
