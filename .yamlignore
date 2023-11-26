@@ -5,7 +5,6 @@ blueprints/
 custom_components/
 ui_lovelace_minimalist/custom_cards/
 themes/
-esphome/.esphome/
 .github/
 o365_storage/
 node_modules/
