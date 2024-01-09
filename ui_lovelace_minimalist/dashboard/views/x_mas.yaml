@@ -1,0 +1,33 @@
+---
+# X-mas lights
+#
+
+title: "Juldekoration"
+path: "x-mas"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.x_mas_lights_outside
+        variables:
+          ulm_card_light_name: "Utomhus"
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.x_mas_star_living_room
+        variables:
+          ulm_card_light_name: "Vardagsrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.x_mas_heart_elinas_room
+        variables:
+          ulm_card_light_name: "Elinas rum"

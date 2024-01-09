@@ -27,3 +27,4 @@ views:
   - !include views/monitor.yaml
   - !include views/batteries.yaml
   - !include views/lights.yaml
+  - !include views/x_mas.yaml

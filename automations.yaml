@@ -463,3 +463,36 @@
       - 240
       - 180
       - 0
+- id: '1701547802548'
+  alias: Juldekoration
+  description: ''
+  trigger:
+  - platform: time
+    at: '15:00:00'
+    id: 'on'
+  - platform: time
+    at: '23:30:00'
+    id: 'off'
+  condition: []
+  action:
+  - if:
+    - condition: trigger
+      id:
+      - 'on'
+    then:
+    - service: light.turn_on
+      data: {}
+      target:
+        entity_id:
+        - light.x_mas_heart_elinas_room
+        - light.x_mas_star_living_room
+        - light.x_mas_lights_outside
+    else:
+    - service: light.turn_off
+      data: {}
+      target:
+        entity_id:
+        - light.x_mas_heart_elinas_room
+        - light.x_mas_lights_outside
+        - light.x_mas_star_living_room
+  mode: single

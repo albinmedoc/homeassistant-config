@@ -10,6 +10,13 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
+        template: chip_navigate
+        label: "Juldekoration"
+        variables:
+          ulm_chip_navigate_path: "x-mas"
+          ulm_chip_navigate_icon: "mdi:string-lights"
+      
+      - type: "custom:button-card"
         template: custom_card_group_counter_chip
         entity: light.all
         variables:
