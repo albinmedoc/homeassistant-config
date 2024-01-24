@@ -14,11 +14,8 @@ turn_off_tv_living_room:
           target:
             entity_id: remote.apple_tv_remote_living_room
           data:
-            delay_secs: 0.3
             command:
-              - home_hold
-              - down
-              - select
+              - suspend
         - service: input_boolean.turn_off
           data: {}
           target:
