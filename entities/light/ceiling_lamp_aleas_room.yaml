@@ -1,0 +1,54 @@
+---
+# Creates a "fake" light
+# This is to handle the light from being unavailable due the relay cuts the power
+#
+
+platform: template
+lights:
+  ceiling_lamp_aleas_room:
+    unique_id: "fc411e46-ce28-4bce-b08e-59868d06815c"
+    availability_template: "{{ states('switch.relay_aleas_room') != 'unavailable' }}"
+    level_template: "{{ state_attr('light.ceiling_bulb_aleas_room', 'brightness') if states('light.ceiling_bulb_aleas_room') != 'unavailable' else 0 }}"
+    value_template: "{{ is_state('switch.relay_aleas_room', 'on') }}"
+    temperature_template: "{{ state_attr('light.ceiling_bulb_aleas_room', 'color_temp') if states('light.ceiling_bulb_aleas_room') != 'unavailable' else 153 }}"
+    color_template: "{{ state_attr('light.ceiling_bulb_aleas_room', 'hs_color') if states('light.ceiling_bulb_aleas_room') != 'unavailable' else [0,0] }}"
+    supports_transition_template: "{{ false }}"
+    turn_on:
+      service: script.turn_on_relay_before_light
+      data:
+        light_entity_id: light.ceiling_bulb_aleas_room
+        relay_entity_id: switch.relay_aleas_room
+    turn_off:
+      service: script.turn_off_light_before_relay
+      data:
+        light_entity_id: light.ceiling_bulb_aleas_room
+        relay_entity_id: switch.relay_aleas_room
+    set_level:
+      - service: script.turn_on_relay_before_light
+        data:
+          light_entity_id: light.ceiling_bulb_aleas_room
+          relay_entity_id: switch.relay_aleas_room
+      - service: light.turn_on
+        data:
+          entity_id: light.ceiling_bulb_aleas_room
+          brightness: "{{ brightness }}"
+    set_temperature:
+      - service: script.turn_on_relay_before_light
+        data:
+          light_entity_id: light.ceiling_bulb_aleas_room
+          relay_entity_id: switch.relay_aleas_room
+      - service: light.turn_on
+        data:
+          entity_id: light.ceiling_bulb_aleas_room
+          color_temp: "{{ color_temp }}"
+    set_color:
+      - service: script.turn_on_relay_before_light
+        data:
+          light_entity_id: light.ceiling_bulb_aleas_room
+          relay_entity_id: switch.relay_aleas_room
+      - service: light.turn_on
+        data:
+          entity_id: light.ceiling_bulb_aleas_room
+          hs_color:
+            - "{{ hs[0] }}"
+            - "{{ hs[1] }}"
