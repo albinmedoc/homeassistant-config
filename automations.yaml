@@ -125,10 +125,11 @@
       integration: ZHA
       controller_device: 04ce33caec348a593905d01720bebabe
       action_button_short:
-      - service: alarm_control_panel.alarm_disarm
-        data: {}
-        target:
+      - service: alarmo.disarm
+        metadata: {}
+        data:
           entity_id: alarm_control_panel.alarmo
+          code: '908990'
       helper_last_controller_event: input_text.controller_helper_hallway
 - id: '1675782176107'
   alias: Kontroll Matilda Sovrum
