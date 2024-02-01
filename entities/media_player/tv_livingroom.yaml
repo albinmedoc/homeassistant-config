@@ -11,7 +11,7 @@ children:
   - media_player.samsung_tv_living_room
   - media_player.apple_tv_living_room
 state_template: >
-  {% if is_state('input_boolean.tv_living_room_on', 'off') %}
+  {% if is_state('media_player.samsung_tv_living_room', 'off') %}
     off
   {% else %}
     {{ states('media_player.apple_tv_living_room') }}
@@ -24,16 +24,16 @@ commands:
   volume_up:
     service: media_player.volume_up
     target:
-      entity_id: media_player.samsung_tv_vardagsrum
+      entity_id: media_player.samsung_tv_living_room
   volume_down:
     service: media_player.volume_down
     target:
-      entity_id: media_player.samsung_tv_vardagsrum
+      entity_id: media_player.samsung_tv_living_room
   volume_set:
     service: media_player.volume_set
     data_template:
       volume_level: "{{ volume_level }}"
-      entity_id: media_player.samsung_tv_vardagsrum
+      entity_id: media_player.samsung_tv_living_room
   volume_mute:
     service: media_player.volume_mute
     data:
@@ -45,10 +45,10 @@ commands:
     data:
       source: "{{ source }}"
     target:
-      entity_id: media_player.samsung_tv_vardagsrum
+      entity_id: media_player.apple_tv_living_room
 attributes:
-  is_volume_muted: media_player.samsung_tv_vardagsrum|is_volume_muted
-  volume_level: media_player.samsung_tv_vardagsrum|volume_level
-  source: media_player.samsung_tv_vardagsrum|source
-  source_list: media_player.samsung_tv_vardagsrum|source_list
+  is_volume_muted: media_player.samsung_tv_living_room|is_volume_muted
+  volume_level: media_player.samsung_tv_living_room|volume_level
+  source: media_player.apple_tv_living_room|source
+  source_list: media_player.apple_tv_living_room|source_list
 device_class: tv
