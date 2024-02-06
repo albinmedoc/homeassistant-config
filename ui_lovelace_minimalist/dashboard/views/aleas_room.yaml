@@ -13,7 +13,7 @@ cards:
       - title: Aleas rum
       - motion_sensor: binary_sensor.motion_aleas_room
       - lights: light.all_aleas_room
-      - temperature: sensor.smoke_detector_aleas_room_temperature
+      - temperature: sensor.temperature_aleas_room
       - camera: camera.aleas_room
 
   - type: "custom:button-card"

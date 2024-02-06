@@ -13,6 +13,7 @@ cards:
       - title: Hall
       - motion_sensor: binary_sensor.motion_hallway
       - lights: light.all_hallway
+      - temperature: sensor.temperature_hallway
 
   - type: "custom:button-card"
     template: card_title

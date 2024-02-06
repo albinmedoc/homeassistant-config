@@ -15,7 +15,7 @@ cards:
       - lights: light.all_living_room
       - televisions: media_player.televisions_living_room
       - speakers: media_player.speakers_living_room
-      - temperature: sensor.smoke_detector_living_room_temperature
+      - temperature: sensor.temperature_living_room
       - camera: camera.living_room
 
   - type: "custom:button-card"
