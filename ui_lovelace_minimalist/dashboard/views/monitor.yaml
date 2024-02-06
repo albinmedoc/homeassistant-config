@@ -20,12 +20,6 @@ cards:
       ulm_card_homeassistant_os: "update.home_assistant_operating_system_update"
 
   - type: "custom:button-card"
-    template: custom_card_network_speed
-    variables:
-      download_sensor: "sensor.google_wifi_system_download_speed"
-      upload_sensor: "sensor.google_wifi_system_upload_speed"
-
-  - type: "custom:button-card"
     template: card_title
     label: "NAS"
 
@@ -47,7 +41,7 @@ cards:
         color: "yellow"
         max_value: 100
       entity_3:
-        entity_id: sensor.nas_cpu_utilization_other
+        entity_id: sensor.nas_cpu_utilization_total
         icon: "mdi:chip"
         name: "CPU"
         color: "green"
