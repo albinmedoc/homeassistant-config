@@ -14,6 +14,25 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
+    label: "Kameror"
+
+  - type: custom:auto-entities
+    filter:
+      include:
+        - entity_id: camera.frigate_*
+          options:
+            type: custom:webrtc-camera
+            entity: this.entity_id
+            style: '.mode {display: none}'
+    show_empty: true
+    card_param: cards
+    card:
+      square: false
+      type: grid
+      columns: 2
+
+  - type: "custom:button-card"
+    template: card_title
     label: "Dörrsensorer"
 
   - type: "horizontal-stack"
