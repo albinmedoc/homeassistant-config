@@ -354,7 +354,7 @@
     input:
       nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
       language: sv
-      date_format: '%A, %-m/%-d'
+      date_format: '%A, %-d/%-m'
       weather_entity: weather.smhi
       alarm: alarm_control_panel.alarmo
       qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
@@ -377,50 +377,54 @@
         data: {}
         target:
           entity_id: switch.airfryer_conservatory
+      chip01: binary_sensor.all_windows
+      chip01_icon: mdi:window-open
+      chip02: binary_sensor.all_doors
+      chip02_icon: mdi:door-open
       button_page01_label: Vardagsrum
-      entity01: light.ceiling_lamp_living_room
-      entity01_name: Taklampa
-      entity01_icon_color:
-      - 240
-      - 180
-      - 0
-      entity02: light.standing_lamp_living_room
-      entity02_name: Stående lampa
+      entity01: media_player.tv_living_room
+      entity01_name: TV
+      entity02: light.ceiling_lamp_living_room
+      entity02_name: Taklampa
       entity02_icon_color:
       - 240
       - 180
       - 0
-      entity03: light.sonos_lamp_living_room
-      entity03_name: Sonos lampa
+      entity03: light.standing_lamp_living_room
+      entity03_name: Stående lampa
       entity03_icon_color:
       - 240
       - 180
       - 0
-      entity04: light.dining_table_living_room
-      entity04_name: Matbord
+      entity04: light.sonos_lamp_living_room
+      entity04_name: Sonos lampa
       entity04_icon_color:
       - 240
       - 180
       - 0
+      entity05: light.dining_table_living_room
+      entity05_name: Matbord
+      entity05_icon_color:
+      - 240
+      - 180
+      - 0
       button_page02_label: Sovrum
-      entity09: light.ceiling_lamp_bedroom
-      entity09_name: Taklampa
-      entity09_icon_color:
+      entity09: media_player.tv_bedroom
+      entity09_name: TV
+      entity10: cover.blind_bedroom
+      entity10_name: Rullgardin
+      entity11: light.ceiling_lamp_bedroom
+      entity11_name: Taklampa
+      entity11_icon_color:
       - 240
       - 180
       - 0
-      entity10: light.wardrobe_lamp_bedroom
-      entity10_name: Garderob
-      entity10_icon: ''
-      entity10_icon_color:
+      entity12: light.wardrobe_lamp_bedroom
+      entity12_name: Garderob
+      entity12_icon_color:
       - 240
       - 180
       - 0
-      entity11: cover.blind_bedroom
-      entity11_name: Rullgardin
-      entity12: media_player.tv_bedroom
-      entity12_name: TV
-      entity12_icon: ''
       button_page03_label: Hall
       entity17: light.lamp_entrance_hallway
       entity17_name: Entré
@@ -440,6 +444,10 @@
       - 240
       - 180
       - 0
+      home_button06_icon: ''
+      home_button04_icon: mdi:bell-alert
+      screensaver_display_time: true
+      domain_automation_button_action: trigger
 - id: '1701547802548'
   alias: Juldekoration
   description: ''
