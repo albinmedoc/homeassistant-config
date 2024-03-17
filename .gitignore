@@ -16,6 +16,9 @@ deps
 # Specific file ignores
 secrets.yaml
 .HA_VERSION
+.omv_cookies.json
+.timeline
+.vacuum
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
