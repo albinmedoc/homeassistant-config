@@ -3,6 +3,9 @@
 # This panel sits in the hallway
 #
 
+esphome:
+  compile_process_limit: 1
+
 substitutions:
   device_name: "ns_panel_hallway"
   wifi_ssid: !secret wifi_ssid
@@ -12,19 +15,6 @@ substitutions:
   # nextion_update_url: "https://raw.githubusercontent.com/Blackymas/NSPanel_HA_Blueprint/main/nspanel_eu.tft"  # URL to Github
 
 ##### My customization - Start #####
-# Enable Bluetooth proxy
-bluetooth_proxy:
-# Set Wi-Fi power save mode to "LIGHT" as required for Bluetooth on ESP32
-wifi:
-  power_save_mode: LIGHT
-  
-# Expose relay local control switch to Home Assistant
-switch:
-  - id: !extend relay1_local
-    internal: false
-  - id: !extend relay2_local
-    internal: false
-##### My customization - End #####
 
 # Core and optional configurations
 packages:
