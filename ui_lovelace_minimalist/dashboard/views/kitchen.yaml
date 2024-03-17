@@ -18,16 +18,6 @@ cards:
     template: card_title
     label: "Enheter"
 
-  - type: "custom:button-card"
-    template: card_media_player
-    entity: media_player.homepod_kitchen
-    variables:
-      ulm_card_media_player_name: "HomePod"
-      ulm_card_media_player_enable_art: true
-      ulm_card_media_player_enable_controls: true
-      ulm_card_media_player_collapsible: true
-      ulm_card_media_player_enable_popup: true
-
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
