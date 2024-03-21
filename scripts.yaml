@@ -1,8 +1,147 @@
----
-# This file is used by the scripts editor
-# in the Home Assistant frontend.
-#
-# This file must exist for the frontend scripts editor to work.
-#
-# If you are looking for my scripts: See scripts folder.
-{}
+turn_off_light_before_relay:
+  alias: Släck lampa före brytare
+  sequence:
+  - service: light.turn_off
+    target:
+      entity_id: '{{ light_entity_id }}'
+    alias: Släck lampa
+  - service: switch.turn_off
+    target:
+      entity_id: '{{ relay_entity_id }}'
+    alias: Stäng av brytare
+  icon: mdi:lightbulb-alert
+  mode: queued
+  max: 10
+  fields:
+    relay_entity_id:
+      selector:
+        entity:
+          filter:
+          - domain: switch
+      name: Brytare
+      required: true
+    light_entity_id:
+      selector:
+        entity:
+          filter:
+          - domain: light
+      name: Lampa
+      required: true
+turn_on_relay_before_light:
+  alias: Sätt på brytare före lampa
+  sequence:
+  - alias: Sätt på brytare om den är av
+    if:
+    - condition: template
+      value_template: '{{ is_state(relay_entity_id, ''off'') }}'
+      alias: Testa om brytare är av
+    then:
+    - service: switch.turn_on
+      target:
+        entity_id: '{{ relay_entity_id }}'
+      alias: Sätt på brytare
+    - alias: Vänta tills lampa blir tillgänglig
+      if:
+      - condition: template
+        value_template: '{{ is_state(light_entity_id, ''unavailable'') }}'
+        alias: Testa om lampa är otillgänglig
+      then:
+      - wait_for_trigger:
+        - platform: template
+          value_template: '{{ not is_state(light_entity_id, ''unavailable'') }}'
+          alias: När lampa inte längre är otillgänglig
+        alias: Vänta till lampa inte längre är otillgänglig
+  - if:
+    - condition: template
+      value_template: '{{ is_state(light_entity_id, ''off'') }}'
+      alias: Testa om lampor är av
+    then:
+    - service: light.turn_on
+      target:
+        entity_id: '{{ light_entity_id }}'
+      alias: Sätt på lampa
+    alias: Sätt på lampa om den är av
+  icon: mdi:lightbulb-alert
+  mode: queued
+  max: 10
+  fields:
+    relay_entity_id:
+      selector:
+        entity:
+          filter:
+          - domain: switch
+      name: Brytare
+      required: true
+    light_entity_id:
+      selector:
+        entity:
+          filter:
+          - domain: light
+      name: Lampa
+      required: true
+'1711028459263':
+  alias: Stäng av TV med Apple TV
+  sequence:
+  - service: media_player.turn_off
+    target:
+      entity_id: '{{ media_player }}'
+    data: {}
+    alias: Stäng av mediaspelare
+  - service: remote.send_command
+    target:
+      entity_id: '{{ remote }}'
+    data:
+      command:
+      - suspend
+    alias: Stäng av AppleTV
+  icon: mdi:television
+  mode: single
+  fields:
+    mediaplayer:
+      selector:
+        entity:
+          filter:
+          - domain: media_player
+      name: Mediaspelare
+      required: true
+    remote:
+      selector:
+        entity:
+          filter:
+          - domain: remote
+      name: Fjärkontroll
+      required: true
+      description: Apple TV Remote
+turn_on_tv_using_apple_tv:
+  alias: Sätt på TV med Apple TV
+  sequence:
+  - service: media_player.turn_on
+    target:
+      entity_id: '{{ media_player }}'
+    data: {}
+    alias: Sätt på mediaspelare
+  - service: remote.send_command
+    target:
+      entity_id: '{{ remote }}'
+    data:
+      command:
+      - home_hold
+    alias: Sätt på AppleTV
+  icon: mdi:television
+  mode: single
+  fields:
+    mediaplayer:
+      selector:
+        entity:
+          filter:
+          - domain: media_player
+      name: Mediaspelare
+      required: true
+    remote:
+      selector:
+        entity:
+          filter:
+          - domain: remote
+      name: Fjärkontroll
+      required: true
+      description: Apple TV Remote

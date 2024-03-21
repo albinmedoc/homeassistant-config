@@ -18,9 +18,15 @@ state_template: >
   {% endif %}
 commands:
   turn_on:
-    service: script.turn_on_tv_living_room
+    service: script.turn_on_tv_using_apple_tv
+    data:
+      media_player: media_player.samsung_tv_living_room
+      remote: remote.apple_tv_remote_living_room
   turn_off:
-    service: script.turn_off_tv_living_room
+    service: script.turn_off_tv_using_apple_tv
+    data:
+      media_player: media_player.samsung_tv_living_room
+      remote: remote.apple_tv_remote_living_room
   volume_up:
     service: media_player.volume_up
     target:
