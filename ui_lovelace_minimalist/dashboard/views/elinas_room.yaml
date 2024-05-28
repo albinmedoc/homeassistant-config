@@ -25,6 +25,12 @@ cards:
         entity: light.ceiling_lamp_elinas_room
         variables:
           ulm_card_light_name: "Taklampa"
+      - type: 'custom:button-card'
+        template: card_input_boolean
+        entity: input_boolean.disco_elinas_room
+        variables:
+          ulm_card_input_boolean_name: Disco
+          ulm_card_input_boolean_icon: mdi:party-popper
 
   - type: "custom:button-card"
     template: card_title

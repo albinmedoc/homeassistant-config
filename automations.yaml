@@ -481,3 +481,37 @@
         - light.x_mas_lights_outside
         - light.x_mas_star_living_room
   mode: single
+- id: '1711038434012'
+  alias: Disco Elinas rum
+  description: ''
+  use_blueprint:
+    path: Twanne/party_lights.yaml
+    input:
+      party_mode_trigger: input_boolean.disco_elinas_room
+      target_light:
+      - light.ceiling_lamp_elinas_room
+      time_between_changes:
+        hours: 0
+        minutes: 0
+        seconds: 1
+      color_mode: random
+      brightness_mode: fixed
+      fixed_brightness_pct: 100
+      lights_turn_off_party: false
+- id: '1711038691731'
+  alias: Disco Aleas rum
+  description: ''
+  use_blueprint:
+    path: Twanne/party_lights.yaml
+    input:
+      party_mode_trigger: input_boolean.disco_aleas_room
+      target_light:
+      - light.ceiling_lamp_aleas_room
+      time_between_changes:
+        hours: 0
+        minutes: 0
+        seconds: 2
+      transition_time: 1
+      color_mode: random
+      brightness_mode: fixed
+      fixed_brightness_pct: 100
