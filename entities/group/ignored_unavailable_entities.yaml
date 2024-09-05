@@ -7,11 +7,11 @@ entities:
   # Camera Living room
   - binary_sensor.camera_living_room_motion
 
-  # Cooker hood light
-  - light.cooker_hood_kitchen
-
   # Bulb Elinas room
   - light.ceiling_bulb_elinas_room
+
+  # Bulb Aleas room
+  - light.ceiling_bulb_aleas_room
 
   # Buld Bedroom
   - light.ceiling_bulb_bedroom
@@ -22,3 +22,6 @@ entities:
 
   # Air conditioner
   - climate.air_conditioner
+
+  # Home Assistant Conversation
+  - conversation.home_assistant

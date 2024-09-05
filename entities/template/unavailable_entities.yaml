@@ -28,15 +28,19 @@ sensor:
         {# Ignore entities from NS Panel Living room #}
         {% set ignored_device_entities = ignored_device_entities|list + device_entities('1d834a32216cb87c3c19e81fcffafd7d')|list %}
 
-        {# Ignore entities from premise #}
-        {% set ignored_premise_entities = state_attr('sensor.premise_entities','entity_id')|list %}
+        {# Ignore entities from Camera Living room #}
+        {% set ignored_device_entities = ignored_device_entities|list + device_entities('9b637b8ae244ea424e94c1e8626ca4b7')|list %}
+
+        {# Ignore entities from Camera Garden #}
+        {% set ignored_device_entities = ignored_device_entities|list + device_entities('f4aeaa7cc7f14953f06c826df7a440b2')|list %}
 
         {# Combine all ignored entities arrays #}
-        {% set ignored = ignored_entities + ignored_integration_entities + ignored_device_entities + ignored_premise_entities %}
+        {% set ignored = ignored_entities + ignored_integration_entities + ignored_device_entities %}
 
         {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
 
         {% set entities = states|rejectattr('domain','eq','group')
+            |rejectattr('domain','eq','update')
             |rejectattr('last_changed','ge',ignore_ts)
             |selectattr('state','in',['unavailable','unknown']) %}
 
