@@ -109,8 +109,8 @@ blueprint:
             value: pink
           - label: YELLOWS ONLY MODE
             value: yellow
-          sort: false
           multiple: false
+          sort: false
           custom_value: false
     brightness_mode:
       name: Brightness mode
@@ -126,8 +126,8 @@ blueprint:
             value: random
           - label: FIXED BRIGHTNESS
             value: fixed
-          sort: false
           multiple: false
+          sort: false
           custom_value: false
     min_brightness_pct:
       name: Minimum brightness (RANDOM BRIGHTNESS MODE)
@@ -179,79 +179,63 @@ trigger:
 - platform: state
   entity_id: !input party_mode_trigger
   to: 'on'
-  id: party_on
-- platform: state
-  entity_id: !input target_light
-  to: 'off'
-  id: lights_off
 action:
-- if:
-    - condition: trigger
-      id: lights_off
-  then:
-    - service: homeassistant.turn_off
-      target:
-        entity_id: !input party_mode_trigger
-- if:
-    - condition: trigger
-      id: party_on
-  then:
-    - repeat:
+- repeat:
+    sequence:
+    - choose:
+      - conditions: '{{ sync_lights is true }}'
         sequence:
-        - choose:
-          - conditions: '{{ sync_lights is true }}'
+        - variables:
+            brightness_value: "{% if brightness_mode == \"random\" %}\n  {{ range(min_brightness_pct,
+              max_brightness_pct) | random }}\n{% else %}\n  {{ fixed_brightness_pct
+              }}\n{% endif %}\n"
+            rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) | random,
+              range(0,255) | random, range(0,255) | random }}\n{% elif color_mode
+              == \"red\" %}\n  {{ range(0,255) | random, 0, 0 }}\n{% elif color_mode
+              == \"green\" %}\n  {{ 0, range(0,255) | random, 0 }}\n{% elif color_mode
+              == \"blue\" %}\n  {{ 0, 0, range(0,255) | random }}\n{% elif color_mode
+              == \"teal\" %}\n  {{ range(0,255) | random, 255, 255 }}\n{% elif color_mode
+              == \"pink\" %}\n  {{ 255, range(0,255) | random, 255 }}\n{% elif color_mode
+              == \"yellow\" %}\n  {{ 255, 255, range(0,255) | random }}\n{% else %}\n
+              \ {{ 255, 255, 255 }}\n{% endif %}\n"
+        - service: light.turn_on
+          data: "{% if color_mode == \"no_color_change\" %}\n  {{ { \"transition\":
+            transition_time, \"brightness_pct\": brightness_value } }}\n{% else %}\n
+            \ {{ { \"transition\": transition_time, \"brightness_pct\": brightness_value,
+            \"rgb_color\": rgb_value } }}\n{% endif %}\n"
+          target:
+            entity_id: '{{ target_light }}'
+      - conditions: '{{ sync_lights is false }}'
+        sequence:
+        - service: system_log.write
+          metadata: {}
+          data:
+            level: warning
+            message: 'target_light: {{ target_light }}
+
+              '
+        - repeat:
+            for_each: '{{ target_light }}'
             sequence:
             - variables:
                 brightness_value: "{% if brightness_mode == \"random\" %}\n  {{ range(min_brightness_pct,
                   max_brightness_pct) | random }}\n{% else %}\n  {{ fixed_brightness_pct
                   }}\n{% endif %}\n"
-                rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) | random,
-                  range(0,255) | random, range(0,255) | random }}\n{% elif color_mode
-                  == \"red\" %}\n  {{ range(0,255) | random, 0, 0 }}\n{% elif color_mode
-                  == \"green\" %}\n  {{ 0, range(0,255) | random, 0 }}\n{% elif color_mode
-                  == \"blue\" %}\n  {{ 0, 0, range(0,255) | random }}\n{% elif color_mode
-                  == \"teal\" %}\n  {{ range(0,255) | random, 255, 255 }}\n{% elif color_mode
-                  == \"pink\" %}\n  {{ 255, range(0,255) | random, 255 }}\n{% elif color_mode
-                  == \"yellow\" %}\n  {{ 255, 255, range(0,255) | random }}\n{% else %}\n
-                  \ {{ 255, 255, 255 }}\n{% endif %}\n"
+                rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) |
+                  random, range(0,255) | random, range(0,255) | random }}\n{% elif
+                  color_mode == \"red\" %}\n  {{ range(0,255) | random, 255, 255 }}\n{%
+                  elif color_mode == \"green\" %}\n  {{ 255, range(0,255) | random,
+                  255 }}\n{% elif color_mode == \"blue\" %}\n  {{ 255, 255, range(0,255)
+                  | random }}\n{% else %}\n  {{ 255, 255, 255 }}\n{% endif %}\n"
             - service: light.turn_on
               data: "{% if color_mode == \"no_color_change\" %}\n  {{ { \"transition\":
-                transition_time, \"brightness_pct\": brightness_value } }}\n{% else %}\n
-                \ {{ { \"transition\": transition_time, \"brightness_pct\": brightness_value,
+                transition_time, \"brightness_pct\": brightness_value } }}\n{% else
+                %}\n  {{ { \"transition\": transition_time, \"brightness_pct\": brightness_value,
                 \"rgb_color\": rgb_value } }}\n{% endif %}\n"
               target:
-                entity_id: '{{ target_light }}'
-          - conditions: '{{ sync_lights is false }}'
-            sequence:
-            - service: system_log.write
-              metadata: {}
-              data:
-                level: warning
-                message: 'target_light: {{ target_light }}
-
-                  '
-            - repeat:
-                for_each: '{{ target_light }}'
-                sequence:
-                - variables:
-                    brightness_value: "{% if brightness_mode == \"random\" %}\n  {{ range(min_brightness_pct,
-                      max_brightness_pct) | random }}\n{% else %}\n  {{ fixed_brightness_pct
-                      }}\n{% endif %}\n"
-                    rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) |
-                      random, range(0,255) | random, range(0,255) | random }}\n{% elif
-                      color_mode == \"red\" %}\n  {{ range(0,255) | random, 255, 255 }}\n{%
-                      elif color_mode == \"green\" %}\n  {{ 255, range(0,255) | random,
-                      255 }}\n{% elif color_mode == \"blue\" %}\n  {{ 255, 255, range(0,255)
-                      | random }}\n{% else %}\n  {{ 255, 255, 255 }}\n{% endif %}\n"
-                - service: light.turn_on
-                  data: "{% if color_mode == \"no_color_change\" %}\n  {{ { \"transition\":
-                    transition_time, \"brightness_pct\": brightness_value } }}\n{% else
-                    %}\n  {{ { \"transition\": transition_time, \"brightness_pct\": brightness_value,
-                    \"rgb_color\": rgb_value } }}\n{% endif %}\n"
-                  target:
-                    entity_id: '{{ repeat.item }}'
-        - delay: !input time_between_changes
-        until:
-        - condition: state
-          entity_id: !input party_mode_trigger
-          state: 'off'
+                entity_id: '{{ repeat.item }}'
+    - delay: !input time_between_changes
+    until:
+    - condition: state
+      entity_id: !input party_mode_trigger
+      state: 'off'
