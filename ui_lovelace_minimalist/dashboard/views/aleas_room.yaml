@@ -14,7 +14,6 @@ cards:
       - motion_sensor: binary_sensor.motion_aleas_room
       - lights: light.all_aleas_room
       - temperature: sensor.temperature_aleas_room
-      - camera: camera.aleas_room
 
   - type: "custom:button-card"
     template: card_title
