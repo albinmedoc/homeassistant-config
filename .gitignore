@@ -19,6 +19,8 @@ secrets.yaml
 .omv_cookies.json
 .timeline
 .vacuum
+.exports
+.jwt_secret
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
