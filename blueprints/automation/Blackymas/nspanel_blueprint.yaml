@@ -2,7 +2,7 @@ blueprint:
   name: NSPanel Configuration
   description: '# NSPanel Configuration via Blueprint: Complete UI-Based Setup
 
-    **Version**: v4.3.9
+    **Version**: v4.3.11
 
 
     This project enables comprehensive configuration of your NSPanel through a Blueprint
@@ -579,8 +579,8 @@ blueprint:
                 value: .
               - label: ', (Comma)'
                 value: ','
-              sort: false
               custom_value: false
+              sort: false
     weather_temperature:
       name: Weather and temperature (optional)
       icon: mdi:weather-partly-snowy-rainy
@@ -652,8 +652,8 @@ blueprint:
                 value: '5'
               - label: 72px
                 value: '6'
-              sort: false
               custom_value: false
+              sort: false
         home_indoor_temp_visible:
           name: Home Page - Indoor Temperature Sensor Visibility
           description: Toggle to display the indoor temperature on the Home page.
@@ -860,8 +860,8 @@ blueprint:
                 value: '7'
               - label: 32px
                 value: '8'
-              sort: false
               custom_value: false
+              sort: false
         chip01:
           name: Home page - Chip 01 - Entity (Optional)
           description: Entity which should be displayed.
@@ -1164,8 +1164,8 @@ blueprint:
                 value: '7'
               - label: 32px
                 value: '8'
-              sort: false
               custom_value: false
+              sort: false
         home_custom_button01:
           name: Home page - Custom button 1 - Entity (Optional)
           description: 'Entity which should be controlled.
@@ -1963,8 +1963,8 @@ blueprint:
                 value: '67108864'
               - label: Keyboard pop-up page
                 value: '16777216'
-              sort: false
               custom_value: false
+              sort: false
         hw_buttons_bar_color_on:
           name: Hardware Buttons - Bar color when `On` (Optional)
           description: Choose a color for the button's bars when the controlled entity
@@ -2066,9 +2066,9 @@ blueprint:
               options:
               - Default
               - Custom Action
-              sort: false
-              custom_value: false
               multiple: false
+              custom_value: false
+              sort: false
         left_button_hold_custom_action:
           name: Left hardware button custom hold action (Optional)
           description: The action(s) to launch on hold.
@@ -2165,9 +2165,9 @@ blueprint:
               options:
               - Default
               - Custom Action
-              sort: false
-              custom_value: false
               multiple: false
+              custom_value: false
+              sort: false
         right_button_hold_custom_action:
           name: Right hardware button custom hold action (Optional)
           description: The action(s) to launch on hold.
@@ -2229,8 +2229,8 @@ blueprint:
                 value: '8'
               - label: 48px
                 value: '10'
-              sort: false
               custom_value: false
+              sort: false
     button_page_01:
       name: Button page 01 (optional)
       icon: mdi:gesture-tap-button
@@ -4181,8 +4181,8 @@ blueprint:
                 value: '1'
               - label: Left
                 value: '2'
-              sort: false
               custom_value: false
+              sort: false
         entitypages_show_entities_icons:
           name: Entity Pages - Show Entity Icons
           description: Display icons associated with each entity.
@@ -4957,8 +4957,8 @@ blueprint:
           default: Utilitites Dashboard
           selector:
             text:
-              multiline: false
               multiple: false
+              multiline: false
         utilities_page01_icon:
           name: Utilities page - Icon (Optional)
           description: Select the icon to be shown in the top left corner of the page.
@@ -4971,8 +4971,8 @@ blueprint:
           default: Home
           selector:
             text:
-              multiline: false
               multiple: false
+              multiline: false
         utilities_page01_home_icon:
           name: Utilities page - Home - Icon (Optional)
           description: 'Select the icon to be shown in the Home area. (Default: mdi:home-lightning-bolt-outline).'
@@ -5006,8 +5006,8 @@ blueprint:
           default: Grid
           selector:
             text:
-              multiline: false
               multiple: false
+              multiline: false
         utilities_page01_grid_icon:
           name: Utilities page - Grid - Icon (Optional)
           description: 'Select the icon to be shown in the Grid area. (Default: mdi:transmission-tower).'
@@ -5433,8 +5433,8 @@ blueprint:
                 value: '11'
               - label: 192px
                 value: '12'
-              sort: false
               custom_value: false
+              sort: false
         screensaver_display_time_font_color:
           name: Screen saver - Display time font color
           description: Font color to be used when displaying the time while sleeping
@@ -5568,8 +5568,8 @@ blueprint:
           default: ''
           selector:
             text:
-              multiline: false
               multiple: false
+              multiline: false
         domain_automation_button_action:
           name: System settings - Button action for automation entities
           description: 'Select the button action when associated to `automation.xxx`
@@ -5589,8 +5589,8 @@ blueprint:
                 value: toggle
               - label: Trigger
                 value: trigger
-              sort: false
               custom_value: false
+              sort: false
         sun_entity:
           name: System Settings - Sun Entity
           description: Select the entity that indicates the Sun's position.
@@ -5640,7 +5640,7 @@ trigger_variables:
       group05: !input utilities_page01_group05_line_reference
       group06: !input utilities_page01_group06_line_reference
 variables:
-  blueprint_version: 4.3.9
+  blueprint_version: 4.3.11
   pages:
     current: '{{ states(currentpage) }}'
     home: home
@@ -13945,7 +13945,7 @@ action:
           night: Nacht
           vacation: Urlaub
           bypass: Umgehen
-          disarm: Entwaffnen
+          disarm: Aus
         settings:
           reboot: Neustart
           sleep: Schlafmodus
@@ -15237,7 +15237,7 @@ action:
           night: Nacht
           vacation: Vakantie
           bypass: Omzeilen
-          disarm: Ontwapenen
+          disarm: Uit
         settings:
           reboot: Herstarten
           sleep: Slaapstand
@@ -16876,8 +16876,8 @@ action:
           then:
           - service: esphome.{{ nspanel_name }}_component_text
             data:
-              id: boot.bluep_version
-              txt: '{{ blueprint_version }}'
+              id: boot.ver_blueprint
+              txt: 'Blueprint: {{ blueprint_version }}'
             continue_on_error: true
           - &id006
             variables:

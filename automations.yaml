@@ -172,12 +172,11 @@
       entity_id: sensor.unavailable_entities
       below: 1
     then:
-    - service: persistent_notification.dismiss
-      data:
+    - data:
         notification_id: unavailable_entities
+      action: persistent_notification.dismiss
     else:
-    - service: persistent_notification.create
-      data:
+    - data:
         notification_id: unavailable_entities
         title: "{{ \"Otillgängliga entiteter (\" ~ states(\"sensor.unavailable_entities\")
           ~ \")\" }} \n"
@@ -191,12 +190,15 @@
           id=\"\" ) %}\n  {% set entity = namespace( data=\"\" ) %}\n  {% set dev.id
           = item.split(\"|\")[1] %}\n  {% set entity.data = item.split(\"|\")[2] %}\n
           \ {% if lastdev.id != dev.id %}\n    {% if dev.id != 'None' %}\n      {%
-          set ns.result = ns.result + [ \"**<a href=\\\"/config/devices/device/\"
-          ~ dev.id ~ \"\\\">\" ~ device_attr(dev.id, \"name\") ~ \"</a>**\" ] %}\n
-          \   {% else %}\n      {% set ns.result = ns.result + [ \"**Icke-enhetsentiteter**\"
-          ] %}\n    {% endif %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n
-          \ {% set ns.result = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result
-          | join('\\n') }}\n"
+          set ns.result = ns.result + [ \n        \"**<a href=\\\"/config/devices/device/\"
+          ~ dev.id ~ \"\\\">\" ~ \n        (device_attr(dev.id, \"name_by_user\")
+          if device_attr(dev.id, \"name_by_user\") is not none else device_attr(dev.id,
+          \"name\")) ~ \n        \"</a>**\" \n    ] %}\n    {% else %}\n      {% set
+          ns.result = ns.result + [ \"**Icke-enhetsentiteter**\" ] %}\n    {% endif
+          %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n  {% set ns.result
+          = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result | join('\\n')
+          }}\n"
+      action: persistent_notification.create
   mode: restart
 - id: '1678827426647'
   alias: NS-Panel Hallway
