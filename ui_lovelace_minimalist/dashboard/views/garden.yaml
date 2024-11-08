@@ -19,3 +19,11 @@ cards:
       - type: custom:simple-weather-card
         entity: weather.smhi
         backdrop: true
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.floodlight_garden
+        variables:
+          ulm_card_light_name: "Strålkastare"
