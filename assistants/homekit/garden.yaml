@@ -4,6 +4,8 @@
 # Area: Garden
 #
 
+- light.floodlight_garden
+
 - camera.garden
 
 - sensor.temperature_garden
