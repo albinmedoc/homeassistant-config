@@ -65,6 +65,15 @@ cards:
         variables:
           ulm_card_light_name: "Matbord"
 
+- type: "custom:button-card"
+    template: card_cover
+    entity: cover.curtain_livingroom
+    variables:
+      ulm_card_cover_name: "Rullgardin"
+      ulm_card_cover_icon: "mdi:blinds"
+      ulm_card_cover_enable_controls: true
+      ulm_card_cover_enable_slider: true
+
   - type: "custom:button-card"
     template: card_title
     label: "Sensorer"
