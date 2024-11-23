@@ -48,7 +48,7 @@ cards:
 
   - type: "custom:button-card"
     template: card_cover
-    entity: cover.blind_bedroom
+    entity: cover.curtain_bedroom
     variables:
       ulm_card_cover_name: "Rullgardin"
       ulm_card_cover_icon: "mdi:blinds"
