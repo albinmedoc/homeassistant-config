@@ -2,7 +2,7 @@ blueprint:
   name: NSPanel Configuration
   description: '# NSPanel Configuration via Blueprint: Complete UI-Based Setup
 
-    **Version**: v4.3.11
+    **Version**: v4.3.12
 
 
     This project enables comprehensive configuration of your NSPanel through a Blueprint
@@ -539,32 +539,32 @@ blueprint:
               - Pacific/Wake (<+12>-12)
               - Pacific/Wallis (<+12>-12)
               - Etc/GMT (GMT0)
-              - Etc/GMT-14 (<+14>-14)
-              - Etc/GMT-13 (<+13>-13)
-              - Etc/GMT-12 (<+12>-12)
-              - Etc/GMT-11 (<+11>-11)
-              - Etc/GMT-10 (<+10>-10)
-              - Etc/GMT-9 (<+09>-9)
-              - Etc/GMT-8 (<+08>-8)
-              - Etc/GMT-7 (<+07>-7)
-              - Etc/GMT-6 (<+06>-6)
-              - Etc/GMT-5 (<+05>-5)
-              - Etc/GMT-4 (<+04>-4)
-              - Etc/GMT-3 (<+03>-3)
-              - Etc/GMT-2 (<+02>-2)
-              - Etc/GMT-1 (<+01>-1)
-              - Etc/GMT+1 (<-01>1)
-              - Etc/GMT+2 (<-02>2)
-              - Etc/GMT+3 (<-03>3)
-              - Etc/GMT+4 (<-04>4)
-              - Etc/GMT+5 (<-05>5)
-              - Etc/GMT+6 (<-06>6)
-              - Etc/GMT+7 (<-07>7)
-              - Etc/GMT+8 (<-08>8)
-              - Etc/GMT+9 (<-09>9)
-              - Etc/GMT+10 (<-10>10)
-              - Etc/GMT+11 (<-11>11)
-              - Etc/GMT+12 (<-12>12)
+              - Etc/GMT+14 (<+14>-14)
+              - Etc/GMT+13 (<+13>-13)
+              - Etc/GMT+12 (<+12>-12)
+              - Etc/GMT+11 (<+11>-11)
+              - Etc/GMT+10 (<+10>-10)
+              - Etc/GMT+9 (<+09>-9)
+              - Etc/GMT+8 (<+08>-8)
+              - Etc/GMT+7 (<+07>-7)
+              - Etc/GMT+6 (<+06>-6)
+              - Etc/GMT+5 (<+05>-5)
+              - Etc/GMT+4 (<+04>-4)
+              - Etc/GMT+3 (<+03>-3)
+              - Etc/GMT+2 (<+02>-2)
+              - Etc/GMT+1 (<+01>-1)
+              - Etc/GMT-1 (<-01>1)
+              - Etc/GMT-2 (<-02>2)
+              - Etc/GMT-3 (<-03>3)
+              - Etc/GMT-4 (<-04>4)
+              - Etc/GMT-5 (<-05>5)
+              - Etc/GMT-6 (<-06>6)
+              - Etc/GMT-7 (<-07>7)
+              - Etc/GMT-8 (<-08>8)
+              - Etc/GMT-9 (<-09>9)
+              - Etc/GMT-10 (<-10>10)
+              - Etc/GMT-11 (<-11>11)
+              - Etc/GMT-12 (<-12>12)
               - Etc/UTC (UTC0)
               sort: false
         decimal_separator:
@@ -579,8 +579,8 @@ blueprint:
                 value: .
               - label: ', (Comma)'
                 value: ','
-              custom_value: false
               sort: false
+              custom_value: false
     weather_temperature:
       name: Weather and temperature (optional)
       icon: mdi:weather-partly-snowy-rainy
@@ -652,8 +652,8 @@ blueprint:
                 value: '5'
               - label: 72px
                 value: '6'
-              custom_value: false
               sort: false
+              custom_value: false
         home_indoor_temp_visible:
           name: Home Page - Indoor Temperature Sensor Visibility
           description: Toggle to display the indoor temperature on the Home page.
@@ -860,8 +860,8 @@ blueprint:
                 value: '7'
               - label: 32px
                 value: '8'
-              custom_value: false
               sort: false
+              custom_value: false
         chip01:
           name: Home page - Chip 01 - Entity (Optional)
           description: Entity which should be displayed.
@@ -1164,8 +1164,8 @@ blueprint:
                 value: '7'
               - label: 32px
                 value: '8'
-              custom_value: false
               sort: false
+              custom_value: false
         home_custom_button01:
           name: Home page - Custom button 1 - Entity (Optional)
           description: 'Entity which should be controlled.
@@ -1963,8 +1963,8 @@ blueprint:
                 value: '67108864'
               - label: Keyboard pop-up page
                 value: '16777216'
-              custom_value: false
               sort: false
+              custom_value: false
         hw_buttons_bar_color_on:
           name: Hardware Buttons - Bar color when `On` (Optional)
           description: Choose a color for the button's bars when the controlled entity
@@ -2067,8 +2067,8 @@ blueprint:
               - Default
               - Custom Action
               multiple: false
-              custom_value: false
               sort: false
+              custom_value: false
         left_button_hold_custom_action:
           name: Left hardware button custom hold action (Optional)
           description: The action(s) to launch on hold.
@@ -2166,8 +2166,8 @@ blueprint:
               - Default
               - Custom Action
               multiple: false
-              custom_value: false
               sort: false
+              custom_value: false
         right_button_hold_custom_action:
           name: Right hardware button custom hold action (Optional)
           description: The action(s) to launch on hold.
@@ -2229,8 +2229,8 @@ blueprint:
                 value: '8'
               - label: 48px
                 value: '10'
-              custom_value: false
               sort: false
+              custom_value: false
     button_page_01:
       name: Button page 01 (optional)
       icon: mdi:gesture-tap-button
@@ -4181,8 +4181,8 @@ blueprint:
                 value: '1'
               - label: Left
                 value: '2'
-              custom_value: false
               sort: false
+              custom_value: false
         entitypages_show_entities_icons:
           name: Entity Pages - Show Entity Icons
           description: Display icons associated with each entity.
@@ -4949,8 +4949,8 @@ blueprint:
             number:
               min: 0.0
               max: 255.0
-              step: 1.0
               mode: slider
+              step: 1.0
         utilities_page01_label:
           name: Utilities page - Label (Optional)
           description: Label which should be displayed in the top of the page.
@@ -5433,8 +5433,8 @@ blueprint:
                 value: '11'
               - label: 192px
                 value: '12'
-              custom_value: false
               sort: false
+              custom_value: false
         screensaver_display_time_font_color:
           name: Screen saver - Display time font color
           description: Font color to be used when displaying the time while sleeping
@@ -5486,8 +5486,8 @@ blueprint:
               min: 500.0
               max: 60000.0
               unit_of_measurement: milliseconds
-              step: 1.0
               mode: slider
+              step: 1.0
         media_player_update_delay:
           name: Media player - Delay (msec) after entity updade call?
           default: 500
@@ -5496,8 +5496,8 @@ blueprint:
               min: 0.0
               max: 5000.0
               unit_of_measurement: milliseconds
-              step: 1.0
               mode: slider
+              step: 1.0
     advanced_settings:
       name: Advanced settings (optional)
       icon: mdi:cogs
@@ -5589,8 +5589,8 @@ blueprint:
                 value: toggle
               - label: Trigger
                 value: trigger
-              custom_value: false
               sort: false
+              custom_value: false
         sun_entity:
           name: System Settings - Sun Entity
           description: Select the entity that indicates the Sun's position.
@@ -5640,7 +5640,7 @@ trigger_variables:
       group05: !input utilities_page01_group05_line_reference
       group06: !input utilities_page01_group06_line_reference
 variables:
-  blueprint_version: 4.3.11
+  blueprint_version: 4.3.12
   pages:
     current: '{{ states(currentpage) }}'
     home: home
@@ -16927,18 +16927,14 @@ action:
                 qrcode: !input qrcode_value
               home_indoor_temp_icon: !input home_indoor_temp_icon
               timezone: !input timezone
-          - if: '{{ timezone is string and timezone | length > 1 and esphome_version
-              >= "4.3.4" }}'
-            then:
-            - variables:
-                timezone_code: "{{\n  timezone.split('(')[1]|replace(')', '')\n  if
-                  timezone.split('(') | count > 0\n  else timezone\n}}\n"
-            - *id001
-            - service: esphome.{{ nspanel_name }}_set_string
-              data:
-                component: timezone
-                val: '{{ timezone_code }}'
-              continue_on_error: true
+              timezone_code: "{{\n  timezone.split('(')[1]|replace(')', '')\n  if
+                timezone.split('(') | count > 0\n  else timezone\n}}\n"
+          - *id001
+          - service: esphome.{{ nspanel_name }}_set_string
+            data:
+              component: timezone
+              val: '{{ timezone_code }}'
+            continue_on_error: true
           - *id001
           - service: esphome.{{ nspanel_name }}_init_page_home
             data:
@@ -17075,14 +17071,12 @@ action:
               climate_friendly_name: '{{ state_attr(climate, "friendly_name") if climate_entity_id_valid
                 else "" }}'
               hw_buttons_bars_pages: !input hw_buttons_bars_pages
-          - if: '{{ esphome_version >= "4.3.4" }}'
-            then:
-            - *id001
-            - service: esphome.{{ nspanel_name }}_set_bool
-              data:
-                component: is_climate
-                val: '{{ climate_entity_id_valid }}'
-              continue_on_error: true
+          - *id001
+          - service: esphome.{{ nspanel_name }}_set_bool
+            data:
+              component: is_climate
+              val: '{{ climate_entity_id_valid }}'
+            continue_on_error: true
           - *id001
           - service: esphome.{{ nspanel_name }}_init_hardware
             data:
