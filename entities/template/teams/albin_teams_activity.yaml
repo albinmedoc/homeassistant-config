@@ -1,8 +1,0 @@
----
-# Track Albins Microsoft Teams activity
-#
-# https://github.com/EBOOZ/TeamsStatus
-
-sensor:
-  - unique_id: c3df98fd-1beb-43d7-8e18-1b32bcb043ed
-    state: "{{states('input_text.albin_teams_activity')}}"
