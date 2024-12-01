@@ -24,7 +24,7 @@ cards:
 
   - type: "custom:button-card"
     template: card_media_player
-    entity: media_player.tv_living_room
+    entity: media_player.apple_tv_livingroom
     variables:
       ulm_card_media_player_name: "TV"
       ulm_card_media_player_enable_art: true
@@ -56,16 +56,11 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.standing_lamp_living_room
-        variables:
-          ulm_card_light_name: "Stående lampa"
-      - type: "custom:button-card"
-        template: card_light
         entity: light.dining_table_living_room
         variables:
           ulm_card_light_name: "Matbord"
 
-- type: "custom:button-card"
+  - type: "custom:button-card"
     template: card_cover
     entity: cover.curtain_livingroom
     variables:
@@ -86,7 +81,7 @@ cards:
           ulm_card_binary_sensor_name: "Rörelse"
           ulm_card_binary_sensor_alert: true
           ulm_card_binary_sensor_alert_show_last_changed: true
-        entity: binary_sensor.camera_living_room_motion
+        entity: binary_sensor.motion_living_room
       - type: "custom:button-card"
         template: card_binary_sensor_alert
         variables:

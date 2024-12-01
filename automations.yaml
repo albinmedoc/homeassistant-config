@@ -450,91 +450,32 @@
       home_button04_icon: mdi:bell-alert
       screensaver_display_time: true
       domain_automation_button_action: trigger
-- id: '1711038434012'
-  alias: Disco Elinas rum
-  description: ''
-  use_blueprint:
-    path: Twanne/party_lights.yaml
-    input:
-      party_mode_trigger: input_boolean.disco_elinas_room
-      target_light:
-      - light.ceiling_lamp_elinas_room
-      time_between_changes:
-        hours: 0
-        minutes: 0
-        seconds: 1
-      color_mode: random
-      brightness_mode: fixed
-      fixed_brightness_pct: 100
-      lights_turn_off_party: false
-      target_lights:
-      - light.ceiling_lamp_elinas_room
-- id: '1711038691731'
-  alias: Disco Aleas rum
-  description: ''
-  use_blueprint:
-    path: Twanne/party_lights.yaml
-    input:
-      party_mode_trigger: input_boolean.disco_aleas_room
-      target_light:
-      - light.ceiling_lamp_aleas_room
-      time_between_changes:
-        hours: 0
-        minutes: 0
-        seconds: 2
-      transition_time: 1
-      color_mode: random
-      brightness_mode: fixed
-      fixed_brightness_pct: 100
-      target_lights:
-      - light.ceiling_lamp_aleas_room
-- id: '1730730470914'
+- id: '1733071971928'
   alias: Julbelysning
   description: ''
   triggers:
-  - trigger: sun
-    event: sunset
-    offset: -00:30:00
-    id: sunset
-    alias: När solen går ned förskjutet med -30 minuter
   - trigger: time
-    at: 02:00:00
-    id: night
-    alias: När klockan är 02.00
-  conditions:
-  - condition: or
-    conditions:
-    - condition: and
-      conditions:
-      - condition: trigger
-        id:
-        - sunset
-      - condition: time
-        before: 01:59:00
-    - condition: trigger
-      id:
-      - night
+    at: '16:00:00'
+    id: 'on'
+  - trigger: time
+    at: '22:00:00'
+    id: 'off'
+  conditions: []
   actions:
   - if:
     - condition: trigger
       id:
-      - sunset
-    then:
-    - action: light.turn_on
-      metadata: {}
-      data: {}
-      target:
-        entity_id: light.xmas_light_front
-    alias: Solnedgång
-  - if:
-    - condition: trigger
-      id:
-      - night
+      - 'off'
     then:
     - action: light.turn_off
       metadata: {}
       data: {}
       target:
-        entity_id: light.xmas_light_front
-    alias: Natt
+        entity_id: light.xmas_light
+    else:
+    - action: light.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.xmas_light
   mode: single

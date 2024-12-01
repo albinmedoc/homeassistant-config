@@ -2,31 +2,31 @@
   name: Inte hemma
   icon: mdi:home-off
   entities:
-    light.all_living_room: "off"
-    light.all_aleas_room: "off"
-    light.all_hallway: "off"
-    light.all_elinas_room: "off"
-    light.all_bedroom: "off"
-    light.all_kitchen: "off"
-    light.all_bathroom: "off"
-    light.all_toilet: "off"
-    light.all_conservatory: "off"
-    media_player.tv_living_room: "off"
-    media_player.tv_bedroom: "off"
+    light.all_living_room: 'off'
+    light.all_aleas_room: 'off'
+    light.all_hallway: 'off'
+    light.all_elinas_room: 'off'
+    light.all_bedroom: 'off'
+    light.all_kitchen: 'off'
+    light.all_bathroom: 'off'
+    light.all_toilet: 'off'
+    light.all_conservatory: 'off'
+    media_player.tv_living_room: 'off'
+    media_player.tv_bedroom: 'off'
 - id: bde84642-1abd-4db8-9c71-e8dbd7bea799
   name: Godnatt
   icon: mdi:sleep
   entities:
-    light.all_living_room: "off"
-    light.all_aleas_room: "off"
-    light.all_hallway: "off"
-    light.all_elinas_room: "off"
-    light.all_bedroom: "off"
-    light.all_kitchen: "off"
-    light.all_bathroom: "off"
-    light.all_toilet: "off"
-    light.all_conservatory: "off"
-    media_player.tv_living_room: "off"
+    light.all_living_room: 'off'
+    light.all_aleas_room: 'off'
+    light.all_hallway: 'off'
+    light.all_elinas_room: 'off'
+    light.all_bedroom: 'off'
+    light.all_kitchen: 'off'
+    light.all_bathroom: 'off'
+    light.all_toilet: 'off'
+    light.all_conservatory: 'off'
+    media_player.tv_living_room: 'off'
 - id: df6883c0-c56d-4bfb-8f89-b0d9de9852db
   name: Film
   entities:
@@ -36,9 +36,17 @@
       source: Apple TV
       state: paused
     light.sonos_lamp_living_room:
-      brightness: 51
-      state: "on"
-    light.ceiling_lamp_living_room: "off"
-    light.ceiling_lamp_kitchen: "off"
-    light.dining_table_living_room: "off"
+      brightness: 50
+      state: 'on'
+    light.ceiling_lamp_living_room: 'off'
+    light.ceiling_lamp_kitchen: 'off'
+    light.dining_table_living_room: 'off'
   icon: mdi:movie
+- id: '1732787414804'
+  name: Hundbelysning
+  entities:
+    light.sonos_lamp_living_room:
+      brightness: 128
+      state: 'on'
+  icon: mdi:dog-side
+  metadata: {}
