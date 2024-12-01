@@ -13,6 +13,7 @@ cards:
       - title: Kök
       - lights: light.all_kitchen
       - speakers: media_player.speakers_kitchen
+      - temperature: sensor.temperature_kitchen
 
   - type: "custom:button-card"
     template: card_title
@@ -27,23 +28,25 @@ cards:
           ulm_card_light_name: "Taklampa"
 
   - type: "custom:button-card"
-    template: custom_card_dishwasher
-    entity: sensor.dishwasher_operationstate
+    template: "custom_card_apexcharts"
     variables:
-      ulm_custom_card_dishwasher_name: Diskmaskin
-      ulm_custom_card_dishwasher_run_state: BSH.Common.EnumType.OperationState.Run
-      ulm_custom_card_dishwasher_ready_state: BSH.Common.EnumType.OperationState.Ready
-      ulm_custom_card_dishwasher_start_pause_button: button.dishwasher_start_pause
-      ulm_custom_card_dishwasher_power_entity: switch.dishwasher_powerstate
-      ulm_custom_card_dishwasher_programs_entity: select.dishwasher_programs
-      ulm_custom_card_dishwasher_active_program_entity: sensor.dishwasher_selected_program
-      ulm_custom_card_dishwasher_progress_entity: sensor.dishwasher_programprogress
-      ulm_custom_card_dishwasher_program_1:
-        icon: mdi:leaf
-        option: "Dishcare.Dishwasher.Program.Eco50"
-      ulm_custom_card_dishwasher_program_2:
-        icon: mdi:fast-forward-60
-        option: "Dishcare.Dishwasher.Program.Quick65"
-      ulm_custom_card_dishwasher_program_3:
-        icon: mdi:auto-fix
-        option: "Dishcare.Dishwasher.Program.Auto2"
+      chart_type: "line"
+      graph_span: "1h"
+      entity_1:
+        entity_id: sensor.vindstyrka_temperature
+        icon: "mdi:thermometer"
+        name: "Temperatur"
+        color: "red"
+        max_value: 35
+      entity_2:
+        entity_id: sensor.vindstyrka_pm2_5
+        icon: "mdi:weather-dust"
+        name: "PM2.5"
+        color: "yellow"
+        max_value: 1000
+      entity_3:
+        entity_id: sensor.vindstyrka_humidity
+        icon: "mdi:water-percent"
+        name: "Luftfuktighet"
+        color: "green"
+        max_value: 100
