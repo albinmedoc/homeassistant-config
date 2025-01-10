@@ -471,11 +471,11 @@
       metadata: {}
       data: {}
       target:
-        entity_id: light.xmas_light
+        entity_id: light.xmas
     else:
     - action: light.turn_on
       metadata: {}
       data: {}
       target:
-        entity_id: light.xmas_light
+        entity_id: light.xmas
   mode: single

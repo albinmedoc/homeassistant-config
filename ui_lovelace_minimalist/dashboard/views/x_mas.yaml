@@ -11,23 +11,24 @@ cards:
     template: card_title
     label: "Enheter"
 
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.x_mas_lights_outside
-        variables:
-          ulm_card_light_name: "Utomhus"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.x_mas_star_living_room
-        variables:
-          ulm_card_light_name: "Vardagsrum"
+  - type: "custom:button-card"
+    template: card_light
+    entity: "light.xmas"
+    variables:
+      ulm_card_light_name: "Alla"
 
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.x_mas_heart_elinas_room
-        variables:
-          ulm_card_light_name: "Elinas rum"
+  - type: custom:auto-entities
+    card:
+      type: "grid"
+      columns: 2
+      square: false
+    card_param: "cards"
+    sort:
+      method: "state"
+    filter:
+      include:
+        - group: "light.xmas"
+          options:
+            type: "custom:button-card"
+            template: card_light
+            entity: "this.entity_id"
