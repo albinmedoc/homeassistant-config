@@ -74,28 +74,3 @@ cards:
         name: "CPU"
         color: "green"
         max_value: 100
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Plex"
-
-  - type: "custom:button-card"
-    template: "custom_card_apexcharts"
-    variables:
-      chart_type: "line"
-      graph_span: "3m"
-      entity_1:
-        entity_id: "sensor.tautulli_bandwidth_lan"
-        icon: "mdi:lan"
-        name: "LAN"
-        color: "red"
-      entity_2:
-        entity_id: "sensor.tautulli_bandwidth_wan"
-        icon: "mdi:wan"
-        name: "WAN"
-        color: "yellow"
-      entity_3:
-        entity_id: "sensor.tautulli_views"
-        icon: "mdi:eye"
-        name: "Views"
-        color: "green"
