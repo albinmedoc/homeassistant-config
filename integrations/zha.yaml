@@ -12,6 +12,8 @@ zha:
   zigpy_config:
     ota:
       ikea_provider: true
+      extra_providers:
+        - type: z2m
   device_config:
     # Relay Elinas room
     00:12:4b:00:26:b7:0a:6e-1:
