@@ -29,6 +29,8 @@ card:
           conditions:
             - entity: "[[temperature]]"
               state_not: "unavailable"
+            - entity: "[[temperature]]"
+              state_not: "unknown"
           card:
             type: "custom:button-card"
             template: card_graph
@@ -44,7 +46,9 @@ card:
           conditions:
             - entity: "[[camera]]"
               state_not: "unavailable"
+            - entity: "[[camera]]"
+              state_not: "unknown"
           card:
             type: custom:webrtc-camera
             entity: "[[camera]]"
-            style: '.mode {display: none}'
+            style: ".mode {display: none}"
