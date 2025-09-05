@@ -200,104 +200,6 @@
           }}\n"
       action: persistent_notification.create
   mode: restart
-- id: '1678827426647'
-  alias: NS-Panel Hallway
-  description: ''
-  use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
-    input:
-      nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
-      language: sv
-      date_format: '%A, %-m/%-d'
-      weather_entity: weather.smhi
-      alarm: alarm_control_panel.alarmo
-      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
-      qrcode_label: Wifi
-      left_button_entity: light.lamp_2_hallway
-      left_button_name: Hall 2
-      left_button_hold_select: Custom Action
-      left_button_hold_custom_action:
-      - service: light.toggle
-        data: {}
-        target:
-          entity_id:
-          - light.lamp_entrance_hallway
-          - light.lamp_2_hallway
-          - light.lamp_3_hallway
-      right_button_entity: light.lamp_entrance_hallway
-      right_button_name: Entré
-      right_button_hold_select: Custom Action
-      right_button_hold_custom_action:
-      - service: light.toggle
-        data: {}
-        target:
-          entity_id:
-          - light.lamp_entrance_hallway
-          - light.lamp_2_hallway
-          - light.lamp_3_hallway
-      button_page01_label: Vardagsrum
-      entity01: light.ceiling_lamp_living_room
-      entity01_name: Taklampa
-      entity01_icon_color:
-      - 240
-      - 180
-      - 0
-      entity02: light.standing_lamp_living_room
-      entity02_name: Stående lampa
-      entity02_icon_color:
-      - 240
-      - 180
-      - 0
-      entity03: light.sonos_lamp_living_room
-      entity03_name: Sonos lampa
-      entity03_icon_color:
-      - 240
-      - 180
-      - 0
-      entity04: light.dining_table_living_room
-      entity04_name: Matbord
-      entity04_icon_color:
-      - 240
-      - 180
-      - 0
-      button_page02_label: Sovrum
-      entity09: light.ceiling_lamp_bedroom
-      entity09_name: Taklampa
-      entity09_icon_color:
-      - 240
-      - 180
-      - 0
-      entity10: light.wardrobe_lamp_bedroom
-      entity10_name: Garderob
-      entity10_icon: ''
-      entity10_icon_color:
-      - 240
-      - 180
-      - 0
-      entity11: cover.blind_bedroom
-      entity11_name: Rullgardin
-      entity12: media_player.tv_bedroom
-      entity12_name: TV
-      entity12_icon: ''
-      button_page03_label: Hall
-      entity17: light.lamp_entrance_hallway
-      entity17_name: Entré
-      entity17_icon_color:
-      - 240
-      - 180
-      - 0
-      entity18_name: Lampa 2
-      entity18: light.lamp_2_hallway
-      entity18_icon_color:
-      - 240
-      - 180
-      - 0
-      entity19: light.lamp_3_hallway
-      entity19_name: Lampa 3
-      entity19_icon_color:
-      - 240
-      - 180
-      - 0
 - id: '1699560333290'
   alias: Tjejernas lampor morgon
   description: Sätt ljusstyrkan till 100% om någon av lamporna tänds på morgonen.
@@ -348,108 +250,6 @@
         entity_id: light.ceiling_lamp_elinas_room
       alias: Set brightness to 100%
   mode: single
-- id: '1699561919628'
-  alias: NS-Panel Living room
-  description: ''
-  use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
-    input:
-      nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
-      language: sv
-      date_format: '%A, %-d/%-m'
-      weather_entity: weather.smhi
-      alarm: alarm_control_panel.alarmo
-      qrcode_value: WIFI:T:WPA;S:Godisbilen.nu-guest;P:staffanstorp;
-      qrcode_label: Wifi
-      left_button_entity: light.ceiling_lamp_living_room
-      left_button_name: Taklampa
-      left_button_hold_select: Custom Action
-      left_button_hold_custom_action:
-      - service: light.toggle
-        data: {}
-        target:
-          entity_id:
-          - light.sonos_lamp_living_room
-          - light.standing_lamp_living_room
-      right_button_entity: light.all_conservatory
-      right_button_name: Uterum
-      right_button_hold_select: Custom Action
-      right_button_hold_custom_action:
-      - service: switch.toggle
-        data: {}
-        target:
-          entity_id: switch.airfryer_conservatory
-      chip01: binary_sensor.all_windows
-      chip01_icon: mdi:window-open
-      chip02: binary_sensor.all_doors
-      chip02_icon: mdi:door-open
-      button_page01_label: Vardagsrum
-      entity01: media_player.tv_living_room
-      entity01_name: TV
-      entity02: light.ceiling_lamp_living_room
-      entity02_name: Taklampa
-      entity02_icon_color:
-      - 240
-      - 180
-      - 0
-      entity03: light.standing_lamp_living_room
-      entity03_name: Stående lampa
-      entity03_icon_color:
-      - 240
-      - 180
-      - 0
-      entity04: light.sonos_lamp_living_room
-      entity04_name: Sonos lampa
-      entity04_icon_color:
-      - 240
-      - 180
-      - 0
-      entity05: light.dining_table_living_room
-      entity05_name: Matbord
-      entity05_icon_color:
-      - 240
-      - 180
-      - 0
-      button_page02_label: Sovrum
-      entity09: media_player.tv_bedroom
-      entity09_name: TV
-      entity10: cover.blind_bedroom
-      entity10_name: Rullgardin
-      entity11: light.ceiling_lamp_bedroom
-      entity11_name: Taklampa
-      entity11_icon_color:
-      - 240
-      - 180
-      - 0
-      entity12: light.wardrobe_lamp_bedroom
-      entity12_name: Garderob
-      entity12_icon_color:
-      - 240
-      - 180
-      - 0
-      button_page03_label: Hall
-      entity17: light.lamp_entrance_hallway
-      entity17_name: Entré
-      entity17_icon_color:
-      - 240
-      - 180
-      - 0
-      entity18_name: Lampa 2
-      entity18: light.lamp_2_hallway
-      entity18_icon_color:
-      - 240
-      - 180
-      - 0
-      entity19: light.lamp_3_hallway
-      entity19_name: Lampa 3
-      entity19_icon_color:
-      - 240
-      - 180
-      - 0
-      home_button06_icon: ''
-      home_button04_icon: mdi:bell-alert
-      screensaver_display_time: true
-      domain_automation_button_action: trigger
 - id: '1733071971928'
   alias: Julbelysning
   description: ''
@@ -479,3 +279,35 @@
       target:
         entity_id: light.xmas
   mode: single
+- id: '1757070203963'
+  alias: NSPanel 2
+  description: ''
+  use_blueprint:
+    path: Blackymas/nspanel_blueprint.yaml
+    input:
+      nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
+      language: sv
+      date_format: '%A, %-d/%-m'
+      timezone: Europe/Stockholm (CET-1CEST,M3.5.0,M10.5.0/3)
+      decimal_separator: ','
+      qrcode_label: WiFi
+      home_button05_icon: mdi:wifi
+      qrcode_enabled: true
+      qrcode_value: WIFI:T:WPA;S:Medoc Guest;P:Rakavagen12;H:false;
+      left_button_name: NSPanel 2
+- id: '1757078313019'
+  alias: NSPanel 1
+  description: ''
+  use_blueprint:
+    path: Blackymas/nspanel_blueprint.yaml
+    input:
+      nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
+      language: sv
+      date_format: '%A, %-d/%-m'
+      timezone: Europe/Stockholm (CET-1CEST,M3.5.0,M10.5.0/3)
+      decimal_separator: ','
+      qrcode_label: WiFi
+      home_button05_icon: mdi:wifi
+      qrcode_enabled: true
+      qrcode_value: WIFI:T:WPA;S:Medoc Guest;P:Rakavagen12;H:false;
+      left_button_name: NSPanel 1

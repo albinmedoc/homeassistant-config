@@ -1,0 +1,28 @@
+esphome:
+  name: test
+  friendly_name: Test
+
+esp32:
+  board: esp-wrover-kit
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "1vvx8gE+kekW/7j11kkfqI8ZDYD6kOvfu1pwyS1CgnM="
+
+ota:
+  - platform: esphome
+    password: "7deb84fd64ab9a8924df0fe7b039851d"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+esp32_ble_tracker:
+bluetooth_proxy:
+  active: True

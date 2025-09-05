@@ -1,0 +1,28 @@
+esphome:
+  name: bt-proxy-1
+  friendly_name: BT Proxy 1
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "NIJ5tB+Sr+13hOnneAc0pAn8ZL4dLjLNL22fIjgXvBU="
+
+ota:
+  - platform: esphome
+    password: "c6af6e1b69a60c5946d80e85d2bc6cfc"
+
+bluetooth_proxy:
+  active: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+    
