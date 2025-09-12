@@ -6,154 +6,15 @@
     input:
       threshold: 15
       actions:
-      - service: notify.mobile_app_albin_iphone
-        data:
+      - data:
           title: Dåligt batteri
           message: '{{sensors}}'
+        action: notify.mobile_app_albin_iphone
       time: 09:00:00
       exclude:
         entity_id:
         - sensor.matilda_iphone_app_battery_level
         - sensor.albin_iphone_app_battery_level
-        - sensor.albin_macbook_battery_level
-- id: '1674327218081'
-  alias: Kontroll Garderob
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_e1743.yaml
-    input:
-      integration: ZHA
-      controller_device: cad760edc13796a74f8e34fc25c2866d
-      action_button_up_short:
-      - service: light.turn_on
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
-      action_button_down_short:
-      - service: light.turn_off
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
-      action_button_up_long:
-      - service: light.turn_on
-        data:
-          brightness_pct: 100
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
-      action_button_down_long:
-      - service: light.turn_on
-        data:
-          brightness_pct: 30
-        target:
-          entity_id: light.wardrobe_lamp_bedroom
-      helper_last_controller_event: input_text.controller_helper_wardrobe
-- id: cef76b99-053d-407a-afac-50272f7a2c08
-  alias: Kontroll Uterum
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_e1743.yaml
-    input:
-      controller_device: 05cdc0b96bd5f7257dfc4affb730767e
-      integration: ZHA
-      helper_last_controller_event: input_text.controller_helper_conservatory
-      action_button_up_short:
-      - service: light.turn_on
-        target:
-          entity_id:
-          - light.lamp_conservatory
-          - light.roof_loop_conservatory
-        alias: Sätt på Takslinga och Lampa
-      action_button_up_long:
-      - service: switch.turn_on
-        target:
-          entity_id: switch.airfryer_conservatory
-        alias: Sätt på AirFryer
-      action_button_down_short:
-      - service: light.turn_off
-        target:
-          entity_id:
-          - light.lamp_conservatory
-          - light.roof_loop_conservatory
-        alias: Stäng av Takslinga och Lampa
-      action_button_down_long:
-      - service: switch.turn_off
-        target:
-          entity_id: switch.airfryer_conservatory
-        alias: Stäng av AirFryer
-- id: '1674415459296'
-  alias: Kontroll Albin Sovrum
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_e1743.yaml
-    input:
-      integration: ZHA
-      controller_device: 30b46d58ca3ede7ea1e1e0298f001601
-      helper_last_controller_event: input_text.controller_helper_albin_bedroom
-      action_button_up_short: []
-      action_button_up_long:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.night
-        metadata: {}
-      action_button_up_double:
-      - service: media_player.toggle
-        data: {}
-        target:
-          entity_id: media_player.tv_bedroom
-      action_button_down_short:
-      - type: turn_on
-        device_id: fc6ab062501184a599762c445fa1c691
-        entity_id: switch.plug_tv_bedroom
-        domain: switch
-      action_button_down_long:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.night
-        metadata: {}
-      action_button_down_double:
-      - service: media_player.toggle
-        data: {}
-        target:
-          entity_id: media_player.tv_bedroom
-      button_up_double_press: true
-      button_down_double_press: true
-      helper_double_press_delay: 1000
-- id: '1675625526304'
-  alias: Kontroll Hall
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_e1812.yaml
-    input:
-      integration: ZHA
-      controller_device: 04ce33caec348a593905d01720bebabe
-      action_button_short:
-      - service: alarmo.disarm
-        metadata: {}
-        data:
-          entity_id: alarm_control_panel.alarmo
-          code: '908990'
-      helper_last_controller_event: input_text.controller_helper_hallway
-- id: '1675782176107'
-  alias: Kontroll Matilda Sovrum
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_e1743.yaml
-    input:
-      integration: ZHA
-      controller_device: 82d9af544c167ca030123651191d08c7
-      helper_last_controller_event: input_text.controller_helper_matilda_bedroom
-      button_down_long_max_loop_repeats: 100
-      button_up_long_max_loop_repeats: 100
-      button_down_long_loop: true
-      button_up_long_loop: true
-      action_button_up_long:
-      - service: media_player.volume_up
-        data: {}
-        target:
-          entity_id: media_player.tv_living_room
-      action_button_down_long:
-      - service: media_player.volume_down
-        data: {}
-        target:
-          entity_id: media_player.tv_living_room
 - id: '1675933105028'
   alias: Persistent notifikation - Otillgängliga entiteter
   description: Skapa persistent notifikation om otillgängliga enheter, avvisa om inga.
@@ -200,56 +61,6 @@
           }}\n"
       action: persistent_notification.create
   mode: restart
-- id: '1699560333290'
-  alias: Tjejernas lampor morgon
-  description: Sätt ljusstyrkan till 100% om någon av lamporna tänds på morgonen.
-  trigger:
-  - platform: state
-    entity_id:
-    - light.ceiling_lamp_aleas_room
-    to: 'on'
-    from: 'off'
-    id: alea
-    alias: Alea's ceiling lamp turns on
-  - platform: state
-    entity_id:
-    - light.ceiling_lamp_elinas_room
-    id: elina
-    from: 'off'
-    to: 'on'
-    alias: Elina's ceiling lamp turns on
-  condition:
-  - condition: time
-    after: 04:00:00
-    before: 09:00:00
-  action:
-  - alias: If Alea's lamp
-    if:
-    - condition: trigger
-      id:
-      - alea
-      alias: When triggered by alea
-    then:
-    - service: light.turn_on
-      data:
-        brightness_pct: 100
-      target:
-        entity_id: light.ceiling_lamp_aleas_room
-      alias: Set brightness to 100%
-  - alias: If Elina's lamp
-    if:
-    - condition: trigger
-      id:
-      - elina
-      alias: When triggered by elina
-    then:
-    - service: light.turn_on
-      data:
-        brightness_pct: 100
-      target:
-        entity_id: light.ceiling_lamp_elinas_room
-      alias: Set brightness to 100%
-  mode: single
 - id: '1733071971928'
   alias: Julbelysning
   description: ''
@@ -296,8 +107,8 @@
       qrcode_value: WIFI:T:WPA;S:Medoc Guest;P:Rakavagen12;H:false;
       left_button_name: NSPanel 2
 - id: '1757078313019'
-  alias: NSPanel 1
-  description: ''
+  alias: NSPanel Entré
+  description: Konfiguration för NSPanel vid entrén
   use_blueprint:
     path: Blackymas/nspanel_blueprint.yaml
     input:
@@ -310,4 +121,10 @@
       home_button05_icon: mdi:wifi
       qrcode_enabled: true
       qrcode_value: WIFI:T:WPA;S:Medoc Guest;P:Rakavagen12;H:false;
-      left_button_name: NSPanel 1
+      left_button_name: Framsida
+      weather_entity: weather.smhi
+      relay_1_local_fallback: true
+      relay_2_local_fallback: true
+      right_button_name: Hall
+      chip01: light.all
+      chip01_icon: ''
