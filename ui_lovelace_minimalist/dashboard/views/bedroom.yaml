@@ -13,21 +13,7 @@ cards:
       - title: Sovrum
       - motion_sensor: binary_sensor.motion_bedroom
       - lights: light.all_bedroom
-      - televisions: media_player.televisions_bedroom
       - temperature: sensor.temperature_bedroom
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_media_player
-        entity: media_player.tv_bedroom
-        variables:
-          ulm_card_media_player_name: TV
-          ulm_card_media_player_enable_art: true
-          ulm_card_media_player_enable_controls: true
-          ulm_card_media_player_collapsible: true
-          ulm_card_media_player_enable_popup: true
-          ulm_card_media_player_power_button: true
 
   - type: "custom:button-card"
     template: card_title
@@ -40,20 +26,6 @@ cards:
         entity: light.ceiling_lamp_bedroom
         variables:
           ulm_card_light_name: "Taklampa"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.wardrobe_lamp_bedroom
-        variables:
-          ulm_card_light_name: "Lampa garderob"
-
-  - type: "custom:button-card"
-    template: card_cover
-    entity: cover.curtain_bedroom
-    variables:
-      ulm_card_cover_name: "Rullgardin"
-      ulm_card_cover_icon: "mdi:blinds"
-      ulm_card_cover_enable_controls: true
-      ulm_card_cover_enable_slider: true
 
   - type: "custom:button-card"
     template: card_title

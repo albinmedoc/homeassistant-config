@@ -10,13 +10,6 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
-        template: chip_navigate
-        label: "Juldekoration"
-        variables:
-          ulm_chip_navigate_path: "x-mas"
-          ulm_chip_navigate_icon: "mdi:string-lights"
-      
-      - type: "custom:button-card"
         template: custom_card_group_counter_chip
         entity: light.all
         variables:
@@ -146,7 +139,7 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    name: "Rum"
+    name: "Nedanvåning"
 
   - type: "horizontal-stack"
     cards:
@@ -165,6 +158,28 @@ cards:
           - icon: mdi:fridge
           - navigation_path: kitchen
           - lights: light.all_kitchen
+
+  - type: "horizontal-stack"
+    cards:
+      - type: custom:decluttering-card
+        template: room_card
+        variables:
+          - title: Toalett
+          - icon: mdi:toilet
+          - navigation_path: toilet
+          - lights: light.all_toilet
+      - type: custom:decluttering-card
+        template: room_card
+        variables:
+          - title: Uterum
+          - icon: mdi:home-plus-outline
+          - navigation_path: conservatory
+          - lights: light.all_conservatory
+          - temperature: sensor.temperature_conservatory
+
+  - type: "custom:button-card"
+    template: card_title
+    name: "Ovanvåning"
 
   - type: "horizontal-stack"
     cards:
@@ -212,24 +227,13 @@ cards:
           - icon: mdi:shower-head
           - navigation_path: bathroom
           - lights: light.all_bathroom
-      - type: custom:decluttering-card
-        template: room_card
-        variables:
-          - title: Toalett
-          - icon: mdi:toilet
-          - navigation_path: toilet
-          - lights: light.all_toilet
+
+  - type: "custom:button-card"
+    template: card_title
+    name: "Utomhus"
 
   - type: "horizontal-stack"
     cards:
-      - type: custom:decluttering-card
-        template: room_card
-        variables:
-          - title: Uterum
-          - icon: mdi:home-plus-outline
-          - navigation_path: conservatory
-          - lights: light.all_conservatory
-          - temperature: sensor.temperature_conservatory
       - type: custom:decluttering-card
         template: room_card
         variables:

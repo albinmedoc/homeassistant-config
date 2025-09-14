@@ -14,23 +14,3 @@ zha:
       ikea_provider: true
       extra_providers:
         - type: z2m
-  device_config:
-    # Relay Elinas room
-    00:12:4b:00:26:b7:0a:6e-1:
-      type: "switch"
-
-    # Relay Kids Bedroom
-    00:12:4b:00:26:b7:0d:9e-1:
-      type: "switch"
-
-    # Relay Hallway 1
-    00:12:4b:00:26:b7:1a:8c-1:
-      type: "switch"
-
-    # Relay Hallway 3
-    00:12:4b:00:26:b7:1b:73-1:
-      type: "switch"
-
-    # Relay Bedroom
-    00:12:4b:00:25:e2:08:c5-1:
-      type: "switch"

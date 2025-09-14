@@ -3,7 +3,7 @@
 #
 
 title: "Elinas rum"
-path: "elinas_room"
+path: "kids-bedroom"
 swipe_back: "home"
 swipe_forward: null
 cards:
@@ -11,7 +11,9 @@ cards:
     template: room_view_base
     variables:
       - title: Elinas rum
+      - motion_sensor: binary_sensor.motion_elinas_room
       - lights: light.all_elinas_room
+      - temperature: sensor.temperature_elinas_room
 
   - type: "custom:button-card"
     template: card_title
@@ -32,8 +34,15 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
+        template: card_binary_sensor
+        variables:
+          ulm_card_binary_sensor_name: "Rök"
+          ulm_card_binary_sensor_alert: true
+        entity: binary_sensor.smoke_detector_elinas_room_smoke
+      - type: "custom:button-card"
         template: card_binary_sensor_alert
         variables:
+          ulm_card_binary_sensor_alert_name: "Fönster"
           ulm_card_binary_sensor_alert: true
           ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.window_elinas_room

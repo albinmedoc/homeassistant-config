@@ -23,21 +23,9 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.lamp_entrance_hallway
+        entity: light.ceiling_lamp_entrance
         variables:
-          ulm_card_light_name: "Entré"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_2_hallway
-        variables:
-          ulm_card_light_name: "Lampa 2"
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_3_hallway
-        variables:
-          ulm_card_light_name: "Lampa 3"
+          ulm_card_light_name: "Lampa"
 
   - type: "custom:button-card"
     entity: lock.main_door

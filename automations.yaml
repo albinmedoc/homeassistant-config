@@ -128,3 +128,5 @@
       right_button_name: Hall
       chip01: light.all
       chip01_icon: ''
+      right_button_entity: light.ceiling_lamp_entrance
+      left_button_entity: light.outside_front

@@ -12,7 +12,6 @@ cards:
     variables:
       - title: Kök
       - lights: light.all_kitchen
-      - speakers: media_player.speakers_kitchen
       - temperature: sensor.temperature_kitchen
 
   - type: "custom:button-card"
