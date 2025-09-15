@@ -3,7 +3,7 @@
 #
 
 title: "Aleas rum"
-path: "kids-bedroom"
+path: "aleas-room"
 swipe_back: "home"
 swipe_forward: null
 cards:
@@ -26,6 +26,11 @@ cards:
         entity: light.ceiling_lamp_aleas_room
         variables:
           ulm_card_light_name: "Taklampa"
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.window_lamp_aleas_room
+        variables:
+          ulm_card_light_name: "Fönsterlampa"
 
   - type: "custom:button-card"
     template: card_title

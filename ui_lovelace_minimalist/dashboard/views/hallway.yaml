@@ -28,18 +28,6 @@ cards:
           ulm_card_light_name: "Lampa"
 
   - type: "custom:button-card"
-    entity: lock.main_door
-    template: "custom_card_eraycetinay_lock"
-    name: "Ytterdörr"
-    variables:
-      ulm_custom_card_eraycetinay_lock_tap_control: true
-      ulm_custom_card_eraycetinay_lock_battery_level: sensor.main_door_battery_level
-      ulm_custom_card_eraycetinay_lock_door_open: binary_sensor.main_door_open
-    triggers_update:
-      - "sensor.main_door_battery_level"
-      - "binary_sensor.main_door_open"
-
-  - type: "custom:button-card"
     template: card_title
     label: "Sensorer"
 

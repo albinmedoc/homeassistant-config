@@ -22,7 +22,7 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.lamp_bathroom
+        entity: light.ceiling_lamp_bathroom
         variables:
           ulm_card_light_name: "Taklampa"
 

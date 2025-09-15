@@ -21,35 +21,7 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    label: "NAS"
-
-  - type: "custom:button-card"
-    template: "custom_card_apexcharts"
-    variables:
-      chart_type: "radialBar"
-      graph_span: "10min"
-      entity_1:
-        entity_id: sensor.omv_filesystem
-        icon: "mdi:harddisk"
-        name: "Disk"
-        color: "red"
-        max_value: 100
-      entity_2:
-        entity_id: sensor.omv_system_memory
-        icon: "mdi:memory"
-        name: "Minne"
-        color: "yellow"
-        max_value: 100
-      entity_3:
-        entity_id: sensor.omv_system_cpu_load
-        icon: "mdi:chip"
-        name: "CPU"
-        color: "green"
-        max_value: 100
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "NUC"
+    label: "Home Assistant"
 
   - type: "custom:button-card"
     template: "custom_card_apexcharts"

@@ -55,7 +55,7 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.dining_table_living_room
+        entity: light.dining_table
         variables:
           ulm_card_light_name: "Matbord"
 

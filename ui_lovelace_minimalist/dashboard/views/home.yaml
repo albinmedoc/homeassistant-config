@@ -207,7 +207,7 @@ cards:
         variables:
           - title: Aleas rum
           - icon: mdi:bed-single
-          - navigation_path: kids-bedroom
+          - navigation_path: aleas-room
           - lights: light.all_aleas_room
           - temperature: sensor.temperature_aleas_room
       - type: custom:decluttering-card
@@ -215,7 +215,7 @@ cards:
         variables:
           - title: Elinas rum
           - icon: mdi:teddy-bear
-          - navigation_path: elinas_room
+          - navigation_path: elinas-room
           - lights: light.all_elinas_room
 
   - type: "horizontal-stack"
