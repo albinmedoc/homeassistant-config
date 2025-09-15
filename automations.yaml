@@ -90,22 +90,6 @@
       target:
         entity_id: light.xmas
   mode: single
-- id: '1757070203963'
-  alias: NSPanel 2
-  description: ''
-  use_blueprint:
-    path: Blackymas/nspanel_blueprint.yaml
-    input:
-      nspanel_name: 1d834a32216cb87c3c19e81fcffafd7d
-      language: sv
-      date_format: '%A, %-d/%-m'
-      timezone: Europe/Stockholm (CET-1CEST,M3.5.0,M10.5.0/3)
-      decimal_separator: ','
-      qrcode_label: WiFi
-      home_button05_icon: mdi:wifi
-      qrcode_enabled: true
-      qrcode_value: WIFI:T:WPA;S:Medoc Guest;P:Rakavagen12;H:false;
-      left_button_name: NSPanel 2
 - id: '1757078313019'
   alias: NSPanel Entré
   description: Konfiguration för NSPanel vid entrén
@@ -128,5 +112,5 @@
       right_button_name: Hall
       chip01: light.all
       chip01_icon: ''
-      right_button_entity: light.ceiling_lamp_entrance
-      left_button_entity: light.outside_front
+      right_button_entity: light.all_entrance
+      left_button_entity: light.all_outside_front
