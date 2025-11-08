@@ -7,18 +7,26 @@ sensor:
     state_class: "measurement"
     state: >
       {% set ns = namespace(on_lights=0) %}
-      {% for light in (
-          state_attr('light.all_bathroom', 'entity_id') +
-          state_attr('light.all_bedroom', 'entity_id') +
-          state_attr('light.all_conservatory', 'entity_id') +
-          state_attr('light.all_hallway', 'entity_id') +
-          state_attr('light.all_aleas_room', 'entity_id') +
-          state_attr('light.all_kitchen', 'entity_id') +
-          state_attr('light.all_living_room', 'entity_id') +
-          state_attr('light.all_elinas_room', 'entity_id') +
-          state_attr('light.all_toilet', 'entity_id')
-        ) if is_state(light, 'on')
+      {% set light_groups = [
+          'light.all_aleas_room',
+          'light.all_bathroom',
+          'light.all_bedroom',
+          'light.all_conservatory',
+          'light.all_elinas_room',
+          'light.all_entrance',
+          'light.all_hallway',
+          'light.all_kitchen',
+          'light.all_living_room',
+          'light.all_outside_front',
+          'light.all_toilet'
+        ]
       %}
-        {% set ns.on_lights = ns.on_lights + 1 %}
+      {% for group in light_groups %}
+        {% set entities = state_attr(group, 'entity_id') %}
+        {% if entities is not none %}
+          {% for light in entities if is_state(light, 'on') %}
+            {% set ns.on_lights = ns.on_lights + 1 %}
+          {% endfor %}
+        {% endif %}
       {% endfor %}
       {{ ns.on_lights }}
