@@ -77,9 +77,3 @@ cards:
           ulm_card_binary_sensor_alert: true
           ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.motion_living_room
-      - type: "custom:button-card"
-        template: card_binary_sensor_alert
-        variables:
-          ulm_card_binary_sensor_name: "Rök"
-          ulm_card_binary_sensor_alert: true
-        entity: binary_sensor.smoke_detector_living_room_smoke
