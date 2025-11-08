@@ -114,3 +114,42 @@
       chip01_icon: ''
       right_button_entity: light.all_entrance
       left_button_entity: light.all_outside_front
+      home_custom_button01_name: Larm
+      home_custom_button01_icon: ''
+      home_custom_button01: alarm_control_panel.alarmo
+      indoortemp: sensor.vindstyrka_temperature
+      button_page01_label: Nedanvåning
+      entity01: light.all_living_room
+      entity01_name: Vardagsrum
+      entity02: light.all_kitchen
+      entity02_name: Kök
+      entity03: light.all_toilet
+      entity03_name: Toalett
+      entity05: light.all_outside_front
+      entity05_name: Framsida
+      entity06: light.all_conservatory
+      entity06_name: Uterum
+      entity_page01_label: Fönster och dörrar
+      entities_entity01: binary_sensor.door_entrance
+      entities_entity01_name: Yterrdörr
+      entities_entity01_icon: ''
+      entities_entity02: binary_sensor.door_conservatory
+      entities_entity02_name: Uterumsdörr
+      entities_entity03_name: Kök
+      entities_entity03: binary_sensor.window_kitchen
+      entities_entity04_name: Aleas rum
+      entities_entity04: binary_sensor.window_aleas_room
+      entities_entity05: binary_sensor.window_elinas_room
+      entities_entity05_name: Elinas rum
+- id: '1762535868708'
+  alias: Närvarosensor badrum
+  description: ''
+  use_blueprint:
+    path: Blackshome/sensor-light.yaml
+    input:
+      motion_trigger:
+      - binary_sensor.narvarosensor
+      light_switch:
+        entity_id: light.all_bathroom
+      include_dynamic_lighting: disable_dynamic_lighting
+      include_sun: sun_enabled
