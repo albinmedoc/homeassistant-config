@@ -5,8 +5,5 @@
 #
 
 - light.lamp_conservatory
-- light.roof_loop_conservatory
-
-- switch.airfryer_conservatory
 
 - sensor.temperature_conservatory

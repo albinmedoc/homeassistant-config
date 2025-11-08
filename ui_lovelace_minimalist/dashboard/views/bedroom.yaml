@@ -34,25 +34,8 @@ cards:
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
-        template: card_binary_sensor_alert
-        variables:
-          ulm_card_binary_sensor_name: "Rörelse"
-          ulm_card_binary_sensor_alert: true
-          ulm_card_binary_sensor_alert_show_last_changed: true
-        entity: binary_sensor.motion_sensor_bedroom
-      - type: "custom:button-card"
         template: card_binary_sensor
         variables:
           ulm_card_binary_sensor_name: "Rök"
           ulm_card_binary_sensor_alert: true
         entity: binary_sensor.smoke_detector_bedroom_smoke
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_binary_sensor_alert
-        variables:
-          ulm_card_binary_sensor_alert_name: "Fönster"
-          ulm_card_binary_sensor_alert: true
-          ulm_card_binary_sensor_alert_show_last_changed: true
-        entity: binary_sensor.window_bedroom

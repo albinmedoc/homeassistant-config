@@ -18,26 +18,6 @@ cards:
     template: card_title
     label: "Enheter"
 
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_conservatory
-        variables:
-          ulm_card_light_name: "Lampa"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.roof_loop_conservatory
-        variables:
-          ulm_card_light_name: "Takslinga"
-
-  - type: "custom:button-card"
-    template: card_power_outlet
-    variables:
-      ulm_card_power_outlet_consumption_sensor: sensor.airfryer_conservatory_active_power
-      ulm_card_power_outlet_name: "Air Fryer"
-    entity: switch.airfryer_conservatory
-
   - type: "custom:button-card"
     template: card_title
     label: "Sensorer"

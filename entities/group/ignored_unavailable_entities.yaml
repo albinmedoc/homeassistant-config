@@ -4,24 +4,9 @@
 
 name: "Ignored Unavailable Entities"
 entities:
-  # Camera Living room
-  - binary_sensor.camera_living_room_motion
-
-  # Bulb Elinas room
-  - light.ceiling_bulb_elinas_room
-
-  # Bulb Aleas room
-  - light.ceiling_bulb_aleas_room
-
-  # Buld Bedroom
-  - light.ceiling_bulb_bedroom
-
   # Albin teams
   - sensor.albin_teams_activity
   - sensor.albin_teams_status
-
-  # Air conditioner
-  - climate.air_conditioner
 
   # Home Assistant Conversation
   - conversation.home_assistant

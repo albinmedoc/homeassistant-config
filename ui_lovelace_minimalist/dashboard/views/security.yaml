@@ -46,13 +46,6 @@ cards:
           ulm_card_binary_sensor_alert: true
           ulm_card_binary_sensor_alert_show_last_changed: true
         entity: binary_sensor.window_kitchen
-      - type: "custom:button-card"
-        template: card_binary_sensor_alert
-        variables:
-          ulm_card_binary_sensor_alert_name: "Sovrum"
-          ulm_card_binary_sensor_alert: true
-          ulm_card_binary_sensor_alert_show_last_changed: true
-        entity: binary_sensor.window_bedroom
 
   - type: "horizontal-stack"
     cards:

@@ -61,35 +61,6 @@
           }}\n"
       action: persistent_notification.create
   mode: restart
-- id: '1733071971928'
-  alias: Julbelysning
-  description: ''
-  triggers:
-  - trigger: time
-    at: '16:00:00'
-    id: 'on'
-  - trigger: time
-    at: '22:00:00'
-    id: 'off'
-  conditions: []
-  actions:
-  - if:
-    - condition: trigger
-      id:
-      - 'off'
-    then:
-    - action: light.turn_off
-      metadata: {}
-      data: {}
-      target:
-        entity_id: light.xmas
-    else:
-    - action: light.turn_on
-      metadata: {}
-      data: {}
-      target:
-        entity_id: light.xmas
-  mode: single
 - id: '1757078313019'
   alias: NSPanel Entré
   description: Konfiguration för NSPanel vid entrén
