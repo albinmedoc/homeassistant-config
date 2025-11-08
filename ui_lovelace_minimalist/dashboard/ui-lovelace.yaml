@@ -14,6 +14,7 @@ views:
   - !include views/house.yaml
   - !include views/living_room.yaml
   - !include views/bedroom.yaml
+  - !include views/entrance.yaml
   - !include views/hallway.yaml
   - !include views/kitchen.yaml
   - !include views/aleas_room.yaml

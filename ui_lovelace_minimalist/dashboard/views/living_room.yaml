@@ -47,17 +47,22 @@ cards:
           ulm_card_light_name: "Soffa"
       - type: "custom:button-card"
         template: card_light
-        entity: light.sonos_lamp_living_room
+        entity: light.dining_table
         variables:
-          ulm_card_light_name: "Sonos lampa"
+          ulm_card_light_name: "Matbord"
 
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"
         template: card_light
-        entity: light.dining_table
+        entity: light.standing_lamp_living_room
         variables:
-          ulm_card_light_name: "Matbord"
+          ulm_card_light_name: "Stående lampa"
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.sonos_lamp_living_room
+        variables:
+          ulm_card_light_name: "Sonos lampa"
 
   - type: "custom:button-card"
     template: card_title

@@ -171,11 +171,11 @@ cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
-          - title: Uterum
-          - icon: mdi:home-plus-outline
-          - navigation_path: conservatory
-          - lights: light.all_conservatory
-          - temperature: sensor.temperature_conservatory
+          - title: Entré
+          - icon: mdi:image-frame
+          - navigation_path: entrance
+          - lights: light.all_entrance
+          - temperature: sensor.temperature_entrance
 
   - type: "custom:button-card"
     template: card_title
@@ -234,6 +234,14 @@ cards:
 
   - type: "horizontal-stack"
     cards:
+      - type: custom:decluttering-card
+        template: room_card
+        variables:
+          - title: Uterum
+          - icon: mdi:home-plus-outline
+          - navigation_path: conservatory
+          - lights: light.all_conservatory
+          - temperature: sensor.temperature_conservatory
       - type: custom:decluttering-card
         template: room_card
         variables:

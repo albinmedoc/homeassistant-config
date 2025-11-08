@@ -1,19 +1,19 @@
 ---
-# Hallway view
+# Entrance view
 #
 
-title: "Hall"
-path: "hallway"
+title: "Entré"
+path: "entrance"
 swipe_back: "home"
 swipe_forward: null
 cards:
   - type: custom:decluttering-card
     template: room_view_base
     variables:
-      - title: Hall
-      - motion_sensor: binary_sensor.motion_hallway
-      - lights: light.all_hallway
-      - temperature: sensor.temperature_hallway
+      - title: Entré
+      - motion_sensor: binary_sensor.motion_entrance
+      - lights: light.all_entrance
+      - temperature: sensor.temperature_entrance
 
   - type: "custom:button-card"
     template: card_title

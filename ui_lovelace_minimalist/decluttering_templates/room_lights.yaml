@@ -1,0 +1,33 @@
+---
+# Room Lights Card
+#
+# Variables
+#   title: The title of the room
+#   group: A light group for the lights in the room
+
+card:
+  type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      label: "[[title]]"
+
+    - type: "custom:button-card"
+      template: card_light
+      entity: "[[group]]"
+      variables:
+        ulm_card_light_name: "Alla"
+
+    - type: custom:auto-entities
+      card:
+        type: "grid"
+        columns: 2
+        square: false
+      card_param: "cards"
+      filter:
+        include:
+          - group: "[[group]]"
+            options:
+              type: "custom:button-card"
+              template: card_light
+              entity: "this.entity_id"

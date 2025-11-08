@@ -14,148 +14,76 @@ cards:
 
   - type: "custom:button-card"
     template: card_title
-    label: "Vardagsrum"
+    name: "Nedanvåning"
 
-  - type: "custom:button-card"
-    template: card_light
-    entity: light.all_living_room
-    variables:
-      ulm_card_light_name: "Alla"
-
-  - type: "horizontal-stack"
+  - type: "vertical-stack"
     cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.ceiling_lamp_living_room
+      - type: custom:decluttering-card
+        template: room_lights
         variables:
-          ulm_card_light_name: "Soffa"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.dining_table_living_room
+          - title: Vardagsrum
+          - group: light.all_living_room
+
+  - type: "vertical-stack"
+    cards:
+      - type: custom:decluttering-card
+        template: room_lights
         variables:
-          ulm_card_light_name: "Matbord"
+          - title: Kök
+          - group: light.all_kitchen
+
+  - type: "vertical-stack"
+    cards:
+      - type: custom:decluttering-card
+        template: room_lights
+        variables:
+          - title: Toalett
+          - group: light.all_toilet
 
   - type: "custom:button-card"
     template: card_title
-    label: "Hall"
+    name: "Ovanvåning"
 
-  - type: "custom:button-card"
-    template: card_light
-    entity: light.all_hallway
-    variables:
-      ulm_card_light_name: "Alla"
-
-  - type: "horizontal-stack"
+  - type: "vertical-stack"
     cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_entrance_hallway
+      - type: custom:decluttering-card
+        template: room_lights
         variables:
-          ulm_card_light_name: "Entré"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_2_hallway
-        variables:
-          ulm_card_light_name: "Lampa 2"
+          - title: Sovrum
+          - group: light.all_bedroom
 
-  - type: "horizontal-stack"
+  - type: "vertical-stack"
     cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_3_hallway
+      - type: custom:decluttering-card
+        template: room_lights
         variables:
-          ulm_card_light_name: "Lampa 3"
+          - title: Badrum
+          - group: light.all_bathroom
+
+  - type: "vertical-stack"
+    cards:
+      - type: custom:decluttering-card
+        template: room_lights
+        variables:
+          - title: Aleas rum
+          - group: light.all_aleas_room
+
+  - type: "vertical-stack"
+    cards:
+      - type: custom:decluttering-card
+        template: room_lights
+        variables:
+          - title: Elinas rum
+          - group: light.all_elinas_room
 
   - type: "custom:button-card"
     template: card_title
-    label: "Sovrum"
+    name: "Utomhus"
 
-  - type: "custom:button-card"
-    template: card_light
-    entity: light.all_bedroom
-    variables:
-      ulm_card_light_name: "Alla"
-
-  - type: "horizontal-stack"
+  - type: "vertical-stack"
     cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.ceiling_lamp_bedroom
+      - type: custom:decluttering-card
+        template: room_lights
         variables:
-          ulm_card_light_name: "Taklampa"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.wardrobe_lamp_bedroom
-        variables:
-          ulm_card_light_name: "Garderob"
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Tjejernas sovrum"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.ceiling_lamp_aleas_room
-        variables:
-          ulm_card_light_name: "Taklampa"
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Elinas rum"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.ceiling_lamp_elinas_room
-        variables:
-          ulm_card_light_name: "Taklampa"
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Badrum"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_bathroom
-        variables:
-          ulm_card_light_name: "Taklampa"
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Toalett"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_toilet
-        variables:
-          ulm_card_light_name: "Taklampa"
-
-  - type: "custom:button-card"
-    template: card_title
-    label: "Uterum"
-
-  - type: "custom:button-card"
-    template: card_light
-    entity: light.all_conservatory
-    variables:
-      ulm_card_light_name: "Alla"
-
-  - type: "horizontal-stack"
-    cards:
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.roof_loop_conservatory
-        variables:
-          ulm_card_light_name: "Takslinga"
-      - type: "custom:button-card"
-        template: card_light
-        entity: light.lamp_conservatory
-        variables:
-          ulm_card_light_name: "Lampa"
+          - title: Framsida
+          - group: light.all_outside_front
