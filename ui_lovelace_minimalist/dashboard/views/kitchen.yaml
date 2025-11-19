@@ -25,6 +25,11 @@ cards:
         entity: light.ceiling_lamp_kitchen
         variables:
           ulm_card_light_name: "Taklampa"
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.underlighting_kitchen
+        variables:
+          ulm_card_light_name: "Köksbelysning"
 
   - type: "custom:button-card"
     template: "custom_card_apexcharts"
