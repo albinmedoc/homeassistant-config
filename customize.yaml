@@ -1,0 +1,8 @@
+person.albin:
+  notification_opt_outs: []
+
+person.matilda:
+  notification_opt_outs:
+    - nightmode_activated
+    - nightmode_deactivated
+    - nightmode_cancel_activation

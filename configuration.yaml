@@ -14,5 +14,6 @@
 #
 
 homeassistant:
+  customize: !include customize.yaml
   # Load packages
   packages: !include_dir_named integrations
