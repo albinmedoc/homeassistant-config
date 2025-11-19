@@ -1,0 +1,26 @@
+---
+# Outside front view
+#
+
+title: "Framsida"
+path: "outside-front"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: custom:decluttering-card
+    template: room_view_base
+    variables:
+      - title: Framsida
+      - lights: light.all_outside_front
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.outside_front
+        variables:
+          ulm_card_light_name: "Lampa"

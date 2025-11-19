@@ -237,11 +237,21 @@ cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
+          - title: Framsida
+          - icon: mdi:outdoor-lamp
+          - navigation_path: outside-front
+          - lights: light.all_outside_front
+      - type: custom:decluttering-card
+        template: room_card
+        variables:
           - title: Uterum
           - icon: mdi:home-plus-outline
           - navigation_path: conservatory
           - lights: light.all_conservatory
           - temperature: sensor.temperature_conservatory
+
+  - type: "horizontal-stack"
+    cards:
       - type: custom:decluttering-card
         template: room_card
         variables:
