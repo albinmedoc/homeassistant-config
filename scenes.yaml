@@ -15,15 +15,126 @@
     media_player.tv_bedroom: 'off'
 - id: bde84642-1abd-4db8-9c71-e8dbd7bea799
   name: Godnatt
-  icon: mdi:sleep
   entities:
-    light.all_living_room: 'off'
-    light.all_aleas_room: 'off'
-    light.all_hallway: 'off'
-    light.all_elinas_room: 'off'
-    light.all_bedroom: 'off'
-    light.all_kitchen: 'off'
-    light.all_bathroom: 'off'
-    light.all_toilet: 'off'
-    light.all_conservatory: 'off'
-    media_player.tv_living_room: 'off'
+    light.all_living_room:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.ceiling_lamp_living_room
+      - light.dining_table
+      - light.sonos_lamp_living_room
+      - light.standing_lamp_living_room
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Vardagsrum
+      supported_features: 40
+      state: 'off'
+    light.all_aleas_room:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_aleas_room
+      - light.window_lamp_aleas_room
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Aleas rum
+      supported_features: 8
+      state: 'off'
+    light.all_hallway:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_hallway
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Hall
+      supported_features: 8
+      state: 'off'
+    light.all_elinas_room:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_elinas_room
+      - light.window_lamp_elinas_room
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Elinas rum
+      supported_features: 8
+      state: 'off'
+    light.all_bedroom:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_bedroom
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Sovrum
+      supported_features: 8
+      state: 'off'
+    light.all_kitchen:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      entity_id:
+      - light.ceiling_lamp_kitchen
+      - light.underlighting_kitchen
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Kök
+      supported_features: 40
+      state: 'off'
+    light.all_bathroom:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_bathroom
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Badrum
+      supported_features: 8
+      state: 'off'
+    light.all_toilet:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.ceiling_lamp_toilet
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Toalett
+      supported_features: 8
+      state: 'off'
+    light.all_conservatory:
+      supported_color_modes:
+      - onoff
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Uterum
+      supported_features: 8
+      state: 'off'
+    media_player.tv_living_room:
+      is_volume_muted: false
+      device_class: tv
+      friendly_name: TV Vardagsrum
+      supported_features: 3468
+      state: unknown
+    light.all_outside_front:
+      supported_color_modes:
+      - onoff
+      icon: mdi:lightbulb-group
+      friendly_name: Lampor Framsida
+      supported_features: 8
+      state: 'off'
+  icon: mdi:sleep
+  metadata:
+    light.all_outside_front:
+      entity_only: true
