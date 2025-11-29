@@ -1,0 +1,39 @@
+---
+# Christmas view
+#
+
+title: "Julbelysning"
+path: "christmas"
+swipe_back: "home"
+swipe_forward: null
+cards:
+  - type: custom:decluttering-card
+    template: room_view_base
+    variables:
+      - title: Julbelysning
+      - lights: light.all_christmas
+
+  - type: "custom:button-card"
+    template: card_title
+    label: "Enheter"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.christmas_tree
+        variables:
+          ulm_card_light_name: "Julgran"
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.christmas_star_living_room
+        variables:
+          ulm_card_light_name: "Julstjärna Vardagsrum"
+
+  - type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.christmas_stars_kitchen
+        variables:
+          ulm_card_light_name: "Julstjärnor Kök"

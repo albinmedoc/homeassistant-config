@@ -11,21 +11,22 @@ swipe_nav:
 decluttering_templates: !include_dir_named "../decluttering_templates"
 views:
   - !include views/home.yaml
-  - !include views/house.yaml
-  - !include views/living_room.yaml
-  - !include views/bedroom.yaml
-  - !include views/entrance.yaml
-  - !include views/hallway.yaml
-  - !include views/kitchen.yaml
-  - !include views/aleas_room.yaml
-  - !include views/elinas_room.yaml
-  - !include views/conservatory.yaml
-  - !include views/bathroom.yaml
-  - !include views/toilet.yaml
-  - !include views/garden.yaml
-  - !include views/outside_front.yaml
 
-  - !include views/security.yaml
-  - !include views/monitor.yaml
+  - !include views/aleas_room.yaml
+  - !include views/bathroom.yaml
   - !include views/batteries.yaml
+  - !include views/bedroom.yaml
+  - !include views/christmas.yaml
+  - !include views/conservatory.yaml
+  - !include views/elinas_room.yaml
+  - !include views/entrance.yaml
+  - !include views/garden.yaml
+  - !include views/hallway.yaml
+  - !include views/house.yaml
+  - !include views/kitchen.yaml
   - !include views/lights.yaml
+  - !include views/living_room.yaml
+  - !include views/monitor.yaml
+  - !include views/outside_front.yaml
+  - !include views/security.yaml
+  - !include views/toilet.yaml
