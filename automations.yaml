@@ -124,3 +124,39 @@
         entity_id: light.all_bathroom
       include_dynamic_lighting: disable_dynamic_lighting
       include_sun: sun_enabled
+- id: '1764441915496'
+  alias: Köksbelysning
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1743.yaml
+    input:
+      integration: ZHA
+      controller_device: 30b46d58ca3ede7ea1e1e0298f001601
+      helper_last_controller_event: input_text.controller_kitchen_light_helper
+      action_button_up_short:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step_pct: 20
+        target:
+          entity_id: light.underlighting_kitchen
+      action_button_down_short:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step_pct: -20
+        target:
+          entity_id: light.underlighting_kitchen
+      action_button_up_long:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_pct: 100
+        target:
+          entity_id: light.underlighting_kitchen
+      action_button_down_long:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.underlighting_kitchen

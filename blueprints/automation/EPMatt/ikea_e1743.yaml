@@ -28,8 +28,8 @@ blueprint:
           - deCONZ
           - ZHA
           - Zigbee2MQTT
-          custom_value: false
           multiple: false
+          custom_value: false
           sort: false
     controller_device:
       name: (deCONZ, ZHA, Zigbee2MQTT Required) Controller Device
@@ -62,8 +62,8 @@ blueprint:
         entity:
           domain:
           - input_text
-          reorder: false
           multiple: false
+          reorder: false
     action_button_up_short:
       name: (Optional) Up button short press
       description: Action to run on short up button press.
@@ -194,6 +194,9 @@ blueprint:
           mode: box
           step: 10.0
 variables:
+  ahb_version: 2025.11.04
+  ahb_maintainers:
+  - EPMatt
   integration: !input integration
   button_up_long_loop: !input button_up_long_loop
   button_up_long_max_loop_repeats: !input button_up_long_max_loop_repeats
