@@ -29,7 +29,7 @@ api:
 packages:
   remote_package:
     url: https://github.com/Blackymas/NSPanel_HA_Blueprint
-    ref: main
+    ref: v2025101
     refresh: 300s
     files:
       - nspanel_esphome.yaml # Basic package
