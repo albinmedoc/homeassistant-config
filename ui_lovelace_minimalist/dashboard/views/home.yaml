@@ -7,12 +7,6 @@ path: "home"
 swipe_back: null
 swipe_forward: null
 cards:
-  - type: "custom:button-card"
-    template: chip_navigate
-    label: "Julbelysning"
-    variables:
-      ulm_chip_navigate_path: christmas
-      ulm_chip_navigate_icon: mdi:pine-tree
   - type: "horizontal-stack"
     cards:
       - type: "custom:button-card"

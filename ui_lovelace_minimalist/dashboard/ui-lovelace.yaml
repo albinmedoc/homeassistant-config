@@ -16,7 +16,6 @@ views:
   - !include views/bathroom.yaml
   - !include views/batteries.yaml
   - !include views/bedroom.yaml
-  - !include views/christmas.yaml
   - !include views/conservatory.yaml
   - !include views/elinas_room.yaml
   - !include views/entrance.yaml
