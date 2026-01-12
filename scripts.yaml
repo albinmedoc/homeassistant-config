@@ -1,18 +1,18 @@
 turn_off_tv_using_apple_tv:
   alias: Stäng av TV med Apple TV
   sequence:
-  - action: remote.send_command
-    target:
-      entity_id: '{{ remote }}'
-    data:
-      command:
-      - suspend
-    alias: Stäng av AppleTV
-  - action: media_player.turn_off
-    target:
-      entity_id: '{{ media_player }}'
-    data: {}
-    alias: Stäng av mediaspelare
+    - action: remote.send_command
+      target:
+        entity_id: "{{ remote }}"
+      data:
+        command:
+          - suspend
+      alias: Stäng av AppleTV
+    - action: media_player.turn_off
+      target:
+        entity_id: "{{ media_player }}"
+      data: {}
+      alias: Stäng av mediaspelare
   icon: mdi:television
   mode: single
   fields:
@@ -20,31 +20,31 @@ turn_off_tv_using_apple_tv:
       selector:
         entity:
           filter:
-          - domain: media_player
+            - domain: media_player
       name: Mediaspelare
       required: true
     remote:
       selector:
         entity:
           filter:
-          - domain: remote
+            - domain: remote
       name: Fjärkontroll
       required: true
       description: Apple TV Remote
 turn_on_tv_using_apple_tv:
   alias: Sätt på TV med Apple TV
   sequence:
-  - action: media_player.turn_on
-    target:
-      entity_id: '{{ media_player }}'
-    data: {}
-    alias: Sätt på mediaspelare
-  - action: remote.send_command
-    target:
-      entity_id: '{{ remote }}'
-    data:
-      command: home_hold
-    alias: Sätt på AppleTV
+    - action: media_player.turn_on
+      target:
+        entity_id: "{{ media_player }}"
+      data: {}
+      alias: Sätt på mediaspelare
+    - action: remote.send_command
+      target:
+        entity_id: "{{ remote }}"
+      data:
+        command: home_hold
+      alias: Sätt på AppleTV
   icon: mdi:television
   mode: single
   fields:
@@ -52,14 +52,14 @@ turn_on_tv_using_apple_tv:
       selector:
         entity:
           filter:
-          - domain: media_player
+            - domain: media_player
       name: Mediaspelare
       required: true
     remote:
       selector:
         entity:
           filter:
-          - domain: remote
+            - domain: remote
       name: Fjärkontroll
       required: true
       description: Apple TV Remote
@@ -73,26 +73,28 @@ get_persons_in_zone:
       name: Zoner
       description: Vilka zoner att kolla
       default:
-      - zone.home
+        - zone.home
       required: true
       selector:
         entity:
           domain: zone
           multiple: true
   sequence:
-  - variables:
-      result:
-        data: "{% set personer = namespace(list=[]) %}\n{% for zone in zones %}\n
-          \ {% set zone_personer = state_attr(zone, 'persons') | default([]) %}\n
-          \ {% set personer.list = personer.list + zone_personer %}\n{% endfor %}\n{{
-          personer.list | unique | list }}\n"
-    alias: Hämta personer i zoner
-  - stop: Returnera personer
-    response_variable: result
-    alias: Returnera personer
+    - variables:
+        result:
+          data:
+            "{% set personer = namespace(list=[]) %}\n{% for zone in zones %}\n
+            \ {% set zone_personer = state_attr(zone, 'persons') | default([]) %}\n
+            \ {% set personer.list = personer.list + zone_personer %}\n{% endfor %}\n{{
+            personer.list | unique | list }}\n"
+      alias: Hämta personer i zoner
+    - stop: Returnera personer
+      response_variable: result
+      alias: Returnera personer
 get_persons_not_in_zone:
   alias: Hämta personer utanför zoner
-  description: Returnerar en lista med alla personer som INTE befinner sig i angivna
+  description:
+    Returnerar en lista med alla personer som INTE befinner sig i angivna
     zoner
   mode: parallel
   max: 10
@@ -101,25 +103,26 @@ get_persons_not_in_zone:
       name: Zoner
       description: Vilka zoner att exkludera
       default:
-      - zone.home
+        - zone.home
       required: true
       selector:
         entity:
           domain: zone
           multiple: true
   sequence:
-  - variables:
-      result:
-        data: "{% set personer_i_zoner = namespace(list=[]) %}\n{% for zone in zones
-          %}\n  {% set zone_personer = state_attr(zone, 'persons') | default([]) %}\n
-          \ {% set personer_i_zoner.list = personer_i_zoner.list + zone_personer %}\n{%
-          endfor %}\n{% set alla_personer = states.person | map(attribute='entity_id')
-          | list %}\n{{ alla_personer | reject('in', personer_i_zoner.list) | list
-          }}\n"
-    alias: Hämta personer utanför zoner
-  - stop: Returnera personer
-    response_variable: result
-    alias: Returnera personer
+    - variables:
+        result:
+          data:
+            "{% set personer_i_zoner = namespace(list=[]) %}\n{% for zone in zones
+            %}\n  {% set zone_personer = state_attr(zone, 'persons') | default([]) %}\n
+            \ {% set personer_i_zoner.list = personer_i_zoner.list + zone_personer %}\n{%
+            endfor %}\n{% set alla_personer = states.person | map(attribute='entity_id')
+            | list %}\n{{ alla_personer | reject('in', personer_i_zoner.list) | list
+            }}\n"
+      alias: Hämta personer utanför zoner
+    - stop: Returnera personer
+      response_variable: result
+      alias: Returnera personer
 send_notification_to_person:
   alias: Skicka notis till en person
   description: Skicka notifikation till en specifik person med opt-out stöd
@@ -144,22 +147,25 @@ send_notification_to_person:
       selector:
         object:
   sequence:
-  - variables:
-      person_name: '{{ person.split(''.'')[1] }}'
-      service_name: notify.mobile_app_{{ person_name }}_iphone
-      notification_tag: '{{ notify_data.data.tag if ''data'' in notify_data and ''tag''
-        in notify_data.data else none }}'
-      person_opt_outs: '{{ state_attr(person, ''notification_opt_outs'') | default([])
-        }}'
-      should_send: '{{ notification_tag is none or notification_tag not in person_opt_outs
-        }}'
-    alias: Definiera variabler och kontrollera opt-out
-  - condition: template
-    value_template: '{{ should_send }}'
-    alias: Kontrollera om notis ska skickas
-  - data: '{{ notify_data }}'
-    action: '{{ service_name }}'
-    alias: Skicka notis
+    - variables:
+        person_name: "{{ person.split('.')[1] }}"
+        service_name: notify.mobile_app_{{ person_name }}_iphone
+        notification_tag:
+          "{{ notify_data.data.tag if 'data' in notify_data and 'tag'
+          in notify_data.data else none }}"
+        person_opt_outs:
+          "{{ state_attr(person, 'notification_opt_outs') | default([])
+          }}"
+        should_send:
+          "{{ notification_tag is none or notification_tag not in person_opt_outs
+          }}"
+      alias: Definiera variabler och kontrollera opt-out
+    - condition: template
+      value_template: "{{ should_send }}"
+      alias: Kontrollera om notis ska skickas
+    - data: "{{ notify_data }}"
+      action: "{{ service_name }}"
+      alias: Skicka notis
 send_notification_to_persons:
   alias: Skicka notis till flera personer
   description: Skickar notifikation till flera personer
@@ -184,14 +190,39 @@ send_notification_to_persons:
       selector:
         object:
   sequence:
-  - repeat:
-      for_each: '{{ persons }}'
-      sequence:
-      - data:
-          person: '{{ repeat.item }}'
-          notify_data: '{{ notify_data }}'
-        action: script.send_notification_to_person
+    - repeat:
+        for_each: "{{ persons }}"
+        sequence:
+          - data:
+              person: "{{ repeat.item }}"
+              notify_data: "{{ notify_data }}"
+            action: script.send_notification_to_person
   icon: mdi:bell
+send_notification_to_all_persons:
+  alias: Skicka notis till alla personer
+  description: Skickar notifikation till alla personer automatiskt
+  mode: parallel
+  max: 10
+  fields:
+    notify_data:
+      name: Notis data
+      description: Datan att använda vid skickande av notis
+      default:
+        title: Titel
+        message: Meddelande
+      required: true
+      selector:
+        object:
+  sequence:
+    - repeat:
+        for_each: "{{ states.person | map(attribute='entity_id') | list }}"
+        sequence:
+          - data:
+              person: "{{ repeat.item }}"
+              notify_data: "{{ notify_data }}"
+            action: script.send_notification_to_person
+      alias: Upprepa för varje person
+  icon: mdi:bell-ring
 send_notification_to_persons_in_zone:
   alias: Skicka notis till alla i zon
   description: Skickar notifikation till alla personer i angivna zoner
@@ -202,7 +233,7 @@ send_notification_to_persons_in_zone:
       name: Zoner
       description: Vilka zoner att skicka till
       default:
-      - zone.home
+        - zone.home
       required: true
       selector:
         entity:
@@ -218,16 +249,16 @@ send_notification_to_persons_in_zone:
       selector:
         object:
   sequence:
-  - alias: Hämta personer i zoner
-    action: script.get_persons_in_zone
-    data:
-      zones: '{{ zones }}'
-    response_variable: persons
-  - alias: Skicka notiser till personer
-    action: script.send_notification_to_persons
-    data:
-      persons: '{{ persons.data }}'
-      notify_data: '{{ notify_data }}'
+    - alias: Hämta personer i zoner
+      action: script.get_persons_in_zone
+      data:
+        zones: "{{ zones }}"
+      response_variable: persons
+    - alias: Skicka notiser till personer
+      action: script.send_notification_to_persons
+      data:
+        persons: "{{ persons.data }}"
+        notify_data: "{{ notify_data }}"
 send_notification_to_persons_not_in_zone:
   alias: Skicka notis till alla utanför zon
   description: Skickar notifikation till alla personer utanför angivna zoner
@@ -238,7 +269,7 @@ send_notification_to_persons_not_in_zone:
       name: Zoner
       description: Vilka zoner att inte skicka till
       default:
-      - zone.home
+        - zone.home
       required: true
       selector:
         entity:
@@ -254,16 +285,16 @@ send_notification_to_persons_not_in_zone:
       selector:
         object:
   sequence:
-  - alias: Hämta personer utanför zoner
-    action: script.get_persons_not_in_zone
-    data:
-      zones: '{{ zones }}'
-    response_variable: persons
-  - alias: Skicka notiser till personer
-    action: script.send_notification_to_persons
-    data:
-      persons: '{{ persons.data }}'
-      notify_data: '{{ notify_data }}'
+    - alias: Hämta personer utanför zoner
+      action: script.get_persons_not_in_zone
+      data:
+        zones: "{{ zones }}"
+      response_variable: persons
+    - alias: Skicka notiser till personer
+      action: script.send_notification_to_persons
+      data:
+        persons: "{{ persons.data }}"
+        notify_data: "{{ notify_data }}"
 play_tts_message:
   alias: Spela TTS meddelande
   description: Spelar ett TTS meddelande på mediaspelare
@@ -297,33 +328,34 @@ play_tts_message:
           step: 0.05
           mode: slider
   sequence:
-  - variables:
-      original_volumes: "{% set ns = namespace(volumes={}) %} {% for player in media_players
-        %}\n  {% set ns.volumes = dict(ns.volumes, **{player: state_attr(player, 'volume_level')})
-        %}\n{% endfor %} {{ ns.volumes }}\n"
-    alias: Spara nuvarande volymnivåer
-  - repeat:
-      for_each: '{{ media_players }}'
-      sequence:
-      - target:
-          entity_id: '{{ repeat.item }}'
-        data:
-          volume_level: '{{ volume_level }}'
-        action: media_player.volume_set
-    alias: Sätt TTS volym
-  - target:
-      entity_id: '{{ media_players }}'
-    data:
-      message: '{{ message }}'
-      language: sv
-    action: tts.google_translate_say
-  - repeat:
-      for_each: '{{ media_players }}'
-      sequence:
-      - target:
-          entity_id: '{{ repeat.item }}'
-        data:
-          volume_level: '{{ original_volumes[repeat.item] }}'
-        action: media_player.volume_set
-    alias: Återställ ursprungliga volymer
+    - variables:
+        original_volumes:
+          "{% set ns = namespace(volumes={}) %} {% for player in media_players
+          %}\n  {% set ns.volumes = dict(ns.volumes, **{player: state_attr(player, 'volume_level')})
+          %}\n{% endfor %} {{ ns.volumes }}\n"
+      alias: Spara nuvarande volymnivåer
+    - repeat:
+        for_each: "{{ media_players }}"
+        sequence:
+          - target:
+              entity_id: "{{ repeat.item }}"
+            data:
+              volume_level: "{{ volume_level }}"
+            action: media_player.volume_set
+      alias: Sätt TTS volym
+    - target:
+        entity_id: "{{ media_players }}"
+      data:
+        message: "{{ message }}"
+        language: sv
+      action: tts.google_translate_say
+    - repeat:
+        for_each: "{{ media_players }}"
+        sequence:
+          - target:
+              entity_id: "{{ repeat.item }}"
+            data:
+              volume_level: "{{ original_volumes[repeat.item] }}"
+            action: media_player.volume_set
+      alias: Återställ ursprungliga volymer
   icon: mdi:speaker-message
