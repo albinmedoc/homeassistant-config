@@ -214,9 +214,10 @@ cards:
         template: room_card
         variables:
           - title: Elinas rum
-          - icon: mdi:teddy-bear
+          - icon: mdi:bed-single
           - navigation_path: elinas-room
           - lights: light.all_elinas_room
+          - temperature: sensor.temperature_elinas_room
 
   - type: "horizontal-stack"
     cards:
