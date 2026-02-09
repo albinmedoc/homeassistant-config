@@ -1,4 +1,4 @@
-- id: "1668465104974"
+- id: '1668465104974'
   alias: Notis vid dåligt batteri
   description: Skicka ut en notifikation när sensorer har dåligt batteri.
   use_blueprint:
@@ -6,65 +6,62 @@
     input:
       threshold: 15
       actions:
-        - data:
-            title: Dåligt batteri
-            message: "{{sensors}}"
-          action: notify.mobile_app_albin_iphone
+      - data:
+          title: Dåligt batteri
+          message: '{{sensors}}'
+        action: notify.mobile_app_albin_iphone
       time: 09:00:00
       exclude:
         entity_id:
-          - sensor.matilda_iphone_app_battery_level
-          - sensor.albin_iphone_app_battery_level
-- id: "1675933105028"
+        - sensor.matilda_iphone_app_battery_level
+        - sensor.albin_iphone_app_battery_level
+- id: '1675933105028'
   alias: Persistent notifikation - Otillgängliga entiteter
   description: Skapa persistent notifikation om otillgängliga enheter, avvisa om inga.
   trigger:
-    - platform: state
-      entity_id: sensor.unavailable_entities
-      attribute: entity_id
-      to:
+  - platform: state
+    entity_id: sensor.unavailable_entities
+    attribute: entity_id
+    to:
   condition:
-    - condition: template
-      value_template:
-        "{{ is_number(trigger.from_state.state)\n    and is_number(trigger.to_state.state)
-        }}\n"
+  - condition: template
+    value_template: "{{ is_number(trigger.from_state.state)\n    and is_number(trigger.to_state.state)
+      }}\n"
   action:
-    - if:
-        - condition: numeric_state
-          entity_id: sensor.unavailable_entities
-          below: 1
-      then:
-        - data:
-            notification_id: unavailable_entities
-          action: persistent_notification.dismiss
-      else:
-        - data:
-            notification_id: unavailable_entities
-            title:
-              "{{ \"Otillgängliga entiteter (\" ~ states(\"sensor.unavailable_entities\")
-              ~ \")\" }} \n"
-            message:
-              "{% set ns = namespace(result=[]) %} {% for s in expand(state_attr('sensor.unavailable_entities',
-              'entity_id')) %}\n  {% set ns.result = ns.result + [\n      device_attr(s.entity_id,
-              \"name\") ~ \"|\" ~ device_id(s.entity_id) ~ \"|- **\" ~ s.name ~ \"**\\n\"\n
-              \     ~ \"  - *entity_id*: \" ~ s.entity_id ~ \"\\n\"\n      ~ \"  - *state*:
-              \" ~ s.state ~ \"\\n\"\n    ]\n  %}\n{% endfor %}\n{% set ns.result = ns.result
-              | sort %} {% set lastdev = namespace( id=\"\" ) %} {% set tarr = ns.result
-              %} {% set ns.result = [] %} {% for item in tarr %}\n  {% set dev = namespace(
-              id=\"\" ) %}\n  {% set entity = namespace( data=\"\" ) %}\n  {% set dev.id
-              = item.split(\"|\")[1] %}\n  {% set entity.data = item.split(\"|\")[2] %}\n
-              \ {% if lastdev.id != dev.id %}\n    {% if dev.id != 'None' %}\n      {%
-              set ns.result = ns.result + [ \n        \"**<a href=\\\"/config/devices/device/\"
-              ~ dev.id ~ \"\\\">\" ~ \n        (device_attr(dev.id, \"name_by_user\")
-              if device_attr(dev.id, \"name_by_user\") is not none else device_attr(dev.id,
-              \"name\")) ~ \n        \"</a>**\" \n    ] %}\n    {% else %}\n      {% set
-              ns.result = ns.result + [ \"**Icke-enhetsentiteter**\" ] %}\n    {% endif
-              %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n  {% set ns.result
-              = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result | join('\\n')
-              }}\n"
-          action: persistent_notification.create
+  - if:
+    - condition: numeric_state
+      entity_id: sensor.unavailable_entities
+      below: 1
+    then:
+    - data:
+        notification_id: unavailable_entities
+      action: persistent_notification.dismiss
+    else:
+    - data:
+        notification_id: unavailable_entities
+        title: "{{ \"Otillgängliga entiteter (\" ~ states(\"sensor.unavailable_entities\")
+          ~ \")\" }} \n"
+        message: "{% set ns = namespace(result=[]) %} {% for s in expand(state_attr('sensor.unavailable_entities',
+          'entity_id')) %}\n  {% set ns.result = ns.result + [\n      device_attr(s.entity_id,
+          \"name\") ~ \"|\" ~ device_id(s.entity_id) ~ \"|- **\" ~ s.name ~ \"**\\n\"\n
+          \     ~ \"  - *entity_id*: \" ~ s.entity_id ~ \"\\n\"\n      ~ \"  - *state*:
+          \" ~ s.state ~ \"\\n\"\n    ]\n  %}\n{% endfor %}\n{% set ns.result = ns.result
+          | sort %} {% set lastdev = namespace( id=\"\" ) %} {% set tarr = ns.result
+          %} {% set ns.result = [] %} {% for item in tarr %}\n  {% set dev = namespace(
+          id=\"\" ) %}\n  {% set entity = namespace( data=\"\" ) %}\n  {% set dev.id
+          = item.split(\"|\")[1] %}\n  {% set entity.data = item.split(\"|\")[2] %}\n
+          \ {% if lastdev.id != dev.id %}\n    {% if dev.id != 'None' %}\n      {%
+          set ns.result = ns.result + [ \n        \"**<a href=\\\"/config/devices/device/\"
+          ~ dev.id ~ \"\\\">\" ~ \n        (device_attr(dev.id, \"name_by_user\")
+          if device_attr(dev.id, \"name_by_user\") is not none else device_attr(dev.id,
+          \"name\")) ~ \n        \"</a>**\" \n    ] %}\n    {% else %}\n      {% set
+          ns.result = ns.result + [ \"**Icke-enhetsentiteter**\" ] %}\n    {% endif
+          %}\n    {% set lastdev.id = dev.id %}\n  {% endif %}\n  {% set ns.result
+          = ns.result + [ entity.data ] %}\n{% endfor %} {{ ns.result | join('\\n')
+          }}\n"
+      action: persistent_notification.create
   mode: restart
-- id: "1757078313019"
+- id: '1757078313019'
   alias: NSPanel Entré
   description: Konfiguration för NSPanel vid entrén
   use_blueprint:
@@ -72,9 +69,9 @@
     input:
       nspanel_name: a4fab9dadf4f2179b4f024d3d3d0fdf9
       language: sv
-      date_format: "%A, %-d/%-m"
+      date_format: '%A, %-d/%-m'
       timezone: Europe/Stockholm (CET-1CEST,M3.5.0,M10.5.0/3)
-      decimal_separator: ","
+      decimal_separator: ','
       qrcode_label: WiFi
       home_button05_icon: mdi:wifi
       qrcode_enabled: true
@@ -85,11 +82,11 @@
       relay_2_local_fallback: true
       right_button_name: Hall
       chip01: light.all
-      chip01_icon: ""
+      chip01_icon: ''
       right_button_entity: light.all_entrance
       left_button_entity: light.all_outside_front
       home_custom_button01_name: Larm
-      home_custom_button01_icon: ""
+      home_custom_button01_icon: ''
       home_custom_button01: alarm_control_panel.alarmo
       indoortemp: sensor.vindstyrka_temperature
       button_page01_label: Nedanvåning
@@ -106,7 +103,7 @@
       entity_page01_label: Fönster och dörrar
       entities_entity01: binary_sensor.door_entrance
       entities_entity01_name: Yterrdörr
-      entities_entity01_icon: ""
+      entities_entity01_icon: ''
       entities_entity02: binary_sensor.door_conservatory
       entities_entity02_name: Uterumsdörr
       entities_entity03_name: Kök
@@ -115,56 +112,57 @@
       entities_entity04: binary_sensor.window_aleas_room
       entities_entity05: binary_sensor.window_elinas_room
       entities_entity05_name: Elinas rum
-- id: "1762535868708"
+- id: '1762535868708'
   alias: Närvarosensor badrum
-  description: ""
+  description: ''
   use_blueprint:
     path: Blackshome/sensor-light.yaml
     input:
       motion_trigger:
-        - binary_sensor.narvarosensor
+      - binary_sensor.narvarosensor
       light_switch:
         entity_id: light.all_bathroom
-- id: "1763564014123"
+- id: '1763564014123'
   alias: Tänd framlampor när mörkt och någon borta
-  description:
-    Tänder lamporna på framsidan om det är mörkt ute och någon inte är
+  description: Tänder lamporna på framsidan om det är mörkt ute och någon inte är
     hemma
   triggers:
-    - trigger: sun
-      event: sunset
-      offset: -00:30:00
-    - entity_id: zone.home
-      trigger: state
+  - trigger: sun
+    event: sunset
+    offset: -00:30:00
+  - entity_id: zone.home
+    trigger: state
   conditions:
-    - condition: sun
-      after: sunset
-      after_offset: -00:30:00
-    - condition: template
-      value_template:
-        "{% set count_home = states('zone.home') | int(0) %} {% set
-        total = states.person | count %} {{ count_home < total }}"
+  - condition: sun
+    after: sunset
+    after_offset: -00:30:00
   actions:
-    - choose:
-        - conditions:
-            - condition: template
-              value_template:
-                "{% set count_home = states('zone.home') | int(0) %} {%
-                set total = states.person | count %} {{ count_home < total }}"
-          sequence:
-            - action: light.turn_off
-              data: {}
-              target:
-                entity_id: light.all_outside_front
-      default:
-        - action: light.turn_on
-          data: {}
-          target:
-            entity_id: light.all_outside_front
-  mode: single
-- id: "1764441915496"
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{% set count_home = states(''zone.home'') | int(0) %} {%
+          set total = states.person | count %} {{ count_home < total }}'
+      sequence:
+      - action: light.turn_on
+        target:
+          entity_id: light.all_outside_front
+    - conditions:
+      - condition: template
+        value_template: '{% set count_home = states(''zone.home'') | int(0) %} {%
+          set total = states.person | count %} {{ count_home == total }}'
+      sequence:
+      - delay:
+          minutes: 5
+      - condition: template
+        value_template: '{% set count_home = states(''zone.home'') | int(0) %} {%
+          set total = states.person | count %} {{ count_home == total }}'
+      - action: light.turn_off
+        target:
+          entity_id: light.all_outside_front
+  mode: restart
+- id: '1764441915496'
   alias: Köksbelysning
-  description: ""
+  description: ''
   use_blueprint:
     path: EPMatt/ikea_e1743.yaml
     input:
@@ -172,218 +170,243 @@
       controller_device: 30b46d58ca3ede7ea1e1e0298f001601
       helper_last_controller_event: input_text.controller_kitchen_light_helper
       action_button_up_short:
-        - action: light.turn_on
-          metadata: {}
-          data:
-            brightness_step_pct: 20
-          target:
-            entity_id: light.underlighting_kitchen
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step_pct: 20
+        target:
+          entity_id: light.underlighting_kitchen
       action_button_down_short:
-        - action: light.turn_on
-          metadata: {}
-          data:
-            brightness_step_pct: -20
-          target:
-            entity_id: light.underlighting_kitchen
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step_pct: -20
+        target:
+          entity_id: light.underlighting_kitchen
       action_button_up_long:
-        - action: light.turn_on
-          metadata: {}
-          data:
-            brightness_pct: 100
-          target:
-            entity_id: light.underlighting_kitchen
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_pct: 100
+        target:
+          entity_id: light.underlighting_kitchen
       action_button_down_long:
-        - action: light.turn_off
-          metadata: {}
-          data: {}
-          target:
-            entity_id: light.underlighting_kitchen
-- id: "1768225170104"
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.underlighting_kitchen
+- id: '1768225170104'
   alias: Notifiera Albin vid ny HA version
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - update.home_assistant_core_update
-      to:
-        - "on"
+  - trigger: state
+    entity_id:
+    - update.home_assistant_core_update
+    to:
+    - 'on'
   conditions: []
   actions:
-    - action: script.send_notification_to_person
-      metadata: {}
-      data:
-        notify_data:
-          message: Det finns en ny version av Home Assistant!
-        person: person.albin
+  - action: script.send_notification_to_person
+    metadata: {}
+    data:
+      notify_data:
+        message: Det finns en ny version av Home Assistant!
+      person: person.albin
   mode: single
-- id: "1768225851868"
+- id: '1768225851868'
   alias: Notifiera Albin när Matilda lämnar salongen
-  description: ""
+  description: ''
   triggers:
-    - trigger: zone
-      entity_id: person.matilda
-      zone: zone.matilda_work
-      event: leave
-  conditions: []
+  - trigger: zone
+    entity_id: person.matilda
+    zone: zone.matilda_work
+    event: leave
+    id: leaves
+  - trigger: zone
+    entity_id: person.matilda
+    zone: zone.home
+    event: enter
+    id: arrives
+  conditions:
+  - condition: state
+    entity_id: person.albin
+    state:
+    - home
   actions:
+  - if:
+    - condition: trigger
+      id:
+      - leaves
+    then:
     - action: script.send_notification_to_person
       metadata: {}
       data:
         notify_data:
           message: Matilda har lämnat salongen
+          data:
+            tag: matilda_left_salon
+        person: person.albin
+    else:
+    - action: script.send_notification_to_person
+      metadata: {}
+      data:
+        notify_data:
+          message: clear_notification
+          data:
+            tag: matilda_left_salon
         person: person.albin
   mode: single
-- id: "1768226548483"
+- id: '1768226548483'
   alias: TTS Mute
-  description: ""
+  description: ''
   triggers:
-    - trigger: time
-      at: 07:00:00
-      id: morning
-    - trigger: time
-      at: "22:00:00"
-      id: evening
+  - trigger: time
+    at: 07:00:00
+    id: morning
+  - trigger: time
+    at: '22:00:00'
+    id: evening
   conditions: []
   actions:
-    - if:
-        - condition: trigger
-          id:
-            - morning
-      then:
-        - action: input_boolean.turn_off
-          metadata: {}
-          target:
-            entity_id: input_boolean.tts_mute
-          data: {}
-      else:
-        - action: input_boolean.turn_on
-          metadata: {}
-          target:
-            entity_id: input_boolean.tts_mute
-          data: {}
+  - if:
+    - condition: trigger
+      id:
+      - morning
+    then:
+    - action: input_boolean.turn_off
+      metadata: {}
+      target:
+        entity_id: input_boolean.tts_mute
+      data: {}
+    else:
+    - action: input_boolean.turn_on
+      metadata: {}
+      target:
+        entity_id: input_boolean.tts_mute
+      data: {}
   mode: single
-- id: "1768235531157"
+- id: '1768235531157'
   alias: Semesterläge trigger notis
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - zone.home
-      for:
-        hours: 24
-        minutes: 0
-        seconds: 0
-      to:
-        - "0"
-      alias: Ingen hemma på 24h
+  - trigger: state
+    entity_id:
+    - zone.home
+    for:
+      hours: 24
+      minutes: 0
+      seconds: 0
+    to:
+    - '0'
+    alias: Ingen hemma på 24h
   conditions:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state:
+    - 'off'
+  actions:
+  - action: script.send_notification_to_all_persons
+    metadata: {}
+    data:
+      notify_data:
+        title": Semesterläge
+        message: Du har varit borta i 24 timmar. Vill du aktivera semesterläge?
+        data:
+          actions:
+          - action: VACATION_MODE_ON
+            title: Aktivera semesterläge
+            icon: sfsymbols:airplane
+            authenticationRequired: true
+          persistent: true
+          tag: vaccation_mode_activate
+  mode: single
+- id: '1768236531692'
+  alias: Semesterläge ändringsnotis
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.vacation_mode
+    to:
+    - 'on'
+  - trigger: state
+    entity_id:
+    - input_boolean.vacation_mode
+    to:
+    - 'off'
+  conditions: []
+  actions:
+  - if:
     - condition: state
       entity_id: input_boolean.vacation_mode
       state:
-        - "off"
-  actions:
+      - 'on'
+    then:
     - action: script.send_notification_to_all_persons
       metadata: {}
       data:
         notify_data:
-          title": Semesterläge
-          message: Du har varit borta i 24 timmar. Vill du aktivera semesterläge?
+          title: Semesterläge!
+          message: Semesterläge har aktiverats!
           data:
-            actions:
-              - action: VACATION_MODE_ON
-                title: Aktivera semesterläge
-                icon: sfsymbols:airplane
-                authenticationRequired: true
-            persistent: true
             tag: vaccation_mode_activate
-  mode: single
-- id: "1768236531692"
-  alias: Semesterläge ändringsnotis
-  description: ""
-  triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.vacation_mode
-      to:
-        - "on"
-    - trigger: state
-      entity_id:
-        - input_boolean.vacation_mode
-      to:
-        - "off"
-  conditions: []
-  actions:
-    - if:
-        - condition: state
-          entity_id: input_boolean.vacation_mode
-          state:
-            - "on"
-      then:
-        - action: script.send_notification_to_all_persons
-          metadata: {}
+    else:
+    - action: script.send_notification_to_all_persons
+      metadata: {}
+      data:
+        notify_data:
+          title: Semesterläge!
+          message: Semesterläge har avaktiverats!
           data:
-            notify_data:
-              title: Semesterläge!
-              message: Semesterläge har aktiverats!
-              data:
-                tag: vaccation_mode_activate
-      else:
-        - action: script.send_notification_to_all_persons
-          metadata: {}
-          data:
-            notify_data:
-              title: Semesterläge!
-              message: Semesterläge har avaktiverats!
-              data:
-                tag: vaccation_mode_deactivated
+            tag: vaccation_mode_deactivated
   mode: single
-- id: "1768236909581"
+- id: '1768236909581'
   alias: Semesterläga notifikation action
-  description: ""
+  description: ''
   triggers:
-    - trigger: event
-      event_type: mobile_app_notification_action
-      event_data:
-        action: VACATION_MODE_ON
-      alias:
-        När mobile_app_notification_action-händelse avfyras med VACATION_MODE_ON
-        action
+  - trigger: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: VACATION_MODE_ON
+    alias: När mobile_app_notification_action-händelse avfyras med VACATION_MODE_ON
+      action
   conditions:
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state:
-        - "off"
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state:
+    - 'off'
   actions:
-    - action: input_boolean.turn_on
-      metadata: {}
-      target:
-        entity_id: input_boolean.vacation_mode
-      data: {}
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.vacation_mode
+    data: {}
   mode: single
-- id: "1768237063602"
+- id: '1768237063602'
   alias: Semesterläga automatiskt avstängning
-  description: ""
+  description: ''
   triggers:
-    - trigger: numeric_state
-      entity_id:
-        - zone.home
-      above: 0
-      alias: Någon hemma
+  - trigger: numeric_state
+    entity_id:
+    - zone.home
+    above: 0
+    alias: Någon hemma
   conditions:
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state:
-        - "on"
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state:
+    - 'on'
   actions:
-    - action: input_boolean.turn_off
-      metadata: {}
-      target:
-        entity_id: input_boolean.vacation_mode
-      data: {}
+  - action: input_boolean.turn_off
+    metadata: {}
+    target:
+      entity_id: input_boolean.vacation_mode
+    data: {}
   mode: single
-- id: "1768250828520"
+- id: '1768250828520'
   alias: Semesterläge belysning
-  description: ""
+  description: ''
   use_blueprint:
     path: Blackshome/holiday-away-lighting.yaml
     input:
@@ -393,160 +416,184 @@
       entity_order_on: entities_on_shuffled
       random_on_delay: 20
       time_off_selection: earliest_latest_time_range
-      start_time_range: "21:30:00"
-      end_time_range: "22:00:00"
+      start_time_range: '21:30:00'
+      end_time_range: '22:00:00'
       entity_order_off: entities_off_in_sequence
       random_off_delay: 15
       entity_1: light.ceiling_lamp_living_room
       entity_2: light.ceiling_lamp_kitchen
       entity_3: light.ceiling_lamp_bedroom
-- id: "1768251705602"
+- id: '1768251705602'
   alias: Spegla semesterkalender med boolean
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - calendar.vacation
-      to:
-        - "on"
-      for:
-        hours: 24
-        minutes: 0
-        seconds: 0
-      id: "on"
-    - trigger: state
-      entity_id:
-        - calendar.vacation
-      to:
-        - "off"
-      id: "off"
+  - trigger: state
+    entity_id:
+    - calendar.vacation
+    to:
+    - 'on'
+    for:
+      hours: 24
+      minutes: 0
+      seconds: 0
+    id: 'on'
+  - trigger: state
+    entity_id:
+    - calendar.vacation
+    to:
+    - 'off'
+    id: 'off'
   conditions: []
   actions:
-    - if:
-        - condition: trigger
-          id:
-            - "on"
-      then:
-        - action: input_boolean.turn_on
-          metadata: {}
-          target:
-            entity_id: input_boolean.vacation_mode
-          data: {}
-      else:
-        - action: input_boolean.turn_off
-          metadata: {}
-          target:
-            entity_id: input_boolean.vacation_mode
-          data: {}
+  - if:
+    - condition: trigger
+      id:
+      - 'on'
+    then:
+    - action: input_boolean.turn_on
+      metadata: {}
+      target:
+        entity_id: input_boolean.vacation_mode
+      data: {}
+    else:
+    - action: input_boolean.turn_off
+      metadata: {}
+      target:
+        entity_id: input_boolean.vacation_mode
+      data: {}
   mode: single
-- id: "1768252106342"
+- id: '1768252106342'
   alias: Spegla gästkalender med boolean
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - calendar.guest_mode
-      to:
-        - "on"
-      id: "on"
-    - trigger: state
-      entity_id:
-        - calendar.guest_mode
-      id: "off"
-      to:
-        - "off"
+  - trigger: state
+    entity_id:
+    - calendar.guest_mode
+    to:
+    - 'on'
+    id: 'on'
+  - trigger: state
+    entity_id:
+    - calendar.guest_mode
+    id: 'off'
+    to:
+    - 'off'
   conditions: []
   actions:
-    - if:
-        - condition: trigger
-          id:
-            - "on"
-      then:
-        - action: input_boolean.turn_on
-          metadata: {}
-          target:
-            entity_id: input_boolean.guest_mode
-          data: {}
-      else:
-        - action: input_boolean.turn_off
-          metadata: {}
-          target:
-            entity_id: input_boolean.guest_mode
-          data: {}
+  - if:
+    - condition: trigger
+      id:
+      - 'on'
+    then:
+    - action: input_boolean.turn_on
+      metadata: {}
+      target:
+        entity_id: input_boolean.guest_mode
+      data: {}
+    else:
+    - action: input_boolean.turn_off
+      metadata: {}
+      target:
+        entity_id: input_boolean.guest_mode
+      data: {}
   mode: single
-- id: "1768252341305"
+- id: '1768252341305'
   alias: Gästläge TTS
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.guest_mode
-      id: "on"
-      to:
-        - "on"
-    - trigger: state
-      entity_id:
-        - input_boolean.guest_mode
-      id: "off"
-      to:
-        - "off"
+  - trigger: state
+    entity_id:
+    - input_boolean.guest_mode
+    id: 'on'
+    to:
+    - 'on'
+  - trigger: state
+    entity_id:
+    - input_boolean.guest_mode
+    id: 'off'
+    to:
+    - 'off'
   conditions: []
   actions:
-    - if:
-        - condition: trigger
-          id:
-            - "on"
-      then:
-        - action: script.play_tts_message
-          metadata: {}
-          data:
-            media_players:
-              - media_player.sonos_lamp_living_room
-            message: Gästläge aktiverat
-      else:
-        - action: script.play_tts_message
-          metadata: {}
-          data:
-            media_players:
-              - media_player.sonos_lamp_living_room
-            message: Gästläge avaktiverat
+  - if:
+    - condition: trigger
+      id:
+      - 'on'
+    then:
+    - action: script.play_tts_message
+      metadata: {}
+      data:
+        media_players:
+        - media_player.sonos_lamp_living_room
+        message: Gästläge aktiverat
+    else:
+    - action: script.play_tts_message
+      metadata: {}
+      data:
+        media_players:
+        - media_player.sonos_lamp_living_room
+        message: Gästläge avaktiverat
   mode: single
-- id: "1768252483605"
+- id: '1768252483605'
   alias: Gästläge notis
-  description: ""
+  description: ''
   triggers:
-    - trigger: state
-      entity_id:
-        - input_boolean.guest_mode
-      id: "on"
-      to:
-        - "on"
-    - trigger: state
-      entity_id:
-        - input_boolean.guest_mode
-      id: "off"
-      to:
-        - "off"
+  - trigger: state
+    entity_id:
+    - input_boolean.guest_mode
+    id: 'on'
+    to:
+    - 'on'
+  - trigger: state
+    entity_id:
+    - input_boolean.guest_mode
+    id: 'off'
+    to:
+    - 'off'
   conditions: []
   actions:
-    - if:
-        - condition: trigger
-          id:
-            - "on"
-      then:
-        - action: script.send_notification_to_all_persons
-          metadata: {}
-          data:
-            notify_data:
-              title: Gästläge aktiverat
-              message:
-                Gästläge har aktiverats, glöm inte att stänga av det senare så
-                det inte är igång i onödan.
-      else:
-        - action: script.send_notification_to_all_persons
-          metadata: {}
-          data:
-            notify_data:
-              title: Gästläge avaktiverat
-              message: Gästläge har stängts av.
+  - if:
+    - condition: trigger
+      id:
+      - 'on'
+    then:
+    - action: script.send_notification_to_all_persons
+      metadata: {}
+      data:
+        notify_data:
+          title: Gästläge aktiverat
+          message: Gästläge har aktiverats, glöm inte att stänga av det senare så
+            det inte är igång i onödan.
+    else:
+    - action: script.send_notification_to_all_persons
+      metadata: {}
+      data:
+        notify_data:
+          title: Gästläge avaktiverat
+          message: Gästläge har stängts av.
+  mode: single
+- id: '1769167071169'
+  alias: Notis om brandlarm
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.smoke_detected
+    to:
+    - 'on'
+  conditions: []
+  actions:
+  - action: script.send_notification_to_all_persons
+    metadata: {}
+    data:
+      notify_data:
+        title: Rök upptäckt!
+        message: Rök upptäckt i hemmet! Det kanske brinner!
+        data:
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1
+          tag: smoke_detected
   mode: single
