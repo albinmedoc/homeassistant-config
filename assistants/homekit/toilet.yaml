@@ -4,6 +4,4 @@
 # Area: Toilet
 #
 
-- light.lamp_toilet
-
-- binary_sensor.motion_toilet
+- light.ceiling_lamp_toilet

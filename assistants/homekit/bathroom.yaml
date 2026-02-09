@@ -4,6 +4,6 @@
 # Area: Bathroom
 #
 
-- light.lamp_bathroom
+- light.ceiling_lamp_bathroom
 
-- binary_sensor.motion_bathroom
+- binary_sensor.motion_sensor_bathroom

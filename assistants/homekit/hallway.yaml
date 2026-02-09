@@ -4,10 +4,4 @@
 # Area: Hallway
 #
 
-- light.lamp_entrance_hallway
-- light.lamp_2_hallway
-- light.lamp_3_hallway
-
-- binary_sensor.motion_hallway
-
-- sensor.temperature_hallway
+- light.ceiling_lamp_hallway

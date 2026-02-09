@@ -4,4 +4,7 @@
 # Area: Home
 #
 
-- vacuum.cleanmate
+- vacuum.q8_max
+
+- input_boolean.guest_mode
+- input_boolean.dog_mode

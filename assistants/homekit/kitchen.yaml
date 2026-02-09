@@ -5,3 +5,6 @@
 #
 
 - light.ceiling_lamp_kitchen
+- light.underlighting_kitchen
+
+- sensor.temperature_kitchen

@@ -4,6 +4,4 @@
 # Area: Conservatory
 #
 
-- light.lamp_conservatory
-
-- sensor.temperature_conservatory
+- binary_sensor.door_conservatory

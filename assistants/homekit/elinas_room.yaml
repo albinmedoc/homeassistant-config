@@ -5,3 +5,9 @@
 #
 
 - light.ceiling_lamp_elinas_room
+- light.window_lamp_elinas_room
+
+- binary_sensor.smoke_detector_elinas_room_smoke
+- binary_sensor.window_elinas_room
+
+- sensor.temperature_elinas_room

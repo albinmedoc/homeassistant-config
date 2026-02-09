@@ -1,0 +1,9 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# Area: Entrance
+#
+
+- light.ceiling_lamp_entrance
+
+- sensor.temperature_entrance
