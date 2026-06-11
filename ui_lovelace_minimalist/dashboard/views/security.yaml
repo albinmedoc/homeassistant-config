@@ -4,8 +4,6 @@
 
 title: "Säkerhet"
 path: "security"
-swipe_back: "home"
-swipe_forward: null
 cards:
   - type: custom:decluttering-card
     template: view_heading

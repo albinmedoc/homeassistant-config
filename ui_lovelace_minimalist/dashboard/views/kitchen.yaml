@@ -4,8 +4,6 @@
 
 title: "Kök"
 path: "kitchen"
-swipe_back: "home"
-swipe_forward: null
 cards:
   - type: custom:decluttering-card
     template: room_view_base

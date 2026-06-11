@@ -4,8 +4,6 @@
 
 title: "Hem"
 path: "house"
-swipe_back: "home"
-swipe_forward: null
 cards:
   - type: custom:decluttering-card
     template: view_heading

@@ -4,8 +4,6 @@
 
 title: "Startsida"
 path: "home"
-swipe_back: null
-swipe_forward: null
 cards:
   - type: "horizontal-stack"
     cards:
