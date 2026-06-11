@@ -84,7 +84,6 @@
       chip01: light.all
       chip01_icon: ''
       right_button_entity: light.all_entrance
-      left_button_entity: light.all_outside_front
       home_custom_button01_name: Larm
       home_custom_button01_icon: ''
       home_custom_button01: alarm_control_panel.alarmo
